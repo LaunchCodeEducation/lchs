@@ -1,4 +1,4 @@
 Project: Strings
 ================
 
-Lorem ipsum...
+Complete part 1 of the :ref:`Candidate Testing <candidate-quiz>` assignment.

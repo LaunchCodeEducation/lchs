@@ -32,6 +32,8 @@ Assignments
    :maxdepth: 1
    :name: assignmentstoc
 
+   assignments/candidate-quiz
+
 Appendices
 ==========
 
