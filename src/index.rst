@@ -11,6 +11,7 @@ Chapters
    chapters/how-to-code/index
    chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
+   chapters/loops/index
    chapters/strings/index
    chapters/lists/index
 
@@ -44,9 +45,14 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
+<<<<<<< HEAD
    appendices/about-this-book
    appendices/list-methods/index
    appendices/string-methods/index
+=======
+   appendices/turtles/index
+   appendices/about-this-book
+>>>>>>> loops
 
 .. toctree::
    :hidden:
