@@ -2,10 +2,13 @@ Chapters
 ========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :name: fulltoc
 
    chapters/introduction/index
+   chapters/how-programs-work/index
+   chapters/how-to-code/index
+   chapters/data-and-variables/index
    chapters/booleans-and-conditionals/index
    chapters/strings/index
    chapters/lists/index

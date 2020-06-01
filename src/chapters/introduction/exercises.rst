@@ -1,2 +1,0 @@
-Exercises: Welcome to Python
-============================
