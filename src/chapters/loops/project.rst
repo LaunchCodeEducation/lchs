@@ -36,8 +36,8 @@ on the link below to open up the starter code in repl.it.
       ``bob.color('blue')`` changes the color of the lines to blue. Many color
       choices are available. Feel free to play with this feature.
 
-      You can also fill the polygon with a color. Refer to the Turtle Appendix
-      for details.
+      You can also fill the polygon with a color. Refer to the
+      :ref:`Turtle Appendix <turtle-guide>` for details.
 
       .. todo:: Insert internal link to the Turtle Appendix.
 
