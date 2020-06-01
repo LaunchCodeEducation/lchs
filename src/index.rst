@@ -45,14 +45,10 @@ Appendices
    :maxdepth: 1
    :name: appendicestoc
 
-<<<<<<< HEAD
    appendices/about-this-book
    appendices/list-methods/index
    appendices/string-methods/index
-=======
    appendices/turtles/index
-   appendices/about-this-book
->>>>>>> loops
 
 .. toctree::
    :hidden:
