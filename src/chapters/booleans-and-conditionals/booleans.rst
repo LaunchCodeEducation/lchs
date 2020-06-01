@@ -1,115 +1,5 @@
-.. _booleans:
-
-Boolean Values and Boolean Expressions
-======================================
-
-.. index:: data type
-
-One of the key features of any programming language is the ability to decide
-whether to run a segment of code. This means you can execute a set of
-statements *only if* a given condition is met.
-
-.. admonition:: Example
-
-   Consider an application that reminds you when you have an overdue book. The
-   app sends you a message *only if* the due date has passed and you have not
-   returned the book.
-
-The *condition* for this example depends on the status of the book. If the
-condition is true (overdue), a message gets sent.
-
-In order for us to code this type of decision making, we need to understand how
-programming languages represent true and false.
-
-Boolean Values
---------------
-
-.. index:: ! True, ! False, ! boolean ! bool
-
-.. index::
-   single: boolean; value
-
-In the previous chapter, you learned about two data types for numbers---``int``
-and ``float``. You also considered the ``string`` data type, which deals with
-collections of characters. To this, we will add the data type ``bool``, which
-stands for **boolean value**.
-
-There are only two boolean values---``True`` and ``False``.
-
-.. admonition:: Note
-
-   Capitalization matters! Since Python is case-sensitive, ``true`` and
-   ``false`` are NOT valid boolean values.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(True, False)
-      print(type(True))
-      print(type(False))
-
-   **Console Output**
-
-   ::
-
-      True False
-      <class 'bool'>
-      <class 'bool'>
-
-The values ``True`` and ``False`` are *not* strings. If you use quotes to
-surround booleans (``"True"`` and ``"False"``), those values become strings.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(type(True))
-      print(type("True"))
-
-   **Console Output**
-
-   ::
-
-      <class 'bool'>
-      <class 'str'>
-
-Can We Do Math with Boolean Values?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We CAN, but we probably SHOULDN'T. Boolean values are used to make decisions,
-not solve calculations.
-
-.. admonition:: Example
-
-   .. sourcecode:: python
-      :linenos:
-
-      print(True*5)
-      print(False*2)
-      print(True + False)
-      print(True * False)
-
-   **Console Output**
-
-   ::
-
-      5
-      0
-      1
-      0
-
-What times 5 gives 5? What times 2 gives 0? When we use a mathematical operator
-(``+``, ``-``, ``*``, etc.) with boolean values, Python automatically converts
-``True`` and ``False`` to the integers ``1`` and ``0``, respectively.
-
-Most of the time, calculations with boolean values are not very useful.
-Instead, we use booleans to evaluate *conditions*.
-
 Boolean Expressions
--------------------
+===================
 
 .. index::
    single: boolean; expression
@@ -117,11 +7,20 @@ Boolean Expressions
 .. index::
    single: operator; equality
 
-.. index:: ! ==
+.. index:: ! ==, ! condition
 
-A **boolean expression** is one that evaluates to either ``True`` or ``False``.
-For example, the **equality operator**, ``==``, compares two values and returns
-``True`` or ``False`` depending on whether the values are identical.
+A **boolean expression** makes a comparison and returns one of the boolean
+values, either ``True`` or ``False``.
+
+To make a decision within our code, a boolean expression is used as the
+**condition**. A condition is a comparison that can be called correct
+(``True``) or incorrect (``False``).
+
+Testing for Equality
+--------------------
+
+The **equality operator**, ``==``, compares two values and returns ``True`` or
+``False`` depending on whether the values are identical.
 
 .. admonition:: Example
 
@@ -145,36 +44,41 @@ For example, the **equality operator**, ``==``, compares two values and returns
 
 In line 4, the two values are equal, so the expression evaluates to ``True``.
 In the line 5, the string ``abc`` is not equal to ``def``, so we get ``False``.
-Line 7 subtracts 3 from the value stored in ``other_num`` and compares the
-result with ``num``.
+Line 7 compares the result of ``other_num - 3`` with the value stored in
+``num``.
 
-We can also use ``==`` to see that ``True`` and ``"True"`` are NOT equal.
+.. admonition:: Tip
 
-.. admonition:: Example
+   A common error is using a single equals sign (``=``) instead of a double
+   equals (``==``) when comparing two values. We call ``=`` an
+   *assignment* operator, but ``==`` is a *comparison* operator.
 
-   .. sourcecode:: python
+   #. To set the value of a variable, use ``=`` (e.g. ``name = 'Mae'``).
+   #. To compare values, use ``==`` (e.g. ``name == other_name``).
 
-      print(True == "True")
+An equality test is *symmetric*, meaning that we can switch the places of the
+two values and get the same the result.  If ``num == 7`` is ``True``, then
+``7 == num`` is also ``True``. However, an assignment statement is NOT
+symmetric: ``num = 7`` works while ``7 = num`` does not.
 
-   **Console Output**
+Try It!
+^^^^^^^
 
-   ::
+Use the simple code editor below to explore flipping an assignment statement:
 
-      False
+.. raw:: HTML
 
-.. admonition:: Fun Fact
+   <iframe src="https://trinket.io/embed/python3/151042b620" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0"></iframe>
 
-   Boolean values are named after the British mathematician George Boole, who
-   created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
-   which is the basis of all modern computer arithmetic.
-
-Comparison Operators
-^^^^^^^^^^^^^^^^^^^^
+Other Comparisons
+-----------------
 
 .. index::
    single: operator; comparison
 
 The ``==`` operator is one of six common **comparison operators**.
+
+.. index:: ! operand
 
 .. admonition:: Vocabulary
 
@@ -192,7 +96,7 @@ The ``==`` operator is one of six common **comparison operators**.
      - Examples Returning ``False``
    * - Equal (``==``)
      - Returns ``True`` if two compared values (operands) are equal, and ``False`` otherwise.
-     - ``7 == 7``
+     - ``7 == 3 + 4``
 
        ``'ab' == 'a'+'b'``
 
@@ -251,36 +155,12 @@ The ``==`` operator is one of six common **comparison operators**.
 
        ``'b' <= 'a'``
 
-.. admonition:: Tip
-
-   A common error is using a single equals sign (``=``) instead of a double
-   equals (``==``) when comparing two values. Remember that ``=`` is an
-   *assignment* operator and ``==`` is a *comparison* operator.
-
-   #. To set or change the value of a variable, use ``=`` (e.g. ``name = 'Mae'``).
-   #. To compare values, use ``==`` (e.g. ``name == other_name``).
-
-An equality test is *symmetric*, meaning that we can swap the places of the
-operands and get the same the result.  For a variable ``num``, if ``num == 7``
-is ``True``, then ``7 == num`` is also ``True``. However, an assignment
-statement is NOT symmetric: ``num = 7`` works while ``7 = num`` does not.
-
-Try It!
-^^^^^^^
-
-Use the simple code editor below to explore flipping an assignment statement:
-
-.. raw:: HTML
-
-   <iframe src="https://trinket.io/embed/python3/98f98f32c9" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0"></iframe>
-
-
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   Which of the following are Boolean expressions? Select all that apply.
+   Which of the following are Boolean expressions? Select ALL that apply.
 
    #. ``3 <= 4``
    #. ``3 + 4``
@@ -289,3 +169,24 @@ Check Your Understanding
    #. ``text = 'Rutabagas!'``
 
 .. Answers = a and c.
+
+.. admonition:: Question
+
+   .. raw:: html
+
+      <script type="text/JavaScript">
+         function highlight(id, answer) {
+            if (answer) {
+               document.getElementById(id).style.background = 'lightgreen';
+            }
+         }
+      </script>
+
+      <p>Which of the following are Boolean expressions? Click ALL that apply.</p>
+      <ol type="a">
+         <li><span id = "3 <= 4" onclick="highlight('3 <= 4', true)">3 <= 4</span></li>
+         <li><span id = "3 + 4" onclick="highlight('3 + 4', false)">3 + 4</span></li>
+         <li><span id = "DogCat" onclick="highlight('DogCat', true)">"DogCat" == "dog" + "cat"</span></li>
+         <li><span id = "False" onclick="highlight('Rutabagas', false)">"False"</span></li>
+         <li><span id = "Rutabagas" onclick="highlight('Rutabagas', false)">text = 'Rutabagas!'</span></li>
+      </ol>

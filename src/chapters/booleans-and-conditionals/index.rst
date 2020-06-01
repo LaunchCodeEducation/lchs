@@ -1,12 +1,17 @@
-Booleans and Conditionals
-=========================
+Making Decisions With Conditionals
+==================================
 
 .. toctree::
    :maxdepth: 3
 
+   introduction
+   bool-data-type
    booleans
-   logical-operators
+   math-with-booleans
    conditionals
+   logical-operators
+   truth-tables
    nested-conditionals
    chained-conditionals
    exercises
+   project
