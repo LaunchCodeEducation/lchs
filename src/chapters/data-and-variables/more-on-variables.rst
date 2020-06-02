@@ -19,9 +19,9 @@ names in Python have their own set of rules:
 #. Case matters! ``animal`` and ``Animal`` are different variable names.
 
 In addition to these rules, there are also some *conventions*. These are
-habits that Python coders follow to keep their code consistent with others
-across the world. You do not have to follow these suggestions, but you really
-*SHOULD*:
+habits that Python programmers follow to keep their code consistent with
+others' across the world. You do not have to follow these suggestions, but you
+really *SHOULD*:
 
 #. Use names that clearly describe their values. For example, if you need to
    store the price of eggs, call your variable ``price_of_eggs`` instead of
@@ -33,7 +33,7 @@ across the world. You do not have to follow these suggestions, but you really
 Compare
 ^^^^^^^
 
-Writing good code is about more than just solving task at hand. It also
+Writing good code is about more than just solving the task at hand. It also
 includes making the code easy to read, update, and maintain.
 
 Consider this example of weak vs. strong variable names:
