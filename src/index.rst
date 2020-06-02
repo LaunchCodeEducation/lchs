@@ -16,12 +16,14 @@ Chapters
 
    genindex
 
-Studios
-=======
+Projects
+========
 
 .. toctree::
    :maxdepth: 1
    :name: studiostoc
+
+   chapters/data-and-variables/project
 
 Assignments
 ===========
