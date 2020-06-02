@@ -49,3 +49,35 @@ Here are some suggestions to get you thinking about debugging:
 
 Over time, you will sharpen your debugging skills and learn how to prevent bugs
 from occurring in the first place.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Debugging is:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> finding all the errors in the program.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> fixing all the errors in the program.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> finding and fixing all the errors in the program.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
