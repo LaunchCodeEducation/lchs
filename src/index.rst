@@ -14,6 +14,7 @@ Chapters
    chapters/loops/index
    chapters/strings/index
    chapters/lists/index
+   chapters/errors-and-debugging/index
 
 .. toctree::
 
@@ -28,6 +29,7 @@ Projects
 
    chapters/strings/project
    chapters/lists/project
+   chapters/errors-and-debugging/project
 
 Assignments
 ===========
