@@ -8,11 +8,11 @@ compared to others.
 Stages for Running a Python Program
 -----------------------------------
 
-In order to understand programming errors it is useful to understand the two
-stages of code execution.
+In order to understand programming errors, we should understand that code gets
+executed in two stages.
 
-Parsing
-^^^^^^^
+Stage 1 - Parsing
+^^^^^^^^^^^^^^^^^
 
 .. index:: ! code parsing
 
@@ -26,25 +26,24 @@ happen behind the scenes during this process, but we just need to know that
 parsing checks the syntax and structure of the code. If any mistakes are found,
 the program does not launch.
 
-Execution
-^^^^^^^^^
+Stage 2 - Execution
+^^^^^^^^^^^^^^^^^^^
 
-If parsing finishes without finding any errors, check, the program is ready to
-run. The **execution stage** is when the statements written into our
-code---printing to the console, prompting the user for input, making
-calculations, etc.---are actually carried out. Think of this stage as
-the plane taking flight.
+If parsing finishes without finding any errors, the program is ready to run.
+During the **execution stage**, the statements written into our code---printing
+to the console, prompting the user for input, making calculations, etc.---get
+carried out. Think of this stage as the plane taking flight.
 
 Syntax Errors
 -------------
 
 .. index:: syntax
 
-Python can only execute a program if the program is *syntactically correct*.
+Python can only run a program if the code is *syntactically correct*.
 **Syntax** refers to the structure of a language (spoken, programming, or
 otherwise) and the rules about that structure. For example, in English,
-a sentence must begin with a capital letter and end with appropriate
-punctuation.
+a sentence must begin with a capital letter and end with some type of
+punctuation mark.
 
 .. index::
    single: error; syntax
@@ -57,6 +56,12 @@ A **syntax error** occurs when we break one of the rules for a given language.
 
    So does this one
 
+   Here is a Python syntax error:
+
+   .. sourcecode:: Python
+
+      printt("Hello, World!")
+
 For most readers, a few syntax errors are not a big problem. Our brains are
 flexible enough to figure out a sentence even if it contains one or more syntax
 errors.
@@ -66,7 +71,7 @@ anywhere in our program, Python will display an error message and immediately
 quit. Since syntax is checked during the parsing stage, these errors are
 found first.
 
-As you practiced your coding skills during the past several chapters, you
+As you completed the coding exercises in the last several chapters, you
 probably spent some time tracking down syntax errors. As you gain experience,
 you will make fewer of these mistakes, but they will never disappear completely.
 However, you will get good at quickly finding syntax errors.
@@ -98,7 +103,7 @@ The errors are also called **exceptions** because they usually indicate that
 something exceptional (and bad) has happened.
 
 Runtime errors occur during the execution phase of a program, so we only
-see them *after* all syntax mistakes are fixed.
+see them after *all* syntax mistakes are fixed.
 
 Common runtime errors include:
 
@@ -133,30 +138,75 @@ Logic Errors
 
 .. index::
    single: error; logic
+   single: error; semantic
 
-The third type of error is the **logic error**. If there is a logic error in your program, it will run successfully and not generate any error messages. However, the program will not work as intended.
+.. index:: ! logic error
 
-The characteristic of logic errors is that the program you wrote is not the program you wanted. For example, say you want a program to calculate your daily earnings based on your weekly salary. You might try the following:
+The third type of error is the **logic error** (sometimes called a **semantic
+error**). If there is a logic error in our code, the program runs successfully
+and no error messages appear. However, the program does not work as intended.
 
-.. admonition:: Example
+The key characteristic of logic errors is that the program we wrote is not the
+program we wanted. The code runs just fine, but it does not solve the problem
+we need.
 
-   .. sourcecode:: js
-      :linenos:
+Let's take a look at two examples of logic errors:
 
-      let weeklyPay = 600;
+.. admonition:: Examples
 
-      let dailyEarnings = weeklyPay / 7;
-      console.log(dailyEarnings);
+   #. We can use a conditional to tell us if an integer is even or odd:
 
-   **Console Output**
+      .. sourcecode:: python
+         :linenos:
 
-   ::
+         num = 25
 
-      85.71428571428571
+         if num%2 == 0:
+            print("The number {0} is odd".format(num))
+         else:
+            print("The number {0} is even".format(num))
 
-The result surprises you because you thought you were making at least $100 per day (you work Monday through Friday). According to this program, though, you are making about $85 per day. The error is a logic one because you divided your weekly pay by 7. It would have been more accurate to divide your weekly pay by 5, since that is how many days a week you come to work. 
+      **Console Output**
 
-Identifying logic errors can be tricky because unlike syntax and runtime problems, there are no error messages to help us identify the issue. We must examine the output of the program and work backward to figure out what it is doing wrong.
+      ::
+
+         The number 25 is even.
+
+   #. To calculate our daily pay based on our weekly pay, we might try:
+
+      .. admonition:: Example
+
+         .. sourcecode:: python
+            :linenos:
+
+            weekly_pay = 600
+
+            daily_pay = weekly_pay / 7
+            print(daily_pay)
+
+         **Console Output**
+
+         ::
+
+            85.71428571428571
+
+In the first example, the value ``25`` is odd, but our program calls it even.
+The syntax of the code is perfectly correct, and no runtime errors crash the
+program, but it gives us the wrong answer. The *logic* of the code is faulty.
+Since we know what the answer *should* be for ``25``, we can use that knowledge
+to help us correct our code. (There are several ways to fix the error---try to
+identify one option).
+
+In the second example, the result surprises us because we thought we were
+making at least $100 per day (assuming we work Monday through Friday).
+According to the program, though, we only earn about $85 per day. The logic
+error occurs because we divided our weekly pay by 7 instead of the 5 days we
+actually came in to work.
+
+Identifying logic errors can be tricky because unlike syntax and runtime
+problems, running the program produces no error messages that help us identify
+the issue. We must examine the output of the program and work backward to
+figure out what our code is doing wrong.
 
 Check Your Understanding
 ------------------------
@@ -165,6 +215,69 @@ Check Your Understanding
 
    Label each of the following as either a syntax, runtime, or logic error.
 
-   #. Trying to use a variable that has not been defined.
-   #. Leaving off a close parenthesis, ``)``, when calling ``console.log``.
-   #. Forgetting to divide by 100 when printing a percentage amount.
+   Trying to use a variable that has not been defined.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> syntax error</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> runtime error</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> logic error</li>
+      </ol>
+      <p id="Q1"></p>
+   
+   Leaving off a close parenthesis, ``)``, when calling ``print``.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> syntax error</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> runtime error</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> logic error</li>
+      </ol>
+      <p id="Q2"></p>
+   
+   Using the formula ``seconds = minutes * 6`` to calculate the number of
+   seconds from a number of minutes.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> syntax error</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> runtime error</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> logic error</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answers = b, a, c
+
+.. admonition:: Question
+
+   Look back at the first logic error example. Which of the following would
+   NOT correct the error?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> In line 3, use <span style="color:#419f6a; font-weight: bold">if num%2 != 0:</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> In line 3, use <span style="color:#419f6a; font-weight: bold">if num%2 == 1:</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> Switch the odd/even words in the print statements.</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> In line 1, use <span style="color:#419f6a; font-weight: bold">num = 26</span></li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = d
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
