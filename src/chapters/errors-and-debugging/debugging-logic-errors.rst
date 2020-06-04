@@ -1,3 +1,5 @@
+.. _fixing-logic-errors:
+
 Fixing Logic Errors
 ===================
 
