@@ -52,46 +52,66 @@ The following code sample contains 3 runtime errors.
 Solve Logic Errors
 ------------------
 
-#. The following code sample contains a logic error.  When given a student's
-   score on an exam, the program *should* convert the points earned into a
-   percentage. Find and fix the error so that the program *always* gives the
-   correct result.
+#. The following code contains two logic errors.  When given a student's score
+   on an exam, the program *should* convert the points earned into a
+   percentage (points earned / points possible * 100). Find and fix the errors
+   so that the program gives the correct result.
 
-      Percentage = points earned / points possible * 100
+   .. admonition:: Example
 
-   *Tip*: Use the following data to test the program and your fix.
+      *Tip*: Use the following data to test the program and your fix.
 
-   a. points_earned = 8, points_possible = 10, Final answer = 80.0%
-   b. points_earned = 11, points_possible = 15, Final answer = 73.33333%
-   c. points_earned = 23.4, points_possible = 25, Final answer = 93.6%
+      a. ``points_earned = 8``, ``points_possible = 10``, Correct answer =
+         ``80.0%``
+      b. ``points_earned = 11``, ``points_possible = 15``, Correct answer ≈
+         ``73.33333333333333%``
+      c. ``points_earned = 23.4``, ``points_possible = 25``, Correct answer =
+         ``93.6%``
 
-   .. todo:: Insert either an interactive repl or a link to a repl here (fixing a logic error).
+      .. raw:: html
+      
+         <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-#. The next code sample contains a logic error that involves the difference
-   between ``>`` and ``>=`` (or ``<`` and ``<=``). When given a student's exam
-   percentage, the program should convert it into a letter grade, assuming a
-   standard scale:
+#. The next program should convert a student's exam percentage into a letter
+   grade. The code follows a simple 10-point scale and allows for decimal
+   results:
 
-   A: 100% - 90%
-   B: 89 - 80
-   C: 79 - 70
-   D: 69 - 60
-   F: < 60
+   A: 100% - 90%, B: 89 - 80, C: 79 - 70, D: 69 - 60, F: Any score under 60%.
 
-   .. todo:: Insert either an interactive repl or a link to a repl here (fixing a logic error).
+   .. admonition:: Example
 
-#. The last code sample contains a logic error that involves the *order* for
-   ``if/elif/else`` statements. Given a value for ``fuel_level``, the
-   program *should*:
+      Be sure to test all the *edge cases*. For example, 80% is a ``B``, but
+      79.99...% is a ``C``.
 
-   a. Print ``Fuel critical!`` if ``fuel_level`` falls below 1000.
-   b. Print ``Fuel low`` if ``fuel_level`` falls between 1000 and 5000.
-   c. Print ``Fuel below 1/2 tank.`` if ``fuel_level`` falls between 5001 and
-      10000.
-   d. Print ``Fuel below 3/4 tank.`` if ``fuel_level`` falls between 10001 and
-      15000.
-   e. Print ``Fuel tank full.`` if ``fuel_level`` is above 15000.
-   f. Print ``Fuel error`` if ``fuel_level`` is below 0 or above 20000.
+      .. raw:: html
 
-   .. todo:: Insert either an interactive repl or a link to a repl here (fixing a logic error).
+         <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-4?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+#. The last code sample checks if a username is valid, but it's not working yet.
+   Add ``print`` statements as directed to find and fix the logic errors.
+
+   Username rules:
+
+   a. Must be 5 - 10 characters long.
+   b. Must only contain letters and numbers.
+   c. Must contain at least 1 digit.
+
+   Test names:
+
+   a. ``"Me2"`` should be invalid (too short).
+   b. ``"CoderGirl"`` should be invalid (no number).
+   c. ``"rut*baga8"`` should be invalid (illegal symbol).
+   d. ``"This1IsTooLong"`` should be invalid (too long).
+
+   .. admonition:: Example
+
+      ``print`` statement steps:
+
+      #. Line 10...
+      #. Correction hints...
+      #. Line 18...
+      #. Correction hints...
+
+      .. raw:: html
+      
+         <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-5?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
