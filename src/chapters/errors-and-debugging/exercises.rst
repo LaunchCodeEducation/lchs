@@ -13,30 +13,41 @@ a helpful strategy.
 Find and Fix Syntax Errors
 --------------------------
 
-The following code sample contains X syntax errors.
+The following code sample contains 3 syntax errors.
 
 #. Before making any changes, run the code as-is to generate the first error
    message.
-#. Use the error message and any syntax highlighting to fix the first bug. Do
-   NOT change anything in the code unless it involves fixing the first bug.
+#. Use the error message to fix the first bug. Do NOT change anything in the
+   code unless it involves fixing the first bug.
 #. After changing the code, run the program again. If there is another bug in
    the program, you will see a different error message.
 #. Repeat steps 2 and 3 until you fix all of the bugs and the program runs
    successfully.
 
-.. todo:: Insert either an interactive repl or a link to a repl here (fixing syntax errors).
+.. admonition:: Example
+
+   This program asks the user to enter an index value, and then it gives the
+   letter from an alphabet string that has that index.
+
+   .. raw:: html
+
+      <iframe height="750px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Find and Fix Runtime Errors
 ---------------------------
 
-The following code sample contains Y runtime errors.
+The following code sample contains 3 runtime errors.
 
 #. Before making any changes, run the code as-is to generate the first error
    message.
 #. Follow the same process you used above to fix the runtime errors. Note that
    syntax highlighting does NOT show all possible runtime errors.
 
-.. todo:: Insert either an interactive repl or a link to a repl here (fixing runtime errors).
+.. admonition:: Example
+
+   .. raw:: html
+
+      <iframe height="750px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Solve Logic Errors
 ------------------
