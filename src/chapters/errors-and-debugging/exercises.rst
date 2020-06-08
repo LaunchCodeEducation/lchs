@@ -10,6 +10,14 @@ well with others is to recognize their effort and what they did correctly.
 Throwing away all of their code just because you would do it differently is NOT
 a helpful strategy.
 
+.. admonition:: Note
+
+   If your teacher uses repl.it *classroom*, follow the links in your classroom
+   account to access the starter code for each part.
+
+   If you are NOT enrolled in a repl.it classroom, use the links given below to
+   complete the exercises.
+
 Find and Fix Syntax Errors
 --------------------------
 
