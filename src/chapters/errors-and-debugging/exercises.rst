@@ -72,9 +72,8 @@ Solve Logic Errors
       
          <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-#. The next program should convert a student's exam percentage into a letter
-   grade. The code follows a simple 10-point scale and allows for decimal
-   results:
+#. The next program should convert a student's percentage into a letter grade.
+   The code follows a simple 10-point scale and allows for decimal results:
 
    A: 100% - 90%, B: 89 - 80, C: 79 - 70, D: 69 - 60, F: Any score under 60%.
 
@@ -103,15 +102,50 @@ Solve Logic Errors
    c. ``"rut*baga8"`` should be invalid (illegal symbol).
    d. ``"This1IsTooLong"`` should be invalid (too long).
 
-   .. admonition:: Example
+.. admonition:: Example
 
-      ``print`` statement steps:
+   #. On line 10 add ``print(is_valid)`` to check if the conditional on line
+      8 correctly assigns ``True`` and ``False`` based on the length of the
+      username. Be sure to run the program with all four test names. ``Me2``
+      and ``This1IsTooLong`` should return ``False``, while ``CoderGirl`` and
+      ``rut*baga8`` should return ``True``.
 
-      #. Line 10...
-      #. Correction hints...
-      #. Line 18...
-      #. Correction hints...
+      Is the conditional on line 8 doing its job correctly?
+   #. If ``is_valid`` is ``False``, then the program should reject the
+      username. The ``print`` statement on line 10 also lets you compare the
+      value of ``is_valid`` to the final result. For example:
 
-      .. raw:: html
-      
-         <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-5?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+      ::
+
+         False
+         'Me2' is a valid username.
+
+      In this case, ``is_valid`` is ``False`` at line 10, but the username
+      still gets labeled as valid. This tells you that a logic error follows
+      line 10.
+   #. On line 18, add ``print(char, is_valid, has_digit)``. Make sure to indent
+      the statement the same amount as the ``else`` on line 16.
+
+      .. sourcecode:: python
+         :lineno-start: 16
+
+            else:
+               is_valid = True
+            print(char, is_valid, has_digit)
+
+   #. Run the program again with all 4 test names. Note how the values of
+      ``is_valid`` and ``has_digit`` change each time the loop repeats. Use the
+      output to find and fix the logic error in the loop.
+   #. *Hints*:
+
+      a. The loop assigns ``is_valid`` to be ``True`` or ``False`` after every
+         character in the username. Modify the code to preserve any ``False``
+         result.
+      b. There are at least two quick ways to accomplish this.
+
+   .. raw:: html
+   
+      <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-5?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+   *Bonus fix*: The loop runs after the length check passes *or* fails. How can
+   we make it so that the loop runs only *if* the length test passes?
