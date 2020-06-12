@@ -134,6 +134,8 @@ Let's modify the code just a little to follow the operation of a ``for`` loop.
 
 We can use a picture to show the *flow of execution* of this ``for`` loop:
 
+.. _for-loop-control-flow:
+
 .. figure:: figures/for-loop-diagram.png
    :alt: Diagram showing the flow of a program with a for loop.
 

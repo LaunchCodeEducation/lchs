@@ -125,6 +125,8 @@ This structure is known as an **if/else statement**, and it allows our program
 to **branch**. The flow of the program takes one of two paths when it reaches a
 conditional, depending on whether the condition is ``True`` or ``False``.
 
+.. _conditional-control-flow:
+
 .. figure:: figures/conditional-flow.png
    :height: 350px
    :alt: A diagram showing how the flow of a program branches based on the value of the condition in an if-else statement. If the condition is true, one code block executes. If the condition is false, a different code block executes.

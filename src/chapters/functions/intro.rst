@@ -25,8 +25,8 @@ Recall how we used a turtle object to draw a square:
 
 What if we have several different turtles on the screen, and we want each one
 to draw a square? We could copy and paste the ``for`` loop once for each
-turtle, but we would need to change the ``forward`` and ``left`` statements to
-match each of the turtle names.
+turtle, but we would need to update the ``forward`` and ``left`` statements to
+match the turtle names.
 
 .. admonition:: Example
 
@@ -56,11 +56,13 @@ match each of the turtle names.
          im_really_a_tortoise.forward(side_length)
          im_really_a_tortoise.left(90)
 
+   This is inefficient!
+
    .. figure:: figures/3-turtle-squares.gif
       :alt: A gif showing a three Python turtles drawing one square each.
 
-This is inefficient! Rather than having to copy, paste, and then edit the loop,
-it would be nice if we could use the SAME lines of code over and over again.
+Instead of copying, pasting, and then editing the loop once for each turtle, it
+would be nice if we could use the SAME lines of code over and over again.
 
 *Functions* allow us to do this!
 
@@ -81,8 +83,8 @@ You used a function when you wrote your first Python program:
    print('Hello, World!')
 
 To display information in the console, the ``print`` function follows a
-detailed set of instructions to convert the values in the ``()`` to symbols on
-the screen. We do not see these steps, but we execute them every time we use
+detailed set of instructions to convert the values inside the ``()`` to symbols
+on the screen. We do not see these steps, but we execute them every time we use
 the function.
 
 For the three-turtle example above, imagine we create a function named
@@ -112,15 +114,42 @@ instructions.
    to use as well as the value for ``side_length``.
 
 When you wrote your ``'Hello, World!'`` program, we skipped the full
-explanation of how functions work. Now, you are ready to learn those details,
+explanation of how functions work. You are now ready to learn those details,
 as well as how functions can be used and how to create your own.
 
 Function Control Flow
 ---------------------
 
-Lorem ipsum...
+.. index:: ! control flow
+
+The **control flow** of a program is the order in which the statements are
+executed. Normal control flow runs from the top to the bottom of a file.
+However, we have seen how :ref:`conditionals <conditional-control-flow>` and
+:ref:`loops <for-loop-control-flow>` alter the flow of a program by
+adding branches or repeated steps in the top-to-bottom running of the code.
+
+Functions create blocks of code that remain separate from the main flow of a
+program. Think of these like complete, but separate, programs that sit off to
+the side of the main branch. When we *call* a function, the main program
+passes control to the separate branch. When the function completes its job, it
+returns control to the main program at the point just after the call was made.
+
+.. figure:: figures/function-control-flow.png
+   :alt: Diagram showing the program flow as it moves from the main branch to the function code.
+   :width: 65%
+
+Once the flow of a program finishes with a conditional or a loop, that code is
+done. The code in a function, however, can be used again and again at different
+points in the program.
+
+.. figure:: figures/function-control-flow-2.png
+   :alt: Diagram showing the program flow as it moves between the main branch and the function code multiple times.
+   :width: 50%
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   In your own words, explain what a function is.
+
