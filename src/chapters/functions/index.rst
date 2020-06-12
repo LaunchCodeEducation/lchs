@@ -5,7 +5,6 @@ What's Your Function
    :maxdepth: 3
 
    intro
-   function-control-flow
    calling-functions
    creating-functions
    function-input-and-output

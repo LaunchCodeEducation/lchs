@@ -52,6 +52,8 @@ program is compared to the one above!
    It may seem odd that this loop uses the integer 51, but only prints up to
    50. Why this is the case will become clear in the next section.
 
+.. _dry-code:
+
 Don't Repeat Yourself
 ---------------------
 
