@@ -138,8 +138,8 @@ returns control to the main program at the point just after the call was made.
    :alt: Diagram showing the program flow as it moves from the main branch to the function code.
    :width: 65%
 
-Once the flow of a program finishes with a conditional or a loop, that code is
-done. The code in a function, however, can be used again and again at different
+Once a program finishes with a conditional or a loop, that code is done. The
+statements in a function, however, can be used again and again at different
 points in the program.
 
 .. figure:: figures/function-control-flow-2.png
