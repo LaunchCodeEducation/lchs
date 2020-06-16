@@ -150,17 +150,6 @@ Use the code below to answer the following questions:
 
    .. raw:: html
 
-      <script type="text/JavaScript">
-         function evaluateMC(id, correct) {
-            if (correct) {
-               document.getElementById(id).innerHTML = 'Yep!';
-               document.getElementById(id).style.color = 'blue';
-            } else {
-               document.getElementById(id).innerHTML = 'Nope!';
-               document.getElementById(id).style.color = 'red';
-            }
-         }
-      </script>
       <ol type="a">
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Invalid username.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Welcome, name!</li>
@@ -193,9 +182,28 @@ Use the code below to answer the following questions:
    If you want to print the welcome message for any username SHORTER than 20
    characters, how should you change line 3?
 
-   #. ``if len(name) > 20:``
-   #. ``if len(name) >= 20:``
-   #. ``if len(name) < 20:``
-   #. ``if len(name) <= 20:``
+   .. raw:: html
 
-.. Answer: b
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">if len(name) > 20:</span></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">if len(name) >= 20:</span></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">if len(name) < 20:</span></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">if len(name) <= 20:</span></li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer: c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

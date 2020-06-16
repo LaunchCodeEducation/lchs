@@ -239,10 +239,15 @@ Check Your Understanding
 
       4 < 3 or 2 < 3
 
-   #. ``True``
-   #. ``False``
-   #. ``"True"``
-   #. ``"False"``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">True</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">False</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">"True"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">"False"</span></li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a
 
@@ -263,10 +268,15 @@ Check Your Understanding
    What is the correct Python expression for checking to see if a number
    stored in a variable x is between 0 and 5.
 
-   #. ``x > 0 and < 5``
-   #. ``x > 0 or < 5``
-   #. ``x > 0 and x < 5``
-   #. ``x > 0 or x < 5``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 and < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 or < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">x > 0 and x < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 or x < 5</span></li>
+      </ol>
+      <p id="Q2"></p>
 
 .. Answer = c
 
@@ -277,22 +287,35 @@ Check Your Understanding
 
    .. raw:: html
 
-      <script type="text/JavaScript">
-         function revealTrueFalse(id, correct) {
-            if (document.getElementById(id).innerHTML != '') {
-               document.getElementById(id).innerHTML = '';
-            } else if (correct) {
-               document.getElementById(id).innerHTML = 'True';
-               document.getElementById(id).style.color = 'blue';
-            } else {
-               document.getElementById(id).innerHTML = 'False';
-               document.getElementById(id).style.color = 'red';
-            }
-         }
-      </script>
       <ol type="a">
          <li onclick="revealTrueFalse('resultA', true)">12 * 2 == 24 <span id="resultA"></span></li>
          <li onclick="revealTrueFalse('resultB', false)">'dog' == 'cat or 'dog' == 'Dog' <span id="resultB"></span></li>
          <li onclick="revealTrueFalse('resultC', false)">12%2 == 0 and len('flower') < 6 <span id="resultC"></span></li>
          <li onclick="revealTrueFalse('resultD', true)">'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10 <span id="resultD"></span></li>
       </ol>
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function revealTrueFalse(id, correct) {
+         if (document.getElementById(id).innerHTML != '') {
+            document.getElementById(id).innerHTML = '';
+         } else if (correct) {
+            document.getElementById(id).innerHTML = 'True';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'False';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

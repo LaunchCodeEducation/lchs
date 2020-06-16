@@ -162,31 +162,32 @@ Check Your Understanding
 
    Which of the following are Boolean expressions? Select ALL that apply.
 
-   #. ``3 <= 4``
-   #. ``3 + 4``
-   #. ``"DogCat" == "dog" + "cat"``
-   #. ``"False"``
-   #. ``text = 'Rutabagas!'``
+   .. raw:: html
+
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', true)">3 <= 4</span></li>
+         <li><span id = "b" onclick="highlight('b', false)">3 + 4</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">"DogCat" == "dog" + "cat"</span></li>
+         <li><span id = "d" onclick="highlight('d', false)">"False"</span></li>
+         <li><span id = "e" onclick="highlight('e', false)">text = 'Rutabagas!'</span></li>
+      </ol>
 
 .. Answers = a and c.
 
-.. admonition:: Question
+.. raw:: html
 
-   .. raw:: html
-
-      <script type="text/JavaScript">
-         function highlight(id, answer) {
-            if (answer) {
-               document.getElementById(id).style.background = 'lightgreen';
-            }
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
          }
-      </script>
-
-      <p>Which of the following are Boolean expressions? Click ALL that apply.</p>
-      <ol type="a">
-         <li><span id = "3 <= 4" onclick="highlight('3 <= 4', true)">3 <= 4</span></li>
-         <li><span id = "3 + 4" onclick="highlight('3 + 4', false)">3 + 4</span></li>
-         <li><span id = "DogCat" onclick="highlight('DogCat', true)">"DogCat" == "dog" + "cat"</span></li>
-         <li><span id = "False" onclick="highlight('Rutabagas', false)">"False"</span></li>
-         <li><span id = "Rutabagas" onclick="highlight('Rutabagas', false)">text = 'Rutabagas!'</span></li>
-      </ol>
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
