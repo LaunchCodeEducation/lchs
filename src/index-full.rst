@@ -28,6 +28,7 @@ Projects
    :name: studiostoc
 
    chapters/data-and-variables/project
+   chapters/booleans-and-conditionals/project
    chapters/strings/project
    chapters/lists/project
    chapters/errors-and-debugging/project
