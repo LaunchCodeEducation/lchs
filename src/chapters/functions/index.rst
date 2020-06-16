@@ -9,6 +9,7 @@ What's Your Function
    creating-functions
    function-input
    function-output
+   boolean-functions
    process
    parameters-and-variables
    naming-functions

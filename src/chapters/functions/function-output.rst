@@ -1,118 +1,75 @@
 Function Output
 ===============
 
-Earlier in this chapter, we used the image of the
-:ref:`function machine <function-machine>`, noting that the machine takes
-*input* and provides *output*. Let's take a closer look at what we send in and
-what we get out of a function.
+Now that we have examined arguments and parameters in more detail, let's take a
+look at the other end of the function machine---*output*.
 
-Arguments and Parameters
-------------------------
 
-.. index::
-   single: function; argument
-   single: function; parameter
-   single: function; input
+.. index:: ! return
 
-Over the past few sections, we defined two terms that are very similar and
-often confused: *arguments* and *parameters*. Both deal with the input we send
-to a function. (Remember, input consists of the values that control how the
-function does its job).
-
-Seeing the difference between the two terms is tricky, and the easiest way to
-clear up the issue is with an example.
-
-.. admonition:: Example
-
-   The function ``say_hello`` takes a single value, which we expect to be a
-   person's name, and prints a greeting. 
-
-   .. sourcecode:: python
-      :linenos:
-
-      def say_hello(name):
-         print("Hello, {0}!".format(name))
-
-      say_hello("Lamar")
-      say_hello('rutabaga')
-
-   **Console Output**
-
-   ::
-
-      Hello, Lamar!
-      Hello, rutabaga!
-
-In this example, ``name`` is a **parameter**. It is part of the function
-definition, and it *behaves like a variable* within the function. A parameter
-*receives* an input value sent to the function.
-
-The value ``"Lamar"`` used in the function call on line 4 is an **argument**.
-It is a specific value *sent* by the function call. Similarly, the value
-``'rutabaga'`` in line 5 is a different argument *sent to* the ``say_hello``
-function.
-
-When we call the ``say_hello`` function in line 4, Python *sends* the value
-``"Lamar"`` to the function. Before running the function body, however, Python
-*assigns* that value to the parameter ``name``. In the background, Python
-completes the statement ``name = "Lamar"``.
-
-When we call the ``say_hello`` function in line 5, Python *sends* a new
-argument to the function, and Python *assigns* that value to ``name`` before
-running the function code (``name = 'rutabaga'``).
-
-The difference between a parameter and an argument is the same as that between
-a variable and a value. A variable *refers to* a specific value, just like a
-parameter *refers to* a specific argument when a function is called. Like a
-value, an argument is a concrete piece of data.
-
-.. admonition:: Note
-
-   **Arguments:** Specific data values *sent* by the function call to a named
-   function.
-
-   **Parameters:** Variables defined in a function that *receive* data. Python
-   *assigns* data to these variables.
+When we call a function, we often send one or more arguments *to* that
+function. Many functions also send data *back* to the main program. We say
+these functions **return** a value.
 
 Return Statements
 -----------------
 
 .. index::
-   single: return
    single: return; value
 
-Some functions return values that are useful. In particular, the type
-conversion functions convert input to the specified data type and return the
-result---calling ``Number("3.14")`` returns the value ``3.14``.
+One example of a function that returns a value is ``len()``. When called, the
+function takes an argument---like a string or a list---and figures out how many
+characters or elements are in the collection. We do not need to know HOW the
+``len()`` function works. We just need the result.
+
+``len()`` *returns* the answer we want---the length of the collection. We send
+the function an argument (a string or list), and it sends back an integer in
+response.
+
+The returned result is the output of the function, and we can picture the
+process something like this:
+
+.. todo:: Insert return diagram here (len function)!
+
+   [Caption describing the relationship between argument, parameter, and return
+   value.]
 
 Returning a Value
 ^^^^^^^^^^^^^^^^^
 
-To return a value from functions that *we* create, we can use a **return statement**. A return statement has the form:
+To return a value from functions that we create, we add a **return statement**
+to the function body. A return statement has the general syntax:
 
-.. sourcecode:: js
+.. sourcecode:: python
 
-   return someVal;
+   return some_value
 
-where ``someVal`` is any value.
+``return`` is the keyword that tells Python, *Send information back to the main
+program*. ``some_value`` is the data that needs to be returned, and it may be
+any data type (``float``, ``str``, ``bool``, ``list``, etc.).
+
+We may return the value of a variable or the result of an
+expression. For example, ``return num`` returns whatever value has been 
+assigned to ``num``, while ``return num >= 20`` sends back either ``True`` or
+``False``.
 
 .. admonition:: Example
 
-   This function has a single parameter, ``n``, which is expected to be a
-   positive integer. It returns the sum 1+2+...+n.
+   This function has a single parameter, ``an_int``, which is expected to be
+   a positive integer. It returns the sum 1 + 2 + ... + ``an_int``.
 
    .. sourcecode:: js
       :linenos:
 
-      function sumToN(n) {
-         let sum = 0;
-         for (let i = 0; i <= n; i++) {
-            sum += i;
-         }
-         return sum;
-      }
+      def sum_one_to_n(an_int):
+         total = 0
+         for number in range(1, an_int+1):
+            total += number
 
-      console.log(sumToN(3));
+         return total
+
+      result = sum_one_to_n(3)
+      print(result)
 
    **Console Output**
 
@@ -120,69 +77,80 @@ where ``someVal`` is any value.
 
       6
 
-Notice that ``sumToN`` does not print anything; the output comes from the final
-line of the program, which prints the value *returned by* the function call
-``sumToN(3)``.
+   Notice that the function ``sum_one_to_n`` contains no ``print`` statements!
 
-Now that we have return statements in our coding toolbox, we will very rarely
-print anything *within* a function. If we want to see the value returned by a
-function then we must print it *after* calling the function.
+Let's take a look at the order of events after we call the function:
 
-.. admonition:: Question
+#. ``sum_one_to_n(3)`` calls the function and sends it the argument ``3``.
+#. Python assigns the argument to the parameter (``an_int = 3``) and then
+   runs the function body. ``total`` stores the result from the accumulator
+   pattern.
+#. Line 6 *returns* the value of ``total`` back to the main program.
+#. Line 8 assigns the answer *returned by* the function to the variable
+   ``result``.
+#. The actual output comes from the final line of the program, which prints the
+   value of ``result``.
 
-   The function ``sumToN`` uses a pattern that we have seen previously. What is
-   it called?
+.. admonition:: Note
 
-Using ``return`` is Optional
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   Now that we have ``return`` statements in our coding toolbox, we will very
+   rarely print anything from *within* a function. If we want to see the value
+   returned by a function, then we must print it AFTER calling the function.
 
-As we saw with our initial examples of function definitions, not every function explicitly returns a value. At its simplest, a function can even have an empty body.
+No ``return`` Value
+^^^^^^^^^^^^^^^^^^^
 
-.. sourcecode:: js
-
-   function doNothing() {}
-
-As written, this function is completely valid, but useless. Although the
-function doesn't have a ``return`` statement, JavaScript still implicitly
-returns a value.
-
-.. admonition:: Example
-
-   A function without a ``return`` statement returns the special value
-   ``undefined``.
-
-   .. sourcecode:: js
-      :linenos:
-
-      function doNothing() {}
-
-      let returnVal = doNothing();
-      console.log(returnVal);
-
-   **Console Output**
-
-   ::
-
-      undefined
-
-``return`` Terminates Function Execution
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When a return statement executes, the function terminates, regardless of whether or not there is any code following the return statement. This means that you must be careful to use ``return`` only when the work of the function has been completed.
+Not every function needs to return a value. For example, we can define the
+``draw_square`` function for a turtle as follows:
 
 .. admonition:: Example
 
-   This ``console.log`` statement in this function never executes, since the function returns before it is reached.
-
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
-      function pastThePointOfReturn() {
-         return "I'm done!";
-         console.log("This will not be printed");
-      }
+      import turtle
 
-      console.log(pastThePointOfReturn());
+      def draw_square(turtle_name, side_length):
+         for side in range(4):
+            turtle_name.forward(side_length)
+            turtle_name.left(90)
+      
+      bob = turtle.Turtle()
+      draw_square(bob, 100)
+
+When we call ``draw_square`` in line 9, we do not want the function to give us
+an *answer*. Instead, we want it to make a turtle draw a specific shape on the
+screen. In this case, there is no need for the function to send any data back
+to the main program. Once the turtle finishes moving, the function ends, and
+control passes back to the the next statement after the function call.
+
+When we write a function, we must decide whether or not it will return data
+once its job is done. We do NOT need to include the ``return`` keyword in
+every function.
+
+``return`` Stops a Function
+---------------------------
+
+When a ``return`` statement executes, the function ends, even if more code
+follows the statement in the function body. This means we must be careful to
+use ``return`` only when the work of the function is done.
+
+.. admonition:: Example
+
+   The ``print`` statements in this function never execute, since the function
+   returns before either one is reached.
+
+   .. sourcecode:: python
+      :linenos:
+
+      def past_the_point_of_return():
+         return "I'm done!"
+         print("This will NOT be printed!!!!!")
+         for line in range(100):
+            print("Neither will this!!!!!")
+
+      message = past_the_point_of_return()
+      print(message)
 
    **Console Output**
 
@@ -190,87 +158,44 @@ When a return statement executes, the function terminates, regardless of whether
 
       I'm done!
 
-We can use the fact that ``return`` stops the execution of a function intentionally, to force a function to stop execution.
+   Written this way, the function behaves as if lines 3 - 5 do not exist!
+
+We can use the fact that ``return`` ends a function to force it to stop at a
+specific point.
 
 .. admonition:: Example
 
-   This function prints out the integers 1...n using an infinite ``while`` loop, which nonetheless terminates when the ``return`` statement is executed.
+   This function adds up the integers 0...n. However, if we send in an argument
+   that is NOT a positive integer, the function sends back an error message.
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
-      function countToN(n) {
-         let count = 1;
-         while (true) {
-            if (count > n) {
-               return;
-            }
-            console.log(count);
-            count++;
-         }
-      }
+      def sum_to_n(an_int):
+         if type(an_int) != int or an_int <= 0:
+            return "Invalid entry. Argument must be a positive integer."
+         
+         total = 0
+         for number in range(an_int+1):
+            total += number
 
-Boolean Functions
-^^^^^^^^^^^^^^^^^
-
-.. index::
-   pair: function; boolean
-
-A function that returns a boolean value is known as a **boolean function**. Perhaps the simplest such function is one that tests an integer to determine if it is even.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-      :linenos:
-
-      function isEven(n) {
-         if (n % 2 === 0) {
-            return true;
-         } else {
-            return false;
-         }
-      }
-
-      console.log(isEven(4));
-      console.log(isEven(7));
+         return total
+      
+      result = sum_to_n('abc')
+      print(result)
 
    **Console Output**
 
    ::
 
-      true
-      false
+      Invalid entry. Argument must be a positive integer.
 
-It is conventional to name boolean functions by starting with either ``is`` or ``has``, which creates a nice semantic effect when reading the code. For example, reading ``isEven(4)`` communicates to the reader that the function should answer the question, "Is 4 even?" This is a convention so widely used by programmers that it extends to nearly every language. 
-
-Let's return to the ``isEven`` function above, to see how we can use the power of return statements to make it even better.
-
-Since ``return`` terminates the function, we can leave out the ``else`` clause and have the same effect. This is because if ``n`` is even, the return statement in the ``if`` block will execute and the function will end. If ``n`` is odd, the ``if`` block will be skipped and the second return statement will execute.
-
-.. sourcecode:: js
-   :linenos:
-
-   function isEven(n) {
-      if (n % 2 === 0) {
-         return true;
-      }
-      return false;
-   }
-
-This updated version works exactly the same as our initial function. 
-
-Additionally, notice that the function returns ``true`` when ``n % 2 === 0`` returns ``true``, and it returns ``false`` when ``n % 2 === 0`` returns ``false``. In other words, the return value is *exactly the same* as the value of ``n % 2 === 0``. This means that we can simplify the function even further by returning the value of this expression.
-
-.. sourcecode:: js
-   :linenos:
-
-   function isEven(n) {
-      return n % 2 === 0;
-   }
-
-This version of ``isEven`` is better than the first two, not because it is shorter (shorter isn't always better), but because it is simpler to read. We don't have to break down the conditional logic to see what is being returned.
-
-Most boolean functions can be written so that they return the value of a boolean expression, rather than explicitly returning ``true`` or ``false``. 
+When we call the function in line 11, we send in the string ``'abc'`` as the
+argument. On line 6, using a string inside ``range`` would cause the program to
+crash, but the ``if`` statement in line 2 prevents that from happening. Since
+``type('abc') != int`` is ``True``, the ``return`` statement on line 3
+executes and sends the error message back to the main program. In this case,
+the ``for`` loop does not run.
 
 Check Your Understanding
 ------------------------
@@ -279,56 +204,59 @@ Check Your Understanding
 
    What does the following code output?
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
-      function plusTwo(num) {
-         return num + 2;
-      }
+      def plus_two(a_number):
+         return a_number + 2
 
-      let a = 2;
+      total = 2
 
-      for (let i=0; i < 4; i++) {
-         a = plusTwo(a);
-      }
+      for turn in range(4):
+         total = plus_two(total)
 
-      console.log(a);
+      print(total)
+
+   #. 4
+   #. 6
+   #. 8
+   #. 10
+
+.. Answer = d
 
 .. admonition:: Question
 
    What does the following function *return*?
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
-      function repeater(str) {
-         let repeated = str + str;
-         console.log(repeated);
-      }
+      def say_hello(user_input = 'World'):
+         if type(user_input) != str:
+            return "Invalid entry."
+            
+         return "Hello, {0}!".format(user_input)
+      
+      message = say_hello(5)
 
-      repeater('Bob');
+   #. ``Hello, World!``
+   #. ``Hello, 5!``
+   #. ``Invalid entry.``
+   #. Nothing (no ``print`` statement)
 
-   #. ``"BobBob"``
-   #. Nothing (no return value)
-   #. ``undefined``
-   #. The value of ``Bob``
+.. Answer = c.
 
 .. admonition:: Question
 
-   What does the following code *output*?
+   Which of the following functions should include a ``return`` statement?
+   Select ALL that apply.
 
-   .. sourcecode:: js
-      :linenos:
+   #. ``calculate_area``
+   #. ``draw_polygon``
+   #. ``print_names``
+   #. ``find_average_score``
+   #. ``change_screen_color``
+   #. ``create_sorted_string``
 
-      function repeater(str) {
-         let repeated = str + str;
-         console.log(repeated);
-      }
-
-      repeater('Bob');
-
-   #. ``"BobBob"``
-   #. Nothing (no output)
-   #. ``undefined``
-   #. The value of ``Bob``
+.. Answers = a, d, f.
 
