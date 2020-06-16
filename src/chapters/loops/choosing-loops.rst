@@ -35,7 +35,7 @@ job done when we do not know how long it will take to meet a given condition.
 Here are some points of comparison between the two types of loops.
 
 ``for`` Pros and Cons
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 #. Easier to set up than ``while`` loops.
 #. Must have a definite start and end point, and these must be declared in the
@@ -48,7 +48,7 @@ Here are some points of comparison between the two types of loops.
 #. Do not work for input validation.
 
 ``while`` Pros and Cons
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 #. More flexible than ``for`` loops.
 #. ANY ``for`` loop can be re-written as a ``while`` loop.
