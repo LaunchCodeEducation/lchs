@@ -121,6 +121,9 @@ Check Your Understanding
    <script type="text/JavaScript">
       function highlight(id, answer) {
          text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
          if (answer) {
             document.getElementById(id).style.background = 'lightgreen';
             document.getElementById(id).innerHTML = text + ' - Correct!';
