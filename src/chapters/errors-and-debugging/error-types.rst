@@ -88,6 +88,8 @@ However, you will get good at quickly finding syntax errors.
    #. What was the error message provided by Python in each case?
    #. Pay attention to any line numbers given in the error message.
 
+.. _runtime-error:
+
 Runtime Errors
 --------------
 

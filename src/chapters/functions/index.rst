@@ -7,7 +7,8 @@ What's Your Function
    intro
    calling-functions
    creating-functions
-   function-input-and-output
+   function-input
+   function-output
    process
    parameters-and-variables
    naming-functions
