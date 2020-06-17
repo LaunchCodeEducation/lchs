@@ -31,7 +31,7 @@ Prompt the user to enter a number:
 
 .. sourcecode:: python
 
-   num_entry = input('Enter a number larger than 100: ')
+   num_entry = int(input('Enter a number larger than 100: '))
 
 2. Check if ``num_entry`` is 100 or larger. If so, print, ``"Valid entry!"``
    Else print, ``"Number too small."``
