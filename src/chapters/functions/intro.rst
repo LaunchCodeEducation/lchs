@@ -152,4 +152,3 @@ Check Your Understanding
 .. admonition:: Question
 
    In your own words, explain what a function is.
-

@@ -29,10 +29,20 @@ response.
 The returned result is the output of the function, and we can picture the
 process something like this:
 
-.. todo:: Insert return diagram here (len function)!
+.. figure:: figures/return-diagram.png
+   :alt: Diagram that shows sending an argument ('Python') to the len() function and returning the value 6.
 
-   [Caption describing the relationship between argument, parameter, and return
-   value.]
+   The argument 'Python' is sent to the len() function, and the function returns
+   the value 6.
+
+We can see this result if we ``print(len('Python'))``:
+
+::
+
+   6
+
+Note that the output is NOT ``"len('Python')"`` or ``Python``. Instead, the
+code prints the value *returned* by the ``len()`` function.
 
 Returning a Value
 ^^^^^^^^^^^^^^^^^
@@ -45,8 +55,8 @@ to the function body. A return statement has the general syntax:
    return some_value
 
 ``return`` is the keyword that tells Python, *Send information back to the main
-program*. ``some_value`` is the data that needs to be returned, and it may be
-any data type (``float``, ``str``, ``bool``, ``list``, etc.).
+program*. ``some_value`` is the data that gets returned, and it may be any data
+type (``float``, ``str``, ``bool``, ``list``, etc.).
 
 We may return the value of a variable or the result of an
 expression. For example, ``return num`` returns whatever value has been 
@@ -120,9 +130,9 @@ Not every function needs to return a value. For example, we can define the
 
 When we call ``draw_square`` in line 9, we do not want the function to give us
 an *answer*. Instead, we want it to make a turtle draw a specific shape on the
-screen. In this case, there is no need for the function to send any data back
-to the main program. Once the turtle finishes moving, the function ends, and
-control passes back to the the next statement after the function call.
+screen. In this case, the function does not need to send any data back to the
+main program. Once the turtle finishes moving, the function ends, and control
+passes back to the the next statement after the function call.
 
 When we write a function, we must decide whether or not it will return data
 once its job is done. We do NOT need to include the ``return`` keyword in
@@ -217,10 +227,15 @@ Check Your Understanding
 
       print(total)
 
-   #. 4
-   #. 6
-   #. 8
-   #. 10
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 6</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 8</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 10</li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = d
 
@@ -239,24 +254,61 @@ Check Your Understanding
       
       message = say_hello(5)
 
-   #. ``Hello, World!``
-   #. ``Hello, 5!``
-   #. ``Invalid entry.``
-   #. Nothing (no ``print`` statement)
+   .. raw:: html
 
-.. Answer = c.
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, World!</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, 5!</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">Invalid entry.</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing (no print statement)</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
 
 .. admonition:: Question
 
-   Which of the following functions should include a ``return`` statement?
-   Select ALL that apply.
+   Three of the following functions should include a ``return`` statement,
+   while the others do not need one. Pick the functions that *require* a
+   ``return``.
 
-   #. ``calculate_area``
-   #. ``draw_polygon``
-   #. ``print_names``
-   #. ``find_average_score``
-   #. ``change_screen_color``
-   #. ``create_sorted_string``
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "A1" onclick="highlight('A1', true)">calculate_area</span></li>
+         <li><span id = "B1" onclick="highlight('B1', false)">draw_polygon</span></li>
+         <li><span id = "C1" onclick="highlight('C1', false)">print_names</span></li>
+         <li><span id = "D1" onclick="highlight('D1', true)">find_average_score</span></li>
+         <li><span id = "E1" onclick="highlight('E1', false)">change_screen_color</span></li>
+         <li><span id = "F1" onclick="highlight('F1', true)">create_sorted_string</span></li>
+      </ol>
 
-.. Answers = a, d, f.
+.. Answers = a, d, f
 
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
