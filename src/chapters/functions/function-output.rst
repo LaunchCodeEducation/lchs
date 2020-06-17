@@ -207,6 +207,11 @@ crash, but the ``if`` statement in line 2 prevents that from happening. Since
 executes and sends the error message back to the main program. In this case,
 the ``for`` loop does not run.
 
+Try It!
+-------
+
+Lorem ipsum...
+
 Check Your Understanding
 ------------------------
 
