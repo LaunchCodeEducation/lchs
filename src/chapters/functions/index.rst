@@ -12,6 +12,7 @@ What's Your Function
    boolean-functions
    process
    parameters-and-variables
+   composing-functions
    naming-functions
    why-create-functions
    exercises
