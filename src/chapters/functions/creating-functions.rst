@@ -292,13 +292,36 @@ Check Your Understanding
 
    .. raw:: html
 
-         <ol type="a">
-            <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
-            <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
-         </ol>
-         <p id="Q3"></p>
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
+      </ol>
+      <p id="Q3"></p>
 
 .. Answer = a
+
+.. admonition:: Question
+
+   Which is the BEST name for the following function?
+
+   .. sourcecode:: python
+      :linenos:
+
+      def func_name(radius):
+        area = 3.14159 * radius**2
+        return area;
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">area</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">calculate_area_of_circle</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">circle</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">shape</span></li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = b
 
 .. raw:: html
 

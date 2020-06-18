@@ -192,6 +192,8 @@ Recall that ``only_vowels += char`` is a shortcut fo the longer expression
    By changing how we reassign the accumulator variable, we get different
    results.
 
+.. _reverse-string:
+
 Reversing a String
 ------------------
 

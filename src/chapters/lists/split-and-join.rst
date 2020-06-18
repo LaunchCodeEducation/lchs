@@ -149,6 +149,8 @@ conversion function only works on data types that consist of smaller pieces.
 
 In general, any *collection* can be turned into a list using this function.
 
+.. _list_reverse-a-string:
+
 For strings, ``list`` produces a different result than the ``split`` method.
 ``split`` breaks a string into a list of *words*, while ``list`` breaks it into
 a list of *characters*.

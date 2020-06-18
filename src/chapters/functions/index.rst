@@ -13,7 +13,6 @@ What's Your Function
    process
    parameters-and-variables
    composing-functions
-   naming-functions
    why-create-functions
    exercises
    project

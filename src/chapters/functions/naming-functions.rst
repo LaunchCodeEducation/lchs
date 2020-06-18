@@ -1,4 +1,0 @@
-Naming Functions
-================
-
-Lorem ipsum...

@@ -1,11 +1,14 @@
 Boolean Functions
 =================
 
+.. _boolean-function:
+
 .. index::
    pair: function; boolean
 
-A function that returns a boolean value is known as a **boolean function**.
-One simple example tests if an integer is even or odd.
+A function that returns a boolean value (either ``True`` or ``False``) is known
+as a **boolean function**. One simple example tests if an integer is even or
+odd.
 
 .. admonition:: Example
 

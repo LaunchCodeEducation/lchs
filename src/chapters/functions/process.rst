@@ -48,6 +48,8 @@ simple string to describe the sandwich will not be useful. In later lessons,
 we will learn how to create our own data types, so making a virtual,
 code-based "sandwich" here is not a problem.*
 
+.. _sandwich-function:
+
 Step 2: Create the Basic Structure
 ----------------------------------
 
