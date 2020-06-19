@@ -3,6 +3,8 @@ Project: Turtle Loops
 
 Let's use Python turtles to practice writing loops!
 
+.. _draw-polygon:
+
 Part A - Polygons and Sprites
 -----------------------------
 
@@ -38,8 +40,6 @@ on the link below to open up the starter code in repl.it.
 
       You can also fill the polygon with a color. Refer to the
       :ref:`Turtle Appendix <turtle-guide>` for details.
-
-      .. todo:: Insert internal link to the Turtle Appendix.
 
 #. A *sprite* is a spider shaped thing with a certain number of legs coming out
    from a center point.

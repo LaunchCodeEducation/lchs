@@ -107,6 +107,8 @@ Let's take a look at the order of events after we call the function:
    rarely print anything from *within* a function. If we want to see the value
    returned by a function, then we must print it AFTER calling the function.
 
+.. _draw-square-code:
+
 No ``return`` Value
 ^^^^^^^^^^^^^^^^^^^
 
