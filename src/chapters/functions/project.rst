@@ -58,8 +58,6 @@ d. Below the function, define a variable and assign it a string value.
 e. Call the ``reverse_characters`` function and use the variable as the argument.
    Check that your function correctly reverses the characters in the string.
 
-.. todo:: Insert interactive repl here (reverse string function).
-
 .. admonition:: Tip
 
    Use these sample strings for testing:
@@ -68,6 +66,10 @@ e. Call the ``reverse_characters`` function and use the variable as the argument
    b. ``'LC101'``
    c. ``'Capitalized Letters'``
    d. ``'I love the smell of code in the morning.'``
+
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/78987c281a" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Part B: Reverse Digits
 ----------------------
@@ -125,8 +127,8 @@ f. *Be sure to print the results from each test case in order to check your
         - Output
       * - ``['apple', 'potato', 'Capitalized Words']``
         - ``['sdroW dezilatipaC', 'otatop', 'elppa']``
-      * - ``[123, 8897, 42, 1138, 8675309]``
-        - ``[9035768, 8311, 24, 7988, 321]``
+      * - ``[123, 8897, 4.2, 1138, 8675309]``
+        - ``[9035768, 8311, 2.4, 7988, 321]``
       * - ``['hello', 'world', 12.3, 'orange', 987]``
         - ``[789, 'egnaro', 3.21, 'dlrow', 'olleh']``
 
@@ -144,7 +146,10 @@ Bonus Missions
       Fill the first blank with the modified string, and fill the second blank
       with the original string.
 
-   .. todo:: Insert interactive repl here (fun phrase studio function).
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python/33fee98fb8" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
 
 #. Now test your function:
 
@@ -161,14 +166,16 @@ Bonus Missions
       width.
    d. If only one argument is passed to the function, then the shape is a
       square. Modify your code to deal with this case.
-   e. Use the returned value to print, "The area is ____ cm^2."
+   e. Use the returned value to print, ``The area is ____ cm^2.``
 
-   .. todo:: Insert interactive repl here (area of rectangle).
+   .. admonition:: Tip
 
-.. admonition:: Tip
+      Use these test cases.
 
-   Use these test cases.
+      a. length = 2, width = 4 (area = 8)
+      b. length = 14.2, width = 7.6 (area = 107.92)
+      c. length = 20 (area = 400)
 
-   a. length = 2, width = 4 (area = 8)
-   b. length = 14.2, width = 7.6 (area = 107.92)
-   c. length = 20 (area = 400)
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python/ee80a82014" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>

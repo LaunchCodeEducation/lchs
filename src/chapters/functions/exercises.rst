@@ -62,6 +62,16 @@ Part A: More Turtles
 
       <iframe height="550px" width="100%" src="https://repl.it/@launchcode/Functions-Exercise-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+   .. admonition:: Try It!
+
+      Add a parameter to ``draw_polygon`` called ``fancy_corners``. If
+      ``True``, then the function should call ``draw_sprite`` at each corner of
+      the shape. Make the sprite legs half the length of each side.
+
+      .. figure:: figures/exercise-3b-image.png
+         :alt: Image showing a sprite with 7 legs and the turtle shape at the center.
+         :scale: 80%
+
 Part B: Return Values
 ---------------------
 
