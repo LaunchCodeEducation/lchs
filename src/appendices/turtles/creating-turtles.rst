@@ -47,16 +47,11 @@ a single line:
 
 .. admonition:: Example
 
-   .. todo:: Insert first turtle appendix repl here.
+   Run the program to draw a line on the screen.
 
-   .. sourcecode:: Python
-      :linenos:
+   .. raw:: html
 
-      import turtle           # Allows access to the turtle module.
-
-      bob = turtle.Turtle()   # Create a turtle named bob.
-
-      bob.forward(75)         # Move bob forward by 75 units (pixels).
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Movement-Basics?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 The ``forward`` method changes the location of turtle ``bob`` on the screen by
 moving it a number of pixels in the direction it is facing.
@@ -68,8 +63,8 @@ Try It!
    different distance.
 #. Try to make ``bob`` move backwards instead.
 #. Can you find the distance from the starting position to the edge of the
-   drawing space? (This number will vary between devices depending on the size
-   of the screen).
+   drawing space? (This number will depend on your device and on the size of
+   the window).
 
 Open A Drawing Space
 --------------------
@@ -96,14 +91,14 @@ the window open until we have a chance to admire the art.
 .. sourcecode:: Python
    :linenos:
 
-      import turtle
-      window = turtle.Screen()
+   import turtle
+   window = turtle.Screen()
 
-      bob = turtle.Turtle()
+   bob = turtle.Turtle()
 
-      bob.forward(75)
+   bob.forward(75)
 
-      window.exitonclick()
+   window.exitonclick()
 
 Just like line 4 creates a new turtle object called ``bob``, line 2 creates a
 screen object called ``window``. This variable allows us to modify the
