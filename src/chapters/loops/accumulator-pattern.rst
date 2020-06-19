@@ -1,3 +1,5 @@
+.. _accumulator-pattern:
+
 The Accumulator Pattern
 =======================
 

@@ -4,10 +4,9 @@ Checking Strings
 It is often helpful to examine a character and test whether it is upper- or
 lowercase, or whether it is a character or a digit.
 
-We can use bracket notation and string methods inside a boolean expression to
-check if a string meets a certain condition.
-
-.. todo:: Insert internal book link to the boolean expression section.
+We can use bracket notation and string methods inside a
+:ref:`boolean expression <boolean-expression>` to check if a string meets a
+certain condition.
 
 Checking Type
 -------------

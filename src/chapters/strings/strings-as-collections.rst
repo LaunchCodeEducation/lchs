@@ -88,24 +88,16 @@ A string that contains no characters, called the **empty string**, is still
 considered a string. It simply contains zero characters and is represented by
 ``''`` or ``""`` (two single or two double quotes with nothing in between).
 
-We used an empty string before, when we practiced the accumulator pattern.
-
-.. todo::
-
-   Add an internal book link here to the accumulator pattern section.
+We used an empty string before, when we practiced the
+:ref:`accumulator pattern <accumulator-pattern>`.
 
 Quote Reminder
 --------------
 
-Recall from the Data and Variables chapter that we can use single quotes around
-a string (``'hello'``), double quotes (``"hello"``), or triple quotes
-(``'''hello'''`` and ``"""hello"""``), as long as we start and end with the
-same type.
-
-.. todo::
-
-   Add an internal book link here to the relevant section of the Data and
-   Variables chapter.
+Recall from the :ref:`Data and Variables <quote-reminder>` chapter that we can
+use single quotes around a string (``'hello'``), double quotes (``"hello"``),
+or triple quotes (``'''hello'''`` and ``"""hello"""``), as long as we start and
+end with the same type.
 
 Why have three options?
 

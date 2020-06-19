@@ -71,6 +71,8 @@ More On Strings
 
       What is the data type of the values ``"17"`` and ``"3.2"``?
 
+.. _quote-reminder:
+
 #. In Python we can use either single quotes (``'``) or double quotes (``"``) for
    strings. *Triple* quotes (``'''`` or ``"""``) can be used for multi-line
    strings.

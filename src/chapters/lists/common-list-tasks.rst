@@ -78,9 +78,8 @@ switches the positions of the two elements inside the list.
 Accumulating List Elements
 --------------------------
 
-.. todo:: Add internal book link to the accumulator pattern section.
-
-Just like strings, we can use the accumulator pattern to add items to a list.
+Just like strings, we can use the
+:ref:`accumulator pattern <accumulator-pattern>` to add items to a list.
 Since the ``append`` method only adds one element at a time, placing the
 statement inside a loop allows us to continually increase the size of a list.
 

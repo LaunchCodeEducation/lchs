@@ -1,3 +1,5 @@
+.. _boolean-expression:
+
 Boolean Expressions
 ===================
 
