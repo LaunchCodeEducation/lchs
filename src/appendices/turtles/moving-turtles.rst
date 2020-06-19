@@ -9,8 +9,6 @@ Straight Lines
 In addition to the movement command ``forward``, we can also make a turtle move
 in the opposite direction with the ``backward`` method.
 
-.. todo:: Insert second turtle appendix repl here.
-
 .. sourcecode:: Python
    :linenos:
 
@@ -31,47 +29,36 @@ amount. The methods ``right()`` and ``left()`` rotate a turtle either clockwise
 (right) or counterclockwise (left). Inside the parentheses, we must include a
 number to specify how much ``bob`` should turn.
 
-Try It!
-^^^^^^^
+.. admonition:: Try It!
 
-The following program draws a line, returns to the starting point, rotates the
-turtle left, and draws another line.
-
-.. admonition:: Example
-
-   .. todo:: Insert second turtle appendix repl here.
-
-   .. sourcecode:: Python
-      :linenos:
-
-      import turtle
-
-      bob = turtle.Turtle()   # Create a turtle named bob.
-      bob.forward(100)        # Move bob forward 100 units.
-      bob.backward(100)       # Return bob to the starting position.
-
-      bob.left(45)            # Turn bob left 45 degrees.
-      bob.forward(100)        # Move bob forward 100 units.
+   The following program draws a line, returns to the starting point, rotates
+   the turtle left, and then draws another line.
 
    The *argument* (the number inside the parentheses) in line 7 sets the number
    of degrees ``bob`` turns. ``bob.left(45)`` makes the turtle rotate
    counterclockwise by 45°.
    
-   Change the argument to see how it affects the drawing:
+   Change the argument in line 7 to see how it affects the drawing:
 
    #. Try each of the values 90, 120, 180, and 360.
    #. What happens if you enter a negative number?
    #. Try using 720.
    #. What happens if you switch the order of lines 7 & 8?
 
-Without diving deep into the geometry, there are 360° in a circle. Using a
-larger number as the argument just makes the turtle spin in place one or more
-times before running the next statement in the code.
+   .. raw:: html
+
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Turning?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+.. admonition:: Note
+
+   Without diving deep into the geometry, there are 360° in a circle. Using a
+   larger number as the argument just makes the turtle spin in place one or
+   more times before running the next statement in the code.
 
 Curved Lines
 ------------
 
-To make ``bob`` draw a curved line, we will use a different turtle method.
+To make ``bob`` draw a curved line, we use a different turtle method.
 
 .. sourcecode:: Python
 
@@ -95,22 +82,10 @@ the curved line will be.
 For example, ``bob.circle(50, 180)`` draws a half-circle, since 180 is half of
 360.
 
-Try It!
-^^^^^^^
 
-Experiment with drawing curved lines.
+.. admonition:: Try It!
 
-.. admonition:: Example
-
-   .. todo:: Insert third turtle appendix repl here.
-
-   .. sourcecode:: Python
-      :linenos:
-
-      import turtle
-
-      bob = turtle.Turtle()   # Create a turtle named bob.
-      bob.circle(50)          # Draw a circle with a radius of 50 pixels.
+   Experiment with drawing curved lines.
    
    Try the following:
 
@@ -118,6 +93,18 @@ Experiment with drawing curved lines.
    #. What happens if you use a negative radius?
    #. Change line 4 to ``bob.circle(50, 180)``.
    #. Replace ``180`` with different numbers to see how the drawing changes.
+
+   .. raw:: html
+
+      <iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Curves?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+.. admonition:: Tip
+
+   How many degrees are there in one-eighth of a circle?
+
+   Never fear! You can make Python figure that out for you!
+
+   ``bob.circle(50, 360/8)``
 
 Combining lines, turns, and circles, we can begin making more interesting
 shapes!
@@ -135,25 +122,9 @@ there is no reason to limit ourselves to just one drawing pet!
 
    Run the following program to see two turtles draw a rectangle.
 
-   .. todo:: Insert fourth turtle appendix repl here.
+   .. raw:: html
 
-   .. sourcecode:: Python
-      :linenos:
-
-      import turtle
-
-      bob = turtle.Turtle()   # Create a turtle named bob.
-      mae = turtle.Turtle()   # Create a turtle named mae.
-      mae.color('green')      # Wow! We can change the line color.
-
-      bob.forward(50)         # bob draws one part of the picture.
-      bob.left(90)
-      bob.forward(100)
-
-      mae.left(90)            # mae draws the other part of the picture.
-      mae.forward(100)
-      mae.right(90)
-      mae.forward(50)
+      <iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Two-Turtles?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
    
    #. Play around by changing any of the code to make the pair of turtles draw
       different shapes.
