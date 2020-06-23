@@ -1,4 +1,4 @@
-Adding a ``main()`` Function
-============================
+Add a ``main()`` Function
+=========================
 
 Lorem ipsum...
