@@ -15,28 +15,47 @@ Generate a Random Number
 ------------------------
 
 Press the *Run* button a number of times for the program below. Note that the
-values change each time. These are random numbers.
+printed values change each time. These are random numbers.
 
-   [Insert interactive repl here.]
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/a38187485a" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
 
 .. index:: ! random(), ! randint()
 
-The **random()** function returns a float value in the range 0.0 - 1.0.
-However, while 0.0 is possible 1.0 is not. If we need a larger float result,
+The **random()** function returns a float value in the range 0.0 - 1.0
+(including 0.0 but not 1.0). If we need a larger float result,
 say from 0.0 to 10.0, we simply multiply the result from ``random()`` by the
 top value we want.
 
 In the case shown below, we’ve converted the result from ``random()`` to a
-number in the range 0.0 - 4.9999... Press the *Run* button several times to
-confirm that values range between 0.0 up to but not including 5.0.
+number in the range 0.00 - 4.99. Press the *Run* button several times to
+confirm the results, then try changing line 4 to produce a different range.
 
-   [Insert interactive repl here.]
+#. What happens if we change the multiplier?
+#. What happens if we add a number to ``random.random()`` instead of
+   multiplying?
+#. What if we multiply ``random.random()`` by a value and then add a number to
+   the result?
+
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/4a4752da5c" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 The **randint()** function is a useful modification of ``random()``. It
-generates an integer between the two arguments, but in this case, the results
-include both end points.
+generates an integer between the two arguments. In this case, however, the
+results include both end points.
 
-   [Insert interactive repl here.]
+Run this program several times to check the behavior of the ``randint()``
+function.
+
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/17a01e0a3e" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Try changing the arguments inside the ``()`` to see how that affects the
+numbers produced.
 
 Not *Really* Random
 ^^^^^^^^^^^^^^^^^^^
@@ -72,7 +91,10 @@ function. It selects a random item from a string, list, or other collection.
 
 Run the following program several times to see how this works:
 
-   [Insert interactive repl here.]
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/09f0f7531e" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
 
 We could do the same thing with ``randint()`` and bracket notation, but the
 ``choice()`` function wraps this up into a simple shortcut.
@@ -97,26 +119,9 @@ We could do the same thing with ``randint()`` and bracket notation, but the
 
    Add the statement ``bob.color(random.choice(colors))`` to the code below.
 
-   [Insert interactive repl here]
+   .. raw:: html
 
-   .. sourcecode:: Python
-      :linenos:
-
-      import turtle
-      import random
-
-      bob = turtle.Turtle()
-      bob.shape('turtle')
-      bob.pensize(3)
-      bob.speed(8)
-
-      colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
-
-      num_sides = 8
-
-      for side in range(num_sides):
-         bob.forward(75)
-         bob.left(360.0/num_sides)
+      <iframe height="700px" width="100%" src="https://repl.it/@launchcode/Random-Turtle-Color?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Random Turtle Walk
 ------------------
@@ -130,12 +135,18 @@ the path our turtle follows less predictable.
 .. admonition:: Example
 
    Currently, the turtle takes 10 steps, and it always turns right by 90
-   degrees. Make the following changes:
+   degrees. Run the program first to see this behavior.
+   
+   .. raw:: html
 
-   #. Inside the loop, define a ``coin_toss`` variable and assign it the result
-      of ``random.randint(0,1)``. As the name of the variable tells us, we can
-      treat this like a coin toss, with ``0`` standing for heads and ``1``
-      standing for tails.
+      <iframe height="700px" width="100%" src="https://repl.it/@launchcode/Random-Turtle-Walk?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+   Now make the following changes:
+
+   #. At the start of the loop, define a ``coin_toss`` variable and assign it
+      the result of ``random.randint(0,1)``. As the name of the variable tells
+      us, we can treat this like a coin toss, with ``0`` standing for heads,
+      and ``1`` standing for tails.
       
       If you don't like working with 0 and 1, you can use
       ``random.choice('heads', 'tails')`` instead. However, numbers are easier
@@ -143,55 +154,84 @@ the path our turtle follows less predictable.
    #. Place the turn command inside a conditional as follows:
 
       .. sourcecode:: Python
-         :lineno-start: 13
+         :lineno-start: 14
 
          if coin_toss == 0:
             bob.right(90)
          else:
             bob.left(90)
       
-      Thus, ``bob`` turns left or right depending on the random choice of 0 or
-      1. Run the program again to see the result.
-   #. Next, let's make bob rotate by a random number of degrees. Replace the
+      Now ``bob`` turns left or right depending on the random choice of ``0`` or
+      ``1``. Run the program several times and compare the paths.
+   #. Next, let's make ``bob`` rotate by a random number of degrees. Replace the
       argument ``90`` with ``random.randint(0, 180)``. Run the program several
       times to see the result.
    #. Finally, randomly assign the number of steps ``bob`` takes to a value
       between 5 and 25. Run the program several times to check your work.
-
-   [Interactive repl here...]
-
-   .. sourcecode:: Python
-      :linenos:
-
-      import turtle
-      import random
-
-      bob = turtle.Turtle()
-      bob.shape('turtle')
-      bob.speed(8)
-
-      num_steps = 10
-
-      for step in range(num_steps):
-         bob.forward(50)
-         coin_toss = random.randint(0,1)
-         if coin_toss == 0:
-            bob.right(90)
-         else:
-            bob.left(90)
 
 Here are some bonus tasks for you to try as well:
 
 #. Add a ``colors`` list and randomly assign a color to the turtle before each
    line is drawn.
 #. Randomly select the length of each line drawn.
-#. Randomly change the speed or pensize before or during the turtle's walk.
+#. Randomly change the speed before or during the turtle's walk.
 #. Move the walking code into a ``random_walk`` function that takes a turtle
    and the number of steps as parameters. Call ``random_walk`` to make ``bob``
    move.
 #. Add a second turtle and have it take a stroll as well.
 
+.. figure:: figures/turtle-random-walk.png
+   :alt: Image with two panels. The left panel shows a single, multi-color random turtle path. The right panel shows two multi-color, random turtle paths.
+
+   A single, multi-color turtle path. Two multi-color paths drawn by different turtles.
+
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Which of the following shows the correct code to return the result of
+   rolling a 6-sided dice?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(0, 7)</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(1, 7)</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(0, 6)</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">random.randint(1, 6)</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   One reason that lotteries don’t use computers to pick the winning numbers
+   is:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> There is no computer on the stage for the drawing.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Computers don’t really generate random numbers.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Computers would generate the same numbers for each drawing.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The computer can’t tell what values were already selected, so it might repeat the same number several times.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
