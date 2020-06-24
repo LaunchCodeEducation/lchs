@@ -25,6 +25,12 @@ that imported it. This makes applying updates much more efficient.
 
 .. todo:: Insert figure showing the relationship between a module and different project files.
 
+.. admonition:: Note
+
+   Modules are NOT designed to run on their own. Their purpose is to *support*
+   many different programs by storing the code for commonly used functions,
+   values, tools, and tasks.
+
 Why Use Modules?
 ----------------
 

@@ -7,6 +7,8 @@ account to access each starter code file.
 If you are NOT enrolled in a repl.it classroom, use the editors below to
 complete the exercises.
 
+.. _functions-turtle-exercises:
+
 Part A: More Turtles
 --------------------
 
