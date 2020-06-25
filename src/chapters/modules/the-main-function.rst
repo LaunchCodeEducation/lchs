@@ -16,6 +16,10 @@ student scores. We started by coding the ``find_average_score`` and the
 ``create_report`` functions. Now we want to test these functions by sending
 in lists of numbers.
 
+Notice that we first ``import`` the required module. Next, we define the
+``find_average_score`` and ``create_report`` functions. Finally, we include
+four statements to call the functions and print some output.
+
 In lines 20 - 21, we call ``find_average_score`` with a list of numbers with a
 known average (3) and then print the result.
 
@@ -43,10 +47,10 @@ Loose Statements
 ----------------
 
 OK, we have a problem with our program, but it's not with ``main.py``. Click on
-the *Files* icon in the top-left corner of the editor. This will show a list of
-the two files that make up this program.
+the *Files* icon in the top-left corner of the editor. This will show the names
+of the two files that make up this program.
 
-Click on ``random_lists.py`` tab to show its code in the editor.
+Click on ``random_lists.py`` to show its code in the editor.
 
 .. index::
    single: statement; loose
@@ -55,10 +59,10 @@ The module contains five functions, but the issue is at the bottom of the file.
 Scroll to the end of the code to find the 8 statements in lines 44 - 51. We
 call these **loose statements** because they are not part of any function.
 
-Sometimes loose statements are just leftover commands that we used to test our
-defined functions. However, most of the time the loose code is needed to run
-the program. It could prompt the user for information, call the functions in
-the proper order, set up a required drawing space, etc.
+Sometimes loose statements are just leftover commands that we used to test some
+of the functions. However, most of the time the loose code is needed to run the
+program. It could prompt the user for information, call the functions in the
+proper order, set up a required drawing space, etc.
 
 In this case, the loose code contains three ``print`` statements, and these
 create the unexpected output. This brings up a very important point:
@@ -114,97 +118,134 @@ inside its own function, it will only run if we call ``main()``.
 Add ``main()`` to ``main.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+Let's do the same thing to wrap up the loose code in ``main.py``:
 
-Alternate Wording
------------------
+.. sourcecode:: Python
+   :lineno-start: 20
 
-Using functions is a GREAT idea. So is using modules. However, in both cases
-there may be some "loose" code that winds up at the bottom of our work. These
-statements may be necessary to run the complete program, or they might be
-leftover from testing the code. Either way, we need to learn how to deal with
-statements that don't seem to fit inside any of our defined functions.
+   def main():
+      average = find_average_score([3, 1, 5])
+      print(average)
 
-Let's take a look at an example of this:
+      pretend_scores = random_lists.create_random_number_list(5, 90, 100)
+      print(create_report(pretend_scores))
+
+The following editor contains the updated code, with a ``main()`` function
+present in both files.
 
 .. admonition:: Example
 
-   .. sourcecode:: Python
-      :linenos:
+   Most of the work happens inside the function, but we still need the last
+   four lines of code to get things done. They perform the main job of the
+   program (printing a score report).
 
-      import random
+   Run the program again to see how it behaves now:
 
-      def create_random_number_list(num_elements, start_value, end_value):
-         new_list = []
-         for element in range(num_elements):
-            new_list.append(random.randint(start_value, end_value))        
-         
-         return new_list
+   .. raw:: html
 
-      numbers = create_random_number_list(8, -10, 10)
-      numbers.sort()
-      print(numbers)
+      <iframe height="700px" width="100%" src="https://repl.it/@launchcode/Why-Use-Main-step-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-Notice that we first ``import`` the required module. Next, we define the
-``create_random_number_list`` function. Finally, we include three statements
-to call the function, sort the list, and print the final collection.
+   Dra! Now NO output appears!
 
-Most of the work happens inside the function, but we still need the last three
-lines of code to get things done. They perform the main job of the program
-(printing a sorted list of numbers).
+Since we placed the loose code into the ``main()`` function, those statements
+will not run unless we *call* the function.
 
-Avoid Loose Statements
-----------------------
+In ``main.py``, add one more statement to the bottom of the code:
+
+.. sourcecode:: Python
+   :lineno-start: 20
+
+   def main():
+      average = find_average_score([3, 1, 5])
+      print(average)
+
+      pretend_scores = random_lists.create_random_number_list(5, 90, 100)
+      print(create_report(pretend_scores))
+
+   main()
+
+Now when we run the code, it behaves as we want. Lines 20 - 25 tell Python,
+*OK, we are defining a function called 'main()', and it holds all of the
+statements that control how the program behaves.*
+
+Line 27 tells Python, *Please run the 'main()' function*.
+
+Yes, You Really Want to Add ``main()``
+--------------------------------------
 
 In many programming languages, like Java and C#, we are not allowed to leave
-statements sitting alone at the bottom of the program. Python is more
-forgiving, but as a best practice we should keep ALL statements inside of a
-defined function.
+loose statements sitting at the bottom of our code. Python is more forgiving,
+but as a best practice we should keep ALL statements inside of a defined
+function.
 
-In our example, where should we put the last three lines of code? They relate
-to each other because they perform the *main* job of the program. This gives us
-a good name for these commands:
+*Why?*
 
-.. admonition:: Try It!
+New coders often think that adding ``main()`` provides little benefit, but they
+really, really, REALLY should. The reasons have everything to do with avoiding
+bugs from loose statements:
 
-   Run the following program.
+#. Using ``main()`` prevents running unwanted code when we import a module.
+#. The ``main()`` function helps organize our code by putting all of the setup
+   and control statements in one place. For example, in a turtle program,
+   ``main()`` would be the place to define new turtles, set their properties,
+   change the window appearance, and call drawing functions.
+#. Using ``main()`` helps prevent shadowing of variables.
 
-   .. todo:: Insert interactive repl here (main function)!
+   .. admonition:: Examples
 
-   .. sourcecode:: Python
-      :linenos:
+      If we define a list variable in a loose statement, then every function in
+      the program can access that list.
 
-      import random
+      .. sourcecode:: Python
+         :linenos:
 
-      def create_random_number_list(num_elements, start_value, end_value):
-         new_list = []
-         for element in range(num_elements):
-            new_list.append(random.randint(start_value, end_value))        
+         def add_item():
+            a_list.append(9)
+
+         def flip_list():
+            a_list.reverse()
+
+         a_list = [2, 4, 6]
+         add_item()
+         flip_list()
+         print(a_list)
+      
+      **Console Output**
+
+      ::
+
+         [9, 6, 4, 2]
+
+      If we define a list variable in ``main()``, then it is harder to
+      accidentally change it in another function. We have to send the list in as
+      an argument before the other function can act on it.
+
+      .. sourcecode:: Python
+         :linenos:
+
+         def add_item():
+            a_list.append(9)
+
+         def flip_list():
+            a_list.reverse()
+
+         def main():
+            a_list = [2, 4, 6]
+            add_item()
+            flip_list()
+            print(a_list)
          
-         return new_list
+         main()
+      
+      **Console Output**
 
-      def main():
-         numbers = create_random_number_list(8, -10, 10)
-         numbers.sort()
-         print(numbers)
+      ::
 
-   Notice that nothing appears in the console! Remember that defining a
-   function does NOT run it.
+         File "main.py", line 2, in add_item
+            a_list.append(9)
+         NameError: name 'a_list' is not defined
 
-   #. Call the function by adding ``main()`` on line 15, then run the program
-      again. Output should appear this time.
-   #. Note that on line 10, we define ``main`` with no parameters.
-   #. Note that on line 15, we do not include any arguments in the function
-      call.
+Check Your Understanding
+------------------------
 
-Why Avoid Loose Statements?
----------------------------
-
-Might be thinking that adding ``main()`` provides little benefit...
-
-Show example of unwanted output (print statements) and/or sorting when
-using an imported function...
-
-How to call ``main()`` only when it's part of ``main.py``... 
-
-Avoids accidental shadowing...
+Lorem ipsum...

@@ -10,5 +10,6 @@ Python Modules
    math-module
    creating-modules
    the-main-function
+   more-on-main
    exercises
    project
