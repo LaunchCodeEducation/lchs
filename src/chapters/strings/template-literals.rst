@@ -1,10 +1,11 @@
 Template Literals
 =================
 
-Earlier, we used *concatenation* to combine strings and variables together in
-order to create a specific output:
+.. index:: concatenation
 
-.. todo:: Add an internal book link here to the concatenation section!
+Earlier, we used *concatenation* to
+:ref:`combine strings and variables together <string-concatenation>` in order
+to create a specific output:
 
 .. admonition:: Example
 

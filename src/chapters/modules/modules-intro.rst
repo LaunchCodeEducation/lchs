@@ -23,7 +23,11 @@ every new project, we store the original in a file and then *import* that file
 when we need it. Changing the code in the module affects all of the programs
 that imported it. This makes applying updates much more efficient.
 
-.. todo:: Insert figure showing the relationship between a module and different project files.
+.. figure:: figures/module-diagram.png
+   :alt: Figure showing a module being imported into three different programs.
+   :width: 60%
+
+   The same module code can be imported and used by completely different programs.
 
 .. admonition:: Note
 

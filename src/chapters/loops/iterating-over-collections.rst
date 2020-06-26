@@ -1,3 +1,5 @@
+.. _string-iteration:
+
 Loop Through a String
 =====================
 

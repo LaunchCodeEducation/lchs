@@ -66,9 +66,7 @@ projects.
 Now that we coded ``reverse_string`` ONCE, we can reuse it whenever we need to
 flip a string.
 
-We will explore this idea in the Modules chapter.
-
-.. todo:: Insert internal link to the Modules chapter index.
+We will explore this idea in the :ref:`Modules chapter <modules-index>`.
 
 Functions Save Millions of Lives Every Day
 ------------------------------------------

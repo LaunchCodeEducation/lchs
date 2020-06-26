@@ -105,6 +105,8 @@ Let's compare using ``+`` and ``*`` with numbers vs. strings.
    
    Try changing the ``int`` and ``str`` values to see what happens!
 
+.. _string-concatenation:
+
 These examples show that the ``+`` and ``*`` operators *behave differently
 based on the data type of the operands.*
 
@@ -126,8 +128,7 @@ based on the data type of the operands.*
    - The ``*`` operator acts like multiple ``+`` operators.
    - ``'Fun' * 3`` does the same thing as ``'Fun' + 'Fun' + 'Fun'``.
 
-.. index::
-   pair: string; concatenation
+.. index:: ! string concatenation
 
 .. admonition:: Note
 
