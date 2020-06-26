@@ -81,6 +81,8 @@ likely get random behavior each time we run our program.
 
    Doing this would be really, really hard, however.
 
+.. _random-list-item:
+
 Select an Item from a Collection
 --------------------------------
 
