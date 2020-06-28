@@ -44,10 +44,9 @@ eye-catching.
 Starter Code
 ------------
 
-Follow this link to the project starter code. Each group needs to fork a copy
-of the code.
-
-.. todo:: Insert link to starter code (collaborative turtle project).
+Follow this link to the
+`project starter code <https://trinket.io/python/c99c3612a9>`__. Each group
+needs their own copy of the code.
 
 Activity
 --------
@@ -106,7 +105,7 @@ Activity
    a. ``place_turtles`` takes a list of turtles as one of the parameters, but
       it needs to be modified to make it better.
    b. Your teacher will walk through how to improve the code, and your team
-      will get to use the final ``place_turtles`` function.
+      will use the final ``place_turtles`` code.
 
 #. Once each group in your team finishes their code, combine the separate
    functions into a single, shared file. Run the code to find and fix any bugs.
