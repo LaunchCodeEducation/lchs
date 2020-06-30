@@ -117,7 +117,8 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following are legal Python variable names?
+   Which of the following are legal Python variable names? Select ALL that
+   apply.
 
    .. raw:: html
       
@@ -134,6 +135,7 @@ Check Your Understanding
 .. admonition:: Question
 
    Which of the following are legal AND recommended Python variable names?
+   Select ALL that apply.
    
    .. raw:: html
       
