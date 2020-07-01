@@ -66,6 +66,45 @@ We can read these two examples of dot notation like this:
    that function. To access a data value stored in a module, we MUST know the
    variable name for that value.
 
+Find the Names of Module Items
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To figure out the names of all the items stored in a module, we could look them
+up with a Google search. However, Python has a useful directory function,
+``dir()``, that returns a list of names for everything stored in a module.
+
+.. admonition:: Example
+
+   .. sourcecode:: Python
+      :linenos:
+
+      import string
+
+      print(dir(string))
+   
+   **Console Output**
+
+   ::
+   
+      ['Formatter', 'Template', '_ChainMap', '_TemplateMetaclass', '__all__', '__builtins__',
+      '__cached__', '__doc__', '__file__', '__loader__', '__name__',
+      '__package__', '__spec__', '_re', '_sentinel_dict', '_string',
+      'ascii_letters', 'ascii_lowercase', 'ascii_uppercase', 'capwords', 'digits',
+      'hexdigits', 'octdigits', 'printable', 'punctuation', 'whitespace']
+
+   To make this output easier to read, we can use a loop to print the list
+   one element per line.
+
+   .. raw:: html
+
+      <iframe height="450px" width="100%" src="https://repl.it/@launchcode/Print-Module-Contents?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+.. admonition:: Tip
+
+   From the list of names, skip those that begin with underscores ``__``. Using
+   these is a more advanced skill, and we will focus on the other options for
+   now.
+
 The ``from`` Keyword
 --------------------
 
