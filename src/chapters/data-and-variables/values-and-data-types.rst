@@ -20,7 +20,7 @@ Each value is an example of a **data type**. We will use many different data
 types in this course, but here are your first three:
 
 #. **string** - One or more characters enclosed in quotes, such as
-   ``"Hello, World!"`` In Python, strings can be enclosed in single quotes or
+   ``"Hello, World"``. In Python, strings can be enclosed in single quotes or
    double quotes, so ``'A'`` and ``"B"`` both count as strings.
 #. **int** - Stands for *integer*, which is a whole number like ``4``, ``-23``,
    and ``42``.
@@ -157,4 +157,33 @@ not intend.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Identify the data type for each of the following values. Click on each option
+   to reveal the answer.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li onclick="revealAnswer('resultA', 'str')">'Python' <span id="resultA"></span></li>
+         <li onclick="revealAnswer('resultB', 'float')">12.75 <span id="resultB"></span></li>
+         <li onclick="revealAnswer('resultC', 'str')">"42" <span id="resultC"></span></li>
+         <li onclick="revealAnswer('resultD', 'str')">"""&^%$""" <span id="resultD"></span></li>
+         <li onclick="revealAnswer('resultE', 'int')">3 <span id="resultE"></span></li>
+         <li onclick="revealAnswer('resultF', 'float')">0.55 <span id="resultF"></span></li>
+      </ol>
+
+.. Answers = str, float, str, str, int, float
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function revealAnswer(id, answer) {
+         if (document.getElementById(id).innerHTML != '') {
+            document.getElementById(id).innerHTML = '';
+         } else {
+            document.getElementById(id).innerHTML = '- ' + answer;
+            document.getElementById(id).style.color = 'blue';
+         }
+      }
+   </script>

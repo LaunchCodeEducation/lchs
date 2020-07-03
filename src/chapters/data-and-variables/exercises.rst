@@ -5,8 +5,8 @@ Exercises appear regularly in the book. Just like the concept checks, the
 exercises check your understanding of the topics in this chapter. They
 also provide good practice for the new skills.
 
-Part A - Printing Stuff
------------------------
+Part A - Printing to the Console
+--------------------------------
 
 Use the code editor at the end of this part to complete the following tasks:
 

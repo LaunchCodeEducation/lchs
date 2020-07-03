@@ -38,6 +38,8 @@ operators, from highest importance (applied first) to lowest (applied last).
      - Multiplication and Division: ``*  /  //  %``
      - ``2 * 3``
 
+       ``10 / 5``
+
        ``4 // 2``
 
        ``15 % 3``
@@ -88,7 +90,7 @@ Don't Panic
    :scale: 80%
    :alt: Don't panic! This is NOT a math class!
 
-OK. Read this section title again.
+*Read the section title again*.
 
 Python automatically applies the order of operations for you!
 
@@ -101,7 +103,7 @@ operations.
 Check Your Understanding
 ------------------------
 
-OK. These are the expected order of operations questions. Deal with it!
+OK. Here are the expected order of operations questions. Deal with it!
 
 .. admonition:: Question
 
