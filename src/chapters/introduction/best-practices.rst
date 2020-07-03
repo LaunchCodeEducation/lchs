@@ -94,10 +94,10 @@ have no way of knowing which is true. This prevents them from knowing how to
 best help the student. Where would they begin?
 
 For the student, a blank response provides no benefit! The practice was either
-ignored or incomplete. Students gain only as much as they put in. SO:
+ignored or incomplete. Doing the work *will* pay off. SO:
 
-#. Even if you have no clue how to solve the problem, MAKE AN ATTEMPT ANYWAY,
-   then ask questions.
+#. Even if you have no clue how to solve the problem, MAKE AN ATTEMPT, then ask
+   questions.
 #. If you know how to solve the problem, COMPLETE THE TASK ANYWAY. Practice
    makes better. Also, you could use your code to help a classmate.
 #. If you tried to solve the problem, but your code did not work, DO NOT
@@ -111,8 +111,8 @@ ignored or incomplete. Students gain only as much as they put in. SO:
 
    Learning takes work, and you need the practice. *Do your homework*.
 
-Sports Motivational Stuff
--------------------------
+Sports Motivation
+-----------------
 
 Attention sports fans! Embrace your favorite quote(s):
 
@@ -144,10 +144,11 @@ Attention sports fans! Embrace your favorite quote(s):
      - "If I don't get it right, I don't stop until I do." - *Serena Williams*
 
    * - Rocky
-     - How can you listen to this and NOT be inspired? (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ )
+     - OK, "Rocky" is not a sport, but how can you listen to this and NOT be
+       inspired? (`Gonna Fly now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`__)
 
-   * - Optional
-     - Imagine your favorite motivational phrase here. - *Some admired person*
+   * - Other
+     - Imagine your favorite motivational phrase here. - *Favorite Role Model*
 
 .. tip::
 
@@ -156,10 +157,10 @@ Attention sports fans! Embrace your favorite quote(s):
 Social Media
 -------------
 
-wnt motivation n 140 caractRs r less? Try these (LOL):
+wnt motivation n 140 caraters r less? Try thez (LOL):
 
 a. `#hardworkworks <https://twitter.com/hashtag/hardworkworks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Ehashtag>`_
-b. Rocky (`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`_ ) because it's just that good.
+b. Rocky (`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`__) because it's just that good.
 
 .. tip::
 
@@ -169,8 +170,8 @@ Marathon Analogy
 ----------------
 
 Pretend you are not a runner (complete with the "0.0" sticker on your car),
-but you decide to compete in a marathon. You cannot just drive to the
-starting line, put on your running shoes and go.
+but you decide to compete in a marathon. You can't just drive to the starting
+line, put on your running shoes and go.
 
 You have to train:
 
@@ -207,9 +208,9 @@ bits of advice:
 #. DO try every exercise and practice problem.
 #. Practice helps you master the basic quirks for a given programming language.
 #. DO experiment. Once you solve one given task, feel
-   free to tweak it. Great fun can be had if you ask, "What if I try ____,"
-   and then go and do just that. For example, if a problem asks you to
-   sort a list alphabetically, can you order it from z to a instead?
+   free to tweak it. Great fun can be had if you ask, "What if I try ...?"
+   For example, if a problem asks you to sort a list alphabetically, can you
+   order it from z to a instead?
 #. ASK FOR HELP when you get stuck. We've all been there, and there is
    no shame in looking for tips. Use your teacher, classmates, and Google as
    the brilliant resources they are.
