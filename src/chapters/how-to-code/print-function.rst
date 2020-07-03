@@ -8,12 +8,12 @@ simple window where the user can type commands or view output. We used the
 Let’s fix that now.
 
 We *call* the function using the syntax ``print()``. When the code runs, we
-want it to tell the computer, *Please display what is inside the ``()`` on
-the screen*. For us, the word ``print`` is simple enough. However, the computer
+want it to tell the computer, *Please display what is inside the () on the
+screen*. For us, the word ``print`` is simple enough. However, the computer
 only understands binary instructions.
 
 When we run the program, Python works behind the scenes to convert ``print()``
-into the 0s and 1s that tell the computer *Show this information in the
+into the 0s and 1s that tell the computer: *Show this information in the
 console*.
 
 .. _print-function:
@@ -25,7 +25,7 @@ Run the example below, and note the difference between the outputs:
 
 .. raw:: html
 
-   <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-print-statement?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+   <iframe src="https://trinket.io/embed/python3/bbecd85a8e?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Observations line by line:
 
@@ -64,5 +64,5 @@ combination ``\n``.
       print("Python\nJavaScript\nJava\nC#\nSwift")
 
 In addition to the newline character, there is also a special tab character,
-``\t``. Go back to the eight examples and play around with using ``\t``
+``\t``. Go back to the seven examples and play around with using ``\t``
 and ``\n``.

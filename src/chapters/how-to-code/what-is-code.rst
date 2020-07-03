@@ -21,7 +21,7 @@ Here is a short list of SOME of the tasks we can carry out with code:
 #. **Interact with users**. Through code, we can ask a user questions, store
    their answers, and respond by changing what is on the screen.
 #. **Interact with other systems**. Through code, we can access information
-   outside of our program. For example, we can read data in from a file on our
+   outside of our program. For example, we can read data from a file on our
    computer, or we can ask a server on the other side of the planet for
    information.
 #. **Repeat tedious tasks**. Have a few thousand emails to send? Need to

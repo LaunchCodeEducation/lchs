@@ -16,9 +16,9 @@ Python and other languages can only run a program if it is *syntactically
 correct*. Even tiny mistakes will cause a program to crash. While humans are
 good at overlooking minor errors, computers cannot do the same.
 
-For example, the following phrases are badly written, but we as humans can
-still understand them. We might need to read them out loud several times, but
-we will eventually get the point.
+For example, the following phrases are badly written, but humans can still
+understand them. We might need to read them out loud several times, but we will
+eventually get the point.
 
 #. *Peas on urth*
 #. *Whirled wor too*
@@ -34,7 +34,7 @@ Other examples include vanity license plates:
    * - KC ROKS
      - Kansas City (or Casey?) Rocks
    * - 4EVERL8
-     - Every parent who ever needed to get their kids to practice
+     - Every parent trying to get their kids to afternoon practice
 
 Computers cannot overlook mistakes like humans. Any syntax errors, no matter
 how small, will prevent the code from running. Instead of trying to work around
