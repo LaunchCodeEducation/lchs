@@ -73,9 +73,13 @@ or *Return*, the data is collected and stored in the variable.
 Try It!
 ^^^^^^^
 
-In the editor above, replace line 1 with
-``name = input('Please enter your name: ')``. Run the program several times and
-enter different names.
+In the editor above:
+
+#. Replace line 2 with ``name = input('Please enter your name: ')``.
+#. Run the program again. You should see the text ``Please enter your name:``
+   appear in the black output box (the *console*).
+#. In the console, type in a name, tap *Enter*, and examine the result.
+#. Run the program several more times and enter different names.
 
 Try adding another ``+ name`` term inside the ``print`` statement and see
 what happens. Next, add code to prompt the user for a second name. Store the
@@ -124,9 +128,13 @@ Do you see the output you expected?
 If we enter ``7`` and ``2``, we expect an output of ``9``.  We do NOT expect
 ``72``, but that is the result printed. What gives?!?!?
 
+.. index:: concatenate
+
 The quirk with the ``input`` function is that it *treats all entries as
-strings*, so numbers get concatenated rather than added.  Just like
-``"Hello, " + "World"`` outputs as ``Hello, World``, ``"7"`` + ``"2"`` outputs
+strings*, so numbers get **concatenated** rather than added. Concatenation
+means that the second string gets attached to the end of the first.
+
+Just like ``"ABC" + "def"`` outputs as ``ABCdef``, ``"7"`` + ``"2"`` outputs
 as the string ``72``.
 
    Python treats input data as strings!
