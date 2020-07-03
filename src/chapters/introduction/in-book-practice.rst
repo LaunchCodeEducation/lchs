@@ -68,7 +68,8 @@ Answer the following practice questions:
 
 .. admonition:: Question
 
-      Multiple Answers: Try clicking each of the options below.
+      Multiple Answers: Try clicking each of the options below (the words, not
+      the letter labels).
       
       .. raw:: html
       
