@@ -6,8 +6,8 @@ Good programmers try to make their code understandable to others, but even with
 Python it is still tricky to look at a large program and figure out what it is
 doing and why.
 
-Best practice encourages us to add notes to our code that clearly explain what
-the program is doing. These notes are called *comments*.
+The best coders add notes to their code to clearly explain what the program is
+doing. These notes are called *comments*.
 
 A **comment** is text within a program intended only for a human reader---it is
 skipped when the program runs. In Python, the ``#`` character starts a comment,
