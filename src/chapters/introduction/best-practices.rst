@@ -10,7 +10,8 @@ course:
 
 #. Yes, there is homework, which consists of prep work, exercises, and
    longer projects.
-#. You do not have to do the ungraded practice, but you absolutely *SHOULD*.
+#. You absolutely *SHOULD* try all of the practice tasks, even if they are not
+   graded.
 
 The rest of this page is our attempt to motivate you to complete ALL of the
 work for this class. How big of a push you need depends on your
