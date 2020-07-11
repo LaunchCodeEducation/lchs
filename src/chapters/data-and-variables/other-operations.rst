@@ -201,7 +201,7 @@ Check Your Understanding
          <li><span id = "b" onclick="highlight('b', false)">print("Python", "ROCKS", "!")</span></li>
          <li><span id = "c" onclick="highlight('c', true)">print("Python", "ROCKS" + "!")</span></li>
          <li><span id = "d" onclick="highlight('d', false)">print("Python" + "ROCKS", "!")</span></li>
-         <li><span id = "e" onclick="highlight('e', true)">print("Python" + " ROCKS" + "!")</span></li>
+         <li><span id = "e" onclick="highlight('e', true)">print("Python " + " ROCKS" + "!")</span></li>
       </ol>
 
 .. Answers = c & e
