@@ -74,15 +74,19 @@ included with the code editor and console. There is some code running in the
 background that sets up the view, and this allows us to focus on other parts of
 the program.
 
-If you want to play with Python turtles outside of repl.it, we need to create
+If we want to play with Python turtles outside of repl.it, we need to create
 the drawing space ourselves. Take a look at the following animation that shows
-the same turtle program running outside of repl.it:
+a different turtle program running outside of repl.it:
 
-.. todo:: Insert turtle window closing gif here.
+.. figure:: figures/turtle-window-close.gif
+   :alt: GIF showing the drawing space closing immediately after the turtle completes its drawing.
+   :width: 40% 
 
-That looks weird. A window opens, ``bob`` appears and draws a line, and then
-the window quickly closes. If we blink at the wrong time, we could easily miss
-the event.
+   A closing window means we cannot appreciate our turtle art!
+
+That looks weird. A window opens, ``bob`` appears and draws several circles,
+and then the window quickly closes. If we blink at the wrong time, we could
+easily miss the event.
 
 Later in this appendix, we will provide more details for controlling the
 drawing space. For now we will add two statements to our turtle program to keep
