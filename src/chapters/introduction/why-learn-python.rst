@@ -78,7 +78,7 @@ Python Does Lots of Things
    :scale: 70%
    :alt: Python is flexible and can be used for small and large applications.
 
-Even though Python code gets described as a "simple", this is because the
+Even though Python code gets described as "simple", this is because the
 language handles a lot of complexity for you. The nitty-gritty details occur
 behind the scenes, allowing you to focus more on getting your ideas to work.
 Plus, there is plenty of free, ready-made code that you can pull into your
