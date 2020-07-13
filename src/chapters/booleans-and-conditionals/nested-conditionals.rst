@@ -109,4 +109,75 @@ This diagram shows the *flow of control* for this program:
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   What is printed when the following code runs?
+
+   .. sourcecode:: python
+      :linenos:
+
+      num = 7
+
+      if num % 2 == 0:
+         if num % 2 == 1:
+            print("odd")
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The code won't run due to invalid syntax.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> odd</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> even</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The code runs but doesn't print anything.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   What is printed when the following code runs?
+
+   .. sourcecode:: python
+      :linenos:
+
+      answer_1 = 'yes'
+      answer_2 = 'no'
+      
+
+      if answer_1 == 'yes':
+         if answer_2 == 'yes':
+            print("Both of you agree!")
+         else:
+            print("You two need to work this out.")
+      else:
+         if answer_2 == 'yes':
+            print("Stop arguing and work it out.")
+         else:
+            print("Clean your bathroom anyway!")
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Both of you agree!</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> You two need to work this out.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Stop arguing and work it out.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Clean your bathroom anyway!</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

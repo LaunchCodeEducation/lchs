@@ -1,19 +1,6 @@
 Truth Tables
 ============
 
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function reveal(id) {
-         state = document.getElementById(id).style.opacity
-         if (state > 0) {
-            document.getElementById(id).style.opacity = 0;
-         } else {
-            document.getElementById(id).style.opacity = 1;
-         }
-      }
-   </script>
-
 .. index:: ! truth table
 
 **Truth tables** help us understand how logical operators work by showing all
@@ -170,4 +157,50 @@ The following table lists operators in order of importance, from highest
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Assume we have 3 boolean expressions---A, B, and C. Which combinations of
+   values (A/B/C) will make the expression ``A or B and C`` evaluate to
+   ``True``? Click ALL that apply.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', true)">True / True / True</span></li>
+         <li><span id = "b" onclick="highlight('b', true)">False / True / True</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">True / False / True</span></li>
+         <li><span id = "d" onclick="highlight('d', true)">True / True / False</span></li>
+         <li><span id = "e" onclick="highlight('e', false)">False / False / True</span></li>
+         <li><span id = "f" onclick="highlight('f', false)">False / True / False</span></li>
+         <li><span id = "g" onclick="highlight('g', true)">True / False / False</span></li>
+         <li><span id = "h" onclick="highlight('h', false)">False / False / False</span></li>
+      </ol>
+
+.. Answers = a, b, c, d, g
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+      
+      function reveal(id) {
+         state = document.getElementById(id).style.opacity
+         if (state > 0) {
+            document.getElementById(id).style.opacity = 0;
+         } else {
+            document.getElementById(id).style.opacity = 1;
+         }
+      }
+   </script>
