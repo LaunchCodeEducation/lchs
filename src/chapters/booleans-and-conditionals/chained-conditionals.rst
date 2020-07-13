@@ -225,12 +225,15 @@ Check Your Understanding
       else:
          print("LaunchCode")
 
-   #. ``Launch``
-   #. ``Code``
-   #. ``Launch``
+   .. raw:: html
 
-      ``Code``
-   #. ``LaunchCode``
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">Launch</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Code</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Launch<br>Code</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">LaunchCode</span></li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a
 
@@ -279,3 +282,28 @@ Check Your Understanding
             print(num, "is a positive number")
          else:
             print(num, "is 0")
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Code sample a</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Code sample b</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Code sample c</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
