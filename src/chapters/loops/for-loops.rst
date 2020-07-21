@@ -54,8 +54,8 @@ Play around with the basic syntax of a ``for`` loop.
 
    .. raw:: html
 
-      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Basic-Python-Loop?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
-   
+      <iframe src="https://trinket.io/embed/python3/f5e2eaec5c?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
    #. What do you notice about the numbers printed in the console vs. the
       value inside ``range()``?
    #. Try changing the value inside ``range()``. What values throw an error?

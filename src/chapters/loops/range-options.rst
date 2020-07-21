@@ -43,7 +43,7 @@ the loop variable ``num`` would take values of 1, 2, 3, and 4.
 
       <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Range-Start-and-Stop?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe>
 
-Cool. ``range(start, stop)`` allows us to count upwards from any number we
+Cool, ``range(start, stop)`` allows us to count upwards from any number we
 want.
 
 What if we want to count DOWN from one value to another? Also, what if we want
@@ -204,7 +204,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What command correctly generates the values ``2, 5, 8``?
+   What command correctly generates the values ``2, 5, 8`` in that order?
 
    .. raw:: html
 
