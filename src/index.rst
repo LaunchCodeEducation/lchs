@@ -17,6 +17,7 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/functions/index
    chapters/modules/index
+   chapters/dictionaries/index
 
 .. toctree::
 
@@ -37,6 +38,7 @@ Projects
    chapters/errors-and-debugging/project
    chapters/functions/project
    chapters/modules/project
+   chapters/dictionaries/project
 
 Assignments
 ===========
