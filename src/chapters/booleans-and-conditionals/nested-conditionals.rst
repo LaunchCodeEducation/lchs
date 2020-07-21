@@ -73,26 +73,19 @@ Nesting Also Works With ``else``
 In the examples above, we left out the ``else`` clauses from the conditionals.
 Let's take nesting a step further by including them.
 
-.. replit:: python
-   :linenos:
-   :slug: LCHS-Nested-Conditionals
+.. admonition:: Try It!
 
-   word = input('Please enter a word: ')
+   **PREDICT**: What will this program print for the following words?
 
-   if len(word) == 4:
-      print("What did your mom tell you about using 4-letter words?")
-   else:
-      if len(word) < 4:
-         print("You can think of a longer word than that!")
-      else:
-         print("Excellent word!")
+   #. ``the``
+   #. ``kale``
+   #. ``rutabaga``
 
-PREDICT: What will the program print for the following words? (Run the program
-to check your predictions).
+   .. raw:: html
 
-#. ``the``
-#. ``kale``
-#. ``rutabaga``
+      <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Nested-Conditionals?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+   **DISCOVER**: Run the program to check your predictions.
 
 This diagram shows the *flow of control* for this program:
 

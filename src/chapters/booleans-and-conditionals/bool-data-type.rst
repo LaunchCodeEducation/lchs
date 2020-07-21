@@ -10,7 +10,7 @@ how programming languages represent *true* and *false*.
 
    .. raw:: html
 
-      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/TF-Data-Type?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/TF-Data-Type?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 In the code above, we make four *comparisons* and then print the results to the
 console. Python evaluates each comparison as being either ``True`` or

@@ -121,6 +121,9 @@ The following table lists operators in order of importance, from highest
      - Category
      - Operators
    * - (Highest)
+     - Parentheses
+     - ``()``
+   * -
      - Exponent
      - ``**`` (For example: ``2**3``)
    * -
