@@ -43,7 +43,7 @@ Here are some points of comparison between the two types of loops.
 #. Can loop through strings and collections without using an index value (e.g.
    ``for char in 'hello':``).
 #. Automatically updates the loop variable.
-#. Kinda hard to accidentally create an infinite Python ``for`` loop.
+#. It is hard to accidentally create an infinite Python ``for`` loop.
 #. Can be used in place of some ``while`` loops, but not all.
 #. Do not work for input validation.
 
@@ -106,7 +106,7 @@ Check Your Understanding
 
       <ol type="a">
          <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">while</strong> loop</li>
-         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">for</strong>loop</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">for</strong> loop</li>
       </ol>
       <p id="Q3"></p>
 

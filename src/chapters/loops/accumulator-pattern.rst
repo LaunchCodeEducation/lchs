@@ -144,22 +144,24 @@ in a different string.
       .. sourcecode:: python
          :lineno-start: 5
 
-         for char in some_text:
+         for character in some_text:
 
-   #. Inside the loop, we want to check if ``char`` is a vowel. If ``True``, add
-      ``char`` to ``only_vowels``. If ``False``, do not update ``only_vowels``.
-      Paste this code into the loop. Remember to indent!
+   #. Inside the loop, we want to check if ``character`` is a vowel. If
+      ``True``, add ``character`` to ``only_vowels``. If ``False``, do not
+      update ``only_vowels``. Paste this code into the loop. Remember to
+      indent!
 
       .. sourcecode:: python
          :lineno-start: 6
 
-         if char in 'aeiou':     # Check if char is a lowercase vowel.
-            only_vowels += char  # If True, add char to only_vowels.
+         if character in 'aeiou':     # Check if char is a lowercase vowel.
+            only_vowels += character  # If True, add char to only_vowels.
          
-         print(only_vowels)
+            print(only_vowels)
 
    #. The ``print`` statement displays the value of ``only_vowels`` each
-      iteration, and this allows us to see how it changes as the loop repeats.
+      time it changes, and this allows us to see how the accumulator pattern
+      works as the loop repeats.
 
    .. raw:: html
 
@@ -183,13 +185,14 @@ Line 7 updates ``only_vowels`` with the ``+=`` operator. Each time the
 statement runs, it adds a new character to the end of the string stored in the
 variable.
 
-Recall that ``only_vowels += char`` is a shortcut fo the longer expression
-``only_vowels = only_vowels + char``. Is the order here important?
+Recall that ``only_vowels += character`` is a shortcut for the longer
+expression ``only_vowels = only_vowels + character``. Is the order here
+important?
 
 .. admonition:: Try It!
 
-   Replace line 7 with ``only_vowels = char + only_vowels`` and run the program
-   again. What happened?
+   Replace line 7 with ``only_vowels = character + only_vowels`` and run the
+   program again. What happened?
 
    By changing how we reassign the accumulator variable, we get different
    results.
