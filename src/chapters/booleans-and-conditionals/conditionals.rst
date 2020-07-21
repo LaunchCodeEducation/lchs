@@ -70,7 +70,7 @@ appears.
 
    Should you indent with tabs or spaces? This question usually starts BIG
    arguments within the programming world (think Marvel vs. DC or Hermione
-   Granger with Harry instead of Ron).
+   Granger marrying Harry instead of Ron).
 
    Many code editors automatically indent the lines within an if-block, so most
    of the time you won't need to worry about how far to move in the cursor.
@@ -117,7 +117,7 @@ runs when the condition is ``False``.
 
    .. raw:: html
 
-      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Else-clause?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe>
+      <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Else-clause?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 This structure is known as an **if/else statement**, and it allows our program
 to **branch**. The flow of the program takes one of two paths when it reaches a

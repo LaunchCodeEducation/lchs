@@ -282,6 +282,8 @@ Check Your Understanding
          <li onclick="revealTrueFalse('resultD', true)">'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10 <span id="resultD"></span></li>
       </ol>
 
+.. Answer = True, False, False, True
+
 .. raw:: html
 
    <script type="text/JavaScript">

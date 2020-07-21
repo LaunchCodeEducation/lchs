@@ -132,9 +132,10 @@ Use this starter code for `parts C and D <https://repl.it/@launchcode/Conditiona
    For ``num = 6``, the output should be ``'6 is divisible by 2 and 3.'``
 
 #. Given the score on an exam, use a chained conditional to assign it the
-   proper letter grade. Assume a standard 10-point scale (A = 100 - 90, B =
-   89 - 80, C = 79 - 70, etc.). Print the results as ``___% = ___``. Fill in
-   the first blank with the score and the second blank with the letter grade.
+   proper letter grade. Assume a standard 10-point range for each letter (A =
+   100 - 90, B = 89 - 80, C = 79 - 70, etc.). Print the results as
+   ``___% = ___``. Fill in the first blank with the score and the second blank
+   with the letter grade.
 #. Write code to help you pick an activity based on the current weather.
    Consider two variables, one for temperature (``hot`` or ``cold``) and one
    for how wet it is (``rainy`` or ``dry``). If the weather is hot and rainy,
