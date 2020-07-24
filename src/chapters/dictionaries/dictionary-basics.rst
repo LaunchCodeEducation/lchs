@@ -36,10 +36,10 @@ A third type of Python collection is called a **dictionary**.
 Create a New Dictionary
 -----------------------
 
-To define a new dictionary, we need three things: a name, a set of keys, and
-their corresponding values. There are several ways to do this, but the simplest
-is to wrap the key/value pairs in curly braces ``{}``, with each pair
-separated from the others by commas.
+To define a new dictionary, we need three things: a variable, a set of keys,
+and their corresponding values. There are several ways to create a new
+dictionary, but the simplest is to wrap the key/value pairs in curly braces
+``{}``, with each pair separated from the others by commas.
 
 .. admonition:: Example
 
@@ -104,7 +104,7 @@ instead.
 
 .. admonition:: Try It!
 
-   Experiment with the dictionary syntax to add or print values from
+   Experiment with the dictionary syntax to add and print values from
    different dictionaries.
 
    #. Run the code as-is to see the output.
@@ -112,7 +112,7 @@ instead.
       console.
    #. Change the key in line 10 to print different values from ``student``.
    #. Add at least two key/value pairs to ``animal_info``, then add brackets
-      in line 12 to print each of the new values.
+      in line 12 to print each of the new values. (Use line 10 as an example).
    
    .. raw:: html
 
@@ -122,20 +122,127 @@ instead.
    Next:
 
    #. In line 10, try using a key name that does NOT exist in ``student``.
-      What happens?
-   #. Can we give two keys in the ``animal_info`` dictionary the same name? Try it and find out.
-   #. Can we assign the same value (like ``5``) to two different keys in the
-      same dictionary? Try it and find out.
+      What happens when you run the program?
+   #. Try using two identical key names for different values in
+      ``animal_info`` (something like ``'name' : 'Bob', 'name' : 42``). What
+      happens when you run the program?
+   #. Try assigning the same value (like ``5``) to two different keys in the
+      same dictionary? Does this cause an error?
 
-What are "Keys"?
-----------------
+Why Use Keys?
+-------------
 
-Lorem ipsum...
+Imagine we have a list of phone numbers, and we want to access the one for
+"Mom". Nothing in the list lets us know which element is the one we want.
+``phone_numbers[0]`` gives us the first entry in the list, but it does not tell
+us who the number belongs to.
+
+If we remember that Mom's phone number is at index ``5``, then
+``phone_numbers[5]`` will work. However, lists are *mutable*. After a few
+updates, her number might not be at position ``5`` anymore.
+
+It would be nice if we could access a phone number by the *name of who it
+belongs to* instead of by index. Maybe something like ``phone_numbers['Mom']``
+instead of ``phone_numbers[5]``. 
+
+   Oh, wait! That's what dictionary keys do!
+
+*Lists* order data from left to right, which is great. However, the index
+values 0, 1, 2... do NOT tell us what the data actually represents. Index ``0``
+might refer to a string, number, list, etc. We cannot know until we access that
+element.
+
+*Dictionaries* organize data by linking concrete values to individual keys. The
+order of the key/value pairs in the ``{}`` is not important, since we just need
+to know the label for the value we want.
+
+.. admonition:: Example
+
+   Compare the following data structures:
+
+   .. sourcecode:: python
+      :linenos:
+
+      phone_numbers = ['555-5555', '555-5556', '123-456-7890']
+
+      phone_book = {
+         'Mom' : '555-5555',
+         'Work' : '555-5556',
+         'Home' : '123-456-7890'
+      }
+
+By attaching a label to each number, we make retrieving a specific result much
+easier. Keys give each data value a name.
+
+Key Data Types
+^^^^^^^^^^^^^^
+
+We can use either an integer or a string for a key name. However, since we want
+the key to describe the data linked to it, the best option is usually to use
+strings.
+
+What if we used integers for the ``phone_book`` example?
+
+.. sourcecode:: python
+   :linenos:
+
+   phone_book = {
+      0 : '555-5555',
+      1 : '555-5556',
+      2 : '123-456-7890'
+   }
+
+This looks a lot like the index values of a list. If we use integers, the keys
+do not tell us which number belongs to a specific person or place. Just like
+variable names, we want the key names to be as descriptive as possible, and
+strings do this best.
+
+.. admonition:: Note
+
+   Technically, we can use an ``int, str, float``, or ``bool`` data type for a
+   key name. Strings are still the best choice in most cases, however.
+
+   ``bool`` or ``float`` for a key?  Don't.  Just... don't.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   A dictionary is an unordered collection of key/value pairs.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   What is printed by the following statements?
+
+   .. sourcecode:: python
+      :linenos:
+
+      pet_population = {"cats" : 12, "dogs" : 6, "elephants" : 23}
+
+      print(pet_population["dogs"])
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 12</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 6</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 23</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> dogs</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
 
 .. raw:: html
 
