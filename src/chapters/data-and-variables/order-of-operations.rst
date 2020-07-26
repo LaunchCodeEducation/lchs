@@ -18,6 +18,8 @@ over the world.
 
 Which operators get done first? Here is a summary of the rules for the math
 operators, from highest importance (applied first) to lowest (applied last).
+If you prefer a song instead of a table, `listen to this composition <https://youtu.be/Ew9mDhjxz4Q>`__
+from NASA engineer `Dajae Williams <https://www.dajaewilliams.com/>`__.
 
 .. list-table:: Math Order
    :widths: auto
