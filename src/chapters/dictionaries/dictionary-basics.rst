@@ -118,7 +118,6 @@ instead.
 
       <iframe src="https://trinket.io/embed/python3/5379d382bc?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-
    Next:
 
    #. In line 10, try using a key name that does NOT exist in ``student``.
@@ -127,7 +126,7 @@ instead.
       ``animal_info`` (something like ``'name' : 'Bob', 'name' : 42``). What
       happens when you run the program?
    #. Try assigning the same value (like ``5``) to two different keys in the
-      same dictionary? Does this cause an error?
+      same dictionary. Does this cause an error?
 
 Why Use Keys?
 -------------
@@ -163,23 +162,24 @@ to know the label for the value we want.
    .. sourcecode:: python
       :linenos:
 
+      # A Python list:
       phone_numbers = ['555-5555', '555-5556', '123-456-7890']
 
+      # A Python dictionary:
       phone_book = {
          'Mom' : '555-5555',
          'Work' : '555-5556',
          'Home' : '123-456-7890'
       }
 
-By attaching a label to each number, we make retrieving a specific result much
-easier. Keys give each data value a name.
+By attaching a label to each value in ``phone_book``, we make retrieving Mom's
+number much easier. Keys give each data value a name.
 
 Key Data Types
 ^^^^^^^^^^^^^^
 
 We can use either an integer or a string for a key name. However, since we want
-the key to describe the data linked to it, the best option is usually to use
-strings.
+the key to describe the data linked to it, the best choice is usually a string.
 
 What if we used integers for the ``phone_book`` example?
 
