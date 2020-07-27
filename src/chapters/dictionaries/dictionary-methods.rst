@@ -37,15 +37,15 @@ To see detailed examples for a particular method, click on its name.
      - ``dictionary_name.pop(key)``
      - Removes the selected key/value pair from the dictionary and returns the
        value.
-   * - :ref:`keys <keys-values-items-examples>`
+   * - :ref:`keys <dictionary-keys>`
      - ``dictionary_name.keys()``
      - Returns all of the key names in the dictionary, which can then be
        moved into a list.
-   * - :ref:`values <keys-values-items-examples>`
+   * - :ref:`values <dictionary-values>`
      - ``dictionary_name.values()``
      - Returns all of the values in the dictionary, which can then be
        moved into a list.
-   * - :ref:`items <keys-values-items-examples>`
+   * - :ref:`items <dictionary-items>`
      - ``dictionary_name.items()``
      - Returns all of the key/value pairs in the dictionary, which can then be
        moved into a list.

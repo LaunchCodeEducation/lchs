@@ -1,3 +1,5 @@
+.. _dictionary-iteration:
+
 Iterating Through Dictionaries
 ==============================
 
