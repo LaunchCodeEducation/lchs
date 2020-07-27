@@ -26,14 +26,14 @@ To see detailed examples for a particular method, click on its name.
    * - Method
      - Syntax
      - Description
-   * - :ref:`clear <clear-pop-examples>`
+   * - :ref:`clear <dictionary-clear>`
      - ``dictionary_name.clear()``
      - Removes all key/value pairs from a dictionary.
    * - :ref:`copy <dictionary-copy-example>`
      - ``dictionary_name.copy()``
      - Returns an independent copy of a dictionary. This is also called
        *cloning*.
-   * - :ref:`pop <clear-pop-examples>`
+   * - :ref:`pop <dictionary-pop>`
      - ``dictionary_name.pop(key)``
      - Removes the selected key/value pair from the dictionary and returns the
        value.

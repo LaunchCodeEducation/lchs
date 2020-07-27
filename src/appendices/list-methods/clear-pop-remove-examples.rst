@@ -42,7 +42,7 @@ No arguments go inside the ``()``.
       0
 
 .. index::
-   single: list; insert
+   single: list; pop
 
 .. _list-pop-examples:
 
