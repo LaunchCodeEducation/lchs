@@ -1,3 +1,5 @@
+.. _cloning-lists:
+
 Cloning Lists
 =============
 

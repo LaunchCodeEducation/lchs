@@ -14,6 +14,9 @@ their values), or all of the values (without their keys).
 Return All Keys
 ---------------
 
+.. index::
+   single: dictionary; keys()
+
 The general syntax for the ``keys()`` method is:
 
 .. sourcecode:: Python
@@ -84,6 +87,9 @@ to apply the ``keys()`` method to loop through a dictionary.
 Return All Values
 -----------------
 
+.. index::
+   single: dictionary; values()
+
 The general syntax for the ``values()`` method is:
 
 .. sourcecode:: Python
@@ -125,6 +131,9 @@ loop through the entries or search the object for a specific value.
 
 Return All Key/Value Pairs
 --------------------------
+
+.. index::
+   single: dictionary; items()
 
 The general syntax for the ``items()`` method is:
 
