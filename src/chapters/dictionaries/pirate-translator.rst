@@ -1,4 +1,4 @@
-Search a Dictionary
+Code Like a Pirate!
 ===================
 
 Lorem ipsum...

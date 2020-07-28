@@ -11,5 +11,6 @@ Python Dictionaries
    dictionary-methods
    dictionary-iteration
    search-a-dictionary
+   pirate-translator
    exercises
    project
