@@ -120,9 +120,9 @@ code editor below, begin with the following:
 
       ph_number = input("Enter a phone number: ")
 
-#. In the space for the second conditional, add an ``if/else`` block that:
+#. Add a second ``if/else`` block that:
 
-   a. Checks if ``ph_number`` is NOT in ``phone_book``.
+   a. Checks if ``ph_number`` is NOT a value in the ``phone_book``.
    b. If ``True``, prints ``"___ is not in your phone book!"``. Fill in the
       blank with the entered phone number.
    c. If ``False``, runs the following loop. Be sure to indent it properly
@@ -159,8 +159,3 @@ Bonus!
 
 Update the program to add a new key/value pair to the dictionary if the name
 entered by the user is NOT already in ``phone_book``.
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...
