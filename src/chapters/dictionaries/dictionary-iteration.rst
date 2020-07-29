@@ -126,4 +126,47 @@ two variables represent a new key/value pair from the collection.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Given the code:
+
+   .. sourcecode:: python
+      :linenos:
+
+      comics = {
+         'Georgia Dunn' : 'Breaking Cat News',
+         'Jan Eliot' : 'Stone Soup',
+         'Wiley Miller' : 'Non Sequitur',         
+         'Bill Watterson' : 'Calvin and Hobbs'
+      }
+
+      for key in comics.keys():
+         print(key, comics[key])
+
+   What is the value of ``comics[key]`` the *third* time through the loop?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'Wiley Miller'</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'Bill Watterson'</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">'Non Sequitur'</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">'Calvin and Hobbs'</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

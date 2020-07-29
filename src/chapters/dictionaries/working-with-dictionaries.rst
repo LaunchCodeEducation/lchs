@@ -190,6 +190,49 @@ Check Your Understanding
 
 .. Answer = b
 
+.. admonition:: Question
+
+   What is printed by the following statements?
+
+   .. sourcecode:: python
+      :linenos:
+
+      pet_population = {'cats' : 10, 'dogs' : 5, 'elephants' : 25}
+
+      pet_population['mice'] = pet_population['cats'] + pet_population['dogs']
+
+      print(pet_population['mice'])
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 0</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 10</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 15</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   Once we added mice to our pet collection, all the elephants ran away! Which
+   of the following shows the correct syntax for setting the value of the
+   ``'elephants'`` key to zero?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">pet_population['elephants'] = 0</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">pet_population['elephants'] = ''</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">del pet_population['elephants']</span></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">pet_population[2] = 0</span></li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = a
+
 .. raw:: html
 
    <script type="text/JavaScript">

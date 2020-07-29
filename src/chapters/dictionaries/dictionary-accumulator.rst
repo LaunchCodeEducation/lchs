@@ -1,5 +1,5 @@
 Accumulator Pattern with Dictionaries
--------------------------------------
+=====================================
 
 We used the :ref:`accumulator pattern <list-accumulation>` to build up from an
 empty string or list, or to keep track of a running total.
@@ -43,7 +43,11 @@ notation:
    pirate-speak.
 
 A more efficient way would be to use the accumulator pattern to add new
-key/value pairs. Let's play with a couple of examples to practice this.
+key/value pairs. Recall that with lists and strings, the pattern adds only one
+new thing each time the loop repeats. For dictionaries, we need to add *two*
+items---a new key and a new value.
+
+Let's play with a couple of examples to practice this.
 
 .. admonition:: Try It!
 
@@ -117,7 +121,7 @@ The next example combines the elements of two lists into a single dictionary.
 Accumulate with an Exiting Dictionary
 -------------------------------------
 
-We can also use the accumulator pattern to perform an operation on each value
+We can also use the accumulator pattern to perform an operation with the values
 in a dictionary.
 
 .. admonition:: Example
@@ -128,7 +132,7 @@ in a dictionary.
       exam_scores = {'exam_1' : 95, 'exam_2' : 90.7, 'exam_3' : 88.3}
 
       total = 0
-      for key in exam_scores:
+      for key in exam_scores.keys():
          total += exam_scores[key]
       
       average = total / len(exam_scores)
@@ -161,4 +165,79 @@ in a dictionary.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   What does the following program print?
+
+   .. sourcecode:: python
+      :linenos:
+
+      my_animals = {"cats":10, "dogs":5, "elephants":25, "bears":20}
+      
+      total = 0
+      for key in my_animals:
+         if len(key) > 4:
+            total += my_animals[key]
+
+      print(total)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">0</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">25</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">45</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">60</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   We want to code an accumulator that takes names and ticket numbers from two
+   different lists, then uses that data to add key/value pairs to a dictionary.
+
+   The names should be the keys in the dictionary with the ticket numbers as
+   their values.
+   
+   Given the following statements:
+
+   .. sourcecode:: python
+      :linenos:
+
+      names = ['Bob', 'Maria', 'Devon', 'Jessi']
+      ticket_numbers = [100, 101, 102, 103]
+      
+      ticket_holders = {}
+      for index in range(len(names)):
+         # Assignment statement here.
+
+   which of the following is the correct syntax for adding the key/value
+   pairs to ``ticket_holders``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">ticket_holders[index] = ticket_numbers[index]</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">ticket_holders[names[index]] = ticket_numbers[index]</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">ticket_holders[key] = ticket_numbers[value]</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">ticket_holders[key] = value</span></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
