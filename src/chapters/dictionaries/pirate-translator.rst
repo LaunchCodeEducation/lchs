@@ -222,7 +222,7 @@ Final Touch
 
 When we split ``text`` into a list of separate strings, punctuation marks
 remain attached to the words. Since the keys in the ``eng_to_pirate``
-dictionary don't consider punctuation, strings like ``'Stop!'`` remain the
+dictionary don't include punctuation, strings like ``'Stop!'`` remain the
 same.
 
 We won't step through building the code like we did above. Instead, here is
@@ -255,10 +255,15 @@ paste this into your code above:
 Try entering different phrases for ``text`` to check that the punctuation and
 capitalization code works.
 
-   Text: "Stop! Go meet the principal in the cafeteria."
-   
-   Translation: "Avast! Go meet th' scallywag in th' swill dungeon."
+.. admonition:: Examples
 
-   Text: "Put away your phone and focus on the computer!"
-   
-   Translation: "Put away yer cursed device and focus on th' magic box!"
+   #. **Text:** ``"Stop! Go Meet The Principal in the cafeteria."``
+
+      **Translation:** ``"Avast! Go Meet Th' Scallywag in th' swill dungeon."``
+   #. **Text:** ``"Put away your phone and focus on the computer!"``
+
+      **Translation:** ``"Put away yer cursed device and focus on th' magic
+      box!"``
+   #. **Text:** ``"Listen to your teacher."``
+
+      **Translation:** ``"Listen ta yer wise sage."``
