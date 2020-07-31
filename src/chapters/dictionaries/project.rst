@@ -1,5 +1,5 @@
-Project: Dictionaries
-=====================
+Project: Mad Dictionaries
+=========================
 
 Let's use dictionaries to play Mad-Libs!
 
@@ -9,11 +9,38 @@ Let's use dictionaries to play Mad-Libs!
    `here <https://en.wikipedia.org/wiki/Mad_Libs#Format>`__, and then play a
    few `short samples <http://www.madlibs.com/>`__ with your friends.
 
-Login to your Trinket.io account and make a copy of this
+Login to your ``Trinket.io`` account and make a copy of this
 `starter code <https://trinket.io/python3/02b97686f1>`__.
 
-The starting code runs, but it does not really do anything. Your job is to
-build three functions that ask the player questions and complete the Mad-Lib.
+The code runs, but it does not really do anything. Your job is to build three
+functions that ask the player questions and complete a Mad-Lib.
+
+.. sourcecode:: python
+   :linenos:
+
+   def create_madlib_dict(mlib_string):
+      words = mlib_string.split() # Split string into a list of words.
+            
+      return {} # Return the new dictionary instead of {}.
+   
+   def prompt_user_for_words(mad_lib_dict):
+      answers_dict = mad_lib_dict.copy() # Make an independent copy of the dictionary.
+         
+      return answers_dict
+
+   def create_output(ml_dict, text):
+      new_text = text  # Assign the starting value to new_text.
+      
+      return new_text
+      
+   def main():
+      mad_lib = ''
+      
+      mlib_dict = create_madlib_dict(mad_lib)
+      user_responses = prompt_user_for_words(mlib_dict)
+      output = create_output(user_responses, mad_lib)
+
+   main()
 
 Part 1: Mad-Lib Text
 --------------------
@@ -47,9 +74,9 @@ use this notation to indicate where the player needs to fill in a blank.
 
 .. admonition:: Note
 
-   You do not have to use ``_`` and ``/`` to mark the labels, but you should
-   use a different symbol on each side. Just choose symbols that are NOT
-   usually used in normal text.
+   You do not have to use ``_`` and ``/`` around a label, but you should use a
+   different symbol on each side. Just choose symbols that are NOT usually used
+   in normal text.
 
    Examples:
 
@@ -65,8 +92,7 @@ calls the ``create_madlib_dict`` function. The ``mad_lib`` string gets passed
 in as the argument.
 
 The ``create_madlib_dict`` function takes the labels from the string and turns
-them into keys for a new dictionary. The function then returns that dictionary,
-which gets assigned to the ``mlib_dict`` variable.
+them into keys for a new dictionary. The function then returns that dictionary.
 
 Code the ``create_madlib_dict`` function:
 
@@ -102,6 +128,7 @@ Code the ``create_madlib_dict`` function:
 
       {'noun1': '', 'color1': '', 'color2': ''}
 #. Remove the ``print`` statement and return ``new_dict`` from the function.
+   This gets assigned to the ``mlib_dict`` variable in ``main()``.
 
 Part 3: Query the User
 ----------------------
@@ -110,7 +137,7 @@ OK, now you're ready to ask the player for the fill-in-the-blank words.
 
 The next statement in ``main()`` calls the ``prompt_user_for_words`` function
 and sends ``mlib_dict`` as the argument. We want the function to prompt the
-player for each of the words needed for the Mad-Lib.
+player for each of the words needed in the Mad-Lib.
 
 The function should work something like this:
 
@@ -120,8 +147,8 @@ The function should work something like this:
    Prompt the user to fill in the Mad-Lib blanks.
 
 The first line in the ``prompt_user_for_words`` function creates a copy of the
-dictionary you built in part 2. Now you need to add a loop to replace the
-values in the collection with player-supplied words.
+dictionary you built in part 2. You need to add a loop to replace the values in
+the collection with player-supplied words.
 
 #. Set up a ``for`` loop to iterate through the keys in ``answers_dict``.
 #. Each time the loop repeats, prompt the player to supply one of the missing
@@ -129,7 +156,7 @@ values in the collection with player-supplied words.
    key name should NOT be displayed in the prompt, so ``noun1`` shows up as
    just ``noun``.
 #. When the player enters a word, update the dictionary to link the current key
-   to that word. Keep the word all lowercase.
+   to that word. The word should be all lowercase.
 #. Print ``answers_dict`` after the loop to check your progress. Properly done,
    the output should look something like:
 
@@ -148,8 +175,8 @@ Back in the ``main()`` function, the returned dictionary gets assigned to the
 Part 4: Print the Result
 ------------------------
 
-Almost done! Now you just need to build the complete Mad-Lib and display it in
-the console.
+Almost done! Now you just need to complete the Mad-Lib and display it in the
+console.
 
 The next statement in ``main()`` calls the ``create_output`` function and sends
 it the ``user_responses`` dictionary and the original ``mad_lib`` string. These
@@ -163,8 +190,8 @@ will NOT print the message.
    Yep. It's time to use the accumulator pattern again!
 
 #. Instead of the empty string, the accumulator variable ``new_text`` is
-   assigned the original text. This is important, and you will see why this is
-   necessary soon. For now, just roll with it.
+   assigned the original text. This is important, and you will see why soon.
+   For now, just roll with it.
 #. Code a ``for`` statement to loop through ``ml_dict.items()``. If you need to
    review this idea, look back at the
    :ref:`Loop by Key/Value Pairs <key-value-iteration>` section.
@@ -197,8 +224,8 @@ will NOT print the message.
 
    #. Try running the program with ``new_text = ''``. What do you notice about
       the output?
-   #. Try running the program with ``new_text = text.replace(label, value)``.
-      What do you notice about the output?
+   #. Try running the program with ``new_text = text.replace(label, value)``
+      inside the loop. What do you notice about the output?
    
    The ``replace`` method creates a new string that swaps one of the labels
    (like ``_noun1/``) with a different word. However, if ``new_text = ''``,
