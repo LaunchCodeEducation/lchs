@@ -10,7 +10,7 @@ b. Calls functions based on the user's responses.
 Rather than coding all of the functions from scratch, you are going to use
 existing modules to help assemble your project.
 
-Open `this link <https://trinket.io/python/3de81ce691>`__ and fork the starter
+Open `this link <https://trinket.io/python/3de81ce691>`__ and copy the starter
 code, then complete the following:
 
 Import Module Code
