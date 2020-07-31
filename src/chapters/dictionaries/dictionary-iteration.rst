@@ -82,6 +82,8 @@ value each time the loop repeats.
 
 Aha! By default, Python iterates through a dictionary by using the key names.
 
+.. _key-value-iteration:
+
 Loop by Key/Value Pairs
 ^^^^^^^^^^^^^^^^^^^^^^^
 
