@@ -44,10 +44,9 @@ Use the accumulator pattern to add new key/value pairs to an empty dictionary.
       We are not worried about giving two people the same ticket number in this
       exercise. However, for a real event we would want to prevent this.
 
-      Check out the [INSERT INTERNAL LINK] section in the Random Events
-      appendix if you would like to avoid repeats when assigning the values.
-
-      .. todo:: Insert internal link to Random Events appendix.
+      Check out the :ref:`Unique Dictionary Values <unique-dict-values>`
+      section in the ``Random Module`` appendix if you would like to avoid
+      repeats when assigning the values.
 
 #. Return the new dictionary and assign it to a ``ticket_holders`` variable in
    ``main()``.
