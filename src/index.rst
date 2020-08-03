@@ -57,6 +57,7 @@ Appendices
    appendices/about-this-book
    appendices/list-methods/index
    appendices/string-methods/index
+   appendices/random-module/index
    appendices/turtles/index
 
 .. toctree::

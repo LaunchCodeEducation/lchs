@@ -11,6 +11,8 @@ We often want to use random numbers in programs. Here are a few typical uses:
 
 Python provides a module called ``random`` that helps with tasks like this.
 
+.. _pick-random-number:
+
 Generate a Random Number
 ------------------------
 
@@ -81,7 +83,7 @@ likely get random behavior each time we run our program.
 
    Doing this would be really, really hard, however.
 
-.. _random-list-item:
+.. _random-collection-item:
 
 Select an Item from a Collection
 --------------------------------
