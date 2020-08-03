@@ -60,6 +60,7 @@ Appendices
    appendices/dictionary-methods/index
    appendices/list-methods/index
    appendices/string-methods/index
+   appendices/random-module/index
    appendices/turtles/index
 
 .. toctree::
