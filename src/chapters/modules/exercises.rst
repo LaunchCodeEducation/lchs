@@ -31,7 +31,7 @@ Finish Coding A New Module
 
 #. Add code to complete the ``random_from_list`` function. It should take a
    list as an argument and then return a
-   :ref:`randomly selected element <random-list-item>` from that list.
+   :ref:`randomly selected element <random-collection-item>` from that list.
 #. Place any loose statements you find in the ``random_select.py`` code into a
    ``main()`` function.
 #. Import the ``random_select`` module into the main function code.
