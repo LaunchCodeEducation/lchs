@@ -223,6 +223,20 @@ Check Your Understanding
 
 .. admonition:: Question
 
+   In a dictionary, two *keys* may have the same name.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
    What is printed by the following statements?
 
    .. sourcecode:: python
@@ -235,14 +249,40 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 12</li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 6</li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 23</li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> dogs</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 12</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 6</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 23</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> dogs</li>
       </ol>
-      <p id="Q2"></p>
+      <p id="Q3"></p>
 
 .. Answer = b
+
+.. admonition:: Question
+
+   What is printed by the following statements?
+
+   .. sourcecode:: python
+      :linenos:
+
+      pet_population = {}
+
+      pet_population['cats'] = 8
+      pet_population['cats'] = 12
+
+      print(pet_population)
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> {'cats' : 12, 'cats' : 8}</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> {'cats' : 8}</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> {'cats' : 12}</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> {'cats' : 20}</li>
+      </ol>
+      <p id="Q4"></p>
+
+.. Answer = c
 
 .. raw:: html
 

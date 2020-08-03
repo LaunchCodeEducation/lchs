@@ -10,7 +10,7 @@ b. Calls functions based on the user's responses.
 Rather than coding all of the functions from scratch, you are going to use
 existing modules to help assemble your project.
 
-Open `this link <https://trinket.io/python/3de81ce691>`__ and copy the starter
+Open `this link <https://trinket.io/python/a579c40c9f>`__ and fork the starter
 code, then complete the following:
 
 Import Module Code
@@ -58,13 +58,13 @@ Now complete the project code.
    your work in the previous sections. If you did, do not worry. The comments
    in ``main.py`` will still show you where to add code.
 
-#. Line X - Call ``display_results`` to print all of the tests and student
+#. Line 18 - Call ``display_results`` to print all of the tests and student
    scores. Be sure to pass in the correct arguments.
-#. Line Y - Using dot notation, call ``average_for_test`` to print the class
-   average for each test. Use ``j`` and ``scores`` as arguments.
-#. Line Z - Call ``average_for_student`` (with the proper arguments) to print
+#. Line 22 - Using dot notation, call ``average_for_test`` to print the class
+   average for each test. Use ``title_index`` and ``scores`` as arguments.
+#. Line 26 - Call ``average_for_student`` (with the proper arguments) to print
    each astronaut's average score.
-#. Line A - Call ``random_from_list`` to pick the next spacewalker from the
+#. Line 29 - Call ``random_from_list`` to pick the next spacewalker from the
    ``astronauts`` list.
 
 Sanity check!

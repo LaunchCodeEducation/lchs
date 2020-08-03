@@ -125,6 +125,13 @@ two variables represent a new key/value pair from the collection.
    dictionary without needing to use bracket notation. On line 14, the variable
    ``value`` replaces ``comics[key]`` in our code. 
 
+Sorting Keys
+------------
+
+Lorem ipsum...
+
+You can't, BUT there is a work-around if you use a list.
+
 Check Your Understanding
 ------------------------
 
