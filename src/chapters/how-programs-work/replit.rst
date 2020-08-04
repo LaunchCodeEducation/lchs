@@ -12,11 +12,10 @@ Create a Repl.it Account
 
 .. admonition:: Warning
 
-   Before signing up for a repl.it account be sure your school has approved
+   Before signing up for a repl.it account, be sure your school has approved
    the site for student use!
 
-If you have not already done so, create a new student account with
-`Repl.it <https://repl.it/signup>`__.
+Create a new student account with `Repl.it <https://repl.it/signup>`__.
 
 .. figure:: figures/replit-signup.png
    :alt: Image of the repl.it sign-up screen.
@@ -37,7 +36,7 @@ select *Python*. Next, name your project and click *Create Repl*.
    :alt: Create a new Python repl.
 
 The Repl.it Workspace
-^^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Now let's take a look at how to use Repl.it. The workspace consists of three
 main panels and several menu functions.

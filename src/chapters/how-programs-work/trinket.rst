@@ -17,7 +17,7 @@ Create a Trinket.io Account
 
 .. admonition:: Warning
 
-   Before signing up for a Trinket account be sure your school has approved
+   Before signing up for a Trinket account, be sure your school has approved
    the site for student use!
 
 Create a new student account with Trinket `here <https://trinket.io/signup>`__.
@@ -36,10 +36,10 @@ much on this screen.
 
 Click on the *New Trinket* button to begin a new project. You can also access
 this option from the username dropdown menu. Scroll through the language
-options and select *Python3*.
+options and select either *Python* (free account) or *Python3* (paid account).
 
 .. figure:: figures/new-trinket.png
-   :alt: Screenshot of the dropdown menus for creating a new Python3 Trinket.
+   :alt: Screenshot of the dropdown menus for creating a new Python Trinket.
    :width: 70%
 
    New trinket options.
@@ -53,8 +53,34 @@ name your project, then use the *Save* button.
 
    Name your new project!
 
+Trinket Python Versions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Trinket allows users to code in both Python versions 2 and 3, but some of the
+latest version 3.x features are not supported with a free account. However, the
+free service will work just fine for this course (which focuses on versions
+3.6 and later).
+
+From time to time, you may notice that the exact same code behaves differently
+in your saved trinkets compared to the examples found in this book. When this
+happens, it is probably due to a version conflict. You can fix the issue by
+adding a special line of code to the top of your saved trinkets:
+
+::
+
+   #!/bin/python3
+
+This tells the editor to run the code as a Python 3 program.
+
+.. figure:: figures/python-version.png
+   :alt: Screenshot showing how to add #!/bin/python3 to a trinket.
+   :width: 70%
+
+   Adding #!/bin/python3 to a project. Note the small difference in the two
+   outputs. The bottom result is what we expect from Python version 3.x.
+
 The Trinket Workspace
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Now let's take a look at how to use Trinket. The workspace consists of two
 main panels, one hidden panel, and several menu functions.
@@ -96,8 +122,3 @@ refresh the page.
 
 At any time, you can return to a list of your saved projects by clicking on the
 *My Trinkets* link next to the project name.
-
-Trinket Python Versions
------------------------
-
-Lorem ipsum...
