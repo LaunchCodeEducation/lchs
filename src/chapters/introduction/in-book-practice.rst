@@ -88,50 +88,83 @@ Some sections provide live-coding practice. These short examples include code
 you can run and/or modify to quickly reinforce what you just read. Play around
 with these!
 
+We use two sites to provide the embedded code editors---Repl.it and Trinket.
+The appearance of the editors differs, but they both function in a similar
+manner. You type your code into one panel, click the *Run* button, and the
+program results get displayed in a second panel.
+
 Try It!
 ^^^^^^^
+
+Here is an example of the repl.it code editor. The coding panel appears at the
+top of the frame, with the output below.
 
 .. raw:: html
 
    <iframe height="600px" width="100%" src="https://repl.it/@launchcode/Embedded-Try-It-Example?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-.. index:: ! repl.it
+Here is an example of the Trinket code editor. The coding panel appears at the
+left of the frame, with the output to the right. Also, clicking on the
+*Instructions* tab displays steps for you to follow.
+
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/python/32d45e0cdd?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+.. index:: ! repl.it, ! trinket.io
 
 Longer Examples and End of Chapter Exercises
 --------------------------------------------
 
-Longer examples and practice problems have links to **Repl.it**. This website
-allows you to write, run and save your code. Repl.it accounts are free, so we
-encourage you to `sign up for one <https://repl.it/signup>`__.
+Longer examples and practice problems have links to **Repl.it** or
+**Trinket.io**. These websites allow you to write, run, and save your code.
+Repl.it and Trinket accounts are free, so we encourage you to sign up for one.
+
+.. admonition:: Warning
+
+   Depending on your school's privacy policy, student access to either site may
+   be restricted. Check with your teacher before creating an account!
+
+   #. `Repl.it signup <https://repl.it/signup>`__.
+   #. `Trinket.io signup <https://trinket.io/signup>`__.
 
 As you explore the examples in this book, feel free to make changes to
-the code. If you want to save your edits, click the *Fork* button at the top of
-the workspace. Repl.it will store a copy of the code in your personal account.
+the code. If you want to save your edits, click the *Fork* or *Remix* button at
+the top of the workspace. Repl.it/Trinket will store a copy of the code in your
+personal account.
 
-.. figure:: figures/replit-fork.png
-   :alt: The fork button saves starter code to your repl.it account.
+.. figure:: figures/fork-remix-buttons.png
+   :alt: Image showing the Fork and Remix buttons to save code to your repl.it or Trinket account.
+   :width: 70%
+
+   Repl.it uses the Fork button to save a copy of the code. Trinket calls it Remix.
 
 Try It!
 ^^^^^^^
 
-Here is the same code used in the box above. Click on the link to open it in
-the repl.it workspace.
+Here is the same code used in the example above. Click on each link to open it
+in the repl.it or Trinket workspaces.
 
-.. replit:: python
-   :linenos:
-   :slug: Embedded-Try-It-Example
+.. admonition:: Example
 
-   import turtle
+   You need to be logged into your account in order to save any changes you
+   make to the code.
 
-   bob = turtle.Turtle()
-   bob.color('blue')
-   bob.shape('turtle')
+   .. sourcecode:: python
+      :linenos:
 
-   bob.left(90)
-   bob.circle(75)
+      import turtle
 
-   # Try changing the color or shape (circle, square, triangle, arrow) for bob.
-   # Try changing the size of the circle.
+      bob = turtle.Turtle()
+      bob.color('blue')
+      bob.shape('turtle')
 
-You need to be logged into your repl.it account in order to save any changes
-you make to the code.
+      bob.left(90)
+      bob.circle(75)
+
+      # Try changing the color or shape (circle, square, triangle, arrow) for bob.
+      # Try changing the size of the circle.
+
+   `Repl.it link <https://repl.it/@launchcode/Embedded-Try-It-Example#main.py>`__
+   
+   `Trinket.io link <https://trinket.io/python/32d45e0cdd>`__

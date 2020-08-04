@@ -1,31 +1,33 @@
 Repl.it
 =======
 
-`Repl.it <https://repl.it>`__ is a free online code editor, and it provides a
-practice space to boost your programming skills.
+`Repl.it <https://repl.it>`__ and `Trinket.io <https://trinket.io>`__ share
+many of the same features, but the two sites differ in how they present their
+workspaces.
 
-For this class, repl.it serves two purposes:
-
-#. To provide a space to respond to quick questions and exercises found in the
-   reading.
-#. To hold larger exercises and projects that will be checked for accuracy and
-   tracked for completion.
+The previous page explored Trinket, so now let's take a look at Repl.it.
 
 Create a Repl.it Account
 -------------------------
 
-If you have not already done so, create a new student account with
-`Repl.it <https://repl.it/signup>`__.
+.. admonition:: Warning
+
+   Before signing up for a repl.it account, be sure your school has approved
+   the site for student use!
+
+Create a new student account with `Repl.it <https://repl.it/signup>`__.
 
 .. figure:: figures/replit-signup.png
-   :alt: Repl.it sign-up screen
+   :alt: Image of the repl.it sign-up screen.
 
 After you sign in, you will see your *Home* screen, which displays your recent
 work and announcements. Since you are just starting out, you won't need to do
 much on this screen.
 
 .. figure:: figures/replit-home.png
-   :alt: Repl.it home screen display.
+   :alt: Image of repl.it home screen.
+
+   Home screen
 
 Click on *new repl* to begin a new project. Scroll through the options and
 select *Python*. Next, name your project and click *Create Repl*.
@@ -34,7 +36,7 @@ select *Python*. Next, name your project and click *Create Repl*.
    :alt: Create a new Python repl.
 
 The Repl.it Workspace
-^^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 Now let's take a look at how to use Repl.it. The workspace consists of three
 main panels and several menu functions.

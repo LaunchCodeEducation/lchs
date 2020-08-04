@@ -8,4 +8,5 @@ How Programs Work
    programming-languages
    how-programs-work
    first-program
+   trinket
    replit
