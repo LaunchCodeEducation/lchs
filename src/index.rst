@@ -55,6 +55,7 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book
+   appendices/classrooms/index
    appendices/list-methods/index
    appendices/string-methods/index
    appendices/random-module/index
