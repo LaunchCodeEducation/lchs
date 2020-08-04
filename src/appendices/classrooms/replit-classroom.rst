@@ -1,9 +1,9 @@
 Repl.it Classrooms
 ==================
 
-Repl.it *Classroom* provides students with the ability to create code and then
-submit it to their teachers. It also allows teachers to post instructions and
-set up automatic code checking.
+A repl.it *classroom* provides students with the ability to create code and
+then submit it to their teachers. It also allows teachers to post instructions
+and set up automatic code checking.
 
 Assignments in a classroom can only be accessed by people enrolled in the
 course, and student work can only be seen by the instructors.
@@ -11,9 +11,8 @@ course, and student work can only be seen by the instructors.
 A repl.it classroom is used for:
 
 #. Organizing coding tasks,
-#. Completing and submitting ungraded, practice tasks,
-#. Providing feedback for working or non-working code,
-#. Submitting assignments for a grade.
+#. Completing and submitting practice tasks and assignments,
+#. Providing feedback for working or non-working code.
 
 .. admonition:: Tip
 
@@ -38,7 +37,7 @@ courses available to you.
 
    Classroom dashboard.
 
-Clicking on a class brings up a list of assignments and projects that your
+Clicking on a class box brings up a list of assignments and projects that your
 teacher has prepared for you.
 
 .. figure:: figures/replit-assignment-list.png
@@ -53,28 +52,31 @@ of three main panels and several menu functions.
 Repl.it Classroom Workspace
 ----------------------------
 
-   INSERT WORKSPACE IMAGE HERE!
+.. figure:: figures/replit-classroom-workspace.png
+   :alt: Screenshot of the repl.it classroom workspace.
+
+   The repl.it classroom workspace.
 
 Features to note:
 
 #. **Settings menu**: Allows you to change editor settings like theme and font
    size.
-#. **Run button**: Runs code in the editor panel (7).
+#. **Run button**: Runs any code in the editor panel (7).
 #. **Name of assignment**
-#. **Repl.it user menu**: Allows you to change account details and change
-   password.
+#. **Repl.it user menu**: Allows you to access account details and change
+   your password.
 #. **Submit button**:
 
    a. Submits your work.
-   b. If the assignment has been setup to be auto graded, you will receive
-      instant feedback.
-   c. If the assignment is NOT auto graded, your TA will need to review and
-      provide feedback.
+   b. If the assignment has been set up for automatic checking, you will
+      receive instant feedback.
+   c. If the assignment is NOT set up for automatic checking, your teacher will
+      review it and provide feedback.
 
 #. **Instructions**: This describes what you need to code. READ CAREFULLY!
-#. **Editor panel**: This is where you write your code.
-#. **Console output**: After clicking the run button (2), output and errors
-   will show up here.
+#. **Editor panel**: Type your code here.
+#. **Console output**: After clicking the run button (2), your program's output
+   and any error messages show up here.
 
 .. admonition:: Note
 
