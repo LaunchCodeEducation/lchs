@@ -8,6 +8,8 @@ astronauts, and fuel.
 Before You Start
 ----------------
 
+.. todo:: Write Trinket and Repl.it classroom instructions, then link to those pages from here.
+
 If your teacher uses repl.it *classroom*, follow these instructions [INSERT
 TEXTBOOK LINK!!!!] to access this project.
 
