@@ -8,13 +8,16 @@ astronauts, and fuel.
 Before You Start
 ----------------
 
-.. todo:: Write Trinket and Repl.it classroom instructions, then link to those pages from here.
+If your teacher uses a :ref:`repl.it classroom <replit-classroom-assignments>`
+or a :ref:`Trinket course <trinket-course-assignments>`, follow the links
+for instructions on how to access this project.
 
-If your teacher uses repl.it *classroom*, follow these instructions [INSERT
-TEXTBOOK LINK!!!!] to access this project.
+If you are working through this material on your own, use this
+`standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Project>`__ or this
+`Trinket <https://trinket.io/python/aa84dd7b3a?runOption=run&showInstructions=true>`__
+to access the starter code.
 
-If you are working through this material on your own, use this standard
-repl to access the starter code. [INSERT LINK HERE!!!]
+To save and share your code, be sure to login to your account.
 
 Declare and Assign Variables
 ----------------------------
@@ -34,7 +37,7 @@ Declare and assign a variable for every data point listed below.
    * - ``average_astronaut_mass_kg``
      - 80.7
    * - ``fuel_mass_kg``
-     - 760,000
+     - 760000
    * - ``ship_mass_kg``
      - 74842.31
    * - ``fuel_level``
@@ -72,7 +75,7 @@ Generate the Checklist
 Display the checklist in the console using your variables.
 
 The generated report should look like the example below---including spaces and
-symbols (-, >, and \*).
+symbols (``-``, ``>``, and ``*``).
 
 Example Output
 ^^^^^^^^^^^^^^^
