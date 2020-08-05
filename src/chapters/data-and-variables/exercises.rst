@@ -48,12 +48,13 @@ Part B - Using Variables
    The remaining exercises require more space than the small embedded code
    editor. You will need to move to a larger workspace.
 
-   If your teacher uses repl.it *classroom*, follow these instructions [INSERT
-   TEXTBOOK LINK!!!!] to access this assignment.
+   If your teacher uses a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, follow the links
+   for instructions on how to access this assignment.
 
-   If your teacher has NOT set up a repl.it classroom, you can access the
-   `starter code here <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-B>`__.
-   To save and share your code, be sure to login to your repl.it account.
+   If your teacher has NOT set up a repl.it classroom or Trinket course, you
+   can access the `starter code here <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-B>`__.
+   To save and share your code, be sure to login to your account.
 
 Use the information given below to complete the part B exercises:
 
@@ -92,8 +93,8 @@ Use the information given below to complete the part B exercises:
 Part C - User Input
 -------------------
 
-If your teacher uses repl.it classroom, solve part C there. Otherwise,
-use this `standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-C>`__.
+If your teacher uses repl.it classroom or Trinket course, solve part C there.
+Otherwise, use this `standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-C>`__.
 
 .. admonition:: Note
 
@@ -144,8 +145,3 @@ use this `standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-C
       How many miles did you drive? 280
       How many gallons did you use? 10
       Your car got 28 miles per gallon.
-
-Part D - Modulus
-----------------
-
-   Not sure if we should add these...

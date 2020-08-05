@@ -56,6 +56,7 @@ Appendices
    :name: appendicestoc
 
    appendices/about-this-book
+   appendices/classrooms/index
    appendices/dictionary-methods/index
    appendices/list-methods/index
    appendices/string-methods/index

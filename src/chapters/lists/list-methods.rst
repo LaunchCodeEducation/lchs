@@ -91,11 +91,6 @@ To see detailed examples for a particular method, click on its name.
        data conversion functions like ``int()`` and ``str()``. The ``list()``
        function tries to convert the whatever is inside the ``()`` into a list.
 
-.. todo::
-   
-   Revise the split and list appendix page to better align with the
-   Runestone book.
-
 Check Your Understanding
 ------------------------
 
