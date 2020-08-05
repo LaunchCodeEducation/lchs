@@ -5,14 +5,16 @@ If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignm
 or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
 there.
 
-Otherwise, follow the links below to *standard repl.it*.
+Otherwise, use the links below to code in your own free account.
 
 Part A: Basic Selection
 -----------------------
 
-If you are NOT assigned to a repl.it classroom or Trinket course, follow this
-link for the `part A <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__
-starter code.
+If you are NOT assigned to a repl.it classroom or Trinket course, follow one of
+these links for the Part A starter code:
+
+#. `repl.it starter <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__
+#. `Trinket starter <https://trinket.io/python3/d7fc46a6b4>`__
 
 ``if`` Only
 ^^^^^^^^^^^
@@ -71,8 +73,8 @@ Part B: Logical Operators
 -------------------------
 
 Use the logical ``and``, ``or``, and ``not`` operators in the following
-exercises (`part B <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
-starter code).
+exercises (Part B starter code: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
+or `Trinket <https://trinket.io/python3/a67d9f95fe>`__).
 
 #. Given an integer, check to see if the number is even and divisible by 5.
    Print an appropriate message depending on the result.
@@ -110,7 +112,8 @@ starter code).
 Part C: Chained Conditionals
 ----------------------------
 
-Use this starter code for `parts C and D <https://repl.it/@launchcode/Conditional-Exercises-Parts-C-and-D>`__.
+Use this starter code for Parts C and D: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Parts-C-and-D>`__
+or `Trinket <https://trinket.io/python3/99e9661e91?showInstructions=true>`__.
 
 #. For ``if/elif/else`` statements, the *order* of the checks is important.
    The following code should determine if a number is divisible by 2, 3, both
