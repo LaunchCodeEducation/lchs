@@ -89,6 +89,8 @@ Part 3: Use Iteration to Ask All Questions
 #. Add one or more loops to your code to ask *all* the questions in the quiz. 
 #. Use lists to collect and check *all* of the candidate's answers.
 #. Calculate the candidate's score as a percentage.
+#. Determine the candidate's status (``ACCEPTED`` or ``NOT ACCEPTED``) based on
+   their score. The candidate needs to earn an 80% or higher to pass.
 #. Print the results.
 
 *Helpful hint!* To calculate the candidate's percentage, use the equation:
@@ -96,7 +98,7 @@ Part 3: Use Iteration to Ask All Questions
    (Number of Correct Answers) / (Number of Questions) * 100
 
 Example Output
---------------
+^^^^^^^^^^^^^^
 
 The output of the results should include the candidate's name, their answers,
 the correct answers, the final percentage, and whether or not the candidate
