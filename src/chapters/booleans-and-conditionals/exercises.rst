@@ -1,15 +1,18 @@
 Exercises: Booleans and Conditionals
 ====================================
 
-If your teacher has added to you a *repl.it classroom*, complete the exercises
-there. Otherwise, follow the links to *standard repl.it* (no auto-grader).
+If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+there.
+
+Otherwise, follow the links below to *standard repl.it*.
 
 Part A: Basic Selection
 -----------------------
 
-If you are NOT assigned to a repl.it classroom, follow this link for the
-`part A <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__ starter
-code.
+If you are NOT assigned to a repl.it classroom or Trinket course, follow this
+link for the `part A <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__
+starter code.
 
 ``if`` Only
 ^^^^^^^^^^^

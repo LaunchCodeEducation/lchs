@@ -27,13 +27,12 @@ Loops simplify repetitive tasks!
 
 .. admonition:: Note
 
-   If your teacher uses repl.it *classroom*, follow these instructions to access
-   this assignment.
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+   there.
 
-   .. todo:: Insert textbook link here!
-
-   If your teacher has NOT set up a repl.it classroom, click each problem link
-   to access the different sets of starter code.
+   If your teacher has NOT set up a repl.it classroom or a Trinket course,
+   click each problem link to access the different sets of starter code.
 
 #. Construct ``for`` loops that accomplish the `following tasks <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-1>`__:
 
