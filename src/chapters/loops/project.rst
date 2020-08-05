@@ -10,23 +10,27 @@ Part A - Polygons and Sprites
 
 In the chapter, you coded a program to make a turtle draw a *regular polygon*
 (a shape with all the sides the same length and all the angles the same). Click
-on the link below to open up the starter code in repl.it.
+on one of the links below to open up the starter code in repl.it or Trinket.
 
-.. replit:: Python
-   :slug: LCHS-Turtle-Loops-Project-polygons
-   :linenos:
+.. admonition:: Example
 
-   import turtle
+   #. `repl.it starter code <https://repl.it/@launchcode/LCHS-Turtle-Loops-Project-polygons>`__
+   #. `Trinket starter code <https://trinket.io/python/d7dc239b42>`__
 
-   bob = turtle.Turtle()
+   .. sourcecode:: Python
+      :linenos:
 
-   num_sides = 8
+      import turtle
 
-   turn_angle = 360.0 / num_sides
+      bob = turtle.Turtle()
 
-   for side in range(num_sides):
-      bob.forward(50)
-      bob.left(turn_angle)
+      num_sides = 8
+
+      turn_angle = 360.0 / num_sides
+
+      for side in range(num_sides):
+         bob.forward(50)
+         bob.left(turn_angle)
 
 #. Modify the program to prompt the user to enter the following:
 
@@ -39,7 +43,7 @@ on the link below to open up the starter code in repl.it.
       choices are available. Feel free to play with this feature.
 
       You can also fill the polygon with a color. Refer to the
-      :ref:`Turtle Appendix <turtle-guide>` for details.
+      :ref:`Turtle Appendix <turtle-fill>` for details.
 
 #. A *sprite* is a spider shaped thing with a certain number of legs coming out
    from a center point.
@@ -53,7 +57,9 @@ on the link below to open up the starter code in repl.it.
    the user. The same ``turn_angle`` calculation applies for both sprites and
    polygons.
 
-   Follow this link to the `starter code <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-sprites>`__.
+   Follow one of these links for the `repl.it <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-sprites>`__
+   or `Trinket <https://trinket.io/python/2b905227c7?runOption=run&showInstructions=true>`__
+   starter code.
 
 Part B - Clock Face
 -------------------
@@ -137,7 +143,8 @@ corner (called a *vertex*). Prompt the user to enter both the number of sides
 for the polygon and the number of legs for each sprite (these do NOT have to be
 the same value).
 
-Fork the starter code `here <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-part-D>`__.
+Copy the starter code from either `repl.it <https://repl.it/@launchcode/LCHS-Turtle-Loop-Project-part-D>`__
+or `Trinket <https://trinket.io/python/df9a792879?runOption=run&showInstructions=true>`__.
 
 .. admonition:: Examples
 
