@@ -25,27 +25,36 @@ To access a course you have joined, login to your account to bring up your home
 screen. (If you are already logged in, click the *Home* button in the top menu
 bar).
 
-Courses available to you are listed under the ``My Courses`` title.
+Courses available to you are listed at the bottom of the page under the
+``My Courses`` title.
 
-.. figure:: figures/trinket-homepage.png
-   :alt: Screenshot of Trinket home page.
-   :width: 70%
+.. figure:: figures/trinket-course-list.png
+   :alt: Screenshot of Trinket course list on the home page.
 
    Trinket home page.
 
-Clicking on a course name brings up dashboard where you can access a list of
-assignments and projects your teacher has prepared for you.
+Clicking on a course name brings up an outline where you can access a list of
+lessons and assignments your teacher has prepared for you. These appear on the
+left hand side of the screen.
 
 .. figure:: figures/trinket-course-dashboard.png
    :alt: Screenshot of a Trinket course outline.
-   :width: 70%
+   :width: 50%
 
-   An outline of assignments waiting for your attention!
+   An outline of information and assignments waiting for your attention!
 
-Clicking a title in the left hand menu opens it up the workspace.
+Clicking an item in the menu opens it up in the workspace on the right.
+
+#. Lesson pages provide information and a space to practice code, but you do
+   NOT turn them in.
+#. Assignments ask you to complete one or more coding tasks. When done, you
+   will submit your work to your teacher.
 
 Trinket Assignment Workspace
 ----------------------------
+
+To begin an assignment, select its name in the outline, then click the blue
+*Start Assignment* button.
 
 .. figure:: figures/trinket-assignment-workspace.png
    :alt: Screenshot of the Trinket assignment workspace.
@@ -58,11 +67,11 @@ Features to note:
 #. **Active code editor**: This is the business part of the assignment! Some
    assignments may include multiple editors, and your work here will be turned
    in to your teacher.
-#. **Settings menu**: Allows you to change settings like font size, or reset
-   your code back to the original starting point.
-#. **Run button**: Runs any code in the editor panel (X).
+#. **Settings menu**: Allows you to change things like window and font size, or
+   reset your code back to the original starting point.
+#. **Run button**: Runs any code in the editor panel (5).
 #. **Editor panel**: Type your code here.
-#. **Console output**: After clicking the run button (Y), your program's output
+#. **Console output**: After clicking the run button (4), your program's output
    and any error messages show up here.
 #. **Comment box**: Send a note to your teacher! :-)
 #. **Submit button**:
@@ -71,7 +80,6 @@ Features to note:
    b. Your teacher will be able to review your code and give you feedback.
 
 #. **Original Version**: Opens a window showing the original starter code.
-
 
 .. admonition:: Note
 
