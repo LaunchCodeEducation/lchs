@@ -14,7 +14,7 @@ If you are NOT assigned to a repl.it classroom or Trinket course, follow one of
 these links for the Part A starter code:
 
 #. `repl.it starter <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__
-#. `Trinket starter <https://trinket.io/python3/d7fc46a6b4>`__
+#. `Trinket starter <https://trinket.io/python/78e5272001>`__
 
 ``if`` Only
 ^^^^^^^^^^^
@@ -74,7 +74,7 @@ Part B: Logical Operators
 
 Use the logical ``and``, ``or``, and ``not`` operators in the following
 exercises (Part B starter code: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
-or `Trinket <https://trinket.io/python3/a67d9f95fe>`__).
+or `Trinket <https://trinket.io/python/196c4bfd4b?showInstructions=true>`__).
 
 #. Given an integer, check to see if the number is even and divisible by 5.
    Print an appropriate message depending on the result.
@@ -113,7 +113,7 @@ Part C: Chained Conditionals
 ----------------------------
 
 Use this starter code for Parts C and D: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Parts-C-and-D>`__
-or `Trinket <https://trinket.io/python3/99e9661e91?showInstructions=true>`__.
+or `Trinket <https://trinket.io/python/014054b0a7?showInstructions=true>`__.
 
 #. For ``if/elif/else`` statements, the *order* of the checks is important.
    The following code should determine if a number is divisible by 2, 3, both
