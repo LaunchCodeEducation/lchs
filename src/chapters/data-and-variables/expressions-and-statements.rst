@@ -1,3 +1,5 @@
+.. _expressions:
+
 Statements and Expressions
 ==========================
 

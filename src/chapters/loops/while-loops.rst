@@ -11,10 +11,9 @@ Unlike a ``for`` loop, which defines a loop variable and a specific starting
 and ending point, a **while loop** uses a single condition to determine whether
 or not to continue running.
 
-This condition (a boolean expression) controls the iteration. The body of a
-``while`` loop repeats as long as the expression evaluates to ``True``.
-
-.. TODO: Add internal link here leading back to the boolean expressions section.
+This condition (a :ref:`boolean expression <boolean-expression>`) controls the
+iteration. The body of a ``while`` loop repeats as long as the expression
+evaluates to ``True``.
 
 ``while`` Loop Syntax
 ---------------------
@@ -39,6 +38,7 @@ and it may contain any number of statements.
    The following loop repeats until ``total < 1000`` returns ``False``:
 
    .. sourcecode:: Python
+      :linenos:
 
       total = 0
       increase_by = 14
