@@ -5,6 +5,15 @@ Complete this project to boost your conditional skills. Don't worry if you
 struggle a bit. Struggling (and needing to review) before succeeding is a
 natural and frequent part of coding. Making mistakes helps you learn.
 
+.. admonition:: Note
+
+   There is no starter code for this project. However, if your teacher uses a 
+   :ref:`repl.it classroom <replit-classroom-assignments>` or a
+   :ref:`Trinket course <trinket-course-assignments>`, you will submit your
+   work there. 
+
+   Otherwise, login to your repl.it or Trinket account and start a new project.
+
 Spacecraft Data
 ---------------
 

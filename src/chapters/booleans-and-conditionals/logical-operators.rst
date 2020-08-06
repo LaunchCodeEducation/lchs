@@ -254,15 +254,15 @@ Check Your Understanding
 .. admonition:: Question
 
    What is the correct Python expression for checking to see if a number
-   stored in a variable x is between 0 and 5.
+   stored in the variable ``num`` is between 0 and 5.
 
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 and < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 or < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">x > 0 and x < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">x > 0 or x < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 and < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 or < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">num > 0 and num < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 or num < 5</span></li>
       </ol>
       <p id="Q2"></p>
 

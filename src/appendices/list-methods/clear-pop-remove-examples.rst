@@ -42,7 +42,7 @@ No arguments go inside the ``()``.
       0
 
 .. index::
-   single: list; insert
+   single: list; pop
 
 .. _list-pop-examples:
 
@@ -84,6 +84,9 @@ variable.
       [100, 99, 97, 96]
       96
       [100, 99, 97]
+
+.. index::
+   single: list; remove
 
 .. _list-remove-examples:
 

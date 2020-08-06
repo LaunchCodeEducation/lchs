@@ -13,10 +13,10 @@ want to display different messages, we could try adding a variable:
 
       <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Input-Practice-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-To print a greeting for a specific user, then ``print("Hello Dave!")`` only
-works if Dave is the actual user. To greet someone else, we could change the
-string inside the ``()`` to be ``'Hello Sarah!'`` or ``'Hello Elastigirl!'`` or
-any other name we need.
+To print a greeting for a specific user, ``print("Hello Dave!")`` only works if
+Dave is the actual user. To greet someone else, we could change the string
+inside the ``()`` to be ``'Hello Sarah!'`` or ``'Hello Elastigirl!'`` or any
+other name we need.
 
 Similarly, to make the statement ``print("Hello, " + name + "!")`` work for
 different users, we need to go into the code and change the string we assign to
