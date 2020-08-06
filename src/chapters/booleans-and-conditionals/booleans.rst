@@ -78,7 +78,7 @@ Other Comparisons
 .. index::
    single: operator; comparison
 
-The ``==`` operator is one of six common **comparison operators**.
+The ``==`` operator is one of seven common **comparison operators**.
 
 .. index:: ! operand
 
@@ -86,7 +86,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
    The values on either side of an operator are called **operands**.
 
-.. index:: ==, ! !=, ! <, ! >, ! <=, ! >=
+.. index:: ==, ! !=, ! <, ! >, ! <=, ! >=, ! in
 
 .. list-table:: Comparison Operators
    :widths: auto
@@ -156,6 +156,15 @@ The ``==`` operator is one of six common **comparison operators**.
      - ``7 <= 5``
 
        ``'b' <= 'a'``
+   * - ``in``
+     - Returns ``True`` if the left-hand value is found inside the right-hand value, and ``False`` otherwise.
+       This operator does NOT work for the ``int`` or ``float`` data types.
+     - ``'a' in 'Happy'``
+
+       ``'stop' in 'unstoppable'``
+     - ``'A' in 'apple'`` (case matters)
+
+       ``'oy' in 'you'`` (order matters)
 
 Check Your Understanding
 ------------------------

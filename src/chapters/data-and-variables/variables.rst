@@ -9,11 +9,10 @@ value is a single, specific piece of data, such as a specific number or string. 
 
 You can think of a variable as a label that *points to* a piece of data.
 
-   INSERT FIGURE HERE
+.. figure:: figures/variable.png
+   :alt: The label title points to a the string value "Ready Player One", and the label lucky_number points to the value 9.
 
-Alternate: The label my_word points to a the string value "Python"
-
-   The variable my_word points to the string value "Python".
+   The variable ``title`` points to the string value ``'Ready Player One'``, and ``lucky_number`` points to the integer value ``9``.
 
 With this picture in mind, let's learn how to create and use variables in
 Python.

@@ -25,20 +25,20 @@ Run the example below, and note the difference between the outputs:
 
 .. raw:: html
 
-   <iframe src="https://trinket.io/embed/python3/bbecd85a8e?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+   <iframe src="https://trinket.io/embed/python/bf9a844ebe?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Observations line by line:
 
-#. In the line 1, we print some text, which is surrounded by quotes.
-#. In the line 2, we print a number. Note the absence of quote marks.
-#. In line 3, we use three words separated by commas, all within the same
+#. In the line 2, we print some text, which is surrounded by quotes.
+#. In the line 3, we print a number. Note the absence of quote marks.
+#. In line 4, we use three words separated by commas, all within the same
    set of parentheses ``()``. When the words print, they show up on the same
    line separated by spaces.
-#. The code in line 4 is just like line 3, only there are no spaces after the
+#. The code in line 5 is just like line 4, only there are no spaces after the
    commas. How does this affect the output?
-#. Line 5 prints two words, but in this case the code uses ``+`` instead of a
+#. Line 6 prints two words, but in this case the code uses ``+`` instead of a
    comma. This prints the words without spaces in between.
-#. Line 6 prints text and a number with a space in between.
+#. Line 7 prints text and a number with a space in between.
 
 Two Special Characters
 -----------------------
@@ -58,11 +58,11 @@ combination ``\n``.
    above:
 
    .. sourcecode:: python
-      :lineno-start: 7
+      :lineno-start: 8
 
       print("Some Programming Languages:")
       print("Python\nJavaScript\nJava\nC#\nSwift")
 
 In addition to the newline character, there is also a special tab character,
-``\t``. Go back to the seven examples and play around with using ``\t``
+``\t``. Go back to the six examples and play around with using ``\t``
 and ``\n``.

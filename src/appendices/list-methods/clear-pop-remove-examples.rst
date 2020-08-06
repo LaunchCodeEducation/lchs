@@ -85,6 +85,9 @@ variable.
       96
       [100, 99, 97]
 
+.. index::
+   single: list; remove
+
 .. _list-remove-examples:
 
 ``remove`` Examples

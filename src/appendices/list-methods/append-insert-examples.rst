@@ -67,7 +67,7 @@ data type, including another list.
       ['a', 'b', 'c', 0, 1, 2, 3, 'l', 'm', 'n', 'o', 'p']
 
 .. index::
-   single: list insert
+   single: list; insert
 
 .. _list-insert-examples:
 
