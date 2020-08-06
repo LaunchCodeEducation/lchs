@@ -78,7 +78,7 @@ Other Comparisons
 .. index::
    single: operator; comparison
 
-The ``==`` operator is one of six common **comparison operators**.
+The ``==`` operator is one of seven common **comparison operators**.
 
 .. index:: ! operand
 
@@ -86,7 +86,7 @@ The ``==`` operator is one of six common **comparison operators**.
 
    The values on either side of an operator are called **operands**.
 
-.. index:: ==, ! !=, ! <, ! >, ! <=, ! >=
+.. index:: ==, ! !=, ! <, ! >, ! <=, ! >=, ! in
 
 .. list-table:: Comparison Operators
    :widths: auto

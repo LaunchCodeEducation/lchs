@@ -38,14 +38,22 @@ variable depend on the old value.
       10
       12
 
-The new value of ``my_number`` equals its old value plus 2.
+   On line 3, the new value of ``my_number`` becomes its old value plus 2.
 
 Updating Variables
 ------------------
 
-The statement ``my_number = my_number + 2`` tells Python, take the current
-value of ``my_number``, increase it by ``2``, then reassign the result to
+The statement ``my_number = my_number + 2`` takes the current value of
+``my_number``, increases it by ``2``, then reassigns the result back to
 ``my_number``.
+
+Think of the statement as a series of steps:
+
+.. sourcecode:: python
+
+   my_number = my_number + 2  
+   my_number = 10 + 2         # Insert the old value of my_number
+   my_number = 12             # Do the math and assign the result to my_number
 
 This type of update is so common in Python (and programming in general) that we
 have an operator to use as a shortcut.
