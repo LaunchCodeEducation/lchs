@@ -117,7 +117,7 @@ Part Two: String Methods and Operations
 .. admonition:: Note
 
    Code part 2, steps 3 & 4 at `repl.it <https://repl.it/@launchcode/LCHS-Strings-Exercises-Part-2-3-and-4>`__
-   or at `Trinket <https://trinket.io/python/0e9a72ffe3?showInstructions=true>`__.
+   or at `Trinket <https://trinket.io/python3/71f52d00c7?showInstructions=true>`__.
 
 Part Three: String Formatting
 -----------------------------
@@ -130,7 +130,8 @@ Part Three: String Formatting
    b. Print the string, ``"Here is my word 3 times: ___/___/___, and here is my
       number squared: ___."``
 
-   `Code it at repl.it <https://repl.it/@launchcode/LCHS-Strings-Exercises-Part-3-1>`__
+      Code it at `repl.it <https://repl.it/@launchcode/LCHS-Strings-Exercises-Part-3-1>`__ or
+      `Trinket <https://trinket.io/python/40b4bd19fb?showInstructions=true>`__
 
 #. For part 2, exercise 4, use an f-string to print the output
    ``"The DNA string is ___ characters long and contains ___ genes."`` Fill in
