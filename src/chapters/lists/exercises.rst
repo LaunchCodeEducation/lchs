@@ -6,16 +6,18 @@ rearrange list elements.
 
 .. admonition:: Note
 
-   If your teacher uses repl.it *classroom*, follow the links in your classroom
-   account to access the starter code for each part.
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+   there.
 
-   If you are NOT enrolled in a repl.it classroom, use the links given below to
-   complete the exercises.
+   If you are NOT enrolled in a repl.it classroom or Trinket course, use the
+   links given below to complete the exercises.
 
 Part One: Adding and Removing Items
 -----------------------------------
 
-`Part 1 starter code <https://repl.it/@launchcode/LCHS-List-Exercises-Part-1#main.py>`__.
+*Part 1 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-1#main.py>`__
+or `Trinket <https://trinket.io/python/73e566dac1?showInstructions=true>`__.
 
 #. Create a list called ``adding_practice`` with a single entry: ``273.15``.
    Use the ``append`` method to add the following elements to the list one at a
@@ -53,7 +55,8 @@ Part One: Adding and Removing Items
 Part Two: Slices & Methods
 --------------------------
 
-`Part 2 starter code <https://repl.it/@launchcode/LCHS-List-Exercises-Part-2#main.py>`__.
+*Part 2 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-2#main.py>`__
+or `Trinket <https://trinket.io/python/0c8b175f1c?showInstructions=true>`__.
 
 #. Using the slice syntax ``list_name[start : end]`` you can either insert,
    replace, or remove items from a list. Review the
@@ -86,12 +89,13 @@ Part Two: Slices & Methods
       the slice.
    #. ``reverse`` the first list, ``sort`` the second, and then print both
       lists. What is the difference between the two methods?
-   #. Do reverse or sort alter the original lists?
+   #. Do ``reverse`` or ``sort`` alter the original lists?
 
 Part Three: Split, List, and Join
 ---------------------------------
 
-`Part 3 starter code <https://repl.it/@launchcode/LCHS-List-Exercises-Part-3#main.py>`__.
+*Part 3 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-3#main.py>`__
+or `Trinket <https://trinket.io/python/b010aba314?showInstructions=true>`__.
 
 #. The ``split`` method converts a string into a list, while the ``join``
    method does the opposite.
@@ -114,7 +118,8 @@ Part Three: Split, List, and Join
 Part Four: Multi-dimensional Lists
 ----------------------------------
 
-`Part 4 starter code <https://repl.it/@launchcode/LCHS-List-Exercises-Part-4#main.py>`__.
+*Part 4 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-4#main.py>`__
+or `Trinket <https://trinket.io/python/f7573d922f?showInstructions=true>`__.
 
 #. Lists can hold different data types, even other lists! A
    *multi-dimensional list* is one with entries that are also lists.
