@@ -32,9 +32,11 @@ Loops simplify repetitive tasks!
    there.
 
    If your teacher has NOT set up a repl.it classroom or a Trinket course,
-   click each problem link to access the different sets of starter code.
+   click on a link in each problem to access the different sets of starter
+   code.
 
-#. Construct ``for`` loops that accomplish the `following tasks <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-1>`__:
+#. Construct ``for`` loops that accomplish the following tasks:
+   (`repl.it code <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-1>`__ or `Trinket code <https://trinket.io/python/71cbf8d913?runOption=run&showInstructions=true>`__)
 
    a. Print the numbers 0 - 20, one number per line.
    b. Print only the ODD values from 3 - 29, one number per line.
@@ -43,8 +45,9 @@ Loops simplify repetitive tasks!
    d. Print the numbers 50 down to 20 in descending order, but only
       if the numbers are multiples of 3.
 
-#. `Given the string <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-2>`__
-   ``'LaunchCode'``, code two ``for`` loops to do the following:
+#. Given the string ``'LaunchCode'``, code two ``for`` loops to do the
+   following: (`repl.it <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-2>`__
+   or `Trinket <https://trinket.io/python/01eb624abf?showInstructions=true>`__)
 
    a. Print out each character of the string, one letter per line. Do this
       WITHOUT using index values.
@@ -54,14 +57,16 @@ Loops simplify repetitive tasks!
       integer value, and ``var_name`` is the variable used to store the string.
 
 #. Given the string ``gibberish =
-   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, `print every fifth
-   character <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__,
-   including the first character. Use index values and
+   'Vna#hewzB*rQhT%yq^lv %iPwgOexWo &C^oUoGSdtJLj'``, print every fifth
+   character, including the first character. Use index values and
    ``range(start, stop, step)``.
 
    *Hint*: Instead of figuring out the ``stop`` value by counting all of the
    characters in ``gibberish`` yourself, make Python do it for you! Recall that
    ``len(gibberish)`` returns the length of the string stored in the variable.
+
+   `repl.it file <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__ or
+   `Trinket file <https://trinket.io/python/04ee784ec9?showInstructions=true>`__
 
 Bonus
 ^^^^^
@@ -81,7 +86,8 @@ Define three variables for a spacecraft---one for the starting fuel level,
 another for the number of astronauts aboard, and the third for the altitude the
 spacecraft reaches. Assign each variable an initial value of 0.
 
-`While loop starter code <https://repl.it/@launchcode/LCHS-While-Loop-Exercises>`__.
+While loop starter code: `repl.it <https://repl.it/@launchcode/LCHS-While-Loop-Exercises>`__
+or `Trinket <https://trinket.io/python/21d6e91b92?showInstructions=true>`__.
 
 4. Construct ``while`` loops to do the following:
 
@@ -117,7 +123,8 @@ spacecraft reaches. Assign each variable an initial value of 0.
 The Accumulator Pattern
 -----------------------
 
-`Accumulator starter code <https://repl.it/@launchcode/LCHS-Accumulator-Exercises>`__.
+Accumulator starter code: `repl.it <https://repl.it/@launchcode/LCHS-Accumulator-Exercises>`__
+or `Trinket <https://trinket.io/python/506a6d99b0?showInstructions=true>`__.
 
 Use two ``input`` statements to prompt the user for a ``start_value`` and an
 ``end_value``. Both inputs should be integers.

@@ -141,9 +141,8 @@ How do we fix this?
 Use Expressions in ``range``
 ----------------------------
 
-Not only can we use variables inside ``range``, we can also use *expressions*.
-
-.. TODO: Insert book link to the expressions section.
+Not only can we use variables inside ``range``, we can also use *expressions*,
+which we practiced in the :ref:`Data and Variables <expressions>` chapter.
 
 For the program above, replace the ``for`` statement with this:
 

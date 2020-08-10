@@ -1,15 +1,13 @@
 Loops With Conditions
 =====================
 
-.. TODO: Insert internal link to conditionals chapter here.
-
-In the last chapter, we learned how to use conditionals to decide which block
-of code to run. In this chapter, we use loops to repeat a set of statements
-multiple times.
+In the :ref:`last chapter <conditionals>`, we learned how to use conditionals
+to decide which block of code to run. In this chapter, we use loops to repeat a
+set of statements multiple times.
 
 You might wonder:
 
-#. *Can I put a loop inside an ``if`` statement?*
+#. *Can I put a loop inside an if statement?*
 #. *Can I put a conditional inside a loop?*
 
 The answer to both of these questions is a definite, *YES!*
@@ -65,10 +63,13 @@ statement.
          for step in range(20):
             print("Python ROCKS!")
 
-#. IF ``condition`` is ``True``, the ``for`` loop starting on line 2 runs.
-#. IF ``other_condition`` is ``True``, then the loop starting on line 5 runs.
-#. IF ``condition`` and ``other_condition`` both return ``False``, then
-   ``Python ROCKS!`` gets printed 20 times by the last loop.
+   Set up this way, only one of the three loops will run:
+
+   #. IF ``condition`` is ``True``, the ``for`` loop starting on line 2 runs.
+   #. IF ``condition`` is ``False`` and ``other_condition`` is ``True``, then
+      the loop starting on line 5 runs.
+   #. IF ``condition`` and ``other_condition`` both return ``False``, then
+      ``Python ROCKS!`` gets printed 20 times by the last loop.
 
 Placing a loop inside a conditional allows us to choose when the loop body
 should run.

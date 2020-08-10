@@ -91,8 +91,8 @@ that nested list.
       101
       True
 
-Multi-Dimensions and List Methods
-----------------------------------
+Applying Methods to Nested Lists
+--------------------------------
 
 We can apply list methods to either the nested or outer lists. However,
 we must use bracket notation carefully.
@@ -101,13 +101,13 @@ To apply a method to the outer list, the syntax is:
 
 .. sourcecode:: python
 
-   multilist_name.method()
+   list_name.method()
 
 To apply a method to one of the nested lists, the syntax is:
 
 .. sourcecode:: python
 
-   multilist_name[index_of_nested_list].method()
+   list_name[index_of_nested_list].method()
 
 .. admonition:: Example
 
@@ -188,7 +188,7 @@ Use the following list to answer the questions:
 
    data = [
       ["science", "computer", "art"],
-      ["Jones", "Willoughby", "Rhodes"]
+      ["Jones", "Diaz", "Rhodes"]
    ]
 
 .. admonition:: Question
