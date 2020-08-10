@@ -1,3 +1,5 @@
+.. _conditionals:
+
 Making Decisions With Conditionals
 ==================================
 
