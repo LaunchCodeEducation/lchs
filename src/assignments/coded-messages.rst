@@ -55,7 +55,7 @@ to the originals.
 
    In this case, each original letter is shifted 2 places to the right in the alphabet.
 
-Open a new project in your code editor complete the following tasks.
+Open a new project in your code editor and complete the following tasks.
 
 The ``alphabet_position`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
