@@ -1,36 +1,31 @@
 Project: Errors and Debugging
 =============================
 
-Avast, ye scurvy dogs! We be needn' ta fix yonder code!
+The code in this project is broken! Your job is to fix it so we can clear a
+rocket for launch.
 
-The cap'n in charge of clearing our rocket for launch be out with a cold, and
-ye be the next tech in line.
-
-Yer job is to check the code and fix any bugs. Remember, the lives of the crew
-rest upon yer shoulders. Happy second day on the job!
-
-Yer directions:
+Requirements:
 
 #. Launch the rocket *only if* the fuel, crew and computer all check out OK.
 #. If a check fails, print that information to the console and scrub the
-   launch (then scrub the deck).
-#. If all checks be successful, print a countdown to the console, then
-   bellow "Liftoff!"
+   launch.
+#. If all checks be successful, print a countdown to the console followed by
+    "Liftoff!"
 
 .. admonition:: Note
 
-   If yer teacher added ye to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
    or a :ref:`Trinket course <trinket-course-assignments>`, do the exercises
    there.
 
-   If ye NOT be in a repl.it classroom or Trinket course, use the links given
+   If you are NOT in a repl.it classroom or Trinket course, use the links given
    in the text below.
 
 Fix Syntax Errors First
 -----------------------
 
-#. Run the following code as-is and squint yer eyes at the error message. Fix
-   the mistake, and then re-run the code to check it.
+#. Run the following code as-is and examine the error message. Fix the mistake,
+   and then re-run the code to check it.
 
    ::
 
@@ -49,9 +44,9 @@ Fix Syntax Errors First
 #. The next block of code hides two syntax errors. Run the code as-is to
    find the mistakes.
    
-   *Tip*: Don't be too hasty, Matey! Only ONE error gets flagged at a time. Fix
-   that ONE problem, and then re-run the code to check yer work. Avoid trying
-   to fix multiple issues at once.
+   *Tip*: Only ONE error gets flagged at a time. Fix that ONE problem, and then
+   re-run the code to check your work. Avoid trying to fix multiple issues at
+   once.
 
    ::
 
@@ -80,8 +75,8 @@ Fix Runtime Errors Next
 -----------------------
 
 #. Remember to examine the error message for clues about what went wrong. Pay
-    close attention to any line numbers given in the message---these will help
-    ye locate and repair the bug.
+   close attention to any line numbers given in the message---these will help
+   you locate and repair the bug.
 
    ::
 
@@ -97,7 +92,7 @@ Fix Runtime Errors Next
 
    `Debugging Project 3 <https://repl.it/@launchcode/LCHS-Debugging-Project-3>`__
 
-#. *Arrr!*  Now find and fix the runtime error in a longer code block.
+#. Now find and fix the runtime error in a longer code block.
 
    ::
 
@@ -127,22 +122,22 @@ Solve Logic Errors Last
 -----------------------
 
 Logic errors do not generate warning messages or prevent the code from running,
-but the program still does not work like ye want. (Refer to the
-:ref:`Fixing Logic Errors <fixing-logic-errors>` section if ye need to
+but the program still does not work right. (Refer to the
+:ref:`Fixing Logic Errors <fixing-logic-errors>` section if you need to
 review).
 
 #. First, run this sample code as-is and examine the output. Should the rocket
    have launched? Did it?
 
-   Do not worry about fixing the code yet. Ye will do that in the next steps.
+   Do not worry about fixing the code yet. You will do that in the next steps.
 
    .. raw:: html
 
       <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Project-5?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #. Let's break the code down into smaller chunks. Consider the first ``if/else``
-   block below. Add ``print("launch_ready =", launch_ready)`` after this block, then run the
-   program.
+   block below. Add ``print("launch_ready =", launch_ready)`` after this block,
+   then run the program.
 
    ::
 
@@ -162,7 +157,8 @@ review).
    ``False`` after the check? Is the program behaving as expected?
 
 #. Now consider the second ``if/else`` block. Add another
-   ``print("launch_ready =", launch_ready)`` after this block and run the program.
+   ``print("launch_ready =", launch_ready)`` after this block and run the
+   program.
 
    ::
 
@@ -216,18 +212,16 @@ review).
    ``computer_status``, should ``launch_ready`` be ``True`` or ``False``? Is
    the program behaving as expected?
 
-#. Ahoy, Houston! We spied a problem! The value of ``launch_ready`` assigned
-   in the first ``if/else`` block got changed in the second ``if/else``
-   block. Dangerous waters, Matey.
+#. Ah ha! The value of ``launch_ready`` assigned in the first ``if/else`` block
+   got changed in the second ``if/else`` block. This is a common
+   mistake---using the same variable to track the results of two separate
+   conditionals.
    
    Since the issue is with ``launch_ready``, ONE way to fix the logic error is
-   to use a different variable to store the fuel check result. Make yer code do
-   this. Make sure yer change works by updating the first ``print``
+   to use a different variable to store the fuel check result. Make your code
+   do this. Make sure your change works by updating the first ``print``
    statement.
 
-#. Almost done, so wipe the sweat off yer brow! Modify the final ``if/else``
-   block to print the countdown and "Liftoff!" if both the fuel check and
-   ``launch_ready`` variables are ``True``. Print "Launch scrubbed" if either
-   check fails.
-
-      Blimey! That's some good work. Now go feed yer parrot.
+#. Almost done! Modify the final ``if/else`` block to print the countdown and
+   ``"Liftoff!"`` if both the fuel check and ``launch_ready`` variables are
+   ``True``. Print ``"Launch scrubbed"`` if either check fails.

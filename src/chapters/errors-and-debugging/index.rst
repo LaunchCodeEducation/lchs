@@ -12,3 +12,4 @@ Errors and Debugging
    asking-good-questions
    exercises
    project
+   project-translated
