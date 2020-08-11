@@ -85,7 +85,7 @@ The ``alphabet_position`` Function
 .. admonition:: Tip
 
    #. You can assume the argument sent to the function will be a single letter.
-      Do not worry about what do to with longer strings or non-letter
+      Do not worry about what to do with longer strings or non-letter
       characters.
    #. ``alphabet_position`` should NOT print anything. It needs to *return* a
       value instead.
