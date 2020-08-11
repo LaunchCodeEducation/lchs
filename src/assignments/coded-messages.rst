@@ -19,10 +19,17 @@ For this assignment, you will create a program that changes plain text messages
 into coded ones. Your program will also decode messages to produce readable
 text.
 
-.. todo::
+.. admonition:: Note
 
-   Insert link to starter code (assignment 2). Make sure it contains a
-   ``main()`` function already defined.
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, complete Assignment
+   #2 there.
+
+   If you are NOT enrolled in a repl.it classroom or Trinket course, you can
+   find a copy of the starter code here:
+
+   #. `repl.it starter code <https://repl.it/@launchcode/LCHS-Assignment-2-starter-code>`__
+   #. `Trinket starter code <https://trinket.io/python/e9285d089f?showInstructions=true>`__
 
 Requirements
 ------------
@@ -43,7 +50,10 @@ takes each letter in a message and replaces it with a different one. The new
 letters are all *shifted* a certain number of spaces in the alphabet compared
 to the originals.
 
-.. todo:: Insert figure here (Caesar Cipher)
+.. figure:: figures/caesar-cipher.png
+   :alt: Image showing how the Caesar cipher shits letters in the alphabet.
+
+   In this case, each original letter is shifted 2 places to the right in the alphabet.
 
 Open a new project in your code editor complete the following tasks.
 
