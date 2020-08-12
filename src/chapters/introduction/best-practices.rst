@@ -1,33 +1,37 @@
-Best Practices: Learning To Code
-=================================
+Tips and Motivation for Learning To Code
+========================================
 
-For years, the education community has debated the best approach for
-*homework*. Should it be scored or not? What is the proper amount? Should
-it be even be assigned? So far, no single answer has been found.
+Best Practices
+---------------
 
-We won't open the debate here. Instead, here are a few simple facts for this
-course:
+*Whew!*  You made it to the end of the chapter. Good job. Here are some final
+bits of advice:
 
-#. Yes, there is homework, which consists of prep work, exercises, and
-   longer projects.
-#. You absolutely *SHOULD* try all of the practice tasks, even if they are not
-   graded.
+#. DO try every exercise and practice problem.
+#. Practice helps you master the basic quirks for a given programming language.
+#. DO experiment. Once you solve one given task, feel
+   free to tweak it. Great fun can be had if you ask, "What if I try ...?"
+   For example, if a problem asks you to sort a list alphabetically, can you
+   order it from z to a instead?
+#. ASK FOR HELP when you get stuck. We've all been there, and there is
+   no shame in looking for tips. Use your teacher, classmates, and Google as
+   the brilliant resources they are.
+#. The only "dumb questions" are the ones that are not asked.
+#. The rubber duck method works. Sometimes just describing a coding problem out
+   loud (to your screen, a parent, the wall, or a rubber duck) sparks an idea
+   about how to solve it.
+#. DO NOT copy/paste answers. There are plenty of websites that post
+   complete code. A simple copy/paste into the assignment box will give you a
+   correct answer, but you completely skipped your chance to learn something.
 
-The rest of this page is our attempt to motivate you to complete ALL of the
-work for this class. How big of a push you need depends on your
-personality. Read the sections that are most likely to encourage you.
+And don't ever forget to:
 
 .. pull-quote::
 
-   "Thanks, but you had me at, 'Do all the homework.' "
-
-If this is your thinking, then bless you. Skip to the best practices listed
-in the last section of this page. *You're awesome!*
-
-Otherwise, on to the motivation...
+   DO THE HOMEWORK!
 
 An Appeal to Wisdom
---------------------
+-------------------
 
 .. pull-quote::
 
@@ -42,7 +46,7 @@ first working loop, your understanding will be incomplete.
 
 .. tip::
 
-   You learn to code by CODING. *Do your homework*.
+   You learn to code by CODING.
 
 Personal Drive (Grit)
 ---------------------
@@ -63,7 +67,7 @@ without some trial-and-error.
 
 .. tip::
 
-   Use your mistakes as learning opportunities. *Do your homework*.
+   Use your mistakes as learning opportunities.
 
 Effort = Outcome
 -----------------
@@ -110,7 +114,7 @@ ignored or incomplete. Doing the work *will* pay off. SO:
 
 .. tip::
 
-   Learning takes work, and you need the practice. *Do your homework*.
+   Learning takes work, and you need the practice.
 
 Sports Motivation
 -----------------
@@ -153,19 +157,15 @@ Attention sports fans! Embrace your favorite quote(s):
 
 .. tip::
 
-   Your heros worked really hard, so should you. *Do your homework*.
+   Your heros worked really hard, so should you.
 
 Social Media
 -------------
 
-wnt motivation n 140 caraters r less? Try thez (LOL):
+Want motivation in 140 characters or less? Check out these posts:
 
 a. `#hardworkworks <https://twitter.com/hashtag/hardworkworks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Ehashtag>`_
 b. Rocky (`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`__) because it's just that good.
-
-.. tip::
-
-   *Do th HW*.
 
 Marathon Analogy
 ----------------
@@ -198,33 +198,6 @@ Learning to code follows the same idea:
 
 .. tip::
 
-   *Do your homework*, and you will consistently get better.
+   Do your work, and you will consistently get better.
 
-Best Practices
----------------
 
-*Whew!*  You made it to the bottom of the page. Good job. Here are some final
-bits of advice:
-
-#. DO try every exercise and practice problem.
-#. Practice helps you master the basic quirks for a given programming language.
-#. DO experiment. Once you solve one given task, feel
-   free to tweak it. Great fun can be had if you ask, "What if I try ...?"
-   For example, if a problem asks you to sort a list alphabetically, can you
-   order it from z to a instead?
-#. ASK FOR HELP when you get stuck. We've all been there, and there is
-   no shame in looking for tips. Use your teacher, classmates, and Google as
-   the brilliant resources they are.
-#. The only "dumb questions" are the ones that are not asked.
-#. The rubber duck method works. Sometimes just describing a coding problem out
-   loud (to your screen, a parent, the wall, or a rubber duck) sparks an idea
-   about how to solve it.
-#. DO NOT copy/paste answers. There are plenty of websites that post
-   complete code. A simple copy/paste into the assignment box will give you a
-   correct answer, but you completely skipped your chance to learn something.
-
-And don't forget:
-
-.. pull-quote::
-
-   DO THE HOMEWORK!!!!

@@ -5,8 +5,9 @@ Most programmers have a favorite coding language, but there is NOT a single,
 best choice. Each language does some things very well, other things pretty well, and
 a few things not so well.
 
-For most tasks, any programming language will do the job. Which one you use
-depends on convenience and personal preference. So why start with Python?
+For most tasks, any programming language can do the job.
+You have to decide which one to use for a project based on what the language does very well and which languages you enjoy using.
+So why start with Python?
 
 Python Is A Friendly First Language
 -----------------------------------
@@ -63,13 +64,7 @@ number) from 1 - 10 and then print it to the screen.
 Each code sample does exactly the same thing, but the keywords that Python uses
 are very similar to their English meanings. ``random.randint(1, 10)`` can be
 read as "select a random integer from 1 - 10", and ``print`` does just what it
-says. ``console.log()`` and ``System.out.println()`` are not as clear.
-
-Even though Java is amazingly popular, beginners who start with the language
-must learn both fundamental skills as well as the meaning behind ``public
-static void main``. Python uses a much simpler vocabulary, which allows new
-coders to focus on building their core skills instead of worrying about the
-placement of ``{}``, ``;``, and building all code inside *classes*.
+says. ``console.log()`` and ``System.out.println()`` are not as clear. For this reason, you may find Python more intuitive than Java or JavaScript to start with.
 
 Python Does Lots of Things
 --------------------------
