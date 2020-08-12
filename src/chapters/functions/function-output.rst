@@ -41,8 +41,8 @@ We can see this result if we ``print(len('Python'))``:
 
    6
 
-Note that the output is NOT ``"len('Python')"`` or ``Python``. Instead, the
-code prints the value *returned* by the ``len()`` function.
+Note that we do NOT see ``"len('Python')"`` or ``Python`` on the screen.
+Instead, the code prints the value *returned* by the ``len()`` function.
 
 Returning a Value
 ^^^^^^^^^^^^^^^^^
@@ -58,10 +58,9 @@ to the function body. A return statement has the general syntax:
 program*. ``some_value`` is the data that gets returned, and it may be any data
 type (``float``, ``str``, ``bool``, ``list``, etc.).
 
-We may return the value of a variable or the result of an
-expression. For example, ``return num`` returns whatever value has been 
-assigned to ``num``, while ``return num >= 20`` sends back either ``True`` or
-``False``.
+Functions can return the value of a variable or the result of an expression.
+For example, ``return num`` returns whatever value has been assigned to
+``num``, while ``return num >= 20`` sends back either ``True`` or ``False``.
 
 .. admonition:: Example
 
@@ -134,7 +133,7 @@ When we call ``draw_square`` in line 9, we do not want the function to give us
 an *answer*. Instead, we want it to make a turtle draw a specific shape on the
 screen. In this case, the function does not need to send any data back to the
 main program. Once the turtle finishes moving, the function ends, and control
-passes back to the the next statement after the function call.
+passes to the statement after the function call.
 
 When we write a function, we must decide whether or not it will return data
 once its job is done. We do NOT need to include the ``return`` keyword in
@@ -144,8 +143,8 @@ every function.
 ---------------------------
 
 When a ``return`` statement executes, the function ends, even if more code
-follows the statement in the function body. This means we must be careful to
-use ``return`` only when the work of the function is done.
+follows in the function body. We must be careful to use ``return`` only when
+the work of the function is done.
 
 .. admonition:: Example
 
@@ -175,44 +174,50 @@ use ``return`` only when the work of the function is done.
 We can use the fact that ``return`` ends a function to force it to stop at a
 specific point.
 
-.. admonition:: Example
+.. admonition:: Try It!
 
    This function adds up the integers 0...n. However, if we send in an argument
    that is NOT a positive integer, the function sends back an error message.
 
-   .. sourcecode:: python
-      :linenos:
+   .. raw:: html
 
-      def sum_to_n(an_int):
-         if type(an_int) != int or an_int <= 0:
-            return "Invalid entry. Argument must be a positive integer."
-         
-         total = 0
-         for number in range(an_int+1):
-            total += number
+      <iframe src="https://trinket.io/embed/python/14412b9424?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-         return total
-      
-      result = sum_to_n('abc')
-      print(result)
+   On line 12, try replacing the argument in the function call with:
 
-   **Console Output**
+   #. a negative number,
+   #. a decimal value,
+   #. a string (like ``'abc'``).
 
-   ::
-
-      Invalid entry. Argument must be a positive integer.
-
-When we call the function in line 11, we send in the string ``'abc'`` as the
-argument. On line 6, using a string inside ``range`` would cause the program to
-crash, but the ``if`` statement in line 2 prevents that from happening. Since
-``type('abc') != int`` is ``True``, the ``return`` statement on line 3
-executes and sends the error message back to the main program. In this case,
-the ``for`` loop does not run.
+Consider what happens if we call the ``sum_one_to_n()`` function and use the
+string ``'abc'`` as the argument. On line 7, using a string inside ``range``
+would cause the program to crash, but the ``if`` statement in line 3 prevents
+that from happening. Since ``type('abc') != int`` is ``True``, the ``return``
+statement on line 4 runs and sends the error message back to the main program.
+In this case, the ``for`` loop does not run.
 
 Try It!
 -------
 
-Lorem ipsum...
+#. In the editor below, define a function called ``double_value``, which takes
+   a single parameter called ``value``.
+#. Inside the function, add the statement ``return value*2``. Don't forget to
+   indent!
+#. Run your program to check for error messages. If any occur, fix the bugs and
+   try again. Properly done, NOTHING shows up in the console! The code contains
+   no ``print`` statements yet.
+#. Below the function, define a new variable and assign it ``double_value(4)``.
+#. Finally, print the value of your new variable.
+#. Run your program to check your work. For ``double_value(4)``, the printed
+   result should be ``8``.
+
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python/c96a6ba9a4?runOption=run" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+#. What happens if you send in a string instead of a number?
+#. Assign a value to a variable, then call the function with the variable as
+   the argument (e.g. ``double_value(variable_name)``).
 
 Check Your Understanding
 ------------------------
