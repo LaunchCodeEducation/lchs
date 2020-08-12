@@ -1,5 +1,7 @@
-Project: Errors and Debugging
-=============================
+.. _translated-pirate-project:
+
+Project: Errors and Debugging (Translated)
+==========================================
 
 The code in this project is broken! Your job is to fix it so we can clear a
 rocket for launch.
@@ -10,7 +12,7 @@ Requirements:
 #. If a check fails, print that information to the console and scrub the
    launch.
 #. If all checks be successful, print a countdown to the console followed by
-    "Liftoff!"
+   "Liftoff!"
 
 .. admonition:: Note
 
@@ -21,8 +23,14 @@ Requirements:
    If you are NOT in a repl.it classroom or Trinket course, use the links given
    in the text below.
 
+   If you would like to see the project instructions in pirate-speak,
+   :ref:`click here for the translation <debugging-project>`.
+
 Fix Syntax Errors First
 -----------------------
+
+Find this code at `repl.it <https://repl.it/@launchcode/LCHS-Debugging-Syntax-Errors-Project>`__
+or `Trinket <https://trinket.io/python/e919db137a?showInstructions=true>`__.
 
 #. Run the following code as-is and examine the error message. Fix the mistake,
    and then re-run the code to check it.
@@ -38,8 +46,6 @@ Fix Syntax Errors First
       else:
          print('WARNING: Insufficient fuel!')
          launch_ready = False
-
-   `Debugging Project 1 <https://repl.it/@launchcode/LCHS-Debugging-Project-1>`__
 
 #. The next block of code hides two syntax errors. Run the code as-is to
    find the mistakes.
@@ -69,10 +75,11 @@ Fix Syntax Errors First
       else:
          print("Launch scrubbed.")
 
-   `Debugging Project 2 <https://repl.it/@launchcode/LCHS-Debugging-Project-2>`__
-
 Fix Runtime Errors Next
 -----------------------
+
+Fix this code at `repl.it <https://repl.it/@launchcode/LCHS-Debugging-Runtime-Errors-Project>`__
+or `Trinket <https://trinket.io/python/b9380365cb?showInstructions=true>`__.
 
 #. Remember to examine the error message for clues about what went wrong. Pay
    close attention to any line numbers given in the message---these will help
@@ -81,7 +88,7 @@ Fix Runtime Errors Next
    ::
 
       launch_ready = False
-      fuel_level = 17000
+      fuel_level = 27000
 
       if fuel_Level >= 20000:
          print('Fuel level cleared.')
@@ -89,8 +96,6 @@ Fix Runtime Errors Next
       else:
          print('WARNING: Insufficient fuel!')
          launch_ready = False
-
-   `Debugging Project 3 <https://repl.it/@launchcode/LCHS-Debugging-Project-3>`__
 
 #. Now find and fix the runtime error in a longer code block.
 
@@ -116,8 +121,6 @@ Fix Runtime Errors Next
       else:
          print("Launch scrubbed.")
 
-   `Debugging Project 4 <https://repl.it/@launchcode/LCHS-Debugging-Project-4>`__
-
 Solve Logic Errors Last
 -----------------------
 
@@ -125,6 +128,9 @@ Logic errors do not generate warning messages or prevent the code from running,
 but the program still does not work right. (Refer to the
 :ref:`Fixing Logic Errors <fixing-logic-errors>` section if you need to
 review).
+
+Fix this code at `repl.it <https://repl.it/@launchcode/LCHS-Debugging-Logic-Errors-Project>`__
+or `Trinket <https://trinket.io/python/5b243176c2?showInstructions=true>`__.
 
 #. First, run this sample code as-is and examine the output. Should the rocket
    have launched? Did it?
@@ -136,13 +142,9 @@ review).
       <iframe height="700px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Project-5?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 #. Let's break the code down into smaller chunks. Consider the first ``if/else``
-   block below. Add ``print("launch_ready =", launch_ready)`` after this block,
-   then run the program.
+   block below.
 
    ::
-
-      launch_ready = False
-      fuel_level = 17000
 
       if fuel_level >= 20000:
          print('Fuel level cleared.')
@@ -151,10 +153,11 @@ review).
          print('WARNING: Insufficient fuel!')
          launch_ready = False
 
-   `Debugging Project 6 <https://repl.it/@launchcode/LCHS-Debugging-Project-6>`__
-
-   Given the ``fuel_level`` value, should ``launch_ready`` be ``True`` or
-   ``False`` after the check? Is the program behaving as expected?
+   a. Comment out lines 14 - 25 in the code editor.
+   b. Add ``print("launch_ready =", launch_ready)`` after the first block,
+      then run the program.
+   c. Given the ``fuel_level`` value, should ``launch_ready`` be ``True`` or
+      ``False`` after the check? Is the program behaving as expected?
 
 #. Now consider the second ``if/else`` block. Add another
    ``print("launch_ready =", launch_ready)`` after this block and run the
@@ -162,18 +165,12 @@ review).
 
    ::
 
-      launch_ready = False
-      crew_status = True
-      computer_status = 'green'
-
       if crew_status and computer_status == 'green':
          print('Crew & computer cleared.')
          launch_ready = True
       else:
          print('WARNING: Crew or computer not ready!')
          launch_ready = False
-
-   `Debugging Project 7 <https://repl.it/@launchcode/LCHS-Debugging-Project-7>`__
 
    Given ``crew_status`` and ``computer_status``, should ``launch_ready`` be
    ``True`` or ``False`` after this check? Is the program behaving as expected?
@@ -206,8 +203,6 @@ review).
 
       print("launch_ready =", launch_ready)
 
-   `Debugging Project 8 <https://repl.it/@launchcode/LCHS-Debugging-Project-8>`__
-
    Given the values for ``fuel_level``, ``crew_status`` and
    ``computer_status``, should ``launch_ready`` be ``True`` or ``False``? Is
    the program behaving as expected?
@@ -219,7 +214,7 @@ review).
    
    Since the issue is with ``launch_ready``, ONE way to fix the logic error is
    to use a different variable to store the fuel check result. Make your code
-   do this. Make sure your change works by updating the first ``print``
+   do this, then check if your change works by updating the first ``print``
    statement.
 
 #. Almost done! Modify the final ``if/else`` block to print the countdown and
