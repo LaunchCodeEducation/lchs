@@ -36,7 +36,5 @@ Contributors
 
 .. _Chris Bay: https://github.com/chrisbay
 .. _Jim Flores: https://github.com/jimflores5
-.. _Blake Mills: https://github.com/welzie
 .. _Sally Steuterman: https://github.com/gildedgardenia
-.. _Paul Matthews: https://github.com/pdmxdd
 .. _Carly Langlois: https://github.com/carlylanglois
