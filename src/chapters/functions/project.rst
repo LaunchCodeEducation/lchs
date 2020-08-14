@@ -42,6 +42,15 @@ to access the starter code.
 If you are NOT enrolled in a repl.it classroom or Trinket course, use the
 editors below to complete the project.
 
+.. admonition:: Note
+
+   The code editors embedded in the exercises all include a *Remix* button in
+   the upper right corner which will save the code to your account. For the
+   matching repl.it code, click these links:
+
+   #. `Parts A - C <https://repl.it/@launchcode/Functions-Project-Parts-A-C>`__
+   #. `Bonus Missions <https://repl.it/@launchcode/Functions-Project-Bonus>`__
+
 Part A: Reverse Characters
 --------------------------
 
@@ -147,11 +156,6 @@ Bonus Missions
       Fill the first blank with the modified string, and fill the second blank
       with the original string.
 
-   .. raw:: html
-
-      <iframe src="https://trinket.io/embed/python/33fee98fb8" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
-
 #. Now test your function:
 
    f. Outside of the function, define a variable and assign it a string value
@@ -179,4 +183,4 @@ Bonus Missions
 
    .. raw:: html
 
-      <iframe src="https://trinket.io/embed/python/ee80a82014" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+      <iframe src="https://trinket.io/embed/python/25bb2d1445" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
