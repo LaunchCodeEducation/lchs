@@ -9,7 +9,7 @@ partner and split the task in half?
 
 Regardless of how you completed the task, you probably followed a *pattern* to
 make the process easier. If you had to repeat the task with a new set of words,
-you could jump right and follow the same pattern.
+you could jump right in and follow the same pattern.
 
 .. index:: ! algorithm
 
@@ -26,8 +26,7 @@ using a different set of ingredients.
 
 An *algorithm* is like a recipe. It is a careful series of steps that, when
 followed, produce a specific result. Programmers create algorithms to solve
-small tasks. By combining these small answers, programmers can solve much
-larger problems.
+small tasks.
 
 For Example
 ^^^^^^^^^^^
@@ -61,9 +60,7 @@ that can be used in many different situations to organize different lists of
 words.
 
 Alphabetizing is a process we can teach a computer to do, and the algorithm
-will complete the process much more rapidly than a human. However, unlike the
-alphabet song that many of us still sing in our heads, programmers must use a
-different method to train the computer.
+will complete the process much more rapidly than a human.
 
 Check Your Understanding
 -------------------------

@@ -23,14 +23,14 @@ Create a Trinket.io Account
 Create a new student account with Trinket `here <https://trinket.io/signup>`__.
 
 .. figure:: figures/trinket-signup.png
-   :alt: Image of the Trinket.io sign-up screen.
+   :alt: Trinket.io sign-up screen.
 
 After you sign in, you will see your *Home* screen, which displays your recent
 work and course options. Since you are just starting out, you won't need to do
 much on this screen.
 
 .. figure:: figures/trinket-home.png
-   :alt: Image of Trinket.io home screen.
+   :alt: Trinket.io home screen.
 
    Home screen
 
@@ -39,7 +39,7 @@ this option from the username dropdown menu. Scroll through the language
 options and select either *Python* (free account) or *Python3* (paid account).
 
 .. figure:: figures/new-trinket.png
-   :alt: Screenshot of the dropdown menus for creating a new Python Trinket.
+   :alt: Dropdown menus for creating a new Python Trinket.
    :width: 70%
 
    New trinket options.
@@ -48,7 +48,7 @@ After you select the language, your new trinket opens! Click on *Untitled* to
 name your project, then use the *Save* button.
 
 .. figure:: figures/name-trinket.png
-   :alt: Screenshot of a new trinket, with an arrow pointing out how to name it.
+   :alt: A new trinket, with an arrow pointing out how to name it.
    :width: 70%
 
    Name your new project!
@@ -86,7 +86,7 @@ Now let's take a look at how to use Trinket. The workspace consists of two
 main panels, one hidden panel, and several menu functions.
 
 .. figure:: figures/trinket-overview.png
-   :alt: Image showing Trinket code editor layout
+   :alt: Trinket code editor layout
 
 Features to note:
 
