@@ -25,8 +25,8 @@ machine itself.
 .. index::
    single: function; call
 
-**Calling a function** is the act of running that function and supplying it
-with the information it needs to perform its action.
+**Calling a function** is the act of running that function and giving it the
+information it needs to do its job.
 
 Making a Function Run
 ---------------------

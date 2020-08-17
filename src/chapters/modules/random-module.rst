@@ -23,7 +23,6 @@ printed values change each time. These are random numbers.
 
    <iframe src="https://trinket.io/embed/python/a38187485a" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-
 .. index:: ! random(), ! randint()
 
 The **random()** function returns a float value in the range 0.0 - 1.0
