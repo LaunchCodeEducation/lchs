@@ -10,8 +10,19 @@ b. Calls functions based on the user's responses.
 Rather than coding all of the functions from scratch, you are going to use
 existing modules to help assemble your project.
 
-Open `this link <https://trinket.io/python/a579c40c9f>`__ and fork the starter
-code, then complete the following:
+.. admonition:: Note
+
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+   there.
+
+   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
+   the following links to copy the starter code:
+
+   #. Open this `Trinket <https://trinket.io/python/a579c40c9f>`__ and *Remix*
+      before getting started.
+   #. Open this `repl <https://repl.it/@launchcode/LCHS-Modules-Chapter-Exercises>`__
+      and *Fork* before getting started.
 
 Import Module Code
 ------------------
@@ -34,7 +45,7 @@ Finish Coding A New Module
    :ref:`randomly selected element <random-collection-item>` from that list.
 #. Place any loose statements you find in the ``random_select.py`` code into a
    ``main()`` function.
-#. Import the ``random_select`` module into the main function code.
+#. Import the ``random_select`` module into the ``main.py`` program.
 
 Rename Imported Modules
 -----------------------

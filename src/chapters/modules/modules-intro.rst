@@ -127,7 +127,6 @@ Check Your Understanding
 
    In Python a module is:
 
-
    .. raw:: html
 
       <ol type="a">
