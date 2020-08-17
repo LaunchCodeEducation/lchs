@@ -167,6 +167,10 @@ Want motivation in 140 characters or less? Check out these posts:
 a. `#hardworkworks <https://twitter.com/hashtag/hardworkworks?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Ehashtag>`_
 b. Rocky (`Gonna Fly Now <https://www.youtube.com/watch?v=ioE_O7Lm0I4/>`__) because it's just that good.
 
+.. tip::
+
+   Sometimes you can find the inspo you need in your social media feeds!
+
 Marathon Analogy
 ----------------
 

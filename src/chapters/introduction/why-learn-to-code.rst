@@ -15,8 +15,8 @@ information. Code is how Siri and Alexa know what you want when you say, "Call M
 Code is how we teach a self-driving car the difference between a street sign and a person walking their dog.
 
 Because code is how we can communicate with computers, learning to code is *vital* to living in the 21st century.
-However, there isn't any one way to code. We can use multiple different languages for multiple different purposes.
-Coding has changed over time as we invent new platforms and devise new purposes for our coding skills.
+However, there isn't any one way to code. We can use different languages for different projects.
+Coding changes over time as we invent new platforms and devise new purposes for our coding skills.
 
 As our needs change, technology changes to meet them. For example, when we needed a quicker
 way to talk to each other over long distances, we invented phones. As our
@@ -27,7 +27,7 @@ our house, and pay for groceries.
 The skills required to make a phone 30 years ago are NOT the same skills
 required to make a phone today. Just as technology changes, programmers must
 adapt and grow. A big part of learning how to code is *learning how to learn*.
-We may learn how to code using one language today and need to learn a new one tomorrow.
+We can use the practices we put in place to learn one programming language today to learn a new one tomorrow.
 
 Learning to code is not only valuable and challenging, it is also FUN.
 Every success keeps us going and encourages us to learn new things. You may

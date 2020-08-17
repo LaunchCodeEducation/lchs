@@ -6,7 +6,7 @@ best choice. Each language does some things very well, other things pretty well,
 a few things not so well.
 
 For most tasks, any programming language can do the job.
-You have to decide which one to use for a project based on what the language does very well and which languages you enjoy using.
+To pick which one to use, think about what each language does best and which languages you enjoy.
 So why start with Python?
 
 Python Is A Friendly First Language
@@ -64,7 +64,8 @@ number) from 1 - 10 and then print it to the screen.
 Each code sample does exactly the same thing, but the keywords that Python uses
 are very similar to their English meanings. ``random.randint(1, 10)`` can be
 read as "select a random integer from 1 - 10", and ``print`` does just what it
-says. ``console.log()`` and ``System.out.println()`` are not as clear. For this reason, you may find Python more intuitive than Java or JavaScript to start with.
+says. ``console.log()`` and ``System.out.println()`` are not as clear.
+For this reason, new coders may find Python more readable than Java or JavaScript to start with.
 
 Python Does Lots of Things
 --------------------------
