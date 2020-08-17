@@ -2,9 +2,8 @@ Adding Comments
 ===============
 
 As programs get bigger and more complicated, they get more difficult to read.
-Good programmers try to make their code understandable to others, but even with
-Python it is still tricky to look at a large program and figure out what it is
-doing and why.
+Good programmers try to make their code understandable to others. 
+However, even with Python, it is still tricky to look at a large program and figure out what is going on.
 
 The best coders add notes to their code to clearly explain what the program is
 doing. These notes are called *comments*.
@@ -24,7 +23,7 @@ Experiment by adding and removing comments to the code.
 
 Notice that when you run the program, it still prints the phrase ``Hello,
 World``, but none of the comments appear. Also notice the blank lines left in
-the code, which are also ignored by the compiler.
+the code also ignored by the compiler.
 
 Comments and blank lines make your programs much easier for humans to read. Use
 them often!
