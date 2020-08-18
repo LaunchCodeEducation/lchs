@@ -27,7 +27,7 @@ our house, and pay for groceries.
 The skills required to make a phone 30 years ago are NOT the same skills
 required to make a phone today. Just as technology changes, programmers must
 adapt and grow. A big part of learning how to code is *learning how to learn*.
-We can use the practices we put in place to learn one programming language today to learn a new one tomorrow.
+We can use the practices we put in place to learn our first programming language to learn another one.
 
 Learning to code is not only valuable and challenging, it is also FUN.
 Every success keeps us going and encourages us to learn new things. You may

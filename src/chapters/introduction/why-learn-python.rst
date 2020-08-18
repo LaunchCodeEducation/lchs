@@ -65,7 +65,7 @@ Each code sample does exactly the same thing, but the keywords that Python uses
 are very similar to their English meanings. ``random.randint(1, 10)`` can be
 read as "select a random integer from 1 - 10", and ``print`` does just what it
 says. ``console.log()`` and ``System.out.println()`` are not as clear.
-For this reason, new coders may find Python more readable than Java or JavaScript to start with.
+For this reason, new coders may find Python more readable than Java or JavaScript.
 
 Python Does Lots of Things
 --------------------------
