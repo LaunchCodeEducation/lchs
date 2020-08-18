@@ -7,6 +7,23 @@ account to access the starter code file.
 If you are NOT enrolled in either type of classroom, use the editors below to
 complete the exercises.
 
+If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+or a :ref:`Trinket course <trinket-course-assignments>`, login to your account
+to access the starter code for each exercise.
+
+If you are NOT enrolled in a repl.it classroom or Trinket course, use the
+editors below to complete the project.
+
+.. admonition:: Note
+
+   The code editors embedded in the exercises all include a *Remix* button in
+   the upper right corner which will save the code to your Trinket account. For
+   the matching repl.it code, click these links:
+
+   #. `Part A <https://repl.it/@launchcode/LCHS-Dictionary-Exercises-Part-A>`__
+   #. `Parts B and C <https://repl.it/@launchcode/LCHS-Dictionary-Exercises-Parts-B-and-C>`__
+   #. `Parts D and E <https://repl.it/@launchcode/LCHS-Dictionary-Exercises-Parts-D-and-E>`__
+
 Part A: Search a Dictionary
 ---------------------------
 
@@ -19,14 +36,21 @@ flavors with their cost per scoop. Your job is to do the following:
    a. The function searches the dictionary for the flavor and returns its cost.
    b. If the flavor is not in the dictionary, return a value of ``0``.
 
+#. After coding the ``return_cost`` function, run the program and examine the
+   output. Make sure your function behaves as expected before moving to the
+   next step. Don't forget to assign different strings to the ``choice``
+   variable! 
 #. Write a function called ``fanciest_flavor`` that takes a dictionary as a
    parameter. The function should return the key name for the most expensive
    choice in the dictionary.
+#. Uncomment the 3 indicated lines in ``main()``, then run the program several
+   times and examine the output. Change the prices in ``flavors`` after each
+   run to make sure your function correctly identifies the most expensive ice
+   cream flavor.
 
 .. raw:: html
 
    <iframe src="https://trinket.io/embed/python3/e377c26043" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
 
 Part B: Keys from a Collection
 ------------------------------
@@ -35,8 +59,8 @@ Use the accumulator pattern to add new key/value pairs to an empty dictionary.
 
 #. Write a function called ``assign_tickets`` that takes a list of names as a
    parameter.
-#. The function should take each name from the list and create a key in a new
-   dictionary.
+#. The function should take each name from the list and use it to create a key
+   in the dictionary.
 #. For the value of each key, assign a random integer from 100-500.
 
    .. admonition:: Tip
@@ -46,10 +70,11 @@ Use the accumulator pattern to add new key/value pairs to an empty dictionary.
 
       Check out the :ref:`Unique Dictionary Values <unique-dict-values>`
       section in the ``Random Module`` appendix if you would like to avoid
-      repeats when assigning the values.
+      repeats in the values.
 
-#. Return the new dictionary and assign it to a ``ticket_holders`` variable in
-   ``main()``.
+#. Return the new dictionary.
+#. In ``main()``, call the ``assign_tickets`` function and assign the result to
+   a ``ticket_holders`` variable.
 
 Print ``ticket_holders`` to check that your code works as expected. Your output
 should look something like:
@@ -60,8 +85,7 @@ should look something like:
 
 .. raw:: html
 
-   <iframe src="https://trinket.io/embed/python3/ecee90db5a" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
+   <iframe src="https://trinket.io/embed/python/494766d553" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Part C: Modify Values
 ---------------------
@@ -81,8 +105,8 @@ The ``fix_tickets`` function should:
 #. Unless you cloned the dictionary, there is no need to return the updated
    collection.
 
-To check your code, be sure to print ``ticket_holders`` after calling the
-``fix_tickets`` function.
+To check your code, be sure to print ``ticket_holders`` before and after
+calling the ``fix_tickets`` function.
 
 **Sample Output:**
 
@@ -103,7 +127,7 @@ The function should:
 #. Create an empty dictionary called ``counts``.
 #. Loop through the string and check each character.
 
-   a. If the character does NOT exist in as a key in ``counts``, add it to and
+   a. If the character does NOT exist in as a key in ``counts``, add it and
       assign it a value of ``1``.
    b. If the character DOES exist as a key in ``counts``, increase its value by
       one.
@@ -125,8 +149,7 @@ Be sure to print the returned dictionary to check your code.
 
 .. raw:: html
 
-   <iframe src="https://trinket.io/embed/python3/9bfa56e621" width="100%" height="550" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
-
+   <iframe src="https://trinket.io/embed/python/86e403e1a1" width="100%" height="550" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Part E: Use a List to Sort Key/Value Output
 -------------------------------------------
