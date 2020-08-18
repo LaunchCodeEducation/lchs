@@ -70,7 +70,7 @@ Let's play with a couple of examples to practice this.
 
    #. Indent line 9 to put the ``print`` statement inside the loop. Run the
       program to see how ``vowel_counts`` grows each time the loop repeats.
-   #. Replace ``guide`` with ``games``.
+   #. Replace ``guide`` with ``games`` in line 7.
    #. Use a different string in the ``for`` statement to count different
       letters or other characters. (As a good Python coder, you should change
       your variable names once you stop counting vowels).

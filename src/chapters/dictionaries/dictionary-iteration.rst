@@ -125,12 +125,57 @@ two variables represent a new key/value pair from the collection.
    dictionary without needing to use bracket notation. On line 14, the variable
    ``value`` replaces ``comics[key]`` in our code. 
 
-Sorting Keys
-------------
+Sorting by Keys
+---------------
 
-Lorem ipsum...
+Dictionaries are *unordered* collections, so they do NOT include any type of
+sorting method. However, sometimes we might want to access or display the
+key/value pairs in a particular order---like alphabetically by key name.
 
-You can't, BUT there is a work-around if you use a list.
+If we want to sort a dictionary, the short answer is...we can't. However, we
+can use a work-around. We won't change the order of the key/value pairs in the
+dictionary. Instead, we will use a list, which can be sorted.
+
+.. admonition:: Try It!
+
+   Let's see how to print out the key/value pairs in a dictionary
+   alphabetically by key name.
+
+   #. Run the program as-is. Notice that the loop prints the key/value pairs in
+      the order they occur in the collection.
+   #. On line 13, add the statement ``keys_list = list(grocery_bill.keys())``.
+      On line 14, print ``keys_list`` and run the program to see the result.
+
+      - Line 13 does NOT change the dictionary. Instead, the ``list()``
+        function creates a new list that contains copies of all the key names
+        from ``grocery_bill``.
+   
+   #. On line 14, replace the ``print`` statement with ``keys_list.sort()``,
+      which alphabetizes the strings in the list.
+
+      - Note that line 14 sorts the *list* and NOT the dictionary!
+
+   #. Change the ``for`` statement to loop through ``keys_list`` instead of
+      ``grocery_bill.keys()``. Run the program again so see the alphabetical
+      result.
+   
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python/b2243c8d8c?runOption=run" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+   Note that we do not need to change the final ``print`` statement. It still
+   uses the loop variable ``key``, but in this case it takes elements from the
+   list we created in line 13 and sorted in line 14.
+
+   ``grocery_bill[key]`` still refers to a value from the dictionary, but now
+   we access the values in a different (sorted) order!
+
+   If we print the ``grocery_bill`` dictionary at the end of the program, we
+   can prove that we did NOT alter the order of the key/value paris.
+
+By adding copies of the key names to a separate list, we can sort the list to
+get the order we want. Then we use the key names *from the sorted list* to
+access the values in the dictionary.
 
 Check Your Understanding
 ------------------------
