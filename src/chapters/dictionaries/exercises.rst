@@ -1,12 +1,6 @@
 Exercises: Dictionaries
 =======================
 
-If your teacher uses a repl.it or Trinket *classroom*, follow the links in your
-account to access the starter code file.
-
-If you are NOT enrolled in either type of classroom, use the editors below to
-complete the exercises.
-
 If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
 or a :ref:`Trinket course <trinket-course-assignments>`, login to your account
 to access the starter code for each exercise.
