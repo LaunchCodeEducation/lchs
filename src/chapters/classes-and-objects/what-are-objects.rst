@@ -8,7 +8,7 @@ A quick search of the web returns this fact:
 In this book, we won't give a detailed explanation of what OOP means, but we
 will take a closer look at the idea behind *objects*.
 
-We have referred to objects in this book many times---turtle objects, string
+We have worked with objects many times already---turtle objects, string
 objects, list objects, etc. However, we never explained what objects represent
 in Python.
 
@@ -20,9 +20,9 @@ As a first step, let's review some vocabulary:
    small task.
 
 We assign values to variables so we can use that data later in our program. We
-define and call functions to do something with that data or perform actions on
-it. When we set up our programs this way, data storage and data manipulation
-get carried out separately.
+define and call functions to do something with data or perform actions on it.
+When we set up our programs this way, data storage and data manipulation get
+carried out separately.
 
 .. index:: ! object
 
@@ -50,34 +50,35 @@ object can perform are called its **methods**.
 Examples of Objects
 -------------------
 
-Lorem ipsum...
+Let's begin with a familiar example---strings.
 
-Why Use Objects?
-----------------
+.. sourcecode:: Python
 
-Walk into your kitchen and you want to cook something. You could write a
-``cook()`` function to call each time you want a meal. What would be the
-required parameters? (Temp, time, device, setup). No need for a pre-heat
-statement for a microwave. Instead of calling ``cook()`` and sending it a
-device, we could create a device object and call a ``cook`` method specific to
-that tool---``microwave.cook(), bbq.cook(), oven.cook(), stovetop.cook()``.
+   text = "I am an object."
 
-Do we ask our phone to look up the weather, or do we write instructions for
-finding weather data and send a phone to that function? This shows the
-difference between ``phone.weather()`` vs. ``show_weather(phone)``.
+All strings have a length property, and an individual character can be
+classified as a letter, digit, punctuation, etc. Stings also include a property
+that describes their case (upper or lower).
 
-OOP
----
+In addition to these properties, we can perform a defined set of actions on ANY
+string value. These :ref:`string methods <string-methods-appendix>` take the
+original string as data and return a new string. Examples include ``.upper()``
+and ``.split()``.
 
-Most of the Python programs you have written so far contain statements that
-gather data, do something with it, and then display the results. You included
-functions to help streamline your code, and you called those functions as you
-needed them. This style of programming focuses on the process of working with
-the data---define or import a function to do a specific job, call that function
-and send it some data, and then do something with the returned result.
+Since strings contain both properties and methods (data and behaviors), they
+are objects.
 
-An *object* wraps this process into a tidy package. A single object can store
-data, perform actions on that data, and return the results of those actions. If
-we bring together a collection of different objects, then we can build
-programs in a much more flexible way. Each object controls its own data and
-actions which breaks large programs into smaller and easier to control chunks.
+Another example of a Python object is a turtle.
+
+.. sourcecode:: Python
+
+   bob = turtle.Turtle()
+
+Properties for the ``bob`` object include its color, speed, pen size, shape,
+and location on the screen. Methods include actions like ``.forward()`` and
+``.circle()``.
+
+Anything related to the appearance or behavior of a turtle on the screen is
+included with every turtle object. We do NOT need to define a ``left()``
+function to rotate a turtle. The code for that behavior is part of the object
+itself.

@@ -7,6 +7,7 @@ Classes and Objects
    :maxdepth: 3
 
    what-are-objects
+   why-use-objects
    using-objects
    object-practice
    what-are-classes
