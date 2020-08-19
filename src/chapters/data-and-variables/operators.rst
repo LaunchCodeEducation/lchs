@@ -3,7 +3,7 @@ Operators
 
 Now that we know how to store data in variables, let's learn how to create new
 values from existing data. Run the following code. It stores values in two
-variables, then prints the result of several expressions.
+variables, ``number_of_days`` and ``hours_per_day``, then prints the result of several expressions.
 
 .. raw:: html
 
@@ -23,17 +23,17 @@ numbers or strings, or they be variables.
    :scale: 80%
    :alt: Operands are the values on either side of the operator.
 
-When Python finds an operator, it evaluates the expression and *returns* a new
-value. When a variable is used in an expression (like ``number_of_days - 5``),
-it gets replaced by the value it stores, and then the expression is evaluated.
+When Python encounters an operator, it evaluates the expression and *returns* a new
+value. When a variable is used in an expression (like ``number_of_days - 5``), 
+the variable's stored value is evaluated in the expression. 
 
 Math Operators
 --------------
 
-The most common operators perform simple math calculations. These behave just
-as you expect, and many of the symbols are probably familiar. However, there
-are two operators that are commonly used in programming but not much in math
-class.
+Some of the most common operators perform simple math calculations. These operators behave 
+just like their similar symbols in the world of math. Many of the symbols are probably 
+familiar to you. However, there are two operators that are commonly used in programming 
+but not much in math class.
 
 .. index:: ! +, ! -, ! *, ! /, ! **, ! //
 
@@ -65,17 +65,21 @@ class.
        ``5 ** 3`` returns ``125``
    * - ``//``
      - Divides the first operand by the second and rounds *down* to a whole number.
+       This is called **floor division** and is discussed :ref:`immediately below <floor_division>`.
      - ``3 // 2`` returns ``1``
    * - ``%``
-     - This is called the modulus operator, and it is discussed :ref:`below <modulus>`.
+     - This is called the **modulus** operator. It returns the remainder after dividing the first operand by the second.
+       It is discussed :ref:`below <modulo>`.
      - ``5 % 2`` returns ``1``
 
        ``10 % 2`` returns ``0``
 
+.. _floor_division:
+
 The ``//`` Operator
 ^^^^^^^^^^^^^^^^^^^
 
-Whenever Python performs division ``/``, it returns the value as a ``float``
+Whenever Python performs division with ``/``, the value returned is a ``float``
 data type.
 
 .. admonition:: Example
@@ -95,17 +99,17 @@ data type.
       1.0
       1.3333333333333333
 
-Even for results that are whole numbers, like ``10/10``, the ``float`` type
-contains a decimal.
+As you see above, even for results that are whole numbers, like ``10/10``, the data type
+returned is a ``float``, it contains a decimal.
 
 If we want the result of a division to be an integer, we can convert it
 using the ``int()`` function as we saw in the
 :ref:`type conversion section <type-conversion>`. In line 2 above, the syntax
 would be ``print(int(10 / 10))``, giving an output of ``1`` instead of ``1.0``.
 
-.. index:: ! integer division
+.. index:: ! floor division
 
-This situation, called **integer division**, is common enough that Python gives
+This situation, called **floor division**, is common enough that Python gives
 us a shortcut with the ``//`` operator. It divides two values and rounds the
 result DOWN to the next smallest integer, regardless of any decimal values.
 
@@ -139,15 +143,12 @@ result DOWN to the next smallest integer, regardless of any decimal values.
    rounding. ``int(-99 / 10)`` returns ``-9``, but ``-99 // 10`` returns
    ``-10``.
 
-.. _modulus:
+.. _modulo:
 
 The ``%`` Operator
 ^^^^^^^^^^^^^^^^^^^
 
-.. index:: ! modulus, ! %
-
-OK. Be patient. This takes some practice, but it's totally worth it. Let's
-start with the definition.
+.. index:: ! modulo,! modulus, ! %
 
 The **modulus** operator (``%``) takes two integers, divides them, and returns
 the *remainder*. Consider these examples, which might bring up fond memories
@@ -177,7 +178,7 @@ and ``10 % 5`` returns ``0``.
    Try changing the numbers on either side of the ``%`` operator and check the
    results.
 
-Just about every new coder wonders,
+You may be currently wondering:
 
    Why would I EVER want to use a modulus?
 
@@ -194,6 +195,10 @@ find yourself using ``%`` more than you expect.
 
    The value returned by ``a % b`` will be from ``0`` to ``b`` (not including
    ``b``).
+
+.. admonition:: Fun Fact
+
+   The operation that the *modulus* symbol performs is called **modulo**.
 
 Check Your Understanding
 ------------------------

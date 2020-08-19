@@ -66,9 +66,9 @@ Consider these examples of variable names:
       print(area_of_circle)
       
    With improved variable names, it becomes clear that the program is
-   calculating the area of a circle of radius 5. And although we have not yet learned 
-	what the symbols ``*`` and ``**`` do on line 3, the descriptive variable names give us some context to 
-	reasonably infer what these symbols mean here.
+   calculating the area of a circle of radius 5. Here's another benefit of descriptive variable names. 
+   Although we have not yet learned what the symbols ``*`` and ``**`` do on line 3, the descriptive 
+   variable names give us some context to reasonably infer what these symbols mean here.
 
 
 Keywords
@@ -90,7 +90,7 @@ specific, so we cannot use it to store a value.
 
    Most code editors will highlight keywords in a different color than
    variables or other parts of your code. This gives you a visual clue about
-   what is a keyword.
+   which words may be reserved for use as keywords.
 
 There are a little over 30 keywords in Python. You can find a complete list of
 them `here <https://www.programiz.com/python-programming/keyword-list>`__.
