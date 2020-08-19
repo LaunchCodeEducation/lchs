@@ -17,6 +17,7 @@ Chapters
    chapters/functions/index
    chapters/modules/index
    chapters/dictionaries/index
+   chapters/classes-and-objects/index
 
 .. toctree::
 
@@ -38,6 +39,7 @@ Projects
    chapters/functions/project
    chapters/modules/project
    chapters/dictionaries/project
+   chapters/classes-and-objects/project
 
 Assignments
 ===========
