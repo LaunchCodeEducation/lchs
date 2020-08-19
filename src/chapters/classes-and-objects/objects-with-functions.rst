@@ -1,0 +1,6 @@
+Using Objects in Functions
+==========================
+
+Lorem ipsum...
+
+Object scope...

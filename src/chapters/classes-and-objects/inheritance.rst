@@ -1,0 +1,4 @@
+Inheritance
+===========
+
+Lorem ipsum...
