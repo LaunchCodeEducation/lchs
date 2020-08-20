@@ -57,10 +57,15 @@ Using objects sounds similar to what we did in the
 :ref:`Modules chapter <modules-index>`. However, unlike the external module
 files, objects get created as they are needed and only *when the program runs*.
 
-Objects as Things
------------------
+Picture How Objects Work
+------------------------
 
-Lorem ipsum...
+As we shift our thinking towards using objects, it helps to create a mental
+picture that connects how we want to code with sone real life examples. In the
+world around us, we interact with objects all the time, like cars, phones, pets,
+and our friends.
+
+Lorem ipsum... (drive box).
 
 Phones as Objects
 ^^^^^^^^^^^^^^^^^
