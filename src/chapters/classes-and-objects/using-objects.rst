@@ -4,18 +4,18 @@ Working With Objects
 Once created, objects are *mutable*. We can change the values of properties or
 add new ones as needed.
 
-Accessing Properties
---------------------
+Object Properties
+-----------------
 
-When using objects, we often want to access or change the value of one of the
-properties. To do this, we will need the object's name and the name of the
-property.
+When using objects, we often want to access the value of a property, change a
+property value, or add a completely new property. To do this, we need the
+object's name as well as the name of the property.
 
-To access, change, or create a property, we use *dot notation*.
+To modify object properties, we use *dot notation*:
 
 .. sourcecode:: python
 
-   object_name.property_name  # Access a property value from the object.
+   object_name.property_name  # Access & return a property value from object_name.
 
    object_name.property_name = new_value  # Change the value of an existing property.
 
@@ -30,185 +30,65 @@ parentheses ``()``.
    and ``age``. Follow the instructions below the editor to practice using dot
    notation with an object.
 
-   .. todo:: Insert interactive editor here (object dot notation).
+   .. raw:: html
 
-   #. Run the program as-is to see how the dot notation on lines X and Y
-      *accesses* each property.
-   #. On line Z, use dot notation to change the value of the ``name`` property.
-   #. On line Z+1, use the ``+=`` operator to increase the age of ``dog`` by
-      3 years.
+      <iframe src="https://trinket.io/embed/python/0b67de0e64" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+   #. Run the program as-is to see how the dot notation on lines 8 and 10
+      accesses and *returns* the property values.
+   #. On line 13, use dot notation to change the value of the ``name``
+      property to ``'Fleas'``.
+   #. On line 14, use the ``+=`` operator to increase the age of ``dog`` by 3
+      years.
    #. Run the program again. Properly done, the output should look like:
 
       ::
 
-         Lore ipsum...
+         Spot
+         3
+         Fleas 6
 
-   #. Uncomment line A and run the program. You should see an error message
-      because ``dog`` does not contain the properties ``breed`` or ``is_cute``.
-   #. On the line before this ``print`` statement, use dot notation to create
-      a new property called ``breed`` and assign it a string value.
-   #. Repeat step 6 for the ``is_cute`` property, but assign it a boolean value
-      instead of a string.
+   #. Uncomment line 19 and run the program. You should see an error message
+      because ``dog`` does not contain a property called ``breed``.
+   #. On the line 17, use dot notation to create a new property called
+      ``breed`` and assign it a string value.
+   #. On line 18, add the ``is_cute`` property to ``dog``. Assign it a boolean
+      value instead of a string.
    #. Run the program again. Properly done, the output should look similar to:
 
       ::
 
-         Lore ipsum...
+         Spot
+         3
+         Fleas 6
+         mutt True
 
+Calling Methods
+---------------
+
+When we learned about strings, lists, and dictionaries, we practiced calling
+methods on each type of object. The same syntax applies for all other objects
+as well:
+
+.. sourcecode:: python
+
+   object_name.method_name(arguments)
+
+Note that some methods require *arguments* (data) inside the parentheses
+``()``, while other methods do not.
+
+.. sourcecode:: python
+
+   my_list.append(100)  # 100 is the argument for the list method .append()
+
+   my_string.lower() # The string method .lower() requires no arguments
 
 Methods vs. Functions
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Lorem ipsum...
-
-Dot Notation
-^^^^^^^^^^^^
-
-To access a property with dot notation, the code looks like: ``object.key``. Notice that the key is no longer surrounded by quotes. However, keys are still strings.
-
-.. note::
-
-   Recall, the only restraint in naming a key is that it has to be a valid JavaScript string.
-   Since a key could potentially have a space in it, bracket syntax would be the only way to access the value in that property because of the quotes.
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-      :linenos:
-
-      let tortoiseOne = {
-          species: "Galapagos Tortoise",
-          name: "Pete",
-          weight: 919,
-          age: 85,
-          diet: ["pumpkins", "lettuce", "cabbage"]
-      };
-
-      console.log(tortoiseOne["name"]);
-      console.log(tortoiseOne.name);
-
-   **Console Output**
-
-   ::
-
-      Pete
-      Pete
-
-Modifying Properties
---------------------
-
-A programmer can modify the value of a property by using either notation style.
-
-.. warning::
-
-   Recall that mutability means that a data structure can be modified without making a copy of that structure.
-   Objects are mutable data structures.
-   When you change the value of a property, the original object is modified and a copy is NOT made.
-
-.. admonition:: Example
-
-   In our zoo software, we may want to update Pete's weight as he has gained 10 lbs.
-   We will use both bracket syntax and dot notation for our software, but that is not a requirement!
-   Feel free to use whichever one suits your needs and is easiest for you and your colleagues to read.
-
-   .. sourcecode:: js
-      :linenos:
-
-      let tortoiseOne = {
-          species: "Galapagos Tortoise",
-          name: "Pete",
-          weight: 919,
-          age: 85,
-          diet: ["pumpkins", "lettuce", "cabbage"]
-      };
-
-      console.log(tortoiseOne.weight);
-
-      newWeight = tortoiseOne.weight + 10;
-
-      tortoiseOne["weight"] = newWeight;
-
-      console.log(tortoiseOne["weight"]);
-
-   **Console Output**
-
-   ::
-
-      919
-      929
-
-.. _add-new-object-properties:
-
-Add New Key/Value Pairs
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-After declaring and initializing an object, we can add new properties at any
-time by using bracket syntax:
-
-.. sourcecode:: js
-
-   objectName["new-key"] = propertyValue;
-
-.. admonition:: Example
-
-   .. sourcecode:: js
-      :linenos:
-
-      let tortoiseTwo = {
-          species: "Galapagos Tortoise",
-          name: "Pete",
-          weight: 919
-      };
-
-      console.log(tortoiseTwo);
-
-      tortoiseTwo["age"] = 120;
-      tortoiseTwo["speed"] = 'Faster than the hare.'
-
-      console.log(tortoiseTwo);
-      console.log(tortoiseTwo.age);
-
-   **Console Output**
-
-   ::
-
-      { species: 'Galapagos Tortoise', name: 'Pete', weight: 919 }
-      { species: 'Galapagos Tortoise',
-         name: 'Pete',
-         weight: 919,
-         age: 120,
-         speed: 'Faster than the hare.' }
-      120
 
 Check Your Understanding
 ------------------------
 
-All of the questions below refer to an object called ``giraffe``.
-
-.. sourcecode:: js
-   :linenos:
-
-   let giraffe = {
-     species: "Reticulated Giraffe",
-     name: "Cynthia",
-     weight: 1500,
-     age: 15,
-     diet: "leaves"
-   };
-
-.. admonition:: Question
-
-   We want to add a method after the ``diet`` property for easily increasing Cynthia's age on her birthday.
-   Which of the following is missing from our method? You can select MORE than one.
-
-   ``birthday: function () {age = age + 1;}``
-
-   a. ``return``
-   b. ``this``
-   c. ``diet``
-   d. a comma
-
-.. admonition:: Question
-
-   Could we use bracket syntax, dot notation, or both to access the properties of ``giraffe``?
-
+Lorem ipsum...
