@@ -84,7 +84,7 @@ Answer the following practice questions:
 In-Page Examples
 ----------------
 
-Some sections provide live-coding practice. These short examples include code
+Some sections provide coding practice. These short examples include code
 you can run and/or modify to quickly reinforce what you just read. Play around
 with these!
 
