@@ -22,8 +22,7 @@ Experiment by adding and removing comments to the code.
    <iframe height="650px" width="100%" src="https://repl.it/@launchcode/LCHS-Comments?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
 Notice that when you run the program, it still prints the phrase ``Hello,
-World``, but none of the comments appear. Also notice the blank lines left in
-the code also ignored by the compiler.
+World``, but none of the comments appear. Also, notice the compiler ignores the blank lines left in the code.
 
 Comments and blank lines make your programs much easier for humans to read. Use
 them often!
