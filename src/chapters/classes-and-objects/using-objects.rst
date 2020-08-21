@@ -83,12 +83,104 @@ Note that some methods require *arguments* (data) inside the parentheses
 
    my_string.lower() # The string method .lower() requires no arguments
 
-Methods vs. Functions
-^^^^^^^^^^^^^^^^^^^^^
+.. admonition:: Try It!
 
-Lorem ipsum...
+   Lorem ipsum...
+
+Methods vs. Functions
+---------------------
+
+Back in the functions chapter, we learned that these defined blocks of code
+behave like a :ref:`machine <function-machine>` when called. A function takes a
+set of input, performs an action with it, and (maybe) returns an output.
+
+Methods are also defined blocks of code that perform actions. Just like
+functions, we can call methods over and over again, send them input, and
+collect an output. So what's the difference between *methods* and *functions*?
+
+Functionally (pun intended), the two are the same thing. However, we should
+consider a method as a special type of function---one with some extra
+restrictions and advantages.
+
+Call Syntax
+^^^^^^^^^^^
+
+The first difference involves the syntax for calling functions vs. methods.
+
+::
+
+   function_name(arguments)
+
+   object_name.method_name(arguments)
+
+As programmers, WE call functions and send them all the data they need. If we
+leave out a value, our program will likely crash.
+
+On the other hand, OBJECTS run their own methods and can supply some or all of
+the required data.
+
+For example, if we call a function called ``increase_age``, we would need to
+provide it with two pieces of data---a current age and the amount to increase.
+
+.. sourcecode:: python
+
+   increase_age(current_age, years_older)
+
+The function would run and return the value for ``current_age + years_older``.
+We could then take that number and assign it to a variable.
+
+When we call a method, it can access all of the properties of the object. We
+do NOT need to include property values in the method call. If our ``dog``
+object has an ``increase_age`` method, we call it this way:
+
+.. sourcecode:: python
+
+   dog.increase_age(years_older)
+
+Note that we do NOT include the current age as an argument. Since the method is
+defined for the ``dog`` object, it automatically has access to the ``age``
+property. Once the method is done, the ``dog`` object updates its own ``age``
+value, so we do not need to capture a return value.
+
+Methods are Object Specific
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can call a function anywhere we want in our program, and it will often work
+with different data types. For example, ``len()`` operates equally well on the
+``string``, ``list``, and ``dict`` data types. The ``max()`` function operates
+on lists, strings, and a set of numbers separated by commas.
+
+Methods are defined to work with one specific type of object. We cannot call a
+method on objects of a different type.
+
+Shift in Thinking
+^^^^^^^^^^^^^^^^^
+
+.. todo:: Not sure about how useful this section is. Keep or remove?
+
+Assume we have a function called ``forward`` that takes a turtle and an
+integer as parameters. We call the function like so:
+
+::
+
+   forward(bob, 100)
+
+where ``bob`` is our turtle, and ``100`` is the number of steps.
+
+Calling a function makes it *perform an action*. If we were to talk directly to
+the function, we might say something like, *Hey you, forward function! Please
+take the turtle called bob and move it forward 100 steps*.
+
+Of course, we know that all turtle objects include a ``forward`` method:
+
+::
+
+   bob.forward(100)
+
+In this case, the *object* performs an action. Speaking to our code again would
+sound something like, *Hey bob! Move yourself forward 100 steps*.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+
