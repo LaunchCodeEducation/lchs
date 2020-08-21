@@ -97,12 +97,39 @@ RIGHT NOW). What we won't find in the kitchen is a device called ``cook()``.
 
 Each tool (stove, oven, microwave, etc.) has its own ``.cook()`` method
 designed to work with its hardware. To warm up our food, we put it in one
-device and then push a button or turn a dial. We do NOT push the tool and our
-food into a corner and say *Use this device to warm up this food*.
+device and then push a button or turn a dial. We do NOT place the tool and our
+food into a defined corner and say *Use this device to warm up this food*.
 
 .. todo:: Insert figure here! (``.cook()`` method for kitchen appliances).
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Which of the following refers to the *properties* of an object?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> behaviors of the object</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> actions the object can take</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> data describing the object</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = "Nope! This refers to the object's methods.";
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
