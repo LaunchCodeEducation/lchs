@@ -44,7 +44,7 @@ the ``Hello, World!`` program. By this standard, Python does very well.
 
 .. admonition:: Note
 
-   If you typed correctly, you saw the output ``Hello, World!`` If you left out
+   If you typed correctly, you saw the output ``Hello, World!``. If you left out
    or mistyped any characters, then you either saw a misspelled output or an
    error message. Do not worry if you make mistakes! These experiences still
    teach you something. Fix any errors and try again.

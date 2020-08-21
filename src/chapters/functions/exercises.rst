@@ -1,11 +1,23 @@
 Exercises: Functions
 ====================
 
-If your teacher uses repl.it *classroom*, follow the links in your classroom
-account to access each starter code file.
+If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+there.
 
-If you are NOT enrolled in a repl.it classroom, use the editors below to
-complete the exercises.
+If you are NOT enrolled in a repl.it classroom or Trinket course, use the
+links given below to complete the exercises.
+
+.. admonition:: Note
+
+   The code editors embedded in the exercises all include a link to repl.it in
+   the upper right corner. For the matching Trinkets, click these links:
+
+   #. `Exercises 1 & 2 <https://trinket.io/python/312522b320?showInstructions=true>`__
+   #. `Exercise 3 <https://trinket.io/python/497b5293b3?showInstructions=true>`__
+   #. `Exercise 4 <https://trinket.io/python/accbf508b3>`__
+   #. `Exercise 5 <https://trinket.io/python/6e523d6464>`__
+   #. `Exercises 6 - 8 <https://trinket.io/python/531698b16b?showInstructions=true>`__
 
 .. _functions-turtle-exercises:
 

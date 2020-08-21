@@ -145,7 +145,7 @@ present in both files.
 
       <iframe height="700px" width="100%" src="https://repl.it/@launchcode/Why-Use-Main-step-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
-   Dra! Now NO output appears!
+   Drat! Now NO output appears!
 
 Since we placed the loose code into the ``main()`` function, those statements
 will not run unless we *call* the function.
@@ -248,4 +248,61 @@ bugs from loose statements:
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   The ``main()`` function can ONLY be added to the ``main.py`` file.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer: b
+
+.. admonition:: Question
+
+   What is the purpose of the ``main()`` function? Select ALL that apply.
+
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "A" onclick="highlight('A', true)">To tie up loose code statements.</span></li>
+         <li><span id = "B" onclick="highlight('B', true)">To control the main tasks that a program performs.</span></li>
+         <li><span id = "C" onclick="highlight('C', false)">To import modules.</span></li>
+         <li><span id = "D" onclick="highlight('D', false)">To keep the program from running.</span></li>
+         <li><span id = "E" onclick="highlight('E', true)">To complete any setup needed to get the program started.</span></li>
+         <li><span id = "F" onclick="highlight('F', true)">To keep control statements from running if the code is imported as a module.</span></li>
+      </ol>
+
+.. Answers: a, b, e, f.
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

@@ -309,7 +309,7 @@ Check Your Understanding
 
       def func_name(radius):
         area = 3.14159 * radius**2
-        return area;
+        return area
 
    .. raw:: html
 
