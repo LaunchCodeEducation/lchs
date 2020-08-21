@@ -5,8 +5,7 @@ A *program* tells a computer how to complete a task, which might be something
 as simple as adding two numbers together or as complex as following voice
 commands.
 
-The details differ between languages, but each one performs the same basic
-operations:
+Every program you've ever used is made up of instructions that do these same basic tasks:
 
 #. **Input**: Get data from the keyboard, a file, or some other device.
 #. **Output**: Display data on the screen, or send data to a file or other
@@ -15,10 +14,6 @@ operations:
 #. **Logic and decision making**: Check for certain conditions and run the
    correct code statements based on those conditions.
 #. **Repetition**: Quickly perform the same action over and over again.
-
-That’s pretty much all there is to it. Every program you’ve ever used, no
-matter how complicated, is made up of instructions that do these same basic
-tasks.
 
 We can describe programming as the process of breaking a large problem or task
 into smaller and smaller pieces. Once these pieces are small enough, we can
