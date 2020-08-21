@@ -10,9 +10,8 @@ Given a set of inputs, Han's computer analyzes the data and returns information
 about safely navigating a hyperspace jump. The computer does this by running a
 **program**.
 
-At the most basic level, a *program* is a set of instructions that tell a
-computer or other machine what to do. These instructions consist of a set of
-commands, calculations, and manipulations that achieve a specific result.
+At the most basic level, a *program* is how we tell the computer what it needs to do to follow an algorithm.
+These instructions consist of a set of commands, calculations, and manipulations that achieve a specific result.
 However, the computer cannot solve the problem on its own. Someone---a
 programmer---had to figure out a series of steps for the computer to follow.
 
@@ -63,7 +62,7 @@ A **programming language** is a set of key words and rules for teaching a
 computer how to perform a task. Examples of programming languages include
 Python, JavaScript, Basic, COBOL, C++, C#, Java, and many others.
 
-These *high-level languages* can be written and understood by humans, and each
+These languages can be written and understood by humans, and each
 one has its own characteristic style and *syntax*.
 
 How Computers Run Programs
@@ -82,7 +81,7 @@ computer can use. The instructions are then executed by the machine, and we
 observe the results.
 
 .. figure:: figures/Compiler.png
-   :alt: Visual description for how a compiler works.
+   :alt: Diagram showing the code getting sent through the compiler.
 
 In the example above, the *syntax* for printing ``Hello, World!`` varies
 between the Python, JavaScript, and Java languages, but the end result is the

@@ -18,14 +18,14 @@ Create a Repl.it Account
 Create a new student account with `Repl.it <https://repl.it/signup>`__.
 
 .. figure:: figures/replit-signup.png
-   :alt: Image of the repl.it sign-up screen.
+   :alt: The repl.it sign-up screen.
 
 After you sign in, you will see your *Home* screen, which displays your recent
 work and announcements. Since you are just starting out, you won't need to do
 much on this screen.
 
 .. figure:: figures/replit-home.png
-   :alt: Image of repl.it home screen.
+   :alt: Repl.it home screen.
 
    Home screen
 
