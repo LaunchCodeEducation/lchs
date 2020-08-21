@@ -25,8 +25,9 @@ something else, like a cake or a roast, you follow a different set of steps
 using a different set of ingredients.
 
 An *algorithm* is like a recipe. It is a careful series of steps that, when
-followed, produce a specific result. Programmers create algorithms to solve
-small tasks.
+followed, produce a specific result. Programmers create algorithms to
+accomplish small tasks. By combining many separate, small tasks, programmers
+build larger applications.
 
 For Example
 ^^^^^^^^^^^
@@ -61,6 +62,36 @@ words.
 
 Alphabetizing is a process we can teach a computer to do, and the algorithm
 will complete the process much more rapidly than a human.
+
+Algorithms Do Many Things
+-------------------------
+
+Cookbooks contain pages and pages of algorithms. Following 2 or 3 of these
+produces a nice dinner plus dessert. Programmers use this same idea, only they
+work with devices instead of food.
+
+Every algorithm is designed to do one small job. Combining different algorithms
+together allows programmers to solve much more complicated problems.
+
+#. Have you ever used the "You may also like..." option when looking at movies
+   or books online? Algorithms take your past choices and use them to recommend
+   new titles.
+#. In 2019, astronomers took X-ray data collected by NASA and used algorithms
+   to create the first image ever taken of a black hole.
+
+   .. figure:: figures/blackhole.png
+      :alt: nasa.gov. Image of a black hole taken by the Chandra telescope.
+      :width: 80%
+
+   https://www.nasa.gov/mission_pages/chandra/news/black-hole-image-makes-history
+
+#. The apps on a phone are just combinations of algorithms working together to
+   do a job. Applying a filter to a photo, playing a game with users across
+   the world, or just calling mom all result from carefully designed sets of
+   instructions.
+
+Programmers can do so many things with computers, but the devices are useless
+unless we give them algorithms to follow.
 
 Check Your Understanding
 -------------------------
