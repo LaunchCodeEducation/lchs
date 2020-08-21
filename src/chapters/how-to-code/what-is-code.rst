@@ -6,7 +6,7 @@ actually dumb. They react mechanically to the instructions we give them, and
 they cannot deviate from the steps we tell them to follow.
 
 If our instructions are even the slightest bit off, computers cannot ignore
-the error and carry on. Instead, they come to a grinding halt.
+the error. As a result, they will return incorrect results, or they may just come to a grinding halt.
 
 .. index:: ! code
 

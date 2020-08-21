@@ -22,7 +22,7 @@ eventually get the point.
 
 #. *Peas on urth*
 #. *Whirled wor too*
-#. *I awlyas thot slpeling was ipmorantt*
+#. *I awlyas thaut slpeling was ipmorantt*
 
 Other examples include vanity license plates:
 
