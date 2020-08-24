@@ -120,7 +120,7 @@ prints their sum:
 
 Do you see the output you expected?
 
-If we enter ``7`` and ``2``, we may expect an output of ``9``. The result printed is 72. What gives?!?!?
+If we enter ``7`` and ``2``, we may expect an output of ``9``. The result printed is ``72``. What gives?!?!?
 
 .. index:: concatenate
 

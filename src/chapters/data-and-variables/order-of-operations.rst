@@ -91,7 +91,8 @@ Don't Panic
 .. figure:: figures/scream-emoji.png
    :scale: 80%
    :alt: Don't panic! This is NOT a math class!
-	*Read the section title again*.
+   
+   *Read the section title again*.
 
 Python automatically applies the order of operations for you!
 

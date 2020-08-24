@@ -99,7 +99,7 @@ data type.
       1.0
       1.3333333333333333
 
-As you see above, even for results that are whole numbers, like ``10/10``, the data type
+As we see above, even for results that are whole numbers, like ``10/10``, the data type
 returned is a ``float``, it contains a decimal.
 
 If we want the result of a division to be an integer, we can convert it
