@@ -83,10 +83,6 @@ Note that some methods require *arguments* (data) inside the parentheses
 
    my_string.lower() # The string method .lower() requires no arguments
 
-.. admonition:: Try It!
-
-   Lorem ipsum...
-
 Methods vs. Functions
 ---------------------
 
@@ -142,6 +138,25 @@ defined for the ``dog`` object, it automatically has access to the ``age``
 property. Once the method is done, the ``dog`` object updates its own ``age``
 value, so we do not need to capture a return value.
 
+.. admonition:: Try It!
+
+   In this example, the ``dog`` object includes three methods called ``speak``,
+   ``fetch``, and ``increase_age``.
+
+   #. On line 9, add a statement to call the ``speak`` method, then run the
+      program. The method requires no argument, but including an integer
+      changes the output. Try it!
+   #. The ``speak`` method prints to the console, but the ``fetch`` method
+      does not. On line 12, print the value *returned* by ``fetch``.
+   #. Try adding a string argument when you call the ``fetch`` method.
+   #. On line 15, print the ``age`` property for ``dog``.
+   #. On line 16, call the ``increase_age`` method, which requires an integer
+      as an argument. Print the ``age`` property again to check the result.
+
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python/c709bc556a" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
 Methods are Object Specific
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -179,8 +194,3 @@ Of course, we know that all turtle objects include a ``forward`` method:
 
 In this case, the *object* performs an action. Speaking to our code again would
 sound something like, *Hey bob! Move yourself forward 100 steps*.
-
-Check Your Understanding
-------------------------
-
-
