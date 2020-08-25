@@ -80,11 +80,11 @@ Other Comparisons
 
 The ``==`` operator is one of seven common **comparison operators**.
 
-.. index:: ! operand
+.. index:: operand
 
-.. admonition:: Vocabulary
+.. admonition:: Note
 
-   The values on either side of an operator are called **operands**.
+   Remember: The values on either side of an operator are called **operands**.
 
 .. index:: ==, ! !=, ! <, ! >, ! <=, ! >=, ! in
 
@@ -171,7 +171,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following are Boolean expressions? Select ALL that apply.
+   Which of the following are boolean expressions? Select ALL that apply.
 
    .. raw:: html
 

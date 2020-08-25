@@ -72,7 +72,7 @@ appears.
    arguments within the programming world (think Marvel vs. DC or Hermione
    Granger marrying Harry instead of Ron).
 
-   Many code editors automatically indent the lines within an if-block, so most
+   Many code editors automatically indent the lines within an ``if`` block, so most
    of the time you won't need to worry about how far to move in the cursor.
    However, here are the accepted guidelines for Python:
 
