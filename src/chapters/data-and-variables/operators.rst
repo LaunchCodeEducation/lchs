@@ -23,7 +23,7 @@ numbers or strings, or they be variables.
    :scale: 80%
    :alt: Operands are the values on either side of the operator.
 
-When Python encounters an operator, it evaluates the expression and *returns* a new
+When Python finds an operator, it evaluates the expression and *returns* a new
 value. When a variable is used in an expression (like ``number_of_days - 5``), 
 the variable's stored value is evaluated in the expression. 
 

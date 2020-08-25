@@ -78,7 +78,7 @@ Once we create a variable and assign it a value, we can use the variable name to
       message = "Hello, World!"
       print(message)
 
-In the case of the second example just above, the variable name ``message`` points to the 
+In the second example just above, the variable name ``message`` points to the 
 value ``"Hello, World"``. ``print(message)`` means the same thing as ``print("Hello, World!")``, so we
 say that ``message`` **evaluates to** ``"Hello, World!"``
 
