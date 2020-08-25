@@ -12,8 +12,8 @@ Classes and Objects
    object-practice
    what-are-classes
    creating-classes
-   class-methods
    objects-from-classes
+   class-methods
    printing-objects
    objects-with-functions
    inheritance
