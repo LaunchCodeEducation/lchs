@@ -5,8 +5,8 @@ Recall that methods are the specific actions that objects can take. Methods can
 either return a result, update property values, or both.
 
 So far, we have learned how to set property values inside the initialization
-method, ``__init__``. To assign the same methods to each new object, we must
-define them inside the class, but outside of ``__init__``.
+method, ``__init__``. To assign methods to each new object, we must define them
+inside the class, but outside of ``__init__``.
 
 Return to the Class Design
 --------------------------
@@ -86,34 +86,26 @@ the ``age`` property of a ``Cat`` object.
 
 .. admonition:: Try It!
 
-   On line 5, we define a method to increase a cat's age by 1 year. Note the
+   On line 6, we define a method to increase a cat's age by 1 year. Note the
    following:
 
    #. The method requires no parameters other than ``self``.
    #. The statement ``self.age += 1`` updates the ``age`` property by 1 unit.
-   #. No return statement is needed for this method. The action it takes
-      increases the current value of ``age`` and reassigns it to the property.
+   #. No return statement is needed for this method. It takes the current value
+      ``age``, increases it by 1, and reassigns it to the property.
 
-   .. todo:: Insert interactive editor here (adding ``Cat`` methods).
+   .. raw:: html
 
-   .. sourcecode:: python
-      :linenos:
-
-      class Cat:
-         def __init__(self, name, age):
-            self.name = name
-            self.age = age
-
-         def increase_age(self):
-            self.age += 1
+      <iframe src="https://trinket.io/embed/python3/6431d81de9" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
    Now do the following:
 
-   #. On line X, create a new cat object with the statement
-      ``cat_1 = Cat('Whiskers', 3)``. Print the value for ``cat_1.age``.
-   #. On line Y, call the new method with the statement
+   #. On line 9, create a new cat object with the statement
+      ``cat_1 = Cat('Whiskers', 3)``.
+   #. Print the value for ``cat_1.age``.
+   #. On line 12, call the new method with the statement
       ``cat_1.increase_age()``. No arguments are needed inside the parentheses
-      ``()``. The code automatically assigns the value ``cat_1`` to ``self``.
+      ``()``. The code automatically assigns ``cat_1`` to ``self``.
    #. Print ``cat_1.age`` again to see its new value.
 
 As written, the ``increase_age()`` method only increases the value of ``age``
@@ -121,15 +113,18 @@ by 1 year. Let's modify the method to add a user specified amount of years.
 
 #. In the editor above, add another parameter in line 6. Call this variable
    ``increase``, and assign it a default value of ``1``.
-#. Change line Z to be ``self.age += increase``.
-#. On line Y, include an argument inside the parentheses. Run the program
+#. Change line 7 to be ``self.age += increase``.
+#. On line 12, include an argument inside the parentheses. Run the program
    several times using different values to check your code. Also, try running
    the code without placing an argument in the method call.
+
+OK! The ``Cat`` class now has a method. All objects made from the class will be
+able to call ``increase_age()``.
 
 Return Values
 -------------
 
-Now let's add a method that *returns* a value when called. We will call it
+Next, let's add a method that *returns* a value when called. We will name it
 ``make_noise()``, and it will return the sound our cat makes based on its
 current mood.
 
@@ -137,48 +132,26 @@ current mood.
 
    Examine the code below, then run the program.
 
-   .. todo:: Insert interactive editor here (method return value).
+   .. raw:: html
 
-   .. sourcecode:: python
-      :linenos:
-
-      class Cat:
-         def __init__(self, name, age):
-            self.name = name
-            self.age = age
-
-         def increase_age(self, increase = 1):
-            self.age += increase
-         
-         def make_noise(self, mood):
-            if mood.lower() == 'hungry':
-               noise = "Meow!"
-            elif mood.lower() == 'angry':
-               noise = "HISS!"
-            else:
-               noise = "Purr!"
-            
-            return noise
-
-      cat_1 = Cat('Garfield', 42)
-      cat_2 = Cat('Socks', 5)
-
-      cat_1.make_noise('hungry')
-      cat_2.make_noise('happy')
+      <iframe src="https://trinket.io/embed/python3/becfc4eae4" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
    Notice that no output appears in the console when we run the program. This
    is because the code contains no ``print`` statements! The ``make_noise()``
    method *returns* a value. In order for us to see it, we need to tell the
    program to display the data.
 
-   Put the statement on line B inside a ``print`` statement and then run the
-   program. ``Meow!`` should appear in the console.
+   Put ``cat_1.make_noise('hungry')`` inside a ``print`` statement and then run
+   the program. ``Meow!`` should appear in the console.
 
-   On line B+1, ``cat_2.make_noise('happy')`` returns a value. Assign that
-   value to a new variable, then print the variable. ``Purr!`` should now also
-   appear in the console.
+   On line 23, ``cat_2.make_noise('happy')`` returns a value. Assign that
+   value to a new variable, then print the variable. ``Purr!`` should now show
+   up in the console.
 
-When Python comes to a method call, it evaluates that method. If the method
+   Try changing the arguments inside the method calls. How does the method
+   decide which noise to return?
+
+When Python comes to a method call, it evaluates that expression. If the method
 returns a value, Python can then work with that result.
 
 ::
