@@ -9,7 +9,6 @@ Classes and Objects
    what-are-objects
    why-use-objects
    using-objects
-   object-practice
    what-are-classes
    creating-classes
    objects-from-classes

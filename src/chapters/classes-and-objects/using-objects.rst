@@ -4,6 +4,8 @@ Working With Objects
 Once created, objects are *mutable*. We can change the values of properties or
 add new ones as needed.
 
+.. _object-properties:
+
 Object Properties
 -----------------
 
@@ -62,6 +64,15 @@ parentheses ``()``.
          3
          Fleas 6
          mutt True
+
+.. admonition:: Tip
+
+   Object properties work like the :ref:`key/value pairs <key-value-pair>` in a
+   dictionary. Each key acts as a label that points to a specific piece of data
+   (the value).
+
+   Similarly, the property name for an object acts as a label. The value for
+   the property is the data the label points to.
 
 Calling Methods
 ---------------
