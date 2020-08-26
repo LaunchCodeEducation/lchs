@@ -1,3 +1,5 @@
+.. _work-with-objects:
+
 Working With Objects
 ====================
 

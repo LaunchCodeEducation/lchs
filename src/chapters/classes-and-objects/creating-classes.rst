@@ -57,7 +57,6 @@ designing and coding the class easier.
    
    #. The values of the properties will allow us to tell the difference between
       animals, but for now just focus on coming up with a set of property names.
-
    #. The editor below is NOT here to run code. Instead, use the space to add
       names for any properties you think belong with a *cat* object. Two
       examples have already been given.
