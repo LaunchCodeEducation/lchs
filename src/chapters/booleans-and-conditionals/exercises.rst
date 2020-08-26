@@ -42,8 +42,13 @@ Prompt the user to enter a number:
    Else print, ``"Number too small."``
 #. Check if ``user_entry`` is all lowercase. If so, print, ``"___ is all
    lowercase."`` Else, print, ``"___ is NOT all lowercase."`` Fill in the blank
-   with the value of ``user_entry``. (*Hint*: Take advantage of the
-   ``.lower()`` string method).
+   with the value of ``user_entry``. 
+	
+.. admonition:: Tip 
+
+	To check if a string is all lowercase, you can use the string method ``.lower()``. We haven't discussed how to use this yet,
+	so read about it `here <https://www.w3schools.com/python/ref_string_lower.asp>`__ and use the *Try it Yourself* button to 
+	explore how to use the method. 
 
 The ``in`` keyword can be used as another comparison operator.
 
@@ -73,8 +78,9 @@ Part B: Logical Operators
 -------------------------
 
 Use the logical ``and``, ``or``, and ``not`` operators in the following
-exercises (Part B starter code: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
-or `Trinket <https://trinket.io/python/196c4bfd4b?showInstructions=true>`__).
+exercises. Once again, if you are not assigned to a repl.it classroom or Trinket course, 
+access the Part B starter code here: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
+or `Trinket <https://trinket.io/python/196c4bfd4b?showInstructions=true>`__.
 
 #. Given an integer, check to see if the number is even and divisible by 5.
    Print an appropriate message depending on the result.
