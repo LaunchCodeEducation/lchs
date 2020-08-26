@@ -22,8 +22,9 @@ object.
    the values of the properties can differ.
 
    Think of this like using the same cookie cutter to make sugar cookies vs.
-   gingerbread cookies. Each cookie will have *color* and *flavor* properties,
-   but these will have completely different values depending on the recipe.
+   gingerbread cookies. Each cookie will have *ingredients* and *flavor*
+   properties, but these will have completely different values depending on the
+   recipe.
 
 Let's revisit the ``dog`` object we used earlier to see how it relates to a
 class.
@@ -45,6 +46,8 @@ Before we create a new class, we should begin by describing the objects that
 belong in that class. Take time to think about the properties and methods we
 want each object to have. Next, *write thess ideas down*! Doing this will make
 designing and coding the class easier.
+
+.. _brainstorm-properties:
 
 .. admonition:: Try It!
 
@@ -136,48 +139,68 @@ help set up that discussion.
 
 .. admonition:: Try It!
 
-   Lorem ipsum... (Add assignment statements to the __init__ method).
+   Use the instructions and editor below to complete the ``__init__`` method:
 
-   .. todo:: Insert interactive editor here (assigning class property values).
+   .. raw:: html
 
-   .. sourcecode:: python
-      :linenos:
+      <iframe src="https://trinket.io/embed/python/c0190790e6?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-      class Cat:
-         def __init__(self):
-            # Assign values for the name and age properties:
-            self.name = 'Coach'
-            self.age = 2
-            # Add a third property of your choice!
+   #. To assign a value to a property, the syntax is:
 
-      # Create a new Cat object called cat_1.
-      cat_1 = Cat()
+      ::
 
-      # Create a new Cat object called cat_2.
-      cat_2 = Cat()
+         self.property_name = property_value
 
-      print(cat_1.name, cat_1.age, cat_2.name, cat_2.age)
-      print(cat_1 == cat_2)
+      On line 5, ``self.name = 'Coach'`` assigns the value ``'Coach'`` to the
+      property called ``name``.
+   #. On line 6, add the statement ``self.age = 2`` to assign the integer ``2``
+      to the property called ``age``.
+   #. Pick one of the properties you listed :ref:`earlier on this page <brainstorm-properties>`.
+      On line 7, assign a value to that property.
+   #. Paste the following code on lines 9 and 10. To keep the statements outside
+      of the class, do NOT indent them.
+
+      .. sourcecode:: python
+         :lineno-start: 9
+
+         cat_1 = Cat()
+         print(cat_1.name, cat_1.age)
+
+   #. Line 9 creates a new object called ``cat_1``, and line 10 prints two of
+      its properties. Run the program to check your work. Properly done, the
+      output should be:
+
+      ::
+
+         Coach 2
+      
+   #. Modify line 10 to print all three property values.
+   #. Finally, create another object called ``cat_2`` and print out its
+      property values.
 
 Lets step through the final code:
 
-#. On line X, ``Cat()`` calls the class to create a new object.
+#. On line 9, ``Cat()`` calls the class to create a new object.
+#. Control moves to line 1, and the class statements execute.
 #. The ``__init__`` method runs, and it assigns values to each of the
    properties included in the code block. This is where ``self`` plays a role.
 #. When we call a class, ``self`` takes on the *name of the new object*. When
-   ``cat_1 = Cat()`` executes, ``self`` gets assigned the value ``cat_1``. The
-   assignment statements then get evaluated as:
+   ``cat_1 = Cat()`` executes, ``self`` gets assigned the value ``cat_1``. So:
 
-   - ``self.name = 'Coach'`` ---> ``cat_1.name = 'Coach'``
-   - ``self.age = 2`` ---> ``cat_1.age = 2``
+   - ``self.name = 'Coach'`` evaluates as ``cat_1.name = 'Coach'``
+   - ``self.age = 2`` evaluates as ``cat_1.age = 2``
+   - etc.
 
-#. In the case above, the ``__init__`` method causes every newly created ``Cat``
-   object to start with a ``name`` of ``'Coach'`` and an ``age`` of ``2``.
+#. After the ``__init__`` method finishes, control passes back to line 9, and
+   the new object is assigned to the variable ``cat_1``.
+#. In this *Try It* example, the ``__init__`` method causes every new ``Cat``
+   object to start with a ``name`` of ``'Coach'``, an ``age`` of ``2``, and the
+   third property you defined.
 
 The program creates two cat objects, ``cat_1`` and ``cat_2``, that have the
-same property values. Are the two objects the same? Add the statement
-``print(cat_1 == cat_2)`` to the bottom of the code and run the program again.
-Is the output ``True`` or ``False``?
+same property values. Are the two objects the same? To answer this question,
+add the statement ``print(cat_1 == cat_2)`` to the bottom of the code and run
+the program again. Is the output ``True`` or ``False``?
 
 .. admonition:: Tip
 
@@ -211,15 +234,97 @@ with functions:
          self.age = an_age
 
 #. Modify the code in the :ref:`editor above <assign-properties>` to match
-   this format. Be sure to include parameters for each property value.
+   this format. Leave the third property assignment alone for now.
 #. Run the program again. The statement ``cat_1 = Cat()`` should now throw an
    error. By adding parameters to ``__init__``, Python expects values to be
    included when we call the class, but we did not provide any.
 #. Add arguments for a name and an age in the statement. For example,
    ``cat_1 = Cat('Nala', 4)``. Do the same for ``cat_2``, but use different
    values.
+#. Run the program and fix any remaining bugs. Once you have your code working,
+   try changing the arguments you send to the class to see how that affects the
+   output.
+#. Next, follow a similar process for the third property. Define a parameter
+   and include an argument when you call the class.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+The questions below refer to a class called ``Car``.
+
+.. sourcecode:: python
+   :linenos:
+
+   class Car:
+      def __init__(make, model, year, color, mpg):
+         self.make = make
+         self.model = model
+         self.year = year
+         self.color = color
+         self.mpg = mpg
+
+.. admonition:: Question
+
+   If we call the class with ``my_car = Car('Chevy', 'Astro', 1985, 'gray', 20)``,
+   what is output by ``print(my_car.model)``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> my_car</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Chevy</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Astro</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 1985</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   If we create another object called ``other_car`` with the exact same
+   property values, what is the result of the expressions
+   ``my_car == other_car`` and ``my_car.year == other_car.year``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True/True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False/True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True/False</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> False/False</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   What happens if we call the class with ``my_car = Car('Tesla', 'Model S',
+   2020, 'blue')``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> The <span style="color:#419f6a; font-weight: bold">mpg</span> property is assigned a value of 0.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> The <span style="color:#419f6a; font-weight: bold">mpg</span> property is assigned the empty string.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> The <span style="color:#419f6a; font-weight: bold">mpg</span> property is not added to the <span style="color:#419f6a; font-weight: bold">my_car</span> object.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> The program crashes and displays an error message.</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = d
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
