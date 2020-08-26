@@ -20,6 +20,8 @@ to either run or skip certain parts of the code. If a condition is ``True``,
 then the program runs a specific block of code. Otherwise, the program ignores
 that code and performs a different action.
 
+.. _if:
+
 ``if`` Statements
 -----------------
 

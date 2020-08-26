@@ -91,21 +91,30 @@ Python always performs operations in a specific order:
 
    The expression ``x * 5 >= 10 and y - 6 <= 20`` will be completed in this order:
 
-   #. x * 5 is calculated, then y - 6.
+   #. ``x * 5`` is calculated, then ``y - 6``.
    #. The ``>=`` comparison is evaluated as ``True`` or ``False``.
    #. The ``<=`` comparison is evaluated as ``True`` or ``False``.
-   #. The ``and`` operator is done last.
+   #. The ``and`` operator is evaluated last.
 
-   If we assume x = 2 and y = 46, then:
+   Let's say ``x = 2`` and ``y = 46``. Here we step through each stage of the evaluation:
 
-   .. sourcecode:: Python
-      :lineno-start: 0
+   .. list-table:: Operator Order
+      :widths: auto
+      :header-rows: 1
 
-      x * 5 >= 10 and y - 6 <= 20
-      10 >= 10 and 40 <= 20
-      True and 40 <= 20
-      True and False
-      False
+      * - Action
+        - Result
+      * - Plug in the values into the expression
+        - ``2 * 5 >= 10 and 46 - 6 <= 20``
+      * - ``x * 5`` is calculated, then ``y - 6``
+        - ``10 >= 10 and 40 <= 20``
+      * - The ``>=`` comparison is evaluated as ``True`` or ``False``
+        - ``True and 40 <= 20``
+      * - The ``<=`` comparison is evaluated as ``True`` or ``False``
+        - ``True and False``
+      * - The ``and`` operator is evaluated last
+        - ``False``
+
 
 Table of Operator Order
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -148,8 +157,8 @@ The following table lists operators in order of importance, from highest
 .. admonition:: Tip
 
    Using parentheses is not always necessary, but they make a BIG difference when
-   someone else has to read your code. As a best practice, use ``()`` to improve the
-   look of your expressions!
+   someone else reads your code. As a best practice, use parentheses to make your 
+   code easier to read:
 
    ``x * 5 >= 10 and y - 6 <= 20``
 
