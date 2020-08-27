@@ -123,6 +123,8 @@ variable names in ``range``:
    end_value = int(input("Enter the LAST number to print: "))
    step_value = int(input("Enter the step value for the loop: "))
 
+.. TODO: I have read this section a couple times and I am not sure what they should be doing. Could you clarify what they are supposed to be repeating?
+
 Repeat each of the *Try It* enter the start, stop, and step values to print the
 desired output.
 

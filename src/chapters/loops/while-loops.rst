@@ -143,20 +143,16 @@ Do the following in the editor below:
 Input Validation
 ----------------
 
-``while`` loops require a little more effort to code than ``for`` loops, but
-``while`` loops tend to be more flexible.
-
-We can replace ANY ``for`` loop with a ``while``, but the reverse is NOT true.
-Many ``while`` loops can be converted into ``for`` loops, but there are some
-instances where only a ``while`` loop will work. Let's look at one example of
-this.
+``while`` and ``for`` loops serve the same purpose, however, ``while`` loops are more flexible than ``for`` loops.
+If you don't know how many times the loop will run, a ``while`` loop is the best fit.
+An example of this would be when a user can specify how many times a loop will run.
 
 .. index:: ! input validation
 
 .. admonition:: Try It!
 
-   This program is an example of **input validation**. It prompts the user to
-   enter a positive number. If the user enters ``0`` or any negative number,
+   This program is an example of **input validation**. Input validation is the process of checking a user's input to make sure their input won't cause errors down the line.
+   It prompts the user to enter a positive number. If the user enters ``0`` or any negative number,
    then they see an error message and are prompted again within the body of the
    loop. If the user keeps entering invalid numbers, the loop continues to
    iterate. As soon as the user chooses a valid number, the loop ends.
