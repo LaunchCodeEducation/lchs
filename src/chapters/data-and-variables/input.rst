@@ -22,13 +22,9 @@ Similarly, to make the statement ``print("Hello, " + name + "!")`` work for
 different users, we need to go into the code and change the string we assign to
 ``name``.
 
-However, doing either of these is NOT a good idea. Having to change the code
-for every possible name is inefficient. Also, what if we do not know the name
-of the user beforehand?
+However, what if we do not know the name of the user beforehand?
 
-We want our code to respond to different names WITHOUT our help.
-
-It would be great if we could ask the user to enter a name, save that string,
+It would be great if we could ask the user of our program to enter a name, save that string,
 and then print a personalized greeting.
 
 Of course, Python gives us a way to do this!
@@ -36,13 +32,12 @@ Of course, Python gives us a way to do this!
 Requesting Data
 ----------------
 
-.. index:: ! input
+.. index:: ! input, ! prompt
 
-.. index:: ! prompt
-
-To personalize the greeting, we have to get **input** from the user. This
-involves displaying a **prompt** on the screen (e.g. ``Please enter a number:``), and then waiting for the user to respond. Whatever information the user
-enters gets stored for later use.
+To personalize the greeting, we need **input** from the user. This
+involves displaying a **prompt** on the screen (e.g. ``Please enter a number:``), and then 
+saving the response from the user. Whatever information the user
+enters can be stored in a variable.
 
 Python has a built-in function to collect information from a user. As you might
 expect, it is called ``input``.
@@ -92,8 +87,8 @@ After collecting a name, the program does not actually DO anything with the
 information. If we want to use the data, we need to tell Python what to do with
 the ``name`` variable.
 
-By storing the user's name inside ``name``, we gain the ability to hold onto
-the data and use it when and where we see fit.
+By storing the user's name inside the variable called ``name``, we gain the ability to hold onto
+the data and use it when we want.
 
 .. admonition:: Try It
 
@@ -125,8 +120,7 @@ prints their sum:
 
 Do you see the output you expected?
 
-If we enter ``7`` and ``2``, we expect an output of ``9``.  We do NOT expect
-``72``, but that is the result printed. What gives?!?!?
+If we enter ``7`` and ``2``, we may expect an output of ``9``. The result printed is ``72``. What gives?!?!?
 
 .. index:: concatenate
 
@@ -139,7 +133,7 @@ as the string ``72``.
 
    Python treats input data as strings!
 
-If we want our program to perform math on the entered numbers, we must
+If we want our program to perform math operations on the entered numbers, we must
 :ref:`use type conversion <type-conversion>` to change the string values into
 numbers.
 
