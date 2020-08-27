@@ -75,6 +75,8 @@ values from an object.
 We can use the function ``vars()`` to take an object and return a dictionary
 that contains the properties as key/value paris.
 
+.. _dog-class-complete:
+
 .. admonition:: Try It!
 
    Run the program below and examine the output.
