@@ -136,7 +136,7 @@ The ``shift_character`` Function
       alphabet. If a shift moves the program past the letter ``'z'`` (index
       value ``25``), it moves back to the start of the alphabet and continues
       counting with ``'a'`` (index value ``0``).
-   #. The :ref:`modulus operator <modulus>` will be a BIG help here to keep the
+   #. The :ref:`modulus operator <modulo>` will be a BIG help here to keep the
       index values in the range 0 - 25.
 
 The ``build_code_dict`` Function
