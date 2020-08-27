@@ -112,7 +112,7 @@ and recommendations when defining a new class.
 Setting Property Values
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. index:: ! initializer method
+.. index:: ! initializer method, ! __init__
 
 Each new object contains a set of property values. To assign these values, our
 class must include an **initializer method**. This method is defined like any
