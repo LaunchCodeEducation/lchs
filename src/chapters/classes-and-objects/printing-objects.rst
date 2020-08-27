@@ -63,11 +63,6 @@ Note that the ``__str__`` method MUST create and return a string.
    include the ``is_cute`` value, or add and display new properties to the
    class.
 
-Iterating Over Objects
-----------------------
-
-Lorem ipsum...
-
 Cloning Objects
 ---------------
 
