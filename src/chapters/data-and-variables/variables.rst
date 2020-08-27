@@ -62,8 +62,7 @@ Evaluating Variables
 
 .. index:: variable, evaluation
 
-After we create a variable and assign it a value, we can use the variable later
-in place of that value.
+Once we create a variable and assign it a value, we can use the variable name to refer to that value.
 
 .. admonition:: Example
 
@@ -79,10 +78,9 @@ in place of that value.
       message = "Hello, World!"
       print(message)
 
-When we use a variable name like this, we **evaluate** the variable. When
-Python sees ``print(message)``, it replaces``message`` with its value.
-``print(message)`` means the same thing as ``print("Hello, World!")``, so we
-say that ``message`` *evaluates to* ``"Hello, World!"``
+In the second example just above, the variable name ``message`` points to the 
+value ``"Hello, World"``. ``print(message)`` means the same thing as ``print("Hello, World!")``, so we
+say that ``message`` **evaluates to** ``"Hello, World!"``
 
 .. admonition:: Example
 
@@ -121,7 +119,7 @@ The type of a variable is same as the data type of its current value.
 Reassigning Variables
 ---------------------
 
-We use variables in a program to "remember" things, like the current score at
+We use variables in a program to store values, like the current score at
 a football game. Just like a score, variables can change over time.
 
 To see this, read and then run the following program. Notice how we change the
