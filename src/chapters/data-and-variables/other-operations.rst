@@ -1,7 +1,7 @@
 Other Operators
 ===============
 
-Earlier, you learned how to assign and then *reassign* a variable:
+Earlier, you learned how to assign, and then *reassign* a variable:
 
 .. sourcecode:: python
    :linenos:
@@ -56,16 +56,14 @@ Think of the statement as a series of steps:
    my_number = 12             # Do the math and assign the result to my_number
 
 This type of update is so common in Python (and programming in general) that we
-have an operator to use as a shortcut.
+have an operator to use as a shortcut. Another way to write ``my_number = my_number + 2``
+is below:
 
 .. sourcecode:: python
-   :linenos:
 
-   my_number = my_number + 2
    my_number += 2
 
-Lines 1 and 2 do exactly the same thing. The operator ``+=`` increases the
-value of ``my_number`` by 2.
+The operator ``+=`` increases the value of ``my_number`` by 2.
 
 ``+=`` always increases the value of a first operand by the amount of the
 second.
@@ -73,8 +71,9 @@ second.
 .. index:: ! compound assignment operator
 
 ``+=`` is an example of a **compound assignment operator**, or an operator that
-performs two actions in the same statement---a calculation and an assignment.
-The table below summarizes four examples of compound assignment operators.
+performs two actions in the same statement. These actions are a calculation and 
+a variable assignment. The table below summarizes four examples of compound assignment 
+operators.
 
 .. list-table:: Compound Assignment Operators
    :widths: auto

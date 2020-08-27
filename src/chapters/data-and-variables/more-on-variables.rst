@@ -36,14 +36,11 @@ Compare
 Writing good code is about more than just solving the task at hand. It also
 includes making the code easy to read, update, and maintain.
 
-Consider this example of weak vs. strong variable names:
+Consider these examples of variable names:
 
 .. admonition:: Example
 
-   We have not learned what ``*`` and ``**`` do, but understanding these
-   symbols is not the point right now.
-
-   **Weak names**:
+   **Weaker variable names**:
 
    .. sourcecode:: Python
       :linenos:
@@ -54,11 +51,11 @@ Consider this example of weak vs. strong variable names:
       print(z)
    
    What is this program doing? Hard to say. The variable names ``x``, ``y``,
-   and ``z`` don't tell us anything about how they are used.
+   and ``z`` don't tell us anything about how they are used. 
 
    Let's look at an improved version of this program.
 
-   **Strong names**:
+   **Stronger variable names**:
 
    .. sourcecode:: Python
       :linenos:
@@ -69,7 +66,10 @@ Consider this example of weak vs. strong variable names:
       print(area_of_circle)
       
    With improved variable names, it becomes clear that the program is
-   calculating the area of a circle of radius 5.
+   calculating the area of a circle of radius 5. Here's another benefit of descriptive variable names. 
+   Although we have not yet learned what the symbols ``*`` and ``**`` do on line 3, the variable 
+   names give us an idea of what the symbols mean.
+
 
 Keywords
 --------
@@ -90,7 +90,7 @@ specific, so we cannot use it to store a value.
 
    Most code editors will highlight keywords in a different color than
    variables or other parts of your code. This gives you a visual clue about
-   what is a keyword.
+   which words are reserved for use as keywords.
 
 There are a little over 30 keywords in Python. You can find a complete list of
 them `here <https://www.programiz.com/python-programming/keyword-list>`__.
