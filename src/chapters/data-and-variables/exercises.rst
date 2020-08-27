@@ -14,7 +14,7 @@ Use the code editor at the end of this part to complete the following tasks:
    ``4`` to ``-6``.
 #. The expression ``2 + 8 + 10 / 5`` evaluates to ``12.0``. Add parentheses to
    change the result to ``4.0``. How could you get a result of ``5.6``?
-#. Assign a string to the variable ``word``.
+#. Assign a string of your choice to a variable named ``word``.
 
    a. Print the word 4 times on the same line, with spaces between each
       - ``word word word word``.
@@ -76,7 +76,7 @@ Use the information given below to complete the part B exercises:
 
 #. Create a variable for each value in the list above. Remember, do NOT include
    commas for ``int`` or ``float`` data types!
-#. Create and assign a *miles to Mars* variable. To get the miles to Mars,
+#. Create and assign a variable to hold the *miles to Mars* value. To get the miles to Mars,
    multiply the distance to Mars in kilometers by the miles per kilometer.
    (Let *Python* to the math! ``distance in km * miles per km``)
 #. Create a variable to hold the hours it would take to get to Mars. To get the
@@ -94,7 +94,7 @@ Use the information given below to complete the part B exercises:
 Part C - User Input
 -------------------
 
-If your teacher uses repl.it classroom or Trinket course, solve part C there.
+If your teacher uses repl.it classroom or a Trinket course, solve part C there.
 Otherwise, use this `standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-C>`__
 or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__.
 
@@ -129,7 +129,7 @@ or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__
       The word 'Tomato' contains 6 characters.
 
 #. Prompt the user to enter the length and width for a rectangle. Calculate the
-   area of the rectangle (length * width) and print the answer. The program
+   area of the rectangle (``length * width``) and print the answer. The program
    should behave something like this:
 
    ::

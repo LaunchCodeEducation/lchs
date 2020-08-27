@@ -26,7 +26,7 @@ from NASA engineer `Dajae Williams <https://www.dajaewilliams.com/>`__.
    :header-rows: 1
 
    * - Level
-     - Category
+     - Operation Category
      - Examples
    * - (Highest)
      - Parentheses: ``()``
@@ -58,7 +58,7 @@ order from left to right.
 
    The expression ``2 + 3 * 4 - 1`` will be completed in this order:
 
-   #. 3 * 4 is calculated first, since ``*`` has a higher importance than ``+``
+   #. ``3 * 4`` is calculated first, since ``*`` has a higher importance than ``+``
       and ``-``.
    #. The ``+`` expression is calculated next (``+`` and ``-`` are equal in
       importance, but the ``+`` is further to the left).
@@ -91,21 +91,19 @@ Don't Panic
 .. figure:: figures/scream-emoji.png
    :scale: 80%
    :alt: Don't panic! This is NOT a math class!
-
-*Read the section title again*.
+   
+   *Read the section title again*.
 
 Python automatically applies the order of operations for you!
 
 However, if you ever notice that your program is not calculating the answers
 you expect, you and Python probably disagree on how to apply the order of
-operations.
-
-(Hint - Python's not wrong).
+operations. Python will always calculate based on these order of operations. If you
+expect a different result from a set of operations, you may need to change how you've written your code.
+Do you need to add a set of parentheses, ``()``, so that an addition operation is executed before multiplication?
 
 Check Your Understanding
 ------------------------
-
-OK. Here are the expected order of operations questions. Deal with it!
 
 .. admonition:: Question
 

@@ -99,7 +99,7 @@ More On Strings
 
 .. admonition:: Warning 
 
-   If a string contains a single quote (such as ``Bruce's beard``) then
+   If a string contains a single quote (such as ``Bruce's beard``), then
    surrounding it with single quotes gives unexpected results. 
 
    Try running the following piece of code:
@@ -130,7 +130,7 @@ types in Python.
       42000
       42 0
 
-Well, that's not what we expected at all! Because of the comma, Python treats
+This may be a surprising output! Because of the comma, Python treats
 ``42,000`` as a *pair* of values. As we saw in the
 :ref:`print function <print-function>` section, ``print`` can display any
 number of values as long as you separate them by commas.
