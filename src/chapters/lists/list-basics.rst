@@ -4,17 +4,13 @@ List Basics
 .. index:: ! list, ! element
 
 The Python **list** data type is another example of an *ordered collection*.
-Lists store data values, which are called **elements**. Just like strings, each
-element has its own index value.
+Lists store data values, which are called **elements**. Just like with strings, each
+element has its own index value. However, strings are ordered collections of *characters* and the elements of lists can be of any data type.
 
 .. figure:: figures/list-diagram.png
    :alt: A label, languages, pointing to an array that contains "Python" at index 0, "C#" at index 1, "Java" at index 2, and "JavaScript" at index 3.
 
    This list contains four strings, and each value has its own index position.
-
-Strings are ordered collections of *characters*, which are just strings of
-length 1. Lists are ordered collections of *elements*, but these elements can
-be of any data type.
 
 Create a New List
 -----------------
@@ -51,7 +47,7 @@ by commas.
 Accessing Elements
 ------------------
 
-Just like strings, we access list elements by using square brackets ``[]``. The
+We access list elements by using square brackets ``[]``. The
 integer or expression inside the brackets gives the *index* for the element we
 want.
 
