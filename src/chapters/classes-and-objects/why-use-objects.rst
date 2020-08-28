@@ -55,20 +55,23 @@ task instead of having to search through all of our code to find the faulty
 
 Using objects sounds similar to what we did in the
 :ref:`Modules chapter <modules-index>`. However, unlike the external module
-files, objects get created as they are needed and only *when the program runs*.
+files, objects get created as they are needed and *only when the program runs*.
 
-Picture How Objects Work
-------------------------
+Objects Copy Real World Thinking
+--------------------------------
 
 As we shift our thinking towards using objects, it helps to create a mental
-picture that connects how we want to code with sone real life examples. In the
+picture that connects how we want to code with some real life examples. In the
 world around us, we interact with objects all the time, like cars, phones, pets,
 and our friends.
 
-Lorem ipsum... (drive box).
+Each of these objects has a set of properties that describe it, and each object
+can perform different actions. 
 
 Phones as Objects
 ^^^^^^^^^^^^^^^^^
+
+Lorem ipsum...
 
 Take a look at the following code syntax:
 
@@ -92,15 +95,43 @@ Cooking with Objects
 
 If we stand in a kitchen, we will probably find several different tools for
 cooking dinner. These might include a microwave, a stove top, an oven, a
-crockpot, and maybe a barbecue grill (although we should move that outside
+crock pot, and maybe a barbecue grill (although we should move that outside
 RIGHT NOW). What we won't find in the kitchen is a device called ``cook()``.
 
-Each tool (stove, oven, microwave, etc.) has its own ``.cook()`` method
-designed to work with its hardware. To warm up our food, we put it in one
-device and then push a button or turn a dial. We do NOT place the tool and our
-food into a defined corner and say *Use this device to warm up this food*.
+.. figure:: figures/cook-function.png
+   :alt: Image showing and empty box labeled "cook()".
 
-.. todo:: Insert figure here! (``.cook()`` method for kitchen appliances).
+   The ``cook()`` function, which represents a spot in your kitchen to deposit food and a device.
+
+Let's assume that we do define a ``cook()`` function. Picture the code block as
+a box waiting for some input. When we call the function, we would need to send
+it the *device that does the cooking* as well as the ingredients.
+
+.. figure:: figures/cook-function-2.png
+   :alt: Image showing examples of putting devices and food into the cook() box.
+   :width: 80%
+
+   ``cook(device, food)``. The function code must deal with multiple tools and ingredients.
+
+Since each device has it's own way of cooking food, the code inside ``cook()``
+must be able to handle different tools and ingredients. The function needs to
+work for an oven, a toaster, a microwave, etc. This is an inefficient way to
+code for the job of cooking.
+
+With objects, we can assign a special block of code to each tool. The stove,
+microwave, etc. gets its own ``.cook()`` method designed to work with its
+hardware. To warm up our food, we put it in a device and then push a button or
+turn a dial. Instead of writing one big function to deal with all possible
+cooking tools, methods allow us to write smaller blocks of code for each
+specific device.
+
+.. figure:: figures/cook-method.png
+   :alt: Image showing the .cook() method applied to different cooking devices.
+
+   Each device has its own specific ``.cook()`` method.
+
+The ``.cook()`` method for a microwave contains different code than the
+``.cook()`` method for a gas grill.
 
 Check Your Understanding
 ------------------------
