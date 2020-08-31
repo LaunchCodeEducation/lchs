@@ -64,15 +64,13 @@ the end of the string.
 Saving Substrings
 -----------------
 
-In many of the bracket notation examples, we simply printed a substring to the
+In the examples above, we simply print a substring to the
 console, like ``print(fruit[:3])``. This works because when we use brackets to
 return part of a string, we actually *create a new string*.
-
-Since this new string is a piece of data, we can perform operations on it. The
+This new string is a piece of data and we can perform operations on it like any other string. The
 expression ``fruit[:3]`` returns the string ``'cuc'``, so the ``print`` function
-displays that data in the console. However, once line 2 finishes, the program
-loses track of the new string. If we need to use ``'cuc'`` again, we would have
-to take another slice from ``fruit``.
+displays that data in the console. If we want to use the string ``'cuc'`` again, we will need
+to take another slice from ``fruit``, or save the string in a new variable.
 
 Instead of creating, using, then losing a new string, we can assign it to a
 variable whenever we use bracket notation.
@@ -108,19 +106,19 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Given ``language = 'Python'``, what does ``language[1:4]`` return?
+   Given ``language = 'Python'``, what does ``language[1:5]`` return?
 
    .. raw:: html
 
       <ol type="a">
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"Pyth"</span></li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"Pyt"</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">"yth"</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"ytho"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">"yth"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">"ytho"</span></li>
       </ol>
       <p id="Q1"></p>
 
-.. Answer: c
+.. Answer: d
 
 .. raw:: html
 
