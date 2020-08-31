@@ -15,6 +15,8 @@ Earlier, we made a list of property names that we wanted to include in our
 ``Cat`` class. We will repeat that process now, but this time we will record
 ideas about what a ``Cat`` object should *do*.
 
+.. _brainstorm-methods:
+
 .. admonition:: Try It!
 
    If you saved your work from the :ref:`Design a New Class <brainstorm-properties>`
@@ -41,8 +43,8 @@ ideas about what a ``Cat`` object should *do*.
       parameters or coding anything yet.
    #. Finish your list with another triple quote line.
 
-   Add at least two method names to the editor, but don't just use the
-   examples. Include your own ideas!
+   Add at least three method names to the editor, but don't limit yourself to
+   the given examples. Include your own ideas!
 
 .. admonition:: Note
 
@@ -129,6 +131,8 @@ Next, let's add a method that *returns* a value when called. We will name it
 ``make_noise()``, and it will return the sound our cat makes based on its
 current mood.
 
+.. _add-more-cat-methods:
+
 .. admonition:: Try It!
 
    Examine the code below, then run the program.
@@ -161,8 +165,21 @@ returns a value, Python can then work with that result.
    print(cat_1.make_noise('hungry'))  # Evaluate the method call.
    print('Meow!')                     # Display the return value in the console.
 
+Add Your Own Method
+-------------------
+
+You started this page by listing your ideas for possible ``Cat`` methods. Take
+another look at :ref:`your list <brainstorm-methods>` and choose one item.
+
+In the editor from the :ref:`Return Values section <add-more-cat-methods>`:
+
+#. Code your choice as the third method inside the ``Cat`` class. Your new
+   method can either update a property value, return a value, or do both.
+#. At the bottom of the editor, call your new method on ``cat_1`` and ``cat_2``
+   to make sure it works as expected.
+
 Improving ``make_noise()``
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 Notice that we must provide an argument for a cat's mood when we call
 ``make_noise()``. However, *mood* seems like a good property to include with
@@ -199,7 +216,7 @@ code instead of setting up a new parameter.
 #. Inside the ``make_noise()`` code block, ``self.mood`` accesses the current
    value of the property and compares it to the different options.
 #. If we change ``mood`` in a different part of our code (say, by feeding or
-   petting our cat), we do not have to worry about using the correct argument
+   petting our cat), we do not need to worry about sending in the new value
    when we call the method. Any changes to the property are immediately
    available inside the method.
 
