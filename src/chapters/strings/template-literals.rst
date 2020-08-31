@@ -26,7 +26,7 @@ to create a specific output:
    Note the following:
    
    #. We must include spaces inside each of the strings to make the output
-      look right. Without the spaces, line 4 prints ``Nextyear,Jackwillbe10.``
+      readable. Without the spaces, line 4 prints ``Nextyear,Jackwillbe10.``
    #. In order to concatenate, we must convert the ``int`` value from the
       expression ``current_age + 1`` into the ``str`` data type.
 
@@ -35,14 +35,14 @@ depends on multiple variables. Also, concatenation usually requires several
 test runs of the code in order to check for syntax errors and proper spacing.
 Fortunately, Python offers us a better way to accomplish the same thing.
 
-The Zen of Python
------------------
+The Philosophy of Python
+------------------------
 
-   Beautiful is better than ugly,
+	Elegance trumps mess,
 
-   Simple is better than complex,
+	Simplicity beats complex,
 
-   Readability counts.
+	Make it readable.
 
 .. index:: ! template literal
 
@@ -59,7 +59,7 @@ literal:
 
 .. sourcecode:: python
 
-   # Concatenation (ugly, complicated, hard to read)
+   # Concatenation (messy, complicated, hard to read)
    "Next year, " + name + " will be " + str(current_age + 1) + "."
 
    # Template literal (beautiful, simple, easier to read)
@@ -90,8 +90,7 @@ The general syntax is:
 
    string_with_braces.format(value_1, value_2, etc)
 
-The values inside ``format()`` can be actual numbers or strings, but they will
-most often be variables or expressions.
+The values inside ``format()`` can be numbers, strings, variables, or expressions.
 
 .. admonition:: Example
 
@@ -145,8 +144,8 @@ with the next value inside ``format()``.
    values in ``format`` will NOT throw an error. However, the output will not
    look the way you want.
 
-Indexes with ``format()``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Index Values with ``format()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 What if we want to use the same value multiple times in a string?
 
@@ -171,7 +170,9 @@ Remember that when we code, we want to avoid repeating ourselves as much as
 possible. Typing ``my_num`` three times inside ``format()`` should set off
 alarm bells in our heads. There is a shorter way.
 
-We can include index values inside of the curly braces ``{}``. These indexes
+.. index:: ! indices
+
+We can include index values inside of the curly braces ``{}``. These **indices** (a plural of index)
 refer to the items inside ``format()``, and the indexes begin with 0.
 
 .. admonition:: Example
@@ -198,8 +199,8 @@ When Python evaluates ``{0}``, it inserts the *first* value from ``format()``.
 If we add another value inside ``format()``, we can insert it into the string
 by adding ``{2}`` to ``output``.
 
-Index values also allow us to split up the link between the order of the curly
-braces and the order of the values within ``format()``.
+Index values in template literals are flexible. The order of the values in curly
+braces does not matter for the order of the values within ``format()``.
 
 .. admonition:: Example
 
@@ -215,12 +216,12 @@ braces and the order of the values within ``format()``.
 
       Hello, Anna. You turn 5 years old today. Happy birthday, Anna!
 
-Notice how the string ``'Anna'`` gets used first in the output, even though it
+Notice how the string ``'Anna'`` is used first in the print statement, even though it
 comes second within ``format()``.
 
 .. admonition:: Tip
 
-   Even if you do not think you will need indexes in a template literal, it is
+   Even if you do not think you will need indicies in a template literal, it is
    a good idea to use them anyway!
 
    In this book, most of the template literals used in the examples and starter
@@ -282,15 +283,14 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Mad Libs are games where one player asks the group to supply random words
+   Mad Libs are games where one player asks a group to supply random words
    (e.g. "Give me a verb," or, "I need a color"). The words are substituted
-   into blanks within a story, which is then read for everyone's amusement. In
-   elementary school classrooms, giggles and hilarity often occur. TRY IT!
+   into blanks within a story, which is then read for everyone's amusement. 
 
    Refactor the following code to replace the awkward string concatenation with
    a template literal. Be sure to add your own choices for the variables!
 
-   Feel free to use either ``.format()`` or and f-string.
+   Feel free to use either ``.format()`` or an f-string.
 
    .. raw:: html
 

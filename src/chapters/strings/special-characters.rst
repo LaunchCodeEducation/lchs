@@ -15,7 +15,7 @@ items that do not appear on our keyboards (like shapes or emojis).
 Newline and Tab
 ---------------
 
-The most commonly used special characters are ``\n`` and ``\t``, which are the
+Some commonly used special characters are ``\n`` and ``\t``, which are the
 newline and tab characters, respectively. A **newline** represents tapping the
 *Return* or *Enter* key while typing.
 
