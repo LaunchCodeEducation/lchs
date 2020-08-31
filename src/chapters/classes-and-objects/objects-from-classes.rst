@@ -50,11 +50,31 @@ properties and values as described in the
    #. Add a new property inside the ``__init__`` method.
    #. On line 12, change the value of the ID number for ``dan``, then print the
       new information.
-   #. On line 15, add the ``act`` property to ``jessi`` and assign it an
+   #. On line 15, add the ``act_score`` property to ``jessi`` and assign it an
       integer value. Print this value to check your work.
 
-   *Note that line 15 adds the ``act`` property to the ``jessi`` object, but
-   this change does NOT affect any other objects created with ``Student``*.
+   *Note that line 15 adds the* ``act_score`` *property to the* ``jessi``
+   *object, but this change does NOT affect any other objects created with*
+   ``Student``.
+
+.. admonition:: Note
+
+   Did you ever wonder why we needed to type "turtle" 3 times to create a new
+   turtle object? Now that we know how to call a class, we can see why this is
+   necessary!
+
+   .. sourcecode:: python
+      :linenos:
+
+      import turtle
+
+      bob = turtle.Turtle()
+
+   #. Line 1 imports the ``turtle`` module, which contains all the code related
+      to these objects AND the class for making them.
+   #. Line 3 tells the program, *Look in the* ``turtle`` *module and call the*
+      ``Turtle()`` *class*. The class code executes, creates a new ``turtle``
+      object, and assigns it to the variable ``bob``.
 
 Default Property Values
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,14 +89,14 @@ parameter as follows:
    :linenos:
 
    class Student:
-      def __init__(self, name, grade, id_number = 'missing'):
+      def __init__(self, name, grade, id_number = 'Missing'):
          self.name = name
          self.grade_level = grade
          self.id = id_number
 
 Now if we call ``Student`` but leave out an ID number, the ``__init__`` method
-automatically assigns the ``id`` property a value of ``missing``. If we include
-an argument for ``id_number``, then the default value is ignored.
+automatically assigns ``id`` a value of ``'Missing'``. If we include an
+argument for ``id_number``, then the default value is ignored.
 
 .. admonition:: Try It!
 
