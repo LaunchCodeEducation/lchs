@@ -151,8 +151,8 @@ An example of this would be when a user can specify how many times a loop will r
 
 .. admonition:: Try It!
 
-   This program is an example of **input validation**. Input validation is the process of checking a user's input to make sure their input won't cause errors down the line.
-   It prompts the user to enter a positive number. If the user enters ``0`` or any negative number,
+   This program is an example of **input validation**, which checks what the user enters to make sure it won't cause errors down the line.
+   The computer prompts the user to enter a positive number. If the user enters ``0`` or any negative number,
    then they see an error message and are prompted again within the body of the
    loop. If the user keeps entering invalid numbers, the loop continues to
    iterate. As soon as the user chooses a valid number, the loop ends.
