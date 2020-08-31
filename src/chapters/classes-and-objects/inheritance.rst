@@ -1,9 +1,14 @@
-Inheritance
-===========
+Inheritance and Clones
+======================
 
-This optional programming topic is explored in an appendix (add ref)...
+Constructing classes and using them to create objects gives your Python code a
+serious power boost. All that remains for this chapter are a couple of optional
+topics that your teacher may or may not ask you to explore. The content can be
+found in the ``Extras`` appendix:
 
-Depending on how close your class is to the end of the semester, your teacher
-will decide whether or not to explore this idea.
+#. :ref:`Inheritance <class-inheritance>`
+#. :ref:`Making independent object copies <deep-copy>`
 
-[INSERT FUN IMAGES HERE...]
+Consult your teacher about whether or not you should dive into these ideas. The
+answer will depend on how close your class is to the end of the semester as
+well as the overall goals and objectives of the course.

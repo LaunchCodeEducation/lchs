@@ -66,6 +66,7 @@ Appendices
    appendices/string-methods/index
    appendices/random-module/index
    appendices/turtles/index
+   appendices/extras/index
 
 .. toctree::
    :hidden:
