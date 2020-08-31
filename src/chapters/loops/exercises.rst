@@ -1,6 +1,11 @@
 Exercises: Loops
 ================
 
+.. figure:: figures/loop-comic.png
+   :alt: Image showing how Bart Simpson could use Python to write his sentences on a chalkboard.
+
+   Loops simplify repetitive tasks!
+
 ``for`` Practice
 -----------------
 
