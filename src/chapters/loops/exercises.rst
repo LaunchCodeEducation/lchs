@@ -1,10 +1,12 @@
 Exercises: Loops
 ================
 
+   Loops simplify repetitive tasks!
+
 .. figure:: figures/loop-comic.png
    :alt: Image showing how Bart Simpson could use Python to write his sentences on a chalkboard.
 
-   Loops simplify repetitive tasks!
+   Image from `Bart's Blackboard <http://bartsblackboard.com/category/season-2/page/2/>`__, Season 2, Episode 11 (Jan 24, 1991)
 
 ``for`` Practice
 -----------------
