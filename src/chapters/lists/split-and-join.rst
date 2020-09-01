@@ -25,7 +25,7 @@ is considered a word boundary.
 
 .. index:: delimiter
 
-We can place an optional argument, called a *delimiter*, inside the ``()``. The
+We can place an optional argument, called a **delimiter**, inside the ``()``. The
 delimiter sets the characters to use as word boundaries. The following example
 uses the string ``se`` as the delimiter:
 
