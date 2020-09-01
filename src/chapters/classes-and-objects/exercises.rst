@@ -1,7 +1,9 @@
 Exercises: Classes and Objects
 ==============================
 
-Lorem ipsum...
+In these exercises, you will create a ``Robot`` class and use it to create
+five ``Robot`` objects. You will also practice writing functions that display
+information about the objects as well as race them against each other.
 
 .. admonition:: Note
 
@@ -10,22 +12,42 @@ Lorem ipsum...
    account to access the starter code for each exercise.
 
    If you are NOT enrolled in a repl.it classroom or Trinket course, use the
-   editors below to complete the project.
+   links below to complete the project.
+
+.. todo:: Insert repl.it and Trinket links to the starter code (Classes exercises).
 
 Part 1: Create a New Class
 --------------------------
 
-Lorem ipsum...
+Open up the starter code and notice that it imports the ``random`` module.
+Below the ``import`` statement, define the ``Robot`` class.
 
 Add Properties
 ^^^^^^^^^^^^^^
 
-Lorem ipsum...
+#. Inside the class, define the ``__init__`` method. It should include
+   parameters for ``self``, ``name``, ``mass``, ``year``, and ``color``.
+#. Give default values to ``year`` and ``color``.
+#. Assign the property values as described in the
+   :ref:`Setting Property Values <set-property-values>` section.
+#. Before you move on, test your code!
+
+   #. In ``main()`` call the ``Robot`` class to create a new object and assign
+      it to a variable.
+   #. Use dot notation to ``print`` the values for each property.
 
 Add Methods
 ^^^^^^^^^^^
 
-Lorem ipsum...
+#. Below the ``__init__`` method, define a method called ``move()``. 
+#. Give default values to ``year`` and ``color``.
+#. Assign the property values as described in the
+   :ref:`Setting Property Values <set-property-values>` section.
+#. Before you move on, test your code!
+
+   #. In ``main()`` call the ``Robot`` class to create a new object and assign
+      it to a variable.
+   #. Use dot notation to ``print`` the values for each property.
 
 Part 2: Create Objects
 ----------------------

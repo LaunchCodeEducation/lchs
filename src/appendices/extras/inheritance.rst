@@ -34,7 +34,7 @@ one repeats some of the same code:
          def refuel(self):
             # Code for recharging the battery...
 
-         def charge_left(self):
+         def charge_level(self):
             # Code to return current charge remaining...
 
       class GasCar:
@@ -51,7 +51,7 @@ one repeats some of the same code:
          def refuel(self):
             # Code for refilling the gas tank...
 
-         def fuel_left(self):
+         def fuel_level(self):
             # Code to return current gas remaining...
 
 .. index:: ! inheritance, ! parent class, ! child class, ! subclass

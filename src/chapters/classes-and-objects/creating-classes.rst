@@ -109,6 +109,8 @@ and recommendations when defining a new class.
 #. If the class name contains an abbreviation, use capital letters for that
    abbreviation. For example, ``OSUBuckeyes``.
 
+.. _set-property-values:
+
 Setting Property Values
 ^^^^^^^^^^^^^^^^^^^^^^^
 
