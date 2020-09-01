@@ -1,7 +1,7 @@
 Exercises: Lists
 ================
 
-The following actions will teach you how to add, remove, modify and
+The following actions will teach you how to add, remove, modify, and
 rearrange list elements.
 
 .. admonition:: Note

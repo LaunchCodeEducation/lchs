@@ -1,8 +1,7 @@
 Lists Are Like Strings
 ======================
 
-Besides being ordered collections, Python lists show other similarities to
-strings.
+Besides being ordered collections, Python lists share other similarities with strings.
 
 List Length
 -----------
@@ -10,8 +9,7 @@ List Length
 .. index::
    single: list; length
 
-Just like strings, the ``len()`` function returns the length of a list (the
-number of elements in the list).
+The ``len()`` function also returns the length of a list (the number of elements in the list).
 
 .. admonition:: Example
 
@@ -30,11 +28,6 @@ number of elements in the list).
 
    In line 3, ``len(letters)`` returns the number of items stored in the
    ``letters`` list.
-
-.. admonition:: Note
-
-   We will explore how the ``len()`` function deals with nested lists (like
-   ``[['a', 'b', 'c'], ['x', 'y', 'z']]``) later in this chapter.
 
 Note that the statement ``print(letters[len(letters)])`` will throw an *index
 out of range* error. Since index values start at 0, the last element in any
