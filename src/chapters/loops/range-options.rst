@@ -84,6 +84,8 @@ called the *step value*, ``range(start_value, end_value, step_value)``.
 
    For ``range()``, the start and step values are OPTIONAL.
 
+.. _range-tryit:
+
 Try It!
 -------
 
@@ -123,7 +125,7 @@ variable names in ``range``:
    end_value = int(input("Enter the LAST number to print: "))
    step_value = int(input("Enter the step value for the loop: "))
 
-Repeat each of the *Try It* enter the start, stop, and step values to print the
+Repeat each of the items in the :ref:`Try It <range-tryit>` section above. Enter the start, stop, and step values to print the
 desired output.
 
 .. admonition:: Warning

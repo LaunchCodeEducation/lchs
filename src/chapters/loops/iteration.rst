@@ -18,7 +18,7 @@ currently know, your program would look like this:
    print(4)
    # and so on...
 
-YUCK! Typing out this code is repetitive, boring, and also error-prone. Even
+Typing out this code is repetitive, boring, and also error-prone. Even
 using copy-paste, the large amount of code makes it likely that we will make a
 simple mistake, such as skipping a number or misspelling ``print``.
 
@@ -31,7 +31,7 @@ to update a large number of lines.
 Programming languages provide tools that allow us to repeat a sequence of
 statements in a much simpler way.
 
-Repeating the same set of statements again and again and again is called
+Repeating the same set of statements again and again is called
 **iteration**. This chapter explores two ways Python makes iteration simple and
 flexible---the ``for`` and ``while`` loops.
 
@@ -46,11 +46,6 @@ above using a ``for`` loop.
 
 We will explore the details soon, but take a moment to marvel how simple this
 program is compared to the one above!
-
-.. admonition:: Note
-
-   It may seem odd that this loop uses the integer 51, but only prints up to
-   50. Why this is the case will become clear in the next section.
 
 .. _dry-code:
 
