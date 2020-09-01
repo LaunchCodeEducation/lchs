@@ -27,7 +27,7 @@ Some points to notice:
    replaces ``range``.
 #. The first time the loop runs, the loop variable gets assigned the first
    character in the string (``character = 'H'`` or ``char = 'T'``).
-#. Each time the loop repeats, the variable stores next character in the
+#. Each time the loop repeats, the variable holds the next character in the
    string.
 #. Unlike ``range(n)``, which does NOT assign the value of ``n`` to the loop
    variable, the last character in the string IS used.
