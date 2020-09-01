@@ -47,4 +47,18 @@ List of robots as the parameter...
 Part 4: Robot Races
 -------------------
 
-Lorem ipsum...
+Now it's time to let the robots compete against each other! Define a
+``robot_race`` function that takes a list as a parameter.
+
+Within the function, race the five robots together by using the ``move``
+method. A machine is done with the race when they reach 20 steps or more.
+Store the result as a string: ``'____ took ____ turns to take 20 steps.'``
+Fill in the blanks with the robot’s name and race result. Create a new list
+to store how many turns it takes each robot to complete the race.
+
+Return the list from the function, then print the results to the console (one
+robot per line).
+
+*HINT*: There are a lot of different ways to approach this problem. One way
+that works well is to see how many iterations of the ``move`` method it will
+take for each animal to reach 20 steps.
