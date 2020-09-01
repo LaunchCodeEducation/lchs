@@ -85,7 +85,7 @@ Make the following adjustments in the editor above:
 #. Also before the loop, define a variable called ``turn_angle``. This stores
    the number of degrees that the turtle needs to rotate after drawing each
    side.
-#. ``turn_angle`` needs to be calculated. Without diving into the geometry, set
+#. ``turn_angle`` needs to be calculated. Set
    the variable equal to ``360.0 / num_sides`` (360.0 degrees divided by the
    number of sides). If you want to know why this works, go ask your math
    teacher! They will LOVE to explain it to you.

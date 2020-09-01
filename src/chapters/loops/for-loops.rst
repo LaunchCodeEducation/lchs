@@ -30,8 +30,7 @@ repeat all the commands!
    Note: If you have not practiced with turtles in class yet, check out the
    :ref:`Python Turtles <turtle-guide>` appendix.
 
-A basic building block of all programs is to repeat some code over and over
-again, which we call *iteration*. The first Python iteration tool we will learn
+Time to use iteration! The first Python iteration tool we will learn
 is the ``for`` loop. 
 
 ``for`` Loop Syntax
@@ -113,8 +112,8 @@ Let's modify the code just a little to follow the operation of a ``for`` loop.
    assigned a value of ``0``.
 #. Next, Python checks if the value of ``num`` is less than the value inside
    ``range``. Since ``num < 4`` evaluates to ``True``, the loop body executes.
-#. Line 2 runs, printing the current value of ``num``.
-#. Line 3 runs, printing the string ``Hello`` zero times.
+#. Line 2 prints the current value of ``num``.
+#. Line 3 prints the string ``Hello`` zero times.
 #. Python reaches the end of the loop body (the indented lines). At this point,
    it increases the value of ``num`` by 1 and then MOVES BACK TO THE ``for``
    STATEMENT (line 1).
