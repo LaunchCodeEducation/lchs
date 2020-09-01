@@ -1,7 +1,7 @@
 Iterating Through Lists
 =======================
 
-We can use a loop to iterate through the elements in a list.
+We can use a loop to iterate through the elements in a list in the same way we did with the characters in a string.
 
 Loop by Element
 ---------------

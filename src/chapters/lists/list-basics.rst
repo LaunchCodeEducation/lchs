@@ -47,7 +47,7 @@ by commas.
 Accessing Elements
 ------------------
 
-We access list elements by using square brackets ``[]``. The
+With strings, we accessed individual characters by using square brackets. With lists, we use square brackets to access list elements. The
 integer or expression inside the brackets gives the *index* for the element we
 want.
 
