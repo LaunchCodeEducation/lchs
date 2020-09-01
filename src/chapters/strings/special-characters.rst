@@ -55,7 +55,7 @@ newline and tab characters, respectively. A **newline** represents tapping the
 Other Characters
 ----------------
 
-.. index:: unicode
+.. index:: ! Unicode
 
 We can also add characters to a string that do not appear on all keyboards.
 These **Unicode characters** use combinations of the form ``\uXXXX``, where the

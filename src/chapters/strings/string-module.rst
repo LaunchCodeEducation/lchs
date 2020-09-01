@@ -1,13 +1,13 @@
+.. index:: ! string module
+
 The ``string`` Module
 =====================
 
-Besides checking if a variable holds a ``str`` data type or whether a character
-is upper- or lowercase, we can also check to see if a character, slice or
-string contains letters, digits, symbols, etc. 
+We've talked before about string methods. The Python language gives us another means of working with string data. 
+The Python **string module** provides several constants that are useful for checking to see if a character, slice, or
+string contains letters, digits, symbols, etc.. To use these constants, we need to *import* the module into our code. 
 
-The Python ``string`` module provides several constants that are useful for
-these purposes. To use these constants, begin with an ``import`` statement at
-the top of your code:
+Begin with an ``import`` statement at the top of your code:
 
 .. sourcecode:: Python
    :linenos:
@@ -32,9 +32,9 @@ lowercase letter. We could set up a conditional like so:
 
 Note what we did:
 
-#. Line 1 checks if the character is any of the digits 0 - 9,
+#. Line 1 checks if the character is any of the digits ``0`` - ``9``,
 #. If not, line 3 checks if the character is any of the lowercase letters from
-   a - z.
+   ``a`` - ``z``.
 #. We could easily expand the conditional to check for uppercase letters
    (``elif char in 'ABC...'``), punctuation, etc.
 
