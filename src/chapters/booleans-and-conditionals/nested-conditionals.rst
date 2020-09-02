@@ -66,7 +66,7 @@ conditional determines whether or not to consider the second.
 
 Notice that when we put one conditional inside another, the body of the nested
 conditional is indented by two levels rather than one. In Python, the indentation 
-of an ``if`` statement determines if it is nested. In order for an ``if``
+of an ``if`` statement determines if it is nested. For an ``if``
 statement to run inside another, it must be indented more than the outer conditional. 
 
 Nesting Also Works With ``else``

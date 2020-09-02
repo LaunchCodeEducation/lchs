@@ -1,5 +1,5 @@
 
-.. index:: ! operand
+.. index:: ! operator, ! operand
 
 Operators
 =========

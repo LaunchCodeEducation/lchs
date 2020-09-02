@@ -36,7 +36,7 @@ Run the code below to identify the data type for ``True`` and ``False``.
 
 .. raw:: html
 
-   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Bool-Data-Type?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/Bool-Data-Type?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 Hmm! In the previous chapter, we learned about three data types---``int``,
 ``float``, and ``string``. The first two deal with numbers, while ``string``

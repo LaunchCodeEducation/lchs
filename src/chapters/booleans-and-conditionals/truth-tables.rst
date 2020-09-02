@@ -97,8 +97,8 @@ Python always performs operations in a specific order:
    #. The ``and`` operator is evaluated last.
 
    Let's say ``x = 2`` and ``y = 46``. Here we step through each stage of the evaluation:
-
-   .. list-table:: Operator Order
+     
+   .. list-table:: Operator Order on: ``x * 5 >= 10 and y - 6 <= 20``
       :widths: auto
       :header-rows: 1
 
