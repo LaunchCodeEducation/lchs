@@ -1,7 +1,7 @@
 Infinite Loops
 ==============
 
-Here's the code for a simple while loop. Run the program first to make sure it
+Here's the code for a simple ``while`` loop. Run the program first to make sure it
 works. Then make one of these changes, and run the program again:
 
 #. Remove or comment out ``num += 1``.
@@ -11,7 +11,7 @@ works. Then make one of these changes, and run the program again:
 
       <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Infinite-While-Loop?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-Yikes!!! What happened? The program just keeps running!
+Yikes! What happened? The program just keeps running!
 
 .. index:: ! infinite loop
 
