@@ -1,26 +1,12 @@
 Exercises: Loops
 ================
 
-.. pull-quote::
+   Loops simplify repetitive tasks!
 
-   Practice makes better. Repetition is a good thing.
+.. figure:: figures/loop-comic.png
+   :alt: Image showing how Bart Simpson could use Python to write his sentences on a chalkboard.
 
-   Repetition is a good thing.
-
-   Repetition is a good thing.
-
-   Repetition is a good thing.
-
-WAIT!!!  Why type "Repetition is a good thing" four times when we can code a
-better result?  How about printing the phrase 100 times instead?
-
-.. sourcecode:: python
-   :linenos:
-
-   for line in range(100):
-      print("Repetition is a good thing.")
-
-Loops simplify repetitive tasks!
+   Image from `Bart's Blackboard <http://bartsblackboard.com/category/season-2/page/2/>`__, Season 2, Episode 11 (Jan 24, 1991)
 
 ``for`` Practice
 -----------------
