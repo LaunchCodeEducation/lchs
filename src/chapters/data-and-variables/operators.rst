@@ -1,3 +1,6 @@
+
+.. index:: ! operator, ! operand
+
 Operators
 =========
 

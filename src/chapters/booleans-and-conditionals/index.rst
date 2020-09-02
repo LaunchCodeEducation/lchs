@@ -8,7 +8,7 @@ Making Decisions With Conditionals
 
    introduction
    bool-data-type
-   booleans
+   boolean-expressions
    math-with-booleans
    conditionals
    logical-operators
