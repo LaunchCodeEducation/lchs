@@ -42,7 +42,7 @@ follow.
 
 **Summary:**
 
-#. Line 4 begins the conditional. The boolean expression ``num > other_num``
+#. Line 4 begins the chained conditional. The boolean expression ``num > other_num``
    returns ``False``, since 10 is not greater than 20. This causes line 5 to be
    skipped.
 #. Line 6 contains the ``elif`` statement. The boolean expression
