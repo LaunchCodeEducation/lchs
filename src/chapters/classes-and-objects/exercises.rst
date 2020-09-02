@@ -2,7 +2,7 @@ Exercises: Classes and Objects
 ==============================
 
 In these exercises, you will create a ``Robot`` class and use it to create
-five ``Robot`` objects. You will also practice writing functions that display
+four ``Robot`` objects. You will also practice writing functions that display
 information about the objects as well as race them against each other.
 
 .. admonition:: Note
@@ -43,30 +43,32 @@ Add Properties to ``Robot``
    a. Call the ``Robot`` class to create a new object. Assign it to a
       variable.
    b. Use dot notation to ``print`` the values for each property.
+   c. To check the default, call the class at least once WITHOUT including an
+      argument for ``year``.
 
 Add Methods to ``Robot``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Below the ``__init__`` method, define a method called ``move()``. The method
+#. Below ``__init__``, define a second method called ``move()``. This method
    should:
 
    #. Only take the ``self`` parameter.
    #. Generate a random number of steps (1 - 10) for the object to take. The
-      range should include ``1`` and ``10``. *Hint*: The ``randint`` function
-      is described in the :ref:`The random Module <pick-random-number>`
-      section.
+      range should include ``1`` and ``10`` as options. *Hint*: The ``randint``
+      function is described in the
+      :ref:`The random Module <pick-random-number>` section.
    #. Increase the ``distance`` property by the number of steps.
    #. Return the random number of steps.
 
 #. Add the ``__str__`` method to return a string of the object properties.
-   ``print(robot_name)`` should produce something similar to:
+   ``print(robot_name)`` should produce something like:
 
    ::
 
       Robot information:
         Name: Bob
         Mass: 25 kg
-        Year made: 2019
+        Year made: 2020
         Distance traveled: 0
 
 .. admonition:: Tip
@@ -82,19 +84,49 @@ Add Methods to ``Robot``
 Part 2: Create Objects
 ----------------------
 
-Lorem ipsum...
+In part 1, you defined a class and created one ``Robot`` object. In ``main()``
+create three more objects:
 
-Store objects in a list...
+#. Assign each ``Robot`` object to its own variable.
+#. Each object should have a different ``name`` value.
+#. Use a randomly generated mass for each new robot. The masses should be in
+   the range from ``25`` to ``40``.
 
-Part 3: Print Robot Info
-------------------------
+You now have 4 total robots. Place their variables inside a list, and assign
+the collection to a variable called ``robots``.
 
-Function to print "Lorem ipsum..."
+Part 3: Find Oldest Robot
+-------------------------
 
-Can EITHER do this inside the function with ``.format()`` and dot notation OR
-by adding a ``__str__`` method to the class.
+Outside of the class, define a function called ``oldest_robot``. It should:
 
-List of robots as the parameter...
+#. Accept a list as a parameter.
+#. Use a loop to iterate through the list.
+#. Check to see if each element in the list is a ``Robot`` data type. If not,
+   return the error message, ``"Invalid data type. Robot objects required."``
+#. Check the ``year`` value for all of the robots.
+#. Return the *index value* for the oldest robot in the list. *Caution*:
+   Remember that a robot made in 2020 is NOT older than one made in 2019!
+
+.. admonition:: Note
+
+   The instructions assume that there will only be ONE "oldest" robot in your
+   list. What if two or more objects have the same ``year`` value?
+
+   We won't solve this issue here. However, add comments in your code
+   describing how you would deal with multiple robots that are the same age.
+
+In ``main()`` call the ``oldest_robot`` function and use ``robots`` for the
+argument. Assign the returned index to a new variable.
+
+Print out a message describing the result:
+
+::
+
+   Of the ___ robots, ___ is the oldest.
+
+Fill in the blanks with the length of the ``robots`` list and the ``name`` of
+the oldest robot.
 
 Part 4: Robot Races
 -------------------
