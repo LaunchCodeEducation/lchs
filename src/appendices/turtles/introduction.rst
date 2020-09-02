@@ -5,7 +5,7 @@ One of the strengths of Python is that we can pull in ready-made features to
 make building our own programs easier. Instead of figuring out how to do all of
 the nitty-gritty details ourselves, we can use a *module* that already contains
 the code we need. Think of a module like a plug-and-play attachment for your
-phone or computer. All you need to do is connect it, and it works.
+phone or computer. All you need to do to use a module is to add a reference to your program.
 
 There are many modules in Python that provide very powerful features. Some of
 these can send email or fetch web pages. Others allow us to perform complex
