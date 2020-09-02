@@ -22,32 +22,62 @@ Part 1: Create a New Class
 Open up the starter code and notice that it imports the ``random`` module.
 Below the ``import`` statement, define the ``Robot`` class.
 
-Add Properties
-^^^^^^^^^^^^^^
+Add Properties to ``Robot``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Inside the class, define the ``__init__`` method. It should include
-   parameters for ``self``, ``name``, ``mass``, ``year``, and ``color``.
-#. Give default values to ``year`` and ``color``.
+   parameters for ``self``, ``name``, ``mass``, and ``year``.
+#. Give a default value to ``year``.
 #. Assign the property values as described in the
    :ref:`Setting Property Values <set-property-values>` section.
-#. Before you move on, test your code!
+#. Add one more property called ``distance``. This will NOT have a
+   parameter, and every new ``Robot`` object will start with a ``distance``
+   value of ``0``.
 
-   #. In ``main()`` call the ``Robot`` class to create a new object and assign
-      it to a variable.
-   #. Use dot notation to ``print`` the values for each property.
+.. admonition:: Tip
 
-Add Methods
-^^^^^^^^^^^
+   Before you move on, test your new class!
+   
+   In ``main()``:
 
-#. Below the ``__init__`` method, define a method called ``move()``. 
-#. Give default values to ``year`` and ``color``.
-#. Assign the property values as described in the
-   :ref:`Setting Property Values <set-property-values>` section.
-#. Before you move on, test your code!
+   a. Call the ``Robot`` class to create a new object. Assign it to a
+      variable.
+   b. Use dot notation to ``print`` the values for each property.
 
-   #. In ``main()`` call the ``Robot`` class to create a new object and assign
-      it to a variable.
-   #. Use dot notation to ``print`` the values for each property.
+Add Methods to ``Robot``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Below the ``__init__`` method, define a method called ``move()``. The method
+   should:
+
+   #. Only take the ``self`` parameter.
+   #. Generate a random number of steps (1 - 10) for the object to take. The
+      range should include ``1`` and ``10``. *Hint*: The ``randint`` function
+      is described in the :ref:`The random Module <pick-random-number>`
+      section.
+   #. Increase the ``distance`` property by the number of steps.
+   #. Return the random number of steps.
+
+#. Add the ``__str__`` method to return a string of the object properties.
+   ``print(robot_name)`` should produce something similar to:
+
+   ::
+
+      Robot information:
+        Name: Bob
+        Mass: 25 kg
+        Year made: 2019
+        Distance traveled: 0
+
+.. admonition:: Tip
+
+   Test your methods!
+   
+   In ``main()``:
+
+   a. ``print`` the ``Robot`` object to check the output.
+   b. Use a loop to call the ``move()`` method several times. Inside the loop,
+      ``print`` the steps taken and the updated ``robot_name.distance`` value. 
 
 Part 2: Create Objects
 ----------------------
