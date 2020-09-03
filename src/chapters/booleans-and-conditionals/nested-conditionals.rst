@@ -36,13 +36,14 @@ Our first attempt at a solution might look like this:
 
    POSITIVE
 
-When we enter 7 at the prompt, we want the program to print nothing. However,
+When we enter ``7`` in the prompt, we want the program to print nothing. However,
 we see the output ``POSITIVE``. The code doesn't work as we want. Why not?
 
 Written this way, the two conditionals are separate from each other. The result
 from one has no influence on the other. Checking ``entry`` as even or odd works
 fine on its own. However, the second check gets carried out whether or not
-``entry%2 == 0`` is ``True`` or ``False``.
+``entry%2 == 0`` is ``True`` or ``False``. :ref:`Remember <if>`, the ``if`` condition
+does not apply after the first unindented line. 
 
 .. index::
    single: conditional; nested
@@ -64,14 +65,15 @@ conditional determines whether or not to consider the second.
    Try removing the indentation for lines 6 & 7 to see how the output changes!
 
 Notice that when we put one conditional inside another, the body of the nested
-conditional is indented by two levels rather than one. This convention provides
-an easy, visual way to see which code is part of which conditional.
+conditional is indented by two levels rather than one. In Python, the indentation 
+of an ``if`` statement determines if it is nested. For an ``if``
+statement to run inside another, it must be indented more than the outer conditional. 
 
 Nesting Also Works With ``else``
 --------------------------------
 
 In the examples above, we left out the ``else`` clauses from the conditionals.
-Let's take nesting a step further by including them.
+Let's take nesting a step further by including ``else`` clauses:
 
 .. admonition:: Try It!
 
@@ -87,17 +89,16 @@ Let's take nesting a step further by including them.
 
    **DISCOVER**: Run the program to check your predictions.
 
+.. admonition:: Tip
+
+   In Python, the amount of indentation tells us exactly which ``else`` clause belongs to which ``if`` statement.
+
 This diagram shows the *flow of control* for this program:
 
 .. figure:: figures/nested-control-flow.png
    :height: 350px
    :alt: A diagram showing how the flow of a program branches based on the value of the condition in a nested if-else statement.
 
-.. admonition:: Note
-
-   In some programming languages, matching the ``if`` and the ``else`` can be
-   confusing. However, in Python this is not the case. The amount of indentation
-   tells us exactly which ``else`` belongs to which ``if``.
 
 Check Your Understanding
 ------------------------

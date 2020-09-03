@@ -3,7 +3,7 @@ Can We Do Math with Boolean Values?
 
 .. admonition:: Fun Fact
 
-   Boolean values are named after the British mathematician George Boole, who
+   The boolean data type is named after the British mathematician George Boole. Boole
    created `Boolean Algebra <https://en.wikipedia.org/wiki/Boolean_algebra>`__,
    which is the basis of all modern computer arithmetic.
 

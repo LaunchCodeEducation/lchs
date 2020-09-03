@@ -13,7 +13,6 @@ Repeating Things With Loops
    accumulator-pattern
    while-loops
    infinite-loops
-   choosing-loops
    terminating-loops
    exercises
    project
