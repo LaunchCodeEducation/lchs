@@ -16,13 +16,13 @@ Requirements
 
 By the END of this assignment, your program will:
 
-#. Ask the candidate to enter their name
-#. Use a loop to ask five questions, one at a time, to the candidate
-#. Collect the candidate's answers
-#. Check those answers for accuracy (case insensitive)
-#. Calculate the candidate's overall percentage
+#. Ask the candidate to enter their name.
+#. Use a loop to ask five questions, one at a time, to the candidate.
+#. Collect the candidate's answers.
+#. Check those answers for accuracy (case insensitive).
+#. Calculate the candidate's overall percentage.
 #. Determine if the candidate did well enough to move on to the next round
-   (need 80% or better to pass)
+   (need 80% or better to pass).
 #. Display the results.
 
 Part 1: Minimum Viable Quiz
