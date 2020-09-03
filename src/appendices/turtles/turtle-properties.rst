@@ -91,10 +91,10 @@ blue to produce a specific color. The code must follow a ``#`` character.
       bob.color('red')
       bob.color('purple')
       bob.color('light salmon')     # Yeah, this is a color.
-      bob.color('#3c79b8')          # Hex code for LaunchCode blue.
+      bob.color('#3c79b8')          # Hex code for smokey blue.
 
    .. figure:: ./figures/4-turtle-colors.png
-      :alt: Image showing red, purple, light salmon and LaunchCode blue.
+      :alt: Image showing red, purple, light salmon, and smokey blue.
 
 To see a list of color names that Python recognizes, check out the
 `Trinket documentation <https://trinket.io/docs/colors>`__, which provides an
@@ -133,10 +133,10 @@ both represented by the turtle image on the screen.
       bob.fillcolor('violet')
       bob.fillcolor('yellow')
       bob.fillcolor('white smoke')  # Yeah, this is a color.
-      bob.fillcolor('#419f6a')      # Hex code for LaunchCode green.
+      bob.fillcolor('#419f6a')      # Hex code for summer green.
 
    .. figure:: ./figures/4-fill-colors.png
-      :alt: Image showing violet, yellow, white smoke and LaunchCode blue fill colors.
+      :alt: Image showing violet, yellow, white smoke, and summer green fill colors.
 
 .. admonition:: Tip
 
@@ -150,7 +150,7 @@ both represented by the turtle image on the screen.
       bob.color('black', 'pink')          # Set black line color and pink fill color.
       bob.color('purple', 'gold')
       bob.color('tomato', 'skyblue')
-      bob.color('#3c79b8', '#419f6a')     # Hex codes for LaunchCode blue and green.
+      bob.color('#3c79b8', '#419f6a')     # Hex codes for smokey blue and summer green.
 
    .. figure:: ./figures/4-line-fill-colors.png
       :alt: Image showing 4 examples of setting line and fill colors.
