@@ -4,7 +4,7 @@ What is Debugging?
 .. index:: ! debugging, ! bug
 
 Programming is a complex process. Since it is done by humans, mistakes often
-occur. Programming errors are called **bugs**, and the process of tracking them
+occur. Programming errors are called **bugs**, and the process of tracking bugs
 down and fixing them is called **debugging**.
 
 One popular story claims that in 1947, a dead moth caused a problem in one of
@@ -35,14 +35,6 @@ Here are some suggestions to get you thinking about debugging:
 
 #. Often, new coders find it tempting to blame errors on Python itself. However, it
    is far, far more likely that the *human* put the error into their own code.
-
-   .. admonition:: Tip
-   
-      Python has been used to solve complicated problems millions of times
-      by millions of other programmers.
-
-         Don't blame the language. It's NOT Python's fault!
-         
 #. Think critically about the code. Use any available tools to help find and
    fix the mistakes. Even senior developers make basic errors!
 #. Learn how to use error messages and ``print`` statements to find clues.
