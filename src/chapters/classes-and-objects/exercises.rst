@@ -84,65 +84,82 @@ Add Methods to ``Robot``
 Part 2: Create Objects
 ----------------------
 
-In part 1, you defined a class and created one ``Robot`` object. In ``main()``
-create three more objects:
+In part 1, you defined a class and created one ``Robot`` object in ``main()``.
+Now create three more objects:
 
 #. Assign each ``Robot`` object to its own variable.
 #. Each object should have a different ``name`` value.
-#. Use a randomly generated mass for each new robot. The masses should be in
-   the range from ``25`` to ``40``.
+#. Use a mass value from ``25`` to ``40``. (*Bonus*: Use ``randint`` to
+   generate the mass value instead of hard-coding a number when you call the
+   class).
 
-You now have 4 total robots. Place their variables inside a list, and assign
-the collection to a variable called ``robots``.
+You now have 4 total robots. Add another statement in ``main()`` where you
+place the objects inside a list. Assign the collection to a variable called
+``robots``.
+
+Update Distances
+^^^^^^^^^^^^^^^^
+
+Use a loop to iterate through the ``robots`` list. For each object, assign a
+random value to the ``distance`` property, from ``1000`` to ``3000`` steps.
 
 Part 3: Find Oldest Robot
 -------------------------
 
-Outside of the class, define a function called ``oldest_robot``. It should:
+Between the class and ``main()``, define a function called ``oldest_robot``. It
+should:
 
-#. Accept a list as a parameter.
+#. Accept a list of robots as a parameter.
 #. Use a loop to iterate through the list.
-#. Check to see if each element in the list is a ``Robot`` data type. If not,
-   return the error message, ``"Invalid data type. Robot objects required."``
-#. Check the ``year`` value for all of the robots.
-#. Return the *index value* for the oldest robot in the list. *Caution*:
-   Remember that a robot made in 2020 is NOT older than one made in 2019!
+#. Return the index value for the oldest robot in the list. *Caution*: A robot
+   made in 2020 is NOT older than one made in 2019!
+#. If two robots have the same ``year`` value, then the one with the largest
+   ``distance`` will be older.
 
 .. admonition:: Note
 
-   The instructions assume that there will only be ONE "oldest" robot in your
-   list. What if two or more objects have the same ``year`` value?
+   The instructions assume that the list contains only one "oldest" robot. What
+   if two old robots have the same ``year`` and ``distance`` values?
 
-   We won't solve this issue here. However, add comments in your code
+   We won't solve this problem here. However, add comments in your code
    describing how you would deal with multiple robots that are the same age.
 
-In ``main()`` call the ``oldest_robot`` function and use ``robots`` for the
+In ``main()``, call the ``oldest_robot`` function and use ``robots`` for the
 argument. Assign the returned index to a new variable.
 
 Print out a message describing the result:
 
 ::
 
-   Of the ___ robots, ___ is the oldest.
+   "___ is the oldest robot (made in ___, ___ steps)."
 
-Fill in the blanks with the length of the ``robots`` list and the ``name`` of
-the oldest robot.
+Fill in the blanks with the name of the robot, the year it was made, and its
+current number of steps.
 
 Part 4: Robot Races
 -------------------
 
-Now it's time to let the robots compete against each other! Define a
-``robot_race`` function that takes a list as a parameter.
+Now it's time for the robots to compete against each other! Define the
+``robot_race`` function that takes a list of robots as a parameter.
 
-Within the function, race the five robots together by using the ``move``
-method. A machine is done with the race when they reach 20 steps or more.
-Store the result as a string: ``'____ took ____ turns to take 20 steps.'``
-Fill in the blanks with the robot’s name and race result. Create a new list
-to store how many turns it takes each robot to complete the race.
+Within the function:
 
-Return the list from the function, then print the results to the console (one
-robot per line).
+#. Each robot takes a turn running a race.
+#. A robot runs the race by calling its ``move()`` method several times.
+#. A robot is done with the race when it moves 30 steps or more.
+#. Create a new list to store how many turns it takes each robot to complete
+   the race. Use the string: ``'____ took ____ turns to take 30 steps.'``
+   Fill in the blanks with the robot’s name and race result.
+#. Return the list from the function.
+#. Print the results to the console (one robot per line).
+
+   ::
+
+      Bob took 7 turns to take 30 steps.
+      Jen took 5 turns to take 30 steps.
+      Sal took 7 turns to take 30 steps.
+      Jessi took 6 turns to take 30 steps.
 
 *HINT*: There are a lot of different ways to approach this problem. One way
-that works well is to see how many iterations of the ``move`` method it will
-take for each animal to reach 20 steps.
+that works well is to count how many times ``move()`` gets called in order to
+reach 30 steps.
