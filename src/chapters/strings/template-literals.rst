@@ -35,15 +35,6 @@ depends on multiple variables. Also, concatenation usually requires several
 test runs of the code in order to check for syntax errors and proper spacing.
 Fortunately, Python offers us a better way to accomplish the same thing.
 
-The Philosophy of Python
-------------------------
-
-	Elegance trumps mess,
-
-	Simplicity beats complex,
-
-	Make it readable.
-
 .. index:: ! template literal
 
 **Template literals** allow for the automatic insertion of expressions and
@@ -200,7 +191,7 @@ If we add another value inside ``format()``, we can insert it into the string
 by adding ``{2}`` to ``output``.
 
 Index values in template literals are flexible. The order of the values in curly
-braces does not matter for the order of the values within ``format()``.
+braces does not need to match the order of the values within ``format()``.
 
 .. admonition:: Example
 

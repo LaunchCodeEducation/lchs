@@ -68,7 +68,9 @@ at position [2] we have the letter ``'h'``.
 
 In step 2 above, ``this_string[40]`` causes an *index out of range* error.
 This happens anytime we try to reference an index location that does not exist
-in the string. We discuss what a negative index value returns shortly. 
+in the string. 
+
+We will discuss what a negative index value returns in step 3 shortly. 
 
 Expressions for ``index``
 ^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -40,7 +40,7 @@ Part One: Bracket Notation
    c. Finally, use concatenation to print the combination of the original and
       reversed string. For example, given the string ``'tomato'``, your program
       prints ``tomatootamot``. (If you want to be fancy, include the ``|``
-      character to make the output look like an almost mirrored image: ``tomato | otamot``). 
+      character to make the output look almost like a mirrored image: ``tomato | otamot``). 
 
 .. admonition:: Note
 
@@ -98,7 +98,7 @@ Part Two: String Methods and Operations
       and then print the result.
    b. Change all of the letters in the DNA string to UPPERCASE and print the
       result.
-   c. Note that if you need to *reassign* the changes back to the ``dna`` variable in order to see them printed. 
+   c. Note that you need to *reassign* the changes back to the ``dna`` variable in order to see them printed. 
       Apply these fixes to your code so that ``print(dna)`` prints the DNA strand in UPPERCASE
       with no whitespace.
 

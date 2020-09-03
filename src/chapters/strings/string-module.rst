@@ -5,7 +5,7 @@ The ``string`` Module
 
 We've talked before about string methods. The Python language gives us another means of working with string data. 
 The Python **string module** provides several constants that are useful for checking to see if a character, slice, or
-string contains letters, digits, symbols, etc.. To use these constants, we need to *import* the module into our code. 
+string contains letters, digits, symbols, etc. To use these constants, we need to *import* the module into our code. 
 
 Begin with an ``import`` statement at the top of your code:
 

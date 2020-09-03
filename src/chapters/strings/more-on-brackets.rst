@@ -67,7 +67,7 @@ Saving Substrings
 In the examples above, we simply print a substring to the
 console, like ``print(fruit[:3])``. This works because when we use brackets to
 return part of a string, we actually *create a new string*.
-This new string is a piece of data and we can perform operations on it like any other string. The
+This new string is a piece of data, and we can perform operations on it like any other string. The
 expression ``fruit[:3]`` returns the string ``'cuc'``, so the ``print`` function
 displays that data in the console. If we want to use the string ``'cuc'`` again, we will need
 to take another slice from ``fruit``, or save the string in a new variable.
