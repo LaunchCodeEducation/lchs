@@ -11,10 +11,13 @@ information about the objects as well as race them against each other.
    or a :ref:`Trinket course <trinket-course-assignments>`, login to your
    account to access the starter code for each exercise.
 
-   If you are NOT enrolled in a repl.it classroom or Trinket course, use the
-   links below to complete the project.
+   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
+   the following links to copy the starter code.
 
-.. todo:: Insert repl.it and Trinket links to the starter code (Classes exercises).
+   #. `Trinket starter code <https://trinket.io/python/b3c2b6e9ff>`__ (*Remix*
+      before getting started).
+   #. `Repl.it starter code <https://repl.it/@launchcode/LCHS-Classes-Exercises>`__
+      (*Fork* before getting started).
 
 Part 1: Create a New Class
 --------------------------
