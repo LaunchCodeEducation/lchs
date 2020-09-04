@@ -1,10 +1,12 @@
-Inheritance and Clones
-======================
+Inheritance and Other Topics
+============================
+
+.. todo:: We need to have a whole Ed Team discussion about whether to include these topics at all.
 
 Constructing classes and using them to create objects gives your Python code a
 serious power boost. All that remains for this chapter are a couple of optional
 topics that your teacher may or may not ask you to explore. The content can be
-found in the ``Extras`` appendix:
+found in the ``Optional Content`` appendix:
 
 #. :ref:`Inheritance <class-inheritance>`
 #. :ref:`Making independent object copies <deep-copy>`

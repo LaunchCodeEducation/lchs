@@ -7,4 +7,5 @@ Optional Course Content
    :maxdepth: 2
 
    inheritance
+   inheritance-cont
    deep-copy
