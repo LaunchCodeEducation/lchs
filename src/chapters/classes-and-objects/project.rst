@@ -1,95 +1,127 @@
 Project: Classes and Objects
 ==============================
 
-Intro text...
+Now that we've got our robots up and running, we want to select a few of them
+to clean our school building.
 
-Let's create a class to handle new animal crew candidates!
+Let's create a class to handle new cleaning crew candidates!
 
 Before You Start
 ----------------
 
-Add the usual Trinket/Repl.it intro...
+.. admonition:: Note
 
-Part 1 - Add Class Properties
------------------------------
+   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+   or a :ref:`Trinket course <trinket-course-assignments>`, login to your
+   account to access the starter code for this project.
+
+   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
+   the following links to copy the starter code.
+
+   #. `Trinket code <https://trinket.io/python/7b69aa933c>`__ (*Remix* before
+      getting started).
+   #. `Repl.it code <https://repl.it/@launchcode/LCHS-Classes-Project-starter-code>`__
+      (*Fork* before getting started).
+
+Part 1: Add Class Properties and ``__str__`` Method
+---------------------------------------------------
 
 #. Declare a class called ``CrewCandidate`` with an ``__init__`` that takes
    three parameters---``name``, ``mass``, and ``scores``. Note that ``scores``
-   will be a list of test results.
-#. Create objects for the following candidates:
+   will be a list of test results for the candidate's speed and accuracy.
+#. In ``main()``, create objects for the following candidates:
 
-   a. Bubba Bear has a mass of 135 kg and test scores of 88, 85, and 90.
-   b. Merry Maltese has a mass of 1.5 kg and test scores of 93, 88, and 97.
-   c. Glad Gator has a mass of 225 kg and test scores of 75, 78, and 62.
+   a. iClean has a mass of 13.5 kg and test scores of 88, 85, and 90.
+   b. Shiny has a mass of 1.5 kg and test scores of 93, 88, and 97.
+   c. DustVac has a mass of 22.5 kg and test scores of 75, 78, and 62.
 
-#. Use ``print`` and dot notation for each object to check to see if your class
-   correctly assigns the property values.
+#. Define a ``__str__`` method to display the properties of each candidate. The
+   output should look something like:
 
-Part 2 - Add First Class Method
+   ::
+
+      **Candidate Information**
+      Name: Shiny
+      Mass: 1.5 kg
+      Scores: [93, 88, 97]
+
+#. Print each object to check to see if your class correctly assigns and
+   displays the property values. (You can remove or comment out the ``print``
+   statement after your tests pass).
+
+Part 2: Add Another Class Method
 --------------------------------
 
 As our candidates complete more tests, we need to be able to add the new
 scores to their records.
 
-#. Create an ``addScore`` method in ``CrewCandidate``. The function must take
-   a new score as a parameter. Code this function OUTSIDE of ``constructor``.
-   (If you need to review the syntax, revisit
-   :ref:`Assigning Class Methods <adding-class-methods>`).
-#. When passed a score, the function adds the value to ``this.scores`` with the
-   :ref:`push array method <push-and-pop-examples>`.
-#. Test out your new method by adding a score of ``83`` to Bubba's record, then
-   print out the new score array with ``objectName.scores``.
+#. Create an ``add_score`` method in ``CrewCandidate``. The function must take
+   a new score as a parameter in addition to ``self``.
+#. When passed a score, the function adds the value to ``self.scores`` with the
+   :ref:`append method <list-append-examples>`.
 
-Part 3 - Add More Methods
---------------------------
+   .. admonition:: Tip
 
-Now that we can add scores to our candidates' records, we need to be able to
-evaluate their fitness for our astronaut program. Let's add two more methods
-to ``CrewCandidate``---one to average the test scores and the other to
-indicate if the candidate should be admitted.
+      Inside the class, the name of the list is ``self.scores`` instead of
+      ``scores``. Thus, ``self.scores.append()`` is the proper syntax.
+
+#. In ``main()``, test your new method by adding a score of ``83`` to iClean's
+   record, then print out the new score list in with ``object_name.scores``.
+
+Part 3: Add More Methods
+------------------------
+
+Now that we can add scores to our candidates' records, we need to evaluate
+their fitness for our astronaut program. Let's add two more methods
+to ``CrewCandidate``---one to average the test scores, and the other to
+decide if the candidate should be admitted.
 
 Calculating the Test Average
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Add an ``average()`` method outside ``constructor``. The function does NOT
-   need a parameter.
-#. To find the average, add up the entries from ``this.scores``, then divide
-   the sum by the number of scores.
+#. Define an ``average()`` method. It only needs the ``self`` parameter.
+#. To find the average, add up the entries from ``self.scores``, then divide
+   the sum by the number of scores in the list.
 #. To make the average easier to look at,
-   :ref:`round it to 1 decimal place <rounding-to-decimal-places>`, then return
-   the result from the function.
+   :ref:`round it to 1 decimal place <round-function>`, then return the result
+   from the method.
 
-Verify your code by evaluating and printing Merry's average test score (92.7).
+Check your code by evaluating and printing Shiny's average test score (92.7).
 
 Determining Candidate Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Candidates with averages at or above 90% are automatically accepted to our
-training program. Reserve candidates average between 80 - 89%, while
-probationary candidates average between 70 - 79%. Averages below 70% lead to a
-rejection notice.
+Candidates with averages at or above 90% are automatically added to our new
+cleaning crew. Backup robots average between 80 - 89%, while robots with
+averages between 70 - 79% get sent out for repairs. Averages below 70% lead to
+a short trip to the recycling bin.
 
 #. Add a ``status()`` method to ``CrewCandidate``. The method returns a string
-   (``Accepted``, ``Reserve``, ``Probationary``, or ``Rejected``) depending on
+   (``Accepted``, ``Backup``, ``Maintenance``, or ``Scrapped``) depending on
    a candidate's average.
-#. The ``status`` method requires the average test score, which can be called
-   as a parameter OR from inside the function. That's correct - methods can
-   call other methods inside a class! Just remember to use the ``this``
-   keyword.
-#. Once ``status`` has a candidate's average score, evaluate that score, and
-   return the appropriate string.
-#. Test the ``status`` method on each of the three candidates. Use a template
-   literal to print out ``'___ earned an average test score of ___% and has a
-   status of ___.'``
+#. The ``status`` method requires the average test score. Fortunately, methods
+   can call other methods inside a class! Just remember to use
+   ``self.method_name()``.
+#. Once ``status`` has a candidate's average score, return the proper string
+   based on that value.
+#. In ``main()``, test the ``status`` method on each of the three candidates.
+   Print the result with the format, ``'___ scored an average of ___% (___).'``
 
-Part 4 - Play a Bit
---------------------
+   ::
 
-Use the three methods to boost Glad Gator's status to ``Reserve`` or higher.
-How many tests will it take to reach ``Reserve`` status? How many to reach
-``Accepted``? Remember, scores cannot exceed 100%.
+      iClean scored an average of 87.7% (Backup).
+      Shiny scored an average of 92.7% (Accepted).
+      DustVac scored an average of 71.7% (Maintenance).
+
+Part 4: Play a Bit
+------------------
+
+Use the class methods to boost DustVac's status to ``Backup`` or higher. How
+many good tests will it take to reach ``Backup`` status? How many to reach
+``Accepted``?
+
+Note that scores cannot exceed 100%.
 
 .. admonition:: Tip
 
    Rather than adding one score at a time, could you use a loop?
-
