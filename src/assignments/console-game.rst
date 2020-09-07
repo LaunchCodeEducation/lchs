@@ -7,11 +7,17 @@ You and a partner will design a simple console game app. For example:
 
 #. Guess letters to figure out a word/sentence
 #. Guess a 4 color sequence (a.k.a Mastermind)
-#. 21
+#. Play a game of 21
 #. Global Thermonuclear War
 #. etc.
 
-For example...Rock, paper, scissors (in run-only editor).
+.. admonition:: Example
+
+   Click *Run* to play play Rock, Paper, Scissors against the computer!
+
+   .. raw:: html
+
+      <iframe src="https://trinket.io/embed/python3/ed6caf8b53?outputOnly=true&runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Requirements
 ------------
@@ -23,13 +29,13 @@ Requirements
 #. Functions
 #. Lists
 #. A ``main()`` function
-#. Replay option (e.g. "Would you like to play again?")
+#. A replay option (e.g. "Would you like to play again?")
 
 **Bonus items**:
 
-#. Using dictionaries
-#. Using classes/objects
-#. Using a module (custom or ready-made)
+#. Use one or more dictionaries
+#. Use classes/objects
+#. Use a module (custom or ready-made)
 
 Choose an Idea
 --------------
@@ -40,8 +46,8 @@ the program to do (NO CODE YET).  Discuss the GAME, not the Python.
 Start simple! You have a limited amount of time, and you can always add more
 complicated features later.
 
-Write Down Some Pseudo-code
----------------------------
+Create Some Pseudo-code
+-----------------------
 
 Define pseudo-code...
 
