@@ -218,9 +218,9 @@ clear text, you must shift the letters to the *left* the same number of steps.
 #. *Hints*:
 
    a. There's no rule that says shift values have to be positive.
-   b. Clever coders will remember that functions can call other functions.
-   c. *Exceptionally* clever coders can complete the ``decrypt`` function in 3
-      lines or less.
+   b. Remember that functions can call other functions.
+   c. The ``decrypt`` function can be completed with only a small number of
+      statements.
 
 Test Your Functions!
 ^^^^^^^^^^^^^^^^^^^^
