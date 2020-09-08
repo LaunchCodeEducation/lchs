@@ -47,7 +47,7 @@ question on StackOverflow that seemed similar to mine. I tried that solution,
 but it didn't fix my problem."
 
 .. figure:: figures/debugging.png
-   :alt: Image showing a comic with the caption, "If debugging is the process
+   :alt: A comic with the caption, "If debugging is the process
          of removing software bugs, then programming must be the process of
          putting them in."
    :width: 40%
