@@ -46,7 +46,7 @@ English words, and the values are the same words in Spanish:
       'blue' : 'azul',
       'apple' : 'manzana',
       'python' : 'pitón',
-      'fox' : 'zorro'
+      'library' : 'biblioteca'
    }
 
 Now imagine that a user inputs an English word. We can easily search the keys
