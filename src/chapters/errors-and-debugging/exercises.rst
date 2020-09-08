@@ -113,7 +113,7 @@ Solve Logic Errors
 
 .. admonition:: Example
 
-   #. On line 10 add ``print(is_valid)`` to check if the conditional on line
+   #. On line 10, add ``print(is_valid)`` to check if the conditional on line
       8 correctly assigns ``True`` and ``False`` based on the length of the
       username. Be sure to run the program with all four test names. ``Me2``
       and ``This1IsTooLong`` should return ``False``, while ``CoderGirl`` and
