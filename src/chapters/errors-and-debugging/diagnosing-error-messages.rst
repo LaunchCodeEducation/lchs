@@ -113,11 +113,7 @@ For example, here is a screenshot of our flawed code taken within an
 `editor at repl.it <https://repl.it/@launchcode/LCHS-Syntax-Highlighting-Example>`__.
 
 .. figure:: figures/syntax-highlighting.png
-   :alt: A screenshot with two lines of code. Syntax errors cause
-      highlighting to differ from what is expected. On line 1, the string "Julie"
-      is black instead of brown, because it is missing quotes. On line 2, the
-      symbol ) are brown instead of black, because the preceding string "Hello
-      doesn't have a closing double-quote.
+   :alt: A screenshot with two lines of code. The highlighting is different than expected because of syntax errors.
 
    Screenshot of a program with syntax errors.
 
