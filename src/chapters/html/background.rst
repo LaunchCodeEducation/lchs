@@ -9,15 +9,15 @@ appearance of a web page.
 In the next two chapters, we will learn about HTML and CSS. These are the two
 most common languages for organizing content and making it look beautiful.
 
-Before jumping in to learn HTML and CSS, we need to understand how web pages
-appear on screens.
+Before jumping in to learn HTML and CSS, we need to first understand how web
+pages appear on screens.
 
 The Internet vs. The Web
 ------------------------
 
 .. index:: ! internet, ! web, ! browser, ! network
 
-We say that devices are "connected to the internet", but what does this
+We often hear the phrase "connected to the internet", but what does this
 actually mean?
 
 At the most basic level, the internet is just a wire.
@@ -32,13 +32,12 @@ and exchange data.
    Even two devices linked together form a network.
 
 Different schools, businesses, homes, libraries, coffee shops, etc. all create
-their own separate networks whenever they link their devices together. If we
-connect two of these networks, say a school and a library, then devices from
-one network can communicate with devices on the other. If we add another
-network to the school-library connection, then we increase the resources
-available to all of the devices in all of the networks.
+their own separate networks. If we connect two of these, say a school and a
+library, then devices from one network can communicate with devices on the
+other. If we add another network to the school-library connection, then we
+increase the resources available to all of the devices in all of the networks.
 
-When a network includes something that can communicate with the outside world,
+When a network includes a device that can communicate with the outside world,
 then it can join forces with others. All of these different networks, connected
 together, form the **internet**.
 
@@ -51,51 +50,53 @@ together, form the **internet**.
 
 .. todo:: Insert image of a "network of networks".
 
-The **World Wide Web** is one system we use to interact with the wire. There
-are other options, but the web is the most common...
+The connections formed by the internet provide us with an amazing amount of
+information and ideas. However, we cannot walk up to a group of wires and ask,
+*What movies are opening this weekend?* We need something between us and the
+wires.
 
-The web allows people all over the world to request and share information. We
-usually access the web using **browsers**. Browsers let us request data from a
-network and then view that content on our screen.
+The **World Wide Web** is one system we can use to interact with the internet.
+There are other options, but the **web** is the most common. It helps people
+all over the world to request and share information.
 
 The internet is really just hardware and data---the machines and structures
-that store and transmit information. The web is what we use to access those
-machines and display the information in a useful way.
+that store and transmit information. The web is the software we use to access
+those machines and display the data in a useful way.
 
-As long as two computers are connected to the same "wire", they can communicate
-with each other over the internet. The web is simply one tool that makes
-exchanging information easier.
+We usually access the web using **browsers**, like Chrome, Firefox, or Safari.
+These programs translate requests for data (like clicking a link about the
+`periodic table <https://www.webelements.com/>`__) into something that machines
+can understand. When a browser receives a response to our request, it displays
+that data on our screens.
 
 Web Pages
 ---------
 
 .. index:: ! server
 
-The process involves the browser and the **server** that
-hosts the code. Think of a server as a machine that stores the data related to
-a particular page on the internet.
+A **server** is a machine that provides data to other devices. This includes
+data related to specific web pages. Somewhere, there is a machine that stores
+the information for the page you are looking at right now---the text, images,
+formatting, etc. However, this data is saved as *code*.
 
-You are viewing this page in a browser. On the surface, browsers are the
-tools that give us access to the internet. However, programmers think of
-browsers a little differently. For them, the browser is what translates code
-into a web page.
+You are viewing this web page in a browser. Behind the scenes, the program
+requested information from the server about this page, and it received some
+code as a response. The browser then executed that code to build the page you
+see on your screen.
+
+.. admonition:: Try It!
+
+   Right-click on this page and choose *View Page Source*. A tab should open
+   in your browser showing the code used to create the clean page.
 
 When you visit a web page in a browser, three main steps happen:
 
-1. The browser sends a **request** to the server for the web page.
-2. The server **responds** with the code that makes up the web page. 
-3. The browser receives the code and executes it. This displays the web page
-   in the browser window as .
+#. The browser sends a **request** to the server for the web page.
+#. The server **responds** with the code that makes up the web page. 
+#. The browser receives the code and executes it. This displays the page in the
+   browser window in a clean way.
 
-When the browser renders the page, HTML outlines the structure of the page's
-content.
+Looking at the *View Page Source* result, we see that the code for this web
+page is NOT Python. What language is it?
 
-.. admonition:: Note
-
-   In later chapters, request and response between browsers and servers will be
-   discussed in greater detail.
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...
+Well, let's take a look at HTML...
