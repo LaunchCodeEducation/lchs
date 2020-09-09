@@ -52,6 +52,8 @@ newline and tab characters, respectively. A **newline** represents tapping the
 
       <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Special-Character-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
+.. _unicode:
+
 Other Characters
 ----------------
 

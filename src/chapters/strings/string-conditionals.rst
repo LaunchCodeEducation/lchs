@@ -88,7 +88,7 @@ We can use the comparison operators ``==, !=, <, >, <=, >=`` on strings.
      ``your_pet[0].lower() == other_pet[0].lower()``).
 
 #. Line 7 evaluates if ``'dog'`` is less than ``'cat'``. This comparison is a bit more complicated.
-   What is really being compared is each character's Unicode value. All characters, even letters,
+   What is really being compared is each character's :ref:`Unicode <unicode>` value. All characters, even letters,
    have Unicode values. The Unicode value of a letter corresponds with its alphabetical order. 
    So a string that comes earlier in the alphabet is considered *less than* a string that comes
    later. Since ``'dog'`` follows ``'cat'`` alphabetically, the expression
