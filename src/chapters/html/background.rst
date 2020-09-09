@@ -48,7 +48,11 @@ together, form the **internet**.
    
    Thus, the internet is the connection between networks.
 
-.. todo:: Insert image of a "network of networks".
+.. figure:: figures/internet-as-wire.png
+   :alt: Think of the internet as a wire that connects different networks together.
+   :width: 80%
+
+   The internet is a network of networks.
 
 The connections formed by the internet provide us with an amazing amount of
 information and ideas. However, we cannot walk up to a group of wires and ask,
