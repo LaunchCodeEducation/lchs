@@ -21,16 +21,19 @@ For the overall structure of an HTML file, a programmer should follow 5 rules:
 
       ``DOCTYPE`` is one of few tags that does not require a closing tag.
 
-#. The ``<html>`` tag marks the beginning and end of the HTML code written by
-   the programmer.
-#. The ``<head>`` tag contains data about the web page. Most of this data will
-   NOT be seen by visitors to the web page.
-#. The ``<body>`` tag contains everything that appears in the browser when the
-   page is viewed.
-#. The ``<title>`` tag goes in the ``<head>`` of the document, and browsers
+#. The ``<html>`` element marks the beginning and end of the HTML code written
+   by the programmer.
+#. The ``<head>`` element contains data about the web page. Most of this data
+   will NOT be seen by visitors to the web page.
+#. The ``<body>`` element contains everything that appears in the browser when
+   the page is viewed.
+#. The ``<title>`` element goes in the ``<head>`` of the document, and browsers
    require it. We see the ``title`` of a web page in its browser tab.
 
-   .. todo:: Add screenshot of some tab titles.
+.. figure:: figures/title-element.png
+   :alt: The text in the ``title`` element provides the label seen in the browser tab.
+
+   The text in the ``title`` element appears in the browser tab.
 
 Here is the structure for an HTML page that follows these rules:
 
@@ -54,7 +57,7 @@ Note the following:
    ``head`` and ``body`` elements are both nested inside the ``html`` element,
    which runs from lines 2 - 10.
 #. While not necessary, using indentation to organize the start and end tags
-   for nested elements is a great idea.
+   for different elements is a great idea.
 
    The following code works as an HTML document, but it is poorly organized and
    very hard to follow.
@@ -154,7 +157,29 @@ Check Your Understanding
 
    Which HTML tag does NOT require a closing tag?
 
-   #. ``title``
-   #. ``body``
-   #. ``head``
-   #. ``DOCTYPE``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">title</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">body</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">head</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">DOCTYPE</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">html</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
