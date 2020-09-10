@@ -1,66 +1,119 @@
 What is HTML?
 =============
 
-.. index:: ! hypertext, ! markup language
+.. index:: ! hypertext, ! markup language, ! HTML
 
-Indicators of how HTML works are in its name. HTML is short for Hypertext Markup Language.
+The web is a collection of documents, which are stored in servers. Many of
+these documents are written in a language called **HTML**, which stands for
+*Hypertext Markup Language*.
 
-**Hypertext** is text that includes references to other text known as hyperlinks.
+The term **hypertext** refers to text that includes links (also called
+*hyperlinks*) to other text.
 
-With coding languages, there is a family of languages called **markup languages**. Markup languages annotate the text of a document and define the structure.
-HTML is the markup language that defines the structure of hypertext.
+HTML documents are made up of:
 
-HTML's two main components, elements and tags, are key to defining the structure of content.
+#. *Text* - The words we see on a page.
+#. *Links* to other pages.
+#. **Markup** - Determines what the text looks like and how that text and other
+   content is arranged on the page.
+#. *References* to other documents - Videos, images, code editors, etc.
+
+HTML code does not execute logic or perform calculations like Python. There are
+no ``for`` loops, ``if/else`` statements, or functions. Instead, HTML is an
+example of a **markup language**. Markup languages provide instructions for
+what text should look like on the screen. They format the text of a document
+(like the size of a section heading) and define the structure of the page (like
+the number of sections or placement of images).
+
+HTML uses two main components, elements and tags, to define the structure of a
+web page.
 
 HTML Elements
 -------------
 
-.. index:: ! element
+When a programmer creates a web page, they break the content down by type:
 
-When a programmer creates a web page, they break the content down by type.
-They may outline a structure for the page on paper first, highlighting what each item is.
+#. What text needs to be on the page, and how will it be organized?
+#. Are there any images/figures/videos?
+#. How many links?
+#. Will there be a form to fill out?
+#. Will there be a menu or a navigation bar?
+#. etc.
+
+The next step for many developers is to sketch a structure for the page on
+paper or in a drawing app. They highlight what each item is, where it belongs
+on the page, and ideas about what it might look like.
+
 With HTML, a programmer can add a lot of different types of content to a page.
 In this chapter, the focus is on headings, paragraphs, images, and more.
 
-An **element** is a segment of an HTML page. Elements are oftentimes broken down by content type.
+.. index:: ! element
+
+An **element** is one portion of an HTML page. Elements can be *nested* inside
+other elements.
+
+.. todo:: Insert image of nested elements.
+
+Elements are often broken down by content type---text, links, images, titles,
+etc.
 
 HTML tags
 ---------
 
 .. index:: ! tag
 
-An HTML **tag** is the syntax that the computer processes to determine the type and content of an HTML element.
+An HTML **tag** tells the computer the type and content of an HTML element.
+Most elements include a *start tag* and an *end tag*, with content in between.
 
-Tags surround the content within the element, so in all cases, programmers need to have opening and closing tags.
+Every tag has the following structure:
 
-Each tag has the following structural elements:
+#. Begin with the ``<`` symbol and end with the ``>`` symbol.
+#. The tag name goes inside the ``<>``, and it indicates the element type.
+#. Start tags and end tags share the same structure. However, end tags (also
+   called *closing tags*) include the ``/`` symbol after the ``<`` bracket.
+#. Start tags may include extra content that affects the element's appearance.
 
-1. ``<`` to start a tag and ``>`` to close it.
-2. The type of element it is.
-3. Optional additional specification about the element's appearance.
-4. Closing tags include the same information as the opening tag with a ``/`` after the ``<`` bracket.
-
-Here is an example of a line of HTML:
+The general syntax for an HTML element is:
 
 ::
 
    <element type>content</element type> 
 
-HTML Writing Style
-------------------
+.. admonition:: Warning
 
-Programmers write HTML different ways with different style guides and philosophies.
-**Semantic HTML** is not about the appearance of the web page, but about the specific meaning of the elements.
-Semantic HTML helps programmers communicate through code and may be easier to pick up at first.
-Programmers can make a paragraph larger than a heading.
-But by looking at the HTML, another programmer can understand which is the paragraph and which is the heading.
-Another benefit to semantic HTML is that it is easier for beginning programmers to visualize the end results.
-Some examples of semantic HTML tags are: ``<p>``, ``<h1>``, ``<h2>`` , and ``<div>``.
+   Tags surround the content within the element. If you forget the ending tag,
+   some HTML elements will still display correctly, but not all. To avoid
+   unexpected results or errors, always include both tags!
 
-.. admonition:: Reminder
+Try It!
+-------
 
-   Making code work is important and so is making it easier for other programmers to read.
-   Not every piece of code a programmer reads is something they wrote.
+The editor below provides a practice HTML document (note the ``.html`` at the
+end of the filename).
+
+#. Notice that the plain text ``Hello, web!`` written in the editor shows up
+   as plain text on the "webpage" to the right.
+#. On line 2, add the statement ``<h1>Hello!</h1>``. How does this affect the
+   appearance of the text in the right panel?
+
+   ``h1`` the name for a *heading* element, and the number indicates the size
+   of the text.
+
+#. Try changing the number after ``h``! Allowed values range from 1 - 6.
+#. Try making the mistakes ``<h2>Hello!</h4>`` and ``<h4>Hello!</h2>``. How
+   does each one affect the text? Hover over red *X* in the editor to read the
+   error messages.
+
+   .. raw:: HTML
+
+      <iframe src="https://trinket.io/embed/html/18c0e4c318?runMode=autorun" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+#. Add the ``<strong></strong>`` tags around the ``Hello, web!`` text. What
+   does ``strong`` do?
+#. Replace each ``strong`` with ``em``. What happens?
+#. Here is one example of nested elements:
+   ``<h3>Nested element <em>here</em></h3>``. Paste the statement into the
+   editor to see what it does.
 
 Check Your Understanding
 ------------------------
@@ -69,7 +122,58 @@ Check Your Understanding
 
    What does HTML stand for?
 
-   #. Happy Tickles Make Laughter
-   #. Hypertext Markup Language
-   #. Hypertext Mockup Language
-   #. Hyperlink Markup Layout
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Happy Tickles Make Laughter</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Hypertext Markup Language</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hypertext Mockup Language</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hyperlink Markup Layout</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   In HTML, ending tags are optional.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   Which of the following is an example of an HTML element?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> h1</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> &lt;/em&gt;</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Hello!</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> &lt;h2&gt;Hello!&lt;/h2&gt;</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = d
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
