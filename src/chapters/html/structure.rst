@@ -1,25 +1,38 @@
 HTML Structure
 ==============
 
-.. index:: ! head , ! title , ! html , ! doctype , ! body
+.. index:: ! head, ! title, ! html tag, ! doctype, ! body
 
-Programmers should follow certain rules about how to structure an HTML file.
-The rules about how to structure an HTML file and the tags used to lay out this structure are vital to the browser being able to render the page.
+To make sure their web pages work as planned, programmers should follow certain
+rules about how to organize an HTML file. These rules, and the tags used within
+the HTML structure, are vital to make sure all browsers render the page
+correctly.
 
 Structure Rules
 ---------------
 
-When it comes to laying out the overarching structure of an HTML file, a programmer should follow 5 rules:
+For the overall structure of an HTML file, a programmer should follow 5 rules:
 
-1. Every HTML file needs a ``DOCTYPE`` tag, specifying the HTML version used.
-   When using the current version of HTML, the ``DOCTYPE`` tag is simple to remember as it is: ``<!DOCTYPE html>``.
-   This is one of few tags that does not require a closing tag.
-2. The ``<html>`` tag denotes the beginning and end of the HTML the programmer has written.
-3. The ``<head>`` tag contains data about the web page.
-4. The ``<body>`` tag contains everything that appears on the page of the document.
-5. The ``<title>`` tag goes in the ``<head>`` of the document and browsers require it. It gives the title of the web page that appears in the tab.
+#. Every HTML file needs a ``DOCTYPE`` tag, which identifies the version of
+   HTML to use. The syntax ``<!DOCTYPE html>`` selects the current version of
+   HTML by default.
 
-Here is an example of the structure of an HTML page based off of these rules:
+   .. admonition:: Note
+
+      ``DOCTYPE`` is one of few tags that does not require a closing tag.
+
+#. The ``<html>`` tag marks the beginning and end of the HTML code written by
+   the programmer.
+#. The ``<head>`` tag contains data about the web page. Most of this data will
+   NOT be seen by visitors to the web page.
+#. The ``<body>`` tag contains everything that appears in the browser when the
+   page is viewed.
+#. The ``<title>`` tag goes in the ``<head>`` of the document, and browsers
+   require it. We see the ``title`` of a web page in its browser tab.
+
+   .. todo:: Add screenshot of some tab titles.
+
+Here is the structure for an HTML page that follows these rules:
 
 .. sourcecode:: html
    :linenos:
@@ -28,67 +41,120 @@ Here is an example of the structure of an HTML page based off of these rules:
    <html>
       <head>
          <title>My Web Page</title>
-         content
+         <!-- Page data elements... -->
       </head>
       <body>
-         content
+         Page content...
       </body>
    </html>
+
+Note the following:
+
+#. An element can take up multiple lines in the editor. For example, the
+   ``head`` and ``body`` elements are both nested inside the ``html`` element,
+   which runs from lines 2 - 10.
+#. While not necessary, using indentation to organize the start and end tags
+   for nested elements is a great idea.
+
+   The following code works as an HTML document, but it is poorly organized and
+   very hard to follow.
+
+   .. sourcecode:: html
+      :linenos:
+
+      <!DOCTYPE html><html><head><title>My Web Page</title><!-- Page data elements... --></head><body>Page content...</body></html>
+
+#. Adding whitespace in your HTML file helps other programmers read and
+   understand your work!
 
 Document Head
 -------------
 
-So other than the title, what goes in the head of an HTML file?
-The head includes links to other files and other data about the document.
-Browsers do not display the content in the head.
+So other than the ``<title></title>``, what goes in the ``head`` element?
 
-.. note::
+The ``head`` includes links to support files and other data about the document.
+For example, we can include some styling instructions in ``head`` to change
+things like background color, font, or text size.
 
-   The head can also include some styling to make the page beautiful.
-   How to do that is covered in the next chapter on CSS.
+.. admonition:: Note
+
+   *Style code* helps to make a web page beautiful. How to do add styles to
+   ``head`` is covered in the next chapter on CSS.
+
+Remember, browsers do not display the content in the ``head`` element.
 
 Document Body
 -------------
 
-After the programmer has written the head of the document, it is time to move on to the body of the document.
-The body of the document contains the content that appears on the web page.
-Within the ``body`` tags, programmers add images, text, and even code samples with different HTML tags.
-Content outside of the body will not appear on the page.
+After finishing the ``head`` of the document, it is time to move on to the
+``<body></body>`` element.
 
-To make HTML more readable to other programmers, programmers write comments in HTML. When adding a comment, the programmer uses ``<!--`` to indicate the start and ``-->`` to end the comment, like so:
+The body of the document contains the content that appears on the web page.
+Within the ``body`` element, programmers use different HTML tags to add images,
+text, videos, GIFs, and even samples of other code.
+
+Content outside of the ``body`` element will not appear on the page.
+
+Other Details
+-------------
+
+Adding ``<!-- Comments -->``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To make our HTML more readable to other people, we can include comments in the
+code. To add a comment, begin with ``<!--``, then type the message. End the
+comment with ``-->``. The general syntax for an HTML comment is:
+
+.. sourcecode:: html
+
+   <!-- This is an important comment -->
+
+We can place comments anywhere inside the HTML file.
 
 .. sourcecode:: html
    :linenos:
 
-   <body>
-      <!-- This is an important comment -->
-   </body>
+   <!DOCTYPE html>
+   <!-- This is an important comment -->
+   <html>
+      <head>
+         <title>My Web Page</title>
+         <!-- This is an important comment -->
+      </head>
+      <body>
+         <!-- This is another important comment -->
+      </body>
+   </html>
+   <!-- This is the final comment -->
 
-.. note::
+Comments help us describe our code to others, and they do NOT appear on the web
+page.
 
-   Spacing and tabs helps many programmers read through theirs and their colleagues' code.
-   Be aware that doing so in HTML can affect how the browser renders the page in rare instances.
+Tags Are Case-Insensitive
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Other Details...
-----------------
+Using capital letters vs. lowercase letters in a tag name does not matter. For
+example, the following statements all work, and they all produce the same
+result on screen:
 
-Tags are case-insensitive...
+.. sourcecode:: html
+   :linenos:
 
-Block level vs. inline elements...
+   <H1>Hello!</H1>
+   <h1>Hello!</h1>
+   <H1>Hello!</h1>
 
-Whitespace...
-
-Adding comments...
+Even though case does not matter, developers usually stick with lowercase
+letters for the tag names. We encourage you to follow this convention.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   Which HTML tag does not require a closing tag?
+   Which HTML tag does NOT require a closing tag?
 
    #. ``title``
    #. ``body``
    #. ``head``
    #. ``DOCTYPE``
-
