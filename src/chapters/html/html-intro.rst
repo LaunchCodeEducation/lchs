@@ -25,11 +25,14 @@ what text should look like on the screen. They format the text of a document
 (like the size of a section heading) and define the structure of the page (like
 the number of sections or placement of images).
 
-HTML uses two main components, elements and tags, to define the structure of a
-web page.
+HTML uses two main components, *elements* and *tags*, to define the structure
+of a web page.
 
 HTML Elements
 -------------
+
+With HTML, a programmer can add a lot of different types of content to a page.
+In this chapter, we focus on headings, paragraphs, images, and more.
 
 When a programmer creates a web page, they break the content down by type:
 
@@ -44,18 +47,19 @@ The next step for many developers is to sketch a structure for the page on
 paper or in a drawing app. They highlight what each item is, where it belongs
 on the page, and ideas about what it might look like.
 
-With HTML, a programmer can add a lot of different types of content to a page.
-In this chapter, the focus is on headings, paragraphs, images, and more.
-
 .. index:: ! element
 
-An **element** is one portion of an HTML page. Elements can be *nested* inside
-other elements.
-
-.. todo:: Insert image of nested elements.
+An **element** is one portion of an HTML page. By combining and arranging
+different elements, a developer builds the structure for the page.
 
 Elements are often broken down by content type---text, links, images, titles,
-etc.
+etc. Elements can also be *nested* inside other elements. This makes it easy,
+for example, to align a figure caption with the image it describes.
+
+.. figure:: figures/html-elements.png
+   :alt: Arranging elements determines the layout of a web page.
+
+   The seven elements on the left are arranged to create the layout for the HTML page.
 
 HTML tags
 ---------
@@ -91,8 +95,9 @@ Try It!
 The editor below provides a practice HTML document (note the ``.html`` at the
 end of the filename).
 
-#. Notice that the plain text ``Hello, web!`` written in the editor shows up
-   as plain text on the "webpage" to the right.
+#. Notice that the plain text ``Hello, web!`` in the editor shows up as plain
+   text on the "webpage" to the right. No quotes are needed around the words.
+   Try adding some to see what happens.
 #. On line 2, add the statement ``<h1>Hello!</h1>``. How does this affect the
    appearance of the text in the right panel?
 
