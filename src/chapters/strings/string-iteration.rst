@@ -138,7 +138,7 @@ Check Your Understanding
       <ol type="a">
          <li><span id = "a" onclick="highlight('a', false)">for index in range(len(my_dream_car)):</span></li>
          <li><span id = "b" onclick="highlight('b', false)">for index in range(-1, -len(my_dream_car), -1):</span></li>
-         <li><span id = "c" onclick="highlight('c', true)">for index in range(len(my_dream_car))-1, -1, -1):</span></li>
+         <li><span id = "c" onclick="highlight('c', true)">for index in range(len(my_dream_car)-1, -1, -1):</span></li>
          <li><span id = "d" onclick="highlight('d', true)">for index in range(-1, -len(my_dream_car)-1, -1):</span></li>
          <li><span id = "e" onclick="highlight('e', false)">for char in my_dream_car:</span></li>
          <li><span id = "f" onclick="highlight('f', false)">for char in -my_dream_car:</span></li>

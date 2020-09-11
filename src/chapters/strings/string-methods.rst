@@ -56,10 +56,10 @@ any method leads to examples and a more detailed description.
      - Returns a copy of the given string, with all lowercase letters converted
        to uppercase.
 
-You can find complete lists of the Python string methods at:
+You can find complete lists of the Python string methods on 
+`W3Schools <https://www.w3schools.com/python/python_ref_string.asp>`__ and 
+`the official Python documentation site <https://docs.python.org/3/library/stdtypes.html?highlight=lower#string-methods>`__.
 
-- `W3Schools <https://www.w3schools.com/python/python_ref_string.asp>`__
-- `docs.python.org <https://docs.python.org/3/library/stdtypes.html?highlight=lower#string-methods>`__
 
 .. admonition:: Tip
 
@@ -109,7 +109,7 @@ Note the following:
 
 #. In line 2, ``nonprofit.lower()`` evaluates to ``"launchcode"`` and assigns
    that string to the variable ``lowercase``.
-#. In line 3, ``nonprofit.replace('a', '')`` removes the letter 'a' and assigns
+#. In line 3, ``nonprofit.replace('a', '')`` removes the letter ``'a'`` and assigns
    a new string to ``meal_plan``.
 #. Despite the actions in lines 2 and 3, the value of ``nonprofit`` stays the
    same.
@@ -140,9 +140,9 @@ Review the content and then answer the following questions.
 
       <ol type="a">
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Pythqn rocks</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Python rqcks</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> ythqn rqcks</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> ythqn rqcks!</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> ythqn rqcks</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Python rocks!</li>
       </ol>
       <p id="Q1"></p>
 
@@ -174,7 +174,7 @@ Review the content and then answer the following questions.
 
 .. admonition:: Question
 
-   Given ``word = "Rutabaga"`` is the value returned by
+   Given ``word = "Rutabaga"``, what is the value returned by
    ``word.lower().strip('r').find('t')``?
 
    .. raw:: html
