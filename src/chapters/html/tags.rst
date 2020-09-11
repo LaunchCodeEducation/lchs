@@ -166,6 +166,9 @@ syntax is:
 
    <tag_name attribute="value">content</tag_name>
 
+We can add multiple attributes inside a tag, but they should be separated by
+spaces.
+
 Attributes Example
 ------------------
 
@@ -270,16 +273,70 @@ Try It!
 In the editor below, practice using different HTML tags and attributes to
 change the appearance of a web page.
 
-.. todo:: Insert interactive HTML editor here (tag and attribute practice).
+**First steps**:
 
-Instructions here...
+#. The ``<br>`` and ``<hr>`` elements do NOT need ending tags. Add a ``<br>``
+   tag to the end of line 9. What happens to the text in the right panel?
+#. Add ``<br>`` tags to the end of lines 10 & 11. What if you use two of the
+   tags (``<br><br>``) instead of just one?
+#. On line 14, add an ``<hr>`` tag. How does the web page change?
+#. Add ``<em>``, ``<b>``, or ``<span>`` tags around some of the text in the
+   first paragraph. Change the color of the wrapped text by including the
+   ``style`` attribute.
+#. Create an unordered list that contains at least three items. The syntax
+   should look something like:
+   
+   .. sourcecode:: html
+   
+      <ul>
+         <li>Item description...</li>
+         <li>Item description...</li>
+         <li>Item description...</li>
+      </ul>
 
-#. ``br`` and ``hr`` elements...
-#. ``a`` element...
-#. ``div`` container, with alignment attribute...
-#. ``ul`` with three ``li`` elements...
-#. Change ``ul`` to ``ol``. Use the ``type``, ``reversed`` and ``start``
-   attributes to change the list labels.
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/html/4f06a808a8" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+**Next steps**:
+
+#. Change both ``<ul>`` tags to ``ol`` to make an ordered list.
+
+   a. The ``type`` attribute sets the item labels. Add ``type="A"`` inside the
+      ``<ol>`` tag. Try replacing ``"A"`` with ``"a"`` and ``"I"``.
+   b. The ``start`` attribute identifies where the list should begin counting.
+      Add ``start="5"`` inside the ``<ol>`` tag. Try other numbers as well.
+      (Note that ``type`` and ``start`` can BOTH be in the tag at the same
+      time).
+   c. The ``reversed`` attribute flips the numbering to count down instead of
+      up. It does not need an equals sign. Add ``reversed`` to the ``<ol>`` tag
+      to see what happens.
+
+#. Now let's add a link! The syntax for the hyperlink element is:
+
+   .. sourcecode:: html
+
+      <a href="Website URL">Link Text</a>
+
+   The ``href`` attribute requires the *full* address of a website, beginning
+   with ``https:``. ``Link Text`` will be the words that appear as the link on
+   the page.
+
+   Add ``<a href="https://www.launchcode.org/">LaunchCode</a>`` to the editor
+   to see this in action. Feel free to use a different web address and link
+   text.
+
+   Because we are using an embedded code editor, clicking the link may not work
+   quite right. Instead, right-click on the link text and choose *Open Link in
+   New Tab* to see the results of your work.
+#. On line 7, add an opening ``<div>`` tag. Put the closing ``</div>`` tag on
+   line 20 (right after the second paragraph element). Nothing changes in the
+   view, but you just made a separate *division* (section) inside the page. 
+
+   Now add ``style="text-align:center"`` inside the ``<div>`` tag.
+   Properly done, the text in the two paragraphs appears centered on the
+   screen. Since the list and link elements are outside of the ``div`` element,
+   their text does NOT get centered.
 
 Check Your Understanding
 ------------------------
