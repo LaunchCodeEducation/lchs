@@ -50,7 +50,7 @@ central program but NOT when it is part of an imported module.
 Wrapping Up
 -----------
 
-Before the Python runs a program, it defines a few special variables. One of
+Before Python runs a program, it defines a few special variables. One of
 these is called ``__name__``, and it is automatically assigned the string value
 ``"__main__"`` when the code runs by itself. For an imported module, on the
 other hand, ``__name__`` matches the module name.
