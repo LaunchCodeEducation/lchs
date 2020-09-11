@@ -73,7 +73,7 @@ The general syntax is:
 
    ``list`` is a *function* and NOT a string method. This means we can call
    ``list`` on objects besides strings. Methods like ``split`` can only be
-   called on a specific data type---strings.
+   called on a specific data type: strings.
 
 .. admonition:: Example
 
@@ -94,5 +94,5 @@ The general syntax is:
       ['B', 'a', 'n', 'a', 'n', 'a', 's']
       ['B', 'o', 'o', 'k', 'k', 'e', 'e', 'p', 'e', 'r', ' ', 'o', 'f', ' ', 'b', 'a', 'l', 'l', 'o', 'o', 'n', 's', '.']
 
-Note that the resulting lists show all of the characters from the string,
+Note that the resulting lists show all of the characters from the strings,
 including spaces.
