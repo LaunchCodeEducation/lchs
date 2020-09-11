@@ -40,7 +40,7 @@ Part One: Bracket Notation
    c. Finally, use concatenation to print the combination of the original and
       reversed string. For example, given the string ``'tomato'``, your program
       prints ``tomatootamot``. (If you want to be fancy, include the ``|``
-      character to make the output look like a mirror image---``tomato | otamot``). 
+      character to make the output look almost like a mirrored image: ``tomato | otamot``). 
 
 .. admonition:: Note
 
@@ -96,22 +96,20 @@ Part Two: String Methods and Operations
 
    a. Use the ``strip()`` method to remove the leading and trailing whitespace,
       and then print the result.
-   b. Change all of the letters in the dna string to UPPERCASE and print the
+   b. Change all of the letters in the DNA string to UPPERCASE and print the
       result.
-   c. Note that if you try ``print(dna)`` after applying the methods, the
-      original, flawed string is displayed. To fix this, you need to
-      *reassign* the changes back to ``dna``. Apply these fixes to your
-      code so that ``print(dna)`` prints the DNA strand in UPPERCASE
+   c. Note that you need to *reassign* the changes back to the ``dna`` variable in order to see them printed. 
+      Apply these fixes to your code so that ``print(dna)`` prints the DNA strand in UPPERCASE
       with no whitespace.
 
 #. Let's use string methods to do more work on the same DNA strand:
 
-   a. Use ``replace()`` to remove the gene ``'GCT'``, and then print the altered
+   a. Use ``replace()`` to remove the sequence ``'GCT'``, and then print the altered
       strand. Don't forget about the extra hyphen!
-   b. Look for the gene ``'CAT'`` with ``find()``. If found print, ``'CAT gene
-      found'``, otherwise print, ``'CAT gene NOT found'``.
+   b. Look for the sequence ``'CAT'`` with ``find()``. If found print, ``'CAT
+      found'``, otherwise print, ``'CAT NOT found'``.
    c. Use ``count()`` to find the number of hyphens (``-``) in the string, then
-      print the number of *genes* (sets of 3 letters) in the dna strand. Note
+      print the number of *genes* (in this case, a gene is a set of 3 letters) in the DNA strand. Note
       that the number of genes will be 1 more than the number of hyphens. 
 
 .. admonition:: Note
@@ -137,7 +135,7 @@ Part Three: String Formatting
    ``"The DNA string is ___ characters long and contains ___ genes."`` Fill in
    the blanks with the length of the string and the number of genes.
 
-#. The following code sample works, but it is NOT "good".
+#. The following code sample works, but it can be improved.
 
    a. Assuming that ``advice`` remains a string, when will the code produce the
       wrong output?
