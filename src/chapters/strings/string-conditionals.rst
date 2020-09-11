@@ -1,7 +1,7 @@
 Checking Strings
 ================
 
-It is often helpful to examine a character and test whether it is upper- or
+It is often helpful to examine a character and test whether it is uppercase,
 lowercase, or whether it is a character or a digit.
 
 We can use bracket notation and string methods inside a
@@ -11,7 +11,8 @@ certain condition.
 Checking Type
 -------------
 
-The string methods only work on string objects. For ``my_var = 'Python'``,
+The string methods only work on string objects. Let's say ``my_var = 'Python'``.
+
 ``my_var.upper()`` works just fine. However, if we were to reassign a number
 to the variable, like ``my_var = 3.14159``, then ``my_var.upper()`` throws an
 error.
@@ -43,13 +44,11 @@ the different data types.  (*TRY IT*!)
 
 .. admonition:: Note
 
-   We could avoid the conditional block completely with:
+   Of course, we could avoid the conditional block completely with:
 
    .. sourcecode:: Python
 
       print("The value {0} is a {1} data type.".format(my_var, type(my_var))
-
-   but that defeats the purpose of the example---*checking the data type*.    
 
 Comparing Strings
 -----------------
@@ -88,17 +87,23 @@ We can use the comparison operators ``==, !=, <, >, <=, >=`` on strings.
      character to the same case (e.g.
      ``your_pet[0].lower() == other_pet[0].lower()``).
 
-#. Line 7 evaluates if ``'dog'`` comes earlier in the alphabet than ``'cat'``.
-   A string that comes earlier is considered *less than* a string that comes
+#. Line 7 evaluates if ``'dog'`` is less than ``'cat'``. This comparison is a bit more complicated.
+   What is really being compared is each character's Unicode value. All characters, even letters,
+   have `Unicode numbers <https://unicode-table.com/en/>`__. The Unicode value of a letter corresponds with its alphabetical order. 
+   So a string that comes earlier in the alphabet is considered *less than* a string that comes
    later. Since ``'dog'`` follows ``'cat'`` alphabetically, the expression
    ``'dog' < 'cat'`` evaluates to ``False``.
    
 .. admonition:: Note
 
-   Case matters when alphabetizing! By convention, we consider CAPITAL letters
-   to come EARLIER in the alphabet than lowercase letters.
-   
-   ``'Zebra' < 'apple'`` is ``True``, but ``'zebra' < 'apple'`` is ``False``.
+   Case matters when comparing characters! CAPITAL letters have smaller Unicode values
+   than lowercase letters.
+
+   ``'Zebra' < 'zebra'`` is ``True``,
+
+   ``'Zebra' < 'apple'`` is ``True``,  and 
+
+   ``'zebra' < 'apple'`` is ``False``.
 
 Checking with ``in`` and ``not in``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -154,51 +159,7 @@ Checking Case
 -------------
 
 Let's explore how we can check the case for a character, slice, or an entire
-string.
-
-First Attempt
-^^^^^^^^^^^^^
-
-The ``upper()`` and ``lower()`` methods return a new string with all of the
-letters shifted to the same case. Recall, however, that the methods do NOT
-change the original string. This gives us a way to create a new string in
-upper- or lowercase and compare it to the original.
-
-.. admonition:: Example
-
-   .. sourcecode:: Python
-      :linenos:
-
-      character = 'a'
-      word = "yep!"
-      non_letters = '$10.75'
-
-      print(character.upper() == character)
-      print(word.lower() == word)
-      print(non_letters.upper() == non_letters)
-   
-   **Console Output**
-
-   ::
-
-      False
-      True
-      True
-
-   #. ``character.upper()`` returns ``'A'``, which results in ``False`` when
-      compared to ``'a'``.
-   #. ``word.lower()`` returns ``'yep!'``, which is the same as ``word``. Note
-      that ``lower()`` ignores non-letter characters.
-   #. ``non_letters.upper() == non_letters`` returns ``True``, even though there
-      are NO letters in the string!
-
-As a first attempt, the results are mixed. If a string contains letters, the
-approach works fine, but it gives inaccurate results for non-letter strings.
-
-Case Methods
-^^^^^^^^^^^^
-
-Fortunately, Python provides methods that check the case of a string, and they
+string. Fortunately, Python provides methods that check the case of a string, and they
 deal with non-letter characters properly.
 
 .. admonition:: Example

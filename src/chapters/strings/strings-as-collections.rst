@@ -1,8 +1,8 @@
 Strings as Collections
 ======================
 
-Throughout the first chapters of this book we used strings to represent words,
-phrases, or characters we wanted to print out. Our definition of a string was
+Throughout the first chapters of this book, we use strings to represent words,
+phrases, or characters we want to print. Our first definition of a string is
 simple: *a string is a sequence of characters inside quotes*.
 
 In this chapter we explore strings in much more detail.
