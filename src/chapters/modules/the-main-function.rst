@@ -1,7 +1,7 @@
 The ``main()`` Event
 ====================
 
-The last skill new skill for this chapter is to learn why we need to add a
+The last new skill for this chapter is to learn why we need to add a
 ``main()`` function to our programs and modules. The best way to explain this
 is to examine what happens when we do NOT include ``main()``.
 
@@ -60,7 +60,7 @@ Scroll to the end of the code to find the 8 statements in lines 44 - 51. We
 call these **loose statements** because they are not part of any function.
 
 Sometimes loose statements are just leftover commands that we used to test some
-of the functions. However, most of the time the loose code is needed to run the
+of the functions. However, most of the time, the loose code is needed to run the
 program. It could prompt the user for information, call the functions in the
 proper order, set up a required drawing space, etc.
 
