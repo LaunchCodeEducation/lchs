@@ -24,13 +24,13 @@ Tags to Know
      - Definition
    * - Bold
      - ``<b>``
-     - When surrounding text, makes that text bold.
+     - When surrounding text, makes that text **bold**.
    * - Emphasis
      - ``<em>``
-     - When surrounding text, makes that text italic.
+     - When surrounding text, makes that text *italic*.
    * - Hyperlink
      - ``<a>``
-     - Creates hyperlinks.
+     - Creates links to other web pages.
    * - Image
      - ``<img>``
      - Denotes images.
@@ -142,11 +142,6 @@ The ``<img>`` tag has two attributes that you will see a lot. ``src`` gives the
 location of the image that is being used and ``alt`` gives alternate text for
 screen reader users. For that reason, ``alt`` should be a concise description
 of what is going on in the image.
-
-Whitespace
-----------
-
-Lorem ipsum...
 
 Block vs. Inline Elements
 -------------------------

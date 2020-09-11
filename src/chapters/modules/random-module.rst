@@ -64,6 +64,8 @@ Not *Really* Random
 It is important to note that random number generators are based on
 *algorithms*. This means that the results are predictable and not truly random.
 
+.. index:: ! seed value
+
 Each algorithm starts with a **seed value**, which the code uses to create a
 result. Every time we ask for another random number, we get one based on the
 current seed, and the value of the seed gets updated. If we figure out how the

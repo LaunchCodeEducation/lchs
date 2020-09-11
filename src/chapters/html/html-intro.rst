@@ -43,9 +43,9 @@ When a programmer creates a web page, they break the content down by type:
 #. Will there be a menu or a navigation bar?
 #. etc.
 
-The next step for many developers is to sketch a structure for the page on
-paper or in a drawing app. They highlight what each item is, where it belongs
-on the page, and ideas about what it might look like.
+The next step for many developers is to sketch the layout for the page on paper
+or in a drawing app. They highlight what each item is, where it belongs on the
+page, and ideas about what it might look like.
 
 .. index:: ! element
 
@@ -119,6 +119,47 @@ end of the filename).
 #. Here is one example of nested elements:
    ``<h3>Nested element <em>here</em></h3>``. Paste the statement into the
    editor to see what it does.
+
+Whitespace
+----------
+
+When a browser displays an HTML document, it treats all whitespace (spaces,
+tabs, new lines, etc.) within a set of text in a very specific way. Let's take
+a moment to explore this.
+
+In the editor above, type these lines at the top of the file.
+
+.. sourcecode:: html
+   :linenos:
+
+   Text with one space between words.
+   Text     with     two      tabs.
+   Text
+   over
+   multiple
+   lines.
+
+When the new page renders on the screen, the output may be surprising!
+
+::
+
+   Text with one space between words. Text with two tabs. Text over multiple lines.
+
+The first sentence appears just as we typed it. However, the tabs and new lines
+in the other two sentences were replaced with single spaces. Also, all three
+sentences appear one after the other on the screen.
+
+This is the standard result when HTML renders text on the screen. Any
+whitespace between words appears as a single space. The same effect occurs with
+text inside an element. ``<h2>Text     with     two      tabs.</h2>`` appears
+as a heading, but with only one space between each of the words.
+
+The advantage of this is that we can break long strings of text over multiple
+lines in the editor without affecting how the words look on the web page. This
+makes our code more readable.
+
+Later in this chapter, we will learn how to make different sections of text
+appear on separate lines of a web page.
 
 Check Your Understanding
 ------------------------
