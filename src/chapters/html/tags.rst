@@ -88,7 +88,7 @@ Tags to Know
      - Makes a section within a set of text.
    * - Table
      - ``<table>``
-     - Creates a table on the page.
+     - Creates a table of rows and columns on the page.
    * - Thematic Break
      - ``<hr>``
      - Adds a horizontal line between elements.
@@ -106,15 +106,16 @@ Tags to Know
 
 .. admonition:: Note
 
-   There are multiple headings in HTML going from ``h1`` to ``h6``.
-   The headings get progressively smaller.
-   A good rule of thumb is to have only one ``h1`` in a web page and do not skip a level.
-   Headings can be resized so there is no need to do so.
+   There are multiple headings in HTML going from ``h1`` to ``h6``. The
+   headings get progressively smaller.
+   
+   A good rule of thumb is to have only one ``h1`` in a web page. Also, do not
+   skip a level, since headings can always be resized.
 
 Tag Example
 -----------
 
-Here is an example of a basic web page using some of the tags above.
+Here is an example of a basic web page using three of the tags above.
 
 .. sourcecode:: html
    :linenos:
@@ -153,13 +154,13 @@ adjust the element's appearance on the page.
 
 Examples of attributes include:
 
-#. The alignment of the element on the page (left, right, centered, etc.).
+#. The alignment of the element on the page (left, right, center, etc.).
 #. The text style (color, size, font, etc.).
 #. Alternate text for an image.
 #. The web address that a link points to.
 
-Programmers place attributes inside the start tag, right after the tag name.
-The general syntax for this is:
+Place attributes inside the start tag, right after the tag name. The general
+syntax is:
 
 .. sourcecode:: html
 
@@ -198,10 +199,10 @@ the color of the text to blue. ``style`` controls other properties as well,
 including alignment, font, background color, text size, etc. We will study
 styling in more detail next chapter.
 
-The ``<img>`` tag has two attributes that we will see a lot. ``src`` gives the
-location of the image that is being used, and ``alt`` gives alternate text for
-screen reader users. For that reason, ``alt`` should be a short description of
-what is going on in the image.
+The ``<img>`` tag has two attributes that we will see a lot. ``src`` (for
+*source*) gives the location of the image being used, and ``alt`` gives
+alternate text for anyone using a screen reader. For this reason, ``alt``
+should provide a short description of what is going on in the image.
 
 Block vs. Inline Elements
 -------------------------
@@ -213,8 +214,8 @@ sentence, ``NASA discovers that plants can live...`` is split over two lines in
 the editor, but it appears on the same line on the web page. However, the
 heading and paragraph elements appear on separate lines.
 
-The reason behind this involves the default behavior for each HTML element.
-There are two display behaviors:
+The reason behind this involves the default behavior of different HTML
+elements. There are two display behaviors:
 
 #. **Block-level elements** always begin on a new line, and they take up the
    full width available. Any content in these elements stretches out as far as
@@ -222,7 +223,7 @@ There are two display behaviors:
 #. **Inline elements** do not start on a new line. They only take up as much
    width as necessary.
 
-The ``h1`` and ``p`` elements are both block-level. Their content occupies a
+The ``h1`` and ``p`` elements are both block-level, so their content occupies a
 dedicated space on the screen. This is why the heading and paragraph do not
 appear side-by-side.
 
@@ -250,9 +251,14 @@ breaking the paragraph into separate lines.
       :alt: Background colors showing the widths of block-level vs. inline elements. 
 
    The ``h2`` and ``p`` elements stretch across the entire width of the screen,
-   and they occupy their own, separate lines. Each ``span`` element only takes
-   up as much space as the text requires, and all three elements can share the
-   same line.
+   and they occupy their own, separate lines. Think of the orange and blue
+   shaded areas as reserved space. If we add more text to the ``p`` element, it
+   would fill in more of the empty blue area. However, only content for that
+   element is allowed inside the space.
+   
+   Each ``span`` element only takes up as much space as the text requires, and
+   all three elements can share the same line. ``span`` is an example of an
+   inline element.
 
 .. admonition:: Tip
 
@@ -282,22 +288,58 @@ Check Your Understanding
 
    Which tag is used to make text *italicized*?
 
-   #. ``b``
-   #. ``i``
-   #. ``em``
-   #. ``br``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">b</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">i</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">em</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">br</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
 
 .. admonition:: Question
 
    Identify each of the following as a block-level or inline element. Click
    each option to check your thinking. *Hint*: Use the editor to test each
-   element!
+   element first!
 
-   #. ``div``
-   #. ``span``
-   #. ``em``
-   #. ``ol``
-   #. ``ul``
-   #. ``li``
-   #. ``img``
-   #. ``h1``
+   .. raw:: html
+
+      <ol type="a">
+         <li onclick="revealAnswer('resultA', 'block-level')"><span style="color:#419f6a; font-weight: bold">div</span> <span id="resultA"></span></li>
+         <li onclick="revealAnswer('resultB', 'inline')"><span style="color:#419f6a; font-weight: bold">span</span> <span id="resultB"></span></li>
+         <li onclick="revealAnswer('resultC', 'inline')"><span style="color:#419f6a; font-weight: bold">em</span> <span id="resultC"></span></li>
+         <li onclick="revealAnswer('resultD', 'block-level')"><span style="color:#419f6a; font-weight: bold">ol</span> <span id="resultD"></span></li>
+         <li onclick="revealAnswer('resultE', 'block-level')"><span style="color:#419f6a; font-weight: bold">ul</span> <span id="resultE"></span></li>
+         <li onclick="revealAnswer('resultF', 'block-level')"><span style="color:#419f6a; font-weight: bold">li</span> <span id="resultF"></span></li>
+         <li onclick="revealAnswer('resultG', 'inline')"><span style="color:#419f6a; font-weight: bold">img</span> <span id="resultG"></span></li>
+         <li onclick="revealAnswer('resultH', 'block-level')"><span style="color:#419f6a; font-weight: bold">h1</span> <span id="resultH"></span></li>
+      </ol>
+
+.. Answers = block, inline, inline, block, block, block, inline, block
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function revealAnswer(id, answer) {
+         if (document.getElementById(id).innerHTML != '') {
+            document.getElementById(id).innerHTML = '';
+         } else {
+            document.getElementById(id).innerHTML = '- ' + answer;
+            document.getElementById(id).style.color = 'blue';
+         }
+      }
+   </script>
