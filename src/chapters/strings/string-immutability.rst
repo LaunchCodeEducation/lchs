@@ -58,7 +58,7 @@ string *variables*.
 In this example, the change made on line 3 works. The difference between this
 example and the first is that here we assign a new value to the variable. We
 are not trying to change the original string itself. If we picture a variable
-as a label that "points at" a value, the second example has the following
+as a label that *points to* a value, the second example has the following
 effect:
 
 .. figure:: ./figures/string-var-reassignment.png
@@ -70,8 +70,8 @@ effect:
 
 .. admonition:: Note
 
-   Reassigning the value of a variable might LOOK like we are changing the
-   string, but we are NOT. Instead, we just replace the old, unchanged string
+   Reassigning the value of a variable might look like we are changing the
+   string, but we are not. Instead, we just replace the old, unchanged string
    with a different one.
 
    .. sourcecode:: python

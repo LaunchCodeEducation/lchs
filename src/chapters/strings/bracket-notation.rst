@@ -8,7 +8,7 @@ Bracket Notation
 
 Strings are *ordered* collections of characters, and this gives us a nice
 mental model for how they are put together. Each character has its own specific
-location within a string, and we call this location the **index**.
+location within a string. We call this location the **index**.
 
 Consider the string ``'Go Python!'`` The first character, ``'G'``, has an index
 value of 0, the first ``'o'`` has index 1, the space ``' '`` has index 2, and
@@ -68,7 +68,9 @@ at position [2] we have the letter ``'h'``.
 
 In step 2 above, ``this_string[40]`` causes an *index out of range* error.
 This happens anytime we try to reference an index location that does not exist
-in the string.
+in the string. 
+
+We will discuss what a negative index value returns in step 3 shortly. 
 
 Expressions for ``index``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -122,6 +124,7 @@ values at ``0``, the 20th character has an index value of ``19``.
    The expression ``len(this_string) - 1`` evaluates to ``19``, and
    ``this_string[19]`` is the last character (``'!'``).
 
+
 Negative Index Values
 ---------------------
 
@@ -149,7 +152,7 @@ Return to the :ref:`editor above <string-index-try-it>` and do the following:
 #. What is the smallest negative number that gives an *index out of range*
    error? In this case, "smallest" means "closest to zero".
 #. ``this_string[len(this_string)]`` throws an error. What about
-   ````this_string[-len(this_string)]``?
+   ``this_string[-len(this_string)]``?
 
 Check Your Understanding
 ------------------------
