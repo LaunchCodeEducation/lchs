@@ -75,11 +75,8 @@ Activity
    
       Your team will only finish on time if everyone does their job.
 
-      #. If you are the type of student who insists on being both the driver
-         *and* navigator in a group, get over yourself. *Everyone* needs to
-         practice, so let your partners contribute.
-      #. If you are the type who sits back and lets your partners do all of the
-         work, step up your game. You learn to code by *coding*, not watching.
+      #. *Everyone* needs to practice, so let everyone contribute.
+      #. You learn to code by *coding*, not watching.
 
 #. **Tasks for each group**:
 

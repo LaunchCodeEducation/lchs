@@ -145,7 +145,7 @@ File Locations
 One important thing to note is that when we import a module into a program,
 Python needs to know exactly where to find that file.
 
-When Python reads ``import module_name`` it first checks to see if the module
+When Python reads ``import module_name``, it first checks to see if the module
 is one of the built-in Python files. Python knows exactly where these modules
 are stored on our device, so the import occurs easily.
 
