@@ -24,7 +24,7 @@ when we need it. Changing the code in the module affects all of the programs
 that imported it. This makes applying updates much more efficient.
 
 .. figure:: figures/module-diagram.png
-   :alt: Figure showing a module being imported into three different programs.
+   :alt: A module being imported into three different programs.
    :width: 60%
 
    The same module code can be imported and used by completely different programs.
@@ -48,7 +48,7 @@ have built on our own and want to use again later.
 Even better, we can SHARE our modules with other programmers, or combine
 someone else's work (with permission) to our own. Instead of writing every
 single part of a new project from scratch, another coder might have already
-solved some of the tasks we need. If that person makes their work available, we
+written some of the code we need. If that person makes their work available, we
 can immediately import their modules into our own project---saving us time and
 effort.
 
@@ -96,21 +96,21 @@ modules that come with Python (called the
 `Global Module Index <https://docs.python.org/3/py-modindex.html>`__).
 
 .. figure:: figures/python-docs-page.png
-   :alt: Image showing the main Python Documentation page, with Global Module Index highlighted.
+   :alt: The main Python Documentation page, with Global Module Index highlighted.
    :width: 50%
 
 The Global Module Index gives an alphabetical listing of all the modules that
 are available as part of the standard library.
 
 .. figure:: figures/python-module-index.png
-   :alt: Image showing the Python Module Index page.
+   :alt: The Python Module Index page.
    :width: 50%
 
 Clicking on the ``turtle`` option opens a page that describes all of the
 tools the module contains.
 
 .. figure:: figures/turtle-graphics-page.png
-   :alt: Image showing the webpage that describes the Python turtle module. 
+   :alt: The webpage that describes the Python turtle module. 
    :width: 50%
 
 .. admonition:: Note
