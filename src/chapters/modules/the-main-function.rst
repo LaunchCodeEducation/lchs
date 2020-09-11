@@ -191,8 +191,6 @@ bugs from loose statements:
    change the window appearance, and call drawing functions.
 #. Using ``main()`` helps prevent shadowing of variables.
 
-.. TODO: Have they encountered variable shadowing before?
-
    .. admonition:: Examples
 
       If we define a list variable in a loose statement, then every function in
