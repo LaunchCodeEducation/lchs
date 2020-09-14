@@ -2,10 +2,11 @@ Semantic HTML
 =============
 
 On the previous page, we used a ``<div></div>`` element in the *Try It* section
-to center two paragraphs on the screen. This is a very common technique. To
-organize content on the page, we often split the page into separate sections.
-We can then fiddle with the size, color, alignment, etc. for the elements in
-each section without affecting the properties in other parts of the page.
+to center two paragraphs on the screen. This is an example of a very common
+technique. To organize content on the page, we often split the page into
+separate sections. We can then fiddle with the size, color, alignment, etc. for
+the elements in each section without affecting the properties in other parts of
+the page.
 
 Here's an example of an HTML file that organizes a page into six sections:
 
@@ -27,26 +28,26 @@ Here's an example of an HTML file that organizes a page into six sections:
    </body>
 
 For this short file, we can count the number of opening ``<div>`` tags to
-identify the number of sections. However, figuring out what each of the
-sections does is more difficult. Maybe the ``<div>`` element on line 13 is a
-figure caption for the ``img``? We would need to interpret the content inside
-that element, or look at the final page in a browser, before we could say for
-sure.
+identify the number of sections. However, figuring out what each section does
+is more difficult. Is the ``<div>`` element on line 13 a figure caption for the
+``img``? Before we could say for sure, we would need to examine the content
+inside that element, or look at the final page in a browser.
 
-If we wrote the sample code above, we would want to include plenty of comments
-in the file to describe the purpose of each ``div`` element. After all, once we
-move on to our next project, another programmer might need to update the code
-for this page. We must make sure they understand what we created.
+For the sample code above, we would want to include plenty of comments in the
+file to describe the purpose of each ``div`` element. After all, once we move
+on to our next project, another programmer might need to update the code for
+this page. We must make sure they understand what we created.
 
 .. admonition:: Tip
 
    Making code work is important, but so is making it easier for others to
-   read. Not every piece of code a programmer reads is something they wrote.
+   understand. Not every piece of code a programmer reads is something they
+   wrote.
 
-Besides comments, recent versions of HTML include a way to use the tags
-themselves to describe the layout of a page. The code below builds exactly the
-same page as the first example. However, note how it helps answer the question
-*What does this section do?*
+Besides comments, HTML also includes a way to use the tags themselves to
+describe the layout of a page. The code below builds exactly the same page as
+the first example. However, note how it helps answer the question, *What does
+this section do?*
 
 .. sourcecode:: html
    :lineno-start: 6
@@ -79,7 +80,7 @@ HTML Writing Style
 Just like any other author, programmers write HTML with different style guides
 and ways of thinking. Two different coders can look at the same set of content
 and choose different ways to arrange it on the screen. However, both of them
-share the same set of HTML tags to use as tools.
+use the same set of HTML tags to do their work.
 
 **Semantic HTML** is not about the appearance of the web page. Instead, it's
 about the specific meaning of the elements. Semantic HTML uses more descriptive
@@ -88,12 +89,45 @@ programmers clarify the structure of a web page.
 
 For example, developers can make a paragraph larger than a heading if they want
 to. By looking at the HTML, however, we can still identify what is the
-paragraph and what is the heading. The ``<p>`` and ``<h_>`` tags tell us this.
-This is the strength of semantic HTML. The tag names express meaning.
+paragraph and what is the heading. The ``<p>`` and ``<h_>`` tags give us that
+information. This is the strength of semantic HTML. The tag names express
+meaning.
 
-Another benefit to semantic HTML is that beginning programmers find it easier
-to visualize the results when they can put a specific name to a section of
-their code.
+Another benefit to semantic HTML is that programmers find it easier to
+visualize the results when they can put a specific name to a section of their
+code.
+
+Screen Readers and Search Engines
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A well designed web page organizes content in a clean and attractive way. For
+these pages, finding the navigation bar or identifying the main content of the
+page is easy. However, screen readers for visually impaired users verbally
+describe the content on a page. These devices cannot pick up on visual clues to
+identify what is the most important information.
+
+The ``div`` and ``span`` elements organize content on the page, but they do not
+provide any information about the content itself. If we use separate ``div``
+elements to build a navigation bar and organize a set of blog posts, a screen
+reader assigns equal importance to each element. If the nav bar is at the top
+of the page, the device will read the buttons and menu items first before
+moving to the posts. This is distracting and can provide a negative user
+experience.
+
+With semantic HTML tags, a screen reader can more easily identify the content
+on the page that should be read or emphasized. For example, content inside a
+``header`` element can be assigned less importance than content inside an
+``article``.
+
+Search engines also benefit from semantic HTML. If we can communicate which
+part of our page holds the most important content, we give the software a
+better chance to find our website and show users an accurate description.
+
+For example, assume we create a website and every page contains the title "My
+Great Site". When a user searches for *My Great Site*, they could easily get a
+hit for every one of our pages. Carefully using semantic HTML tags helps the
+search engine find and steer users toward our home page instead of pointing
+them to every example of the title.
 
 A ``<div>`` by Another Name
 ---------------------------
@@ -101,18 +135,76 @@ A ``<div>`` by Another Name
 Open a new tab in your browser and visit one of your favorite websites. Before
 you get too distracted, right-click on the page and choose *View Page Source*.
 Examine the HTML code used to build the page. Most likely, you will find a
-huge number of ``<div>`` tags. If the web page includes a lot of text, you will
-find plenty of ``p`` and ``span`` elements as well.
+huge number of ``<div>`` tags. These tell the browser how to display the page,
+but they provide few details about the different sections.
 
-Semantic tag name examples...
+The latest versions of HTML provide several tag names that can be used in place
+of ``div``. They work the same way, but provide more information to readers of
+the code. These include:
 
-Div vs. other names... same functionality, but more informative to readers of
-the code.
+.. list-table:: Semantic HTML Tags
+   :widths: auto
+   :header-rows: 1
 
-Some examples of semantic HTML tags are:
-``<p>``, ``<h1>``, ``<h2>`` , ``<strong>``, and ``<section>``.
+   * - Tag Name
+     - Code
+     - Definition
+   * - Article
+     - ``<article>``
+     - Contains content that can stand on its own, outside of the page (like
+       a news story).
+   * - Aside
+     - ``<aside>``
+     - Contains content that supports the main information on the page.
 
-Image of non-semantic vs. semantic page (code and final appearance).
+       .. admonition:: Note
+
+          This is an example of an aside! It contains useful, but not critical
+          information.
+
+   * - Figure
+     - ``<figure>``
+     - Contains independent visual content like diagrams, photos, code, etc.
+   * - Figure Caption
+     - ``<figcaption>``
+     - Contains the description for a ``figure`` element.
+   * - Footer
+     - ``<footer>``
+     - Appears at the bottom of a page. Usually includes contact or copyright
+       information as well as some site navigation.
+   * - Header
+     - ``<header>``
+     - Contains content like headings, a logo, or introductory information.
+   * - Main
+     - ``<main>``
+     - Identifies the main content of the page. It should not include navigation
+       tools or any information that is repeated on other pages of the website.
+       There should only be one ``main`` element for a page.
+   * - Nav
+     - ``<nav>``
+     - Contains a set of navigation links, like menu options or buttons.
+   * - Section
+     - ``<section>``
+     - Groups together elements that follow a similar theme.
+
+Many of the tag names we :ref:`considered before <html-tags>`, like ``p``,
+``h1``, and ``ol`` are also semantic.
+
+Inline elements like ``strong`` and ``em`` instruct screen readers to place
+verbal emphasis on the indicated words. Even though the HTML statements
+
+.. sourcecode:: html
+
+   <b>Bold text</b>
+   <strong>Strong text</strong>
+
+both cause text to appear in bold, the ``<strong>`` tag tells a screen reader
+to place stress on the words.
+
+The figures below show how helpful semantic HTML tags are in describing the
+layout for a webpage.
+
+.. todo:: Insert semantic HTML figure here (div vs. non-div layouts).
 
 .. admonition:: Try It!
 
