@@ -1,8 +1,8 @@
 Defining Our Own Functions
 ==========================
 
-While using the functions built into Python is useful, the most powerful part
-of functions is the ability to create our own.
+Built-in functions in Python give us a lot of capabilities. In fact, we gain even more coding potential by 
+writing our own functions.
 
 .. index::
    single: function; definition
@@ -32,11 +32,8 @@ To create a function, use the following syntax:
    single: function; name
 
 Following ``def`` is the **function name**, which is the label that Python
-attaches to the code. The programmer chooses the name, so they have the ability
-to make a good or a bad choice.
-
-Just like ``x`` is a legal but VERY poor choice for a variable name, function
-names should also follow a set of best practices. The better we make the name,
+attaches to the code. When writing our own functions, the programmer chooses the function name. Like any 
+other variable, a function name should describe the purpose of the function. The stronger we make the name,
 the less confusion we add to our code. A list of good naming practices appears
 in the next section.
 
@@ -79,9 +76,6 @@ Python function names should follow these rules:
       If someone unfamiliar with your code can read the function name and tell
       you what it does, then you chose a good name.
 
-      If you find yourself including a comment to describe what your function
-      does, then you need to use a better name.
-
 #. For names with multiple words, separate the words with underscores (e.g.
    ``convert_score_to_percentage``).
 
@@ -98,12 +92,6 @@ Python function names should follow these rules:
    - ``convert``
    - ``is_valid``
    - ``draw``
-
-   **Really Bad**
-
-   - ``x``
-   - ``my_cool_function``
-   - ``draw_square`` (if the function draws a circle)
 
 Function Code
 -------------
@@ -134,7 +122,7 @@ keyword.
 
    Line 1 defines the function name and parameter. Lines 2 - 6 are part of the
    function body. Line 8 is even with the ``def`` keyword, so it is NOT part of
-   the ``add_list_numbers`` code.
+   the ``add_list_numbers`` function.
             
 Try It!
 -------
@@ -186,8 +174,8 @@ We can now use ``print_names`` just like the built-in Python functions. To
 *call* our function, we need to type its name and include a list as the
 argument.
 
-At the bottom of the editor above, call our new function twice by adding these
-lines:
+In the editor above, call our new function twice by adding these
+lines below the function body:
 
 .. sourcecode:: Python
 
