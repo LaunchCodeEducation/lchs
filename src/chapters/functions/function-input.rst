@@ -44,21 +44,21 @@ clear up the issue is with an example.
       Hello, rutabaga!
 
 In this example, ``name`` is a **parameter**. It is part of the function
-definition, and it *behaves like a variable* within the function. A parameter
+definition, and it behaves like a variable within the function. A parameter
 *receives* an input value sent to the function.
 
 The value ``"Lamar"`` used in the function call on line 4 is an **argument**.
-It is a specific value *sent* by the function call. Similarly, the value
-``'rutabaga'`` in line 5 is a different argument *sent to* the ``say_hello``
+It is a specific value sent by the function call. Similarly, the value
+``'rutabaga'`` in line 5 is a different argument sent to the ``say_hello``
 function.
 
-When we call the ``say_hello`` function in line 4, Python *sends* the value
+When we call the ``say_hello`` function in line 4, Python sends the value
 ``"Lamar"`` to the function. Before running the function body, however, Python
-*assigns* that value to the parameter ``name``. In the background, Python
+assigns that value to the parameter ``name``. In the background, Python
 completes the statement ``name = "Lamar"``.
 
-When we call the ``say_hello`` function in line 5, Python *sends* a new
-argument to the function, and Python *assigns* that value to ``name`` before
+When we call the ``say_hello`` function in line 5, Python sends a new
+argument to the function and assigns that value to ``name`` before
 running the function code (``name = 'rutabaga'``).
 
 The difference between a parameter and an argument is the same as that between
@@ -68,17 +68,16 @@ value, an argument is a concrete piece of data.
 
 .. admonition:: Note
 
-   **Arguments:** Specific data values *sent* by the function call to a named
+   **Arguments:** Specific data values sent by the function call to a named
    function.
 
    **Parameters:** Variables defined in a function that *receive* data. Python
-   *assigns* data to these variables.
+   assigns data to these variables.
 
 Mismatched Arguments and Parameters
 -----------------------------------
-
-What happens if we define a function with a single parameter, but when we call
-that function, we provide two arguments? What if we call the function but give
+Let's say we define a function with a single parameter. When we call
+that function, what happens if we provide two arguments? What if we call the function but give
 no arguments?
 
 .. admonition:: Try It!
@@ -143,7 +142,7 @@ like:
       Hello, World!
 
 Now, if we provide an argument in the function call (line 4), Python assigns
-that value to ``name``. If we do NOT provide an argument (line 5), Python
+that value to ``name``. If we do not provide an argument (line 5), Python
 assigns the value ``'World'`` to ``name``.
 
 Check Your Understanding
