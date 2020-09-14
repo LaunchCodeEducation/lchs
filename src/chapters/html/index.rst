@@ -8,6 +8,7 @@ We Built The Internet on HTML
    html-intro
    structure
    tags
+   entities
    semantic-html
    exercises
    project
