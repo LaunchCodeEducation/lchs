@@ -191,7 +191,7 @@ Many of the tag names we :ref:`considered before <html-tags>`, like ``p``,
 ``h1``, and ``ol`` are also semantic.
 
 Inline elements like ``strong`` and ``em`` instruct screen readers to place
-verbal emphasis on the indicated words. Even though the HTML statements
+verbal emphasis on chosen words. Even though the HTML statements
 
 .. sourcecode:: html
 
@@ -201,16 +201,86 @@ verbal emphasis on the indicated words. Even though the HTML statements
 both cause text to appear in bold, the ``<strong>`` tag tells a screen reader
 to place stress on the words.
 
-The figures below show how helpful semantic HTML tags are in describing the
-layout for a webpage.
+The figure below shows how helpful semantic HTML tags are in describing the
+content of a webpage. The tag names tell us something about what each element
+represents on the page.
 
-.. todo:: Insert semantic HTML figure here (div vs. non-div layouts).
+.. figure:: figures/semantic-html.png
+   :alt: Comparing two HTML pages. Semantic tags provide more detail about the structure of the page.
 
-.. admonition:: Try It!
+   Semantic HTML tags provide more detail than ``div`` tags about the content of a page.
 
-   Lorem ipsum...
+If we needed to update the page by adding more story links, the code for the
+right hand HTML file would be easier to manage. We would simply find the
+``aside`` tag and add new ``<a>`` elements inside of it. Adding to the code for
+the left hand page would take more time, since we would need to look at each of
+the ``div`` tags to find the one we want.
+
+Try It!
+-------
+
+The HTML code in the editor below is mostly complete. You just need to
+rearrange the elements to organize the page.
+
+Lines 38-48 contain the elements you need to move, but they are NOT in the
+correct order. Cut and paste the HTML code from the bottom of the editor into
+the spaces above. Use the hints given by the tag names to decide where to put
+everything!
+
+*Hints*:
+
+#. Which two elements make the most sense to put inside the ``header`` element?
+#. There is only one image. Where should it go, and what text describes it?
+#. Which paragraph relates the image the best?
+#. Which paragraph does the unordered list support?
+#. What information should go inside the ``footer`` element?
+
+.. raw:: html
+
+   <iframe src="https://trinket.io/embed/html/6f29694e0e" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Check if the following semantic HTML tags are block-level or inline. Click
+   each option to see the answer.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li onclick="revealAnswer('resultA', 'block-level')"><span style="color:#419f6a; font-weight: bold">article</span> <span id="resultA"></span></li>
+         <li onclick="revealAnswer('resultB', 'block-level')"><span style="color:#419f6a; font-weight: bold">aside</span> <span id="resultB"></span></li>
+         <li onclick="revealAnswer('resultC', 'inline')"><span style="color:#419f6a; font-weight: bold">strong</span> <span id="resultC"></span></li>
+         <li onclick="revealAnswer('resultD', 'block-level')"><span style="color:#419f6a; font-weight: bold">figure</span> <span id="resultD"></span></li>
+         <li onclick="revealAnswer('resultE', 'block-level')"><span style="color:#419f6a; font-weight: bold">section</span> <span id="resultE"></span></li>
+         <li onclick="revealAnswer('resultF', 'block-level')"><span style="color:#419f6a; font-weight: bold">figcaption</span> <span id="resultF"></span></li>
+         <li onclick="revealAnswer('resultG', 'block-level')"><span style="color:#419f6a; font-weight: bold">nav</span> <span id="resultG"></span></li>
+         <li onclick="revealAnswer('resultH', 'inline')"><span style="color:#419f6a; font-weight: bold">a</span> <span id="resultH"></span></li>
+      </ol>
+
+.. Answers = block, block, inline, block, block, block, block, inline
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function revealAnswer(id, answer) {
+         if (document.getElementById(id).innerHTML != '') {
+            document.getElementById(id).innerHTML = '';
+         } else {
+            document.getElementById(id).innerHTML = '- ' + answer;
+            document.getElementById(id).style.color = 'blue';
+         }
+      }
+   </script>
