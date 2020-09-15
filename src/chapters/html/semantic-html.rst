@@ -30,7 +30,7 @@ Here's an example of an HTML file that organizes a page into six sections:
 For this short file, we can count the number of opening ``<div>`` tags to
 identify the number of sections. However, figuring out what each section does
 is more difficult. Is the ``<div>`` element on line 13 a figure caption for the
-``img``? Before we could say for sure, we would need to examine the content
+``img``? Before we can say for sure, we would need to examine the content
 inside that element, or look at the final page in a browser.
 
 For the sample code above, we would want to include plenty of comments in the
@@ -82,10 +82,10 @@ and ways of thinking. Two different coders can look at the same set of content
 and choose different ways to arrange it on the screen. However, both of them
 use the same set of HTML tags to do their work.
 
-**Semantic HTML** is not about the appearance of the web page. Instead, it's
+**Semantic HTML** is not about the appearance of the webpage. Instead, it's
 about the specific meaning of the elements. Semantic HTML uses more descriptive
 tag names to help identify what each section of the code does. This helps
-programmers clarify the structure of a web page.
+programmers clarify the structure of a webpage.
 
 For example, developers can make a paragraph larger than a heading if they want
 to. By looking at the HTML, however, we can still identify what is the
@@ -100,7 +100,7 @@ code.
 Screen Readers and Search Engines
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A well designed web page organizes content in a clean and attractive way. For
+A well designed webpage organizes content in a clean and attractive way. For
 these pages, finding the navigation bar or identifying the main content of the
 page is easy. However, screen readers for visually impaired users verbally
 describe the content on a page. These devices cannot pick up on visual clues to
@@ -137,6 +137,9 @@ you get too distracted, right-click on the page and choose *View Page Source*.
 Examine the HTML code used to build the page. Most likely, you will find a
 huge number of ``<div>`` tags. These tell the browser how to display the page,
 but they provide few details about the different sections.
+
+There is absolutely nothing wrong with using ``<div>`` tags in our HTML, but
+semantic tags offer us a better option for our code.
 
 The latest versions of HTML provide several tag names that can be used in place
 of ``div``. They work the same way, but provide more information to readers of
@@ -219,11 +222,11 @@ the ``div`` tags to find the one we want.
 Try It!
 -------
 
-The HTML code in the editor below is mostly complete. You just need to
-rearrange the elements to organize the page.
+The HTML in the editor below is mostly complete. You just need to rearrange the
+elements to organize the page.
 
 Lines 38-48 contain the elements you need to move, but they are NOT in the
-correct order. Cut and paste the HTML code from the bottom of the editor into
+correct order. Cut and paste each element from the bottom of the editor into
 the spaces above. Use the hints given by the tag names to decide where to put
 everything!
 
@@ -231,7 +234,7 @@ everything!
 
 #. Which two elements make the most sense to put inside the ``header`` element?
 #. There is only one image. Where should it go, and what text describes it?
-#. Which paragraph relates the image the best?
+#. Which paragraph best matches the image?
 #. Which paragraph does the unordered list support?
 #. What information should go inside the ``footer`` element?
 
@@ -241,6 +244,22 @@ everything!
 
 Check Your Understanding
 ------------------------
+
+.. admonition:: Question
+
+   Semantic HTML helps with all of the following EXCEPT:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the accuracy of search engine results.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the ability of screen readers to clearly present a webpage.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the ability of programmers to read and understand HTML code.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Improving the speed of loading a webpage.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
 
 .. admonition:: Question
 
@@ -267,7 +286,7 @@ Check Your Understanding
    <script type="text/JavaScript">
       function evaluateMC(id, correct) {
          if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).innerHTML = 'Yep! Tag names do not affect loading speed.';
             document.getElementById(id).style.color = 'blue';
          } else {
             document.getElementById(id).innerHTML = 'Nope!';
