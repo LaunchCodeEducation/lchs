@@ -98,27 +98,91 @@ Now add attributes to some of the tags to change the look of the text.
 #. Use the ``type`` attribute in the ordered list to change the bullets from
    numbers to lowercase letters. For the unordered list(s), change the bullets
    to ``type="disc"``.
-#. For the image, add the ``width="value"`` or ``height="value"`` attribute to
-   change the size of the image. ``value`` refers to a number of pixels.
-
-   .. admonition:: Note
-
-      If both ``width`` and ``height`` are used, the image scales to their
-      values. If only one or the other is added to the ``img`` tag, the image
-      will scale to keep the same proportions as the original.
-
 #. Change the font for one of the paragraphs with
    ``style="font-family:Brush Script MT"``, then play around by trying other
    font names like ``Helvetica``.
-#. Align the ``small`` text to the right edge of the screen.
+#. Use the ``style`` attribute to align the ``small`` text to the right edge of
+   the screen.
 
 Part 4: Other Semantic Tags
 ---------------------------
 
-Lorem ipsum...
+The editor below contains an image and some text, which you can use to practice
+with other useful tags and attributes.
 
-``details`` element...
+Image Attributes
+^^^^^^^^^^^^^^^^
 
-``sub`` and ``sup`` elements...
+Inside the ``<img>`` tag, add the ``width="value"`` or ``height="value"``
+attribute to change the size of the image. ``value`` refers to a number of
+pixels. Start with a value of ``200`` and then experiment by moving up and down
+from there.
 
-Maybe the ``blockquote`` element...
+.. admonition:: Note
+
+   If both ``width`` and ``height`` are used, the image resizes to their
+   values. If only one or the other is added to the ``img`` tag, the image
+   will scale to keep the same proportions as the original.
+
+The ``src`` attribute references an image saved in the same folder as this HTML
+file. You cannot see the folder in the embedded editor, but X images are
+available. Feel free to change the number in ``pet_1.jpg`` to change which
+picture gets displayed.
+
+.. admonition:: Warning
+
+   The ``src`` attribute also accepts the address for any image on the web.
+   However, pulling images from other sites to display on your own may violate
+   copyright laws.
+
+   Discuss with your teacher how to properly cite or request permission to use
+   images that don't belong to you.
+
+Special Text Tags
+^^^^^^^^^^^^^^^^^
+
+#. In your math and science classes, you use *superscripts* or *subscripts* to
+   correctly express chemical or mathematical formulas.
+
+   .. admonition:: Examples
+
+      .. raw:: html
+
+         <h4>Subscripts: 2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O</h4>
+
+         <h4>Superscript: ax<sup>2</sup> + bx + c = 0</h4>
+
+   To make the ``2`` (or any other character) appear smaller and below the main
+   line of text, wrap it with the ``<sub></sub>`` tags. For superscripts, use
+   the ``<sup></sup>`` tags instead.
+
+#. In the editor, add some subscripts and superscripts into the text.
+#. Next, replace a set of ``<p>`` tags with ``<blockquote>``. What happens?
+   This tag is often used to set apart quotes taken from books, movies, plays,
+   etc.
+
+Details, Details
+^^^^^^^^^^^^^^^^
+
+Sometimes, you want to display information on a webpage only when the user
+clicks in a specific spot. One way to accomplish this is by using the
+``details`` element.
+
+Paste this code into the editor:
+
+.. sourcecode:: html
+   :linenos:
+
+   <details>
+      <p>Some text here...</p>
+      <p>Some more text here...</p>
+      <ul><em>List of items:</em>
+         <li>One list item</li>
+      </ul>
+   </details>
+
+#. What does the ``details`` element do on the screen?
+#. Change the first ``<p></p>`` tags in the element to ``<summary>``. What
+   happens?
+#. Add more content in the ``details`` element describing how you might use it
+   on a webpage.
