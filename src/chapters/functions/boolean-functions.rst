@@ -60,9 +60,9 @@ skipped and the second return statement executes.
    print(is_int_even(4))
    print(is_int_even(7))
 
-The updated version works exactly the same as the original code. 
+The updated version returns the same results as the original and contains less code. 
 
-Also, notice that the function returns ``True`` when the expression
+The function returns ``True`` when the expression
 ``integer % 2 == 0`` is ``True``, and the function returns ``False`` when
 ``integer % 2 == 0`` is ``False``. In this case, the return value is *exactly
 the same* as the value of ``integer % 2 == 0``. This means that we can

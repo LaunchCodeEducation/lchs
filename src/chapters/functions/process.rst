@@ -7,7 +7,7 @@ be used in more complex ways.
 
 To avoid frustration and bugs, it's important to write functions in a very
 structured way. *Have a plan* before you start coding any function! This is
-essential now as well as once you start writing more complex code.
+essential now and once you start writing more complex code.
 
 In this section, we outline what we think is the best approach. To show a
 concrete example, we will consider a fictional function that makes a sandwich.
@@ -42,11 +42,11 @@ For our sandwich function, the answers might look like this:
    * - Return Type
      - An object of type ``'sandwich'`` :sup:`*`
     
-\* *Python does not actually have a "sandwich" data type, but we want our
+\* Python does not actually have a ``'sandwich'`` data type, but we want our
 function to be as flexible as possible. For now, recognize that returning a
 simple string to describe the sandwich will not be useful. In later lessons,
 we will learn how to create our own data types, so making a virtual,
-code-based "sandwich" here is not a problem.*
+code-based ``'sandwich'`` will be possible.
 
 .. _sandwich-function:
 
@@ -56,7 +56,7 @@ Step 2: Create the Basic Structure
 Now it is time to start coding. Using the decisions you just made, write the
 minimal syntax needed to create and call the function.
 
-Here's what an outline of our sandwich function would look like:
+Here's how an outline of our sandwich function looks:
 
 .. sourcecode:: python
    :linenos:
@@ -69,7 +69,7 @@ Here's what an outline of our sandwich function would look like:
    
    make_sandwich('this', 'is', ['a', 'practice', 'call'])
 
-Doing this step before writing the body will prevent silly mistakes like
+Doing this step before writing the body ensures we aren't
 leaving off the ``:`` or forgetting to define a parameter.
 
 Even though the function does not do anything yet, it will still work. Running
