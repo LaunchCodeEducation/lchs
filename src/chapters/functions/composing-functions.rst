@@ -31,46 +31,22 @@ Palindrome Checker
 A **palindrome** refers to a word that is spelled the same backwards and
 forwards. Two examples are "mom" and "level".
 
-.. admonition:: Note
-
-   Should we consider capitalization or spaces? Our answers determine whether or
-   not "Mom" and "taco cat" get counted as palindromes.
-   
-   For now, we will set these choices aside and stick with a simple definition.
-
 Let's write a :ref:`boolean function <boolean-function>` to check if a word is a
 palindrome.
 
 We will call a palindrome a string that is identical to its reverse. This means
 we can test for palindromes by taking a string, reversing it, and then
 comparing the reversed string to the original. If the two are equal, we have a
-palindrome!
+palindrome.
 
-Since we want to compare a string to its reverse, it would be very useful if we
-had a function that flips a string.
+Since we want to compare a string to its reverse, we'll need a function that flips a string.
 
 The ``reverse_string`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's write a function that, given a string, returns its reverse.
 
-One approach uses the accumulator pattern:
-
-.. sourcecode:: python
-   :linenos:
-
-   def reverse_string(a_string):
-      rev_string = ''
-
-      for char in a_string:
-         rev_string = char + rev_string
-
-      return rev_string
-
-This is the same algorithm that we used in the loops chapter to
-:ref:`reverse a string <reverse-string>`.
-
-Another approach is to use the list method ``reverse()`` in combination with
+One approach is to use the list method ``reverse()`` in combination with
 ``list()`` and ``join()`` (this was covered in the
 :ref:`split and join section <list_reverse-a-string>`).
 
@@ -123,9 +99,7 @@ compare the reversed string to the original.
    .. raw:: html
 
       <iframe height="550px" width="100%" src="https://repl.it/@launchcode/Palindrome-Checker?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-   
-Since ``is_palindrome`` uses our ``reverse_string`` function, this is an
-example of composition.
+
 
 .. admonition:: Try It!
 
@@ -140,8 +114,8 @@ example of composition.
 Functions Should Do Exactly One Thing
 -------------------------------------
 
-When writing a function, we should pay attention to its size. By "size" we mean
-that functions should be short and *DO ONLY ONE THING.*
+When writing a function, we should pay attention to its size. Functions work best when they are
+small and do only one thing.
 
 This idea is easier to say than to put into practice. For example, what if we
 wrote ``is_palindrome`` without putting the ``reverse_sting`` code in a
@@ -161,7 +135,7 @@ This function is still short, which is good. However, it does two separate
 jobs---it reverses a string *and* decides if that string is a palindrome.
 
 Making a palindrome checker with one function vs. two might not seem like a big
-deal, but what if we need to reverse a string for some other reason? We cannot
+deal now. But what if we need to reverse a string for some other reason? We cannot
 use the combined ``is_palindrome`` function, since it only returns ``True`` or
 ``False``. If we need to flip the order of a string, then we should write a
 function that just DOES THAT ONE JOB.
