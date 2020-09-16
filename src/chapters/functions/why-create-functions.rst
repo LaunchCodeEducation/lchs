@@ -15,8 +15,8 @@ Like loops, functions help us keep our code DRY. When we need to repeat the
 same basic task in multiple parts of a program, a function allows us to pack
 the code for that task into a neat, reusable form.
 
-*Loops* let us repeat the same task many times, but only in one part of a
-program. *Functions* let us repeat the same task in different parts of a
+Loops let us repeat the same task many times, but only in one part of a
+program. Functions let us repeat the same task in different parts of a
 program.
 
 Functions Make Your Code More Readable
@@ -54,7 +54,7 @@ create a custom-made replacement part, and then weld it into place.
 
 The repair complexity goes way down when a car is made up of lots of small
 parts, each of which can be tested and replaced on its own. The same thing
-happens with code. Small, clear chunks of code are easier to manage.
+happens with code. Small, uncomplicated chunks of code are easier to manage.
 
 Functions Enable Code Sharing
 -----------------------------
@@ -71,9 +71,8 @@ We will explore this idea in the :ref:`Modules chapter <modules-index>`.
 Functions Save Millions of Lives Every Day
 ------------------------------------------
 
-Okay, not really. However, functions ARE incredibly powerful tools that you
-WILL come to appreciate. Ask a professional programmer if they could do their
-job without functions, and the answer will be an emphatic "NO!"
+Okay, not really. However, functions are incredibly powerful tools. Ask a professional 
+programmer if they could do their job without functions, and the answer will be an emphatic "NO!"
 
 While functions may feel difficult to learn at first, repeated practice will
-lead to mastery. Your work now WILL be worth it.
+lead to mastery. Your work now will be worth it.
