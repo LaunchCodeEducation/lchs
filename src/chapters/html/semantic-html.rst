@@ -225,12 +225,12 @@ Try It!
 The HTML in the editor below is mostly complete. You just need to rearrange the
 elements to organize the page.
 
-Lines 38-48 contain the elements you need to move, but they are NOT in the
+Lines 38-49 contain the elements you need to move, but they are NOT in the
 correct order. Cut and paste each element from the bottom of the editor into
 the spaces above. Use the hints given by the tag names to decide where to put
 everything!
 
-*Hints*:
+*Consider*:
 
 #. Which two elements make the most sense to put inside the ``header`` element?
 #. There is only one image. Where should it go, and what text describes it?

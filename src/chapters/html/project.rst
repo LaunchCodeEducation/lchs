@@ -1,6 +1,4 @@
 Project: HTML
 =============
 
-Complete part 1 of the HTML Me Something assignment.
-
-.. todo:: Add internal reference to Assignment #4.
+Complete part 1 of the :ref:`HTML Me Something <html-me-something>` assignment.
