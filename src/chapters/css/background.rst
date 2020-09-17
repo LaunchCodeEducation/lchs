@@ -8,25 +8,37 @@ As discussed in the previous chapter, HTML lays out the structure of a webpage.
 However, when programmers make pages only with HTML, the webpages look rather
 bland.
 
-.. todo:: Insert image of a simple, bland webpage here.
+.. figure:: figures/bland-page.png
+   :alt: Webpage with a boring (black text on a white background) heading, paragraph, section, article, and list.
+
+   HTML by itself makes basic, boring webpages.
 
 When building a website, the structure of each page is important, but so is the
 appearance of the elements. By adding attributes inside the tags, programmers
 can adjust how an element looks on the screen.
 
-.. todo:: Insert image of a more attractive webpage here.
+.. figure:: figures/styled-page.png
+   :alt: Webpage with a styled heading, paragraph, section, article, list, and with a background image.
+
+   Attributes spice up a webpage.
 
 .. index:: ! css
 
-The attributes themselves are considered *styling* information, not structure.
-As such, we generally consider the styling of a webpage to be a separate task
-from building the HTML layout.
+The attributes provide *styling* information, not structure. As such, we
+generally consider the styling of a webpage to be a separate task from building
+the HTML layout.
 
 While HTML creates the structure and content of the page, CSS adds the styling
-to make it beautiful! Cascading Styling Sheets (**CSS**) is a style sheet
-language that allows programmers to efficiently adjust add styling instructions
-to HTML documents. With CSS, programmers can change background and font colors,
-the size of different elements, and many more things.
+to make it beautiful! Cascading Styling Sheets (**CSS**) is a language that
+allows programmers to easily add styling instructions to HTML documents. With
+CSS, programmers can change background and font colors, the size of different
+elements, and many more things.
+
+.. figure:: figures/html-css.png
+   :alt: A house frame represents HTML. Paint, carpet, etc. is the CSS. Together, they make an attractive building.
+   :width: 80%
+
+   HTML is the frame. CSS is the decoration. Combined, they make attractive webpages.
 
 CSS works by applying style rules to different elements. A style rule could be:
 *Make this lettering purple* or *Make this font Helvetica*.
@@ -37,8 +49,6 @@ The rules "cascade" because they follow a specific order of importance.
 .. admonition:: Note
 
    We will explore this order of importance later in the chapter. 
-
-.. todo:: Insert image of HTML frame, CSS bells & whistles, and HTML+CSS.
 
 Check Your Understanding
 ------------------------
