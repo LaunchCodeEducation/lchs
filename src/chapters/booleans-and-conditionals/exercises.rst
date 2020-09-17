@@ -13,8 +13,8 @@ Part A: Basic Selection
 If you are NOT assigned to a repl.it classroom or Trinket course, follow one of
 these links for the Part A starter code:
 
-#. `repl.it starter <https://repl.it/@launchcode/Conditional-Exercises-Part-A>`__
-#. `Trinket starter <https://trinket.io/python/78e5272001>`__
+#. `repl.it starter <https://repl.it/@launchcode/Conditional-Exercises-Part-A-1>`__
+#. `Trinket starter <https://trinket.io/python/a25b2ff397>`__
 
 ``if`` Only
 ^^^^^^^^^^^
@@ -40,15 +40,6 @@ Prompt the user to enter a number:
 
 2. Check if ``num_entry`` is 100 or larger. If so, print, ``"Valid entry!"``
    Else print, ``"Number too small."``
-#. Check if ``user_entry`` is all lowercase. If so, print, ``"___ is all
-   lowercase."`` Else, print, ``"___ is NOT all lowercase."`` Fill in the blank
-   with the value of ``user_entry``. 
-	
-.. admonition:: Tip 
-
-	To check if a string is all lowercase, you can use the string method ``.lower()``. We haven't discussed how to use this yet,
-	so read about it `here <https://www.w3schools.com/python/ref_string_lower.asp>`__ and use the *Try it Yourself* button to 
-	explore how to use the method. 
 
 The ``in`` keyword can be used as another comparison operator.
 
@@ -70,37 +61,44 @@ The ``in`` keyword can be used as another comparison operator.
    The string ``ana`` is present within ``banana``, while there is no
    ``z`` character within ``apple``.
 
-4. Use the ``in`` operator to check if ``user_entry`` starts with a vowel. If
-   so, print, ``"___ starts with a vowel."`` Else, print, ``"___ does NOT start
-   with a vowel."``
+3. Prompt the user to enter a lowercase letter. Use the ``in`` operator to
+   check if the letter is a vowel (e.g. in the string ``aeiou``). If so, print,
+   ``"___ is a vowel."`` Else, print, ``"___ is NOT a vowel."``
+#. What happens if the user enters a capital letter instead of lowercase?
+   Refactor your code for problem 3 so that it works for both capital and
+   lowercase vowels!
 
 Part B: Logical Operators
 -------------------------
 
 Use the logical ``and``, ``or``, and ``not`` operators in the following
 exercises. Once again, if you are not assigned to a repl.it classroom or Trinket course, 
-access the Part B starter code here: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B>`__
-or `Trinket <https://trinket.io/python/196c4bfd4b?showInstructions=true>`__.
+access the Part B starter code here: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B-1>`__
+or `Trinket <https://trinket.io/python/923476a25b>`__.
 
 #. Given an integer, check to see if the number is even and divisible by 5.
    Print an appropriate message depending on the result.
 
-#. Given a string, print, ``"Exterior vowel found!"`` if the string begins or
-   ends with a vowel. Otherwise, print, ``"Consonants all around!"``
+#. Given a string, print, ``"___ is a really long word!"`` if the string is
+   longer than 9 characters and does NOT contain a space. Otherwise, print,
+   ``"___ is either short, or it contains multiple words."`` Fill in the blank
+   with the original string.
 
-#. Refactor the following code to check if ``text`` does NOT start with a
-   capital letter or vowel. How does making this change affect the ``if/else``
-   code blocks?
+#. Refactor the following code to check if ``letter`` is NOT in the string
+   ``'BCDFGHJKLMNPQRSTVWXYZ'`` or is a lowercase vowel. How does making this
+   change affect the ``if/else`` code blocks?
 
    .. sourcecode:: python
       :linenos:
 
-      text = 'conditioNals Affect control FLOW'
+      letter = 'A'
+      cap_consonants = 'BCDFGHJKLMNPQRSTVWXYZ'
+      vowels = 'aeiou'
 
-      if text[0].upper() == text[0] or text[0].lower() in vowels:
-         print("'{0}' starts with a vowel OR capital letter".format(text))
+      if letter in cap_consonants or letter in vowels:
+         print("'{0}' is either a lowercase vowel OR a capital consonant".format(letter))
       else:
-         print("Fix '{0}' to start with a capital letter or vowel".format(text))
+         print("Pick a capital consonant or a lowercase vowel")
 
 #. If ``num = 5``, indicate whether each of following expressions returns
    ``True`` or ``False``.
