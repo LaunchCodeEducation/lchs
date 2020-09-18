@@ -169,6 +169,8 @@ syntax is:
 We can add multiple attributes inside a tag, but they should be separated by
 spaces.
 
+.. _attributes-example:
+
 Attributes Example
 ------------------
 
