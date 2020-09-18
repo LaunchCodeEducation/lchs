@@ -129,13 +129,13 @@ CSS property if we want to change it from the default setting.
 CSS Examples
 ------------
 
-Here are three different examples of how we can use selectors to make the text
-in a paragraph pink.
+Here are three different examples of how we can use selectors to make some of
+the text on a page pink.
 
 Element Selector
 ^^^^^^^^^^^^^^^^
 
-Using the element selector to change the color of all ``<p></p>`` elements,
+This element selector sets the text color for ``<p></p>`` elements:
 
 .. sourcecode:: css
    :linenos:
@@ -155,7 +155,7 @@ Class Selector
 What if we only want a few of the paragraphs on the page to be pink? Also, what
 if we want some other elements on the page to have pink text as well?
 
-In these cases, we can define a CSS *class*, like so:
+For these cases, we can define a CSS *class*, like so:
 
 .. sourcecode:: css
    :linenos:
@@ -164,7 +164,8 @@ In these cases, we can define a CSS *class*, like so:
       color: pink;
    }
 
-In CSS, the class selector begins with a dot, ``.``.
+In CSS, the class selector begins with a dot followed by the class name we
+chose (``.class-name``).
 
 Unlike the element selector, class styling requires us to add a specific
 attribute to an HTML tag. For example, if we wanted one pink paragraph and one
@@ -174,7 +175,7 @@ pink heading on our page, the HTML would look something like:
    :linenos:
 
    <body>
-      <h1 class="pink-text">Main Pink Page Heading</h1>
+      <h1 class="pink-text">Main Page Heading (Pink)</h1>
 
       <h2>Sub-heading #1 (black text)</h2>
 
@@ -183,14 +184,14 @@ pink heading on our page, the HTML would look something like:
    </body>
 
 By giving the elements on lines 2 and 6 the ``class`` attribute, we apply the
-``pink-text`` styling rule to both. By leaving ``class="pink-text"`` out of
-line 7, the text in that paragraph element remains the default color (black).
+``pink-text`` styling rule to both. By leaving ``class="pink-text"`` out of the
+other tags, the text in those elements remains the default color (black).
 
 ID Selector
 ^^^^^^^^^^^
 
 If only one element on the page needs to have pink text, then we can add an
-``id`` attribute inside the tag. For example,
+``id`` attribute inside that one tag. For example,
 ``<p id="pinkParagraph">Content</p>``.
 
 In CSS, we define the id selector like so:
@@ -202,7 +203,8 @@ In CSS, we define the id selector like so:
       color: pink;
    }
 
-In CSS, the id selector begins with the symbol ``#``.
+In CSS, the id selector begins with the symbol ``#`` followed by the ``id``
+name.
 
 .. admonition:: Fun Fact
 
@@ -213,63 +215,10 @@ In CSS, the id selector begins with the symbol ``#``.
    #. *Pound*, when referencing the button on a telephone keypad.
    #. *Hashtag*, for most appearances after 2006.
 
-Linking CSS to HTML
--------------------
+Try It!
+-------
 
-To get started with CSS, programmers need to add CSS to HTML.
+Lorem ipsum...
 
-There are three different places to add CSS in an HTML file as indicated above:
-
-1. External: The CSS is in a separate file linked to the HTML document in the ``<head>``. External linking of CSS is great for when programmers have large quantities of CSS that apply to the whole page.
-
-   .. sourcecode:: html
-      :linenos:
-
-      <head>
-         <title>My Web Page</title>
-         <link rel="stylesheet" type="text/css" href="styles.css">
-      </head>
-
-   ``link`` is an HTML tag that tells the browser to connect what is inside the linked file to the web page content.
-   ``rel``, ``type``, ``href`` are all HTML attributes that are required to properly link CSS and let the browser know that CSS is what is in the file and where the file is.
-   ``rel`` should be set to "stylesheet", because it designates how the link relates to the page. ``type`` will be set to "text/css" for all stylesheets.
-   ``href`` is where the programmer enters the path to the stylesheet that should be used for the page.
-
-2. Document or internal: All CSS styling is inside the HTML file, but within the ``<head>``. Internal use of CSS is great for when the programmer has a small amount of CSS that applies to the whole document.
-
-   ::
-
-      <head>
-         <title>My Web Page</title>
-         <style>
-            selector {
-                declaration block
-            }
-         </style>
-      </head>
-
-3. Inline: Programmers add CSS styling to individual tags. This is a good place to add some specific styling.
-   There is no selector in inline CSS; instead, the ``style`` attribute is used. This is because the styling only applies to that one instance of the HTML tag.
-
-   .. sourcecode:: html
-
-      <tag style="declaration block">content</tag>
-
-Order of Precedence
-^^^^^^^^^^^^^^^^^^^
-
-Because there is an order of precedence to the location of CSS, it is important to be able to add or change CSS in all three locations.
-Programmers use this to their advantage if they want to be very specific with overwriting some CSS for one element.
-Inline CSS is highest in precedence with internal CSS being next and then external CSS is lowest.
-
-Check Your Understanding
-------------------------
-
-.. admonition:: Question
-
-   What is the order of precedence in CSS?
-
-   #. Internal > External > Inline
-   #. Inline > Internal > External
-   #. Inline > External > Internal
-   #. External > Internal > Inline
+Use a pre-configured editor with HTML elements and css file. Students practice
+applying element, class, and id selectors...

@@ -7,5 +7,6 @@ Styling the Web With CSS
 
    background
    structure
+   css-locations
    rules
    exercises
