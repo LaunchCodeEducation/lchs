@@ -9,8 +9,8 @@ records, etc. safe requires constant work.
 
 .. index:: ! encryption
 
-**Encryption** refers to any process that converts information into a "secret
-code" that hides its meaning from prying eyes. For example, messages can be
+**Encryption** refers to any process that converts information into a secret
+code that hides its meaning from prying eyes. For example, messages can be
 *encrypted* on one user's device, sent to another user, and then changed back
 into plain text on the second device. Anyone spying on the message mid-stream
 will see unreadable content.
@@ -34,7 +34,7 @@ text.
 Requirements
 ------------
 
-By the END of this assignment, your program will:
+By the end of this assignment, your program will:
 
 #. Prompt the user for a message and a shift value.
 #. Ask the user to either *encrypt* or *translate* the message.
@@ -44,11 +44,11 @@ By the END of this assignment, your program will:
 Part 1: Simple Letter Shift
 ---------------------------
 
-You will program one of the basic encryption tricks, called the
-`Caesar Cipher <https://en.wikipedia.org/wiki/Caesar_cipher>`__. This process
-takes each letter in a message and replaces it with a different one. The new
-letters are all *shifted* a certain number of spaces in the alphabet compared
-to the originals.
+You will use a basic encryption tool, called the
+`Caesar Cipher <https://en.wikipedia.org/wiki/Caesar_cipher>`__, to encode a
+message. This process takes each letter in a message and replaces it with a
+different one. The new letters are all *shifted* a certain number of spaces in
+the alphabet compared to the originals.
 
 .. figure:: figures/caesar-cipher.png
    :alt: Image showing how the Caesar cipher shits letters in the alphabet.
@@ -63,7 +63,7 @@ The ``alphabet_position`` Function
 #. Define a function called ``alphabet_position`` with one parameter. The
    parameter receives a string containing a single letter.
 #. The function returns the *index* of that letter within the alphabet.
-#. The function should be *case-insensitive*. Capital and lowercase letters
+#. The function should be case-insensitive. Capital and lowercase letters
    return the same result.
 
    .. list-table:: Sample Results
@@ -87,15 +87,15 @@ The ``alphabet_position`` Function
    #. You can assume the argument sent to the function will be a single letter.
       Do not worry about what to do with longer strings or non-letter
       characters.
-   #. ``alphabet_position`` should NOT print anything. It needs to *return* a
+   #. ``alphabet_position`` should NOT print anything. It needs to return a
       value instead.
 
 The ``shift_character`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. Define the function ``shift_character(char, shift)`` with two parameters.
-   ``char`` accepts a *character* (a string of length 1) and ``shift`` accepts
-   an integer value.
+   ``char`` accepts a character (a string of length 1) and ``shift`` accepts an
+   integer value.
 #. If ``char`` is a letter, the function returns a different one. The new
    letter will be ``shift`` places to the right in the alphabet.
 #. The case of the original letter and the returned value should match. For
@@ -132,12 +132,12 @@ The ``shift_character`` Function
 
    #. You should make use of your ``alphabet_position`` function! Thinking in
       terms of index values helps.
-   #. Notice that the function "wraps around" when it reaches the end of the
-      alphabet. If a shift moves the program past the letter ``'z'`` (index
-      value ``25``), it moves back to the start of the alphabet and continues
-      counting with ``'a'`` (index value ``0``).
+   #. Notice in the Sample Results table that the function wraps around when it
+      reaches the end of the alphabet. If a shift moves the program past the
+      letter ``'z'`` (index value ``25``), it moves back to the start of the
+      alphabet and continues counting with ``'a'`` (index value ``0``).
    #. The :ref:`modulus operator <modulo>` will be a BIG help here to keep the
-      index values in the range 0 - 25.
+      index values in the range ``0 - 25``.
 
 The ``build_code_dict`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,7 +149,7 @@ The ``build_code_dict`` Function
    shifted to the right a certain number of places. How many places? That
    depends on the integer sent to the function.
 
-   *Hints*: The accumulator pattern strikes again! Also, notice how you can
+   *Hints*: The accumulator pattern strikes again! Also, remember that you can
    call the ``shift_character`` function to keep your code DRY.
 
 #. The returned dictionary should include keys for BOTH lower and uppercase
@@ -176,10 +176,10 @@ The ``build_code_dict`` Function
    in your results might be in a different order than the examples, and that is
    OK.
 
-Part 2: Create Coded Messages
------------------------------
+Part 2: Code and Decode Messages
+--------------------------------
 
-Now that your part 1 functions all work, you are ready to create coded
+Now that your Part 1 functions all work, you are ready to create coded
 messages! Before you dive in, however, remove any ``print`` statements you used
 to test those functions.
 
@@ -288,7 +288,7 @@ for other programs. Move them into a module!
 Sample Output
 -------------
 
-Your output does NOT have to look exactly like the samples, but it should be
+Your output does not have to look exactly like the samples, but it should be
 close.
 
 ::
@@ -313,8 +313,23 @@ Bonus Mission
 -------------
 
 The Caesar Cipher works fine, but it is VERY easy to decode. Add another
-function to your program that takes any coded message and returns all possible
-outcomes (one for each shift value).
+function to your program that takes a coded message and returns all possible
+outcomes for how the message can be translated back into English.
+
+For example:
+
+::
+
+   Coded Message: Udymts fuuwjsynhj, dtz fwj.
+   Translations:
+      Shift 1: Tcxlsr ettvirxmgi, csy evi.
+      Shift 2: Sbwkrq dssuhqwlfh, brx duh.
+      Shift 3: Ravjqp crrtgpvkeg, aqw ctg.
+      Shift 4: Qzuipo bqqsfoujdf, zpv bsf.
+      Shift 5: Python apprentice, you are.  <-- Scan output for clear text.
+      Shift 6: Oxsgnm zooqdmshbd, xnt zqd.
+      Shift 7: Nwrfml ynnpclrgac, wms ypc.
+      etc.
 
 Back in ``main()`` call the function, send it a coded message, and print each
 result so you can spot the correct translation.
@@ -328,7 +343,7 @@ Before submitting your assignment, make sure your program:
 
 #. Works.
 #. Only displays the expected output and NOT any of the function test results.
-#. Contains no "loose" code statements (statements placed outside of any
+#. Contains no loose code statements (statements placed outside of any
    function).
 #. Includes enough comments to describe to a non-coder what each part of the
    program does.
