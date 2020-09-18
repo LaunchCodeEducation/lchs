@@ -9,16 +9,14 @@ collection. However, we still need to understand what dictionaries allow us to
 Lists vs. Dictionaries
 ----------------------
 
-First, neither collection is "better" than the other. There are some jobs
-that lists solve more easily, while dictionaries provide the best choice for
-other tasks. Lists and dictionaries are different, and this gives us two very
-useful tools for solving problems.
+First, neither collection is better than the other. They are just different.
+There are some problems that lists solve more easily, while dictionaries are
+the better choice for other tasks.
 
 The question isn't which collection is *better* than the other. The proper
 question is which data structure best *fits the job at hand*.
 
-Let's take a look at one task where having labeled values (key/value pairs)
-really helps.
+Let's take a look at one task where using a dictionary really helps.
 
 Translation App
 ---------------

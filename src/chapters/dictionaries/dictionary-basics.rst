@@ -28,10 +28,59 @@ A third type of Python collection is called a **dictionary**.
    strings is the better choice. We will see why soon.
 
 .. figure:: figures/dictionary.png
-   :alt: Image showing the relationship of key/value pairs inside a dictionary.
+   :alt: Each key points to a value inside a dictionary.
    :width: 80%
 
    Dictionaries store data as key/value pairs.
+
+Why Use Keys?
+-------------
+
+Imagine we have a list of phone numbers, and we want to access the one for
+"Mom". Nothing in the list lets us know which element is the one we want.
+``phone_numbers[0]`` gives us the first entry in the list, but it does not tell
+us who the number belongs to.
+
+If we remember that Mom's phone number is at index ``5``, then
+``phone_numbers[5]`` will work. However, lists are *mutable*. After a few
+updates, her number might not be at position ``5`` anymore.
+
+It would be nice if we could access a phone number by the *name of who it
+belongs to* instead of by index. Maybe something like ``phone_numbers['Mom']``
+instead of ``phone_numbers[5]``. 
+
+   Oh, wait! That's what dictionary keys do!
+
+*Lists* order data from left to right, which is great. However, the index
+values 0, 1, 2... do NOT tell us what the data actually represents. Index ``0``
+might refer to a string, number, list, etc. We cannot know until we access that
+element.
+
+*Dictionaries* organize data by linking concrete values to individual keys. The
+order of the key/value pairs in the collection is not important, since we just
+need to know the label for the value we want.
+
+.. admonition:: Example
+
+   Compare the following data structures:
+
+   .. sourcecode:: python
+      :linenos:
+
+      # A Python list:
+      phone_numbers = ['555-5555', '555-5556', '123-456-7890']
+
+      # A Python dictionary:
+      phone_book = {
+         'Mom' : '555-5555',
+         'Work' : '555-5556',
+         'Home' : '123-456-7890'
+      }
+
+By attaching a label to each value in ``phone_book``, we make retrieving Mom's
+number much easier. Keys give each data value a name.
+
+Let's take a closer look at how to define a Python dictionary.
 
 Create a New Dictionary
 -----------------------
@@ -47,7 +96,7 @@ dictionary, but the simplest is to wrap the key/value pairs in curly braces
 
       student = {'name' : 'Maria', 'id_number' : 1234, 'scores' : [90, 95, 88]}
 
-*Note the following*:
+**Note the following**:
 
 #. The new dictionary is assigned to the variable ``student``.
 #. Inside the curly braces, colons separate the key/value pairs, with the keys
@@ -94,7 +143,7 @@ notation and placing an index value inside the ``[]``.
    my_string[3]   # Access the character at index 3 in my_string.
 
 To access a specific entry in a dictionary, we still use bracket notation.
-However, instead of placing an index inside the ``[]``, we use a key name
+However, instead of placing an index inside the brackets, we use a key name
 instead.
 
 .. sourcecode:: Python
@@ -128,55 +177,8 @@ instead.
    #. Try assigning the same value (like ``5``) to two different keys in the
       same dictionary. Does this cause an error?
 
-Why Use Keys?
--------------
-
-Imagine we have a list of phone numbers, and we want to access the one for
-"Mom". Nothing in the list lets us know which element is the one we want.
-``phone_numbers[0]`` gives us the first entry in the list, but it does not tell
-us who the number belongs to.
-
-If we remember that Mom's phone number is at index ``5``, then
-``phone_numbers[5]`` will work. However, lists are *mutable*. After a few
-updates, her number might not be at position ``5`` anymore.
-
-It would be nice if we could access a phone number by the *name of who it
-belongs to* instead of by index. Maybe something like ``phone_numbers['Mom']``
-instead of ``phone_numbers[5]``. 
-
-   Oh, wait! That's what dictionary keys do!
-
-*Lists* order data from left to right, which is great. However, the index
-values 0, 1, 2... do NOT tell us what the data actually represents. Index ``0``
-might refer to a string, number, list, etc. We cannot know until we access that
-element.
-
-*Dictionaries* organize data by linking concrete values to individual keys. The
-order of the key/value pairs in the ``{}`` is not important, since we just need
-to know the label for the value we want.
-
-.. admonition:: Example
-
-   Compare the following data structures:
-
-   .. sourcecode:: python
-      :linenos:
-
-      # A Python list:
-      phone_numbers = ['555-5555', '555-5556', '123-456-7890']
-
-      # A Python dictionary:
-      phone_book = {
-         'Mom' : '555-5555',
-         'Work' : '555-5556',
-         'Home' : '123-456-7890'
-      }
-
-By attaching a label to each value in ``phone_book``, we make retrieving Mom's
-number much easier. Keys give each data value a name.
-
 Key Data Types
-^^^^^^^^^^^^^^
+--------------
 
 We can use either an integer or a string for a key name. However, since we want
 the key to describe the data linked to it, the best choice is usually a string.
