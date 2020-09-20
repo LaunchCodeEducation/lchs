@@ -40,48 +40,101 @@ or more of the following **Bonus Items**:
 #. Use classes/objects.
 #. Use a module (custom or ready-made).
 
-Choose an Idea
---------------
+Part 1: Choose an Idea
+----------------------
 
-Before you start coding, you must decide WHAT you want to create!
+Before you start coding, you and your partner must decide what game you want to
+create!
 
-#. Talk to your partner. Brainstorm ideas, and write them down.
+#. Brainstorm ideas and write them down.
 #. Show the list of your ideas to your teacher. Receive feedback on which ones
-   are suitable for the assignment.
+   are suitable for this assignment.
 #. Narrow down your list, then select the idea that excites you the most.
 
 Next, describe to each other what you want the program to do. Now is NOT the
 time to write code! Discuss the GAME, not the Python.
 
 #. Write down the features you want your game to have.
-#. Write down what information needs to be displayed in the console.
-#. Start simple! You have a limited amount of time, and you can always add more
-   complicated features later.
+#. Start simple! From your features list, select only the most important ideas
+   for your game. You have a limited amount of time, and you can always add
+   more features later.
+#. Write down how the game will be played by the user. What inputs will be
+   needed?
+#. Identify what information needs to be displayed in the console (intro, user
+   input prompts, results, etc.).
 
-Outline the Program
--------------------
-
-Define pseudo-code...
-
-Provide example...
-
-Get the Console App Working
+Part 2: Outline the Program
 ---------------------------
 
-Open a new project in Trinket or repl.it...
+Now that you and your partner have chosen a game idea, the next step is to
+block out the different parts of the program. This can be done with pencil and
+paper, in a shared document, or with comments in a code editor.
 
-Lorem ipsum...
+The idea here is to describe how each part of the program works without
+worrying about the actual Python code yet.
 
-#. What data/variables does it need? What sort of logic?
-#. Code something small that works (NOT the whole game).
-#. Add one small, new thing.  Keep the code working.
-#. Add the next, tiny thing.  Keep the code working.
-#. Keep this up until the console app is done.
+This is called making **pseudo-code**. Pseudo-code is an outline of the data
+and variables needed for the program. It also includes a short description of
+the logic needed in each part of the game (e.g. loops, conditionals, functions,
+etc.).
 
-Expand Your Working Program
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. admonition:: Example
 
-Lorem ipsum...
+   For the Rock, Paper, Scissors game above, the pseudo-code might look
+   something like:
+
+   .. todo:: Insert RPS pseudo-code diagram here.
+
+Part 3: Code the Console Game
+-----------------------------
+
+Login to your Trinket or repl.it account. Start a new project and give it a
+descriptive name (something flashier than ``Assignment 3``). Be sure to share
+the link to the project with your partner!
+
+Begin coding your game by following the outline you made in Part 2. Here are a
+few tips to help you complete your project with less hassle:
+
+#. Start by coding something small that works (NOT the whole game). For
+   example, when the player clicks *Run*, what should they see on the screen
+   first?
+#. Test your new program carefully before moving on.
+#. Next, add one small, new thing to the program. IMPORTANT: Keep your code
+   working! If the new feature breaks the program, find and fix the bugs before
+   moving on.
+#. Add another feature to the program. Keep the code working.
+#. Repeat this process until your console game is done.
+
+Part 4: Challenge Your Game
+---------------------------
+
+Your game program is almost complete! Now you need to run it and try to break
+it as you play.
+
+Users often enter the wrong thing when prompted. For example, if they are asked
+for a number between ``1`` and ``10``, they might enter ``100`` or the string
+``'one'``. Your program needs to survive these cases.
+
+.. index:: ! edge cases
+
+Also, you need to check to make sure your program deals with **edge cases**
+correctly. For example, for the range ``1 - 10``, the values ``1`` and ``10``
+are at the *edge* of the accepted entries. A conditional that checks for
+``user_choice < 1`` behaves differently than one that uses
+``user_choice <= 1``. This small change in logic can cause unexpected results.
+(In the Rock, Paper, Scissors game above, this might never allow a player to
+select ``Rock``). 
+
+Run your program several times and do the following:
+
+#. For every input statement, enter an invalid response.
+#. For every numerical input, enter the smallest valid option.
+#. For every numerical input, enter the largest valid option.
+
+If your program crashes or produces unexpected results during these tests, then
+you need to find and fix the bugs.
+
+Once you finish this final round of debugging, your game is ready!
 
 Scoring
 -------
