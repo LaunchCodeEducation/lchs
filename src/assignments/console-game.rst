@@ -13,7 +13,7 @@ You and a partner will design a simple console game app. For example:
 
 .. admonition:: Example
 
-   Click *Run* to play play Rock, Paper, Scissors against the computer!
+   Click *Run* to play Rock, Paper, Scissors against the computer!
 
    .. raw:: html
 
@@ -71,19 +71,17 @@ block out the different parts of the program. This can be done with pencil and
 paper, in a shared document, or with comments in a code editor.
 
 The idea here is to describe how each part of the program works without
-worrying about the actual Python code yet.
-
-This is called making **pseudo-code**. Pseudo-code is an outline of the data
-and variables needed for the program. It also includes a short description of
-the logic needed in each part of the game (e.g. loops, conditionals, functions,
-etc.).
+worrying about the actual Python code yet. This can include an outline of the
+data and variables needed and/or a short description of the logic for each part
+of the game (e.g. loops, conditionals, functions, etc.).
 
 .. admonition:: Example
 
-   For the Rock, Paper, Scissors game above, the pseudo-code might look
-   something like:
+   For the Rock, Paper, Scissors game above, the outline might look something
+   like:
 
-   .. todo:: Insert RPS pseudo-code diagram here.
+   .. figure:: figures/rock-paper-scissors-outline.png
+      :alt: A four part outline describing the different pieces of a rock-paper-scissors program.
 
 Part 3: Code the Console Game
 -----------------------------
@@ -103,13 +101,13 @@ few tips to help you complete your project with less hassle:
    working! If the new feature breaks the program, find and fix the bugs before
    moving on.
 #. Add another feature to the program. Keep the code working.
-#. Repeat this process until your console game is done.
+#. Repeat this process until you have added all your planned features.
 
 Part 4: Challenge Your Game
 ---------------------------
 
-Your game program is almost complete! Now you need to run it and try to break
-it as you play.
+Your game is almost complete! You just need to run it a few times to check for
+any leftover bugs.
 
 Users often enter the wrong thing when prompted. For example, if they are asked
 for a number between ``1`` and ``10``, they might enter ``100`` or the string
@@ -118,16 +116,17 @@ for a number between ``1`` and ``10``, they might enter ``100`` or the string
 .. index:: ! edge cases
 
 Also, you need to check to make sure your program deals with **edge cases**
-correctly. For example, for the range ``1 - 10``, the values ``1`` and ``10``
+correctly. For example, in the range ``1 - 10``, the values ``1`` and ``10``
 are at the *edge* of the accepted entries. A conditional that checks for
 ``user_choice < 1`` behaves differently than one that uses
-``user_choice <= 1``. This small change in logic can cause unexpected results.
-(In the Rock, Paper, Scissors game above, this might never allow a player to
-select ``Rock``). 
+``user_choice <= 1``. This small change in logic can cause unexpected results,
+like never being able to select ``Rock`` in the Rock, Paper, Scissors game.
 
 Run your program several times and do the following:
 
-#. For every input statement, enter an invalid response.
+#. For every input statement, enter an invalid response. Try using values
+   outside of the expected range. Also try entering the wrong data type (e.g.
+   ``float`` or ``str`` when an ``int`` is required).
 #. For every numerical input, enter the smallest valid option.
 #. For every numerical input, enter the largest valid option.
 
@@ -135,6 +134,11 @@ If your program crashes or produces unexpected results during these tests, then
 you need to find and fix the bugs.
 
 Once you finish this final round of debugging, your game is ready!
+
+.. admonition:: Tip
+
+   One of the best ways to find bugs in your game is to let someone else play
+   it!
 
 Scoring
 -------
