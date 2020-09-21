@@ -107,6 +107,8 @@ loop instead of a ``for`` loop in the accumulator pattern.
    values (``0, 1, 2, 3``). Given this range of four numbers, it is IMPOSSIBLE
    to build a list of 5 or more unique numbers!
 
+.. _unique-dict-values:
+
 Unique Dictionary Values
 ------------------------
 
