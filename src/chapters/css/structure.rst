@@ -1,5 +1,5 @@
-CSS Structure
-=============
+CSS Syntax
+==========
 
 .. index:: ! inline style
 
@@ -30,7 +30,7 @@ multiple elements the same way.
          <h2 style="color:blue; text-align:center">Sub-heading #1</h2>
          <!-- Some content -->
 
-         <h2 style="color:blue; text-align:center">Sub-heading #3</h2>
+         <h2 style="color:blue; text-align:center">Sub-heading #2</h2>
          <!-- More content -->
       </body>
 
@@ -129,8 +129,8 @@ CSS property if we want to change it from the default setting.
 CSS Examples
 ------------
 
-Here are three different examples of how we can use selectors to make some of
-the text on a page pink.
+Here are three different ways we can use selectors to make some of the text on
+a page pink.
 
 Element Selector
 ^^^^^^^^^^^^^^^^
@@ -144,10 +144,8 @@ This element selector sets the text color for ``<p></p>`` elements:
       color: pink;
    }
 
-Using the element selector will make all paragraph elements on the page have
-pink text.
-
-.. todo:: Insert interactive editor here for a CSS Try It example.
+Using the element selector makes all paragraph elements on the page have pink
+text.
 
 Class Selector
 ^^^^^^^^^^^^^^
@@ -164,8 +162,8 @@ For these cases, we can define a CSS *class*, like so:
       color: pink;
    }
 
-In CSS, the class selector begins with a dot followed by the class name we
-chose (``.class-name``).
+In CSS, the class selector begins with a dot followed by a class name we
+choose (``.class-name``).
 
 Unlike the element selector, class styling requires us to add a specific
 attribute to an HTML tag. For example, if we wanted one pink paragraph and one
@@ -192,19 +190,19 @@ ID Selector
 
 If only one element on the page needs to have pink text, then we can add an
 ``id`` attribute inside that one tag. For example,
-``<p id="pinkParagraph">Content</p>``.
+``<p id="pink-paragraph">Content</p>``.
 
 In CSS, we define the id selector like so:
 
 .. sourcecode:: css
    :linenos:
 
-   #pinkParagraph {
+   #pink-paragraph {
       color: pink;
    }
 
-In CSS, the id selector begins with the symbol ``#`` followed by the ``id``
-name.
+In CSS, the ``id`` selector begins with the symbol ``#`` followed by the name
+that we choose to give that one element.
 
 .. admonition:: Fun Fact
 
@@ -218,7 +216,52 @@ name.
 Try It!
 -------
 
-Lorem ipsum...
+The editor below contains two files, ``index.html`` and ``style.css``. We will
+learn about how to link these together on the next page. For now, just
+recognize that changes you make to the ``css`` file will change the styling
+applied to the HTML elements.
 
-Use a pre-configured editor with HTML elements and css file. Students practice
-applying element, class, and id selectors...
+.. raw:: html
+
+   <iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Initial-CSS-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+#. Click on the file icon on the left side of the editor to switch between the
+   ``.html`` and ``.css`` files. Flip back and forth between the two as you
+   work with the code.
+
+   .. admonition:: Tip
+
+      After making a change in either file, click on the *Run* button to update
+      the webpage.
+
+      Click the *Open in a New Tab* button in the output panel to see the whole
+      webpage. You can refresh this tab at any time to update the view.
+
+#. The ``css`` file already contains the styling information for the ``h1``
+   element. Using this as a model, add an ``h2`` selector and assign only two
+   property values in the declaration block:
+
+   a. Set the text color to ``blue``.
+   b. Set the property ``text-decoration`` to ``underline``.
+   c. Click *Run* and notice how all of the ``h2`` headings change.
+
+#. In the HTML file, two of the elements include the attribute
+   ``class="gray-background"``. However, this class name does not exist in the
+   ``css`` file yet!
+
+   a. In the ``css`` file, add the ``.gray-background`` selector.
+   b. Inside the declaration block, set the ``background-color`` property to
+      ``lightgray``.
+   c. Set the ``text-align`` property to ``center``.
+
+#. The styling for the ``id`` called ``main-article`` is defined in the ``css``
+   file. However, none of the elements in the HTML file use it.
+
+   a. Select one element in the HTML file and add the attribute
+      ``id="main-article"`` inside its starting tag. How does the webpage
+      change?
+   b. Try moving the ``id`` attribute to different elements in the HTML file.
+
+      .. admonition:: Note
+
+         Only ONE element in an HTML file receives a particular ``id``.
