@@ -54,7 +54,7 @@ create a custom-made replacement part, and then weld it into place.
 
 The repair complexity goes way down when a car is made up of lots of small
 parts, each of which can be tested and replaced on its own. The same thing
-happens with code. Small, uncomplicated chunks of code are easier to manage.
+happens with code. Small, simple chunks of code are easier to manage.
 
 Functions Enable Code Sharing
 -----------------------------

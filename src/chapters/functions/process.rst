@@ -40,13 +40,13 @@ For our sandwich function, the answers might look like this:
    * - Return Value
      - The finished sandwich
    * - Return Type
-     - An object of type ``'sandwich'`` :sup:`*`
+     - An object of type ``sandwich`` :sup:`*`
     
-\* Python does not actually have a ``'sandwich'`` data type, but we want our
+\* Python does not actually have a ``sandwich`` data type, but we want our
 function to be as flexible as possible. For now, recognize that returning a
 simple string to describe the sandwich will not be useful. In later lessons,
 we will learn how to create our own data types, so making a virtual,
-code-based ``'sandwich'`` will be possible.
+code-based ``sandwich`` will be possible.
 
 .. _sandwich-function:
 
@@ -56,7 +56,7 @@ Step 2: Create the Basic Structure
 Now it is time to start coding. Using the decisions you just made, write the
 minimal syntax needed to create and call the function.
 
-Here's how an outline of our sandwich function looks:
+Here's an outline for our sandwich function:
 
 .. sourcecode:: python
    :linenos:
@@ -69,7 +69,7 @@ Here's how an outline of our sandwich function looks:
    
    make_sandwich('this', 'is', ['a', 'practice', 'call'])
 
-Doing this step before writing the body ensures we aren't
+Doing this step before writing the body makes sure we aren't
 leaving off the ``:`` or forgetting to define a parameter.
 
 Even though the function does not do anything yet, it will still work. Running

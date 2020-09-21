@@ -76,6 +76,7 @@ value, an argument is a concrete piece of data.
 
 Mismatched Arguments and Parameters
 -----------------------------------
+
 Let's say we define a function with a single parameter. When we call
 that function, what happens if we provide two arguments? What if we call the function but give
 no arguments?

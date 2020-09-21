@@ -1,7 +1,7 @@
 Defining Our Own Functions
 ==========================
 
-Built-in functions in Python give us a lot of capabilities. In fact, we gain even more coding potential by 
+Built-in functions in Python give us a lot of capabilities. Indeed, we gain even more coding potential by 
 writing our own functions.
 
 .. index::
