@@ -43,8 +43,7 @@ change. The ``=`` operator assigns ``new_value`` to that key.
 
 .. admonition:: Note
 
-   Although we can change the values inside a dictionary, we CANNOT change the
-   names of the keys in the same way.
+   We cannot use this method to change the names of the keys.
 
 Add a New Key/Value Pair
 ------------------------
@@ -116,8 +115,8 @@ general syntax is:
    Once we define a key, it remains in the dictionary unless we use ``del`` to
    remove it.
 
-   If we wanted to replace the key ``'Mom'`` with ``'Mother'``, for example,
-   we would have to delete the old key first, then add a new key/value pair.
+   For example, if we wanted to rename the key ``'Mom'`` to ``'Mother'``, we
+   would have to delete the old key first, then add a new key/value pair.
 
    .. sourcecode:: python
       :lineno-start: 9

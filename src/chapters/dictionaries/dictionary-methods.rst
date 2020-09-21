@@ -74,12 +74,10 @@ item.
 
       <iframe src="https://trinket.io/embed/python3/365aeba063" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-Just like strings and lists, the ``max()`` and ``min()`` functions return the
-largest/smallest item from a dictionary. However, since dictionaries use
-key/value pairs, we must tell Python if we want to return a *key* or a *value*
-from the collection.
-
-By default, ``max()`` and ``min()`` return the largest/smallest KEY.
+``max()`` and ``min()`` provide similar results for dictionaries as they do for
+strings and lists. By default, the functions return the largest or smallest KEY
+in the dictionary, not value. As a best practice, we should specify if we are
+looking for a largest/smallest key or value.
 
 .. sourcecode:: python
    :linenos:
@@ -96,7 +94,7 @@ By default, ``max()`` and ``min()`` return the largest/smallest KEY.
    lowercase.
 
    Using this model, Python considers ``"Zebra"`` larger than ``"Hippo"`` but
-   smaller than ``"applesauce"``.
+   smaller than ``"apple"``.
 
 .. admonition:: Try It!
 

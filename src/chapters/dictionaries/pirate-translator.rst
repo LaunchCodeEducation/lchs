@@ -9,16 +9,14 @@ collection. However, we still need to understand what dictionaries allow us to
 Lists vs. Dictionaries
 ----------------------
 
-First, neither collection is "better" than the other. There are some jobs
-that lists solve more easily, while dictionaries provide the best choice for
-other tasks. Lists and dictionaries are different, and this gives us two very
-useful tools for solving problems.
+First, neither collection is better than the other. They are just different.
+There are some problems that lists solve more easily, while dictionaries are
+the better choice for other tasks.
 
 The question isn't which collection is *better* than the other. The proper
 question is which data structure best *fits the job at hand*.
 
-Let's take a look at one task where having labeled values (key/value pairs)
-really helps.
+Let's take a look at one task where using a dictionary really helps.
 
 Translation App
 ---------------
@@ -35,8 +33,8 @@ While we cannot build something as complete as this app (yet), we CAN
 understand how to make something similar with Python. At its core, the program
 is built around a dictionary!
 
-Take a look at this small English-to-Spanish dictionary, where the keys are
-English words, and the values are the same words in Spanish:
+Take a look at this small English-to-Spanish dictionary. The keys are English
+words, and the values are the same words in Spanish:
 
 .. sourcecode:: Python
    :linenos:
@@ -46,12 +44,12 @@ English words, and the values are the same words in Spanish:
       'blue' : 'azul',
       'apple' : 'manzana',
       'python' : 'pitón',
-      'fox' : 'zorro'
+      'library' : 'biblioteca'
    }
 
 Now imagine that a user inputs an English word. We can easily search the keys
-in the ``eng_to_span`` dictionary for the user's word. If we find it, we can
-print the value for that key, which is the Spanish translation.
+in the ``eng_to_span`` dictionary for that word. If we find it, we can print
+the value for that key, which is the Spanish translation.
 
 That's it! Our word translator is limited only by the size and accuracy of the
 dictionary.
@@ -101,7 +99,9 @@ Talk Like A Pirate
 ------------------
 
 Once we complete a language-to-language dictionary, we can use it to translate
-more than just single words!
+more than just single words. Earlier in this chapter, we created a dictionary
+that linked words in pirate-speak with their English meanings. Let's use this
+to have a little fun!
 
 Our next task will take a set of text and replace some of the English words
 with pirate-speak. Follow the instructions listed below the editor to complete
@@ -142,10 +142,10 @@ the editor.
    .. sourcecode:: python
       :lineno-start: 8
 
-      if word in eng_to_pirate:
-         new_words.append(eng_to_pirate[word])
-      else:
-         new_words.append(word)
+         if word in eng_to_pirate:
+            new_words.append(eng_to_pirate[word])
+         else:
+            new_words.append(word)
 
 #. After the loop is done, join the elements from the ``new_words`` list into
    a new string, then print the result.
