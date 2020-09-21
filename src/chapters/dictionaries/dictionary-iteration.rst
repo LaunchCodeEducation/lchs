@@ -21,8 +21,8 @@ elements in a list without using the index values.
       for number in numbers:
          total += number*2
 
-Each time the loop body repeats, the loop variable---``character`` or
-``number``---gets assigned the next value in the collection.
+Each time the loop body repeats, the loop variable (``character`` or
+``number``) gets assigned the next value in the collection.
 
 We can do something similar with dictionaries.
 
@@ -50,9 +50,6 @@ loop, the variable ``value`` gets assigned a new value each iteration.
 
    We do not have to use the name ``key`` or ``value`` for the loop variable,
    but doing so helps keep our code clear.
-   
-   When we read our code, the name reminds us which half of the key/value pair
-   gets assigned to the loop variable.
 
 .. admonition:: Try It!
 
@@ -64,7 +61,7 @@ loop, the variable ``value`` gets assigned a new value each iteration.
    
    Try adding or removing key/value pairs to change the output.
 
-Note that in lines 21 and 26, we access each value in the dictionary by using
+Note that on lines 21 and 26, we access each value in the dictionary by using
 bracket notation and the loop variable ``key``. Each iteration, ``key``
 represents a new label from ``comics``, so ``comics[key]`` accesses a different
 value each time the loop repeats.
