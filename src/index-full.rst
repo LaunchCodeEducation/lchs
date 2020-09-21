@@ -16,6 +16,7 @@ Chapters
    chapters/errors-and-debugging/index
    chapters/functions/index
    chapters/modules/index
+   chapters/dictionaries/index
 
 .. toctree::
 
@@ -36,6 +37,7 @@ Projects
    chapters/errors-and-debugging/project
    chapters/functions/project
    chapters/modules/project
+   chapters/dictionaries/project
 
 Assignments
 ===========
@@ -55,6 +57,7 @@ Appendices
 
    appendices/about-this-book
    appendices/classrooms/index
+   appendices/dictionary-methods/index
    appendices/list-methods/index
    appendices/string-methods/index
    appendices/random-module/index

@@ -75,6 +75,8 @@ The idea behind the shortcut is that, if we have two list elements---``a`` and
 
 switches the positions of the two elements inside the list.
 
+.. _list-accumulation:
+
 Accumulating List Elements
 --------------------------
 
