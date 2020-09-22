@@ -1,4 +1,0 @@
-CSS Rules
-=========
-
-Lorem ipsum...

@@ -8,7 +8,7 @@ Styling the Web With CSS
    background
    structure
    css-locations
-   rules
+   properties
    bootstrap
    exercises
    project
