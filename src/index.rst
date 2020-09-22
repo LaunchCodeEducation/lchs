@@ -48,6 +48,7 @@ Assignments
    :name: assignmentstoc
 
    assignments/candidate-quiz
+   assignments/coded-messages
 
 Appendices
 ==========
