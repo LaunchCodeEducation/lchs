@@ -65,8 +65,8 @@ three different places to add CSS in an HTML file:
 
    Let's step through what's going on in line 3:
 
-   #. ``link`` is the HTML tag that tells the browser to connect a webpage and
-      a separate, named file.
+   #. ``<link>`` is the HTML tag that tells the browser to connect a webpage
+      and a separate, named file.
    #. ``rel`` describes how the link *relates* to the page. In this case, the
       linked file provides style instructions, so we set ``rel`` to the value
       ``"stylesheet"``.
@@ -104,13 +104,8 @@ The different CSS selectors also follow a specific order:
 #. ``class`` styling rules come next.
 #. ``element`` level styling rules receive the lowest importance.
 
-The order for the selectors assumes that the style rules are all in the same
-location (e.g. all in an external CSS file). If the rules occur in different
-locations, then the browser follows the inline/internal/external order.
-
-Finally, when we nest HTML elements inside others, this affects their styling.
-Any style rules for the internal element override the rules on the outer
-element.
+Finally, nesting HTML elements inside others affects their styling. Any rules
+for the internal element override the rules on the outer element.
 
 .. admonition:: Example
 
@@ -145,21 +140,28 @@ element.
 Try It!
 -------
 
-The editor below contains some plain HTML and a ``style.css`` file. Practice
-adding CSS style rules to the document. Also, note how the order of importance
-affects how the rules get applied.
+The editor below contains some plain HTML and a ``style.css`` file. Follow the
+instructions below the code to practice adding CSS style rules to the document.
+Also, pay attention to how the order of importance affects how the rules get
+applied.
 
-.. todo:: Insert interactive Trinket editor (add CSS style rules).
+.. raw:: html
 
-#. Use the ``link`` element to connect the ``style.css`` file to the HTML
-   code. Properly done, you will see the plain webpage change quite a bit.
-#. Note that the ``li`` selector from ``style.css`` applies to all list
-   elements on the page. On line 15, add BOTH ``class="red-text"`` and
-   ``id="blue-item"`` to the ``<li>`` tag. Which style rule gets applied
+   <iframe src="https://trinket.io/embed/html/f75c53eff8" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+
+#. On line 7, use the ``<link>`` tag to connect the ``style.css`` file to the
+   HTML code. Properly done, you will see the plain webpage change quite a bit.
+   This is an example of bringing in *external CSS*.
+#. Note that the ``li`` selector from ``style.css`` affects all list elements
+   on the page. On line 15, add BOTH ``class="small-red-text"`` and
+   ``id="large-blue-item"`` to the ``<li>`` tag. Which style rule gets applied
    (``element``, ``class``, or ``id``)?
-#. Now add the following code inside the ``head`` element:
+#. Inside ``<head></head>`` and below the ``<link>`` tag, add the following
+   code. This is an example of *internal CSS*:
 
    .. sourcecode:: html
+      :lineno-start: 8
 
       <style>
          li {
@@ -168,8 +170,8 @@ affects how the rules get applied.
          }
       </style>
 
-   What level of importance does the internal element selector receive compared
-   to the external ``p``, ``class``, and ``id`` rules?
+   What level of importance does the internal ``li`` selector receive compared
+   to the external ``li``, ``class``, and ``id`` rules?
 
 #. Add a ``section`` selector to the internal CSS. Set the background to a
    color of your choice. Does this internal rule override the font, text color,
@@ -177,11 +179,11 @@ affects how the rules get applied.
 #. Use inline styling to add a border to one of the ``<section>`` tags. One fun
    option is ``style="border:4px double blue"``.
    
-   ``4px`` sets the border thickness. ``double`` refers to the border type
-   (``solid, dashed, dotted`` are also options).
+   ``4px`` sets the border thickness to 4 pixels. ``double`` refers to the
+   border type (``solid``, ``dashed``, and ``dotted`` are also options).
    
-   Does this inline style rule affect the properties set by the internal and
-   external style rules?
+   Does this inline CSS affect the ``section`` properties set by the internal
+   and external style rules?
 
 Check Your Understanding
 ------------------------
