@@ -277,3 +277,37 @@ applied to the HTML elements.
       .. admonition:: Note
 
          Only ONE element in an HTML file receives a particular ``id``.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Which of the following correctly sets the text color inside a declaration
+   block?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> color: green;</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color: "red";</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color = blue;</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color = "orange";</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = a
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
