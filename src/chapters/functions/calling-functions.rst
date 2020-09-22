@@ -18,7 +18,7 @@ carries out an action, and gives back a result. This is known as the
 
 If we want to use a function, we must provide it with some input. It carries
 out an action on that input and returns a result. The action occurs within the
-function, or "inside the machine". If we know the purpose of a function, we
+function, or *inside the machine*. If we know the purpose of a function, we
 simply provide it with input and receive the output. The rest is up to the
 machine itself.
 
@@ -80,7 +80,7 @@ to do those jobs for us with the data we supply.
    Here is an import vocabulary term!
    
    **Arguments** refer to the data values we send to a function. Some functions
-   do not require arguments inside the ``()``, but most will.
+   do not require arguments inside the parentheses, ``()``.
 
 If a function requires more than one argument, we separate them with commas:
 
@@ -106,7 +106,7 @@ Add function calls to the editor below to carry out specific actions.
    .. index:: ! round()
 
    The ``round()`` function rounds a value to a specific number of decimal
-   places. The function takes two arguments---the original value and the number
+   places. The function takes two arguments: the original value and the number
    of decimal places desired.
 
    3. Define the variable ``rounded_result`` and set it equal to the function

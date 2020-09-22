@@ -54,8 +54,8 @@ to the function body. A return statement has the general syntax:
 
    return some_value
 
-``return`` is the keyword that tells Python, *Send information back to the main
-program*. ``some_value`` is the data that gets returned, and it may be any data
+``return`` is the keyword that tells Python: "Send information back to the main
+program." ``some_value`` is the data that gets returned, and it may be any data
 type (``float``, ``str``, ``bool``, ``list``, etc.).
 
 Functions can return the value of a variable or the result of an expression.
@@ -65,9 +65,9 @@ For example, ``return num`` returns whatever value has been assigned to
 .. admonition:: Example
 
    This function has a single parameter, ``an_int``, which is expected to be
-   a positive integer. It returns the sum 1 + 2 + ... + ``an_int``.
+   a positive integer. It returns the sum of ``1 + 2 + ... + an_int``.
 
-   .. sourcecode:: js
+   .. sourcecode:: python
       :linenos:
 
       def sum_one_to_n(an_int):
@@ -95,15 +95,14 @@ Let's take a look at the order of events after we call the function:
    runs the function body. ``total`` stores the result from the accumulator
    pattern.
 #. Line 6 *returns* the value of ``total`` back to the main program.
-#. Line 8 assigns the answer *returned by* the function to the variable
+#. Line 8 assigns the answer returned by the function to the variable
    ``result``.
-#. The actual output comes from the final line of the program, which prints the
+#. The output we see comes from the final line of the program, which prints the
    value of ``result``.
 
 .. admonition:: Note
 
-   Now that we have ``return`` statements in our coding toolbox, we will very
-   rarely print anything from *within* a function. If we want to see the value
+	A ``return`` statement does not print anything. If we want to see the value
    returned by a function, then we must print it AFTER calling the function.
 
 .. _draw-square-code:
@@ -136,7 +135,7 @@ main program. Once the turtle finishes moving, the function ends, and control
 passes to the statement after the function call.
 
 When we write a function, we must decide whether or not it will return data
-once its job is done. We do NOT need to include the ``return`` keyword in
+once its job is done. We do not need to include the ``return`` keyword in
 every function.
 
 ``return`` Stops a Function
@@ -176,8 +175,8 @@ specific point.
 
 .. admonition:: Try It!
 
-   This function adds up the integers 0...n. However, if we send in an argument
-   that is NOT a positive integer, the function sends back an error message.
+   This function adds up the integers ``0...n``. However, if we send in an argument
+   that is not a positive integer, the function sends back an error message.
 
    .. raw:: html
 
@@ -190,11 +189,9 @@ specific point.
    #. a string (like ``'abc'``).
 
 Consider what happens if we call the ``sum_one_to_n()`` function and use the
-string ``'abc'`` as the argument. On line 7, using a string inside ``range``
-would cause the program to crash, but the ``if`` statement in line 3 prevents
-that from happening. Since ``type('abc') != int`` is ``True``, the ``return``
-statement on line 4 runs and sends the error message back to the main program.
-In this case, the ``for`` loop does not run.
+string ``'abc'`` as the argument. Since the ``if`` statement in line 3 (``type('abc') != int``)
+is ``True``, the ``return`` statement on line 4 runs and sends the error message back to the main program.
+In this case, the ``for`` loop on line 7 does not run.
 
 Try It!
 -------
@@ -206,7 +203,7 @@ Try It!
 #. Run your program to check for error messages. If any occur, fix the bugs and
    try again. Properly done, NOTHING shows up in the console! The code contains
    no ``print`` statements yet.
-#. Below the function, define a new variable and assign it ``double_value(4)``.
+#. Below the function, define a new variable and assign it to ``double_value(4)``.
 #. Finally, print the value of your new variable.
 #. Run your program to check your work. For ``double_value(4)``, the printed
    result should be ``8``.
@@ -272,7 +269,7 @@ Check Your Understanding
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, World!</span></li>
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, 5!</span></li>
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">Invalid entry.</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing (no print statement)</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is returned by the function</li>
       </ol>
       <p id="Q2"></p>
 
