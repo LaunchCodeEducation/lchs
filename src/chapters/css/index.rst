@@ -9,4 +9,6 @@ Styling the Web With CSS
    structure
    css-locations
    rules
+   bootstrap
    exercises
+   project

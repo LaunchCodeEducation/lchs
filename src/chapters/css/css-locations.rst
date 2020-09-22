@@ -15,29 +15,30 @@ three different places to add CSS in an HTML file:
 
       <tag style="declaration block">Content...</tag>
 
-#. **Internal**: All CSS style rules occur in one location inside the HTML
-   file. The rules are placed within the ``<head>`` element at the start of the
-   document.
+#. **Internal**: All CSS style rules are placed within the ``<head>`` element
+   at the start of the HTML document.
    
    Internal CSS works great when we have a small number of style rules that
    apply to the whole document. The general syntax is:
 
-   ::
+   .. sourcecode:: html
+      :lineno-start: 3
 
       <head>
          <title>My Web Page</title>
          <style>
             selector {
-               declaration block
+               property: value;
+               property: value;
+               /* Other property assignments */
             }
 
             selector {
-               declaration block
+               property: value;
+               property: value;
             }
 
-            selector {
-               declaration block
-            }
+            /* Other CSS rules */
          </style>
       </head>
    
@@ -63,22 +64,40 @@ three different places to add CSS in an HTML file:
    Let's step through what's going on in line 3:
 
    #. ``link`` is an HTML tag that tells the browser to connect the webpage to
-      what is inside the named file.
+      what is inside a named file.
+   #. ``rel`` describes how the link *relates* to the page. In this case, the
+      linked file provides style instructions, so we set ``rel`` to the value
+      ``"stylesheet"``.
+   #. ``type`` tells the browser what kind of content is saved within the
+      linked file. ``type`` should be set to ``"text/css"`` for all style
+      sheets. This tells the browser to expect CSS syntax when it opens the
+      file.
+   #. ``href`` provides the path to the CSS document as well as its name. The
+      path tells the browser where to look for the file it needs to open.
+      
+      In this case, ``href="styles.css"`` tells the browser, "Look in the same
+      folder as the HTML file, and open the document called ``styles.css``."
 
-   
-   
-   ``rel``, ``type``, ``href`` are all HTML
-   attributes that are required to properly link CSS and let the browser know
-   that CSS is what is in the file and where the file is.
-   ``rel`` should be set to "stylesheet", because it designates how the link relates to the page. ``type`` will be set to "text/css" for all stylesheets.
-   ``href`` is where the programmer enters the path to the stylesheet that should be used for the page.
+      .. admonition:: Note
+
+         The ``href`` path can describe where a file is stored on a computer,
+         or it can be a web address where the CSS code can be accessed.
 
 Order of Precedence
 -------------------
 
-Because there is an order of precedence to the location of CSS, it is important to be able to add or change CSS in all three locations.
-Programmers use this to their advantage if they want to be very specific with overwriting some CSS for one element.
-Inline CSS is highest in precedence with internal CSS being next and then external CSS is lowest.
+Because there is an order of precedence to the location of CSS, it is important
+to be able to add or change CSS in all three locations.
+Programmers use this to their advantage if they want to be very specific with
+overwriting some CSS for one element.
+Inline CSS is highest in precedence with internal CSS being next and then
+external CSS is lowest.
+
+Inline > internal > external
+
+id > class > element
+
+inner style > outer style
 
 Try It!
 -------

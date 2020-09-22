@@ -213,6 +213,18 @@ that we choose to give that one element.
    #. *Pound*, when referencing the button on a telephone keypad.
    #. *Hashtag*, for most appearances after 2006.
 
+CSS Comments
+------------
+
+Just like any programming language, we can add comments to our CSS code. The
+general syntax for this is:
+
+.. sourcecode:: css
+
+   /* Comment... */
+
+The text of the comment comes between the ``/*`` and ``*/`` symbols.
+
 Try It!
 -------
 
