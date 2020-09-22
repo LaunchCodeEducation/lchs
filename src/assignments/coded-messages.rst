@@ -149,8 +149,8 @@ The ``build_code_dict`` Function
    shifted to the right a certain number of places. How many places? That
    depends on the integer sent to the function.
 
-   *Hints*: The accumulator pattern strikes again! Also, remember that you can
-   call the ``shift_character`` function to keep your code DRY.
+   *Hints*: The accumulator pattern strikes again! Also, think about calling
+   the ``shift_character`` function to keep your code DRY.
 
 #. The returned dictionary should include keys for BOTH lower and uppercase
    letters.
@@ -225,7 +225,7 @@ clear text, you must shift the letters to the *left* the same number of steps.
 Test Your Functions!
 ^^^^^^^^^^^^^^^^^^^^
 
-#. In ``main()`` define the ``message`` and ``shift_by`` variables. Assign
+#. In ``main()``, define the ``message`` and ``shift_by`` variables. Assign
    values to each one.
 #. Call the ``encrypt_with_shift`` function and use the two variables as the
    arguments. Assign the returned (coded) message to another variable.
