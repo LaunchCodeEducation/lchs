@@ -14,25 +14,43 @@ Good CSS Properties to Know
    * - CSS Property
      - Definition
      - Default Value
-   * - ``font-size``
-     - Changes the size of the font.
-     - medium or 20px
+   * - ``background-color``
+     - Sets the color of the background for an element.
+     - transparent
+   * - ``border``
+     - Takes 3 values for the border (width, style, color).
+       
+       - Only the ``style`` value is required.
+       - ``width`` sets the thickness of the border around an element.
+       - ``style`` values include solid, wavy, dotted, dashed, and double.
+
+     - medium (3px), none, text color
+   * - ``border-radius``
+     - Rounds the 4 corners of an element.
+     - 0px
    * - ``color``
      - Changes the text color.
      - black
    * - ``font-family``
      - Changes the font types.
      - Depends on the browser
-   * - ``background-color``
-     - Sets the color of the background of an element.
-     - transparent
+   * - ``font-size``
+     - Changes the size of the font.
+     - medium or 20px
    * - ``text-align``
      - Aligns the text within an element.
      - left
+   * - ``text-decoration``
+     - Applies decorations to text and takes 3 values (line, color, and style).
+       
+       - Only the ``line`` value is required.
+       - ``line`` values include underline, overline, and line-through. 
+       - ``style`` values include solid, wavy, dotted, dashed, and double.
 
-Add ``border``, ``border-radius``, and ``text-decoration``...
+     - no line, text color, solid
 
-Add link to W3Schools CSS property list...
+A larger, searchable list of CSS properties can be found at
+`W3Schools <https://www.w3schools.com/cssref/>`__.
 
 CSS Example
 -----------
