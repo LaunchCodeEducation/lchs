@@ -34,14 +34,14 @@ A function that returns a boolean value (``True`` or ``False``) is known as a
 
    Start the names of boolean functions with either ``is`` or ``has``, which
    helps make their purpose more clear. For example, reading ``is_int_even(4)``
-   tells us that the function should answer the question, "Is the integer 4
+   tells us that the function should answer the question: "Is the integer 4
    even?"
    
    This convention is so widely used by programmers that it extends to nearly
    every language.
 
 Let's look at ``is_int_even`` again to see how we can use the power of
-``return`` statements to make it even better.
+``return`` statements to make it even stronger.
 
 Since ``return`` ends the function, we can leave out the ``else`` clause and
 have the same effect. If ``integer`` is even, the return statement in line 3
@@ -60,9 +60,9 @@ skipped and the second return statement executes.
    print(is_int_even(4))
    print(is_int_even(7))
 
-The updated version works exactly the same as the original code. 
+The updated version returns the same results as the original and contains less code. 
 
-Also, notice that the function returns ``True`` when the expression
+The function returns ``True`` when the expression
 ``integer % 2 == 0`` is ``True``, and the function returns ``False`` when
 ``integer % 2 == 0`` is ``False``. In this case, the return value is *exactly
 the same* as the value of ``integer % 2 == 0``. This means that we can
