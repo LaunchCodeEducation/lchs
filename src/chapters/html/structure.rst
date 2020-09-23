@@ -73,7 +73,7 @@ Note the following:
 Document Head
 -------------
 
-So other than the ``<title></title>``, what goes in the ``head`` element?
+So other than the title, what goes in the ``head`` element?
 
 The ``head`` includes links to support files and other data about the document.
 For example, we can include some styling instructions in ``head`` to change

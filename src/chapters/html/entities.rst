@@ -3,7 +3,7 @@
 HTML Entities
 =============
 
-Some symbols, like ``<`` and ``>`` are reserved for use in HTML code. If we
+Some symbols, like ``<`` and ``>``, are reserved for use in HTML code. If we
 include reserved characters in the text we want to display on the screen, web
 browsers might interpret the symbols as tags.
 
