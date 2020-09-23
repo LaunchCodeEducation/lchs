@@ -55,8 +55,13 @@ A larger, searchable list of CSS properties can be found at
 CSS Example
 -----------
 
-Adding CSS to the HTML page about Space Plants is the logical next step in building a website about this cool discovery.
-The astronauts building the site used the ``body``, ``h1``, and ``p`` selectors to change some of the styling of those elements.
+In the :ref:`HTML chapter <attributes-example>`, we used attributes to style a
+simple webpage about space plants. Let's revisit that example, but this time we
+will use *internal* CSS instead of inline CSS to style the webpage. We will
+also include some of the properties listed above to create a different look.
+
+Note how the selectors and declaration blocks between the ``<style>`` tags
+control the appearance of the page.
 
 .. sourcecode:: html
    :linenos:
@@ -67,33 +72,95 @@ The astronauts building the site used the ``body``, ``h1``, and ``p`` selectors 
          <title>Plant-Loving Astronauts</title>
          <style>
             body {
-              background-color: cornflowerblue;
+               background-color: cornflowerblue;
+               text-align: center;
             }
             h1 {
-              color: green;
+               color: green;
+               text-decoration: underline;
             }
             p {
-              font-size: 18px;
+               font-size: 18px;
+               font-family: courier new;
+            }
+            img {
+               border-radius: 25px;
+            }
+            hr {
+               border: 1px dashed white;
             }
          </style>   
       </head>
+
       <body>
          <h1>Space Plants Are Cool</h1>
-         <p>NASA discovers that plants can live in <b>outer space</b>. More innovations from this discovery to follow.</p>
+         <p>
+            NASA discovers that plants can live in <b>outer space</b>.<br>
+            More innovations from this discovery to follow.
+         </p>
+         <hr>
          <img src = "space-flower.jpg" alt = "Flower floating in space.">
          <!-- This image was taken by NASA and is in the Public Domain -->
+         <hr>
       </body>
-    </html>
+   </html>
 
 .. figure:: figures/plant-loving-astronauts-css.png
-   :alt: Made the background color blue, the heading green, and the paragraph text 18 pt. font of the website in the previous chapter about space plants.
-
-Modify code and screenshot to include more properties from the list above...
+   :alt: For the website in the previous chapter about space plants, made the page background color blue, center-aligned content, the heading green, the paragraph text Courier New font at 18 pt. size, and the image has rounded corners.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   Find a CSS property and give its name, definition, and default value. Please
-   do NOT use one of the ones above.
+   Play around with the `order of the values <https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border>`__
+   for the border property.
+
+   ``border: 5px solid red;``
+   
+   Does the order matter for the thickness, style, and color values?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> No, the order does not matter.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Yes, the order matters.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   Which of the following is NOT a ``text-decoration`` style?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> dotted</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> double</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> wavy</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> strike-through</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   Find an interesting CSS property that is NOT on the list above. Give its
+   definition, syntax, and default value.
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
