@@ -61,7 +61,7 @@ wires.
 
 The **World Wide Web** is one system we can use to interact with the internet.
 There are other options, but the **web** is the most common. It helps people
-all over the world to request and share information.
+all over the world request and share information.
 
 The internet is really just hardware and data---the machines and structures
 that store and transmit information. The web is the software we use to access

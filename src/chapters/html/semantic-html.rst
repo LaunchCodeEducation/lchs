@@ -1,12 +1,12 @@
 Semantic HTML
 =============
 
-On the previous page, we used a ``<div></div>`` element in the *Try It* section
-to center two paragraphs on the screen. This is an example of a very common
-technique. To organize content on the page, we often split the page into
-separate sections. We can then fiddle with the size, color, alignment, etc. for
-the elements in each section without affecting the properties in other parts of
-the page.
+In the *Try It* section on the :ref:`Tags page <tags-try-it>`, we used a
+``<div></div>`` element in the *Try It* section to center two paragraphs on the
+screen. This is an example of a very common technique. To organize content on
+the page, we often split the page into separate sections. We can then fiddle
+with the size, color, alignment, etc. for the elements in each section without
+affecting the properties in other parts of the page.
 
 Here's an example of an HTML file that organizes a page into six sections:
 
@@ -87,10 +87,10 @@ about the specific meaning of the elements. Semantic HTML uses more descriptive
 tag names to help identify what each section of the code does. This helps
 programmers clarify the structure of a webpage.
 
-For example, developers can make a paragraph larger than a heading if they want
-to. By looking at the HTML, however, we can still identify what is the
-paragraph and what is the heading. The ``<p>`` and ``<h_>`` tags give us that
-information. This is the strength of semantic HTML. The tag names express
+For example, developers can make paragraph text larger than heading text if
+they want to. By looking at the HTML, however, we can still identify what is
+the paragraph and what is the heading. The ``<p>`` and ``<h>`` tags give us
+that information. This is the strength of semantic HTML. The tag names express
 meaning.
 
 Another benefit to semantic HTML is that programmers find it easier to
