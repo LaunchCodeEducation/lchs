@@ -56,7 +56,7 @@ First, you need to create a string that looks something like a Mad-Lib
 statement.
 
 .. figure:: figures/mad-lib.png
-   :alt: Image showing a Mad-Lib sentence with two blanks labeled "plural noun" and "adjective".
+   :alt: A Mad-Lib sentence with two blanks labeled "plural noun" and "adjective".
 
    Mad-Lib sentence with labeled blanks.
 
@@ -171,7 +171,7 @@ the collection with player-supplied words.
 
       {'noun1': 'school', 'color1': 'salmon', 'color2': 'brown'}
    
-   Where ``'school', 'salmon'``, and ``'brown'`` were the words entered in the
+   ``'school', 'salmon'``, and ``'brown'`` were the words entered in the
    console.
 #. Remove the ``print`` statement and return ``answers_dict`` from the
    function.

@@ -83,14 +83,14 @@ You used a function when you wrote your first Python program:
    print('Hello, World!')
 
 To display information in the console, the ``print`` function follows a
-detailed set of instructions to convert the values inside the ``()`` to symbols
+detailed set of instructions to convert the values inside the parentheses to symbols
 on the screen. We do not see these steps, but we execute them every time we use
 the function.
 
 For the three-turtle example above, imagine we create a function named
 ``draw_square``. We could put the ``for`` loop inside this function, and then
 run the function once for each turtle. This allows us to use the same lines of
-code for each turtle instead of copy/pasting multiple copies of the
+code for each turtle instead of writing multiple copies of the
 instructions.
 
 .. admonition:: Example
@@ -105,6 +105,7 @@ instructions.
       im_really_a_tortoise = turtle.Turtle()
 
       # Turtle color, shape, speed, and location code...
+      # draw_square function definition ...
 
       draw_square(bob, 50)
       draw_square(wonder, 75)
