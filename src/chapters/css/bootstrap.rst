@@ -10,17 +10,25 @@ reuse that code for multiple pages. Similarly, many developers are willing to
 share their CSS rules with others. With their permission, we can import their
 work to decorate our own HTML.
 
-What is Bootstrap
------------------
+What is Bootstrap?
+------------------
 
 Bootstrap provides a library of ready-made CSS that we can use to quickly make
 our web pages look more professional.
 
 Bootstrap examples (plain HTML ---> awesome page)...
 
-Linking the Bootstrap library to an HTML page...
+Lorem ipsum...
 
-Using Bootstrap classes...
+Link to the Bootstrap Library
+-----------------------------
+
+Lorem ipsum...
+
+Adding Bootstrap Styles
+-----------------------
+
+Bootstrap classes...
 
 Bootstrap Documentation
 -----------------------
