@@ -16,9 +16,18 @@ What is Bootstrap?
 Bootstrap provides a library of ready-made CSS that we can use to quickly make
 our web pages look more professional.
 
-Bootstrap examples (plain HTML ---> awesome page)...
+.. admonition:: Example
 
-Lorem ipsum...
+   The content on the left was created with plain HTML code. The right side
+   shows the same code with a few Bootstrap styles added.
+
+   .. figure:: figures/simple-bootstrap-styles.png
+      :alt: Plain HTML on the left, more attractive styled content (buttons, table, lists) on the right.
+   
+      Bootstrap classes make our page look slick!
+
+Instead of defining our own style rules with selectors and declaration blocks,
+Bootstrap provides attractive options that we can drop into our code.
 
 Link to the Bootstrap Library
 -----------------------------
