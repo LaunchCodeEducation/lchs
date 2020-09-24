@@ -129,6 +129,8 @@ hit for every one of our pages. Carefully using semantic HTML tags helps the
 search engine find and steer users toward our home page instead of pointing
 them to every example of the title.
 
+.. _semantic-tag-list:
+
 A ``<div>`` by Another Name
 ---------------------------
 
