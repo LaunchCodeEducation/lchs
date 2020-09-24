@@ -108,10 +108,13 @@ Try It!
 -------
 
 The editor below contains some plain, boring HTML. It *also* includes the link
-to the Bootstrap style rules.
+to the Bootstrap style rules. Explore the Bootstrap website and add class
+attributes to the HTML tags. Make the page look more interesting!
 
-Explore the Bootstrap website and add class attributes to the HTML tags. Make
-the page look more interesting!
+.. admonition:: Tip
+
+   Click the *Open in repl.it* and the *Open in a new tab* buttons to expand
+   the views.
 
 Possible ideas:
 
@@ -123,4 +126,43 @@ Possible ideas:
    options.
 #. Add `spinners <https://getbootstrap.com/docs/4.5/components/spinners/>`__!
 
-.. todo:: Insert interactive repl here (Bootstrap).
+.. raw:: html
+
+   <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Bootstrap-Try-It?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Which of the following Bootstrap class attributes produces the following
+   table?
+
+   .. figure:: figures/hover-table.gif
+      :alt: Table with dark cells and white text. Rows highlight when the mouse hovers over them.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">class="table table-dark"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">class="table table-hover"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">class="table table-hover table-dark"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">class="table-hover table-dark"</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
