@@ -2,7 +2,7 @@ Project: Functions
 ==================
 
 The ``reverse()`` method flips the order of the elements within a list.
-However, ``reverse`` does NOT affect the digits or characters within those
+However, ``reverse()`` does not affect the digits or characters within those
 elements.
 
 .. admonition:: Example
@@ -54,7 +54,7 @@ editors below to complete the project.
 Part A: Reverse Characters
 --------------------------
 
-In the *composing functions* section, we examined a function that
+On a previous page, we examined a function that
 :ref:`reverses the characters in a string <reverse_func>` using ``list()``
 and ``join``. Let's rebuild that function now.
 
@@ -64,7 +64,7 @@ b. Within the function, use ``list()`` to create a list of characters from the
    string, then reverse the list.
 c. Use ``join`` to create the reversed string and *return* that string from the
    function.
-d. Below the function, define a variable and assign it a string value.
+d. Below the function, define a variable and assign it a string value to test the function.
 e. Call the ``reverse_characters`` function and use the variable as the argument.
    Check that your function correctly reverses the characters in the string.
 

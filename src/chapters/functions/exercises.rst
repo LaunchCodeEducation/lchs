@@ -89,7 +89,7 @@ Part A: More Turtles
 Part B: Return Values
 ---------------------
 
-4. Write a ``shift_case`` function with a single string parameter and
+4. Write a ``shift_case`` function that takes a single string parameter and
    returns a different string. The function should loop through the string and
    change uppercase characters to lowercase, and lowercase to uppercase.
 
