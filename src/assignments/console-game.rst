@@ -35,8 +35,8 @@ To be considered complete, your program must include each of the following:
 To boost your score for this assignment, you and your partner can include one
 or more of the following **Bonus Items**:
 
-#. Use one or more dictionaries in addition to (or in place of) the required
-   lists.
+#. Use at least one dictionary in addition to (or in place of) the required
+   list(s).
 #. Use classes/objects.
 #. Use a module (custom or ready-made).
 
@@ -52,7 +52,7 @@ create!
 #. Narrow down your list, then select the idea that excites you the most.
 
 Next, describe to each other what you want the program to do. Now is NOT the
-time to write code! Discuss the GAME, not the Python.
+time to write code! Discuss the GAME, not Python.
 
 #. Write down the features you want your game to have.
 #. Start simple! From your features list, select only the most important ideas
@@ -145,9 +145,9 @@ Scoring
 
 Before you submit your final program, be sure that your code:
 
-#. Works,
-#. Includes your name and your partner's name,
-#. Includes each of :ref:`the required items <assignment3-requirements>`,
+#. Works.
+#. Includes your name and your partner's name.
+#. Includes each of :ref:`the required items <assignment3-requirements>`.
 #. Survives invalid input. For example, if your program asks the user to enter
    a number, it should not crash when they enter a letter.
 #. Includes enough comments to describe what each part of the code is doing.
