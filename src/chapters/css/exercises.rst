@@ -1,31 +1,42 @@
 Exercises: CSS
 ==============
 
-We built a website for you to test your CSS knowledge!
+.. admonition:: Note
 
-.. todo:: Add links to repl.it and Trinket starter code.
+   We built a website for you to test your CSS knowledge! To allow you to view
+   your work in its own browser tab, we saved the
+   `starter code in repl.it <https://repl.it/@launchcode/LCHS-CSS-Exercises>`__.
 
-For the exercises, add the following style rules to the website. It's OK to
-look back in the chapter, but try to complete as many of the tasks as possible
-before you check!
+   Complete the exercises, then follow your teacher's instructions about how to
+   submit your work.
+
+Add the following style rules to the website. It's OK to look back in the
+chapter, but try to complete as many of the tasks as possible before you check!
 
 External CSS
 ------------
 
+Add element, class, and id selectors to the ``style.css`` file to do the
+following:
+
 #. Change the background color of the whole page to yellow.
-#. Change the text color to green for all paragraphs.
-#. Change all ``h1`` elements to 36px font size and ``h2`` elements to 24px.
+#. Change the text color to green for all paragraphs, and set ``font-family``
+   to ``Courier``.
+#. Change all ``h1`` elements to 48px font size and ``h2`` elements to 36px.
+   Also, underline the ``h2`` text, and overline/underline the ``h1`` text.
 #. Align all text to the center of the page.
-#. Let's say that you don't like aligning all of the text to the center. Use a
-   CSS class to align only the headings to the center of the page.
-#. Create a class called ``fancy-script`` with a ``font-family`` of 
+#. Instead of aligning all of the text to the center, use a CSS class to align
+   only the headings to the center of the page.
+#. Create a class called ``fancy-text`` with a ``font-family`` of 
    ``cursive``. What happens when you apply this class to a section, a
    paragraph, or a heading?
 #. Can you place more than one value in the ``class`` attribute, like
    ``class="class_name_1 class_name_2"``? Try it to find out!
 #. Change the font color of the element with ``id="cool-text"`` to blue. 
-#. Use a CSS ``id`` to change the items in the ordered list to a color of
-   your choosing.
+#. Use a CSS ``id`` to change the items in the ordered list to a color and size
+   of your choosing. Remember, you can only add that ``id`` attribute to ONE
+   tag.
+#. Use a class or id to put an interesting border around one of the sections.
 
 Internal CSS
 ------------
