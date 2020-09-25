@@ -59,19 +59,38 @@ information and ideas. However, we cannot walk up to a group of wires and ask,
 *What movies are opening this weekend?* We need something between us and the
 wires.
 
+What is the Web?
+^^^^^^^^^^^^^^^^
+
 The **World Wide Web** is one system we can use to interact with the internet.
-There are other options, but the **web** is the most common. It helps people
-all over the world request and share information.
+There are other options, but the **web** is the most common. It uses a specific
+programming language to move data between different networks. This *file
+transfer protocol* helps people all over the world request and share
+information.
 
-The internet is really just hardware and data---the machines and structures
-that store and transmit information. The web is the software we use to access
-those machines and display the data in a useful way.
+The web forms just a small portion of the whole internet. It is a collection of
+documents that are all formatted with a common structure and set of rules.
+These documents also connect to each other through a series of links embedded
+inside the files. However, the documents are not written in a way that is
+easily understood by non-coders.
 
-We usually access the web using **browsers**, like Chrome, Firefox, or Safari.
-These programs translate requests for data (like clicking a link about the
-`periodic table <https://www.webelements.com/>`__) into something that machines
-can understand. When a browser receives a response to our request, it displays
-that data on our screens.
+When we view this page in a browser, like Chrome, Firefox, or Safari, we use
+the web to access a portion of the internet. **Browsers** are programs that
+translate requests for data (like clicking a link about the
+`periodic table <https://www.webelements.com/>`__) into the code machines use
+to communicate over the wires. This sets up a transfer of data between
+networks.
+
+When a browser receives a response to a request, it translates the data from
+the original, user-unfriendly form into something easy to look at on the
+screen. Browsers convert document code into something we recognize, and they
+also convert our actions into a language the machines understand.
+
+.. todo:: Insert image here (user browser web wire-code wire).
+
+The internet is really just hardware and data - the machines and structures
+that store and transmit information. The web is software we use to access those
+machines and display the data in a useful way.
 
 Web Pages
 ---------
