@@ -26,7 +26,7 @@ those statements into a single object.
 If we bring together a collection of different objects, each with its own
 set of properties and methods, then we can build programs in a much more
 flexible way. Each object controls its own data and actions. This lets us break
-large programs into smaller and easier to control chunks.
+large programs into smaller chunks of code that are easier to edit and debug.
 
 Imagine that we write a program over several weeks or months. As we build it
 and add new features, we code new functions and add them to the end of a
@@ -55,15 +55,15 @@ task instead of having to search through all of our code to find the faulty
 
 Using objects sounds similar to what we did in the
 :ref:`Modules chapter <modules-index>`. However, unlike the external module
-files, objects get created as they are needed and *only when the program runs*.
+files, objects are created as they are needed and *only when the program runs*.
 
 Objects Copy Real World Thinking
 --------------------------------
 
 As we shift our thinking towards using objects, it helps to create a mental
 picture that connects how we want to code with some real life examples. In the
-world around us, we interact with objects all the time, like cars, phones, pets,
-and our friends.
+world around us, we interact with objects all the time. Think of things like
+cars, phones, refrigerators, etc.
 
 Each of these objects has a set of properties that describe it, and each object
 can perform different actions. 
@@ -71,9 +71,13 @@ can perform different actions.
 Phones as Objects
 ^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+When we run an app on a smartphone, we use the device to perform a specific
+action. This is the same idea behind coding with an object. Instead of writing
+a function and sending it some data, we create an object and give it the
+ability to perform an action.
 
-Take a look at the following code syntax:
+Let's think about how using a smartphone relates to coding with an object. Take
+a look at the following code:
 
 .. sourcecode:: Python
    :linenos:
@@ -88,7 +92,7 @@ report, and use the data assigned to phone*.
 
 Line 3 shows an object-oriented approach to the same job. ``phone`` is an
 object that contains code for displaying the weather. The statement tells
-Python, *Make the phone object run its weather() code*.
+Python, *Make the phone object run its weather() action*.
 
 Cooking with Objects
 ^^^^^^^^^^^^^^^^^^^^
@@ -96,7 +100,8 @@ Cooking with Objects
 If we stand in a kitchen, we will probably find several different tools for
 cooking dinner. These might include a microwave, a stove top, an oven, a
 crock pot, and maybe a barbecue grill (although we should move that outside
-RIGHT NOW). What we won't find in the kitchen is a device called ``cook()``.
+before using it). What we won't find in the kitchen is a device called
+``cook()``.
 
 .. figure:: figures/cook-function.png
    :alt: Image showing and empty box labeled "cook()".

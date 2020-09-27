@@ -13,7 +13,7 @@ Object Properties
 
 When using objects, we often want to access the value of a property, change a
 property value, or add a completely new property. To do this, we need the
-object's name as well as the name of the property.
+object's name and the property name.
 
 To modify object properties, we use *dot notation*:
 
@@ -25,7 +25,7 @@ To modify object properties, we use *dot notation*:
 
    object_name.new_property = value   # Add a new property and value to the object.
 
-Note tha ``property_name`` and ``new_property`` do NOT end with a set of
+Note that ``property_name`` and ``new_property`` do NOT end with a set of
 parentheses ``()``.
 
 .. admonition:: Try It!
@@ -70,11 +70,8 @@ parentheses ``()``.
 .. admonition:: Tip
 
    Object properties work like the :ref:`key/value pairs <key-value-pair>` in a
-   dictionary. Each key acts as a label that points to a specific piece of data
-   (the value).
-
-   Similarly, the property name for an object acts as a label. The value for
-   the property is the data the label points to.
+   dictionary. Each property name acts as a label that points to a specific
+   piece of data (the value).
 
 Calling Methods
 ---------------
@@ -87,8 +84,8 @@ as well:
 
    object_name.method_name(arguments)
 
-Note that some methods require *arguments* (data) inside the parentheses
-``()``, while other methods do not.
+Note that some methods require *arguments* (data) inside the parentheses, while
+other methods do not.
 
 .. sourcecode:: python
 
@@ -101,7 +98,7 @@ Methods vs. Functions
 
 Back in the functions chapter, we learned that these defined blocks of code
 behave like a :ref:`machine <function-machine>` when called. A function takes a
-set of input, performs an action with it, and (maybe) returns an output.
+set of input, performs an action with it, and in some cases returns an output.
 
 Methods are also defined blocks of code that perform actions. Just like
 functions, we can call methods over and over again, send them input, and
