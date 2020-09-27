@@ -15,14 +15,14 @@ Function Scope
 .. index::
    single: function; scope
 
-The **scope** of a variable refers to where that variable is "visible" within a
+The **scope** of a variable refers to where that variable is useable within a
 program. Scope consists of all locations in a program where a variable can be
 used or modified.
 
-.. admonition:: Note
+.. admonition:: Warning
 
-   *A variable defined inside a function is NOT visible outside of that
-   function.*
+   A variable defined inside a function is NOT usable outside of that
+   function.
 
 Consider the following function, which takes a string as a parameter and
 returns a new string without hyphens, ``-``.
@@ -87,7 +87,7 @@ Variable Shadowing
 What about variables defined OUTSIDE of a function? We saw above that
 ``phone_number`` was visible inside of the ``remove_hyphens`` function.
 
-However, this situation is more complicated. A variable defined outside a
+This situation is more complicated. A variable defined outside a
 function *may* be visible within the function, but using it or trying to
 change its value creates problems.    
 
@@ -130,7 +130,7 @@ same name but different values. Yuck!
 
 .. admonition:: Example
 
-   What if we did something truly awful like this:
+   What if we did something like this:
 
    .. sourcecode:: python
       :linenos:
@@ -142,7 +142,8 @@ same name but different values. Yuck!
       phone_number = "614-555-5555"
       no_hyph_number = remove_hyphens('56-78')
 
-   On line 2, does ``phone_number`` have the value ``"614-555-5555"`` or
+   We don't recommend doing this! Are you having trouble interpreting this code?
+   When the function runs, does ``phone_number`` on line 2 have the value ``"614-555-5555"`` or
    ``'56-78'``? Feel free to run this code in the editor above to find out.
 
 .. index::
@@ -158,7 +159,7 @@ name. When ``remove_hyphens('56-78')`` is called, and
 ``'56-78'``, which is the argument passed into the function.
 
 This situation is called **shadowing**. We can imagine that a function
-parameter "casts a shadow" over a variable of the same name and hides it from
+parameter *casts a shadow* over a variable of the same name and hides it from
 view.
 
 .. admonition:: Warning
