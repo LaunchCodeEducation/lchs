@@ -68,14 +68,14 @@ programming language to move data between different networks. This *file
 transfer protocol* helps people all over the world request and share
 information.
 
-The web forms just a small portion of the whole internet. It is a collection of
+The web forms a smaller part of the whole internet. It is a collection of
 documents that are all formatted with a common structure and set of rules.
 These documents also connect to each other through a series of links embedded
 inside the files. However, the documents are not written in a way that is
 easily understood by non-coders.
 
-When we view this page in a browser, like Chrome, Firefox, or Safari, we use
-the web to access a portion of the internet. **Browsers** are programs that
+When we view a page in a browser, like Chrome, Firefox, or Safari, we use the
+web to access a portion of the internet. **Browsers** are programs that
 translate requests for data (like clicking a link about the
 `periodic table <https://www.webelements.com/>`__) into the code machines use
 to communicate over the wires. This sets up a transfer of data between
@@ -86,11 +86,15 @@ the original, user-unfriendly form into something easy to look at on the
 screen. Browsers convert document code into something we recognize, and they
 also convert our actions into a language the machines understand.
 
-.. todo:: Insert image here (user browser web wire-code wire).
+.. figure:: figures/web-internet-connection.png
+   :alt: A person uses browser software to interact with the web. The web contains linked documents that use a common format and data transfer code.
+
+   Browsers allow users to search the web. The web consists of documents that
+   link to each other and use the same formatting code.
 
 The internet is really just hardware and data - the machines and structures
-that store and transmit information. The web is software we use to access those
-machines and display the data in a useful way.
+that store and transmit information. The web and browsers provide the software
+we use to access those machines and display the data in a useful way.
 
 Web Pages
 ---------
@@ -99,7 +103,7 @@ Web Pages
 
 A **server** is a machine that provides data to other devices. This includes
 data related to specific web pages. Somewhere, there is a machine that stores
-the information for the page you are looking at right now---the text, images,
+the information for the page you are looking at right now: the text, images,
 formatting, etc. However, this data is saved as *code*.
 
 You are viewing this web page in a browser. Behind the scenes, the program
