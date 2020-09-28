@@ -51,6 +51,7 @@ Assignments
    assignments/candidate-quiz
    assignments/coded-messages
    assignments/console-game
+   assignments/html-me-something
 
 Appendices
 ==========
