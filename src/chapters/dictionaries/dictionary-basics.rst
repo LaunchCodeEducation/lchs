@@ -9,9 +9,11 @@ own index value.
 
 A third type of Python collection is called a **dictionary**.
 
+.. _key-value-pair:
+
 .. index:: ! key/value pair
 
-**Key dictionary facts:**
+**Dictionary facts:**
 
 #. Dictionaries are *unordered* collections. They do NOT use index values
    (0, 1, 2, ...) to organize the data from left to right.

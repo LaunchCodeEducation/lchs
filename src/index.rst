@@ -18,6 +18,7 @@ Chapters
    chapters/functions/index
    chapters/modules/index
    chapters/dictionaries/index
+   chapters/classes-and-objects/index
 
 .. toctree::
 
@@ -39,6 +40,7 @@ Projects
    chapters/functions/project
    chapters/modules/project
    chapters/dictionaries/project
+   chapters/classes-and-objects/project
 
 Assignments
 ===========
@@ -49,6 +51,7 @@ Assignments
 
    assignments/candidate-quiz
    assignments/coded-messages
+   assignments/console-game
 
 Appendices
 ==========
@@ -64,6 +67,7 @@ Appendices
    appendices/string-methods/index
    appendices/random-module/index
    appendices/turtles/index
+   appendices/extras/index
 
 .. toctree::
    :hidden:

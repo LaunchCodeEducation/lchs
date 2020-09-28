@@ -69,6 +69,10 @@ We can read these two examples of dot notation like this:
 Find the Names of Module Items
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. _dir-function:
+
+.. index:: ! dir()
+
 To figure out the names of all the items stored in a module, we could look them
 up with a Google search. However, Python has a useful directory function,
 ``dir()``, that returns a list of names for everything stored in a module.
