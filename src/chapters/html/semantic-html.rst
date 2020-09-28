@@ -2,11 +2,11 @@ Semantic HTML
 =============
 
 In the *Try It* section on the :ref:`Tags page <tags-try-it>`, we used a
-``<div></div>`` element in the *Try It* section to center two paragraphs on the
-screen. This is an example of a very common technique. To organize content on
-the page, we often split the page into separate sections. We can then fiddle
-with the size, color, alignment, etc. for the elements in each section without
-affecting the properties in other parts of the page.
+``<div></div>`` element to center two paragraphs on the screen. This is an
+example of a very common technique. To organize content on the page, we often
+split the page into separate sections. We can then fiddle with the size, color,
+alignment, etc. for the elements in each section without affecting the
+properties in other parts of the page.
 
 Here's an example of an HTML file that organizes a page into six sections:
 
@@ -42,7 +42,7 @@ this page. We must make sure they understand what we created.
 
    Making code work is important, but so is making it easier for others to
    understand. Not every piece of code a programmer reads is something they
-   wrote.
+   wrote!
 
 Besides comments, HTML also includes a way to use the tags themselves to
 describe the layout of a page. The code below builds exactly the same page as
@@ -97,37 +97,67 @@ Another benefit to semantic HTML is that programmers find it easier to
 visualize the results when they can put a specific name to a section of their
 code.
 
-Screen Readers and Search Engines
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Screen Readers and Accessibility
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A well designed webpage organizes content in a clean and attractive way. For
-these pages, finding the navigation bar or identifying the main content of the
-page is easy. However, screen readers for visually impaired users verbally
-describe the content on a page. These devices cannot pick up on visual clues to
-identify what is the most important information.
+these pages, sighted users can easily find the navigation bar or identify the
+main content of the page. However, individuals with visual impairments may use
+screen readers to navigate the page.
 
-The ``div`` and ``span`` elements organize content on the page, but they do not
-provide any information about the content itself. If we use separate ``div``
-elements to build a navigation bar and organize a set of blog posts, a screen
-reader assigns equal importance to each element. If the nav bar is at the top
-of the page, the device will read the buttons and menu items first before
-moving to the posts. This is distracting and can provide a negative user
-experience.
+Screen readers are tools that verbally describe the content on a page. They
+also describe the HTML tags surrounding the content. With semantic HTML, we can
+make our webpages accessible to all users.
 
-With semantic HTML tags, a screen reader can more easily identify the content
-on the page that should be read or emphasized. For example, content inside a
-``header`` element can be assigned less importance than content inside an
-``article``.
+For example, the ``div`` and ``span`` elements organize content on the page,
+but they do not provide any information about the content itself. If we use
+separate ``div`` elements to build a navigation bar and organize a set of blog
+posts, a screen reader can give no clarification to the user. As the person
+listens, they might not recognize which words deal with navigation. However, if
+we replace a ``<div>`` tag with ``<nav>``, the device can alert the user that
+the elements inside provide links to key locations.
+
+A screen reader just reads what's in each element. With semantic HTML, the
+device can inform the user that they have reached a navigation bar, a header, a
+login form, a news article, etc. This helps the user understand the layout of
+the page.
+
+Without semantic HTML, programmers must add extra attributes (like
+``class="nav-bar"``) to assist those who rely on screen readers.
+
+Search Engines
+^^^^^^^^^^^^^^
 
 Search engines also benefit from semantic HTML. If we can communicate which
 part of our page holds the most important content, we give the software a
 better chance to find our website and show users an accurate description.
 
-For example, assume we create a website and every page contains the title "My
-Great Site". When a user searches for *My Great Site*, they could easily get a
-hit for every one of our pages. Carefully using semantic HTML tags helps the
-search engine find and steer users toward our home page instead of pointing
-them to every example of the title.
+For example, assume we create a website with the title "My Great Site", and we
+follow that title with with a collection of ``div`` elements. When a user
+types *My Great Site* into a search engine, the software will find our site and
+display a description of the content. Since ``div`` tags provide no information
+about the content they contain, the description of our site may be incomplete.
+
+Carefully using semantic HTML tags helps search engines find and steer users
+toward our home page. If we include a ``main`` element with some ``article``
+elements inside, the engines find our most important content faster and provide
+a more accurate description.
+
+With search, speed an accuracy are critical! Semantic tags let us tell search
+engines what our website is about. This can help keep our website from
+getting pushed off of the first page of results.
+
+.. admonition:: Fun Fact
+
+   Search Engine Optimization (SEO) is big deal for anyone who wants to build a
+   successful and relevant website. Just like coding, students can train to
+   become SEO experts.
+
+   If you are curious about how people and companies boost their placement in
+   web searches, here are a couple of articles to get you started:
+
+   #. `What is SEO <https://www.webfx.com/internet-marketing/how-SEO-works.html>`__
+   #. `SEO Made Simple <https://neilpatel.com/what-is-seo/>`__
 
 A ``<div>`` by Another Name
 ---------------------------
