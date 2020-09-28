@@ -103,14 +103,19 @@ crock pot, and maybe a barbecue grill (although we should move that outside
 before using it). What we won't find in the kitchen is a device called
 ``cook()``.
 
+For a moment, lets imagine that we *do* write a ``cook()`` function as part of
+our kitchen space. It's not a device, like the stove. Instead, its a place
+where we must add items to prepare a meal. Let's think about how we would use
+this set of code. We can picture the code block as a box waiting for some
+input:
+
 .. figure:: figures/cook-function.png
    :alt: Image showing and empty box labeled "cook()".
 
    The ``cook()`` function, which represents a spot in your kitchen to deposit food and a device.
 
-Let's assume that we do define a ``cook()`` function. Picture the code block as
-a box waiting for some input. When we call the function, we would need to send
-it the *device that does the cooking* as well as the ingredients.
+When we call the function, we need to send it the *device that does the
+cooking* as well as the ingredients.
 
 .. figure:: figures/cook-function-2.png
    :alt: Image showing examples of putting devices and food into the cook() box.
@@ -137,6 +142,20 @@ specific device.
 
 The ``.cook()`` method for a microwave contains different code than the
 ``.cook()`` method for a gas grill.
+
+Writing code for separate ``.cook()`` methods might sound like just as much
+work as creating one big ``cook()`` function. Our final program will work well
+either way. However, each method represents a smaller individual block of code.
+This leaves less room for error and makes debugging much easier. For example,
+we can modify the oven code without worrying about how it will affect the crock
+pot.
+
+Coding with objects also allows us to more easily expand our program. We can
+add a new device and cook method, like ``toaster.cook()``, without needing to
+change the code for other objects. The new object and method extends what we
+already have. We *add* new code blocks instead of *inserting* the code in the
+middle of an existing function. By working this way, we don't disrupt the other
+``.cook()`` methods.
 
 Check Your Understanding
 ------------------------
