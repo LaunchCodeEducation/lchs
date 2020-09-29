@@ -13,7 +13,7 @@ Object Properties
 
 When using objects, we often want to access the value of a property, change a
 property value, or add a completely new property. To do this, we need the
-object's name as well as the name of the property.
+object's name and the property name.
 
 To modify object properties, we use *dot notation*:
 
@@ -25,7 +25,7 @@ To modify object properties, we use *dot notation*:
 
    object_name.new_property = value   # Add a new property and value to the object.
 
-Note tha ``property_name`` and ``new_property`` do NOT end with a set of
+Note that ``property_name`` and ``new_property`` do NOT end with a set of
 parentheses ``()``.
 
 .. admonition:: Try It!
@@ -70,11 +70,8 @@ parentheses ``()``.
 .. admonition:: Tip
 
    Object properties work like the :ref:`key/value pairs <key-value-pair>` in a
-   dictionary. Each key acts as a label that points to a specific piece of data
-   (the value).
-
-   Similarly, the property name for an object acts as a label. The value for
-   the property is the data the label points to.
+   dictionary. Each property name acts as a label that points to a specific
+   piece of data (the value).
 
 Calling Methods
 ---------------
@@ -87,8 +84,8 @@ as well:
 
    object_name.method_name(arguments)
 
-Note that some methods require *arguments* (data) inside the parentheses
-``()``, while other methods do not.
+Note that some methods require *arguments* (data) inside the parentheses, while
+other methods do not.
 
 .. sourcecode:: python
 
@@ -101,14 +98,14 @@ Methods vs. Functions
 
 Back in the functions chapter, we learned that these defined blocks of code
 behave like a :ref:`machine <function-machine>` when called. A function takes a
-set of input, performs an action with it, and (maybe) returns an output.
+set of input, performs an action with it, and in some cases returns an output.
 
 Methods are also defined blocks of code that perform actions. Just like
 functions, we can call methods over and over again, send them input, and
 collect an output. So what's the difference between *methods* and *functions*?
 
 Functionally (pun intended), the two are the same thing. However, we should
-consider a method as a special type of function---one with some extra
+consider a method as a special type of function, one with some extra
 restrictions and advantages.
 
 Call Syntax
@@ -122,53 +119,11 @@ The first difference involves the syntax for calling functions vs. methods.
 
    object_name.method_name(arguments)
 
-As programmers, WE call functions and send them all the data they need. If we
+As programmers, we call functions and send them all the data they need. If we
 leave out a value, our program will likely crash.
 
-On the other hand, OBJECTS run their own methods and can supply some or all of
-the required data.
-
-For example, if we call a function called ``increase_age``, we would need to
-provide it with two pieces of data---a current age and the amount to increase.
-
-.. sourcecode:: python
-
-   increase_age(current_age, years_older)
-
-The function would run and return the value for ``current_age + years_older``.
-We could then take that number and assign it to a variable.
-
-When we call a method, it can access all of the properties of the object. We
-do NOT need to include property values in the method call. If our ``dog``
-object has an ``increase_age`` method, we call it this way:
-
-.. sourcecode:: python
-
-   dog.increase_age(years_older)
-
-Note that we do NOT include the current age as an argument. Since the method is
-defined for the ``dog`` object, it automatically has access to the ``age``
-property. Once the method is done, the ``dog`` object updates its own ``age``
-value, so we do not need to capture a return value.
-
-.. admonition:: Try It!
-
-   In this example, the ``dog`` object includes three methods called ``speak``,
-   ``fetch``, and ``increase_age``.
-
-   #. On line 9, add a statement to call the ``speak`` method, then run the
-      program. The method requires no argument, but including an integer
-      changes the output. Try it!
-   #. The ``speak`` method prints to the console, but the ``fetch`` method
-      does not. On line 12, print the value *returned* by ``fetch``.
-   #. Try adding a string argument when you call the ``fetch`` method.
-   #. On line 15, print the ``age`` property for ``dog``.
-   #. On line 16, call the ``increase_age`` method, which requires an integer
-      as an argument. Print the ``age`` property again to check the result.
-
-   .. raw:: html
-
-      <iframe src="https://trinket.io/embed/python/c709bc556a" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+On the other hand, when we use an object to call a method, the object can
+supply some or all of the required data.
 
 Methods are Object Specific
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -181,29 +136,22 @@ on lists, strings, and a set of numbers separated by commas.
 Methods are defined to work with one specific type of object. We cannot call a
 method on objects of a different type.
 
-Shift in Thinking
-^^^^^^^^^^^^^^^^^
+Try It!
+^^^^^^^
 
-.. todo:: Not sure about how useful this section is. Keep or remove?
+In this example, the ``dog`` object includes three methods called ``speak``,
+``fetch``, and ``increase_age``.
 
-Assume we have a function called ``forward`` that takes a turtle and an
-integer as parameters. We call the function like so:
+#. On line 9, add a statement to call the ``speak`` method, then run the
+   program. The method requires no argument, but including an integer
+   changes the output. Try it!
+#. The ``speak`` method prints to the console, but the ``fetch`` method
+   does not. On line 12, print the value *returned* by ``fetch``.
+#. Try adding a string argument when you call the ``fetch`` method.
+#. On line 15, print the ``age`` property for ``dog``.
+#. On line 16, call the ``increase_age`` method, which requires an integer
+   as an argument. Print the ``age`` property again to check the result.
 
-::
+.. raw:: html
 
-   forward(bob, 100)
-
-where ``bob`` is our turtle, and ``100`` is the number of steps.
-
-Calling a function makes it *perform an action*. If we were to talk directly to
-the function, we might say something like, *Hey you, forward function! Please
-take the turtle called bob and move it forward 100 steps*.
-
-Of course, we know that all turtle objects include a ``forward`` method:
-
-::
-
-   bob.forward(100)
-
-In this case, the *object* performs an action. Speaking to our code again would
-sound something like, *Hey bob! Move yourself forward 100 steps*.
+   <iframe src="https://trinket.io/embed/python/c709bc556a" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>

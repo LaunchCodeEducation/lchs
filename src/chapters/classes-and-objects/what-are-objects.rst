@@ -5,13 +5,15 @@ A quick search of the web returns this fact:
 
    Python is an Object-Oriented Programming language.
 
-In this book, we won't give a detailed explanation of what
-*object-oriented programming* (OOP) means, but we will take a closer look at
-the idea behind *objects*.
+Object-oriented programming (OOP) is a software design model that focuses on
+the capabilities of *object types* instead of on things like individual
+functions, loops, logic, etc. In this book, we won't get into the principles
+behind OOP. However, we do need to take a closer look at the concept of
+*objects*.
 
-We have worked with objects many times already---turtle objects, string
-objects, list objects, etc. However, we never explained what objects represent
-in Python.
+We have worked with objects many times already: turtle objects, string objects,
+list objects, etc. However, we never explained what objects represent in
+Python.
 
 As a first step, let's review some vocabulary:
 
@@ -51,14 +53,14 @@ object can perform are called its **methods**.
 Examples of Objects
 -------------------
 
-Let's begin with a familiar example---strings.
+Let's begin with a familiar example: strings.
 
 .. sourcecode:: Python
 
    text = "I am an object."
 
-All strings have a length property, which tells us the number of characters
-between the quote marks. Also, each individual character can be classified as a
+All strings have a length property. This tells us the number of characters
+between the quote marks. Each individual character can be classified as a
 letter, digit, punctuation, etc. Strings also include a property that describes
 their case (upper or lower).
 
@@ -81,7 +83,7 @@ and location on the screen. Each of these bits of data tells us something about
 the object. Methods include actions like ``.forward()`` and ``.circle()``.
 
 Anything related to the appearance or behavior of a turtle on the screen is
-included with every turtle object. We do NOT need to define a ``left()``
+included with every turtle object. We do not need to define a ``left()``
 function to rotate a turtle. The code for that behavior is part of the object
 itself.
 
@@ -118,18 +120,18 @@ Objects help us by keeping related code in one place. For example, the method
 object contains the code to rearrange the elements, but ``turtle`` objects do
 not.
 
-If we define a new ``elephant`` object, then that object only contains code to
-deal with elephant data and elephant behaviors. Any code NOT related to
-elephants belongs somewhere else in our program.
+If we define a new ``elephant`` type of object, then that kind of object only
+contains code to deal with elephant data and elephant behaviors. Any code not
+related to elephants belongs somewhere else in our program.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   Assume we create a ``rabbit`` object in our code. Which of the following are
-   *properties* for the object, and which ones are *methods*? (Answer in your
-   head before clicking each option).
+   Assume we create an object of type ``rabbit`` in our code. Which of the
+   following are *properties* for this kind of object, and which ones are
+   *methods*? (Answer in your head before clicking each option).
 
    .. raw:: html
 
