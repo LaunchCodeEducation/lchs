@@ -29,7 +29,7 @@ and exchange data.
 
 .. admonition:: Note
 
-   Even two devices linked together form a network.
+   Even just two devices linked together form a network.
 
 Different schools, businesses, homes, libraries, coffee shops, etc. all create
 their own separate networks. If we connect two of these, say a school and a

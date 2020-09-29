@@ -107,7 +107,8 @@ screen readers to navigate the page.
 
 Screen readers are tools that verbally describe the content on a page. They
 also describe the HTML tags surrounding the content. With semantic HTML, we can
-make our webpages accessible to all users.
+make our webpages accessible to all people, including those who use screen
+readers.
 
 For example, the ``div`` and ``span`` elements organize content on the page,
 but they do not provide any information about the content itself. If we use
@@ -143,7 +144,7 @@ toward our home page. If we include a ``main`` element with some ``article``
 elements inside, the engines find our most important content faster and provide
 a more accurate description.
 
-With search, speed an accuracy are critical! Semantic tags let us tell search
+With search, speed and accuracy are critical! Semantic tags let us tell search
 engines what our website is about. This can help keep our website from
 getting pushed off of the first page of results.
 
