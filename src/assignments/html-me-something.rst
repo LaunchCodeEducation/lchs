@@ -31,7 +31,6 @@ Sections
 #. :ref:`Getting Started <getting-started>`
 #. :ref:`Part 1: HTML <html-me-part1>`
 #. :ref:`Part 2: CSS <html-me-part2>`
-#. :ref:`Submitting Your Work <submitting-your-work>`
 
 .. _getting-started:
 
@@ -205,25 +204,22 @@ Part 2 Tips
    ``index.html`` file.
 #. Feel free to check out our `styled example
    <http://education.launchcode.org/html-me-something/submissions/chrisbay/index.html>`__
-   to see how we did things.
-   
-   Right-click anywhere on the page and select *View Page Source*. In the tab
-   that opens, click on the ``style.css`` link on line 8.
+   to see how we did things. Right-click anywhere on the page and select
+   *View Page Source*. In the tab that opens, click on the ``style.css`` link
+   on line 8.
 #. Check out the `W3Schools CSS Reference <http://www.w3schools.com/css/default.asp>`__.
 
 Done!
-^^^^^
+-----
 
-You completed Part 2! Take a moment to gaze with pride at your webpage. Feel
-free to show it off a little.
+You completed assignment 4! Take a moment to gaze with pride at your webpage.
+Feel free to show it off a little.
 
-.. _submitting-your-work:
+Follow your teacher's instructions for how to turn in your finished project.
 
-Submitting Your Work
---------------------
+.. raw:: html
 
-Follow your teacher's instructions for how to turn in
-your finished webpage.
+   <hr>
 
 .. _upload-images:
 
