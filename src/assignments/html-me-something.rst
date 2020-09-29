@@ -22,8 +22,8 @@ first. In the second half, you will add styling to the page with CSS.
    *red*? You can either add this style one time in the CSS file, or you must
    include ``style="color:red"`` in EVERY ``h2`` tag.
 
-   Especially for large websites, CSS provides the best place to
-   control the overall appearance of a page.
+   Especially for large websites, CSS provides the best way to control the
+   overall appearance of a page.
 
 Sections
 --------
@@ -66,7 +66,8 @@ When you open a new HTML project, repl.it gives you some standard code in the
 This is a good starting place, but you should make some minor tweaks before
 diving into Part 1.
 
-#. Change the ``title`` text on line 6 to describe the page you want to build.
+#. Change the text in the ``title`` element to describe the page you want to
+   build.
 #. Remove the ``script`` element from line 10.
 #. You can also delete ``script.js`` from the file tree on the left hand side
    of the workspace.
@@ -109,32 +110,28 @@ Your mission is to build a page that:
 
    a. Describe a trip you took.
    b. Talk about one of your hobbies or passions.
-   c. Provide an alternate ending to a book you read. (For example:
-      *The Hunger Games* trilogy, Prim, go...)
+   c. Provide an alternate ending or plot twist to a book you read. (For
+      example: *Mockingjay*, Prim's fate, go...)
 
    .. admonition:: Tip
    
       Check out this `example page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
       created by a member of LaunchCode.
 
-#. **Does the following**:
+#. Uses each of the following semantic HTML5 tags: ``<p>``, ``<header>``,
+   ``<footer>``, ``<main>``, ``<article>``. If you need to review any of
+   these tags, check out the `HTML tag reference <http://www.w3schools.com/tags/default.asp>`__
+   at W3Schools.
 
-   a. Uses each of the following semantic HTML5 tags: ``<p>``, ``<header>``,
-      ``<footer>``, ``<main>``, ``<article>``. If you need to review any of
-      these tags, check out the `HTML tag reference <http://www.w3schools.com/tags/default.asp>`__
-      at W3Schools.
-
-      You are NOT limited to just these 5 tags! Feel free to include any other
-      semantic tags you need or want.
-   b. Includes one or more ``<img>`` tags. (See
-      :ref:`Uploading Images <upload-images>` below).
-   c. Uses at least one `HTML entity
-      <http://www.w3schools.com/html/html_entities.asp>`__.
-      
-      *Hint*: Putting a copyright notice in your footer will take care of this,
-      but feel free to get creative!
-   d. Demonstrates creativity. Don’t stop with the required items or tags. Add
-      some extra ideas to your page, and make it great.
+   You are NOT limited to just these 5 tags! Feel free to include any other
+   semantic tags you need or want.
+#. Includes one or more ``<img>`` tags. (See
+   :ref:`Uploading Images <upload-images>` below).
+#. Uses at least one `HTML entity <http://www.w3schools.com/html/html_entities.asp>`__. 
+   *Hint*: Putting a copyright notice in your footer will take care of this,
+   but feel free to use your imagination!
+#. Demonstrates creativity. Don’t stop with the required items or tags. Add
+   some extra ideas to your page to make it great.
 
 Part 1 Tips
 ^^^^^^^^^^^
@@ -144,9 +141,10 @@ Part 1 Tips
    own HTML elements. However, do NOT just copy/paste! Build your page to fit
    your own content.
 #. Don’t add any CSS yet. Really, we mean it! If you think your page
-   looks boring now, that’s okay. You will fix that in Part 2.
-#. Use the references linked on this page, or find others online. We haven’t
-   taught you every detail about every tag that you may want or need.
+   looks boring without any style rules, that’s okay. You will fix that in Part
+   2.
+#. Use the HTML references linked on this page, or find others online. We
+   haven’t taught you every detail about every tag that you may want or need.
 #. You’re free to use tags that haven’t been introduced in class! We’ve given
    you enough background to get started, but you are more than ready to do
    some learning on your own.
@@ -156,7 +154,32 @@ Part 1 Tips
 Uploading Images
 ^^^^^^^^^^^^^^^^
 
-Instructions for adding images to repl.it and Trinket projects...
+The repl.it and Trinket platforms both allow you to add images to your HTML
+projects. While the processes are similar, they are not identical. Be sure you
+follow the correct guide!
+
+Repl.it Images
+~~~~~~~~~~~~~~
+
+#. In the file tree on the left side of the workspace, click the *Add Folder*
+   button.
+
+   .. figure:: figures/replit-add-folder.png
+      :alt: The 'Add Folder' button in the repl.it file tree.
+
+#. Call the new folder ``images``.
+#. Drag and drop the images you want to use into this folder.
+#. To display an image on your webpage, use the ``src`` attribute inside the
+   ``img`` tag. The syntax is:
+
+   ``src="images/image_file_name"``
+
+   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
+
+Trinket Images
+~~~~~~~~~~~~~~
+
+Lorem ipsum...
 
 Halfway There!
 ^^^^^^^^^^^^^^
