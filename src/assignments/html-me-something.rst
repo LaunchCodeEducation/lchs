@@ -1,7 +1,7 @@
 .. _html-me-something:
 
 Assignment #4: HTML Me Something
-=================================
+================================
 
 You’ve learned a bit of HTML and some CSS as you added or modified content in
 exercises or pre-existing files. In this assignment, you are going to take the
@@ -127,9 +127,9 @@ Your mission is to build a page that:
    semantic tags you need or want.
 #. Includes one or more ``<img>`` tags. (See
    :ref:`Uploading Images <upload-images>` below).
-#. Uses at least one `HTML entity <http://www.w3schools.com/html/html_entities.asp>`__. 
-   *Hint*: Putting a copyright notice in your footer will take care of this,
-   but feel free to use your imagination!
+#. Uses at least one :ref:`HTML entity <html-entities>`. *Hint*: Putting a
+   copyright notice in your footer will take care of this, but feel free to use
+   your imagination!
 #. Demonstrates creativity. Don’t stop with the required items or tags. Add
    some extra ideas to your page to make it great.
 
@@ -148,38 +148,6 @@ Part 1 Tips
 #. You’re free to use tags that haven’t been introduced in class! We’ve given
    you enough background to get started, but you are more than ready to do
    some learning on your own.
-
-.. _upload-images:
-
-Uploading Images
-^^^^^^^^^^^^^^^^
-
-The repl.it and Trinket platforms both allow you to add images to your HTML
-projects. While the processes are similar, they are not identical. Be sure you
-follow the correct guide!
-
-Repl.it Images
-~~~~~~~~~~~~~~
-
-#. In the file tree on the left side of the workspace, click the *Add Folder*
-   button.
-
-   .. figure:: figures/replit-add-folder.png
-      :alt: The 'Add Folder' button in the repl.it file tree.
-
-#. Call the new folder ``images``.
-#. Drag and drop the images you want to use into this folder.
-#. To display an image on your webpage, use the ``src`` attribute inside the
-   ``img`` tag. The syntax is:
-
-   ``src="images/image_file_name"``
-
-   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
-
-Trinket Images
-~~~~~~~~~~~~~~
-
-Lorem ipsum...
 
 Halfway There!
 ^^^^^^^^^^^^^^
@@ -256,3 +224,55 @@ Submitting Your Work
 
 Follow your teacher's instructions for how to turn in
 your finished webpage.
+
+.. _upload-images:
+
+Uploading Images
+----------------
+
+The repl.it and Trinket platforms both allow you to add images to your HTML
+projects. While the processes are similar, they are not identical. Be sure you
+follow the correct guide!
+
+Repl.it Images
+^^^^^^^^^^^^^^
+
+#. In the file tree on the left side of the workspace, click the *Add Folder*
+   button.
+
+   .. figure:: figures/replit-add-folder.png
+      :alt: The 'Add Folder' button in the repl.it file tree.
+
+#. Call the new folder ``images``.
+#. Drag and drop the images you want to use into this folder.
+#. To display an image on your webpage, use the ``src`` attribute inside the
+   ``img`` tag. The syntax is:
+
+   ``src="images/image_file_name"``
+
+   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
+
+Trinket Images
+^^^^^^^^^^^^^^
+
+#. In the toolbar on top of the editor, click the *Add Images* button.
+
+   .. figure:: figures/trinket-add-image.png
+      :alt: The 'Add Images' button in the Trinket toolbar.
+
+#. Click on the *Image Library* button, then *Upload New Image*.
+#. Once you upload a new image, its thumbnail appears in the space below the
+   buttons. Select the images you want to use, then click *Done*.
+
+   .. figure:: figures/trinket-select-image.png
+      :alt: Choose from the list of images in the editor pane.
+      :width: 70%
+
+#. To display an image on your webpage, use the ``src`` attribute inside the
+   ``img`` tag. The syntax is:
+
+   ``src="image_file_name"``
+
+   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
+
+(Back to :ref:`Part 1 <html-me-part1>`)
