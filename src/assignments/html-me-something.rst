@@ -44,7 +44,8 @@ account. Open a new HTML/CSS project and call it ``HTML Me Something``.
 Repl.it Users
 ^^^^^^^^^^^^^
 
-When you open a new HTML project, repl.it gives you some boilerplate code:
+When you open a new HTML project, repl.it gives you some standard code in the
+``index.html`` file:
 
 .. sourcecode:: HTML
    :linenos:
@@ -94,67 +95,141 @@ In Part 1, you will build the structure and content for your webpage. All of
 your work for this part will go inside the ``body`` element of the
 ``index.html`` file.
 
-Getting to Work
-^^^^^^^^^^^^^^^
+Requirements
+^^^^^^^^^^^^
 
 Your mission is to build a page that:
 
-#. Tells a story. This can be personal or impersonal, funny, serious or
-   neither. You can do whatever you like, but it should be something in the
-   range of 3-10 paragraphs or sections. `Here is an example
-   <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__,
-   and here are some other ideas:
+#. **Tells a story**. This can be personal or impersonal, funny, serious or
+   neither. You can do whatever you like, but it must be school appropriate.
+   Your story page should include 3-10 total paragraph elements, with those
+   split into at least 3 different sections.
+   
+   Here are some ideas you can consider:
 
    a. Describe a trip you took.
    b. Talk about one of your hobbies or passions.
-   c. Create a page that provides an alternate ending to a book you read. (For
-      example: *The Hunger Games* trilogy, Prim, go...)
+   c. Provide an alternate ending to a book you read. (For example:
+      *The Hunger Games* trilogy, Prim, go...)
 
-#. Does each of the following:
-
-   a. Uses each of the following structural HTML5 tags: ``<p>``,
-      ``<header>``, ``<footer>``, ``<main>``, ``<article>``. If you need
-      to review any of these tags, check out the `HTML tag reference
-      <http://www.w3schools.com/tags/default.asp>`__ at W3Schools.
-   b. Uses at least one ``<img>`` tag (hopefully more). (See note below).
-   c. Uses at least one `HTML entity
-      <http://www.w3schools.com/html/html_entities.asp>`__. Hint: putting a
-      copyright notice in your footer will afford you the opportunity to use
-      ``&copy;``, but you should also try to get creative here.
-   d. Demonstrates creativity. Don’t stop with these items or tags. Have some
-      ideas for your page, and make it great. And dig into the
-      `w3schools HTML reference <http://www.w3schools.com/tags/default.asp>`__
-      to learn more about other tags, their usage and attributes!
-
-.. admonition:: Note
-
-   Instructions for adding images to repl.it and Trinket projects...
-
-Tips
-^^^^
-
-#. Right-click on the `the example page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
-   to learn how your HTML elements might be structured.
+   .. admonition:: Tip
    
-   However, do NOT just copy/paste! Build your page to fit your own content.
+      Check out this `example page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
+      created by a member of LaunchCode.
+
+#. **Does the following**:
+
+   a. Uses each of the following semantic HTML5 tags: ``<p>``, ``<header>``,
+      ``<footer>``, ``<main>``, ``<article>``. If you need to review any of
+      these tags, check out the `HTML tag reference <http://www.w3schools.com/tags/default.asp>`__
+      at W3Schools.
+
+      You are NOT limited to just these 5 tags! Feel free to include any other
+      semantic tags you need or want.
+   b. Includes one or more ``<img>`` tags. (See
+      :ref:`Uploading Images <upload-images>` below).
+   c. Uses at least one `HTML entity
+      <http://www.w3schools.com/html/html_entities.asp>`__.
+      
+      *Hint*: Putting a copyright notice in your footer will take care of this,
+      but feel free to get creative!
+   d. Demonstrates creativity. Don’t stop with the required items or tags. Add
+      some extra ideas to your page, and make it great.
+
+Part 1 Tips
+^^^^^^^^^^^
+
+#. Right-click inside the `example page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
+   and *View Page Source* to see some ideas about how you might arrange your
+   own HTML elements. However, do NOT just copy/paste! Build your page to fit
+   your own content.
 #. Don’t add any CSS yet. Really, we mean it! If you think your page
-   looks boring now, that’s okay. You will fix that soon enough.
-#. Rely on the reference sites linked on this page, or find others online. We
-   haven’t taught you every detail about every tag that you may want or need.
+   looks boring now, that’s okay. You will fix that in Part 2.
+#. Use the references linked on this page, or find others online. We haven’t
+   taught you every detail about every tag that you may want or need.
 #. You’re free to use tags that haven’t been introduced in class! We’ve given
    you enough background to get started, but you are more than ready to do
    some learning on your own.
+
+.. _upload-images:
+
+Uploading Images
+^^^^^^^^^^^^^^^^
+
+Instructions for adding images to repl.it and Trinket projects...
+
+Halfway There!
+^^^^^^^^^^^^^^
+
+You finished Part 1! Copy the link to your repl.it or Trinket file and share it
+with your teacher.
+
+You will complete the second half of this project once you reach the end of the
+CSS chapter.
+
+.. todo:: Add internal link to the CSS chapter here.
 
 .. _html-me-part2:
 
 Part 2: CSS
 -----------
 
-Lorem ipsum...
+In Part 2, you will use CSS selectors and style rules to control what your page
+looks like. Remember, the goal is to keep your styling separate from your
+content.
+
+When you first created this project, you added a ``style.css`` file. Click on
+its name to open it in the editor. Right now, it should be empty. Most of your
+code for Part 2 will go inside ``style.css``.
+
+Now start adding some CSS rules!
+
+Requirements
+^^^^^^^^^^^^
+
+#. Be creative! Make your page look great, and don’t just settle for checking
+   off the items from this requirements list.
+#. Use at least one of each of the following selectors:
+
+   a. `element <http://www.w3schools.com/cssref/sel_element.asp>`__,
+   b. `class <http://www.w3schools.com/cssref/sel_class.asp>`__,
+   c. `id <http://www.w3schools.com/cssref/sel_id.asp>`__.
+
+   Remember, ``class`` and ``id`` selectors require you to add attributes
+   inside a starting tag.
+
+   .. todo:: Replace external links with internal LCHS chapter links (CSS selectors).
+
+#. Avoid adding HTML elements in order to achieve a specific visual effect. Do
+   ALL of your styling with CSS.
+#. Include `margin <http://www.w3schools.com/css/css_margin.asp>`__ and
+   `padding <http://www.w3schools.com/css/css_padding.asp>`__ in the
+   declaration blocks to space your elements in a visually pleasing way.
+#. Use inline ``style`` attributes only when absolutely necessary.
+
+Part 2 Tips
+^^^^^^^^^^^
+
+#. In order to see any visible change, make sure to link ``style.css`` to your
+   ``index.html`` file.
+#. Feel free to check out our `styled example
+   <http://education.launchcode.org/html-me-something/submissions/chrisbay/index.html>`__
+   to see how we did things.
+   
+   Right-click anywhere on the page and select *View Page Source*. In the tab
+   that opens, click on the ``style.css`` link on line 8.
+#. Check out the `W3Schools CSS Reference <http://www.w3schools.com/css/default.asp>`__.
+
+Done!
+^^^^^
+
+You completed Part 2! Take a moment to gaze with pride at your webpage. Feel
+free to show it off a little.
 
 .. _submitting-your-work:
 
 Submitting Your Work
 --------------------
 
-Lorem ipsum...
+Follow your teacher's instructions for how to turn in
+your finished webpage.
