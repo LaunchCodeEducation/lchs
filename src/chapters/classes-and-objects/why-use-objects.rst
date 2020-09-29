@@ -1,15 +1,18 @@
 Why Use Objects?
 ================
 
+.. index:: ! procedural programming
+
 Most of the Python programs you have written so far contain statements that
-gather data, do something with it, and then display the results. You included
-functions to help streamline your code, and you called those functions as you
-needed them. This style of programming focuses on the process of working with
-data:
+gather data, do something with it, and then display the results. The statements
+follow a general top-down order, and they focus on how to carry out a certain
+job. You included functions to help streamline your code, and you called those
+functions as you needed them. This style of programming is called
+**procedural**. It focuses on the process of working with data:
 
 #. Define or import a function to do a specific job,
 #. Call that function and send it some data,
-#. Do something with the returned result.
+#. Use loops, conditionals, etc. to do something with the returned result.
 
 This style of programming works fine for small programs. However, as our
 applications get bigger, reading, debugging and updating the code gets harder.
@@ -26,7 +29,7 @@ those statements into a single object.
 If we bring together a collection of different objects, each with its own
 set of properties and methods, then we can build programs in a much more
 flexible way. Each object controls its own data and actions. This lets us break
-large programs into smaller and easier to control chunks.
+large programs into smaller chunks of code that are easier to edit and debug.
 
 Imagine that we write a program over several weeks or months. As we build it
 and add new features, we code new functions and add them to the end of a
@@ -55,15 +58,15 @@ task instead of having to search through all of our code to find the faulty
 
 Using objects sounds similar to what we did in the
 :ref:`Modules chapter <modules-index>`. However, unlike the external module
-files, objects get created as they are needed and *only when the program runs*.
+files, objects are created as they are needed and *only when the program runs*.
 
 Objects Copy Real World Thinking
 --------------------------------
 
 As we shift our thinking towards using objects, it helps to create a mental
 picture that connects how we want to code with some real life examples. In the
-world around us, we interact with objects all the time, like cars, phones, pets,
-and our friends.
+world around us, we interact with objects all the time. Think of things like
+cars, phones, refrigerators, etc.
 
 Each of these objects has a set of properties that describe it, and each object
 can perform different actions. 
@@ -71,9 +74,13 @@ can perform different actions.
 Phones as Objects
 ^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+When we run an app on a smartphone, we use the device to perform a specific
+action. This is the same idea behind coding with an object. Instead of writing
+a function and sending it some data, we create an object and give it the
+ability to perform an action.
 
-Take a look at the following code syntax:
+Let's think about how using a smartphone relates to coding with an object. Take
+a look at the following code:
 
 .. sourcecode:: Python
    :linenos:
@@ -84,11 +91,12 @@ Take a look at the following code syntax:
 
 Line 1 shows a function call to ``show_weather``, and we pass it ``phone`` as
 the argument. The statement tells Python, *Run the code to give us a weather
-report, and use the data assigned to phone*.
+report, and use the data assigned to phone*. This is an example of procedural
+programming.
 
 Line 3 shows an object-oriented approach to the same job. ``phone`` is an
 object that contains code for displaying the weather. The statement tells
-Python, *Make the phone object run its weather() code*.
+Python, *Make the phone object run its weather() action*.
 
 Cooking with Objects
 ^^^^^^^^^^^^^^^^^^^^
@@ -96,16 +104,22 @@ Cooking with Objects
 If we stand in a kitchen, we will probably find several different tools for
 cooking dinner. These might include a microwave, a stove top, an oven, a
 crock pot, and maybe a barbecue grill (although we should move that outside
-RIGHT NOW). What we won't find in the kitchen is a device called ``cook()``.
+before using it). What we won't find in the kitchen is a device called
+``cook()``.
+
+For a moment, lets imagine that we *do* write a ``cook()`` function as part of
+our kitchen space. It's not a device, like the stove. Instead, its a place
+where we must add items to prepare a meal. Let's think about how we would use
+this set of code to do some procedural programming. We can picture the code
+block as a box waiting for some input:
 
 .. figure:: figures/cook-function.png
    :alt: Image showing and empty box labeled "cook()".
 
    The ``cook()`` function, which represents a spot in your kitchen to deposit food and a device.
 
-Let's assume that we do define a ``cook()`` function. Picture the code block as
-a box waiting for some input. When we call the function, we would need to send
-it the *device that does the cooking* as well as the ingredients.
+When we call the function, we need to send it the *device that does the
+cooking* as well as the ingredients.
 
 .. figure:: figures/cook-function-2.png
    :alt: Image showing examples of putting devices and food into the cook() box.
@@ -117,6 +131,8 @@ Since each device has it's own way of cooking food, the code inside ``cook()``
 must be able to handle different tools and ingredients. The function needs to
 work for an oven, a toaster, a microwave, etc. This is an inefficient way to
 code for the job of cooking.
+
+Now let's look at how we can prepare a meal using the object-oriented approach.
 
 With objects, we can assign a special block of code to each tool. The stove,
 microwave, etc. gets its own ``.cook()`` method designed to work with its
@@ -132,6 +148,20 @@ specific device.
 
 The ``.cook()`` method for a microwave contains different code than the
 ``.cook()`` method for a gas grill.
+
+Writing code for separate ``.cook()`` methods might sound like just as much
+work as creating one big ``cook()`` function. Our final program will work well
+either way. However, each method represents a smaller individual block of code.
+This leaves less room for error and makes debugging much easier. For example,
+we can modify the oven code without worrying about how it will affect the crock
+pot.
+
+Coding with objects also allows us to more easily expand our program. We can
+add a new device and cook method, like ``toaster.cook()``, without needing to
+change the code for other objects. The new object and method extends what we
+already have. We *add* new code blocks instead of *inserting* the code in the
+middle of an existing function. By working this way, we don't disrupt the other
+``.cook()`` methods.
 
 Check Your Understanding
 ------------------------

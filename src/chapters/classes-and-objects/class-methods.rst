@@ -74,7 +74,7 @@ Note the following:
 
 #. The ``def`` keyword is used to define the new method.
 #. ``method_name`` follows the same
-   :ref:`naming conventions <function-naming-rules>` we used for functions.
+   :ref:`naming conventions <function-naming-rules>` we use for functions.
 #. All methods must include the ``self`` parameter, which appears first in the
    parentheses ``()``.
 #. Additional parameters may or may not be used, depending on what we need the
@@ -95,7 +95,7 @@ take the ``age`` property of a ``Cat`` object and make it larger.
    #. The method requires no parameters other than ``self``.
    #. The statement ``self.age += 1`` updates the ``age`` property by 1 unit.
    #. No return statement is needed for this method. It takes the current value
-      ``age``, increases it by 1, and then reassigns it to the property name.
+      of the ``age`` property and increases it by 1.
 
    .. raw:: html
 
@@ -159,11 +159,6 @@ current mood.
 
 When Python comes to a method call, it evaluates that expression. If the method
 returns a value, Python can then work with that result.
-
-::
-
-   print(cat_1.make_noise('hungry'))  # Evaluate the method call.
-   print('Meow!')                     # Display the return value in the console.
 
 Add Your Own Method
 -------------------

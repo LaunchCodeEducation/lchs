@@ -44,7 +44,7 @@ Design a New Class
 
 Before we create a new class, we should begin by describing the objects that
 belong in that class. Take time to think about the properties and methods we
-want each object to have. Next, *write thess ideas down*! Doing this will make
+want each object to have. Next, *write these ideas down*! Doing this will make
 designing and coding the class easier.
 
 .. _brainstorm-properties:
@@ -68,9 +68,11 @@ designing and coding the class easier.
    Add at least two more property names to the editor, but feel free to go
    crazy!
 
-   Also, if you are logged into your Trinket account, you can click the *Remix*
+   If you are logged into your Trinket account, you can click the *Remix*
    button to save your ideas. We will use this editor again on a later page.
-   Making your own copy will allow you to pick up where you left off.
+   Making your own copy will allow you to pick up where you left off. If you do
+   not have a Trinket account, copy and paste your list of method names into
+   something you can look at later.
 
 Now let's convert our thoughts into code.
 
@@ -96,7 +98,7 @@ of the class. The general syntax is:
    class ClassName:
       # Class code...
 
-Note that class definitions do NOT include parentheses ``()``.
+Note that class definitions do NOT include parentheses, ``()``.
 
 Just like with variable and function names, Python coders follow a set of rules
 and recommendations when defining a new class.
@@ -104,7 +106,7 @@ and recommendations when defining a new class.
 #. Class names begin with a capital letter, followed by lowercase letters.
    For example, ``Cat``.
 #. For class names that contain more than one word, begin each new word with a
-   capital letter. Do NOT use underscores to separate the words. For example,
+   capital letter. Do not use underscores to separate the words. For example,
    ``CoolCat``. (FYI: This style is called UpperCamelCase).
 #. If the class name contains an abbreviation, use capital letters for that
    abbreviation. For example, ``OSUBuckeyes``.
@@ -155,7 +157,8 @@ help set up that discussion.
       On line 5, ``self.name = 'Coach'`` assigns the value ``'Coach'`` to the
       property called ``name``.
    #. On line 6, add the statement ``self.age = 2`` to assign the integer ``2``
-      to the property called ``age``.
+      to the property called ``age``. Be sure to indent the statement to match
+      line 5. This puts ``self.age = 2`` inside the ``init`` code block.
    #. Pick one of the properties you listed :ref:`earlier on this page <brainstorm-properties>`.
       On line 7, assign a value to that property.
    #. Paste the following code on lines 9 and 10. To keep the statements outside
@@ -223,8 +226,7 @@ However, it would be better if we could assign these values when the objects
 are first created. Instead of giving *every* new ``Cat`` object the same name
 and age, we want to let these values vary from object to object.
 
-We do this by adding parameters to the ``__init__`` method, just like we do
-with functions:
+We do this by adding parameters to the ``__init__`` method:
 
 .. sourcecode:: python
    :linenos:
@@ -242,9 +244,9 @@ with functions:
 #. Add arguments for a name and an age in the statement. For example,
    ``cat_1 = Cat('Nala', 4)``. Do the same for ``cat_2``, but use different
    values.
-#. Run the program and fix any remaining bugs. Once you have your code working,
-   try changing the arguments you send to the class to see how that affects the
-   output.
+#. Run the program and fix any remaining bugs. Try changing the arguments you
+   send to the class when creating a new object. How do those changes affect
+   the output?
 #. Next, follow a similar process for the third property. Define a parameter
    and include an argument when you call the class.
 

@@ -1,33 +1,31 @@
 Project: Classes and Objects
-==============================
+============================
 
-Now that we've got our robots up and running, we want to select a few of them
-to clean our school building.
+Now its time to design a new class of robots. These objects will all be able to
+clean our school building, but we want to pick the best ones.
 
 Let's create a class to handle new cleaning crew candidates!
 
 Before You Start
 ----------------
 
-.. admonition:: Note
+If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
+or a :ref:`Trinket course <trinket-course-assignments>`, login to your
+account to access the starter code for this project.
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, login to your
-   account to access the starter code for this project.
+If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
+the following links to copy the starter code.
 
-   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
-   the following links to copy the starter code.
-
-   #. `Trinket code <https://trinket.io/python/7b69aa933c>`__ (*Remix* before
-      getting started).
-   #. `Repl.it code <https://repl.it/@launchcode/LCHS-Classes-Project-starter-code>`__
-      (*Fork* before getting started).
+#. `Trinket code <https://trinket.io/python/7b69aa933c>`__ (*Remix* before
+   getting started).
+#. `Repl.it code <https://repl.it/@launchcode/LCHS-Classes-Project-starter-code>`__
+   (*Fork* before getting started).
 
 Part 1: Add Class Properties and ``__str__`` Method
 ---------------------------------------------------
 
 #. Declare a class called ``CrewCandidate`` with an ``__init__`` that takes
-   three parameters---``name``, ``mass``, and ``scores``. Note that ``scores``
+   three parameters: ``name``, ``mass``, and ``scores``. Note that ``scores``
    will be a list of test results for the candidate's speed and accuracy.
 #. In ``main()``, create objects for the following candidates:
 
@@ -66,15 +64,15 @@ scores to their records.
       ``scores``. Thus, ``self.scores.append()`` is the proper syntax.
 
 #. In ``main()``, test your new method by adding a score of ``83`` to iClean's
-   record, then print out the new score list in with ``object_name.scores``.
+   record. Print out the new score list with ``object_name.scores``.
 
 Part 3: Add More Methods
 ------------------------
 
 Now that we can add scores to our candidates' records, we need to evaluate
-their fitness for our astronaut program. Let's add two more methods
-to ``CrewCandidate``---one to average the test scores, and the other to
-decide if the candidate should be admitted.
+their fitness for our cleaning program. Let's add two more methods to
+``CrewCandidate``. One will average the test scores, and the other will decide
+if the candidate should be added to the cleaning team.
 
 Calculating the Test Average
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,7 +84,8 @@ Calculating the Test Average
    :ref:`round it to 1 decimal place <round-function>`, then return the result
    from the method.
 
-Check your code by evaluating and printing Shiny's average test score (92.7).
+Check your code by evaluating and printing Shiny's average test score
+(``92.7``).
 
 Determining Candidate Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,8 +96,8 @@ averages between 70 - 79% get sent out for repairs. Averages below 70% lead to
 a short trip to the recycling bin.
 
 #. Add a ``status()`` method to ``CrewCandidate``. The method returns a string
-   (``Accepted``, ``Backup``, ``Maintenance``, or ``Scrapped``) depending on
-   a candidate's average.
+   (``'Accepted'``, ``'Backup'``, ``'Maintenance'``, or ``'Scrapped'``)
+   depending on a candidate's average.
 #. The ``status`` method requires the average test score. Fortunately, methods
    can call other methods inside a class! Just remember to use
    ``self.method_name()``.

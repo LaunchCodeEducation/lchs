@@ -44,8 +44,8 @@ properties and values as described in the
 
 .. admonition:: Try It
 
-   Play around with modifying and adding properties inside and outside of the
-   ``Student`` class.
+   Play around with :ref:`modifying and adding properties <object-properties>`
+   inside and outside of the ``Student`` class.
 
    #. Add a new property inside the ``__init__`` method.
    #. On line 12, change the value of the ID number for ``dan``, then print the
@@ -53,9 +53,8 @@ properties and values as described in the
    #. On line 15, add the ``act_score`` property to ``jessi`` and assign it an
       integer value. Print this value to check your work.
 
-   *Note that line 15 adds the* ``act_score`` *property to the* ``jessi``
-   *object, but this change does NOT affect any other objects created with*
-   ``Student``.
+   Note that line 15 adds the ``act_score`` property to the ``jessi`` object,
+   but this change does NOT affect any other objects created with ``Student``.
 
 .. admonition:: Note
 
@@ -100,8 +99,8 @@ argument for ``id_number``, then the default value is ignored.
 
 .. admonition:: Try It!
 
-   Return to the example above and set default values for one or more of the
-   parameters.
+   Return to the example above and modify the ``Student`` class to use a
+   default value for one or more of the ``__init__`` parameters.
 
 Another Mental Image for Classes
 --------------------------------

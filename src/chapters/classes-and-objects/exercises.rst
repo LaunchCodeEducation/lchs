@@ -3,7 +3,7 @@ Exercises: Classes and Objects
 
 In these exercises, you will create a ``Robot`` class and use it to create
 four ``Robot`` objects. You will also practice writing functions that display
-information about the objects as well as race them against each other.
+information about the objects and race them against each other.
 
 .. admonition:: Note
 
@@ -33,9 +33,9 @@ Add Properties to ``Robot``
 #. Give a default value to ``year``.
 #. Assign the property values as described in the
    :ref:`Setting Property Values <set-property-values>` section.
-#. Add one more property called ``distance``. This will NOT have a
-   parameter, and every new ``Robot`` object will start with a ``distance``
-   value of ``0``.
+#. Add one more property called ``distance``. This will not need a parameter
+   in the ``__init__`` definition. Instead, every new ``Robot`` object will
+   start with a ``distance`` value of ``0``.
 
 .. admonition:: Tip
 
@@ -58,8 +58,8 @@ Add Methods to ``Robot``
    #. Only take the ``self`` parameter.
    #. Generate a random number of steps (1 - 10) for the object to take. The
       range should include ``1`` and ``10`` as options. *Hint*: The ``randint``
-      function is described in the
-      :ref:`The random Module <pick-random-number>` section.
+      function is described in the :ref:`Random Module <pick-random-number>`
+      section.
    #. Increase the ``distance`` property by the number of steps.
    #. Return the random number of steps.
 
@@ -121,7 +121,7 @@ should:
 
 .. admonition:: Note
 
-   The instructions assume that the list contains only one "oldest" robot. What
+   The instructions assume that the list contains only one oldest robot. What
    if two old robots have the same ``year`` and ``distance`` values?
 
    We won't solve this problem here. However, add comments in your code
