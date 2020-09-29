@@ -19,6 +19,7 @@ Chapters
    chapters/modules/index
    chapters/dictionaries/index
    chapters/classes-and-objects/index
+   chapters/html/index
 
 .. toctree::
 
@@ -41,6 +42,7 @@ Projects
    chapters/modules/project
    chapters/dictionaries/project
    chapters/classes-and-objects/project
+   chapters/html/project
 
 Assignments
 ===========
@@ -52,6 +54,7 @@ Assignments
    assignments/candidate-quiz
    assignments/coded-messages
    assignments/console-game
+   assignments/html-me-something
 
 Appendices
 ==========
