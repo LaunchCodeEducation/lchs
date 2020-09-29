@@ -119,11 +119,11 @@ The first difference involves the syntax for calling functions vs. methods.
 
    object_name.method_name(arguments)
 
-As programmers, WE call functions and send them all the data they need. If we
+As programmers, we call functions and send them all the data they need. If we
 leave out a value, our program will likely crash.
 
-On the other hand, OBJECTS run their own methods and can supply some or all of
-the required data.
+On the other hand, when we use an object to call a method, the object can
+supply some or all of the required data.
 
 Methods are Object Specific
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -1,15 +1,18 @@
 Why Use Objects?
 ================
 
+.. index:: ! procedural programming
+
 Most of the Python programs you have written so far contain statements that
-gather data, do something with it, and then display the results. You included
-functions to help streamline your code, and you called those functions as you
-needed them. This style of programming focuses on the process of working with
-data:
+gather data, do something with it, and then display the results. The statements
+follow a general top-down order, and they focus on how to carry out a certain
+job. You included functions to help streamline your code, and you called those
+functions as you needed them. This style of programming is called
+**procedural**. It focuses on the process of working with data:
 
 #. Define or import a function to do a specific job,
 #. Call that function and send it some data,
-#. Do something with the returned result.
+#. Use loops, conditionals, etc. to do something with the returned result.
 
 This style of programming works fine for small programs. However, as our
 applications get bigger, reading, debugging and updating the code gets harder.
@@ -88,7 +91,8 @@ a look at the following code:
 
 Line 1 shows a function call to ``show_weather``, and we pass it ``phone`` as
 the argument. The statement tells Python, *Run the code to give us a weather
-report, and use the data assigned to phone*.
+report, and use the data assigned to phone*. This is an example of procedural
+programming.
 
 Line 3 shows an object-oriented approach to the same job. ``phone`` is an
 object that contains code for displaying the weather. The statement tells
@@ -106,8 +110,8 @@ before using it). What we won't find in the kitchen is a device called
 For a moment, lets imagine that we *do* write a ``cook()`` function as part of
 our kitchen space. It's not a device, like the stove. Instead, its a place
 where we must add items to prepare a meal. Let's think about how we would use
-this set of code. We can picture the code block as a box waiting for some
-input:
+this set of code to do some procedural programming. We can picture the code
+block as a box waiting for some input:
 
 .. figure:: figures/cook-function.png
    :alt: Image showing and empty box labeled "cook()".
@@ -127,6 +131,8 @@ Since each device has it's own way of cooking food, the code inside ``cook()``
 must be able to handle different tools and ingredients. The function needs to
 work for an oven, a toaster, a microwave, etc. This is an inefficient way to
 code for the job of cooking.
+
+Now let's look at how we can prepare a meal using the object-oriented approach.
 
 With objects, we can assign a special block of code to each tool. The stove,
 microwave, etc. gets its own ``.cook()`` method designed to work with its
