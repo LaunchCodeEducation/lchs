@@ -24,7 +24,7 @@ Tags to Know
      - Definition
    * - Bold
      - ``<b>``
-     - When surrounding text, makes that text **bold**.
+     - Makes text inside the tags **bold**.
    * - Break
      - ``<br>``
      - A single line break.
@@ -36,54 +36,33 @@ Tags to Know
      - Defines an area of the page. Often used as a container to arrange other elements.
    * - Emphasis
      - ``<em>``
-     - When surrounding text, makes that text *italic*.
+     - Makes text inside the tags *italic*.
    * - Form
      - ``<form>``
      - Creates a form for user input.
    * - Heading, Level One
      - ``<h1>``
-     - Creates a heading in the text.
+     - Creates a heading in the text (see note below).
    * - Hyperlink
      - ``<a>``
      - Creates clickable links to other web pages.
    * - Image
      - ``<img>``
      - Adds an image and controls its appearance.
-   * - List element
-     - ``<li>``
-     - Indicates an element of a list. This tag is used for both ordered and unordered lists.
    * - Ordered List
      - ``<ol>``
      - Creates an ordered list. List items are given numbers, letters, etc. from top to bottom.
-       
-       .. list-table::
-          :widths: auto
-
-          * - .. raw:: html
-
-                 <ol>
-                   <li>First list item</li>
-                   <li>Second list item</li> 
-                   <li>Third list item</li> 
-                 </ol>
-            - .. raw:: html
-
-                 <ol type="A">
-                   <li>First list item</li>
-                   <li>Second list item</li> 
-                   <li>Third list item</li> 
-                 </ol>
-            - .. raw:: html
-
-                 <ol type="I">
-                   <li>First list item</li>
-                   <li>Second list item</li> 
-                   <li>Third list item</li> 
-                 </ol>
+       (See the examples below this table).
+   * - Unordered List
+     - ``<ul>``
+     - Creates an unordered list with bullet points for each item. (See the examples below this table).
+   * - List element
+     - ``<li>``
+     - Indicates an element of a list. This tag is used for both ordered and unordered lists.
    * - Paragraph
      - ``<p>``
      - Creates a paragraph of text.
-   * - Section
+   * - Span
      - ``<span>``
      - Makes a section within a set of text.
    * - Table
@@ -92,17 +71,56 @@ Tags to Know
    * - Thematic Break
      - ``<hr>``
      - Adds a horizontal line between elements.
-   * - Unordered List
-     - ``<ul>``
-     - Creates an unordered list with bullet points for each item.
 
-       .. raw:: html
+.. admonition:: Examples
 
-          <ul>
-            <li>First list item</li>
-            <li>Second list item</li> 
-            <li>Third list item</li> 
-          </ul>
+   The ``ol`` and ``ul`` elements create a vertical list of items. We can also
+   modify the appearance of the bullets.
+
+   .. list-table:: List Examples
+      :widths: auto
+      :header-rows: 1
+
+      * - Ordered
+        - Ordered
+        - Ordered
+        - Unordered
+        - Unordered
+      * - .. raw:: html
+
+              <ol>
+                 <li>First list item</li>
+                 <li>Second item</li> 
+                 <li>Third item</li> 
+              </ol>
+        - .. raw:: html
+
+              <ol type="A">
+                 <li>First list item</li>
+                 <li>Second item</li> 
+                 <li>Third item</li> 
+              </ol>
+        - .. raw:: html
+
+              <ol type="I">
+                 <li>First list item</li>
+                 <li>Second list item</li> 
+                 <li>Third list item</li> 
+              </ol>
+        - .. raw:: html
+
+              <ul>
+                 <li>First list item</li>
+                 <li>Second item</li> 
+                 <li>Third item</li> 
+              </ul>
+        - .. raw:: html
+
+              <ul style="list-style-type:circle">
+                 <li>First list item</li>
+                 <li>Second item</li> 
+                 <li>Third item</li> 
+              </ul>
 
 .. admonition:: Note
 
@@ -215,8 +233,8 @@ Block vs. Inline Elements
 .. index:: ! block-level, ! inline
 
 Take another look at the screenshots for the basic web pages. Notice that the
-sentence, ``NASA discovers that plants can live...`` is split over two lines in
-the editor, but it appears on the same line on the web page. However, the
+sentence, ``NASA discovers that plants can live...``, is split over two lines
+in the editor, but it appears on the same line on the web page. However, the
 heading and paragraph elements appear on separate lines.
 
 The reason behind this involves the default behavior of different HTML
@@ -269,6 +287,8 @@ breaking the paragraph into separate lines.
 
    Nest inline elements inside block-level elements, not the other way around!
 
+.. _tags-try-it:
+
 Try It!
 -------
 
@@ -302,7 +322,7 @@ change the appearance of a web page.
 
 **Next steps**:
 
-#. Change both ``<ul>`` tags to ``ol`` to make an ordered list.
+#. Change both ``<ul>`` tags to ``<ol>`` to make an ordered list.
 
    a. The ``type`` attribute sets the item labels. Add ``type="A"`` inside the
       ``<ol>`` tag. Try replacing ``"A"`` with ``"a"`` and ``"I"``.

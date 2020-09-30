@@ -27,7 +27,7 @@ this actually gives us some information:
 #. The data type (an ``object`` of type ``Dog``).
 #. A memory address, ``0x7fa1a167c4c0``, which differs between the two objects.
 
-Usually, this format is NOT what we want to see when we print an object.
+Usually, this format is not what we want to see when we print an object.
 Fortunately, Python allows us to decide what an object should look like when it
 gets printed.
 

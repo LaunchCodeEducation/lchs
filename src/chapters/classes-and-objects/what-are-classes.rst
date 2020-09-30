@@ -85,7 +85,7 @@ strings, lists, etc. ``dog`` introduced a new data type, but Python does NOT
 come with a pre-defined class for ``dog``.
 
 Just like creating our own functions, Python allows us to define our own
-*custom classes*. For the examples on the pervious page, we defined a new
+*custom classes*. For the examples on the previous page, we defined a new
 class and gave it the properties and methods it needed to describe the ``dog``
 object.
 
