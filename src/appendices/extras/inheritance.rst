@@ -9,7 +9,7 @@ and then reuse blocks of code. Classes are no different.
 
 Imagine we have two objects that are very similar but not *quite* the same. One
 example would be an electric car compared to one that runs on gasoline. Both
-are "cars", and they share a number of properties and behaviors. However, there
+are cars, and they share a number of properties and behaviors. However, there
 are definite differences between the two.
 
 We could code separate ``EVCar`` and ``GasCar`` classes, but notice how each
@@ -36,7 +36,7 @@ one repeats some of the same code:
             # Code for recharging the battery.
 
          def drive(self):
-            # Code for decreasing energy_level after moving.
+            # Code for decreasing charge_level after moving.
 
       class GasCar:
          def __init__(self, make, model, year, color, tank_size):
@@ -56,7 +56,7 @@ one repeats some of the same code:
          def drive(self):
             # Code for decreasing fuel_level after moving.
 
-.. index:: ! inheritance, ! parent class, ! child class, ! subclass
+.. index:: ! inheritance, ! parent class, ! child class
 
 **Inheritance** refers to one class taking the same properties and methods from
 a different one. In the example above, the two classes share the ``make``,
@@ -66,7 +66,7 @@ same code for the ``honk_horn`` method.
 Instead of repeating statements, we define a **parent class** to hold all of
 the shared code. Next, we add **child classes**, which will *inherit* the
 shared code. Finally, we add new properties and methods to the child classes.
-This makes them distinct from each other, but they are both *related* to the
+This makes them distinct from each other, but they are both related to the same
 parent.
 
 Let's work through an example.
@@ -109,7 +109,7 @@ The general syntax to define a child class is:
 
    class ChildClassName(ParentClassName):
 
-By placing ``ParentClassName`` inside the parentheses ``()`` we link
+By placing ``ParentClassName`` inside the parentheses ``()``, we link
 ``ChildClassName`` to all of the code the parent contains.
 
 Let's start with ``EVCar``, and for now we will only add one new method:
@@ -117,6 +117,7 @@ Let's start with ``EVCar``, and for now we will only add one new method:
 .. admonition:: Example
 
    The following program creates one ``Car`` object and one ``EVCar`` object.
+   Notice that the ``EVCar`` class does not include an ``__init__`` method.
 
    .. sourcecode:: python
       :linenos:
@@ -162,14 +163,16 @@ Let's start with ``EVCar``, and for now we will only add one new method:
          print(my_car.recharge())
       AttributeError: 'Car' object has no attribute 'recharge'
 
-#. Lines X and Y call the two classes and create the ``Car`` and ``EVCar``
-   objects.
-#. Line Z shows us that ``my_car`` and ``dream_car`` are different data types.
-#. Line Z+1 prints the make and calls the ``honk_horn`` method for the ``Car``
-   object.
-#. Line Z+2 shows us that properties were assigned to the ``EVCar`` object.
-   ``dream_car`` can also call the ``Car`` method ``honk_horn``!
-#. Lines Z+4/5 shows us that ``dream_car`` can call the ``EVCar`` method
+#. Lines 17 and 18 call the two classes and create the ``Car`` and ``EVCar``
+   objects. Note that both statements include the same number and types of
+   arguments.
+#. Line 20 shows us that ``my_car`` and ``dream_car`` are different data types.
+#. Line 21 prints the ``make`` property and calls the ``honk_horn`` method for
+   the ``Car`` object.
+#. Line 22 shows us that even without its own ``__init__`` method, properties
+   were assigned to the ``EVCar`` object. ``dream_car`` can also call the
+   ``Car`` method ``honk_horn``!
+#. Lines 24 and 25 show us that ``dream_car`` can call the ``EVCar`` method
    ``recharge``, but ``my_car`` cannot.
 
 This is what inheritance does! It allows a subclass to use the ``__init__`` and
@@ -186,8 +189,8 @@ other methods defined in the parent class.
 Similar, but Different
 ----------------------
 
-Notice that an ``EVCar`` and ``Car`` objects need to include properties that
-are NOT defined in the ``Car`` class---``battery_size``, ``charge_level``,
+Notice that ``EVCar`` and ``GasCar`` objects need to include properties that
+are NOT defined in the ``Car`` class: ``battery_size``, ``charge_level``,
 ``tank_size``, and ``fuel_level``.
 
 On the next page, we will learn how to add new properties to a child class.
