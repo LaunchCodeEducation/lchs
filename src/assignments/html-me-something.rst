@@ -174,7 +174,7 @@ Part 1 Tips
 Halfway There
 ^^^^^^^^^^^^^
 
-You finished Part 1! Copy the link to your repl.it or Trinket file and share it
+You finished Part 1. Copy the link to your repl.it or Trinket file and share it
 with your teacher.
 
 You will complete the second half of this project once you reach the end of the
@@ -267,9 +267,12 @@ Repl.it Images
 #. To display an image on your webpage, use the ``src`` attribute inside the
    ``img`` tag. The syntax is:
 
-   ``src="images/image_file_name"``
+   .. sourcecode:: html
 
-   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
+      <img src="images/image_file_name" alt="Text description...">
+
+   ``image_file_name`` must include the file extension (``.png``, ``.jpg``,
+   etc.).
 
 Trinket Images
 ^^^^^^^^^^^^^^
@@ -290,8 +293,11 @@ Trinket Images
 #. To display an image on your webpage, use the ``src`` attribute inside the
    ``img`` tag. The syntax is:
 
-   ``src="image_file_name"``
+   .. sourcecode:: html
 
-   Be sure to include the extension as well (``.png``, ``.jpg``, etc.).
+      <img src="image_file_name" alt="Text description...">
+
+   ``image_file_name`` must include the file extension (``.png``, ``.jpg``,
+   etc.).
 
 (Back to :ref:`Part 1 <html-me-part1>`)
