@@ -66,14 +66,10 @@ starting tag. The general syntax for this is:
    <tag_name class="Bootstrap style name(s)">
 
 The developers gave each class a specific name, and we can assign multiple
-class styles at the same time. For example, the code:
-
-.. sourcecode:: html
-
-   <section class="text-center border border-dark">
-
-tells the browser: *Create a section element, center the text inside that
-space, then add a border and make it dark*.
+class styles at the same time. For example, the code
+``<section class="text-center border border-dark">`` tells the browser: *Create
+a section element, center the text inside that space, then add a border and
+make it dark*.
 
 Bootstrap Documentation
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,9 +103,9 @@ The next step is to play!
 Try It!
 -------
 
-The editor below contains some plain, boring HTML. It *also* includes the link
-to the Bootstrap style rules. Explore the Bootstrap website and add class
-attributes to the HTML tags. Make the page look more interesting!
+The editor below contains some plain HTML. It *also* includes the link to the
+Bootstrap style rules. Explore the Bootstrap website and add class attributes
+to the HTML tags. Make the page look more interesting!
 
 .. admonition:: Tip
 

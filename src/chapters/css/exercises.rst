@@ -22,8 +22,9 @@ following:
 #. Change the background color of the whole page to yellow.
 #. Change the text color to green for all paragraphs, and set ``font-family``
    to ``Courier``.
-#. Change all ``h1`` elements to 48px font size and ``h2`` elements to 36px.
-   Also, underline the ``h2`` text, and overline/underline the ``h1`` text.
+#. Change all ``h1`` elements to 48px font size and underline the text.
+   (*Bonus:* Make it a wavy underline). Change all ``h2`` elements to 36px
+   font size. Also, decorate the text with both an overline and an underline.
 #. Align all text to the center of the page.
 #. Instead of aligning all of the text to the center, use a CSS class to align
    only the headings to the center of the page.

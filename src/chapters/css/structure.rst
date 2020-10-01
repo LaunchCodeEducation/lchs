@@ -3,7 +3,7 @@ CSS Syntax
 
 .. index:: ! inline style
 
-In the HTML chapter we :ref:`added attributes <attributes-example>` to some
+In the HTML chapter, we :ref:`added attributes <attributes-example>` to some
 elements to control their appearance on the webpage. This is called
 **inline styling**, because we assign different property values inside one line
 of HTML:

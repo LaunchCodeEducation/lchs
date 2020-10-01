@@ -93,8 +93,7 @@ create conflicting style rules. If an external CSS file sets a heading text to
 blue, while an internal rule sets the color to red, which one wins? To deal
 with cases like this, browsers follow a specific order when applying styles.
 
-#. Inline CSS receives the highest importance. It overrules any other styling
-   code.
+#. Inline CSS receives the highest importance. It overrules any other styling.
 #. Internal CSS comes next in importance.
 #. External CSS receives the lowest level of importance.
 

@@ -5,17 +5,17 @@ Background
 ----------
 
 As discussed in the previous chapter, HTML lays out the structure of a webpage.
-However, when programmers make pages only with HTML, the webpages look rather
-bland.
+However, when programmers make pages only with HTML, they might not be able to
+really show off their creativity and artistic flair.
 
 .. figure:: figures/bland-page.png
-   :alt: Webpage with a boring (black text on a white background) heading, paragraph, section, article, and list.
+   :alt: Webpage with plain black text on a white background. It includes a heading, paragraph, section, article, and list.
 
-   HTML by itself makes basic, boring webpages.
+   HTML by itself may not fully reflect a programmer's style.
 
 When building a website, the structure of each page is important, but so is the
-appearance of the elements. By adding attributes inside the tags, programmers
-can adjust how an element looks on the screen.
+appearance of the elements. By adding ``style`` attributes inside the tags,
+programmers can adjust how an element looks on the screen.
 
 .. figure:: figures/styled-page.png
    :alt: Webpage with a styled heading, paragraph, section, article, list, and with a background image.
