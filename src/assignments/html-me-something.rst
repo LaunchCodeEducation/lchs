@@ -101,23 +101,46 @@ Requirements
 Your mission is to build a page that:
 
 #. **Tells a story**. This can be personal or impersonal, funny, serious or
-   neither. You can do whatever you like, but it must be school appropriate.
-   Your story page should include 3-10 total paragraph elements, with those
-   split into at least 3 different sections.
-   
+   neither. You can do whatever you like, but it must be school appropriate.   
    Here are some ideas you can consider:
 
    a. Describe a trip you took.
    b. Talk about one of your hobbies or passions.
    c. Provide an alternate ending or plot twist to a book you read. (For
-      example: *Mockingjay*, Prim's fate, go...)
+      example, now's your chance to change Prim's fate in *Mockingjay*).
 
    .. admonition:: Tip
    
       Check out this `example page <http://education.launchcode.org/html-me-something/submissions/chrisbay/index-nocss.html>`__
       created by a member of LaunchCode.
 
-#. Uses each of the following semantic HTML5 tags: ``<p>``, ``<header>``,
+#. Includes 3-10 total paragraph elements. The page should also contain at
+   least 4 different sections.
+
+   .. admonition:: Example
+
+      A section is a set of HTML elements nested inside block-level tags like
+      ``<section>, <article>, <header>, <footer>``, etc. Sections allow you to
+      divide your webpage into distinct regions.
+
+      The code below shows two sections (lines 1 - 9 and lines 5 - 8).
+
+      .. sourcecode:: HTML
+         :linenos:
+
+         <article>
+            <h2>Heading...</h2>
+            <p>Content...</p>
+            <p>Content...</p>
+            <figure>
+               <img src="..." alt="...">
+               <figcaption>Text...</figcaption>
+            </figure>
+         </article>
+      
+      Creating sections now will help you style your webpage in Part 2.
+
+#. Uses each of the following semantic tags: ``<p>``, ``<header>``, ``<h1>``,
    ``<footer>``, ``<main>``, ``<article>``. If you need to review any of
    these tags, check out the `HTML tag reference <http://www.w3schools.com/tags/default.asp>`__
    at W3Schools.
@@ -128,7 +151,7 @@ Your mission is to build a page that:
    :ref:`Uploading Images <upload-images>` below).
 #. Uses at least one :ref:`HTML entity <html-entities>`. *Hint*: Putting a
    copyright notice in your footer will take care of this, but feel free to use
-   your imagination!
+   your imagination (and emojis).
 #. Demonstrates creativity. Don’t stop with the required items or tags. Add
    some extra ideas to your page to make it great.
 
@@ -148,8 +171,8 @@ Part 1 Tips
    you enough background to get started, but you are more than ready to do
    some learning on your own.
 
-Halfway There!
-^^^^^^^^^^^^^^
+Halfway There
+^^^^^^^^^^^^^
 
 You finished Part 1! Copy the link to your repl.it or Trinket file and share it
 with your teacher.
@@ -172,7 +195,7 @@ When you first created this project, you added a ``style.css`` file. Click on
 its name to open it in the editor. Right now, it should be empty. Most of your
 code for Part 2 will go inside ``style.css``.
 
-Now start adding some CSS rules!
+Now start adding some CSS rules.
 
 Requirements
 ^^^^^^^^^^^^
@@ -207,13 +230,14 @@ Part 2 Tips
    to see how we did things. Right-click anywhere on the page and select
    *View Page Source*. In the tab that opens, click on the ``style.css`` link
    on line 8.
-#. Check out the `W3Schools CSS Reference <http://www.w3schools.com/css/default.asp>`__.
+#. To explore more styling properties, check out the
+   `W3Schools CSS Reference <http://www.w3schools.com/css/default.asp>`__.
 
 Done!
 -----
 
-You completed assignment 4! Take a moment to gaze with pride at your webpage.
-Feel free to show it off a little.
+Take a moment to gaze with pride at your webpage. Feel free to show it off a
+little.
 
 Follow your teacher's instructions for how to turn in your finished project.
 
@@ -227,8 +251,7 @@ Uploading Images
 ----------------
 
 The repl.it and Trinket platforms both allow you to add images to your HTML
-projects. While the processes are similar, they are not identical. Be sure you
-follow the correct guide!
+projects. While the processes are similar, they are not identical.
 
 Repl.it Images
 ^^^^^^^^^^^^^^
