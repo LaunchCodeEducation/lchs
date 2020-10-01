@@ -138,8 +138,8 @@ Let's start with ``EVCar``, and for now we will only add one new method:
             return "Fully charged!"
 
       def main():
-         my_car = Car('Ford', 'Focus', 2014, 'white')
-         dream_car = EVCar('Tesla', 'Model S', 2020, 'Blue')
+         my_car = Car('Saturn', 'SW-1', 1999, 'green')
+         dream_car = EVCar('Tesla', 'Model S', 2020, 'blue')
 
          print(type(my_car), type(dream_car))
          print(my_car.make, my_car.honk_horn())
@@ -156,7 +156,7 @@ Let's start with ``EVCar``, and for now we will only add one new method:
    ::
 
       <class '__main__.Car'> <class '__main__.EVCar'>
-      Ford Beep!
+      Saturn Beep!
       Tesla Beep!
       Fully charged!
       File "main.py", line 25, in main
@@ -180,11 +180,23 @@ other methods defined in the parent class.
 
 .. admonition:: Try It!
 
-   Add the ``GasCar`` child class to the program.
+   In the editor below:
+   
+   #. Add the ``GasCar`` child class to the program. It should inherit from the
+      ``Car`` parent class.
+   #. Add a simple ``refuel`` method that returns the string ``'Tank full'``.
+   #. In ``main()``, test your new class:
+   
+      a. Create a ``GasCar`` object and print its data type.
+      b. Print one or more of its properties, and call the ``honk_horn``
+         method.
+      c. Call the ``refuel`` method and print the returned string.
+      d. Verify that the ``my_car`` and ``dream_car`` objects cannot call the
+         ``refuel()`` method.
 
-   .. todo:: Insert interactive editor here (Inheritance, part 1).
+   .. raw:: html
 
-   Lorem ipsum...
+      <iframe src="https://trinket.io/embed/python/d77c290132" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Similar, but Different
 ----------------------
