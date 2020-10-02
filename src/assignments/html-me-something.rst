@@ -178,9 +178,7 @@ You finished Part 1. Copy the link to your repl.it or Trinket file and share it
 with your teacher.
 
 You will complete the second half of this project once you reach the end of the
-CSS chapter.
-
-.. todo:: Add internal link to the CSS chapter here.
+:ref:`CSS chapter <css-index>`.
 
 .. _html-me-part2:
 
@@ -204,14 +202,12 @@ Requirements
    off the items from this requirements list.
 #. Use at least one of each of the following selectors:
 
-   a. `element <http://www.w3schools.com/cssref/sel_element.asp>`__,
-   b. `class <http://www.w3schools.com/cssref/sel_class.asp>`__,
-   c. `id <http://www.w3schools.com/cssref/sel_id.asp>`__.
+   a. :ref:`element <element-selector>`,
+   b. :ref:`class <class-selector>`,
+   c. :ref:`id <id-selector>`.
 
    Remember, ``class`` and ``id`` selectors require you to add attributes
    inside a starting tag.
-
-   .. todo:: Replace external links with internal LCHS chapter links (CSS selectors).
 
 #. Avoid adding HTML elements in order to achieve a specific visual effect. Do
    ALL of your styling with CSS.
