@@ -4,9 +4,9 @@ Copying Objects
 ===============
 
 With both :ref:`lists <cloning-lists>` and :ref:`dictionaries <dictionary-copy-example>`,
-we see that using an assignment statement like ``list_b = list_a`` does NOT
-make a separate copy of the data. Instead, we just create a new label
-(``list_b``) that points to the same memory location.
+using an assignment statement like ``list_b = list_a`` does NOT make a separate
+copy of the data. Instead, the statement just creates a new label (``list_b``)
+that points to the same memory location.
 
 To make an independent clone of a list or dictionary, we use the ``.copy()``
 method. Lists and dictionaries are both object types, and the class for each
@@ -45,6 +45,7 @@ object.
 
          student_2.id = 7890  # Reassign the id value using student_2.
 
+         # Print out the property values for student_1 and student_2.
          print("student_1 =", vars(student_1))
          print("student_2 =", vars(student_2))
 
@@ -59,20 +60,22 @@ object.
       student_1 = {'name': 'Maria', 'id': 7890, 'scores': [88, 95, 93]}
       student_2 = {'name': 'Maria', 'id': 7890, 'scores': [88, 95, 93]}
 
-      File "main.py", line 19, in main
+      File "main.py", line 20, in main
          student_3 = student_1.copy()
       AttributeError: 'Student' object has no attribute 'copy'
 
-   The change we make to the ``id`` property on line 14 shows up when print the
-   values using both ``student_1`` and ``student_2``. They are the same object,
-   so changes made with one label show up when we use the other. 
+   The change we make to the ``id`` property on line 14 shows up when print
+   both ``student_1`` and ``student_2``. They are the same object, so changes
+   made with one label show up when we use the other. 
 
-   Note that line 19 throws an error. While list and dictionary objects both
+   Note that line 20 throws an error. While list and dictionary objects both
    have defined ``.copy()`` methods, our ``Student`` object type does not.
 
 Fortunately, we do not need to add a method to our ``Student`` class to copy
 the objects. Python comes with a module, called ``copy``, that contains the
 functions we need.
+
+.. _copy-deepcopy-try-it:
 
 .. admonition:: Try It!
 
@@ -110,13 +113,13 @@ Deep Copy
 .. index:: ! shallow copy
 
 A **shallow copy** of an object creates a new, independent object. However,
-some of the values in the new and old objects might still be linked. We can
-see this in the following example.
+some of the data in the new and old objects might still be linked. We can see
+this in the following example.
 
 .. admonition:: Example
 
-   In the previous section, we created the ``student_1`` object from the
-   ``Student`` class and cloned it with ``student_2 = copy(student_1)``.
+   Once again, we create the ``student_1`` object from the ``Student`` class
+   and clone it with ``student_2 = copy(student_1)``.
 
    Let's see what happens when we try changing one value in the list assigned
    to the ``scores`` property.
@@ -152,11 +155,11 @@ NOT change the ``id`` for ``student_1``. However, changing the first value in th
 ``student_1`` and ``student_2`` are different objects, they are not quite
 independent of each other yet.
 
-The reason for this involves how the ``scores`` property relates to the list
-value. In line 12, the value assigned to ``scores`` isn't ``[88, 75, 93]``.
-Instead ``scores`` is assigned a *reference to a memory location*. The actual
-list is stored at that memory location. The value assigned to ``scores`` just
-points to it.
+The reason for this involves how the ``scores`` property relates to the list.
+When line 12 calls the class and ``__init__`` runs, the value assigned to
+``scores`` isn't ``[88, 75, 93]``. Instead ``scores`` is assigned a *reference
+to a memory location*. The actual list is stored at that memory location. The
+value assigned to ``scores`` just points to it.
 
 When we make the shallow copy in line 13, ``student_2`` assigns the same
 memory reference to ``scores``. Even though the two objects are different, both
@@ -185,9 +188,10 @@ The syntax for making a deep copy is very similar to using ``copy()``:
 
 .. admonition:: Try It!
 
-   In the editor above:
+   In the :ref:`editor above <copy-deepcopy-try-it>`:
    
-   #. Replace line 1 with ``from copy import copy, deepcopy``
-   #. Replace line 14 with ``student_2 = deepcopy(student_1)``
+   #. Replace line 1 with ``from copy import copy, deepcopy``.
+   #. Replace line 14 with ``student_2 = deepcopy(student_1)``.
+   #. Add ``student_2.scores[0] = 100`` before the final ``print`` statements.
    #. Rerun the program to verify that changing the ``scores`` values for
-      ``student_2`` no longer affects the ``scores`` for ``student_1``.
+      ``student_2`` no longer affects ``scores`` for ``student_1``.
