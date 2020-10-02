@@ -20,6 +20,7 @@ Chapters
    chapters/dictionaries/index
    chapters/classes-and-objects/index
    chapters/html/index
+   chapters/css/index
 
 .. toctree::
 
@@ -43,6 +44,7 @@ Projects
    chapters/dictionaries/project
    chapters/classes-and-objects/project
    chapters/html/project
+   chapters/css/project
 
 Assignments
 ===========
