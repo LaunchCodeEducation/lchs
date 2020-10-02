@@ -43,7 +43,7 @@ object.
          student_1 = Student("Maria", 1234, [88, 95, 93])
          student_2 = student_1
 
-         student_2.id = 7890
+         student_2.id = 7890  # Reassign the id value using student_2.
 
          print("student_1 =", vars(student_1))
          print("student_2 =", vars(student_2))
@@ -79,7 +79,7 @@ functions we need.
    In the editor below, note that we import one function from the ``copy``
    module. Not surprisingly, it's called ``copy``.
 
-   To make an independent copy of an object, the general syntax is:
+   The general syntax is:
 
    .. sourcecode:: Python
 
@@ -107,6 +107,87 @@ means in the next section.
 Deep Copy
 ---------
 
-.. index:: ! shallow copy, ! deep copy
+.. index:: ! shallow copy
 
+A **shallow copy** of an object creates a new, independent object. However,
+some of the values in the new and old objects might still be linked. We can
+see this in the following example.
 
+.. admonition:: Example
+
+   In the previous section, we created the ``student_1`` object from the
+   ``Student`` class and cloned it with ``student_2 = copy(student_1)``.
+
+   Let's see what happens when we try changing one value in the list assigned
+   to the ``scores`` property.
+
+   .. sourcecode:: python
+      :lineno-start: 11
+
+      def main():
+         student_1 = Student("Maria", 1234, [88, 75, 93])
+         student_2 = copy(student_1)    # Make a shallow copy of student_1.
+
+         # Reassign the id value in student_2:
+         student_2.id = 7890
+
+         # Reassign the first value in the student_2 scores list:
+         student_2.scores[0] = 100
+
+         print("student_1 =", vars(student_1))
+         print("student_2 =", vars(student_2))
+
+      main()
+
+   **Console Output**
+
+   ::
+
+      student_1 = {'name': 'Maria', 'id': 1234, 'scores': [100, 75, 93]}
+      student_2 = {'name': 'Maria', 'id': 7890, 'scores': [100, 75, 93]}
+
+Hmmm. The output shows us that changing the ``id`` value for ``student_2`` does
+NOT change the ``id`` for ``student_1``. However, changing the first value in the
+``scores`` list for ``student_2`` affects BOTH objects. Even though
+``student_1`` and ``student_2`` are different objects, they are not quite
+independent of each other yet.
+
+The reason for this involves how the ``scores`` property relates to the list
+value. In line 12, the value assigned to ``scores`` isn't ``[88, 75, 93]``.
+Instead ``scores`` is assigned a *reference to a memory location*. The actual
+list is stored at that memory location. The value assigned to ``scores`` just
+points to it.
+
+When we make the shallow copy in line 13, ``student_2`` assigns the same
+memory reference to ``scores``. Even though the two objects are different, both
+``scores`` properties point to the same data in memory. This is why changing
+``[88, 75, 93]`` to ``[100, 75, 93]`` for ``student_2`` also affects
+``student_1``.
+
+Think of each ``Student`` object as having two layers inside of it. The first
+layer includes references to memory locations. The second layer is the actual
+data stored. A shallow copy only goes one layer deep. It duplicates the memory
+references, but it does not create new sets of the original data.
+
+.. index:: ! deep copy
+
+To make a full, independent clone of an object, we must make a **deep copy**.
+A deep copy takes the original data and creates clones of that data in new
+memory locations. The cloned object uses these new locations as its property
+values.
+
+The syntax for making a deep copy is very similar to using ``copy()``:
+
+.. sourcecode:: Python
+
+   from copy import deepcopy
+   new_object = deepcopy(old_object)
+
+.. admonition:: Try It!
+
+   In the editor above:
+   
+   #. Replace line 1 with ``from copy import copy, deepcopy``
+   #. Replace line 14 with ``student_2 = deepcopy(student_1)``
+   #. Rerun the program to verify that changing the ``scores`` values for
+      ``student_2`` no longer affects the ``scores`` for ``student_1``.
