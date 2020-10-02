@@ -160,6 +160,8 @@ getting pushed off of the first page of results.
    #. `What is SEO <https://www.webfx.com/internet-marketing/how-SEO-works.html>`__
    #. `SEO Made Simple <https://neilpatel.com/what-is-seo/>`__
 
+.. _semantic-tag-list:
+
 A ``<div>`` by Another Name
 ---------------------------
 
