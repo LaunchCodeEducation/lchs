@@ -20,6 +20,7 @@ Chapters
    chapters/classes-and-objects/index
    chapters/html/index
    chapters/css/index
+   chapters/local-dev/index
 
 .. toctree::
 
@@ -44,6 +45,7 @@ Projects
    chapters/classes-and-objects/project
    chapters/html/project
    chapters/css/project
+   chapters/local-dev/project
 
 Assignments
 ===========
