@@ -68,6 +68,7 @@ Appendices
 
    appendices/about-this-book
    appendices/classrooms/index
+   appendices/software-installation/index
    appendices/dictionary-methods/index
    appendices/list-methods/index
    appendices/string-methods/index

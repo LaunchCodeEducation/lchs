@@ -6,6 +6,7 @@ Terminal & Local Development
 .. toctree::
    :maxdepth: 3
 
+   before-starting
    introduction
    filesystem-and-paths
    basic-commands

@@ -11,11 +11,9 @@ programs, and moving or deleting files are all done by selecting menu items or
 clicking icons on the screen.
 
 .. figure:: figures/GUI-example.png
-   :alt: Sample graphic user interface.
+   :alt: Three examples of graphical user interfaces (file tree, desktop, smartphone).
 
-   A GUI with file icons and columns representing folder structure.
-
-.. todo:: Update GUI figure to include a desktop view and phone home screen.
+   Three examples of graphical user interfaces: a folder structure box, a desktop, a smartphone home screen.
 
 Programmers often use another kind of interface, called the **command line**. A 
 **CLI**, or command line interface, uses text to give the computer instructions
@@ -23,11 +21,14 @@ instead of dragging and dropping icons.
 
 .. figure:: figures/CLI-example.png
    :alt: Sample command line interface.
+   :width: 80%
 
-   A CLI with commands navigating the same file paths as the GUI above.
+   A CLI showing commands for navigating a file tree.
 
-The application responsible for running a CLI is called a **terminal**, and the 
-program interpreting the commands is called the **shell**.
+.. index:: ! terminal, ! shell
+
+The application responsible for running a CLI is called a **terminal**. The 
+program that interprets the commands is called the **shell**.
 
 .. admonition:: Note
 
@@ -37,24 +38,51 @@ program interpreting the commands is called the **shell**.
 Why Use the Terminal?
 ---------------------
 
-Both of the images above represent the same file structure. While the GUI may now 
-appear more user-friendly, as you grow more familiar with the commands available,
-you'll find there can be advantages to using the terminal. 
+Both GUIs and CLIs allow us to access and modify files on our device. Most of
+us are familiar with GUIs, and they are very user-friendly. However, using a
+CLI makes some tasks easier or more efficient. We need to be familiar with both
+types of interfaces.
 
-In the terminal, you will be able to:
+In the terminal, we will be able to:
 
-- quickly move throughout your computer's file structure 
-- make new files and directories 
-- remove items from folders 
-- install software
-- open programs 
-- run programs directly
+- Quickly move through our computer's file structure.
+- Make new files and folders.
+- Move or delete files and folders.
+- Install software.
+- Open applications.
+- Run the programs we code.
 
-Setup the Terminal
-------------------
+Launch the Terminal
+-------------------
 
-Follow these instructions for setting up your terminal.
-You'll need it for this chapter's exercises and you can explore inside it while 
-you read along with the text.
+As you read the next few sections, it helps to have the terminal open. That way,
+you can work through the examples and get used to the CLI. Follow the
+instructions below to launch the application.
 
-.. todo:: Add internal link to Terminal setup instructions.
+While we cannot predict the setup on your personal device, these guides should
+point you in the right direction.
+
+Mac Users
+^^^^^^^^^
+
+#. In the Finder, navigate to the Applications folder. You can find the icon
+   when you open the computer window. The folder may also appear as an icon in
+   the dock.
+
+   .. todo:: Add screenshot for finding the Applications folder (Mac).
+
+#. Inside the Applications folder, you will find a *Utilities* folder.
+#. Open the *Utilities* folder to find the Terminal application!
+
+Another way to locate the Terminal application is to do a simple search in the
+Finder for it.
+
+Windows Users
+^^^^^^^^^^^^^
+
+Lorem ipsum...
+
+Chromebook Users
+^^^^^^^^^^^^^^^^
+
+Lorem ipsum...
