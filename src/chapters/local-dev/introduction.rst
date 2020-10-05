@@ -4,6 +4,8 @@ What is a Terminal?
 GUIs and CLIs
 -------------
 
+.. index:: ! graphical user interface, ! GUI
+
 Most of the time when we use our computers and smartphones, we do so through a 
 **graphical user interface**, or **GUI** for short. A GUI is a system designed
 to use icons and visual tools to manage tasks. Creating a new folder, running
@@ -13,7 +15,9 @@ clicking icons on the screen.
 .. figure:: figures/GUI-example.png
    :alt: Three examples of graphical user interfaces (file tree, desktop, smartphone).
 
-   Three examples of graphical user interfaces: a folder structure box, a desktop, a smartphone home screen.
+   Three examples of graphical user interfaces: a folder navigation box, a desktop, and a smartphone home screen.
+
+.. index:: ! command line interface, ! CLI
 
 Programmers often use another kind of interface, called the **command line**. A 
 **CLI**, or command line interface, uses text to give the computer instructions
@@ -65,24 +69,45 @@ point you in the right direction.
 Mac Users
 ^^^^^^^^^
 
-#. In the Finder, navigate to the Applications folder. You can find the icon
-   when you open the computer window. The folder may also appear as an icon in
+#. In the Finder, navigate to the *Applications* folder. Find the icon by
+   opening the window for your hard drive. The folder icon may also appear in
    the dock.
 
    .. todo:: Add screenshot for finding the Applications folder (Mac).
 
-#. Inside the Applications folder, you will find a *Utilities* folder.
+#. Inside the Applications folder, find the *Utilities* folder.
 #. Open the *Utilities* folder to find the Terminal application!
 
 Another way to locate the Terminal application is to do a simple search in the
 Finder for it.
 
+.. admonition:: Tip
+
+   Once you locate the Terminal application, you can add it to the dock! Just
+   drag and drop the icon to the dock. This lets you quickly launch the program
+   the next time you need it.
+
 Windows Users
 ^^^^^^^^^^^^^
 
-Lorem ipsum...
+#. Click on the *Start* menu by clicking on the Windows icon found in the lower
+   left corner of the screen.
+#. From the list of items that pops up, select *Git Bash* to open the CLI.
+#. If the list is long, try typing “Git Bash” into Start menu search bar. This
+   narrows down the options displayed.
+
+.. admonition:: Tip
+
+   To put an icon for the CLI on your desktop, right-click on the *Git Bash*
+   name in the start menu. Select the *Add Shortcut To Desktop* option.
 
 Chromebook Users
 ^^^^^^^^^^^^^^^^
 
 Lorem ipsum...
+
+More options/programs from toolbar...
+
+Open *Linux* subfolder...
+
+Select Terminal...
