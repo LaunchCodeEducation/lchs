@@ -25,31 +25,48 @@ else on the machine. This is called the **root directory**. In most cases, the
 root directory refers to the primary hard drive. For Windows, that's the
 ``C drive``. On a Mac, we refer to the root directory with ``/``.
 
-A **path** for files and folders is the list of directories that the computer
-must follow to find that particular item. This begins with the root directory
-and ends with the name of the required item.
-
 .. index:: ! path
    single: path; absolute
    single: path; relative
 
-Filesystems have two different types of paths: absolute and relative.
-The **absolute path** is the path to a file from the root directory.
-The **relative path** is the path to a file from the current directory. When working with a relative path, you may find yourself wanting to go up into a parent directory to find a file in a different sub, or child, directory.
-In order to do so, you can use ``..`` in the file path to tell the computer to go up to the parent directory.
+A **path** for files and folders is the list of directories that the computer
+must follow to find a particular item. This begins with the root directory and
+ends with the name of the required item. Think of a path as a set of directions
+to get from point A to point B.
+
+.. todo:: Insert screenshot of the path seen in a terminal window.
+
+Filesystems use two different types of paths: *absolute* and *relative*.
+The **absolute path** starts at the root directory and ends with the file name.
+The **relative path** starts at the current directory and ends with the file
+name.
 
 .. admonition:: Example
 
-   We have a file inside our ``LC101_Homework`` directory from the above example.
-   We named that file ``homework.js``.
-   The absolute path for ``homework.js`` is ``/Users/LaunchCodeStudent/Desktop/LC101_Homework`` for Mac users and ``C:\windows\Desktop\LC101_Homework`` for Windows users.
-   If the current directory is ``Desktop``, then the relative path for ``homework.js`` is ``/LC101_Homework`` for Mac users and ``\LC101_Homework`` for Windows users.
+   Let's assume we have a file inside the ``LCHS_Homework`` directory called
+   ``hello.py``. The absolute path would look something like this:
 
-   Say ``homework.js`` is in a different directory called ``CoderGirl_Homework``. ``CoderGirl_Homework`` is inside 
-   the ``Desktop`` directory. Your current directory is ``LC101_Homework``. In this scenario, we would use the 
-   ``..`` syntax in our relative path. The relative path would then be ``/../CoderGirl_Homework`` for Mac users 
-   and ``\..\CoderGirl_Homework`` for Windows users.
+   ::
+
+      Mac:
+      /Users/StudentName/Desktop/LCHS_Homework/hello.py
+
+      Windows:
+      C:\windows\Desktop\LCHS_Homework\hello.py
+
+   If we are currently in the ``Desktop`` directory, then the relative path for
+   ``hello.py`` is:
+
+   ::
+
+      Mac:
+      /LCHS_Homework/hello.py
+
+      Windows:
+      \LCHS_Homework\hello.py
 
 Many programmers use paths to navigate through the filesystem in the terminal.
-We will discuss the commands to do so in the next section.
+We will practice this in the next section.
 
+As we work with the CLI more, paying attention to correct file paths becomes
+very important!
