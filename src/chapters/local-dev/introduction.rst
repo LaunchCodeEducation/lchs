@@ -56,6 +56,8 @@ In the terminal, we will be able to:
 - Open applications.
 - Run the programs we code.
 
+.. _launch-terminal:
+
 Launch the Terminal
 -------------------
 
@@ -73,24 +75,31 @@ Mac Users
    opening the window for your hard drive. The folder icon may also appear in
    the dock.
 
-   .. todo:: Add screenshot for finding the Applications folder (Mac).
+   .. figure:: figures/applications-folder.png
+      :alt: The application folder can be found in the dock or by double-clicking the hard drive icon.
+      :width: 80%
 
-#. Inside the Applications folder, find the *Utilities* folder.
+      Double-click the hard drive icon to find the Applications folder, or check the dock.
+
+#. Inside the *Applications* folder, find the *Utilities* folder.
 #. Open the *Utilities* folder to find the Terminal application!
-
-Another way to locate the Terminal application is to do a simple search in the
-Finder for it.
+#. Another way to locate the application is to run a search in the Finder for
+   "Terminal".
 
 .. admonition:: Tip
 
    Once you locate the Terminal application, you can add it to the dock! Just
-   drag and drop the icon to the dock. This lets you quickly launch the program
-   the next time you need it.
+   drag and drop the icon into the dock. This lets you quickly launch the
+   program the next time you need it.
 
 Windows Users
 ^^^^^^^^^^^^^
 
-#. Click on the *Start* menu by clicking on the Windows icon found in the lower
+.. index:: ! Git Bash
+
+The terminal application we will use in this course is called **Git Bash**.
+
+#. Open the *Start* menu by clicking on the Windows icon found in the lower
    left corner of the screen.
 #. From the list of items that pops up, select *Git Bash* to open the CLI.
 #. If the list is long, try typing “Git Bash” into Start menu search bar. This
@@ -99,7 +108,8 @@ Windows Users
 .. admonition:: Tip
 
    To put an icon for the CLI on your desktop, right-click on the *Git Bash*
-   name in the start menu. Select the *Add Shortcut To Desktop* option.
+   name in the start menu. Select the *Add Shortcut To Desktop* option. Another
+   option pins GitBash to the taskbar.
 
 Chromebook Users
 ^^^^^^^^^^^^^^^^

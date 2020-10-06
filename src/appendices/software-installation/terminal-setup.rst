@@ -3,67 +3,105 @@
 Setting Up Your Terminal
 ========================
 
-The command line is a vital tool to learn for any programmer. Over the course of this program and your career, you will find yourself navigating to it frequently.
+.. admonition:: Warning
 
-.. note::
+   Are you here too early? The content on this page fits with chapters 16 and
+   higher. If you have not made it to the :ref:`Terminal chapter <terminal-local-dev>`
+   yet, you should probably wait a bit before using this page.
 
-   Once you have your terminal setup on your machine, make sure to pin it to the taskbar or add it to your dock!
+   If you are a student using a school-issued device, then the CLI software is
+   probably already on your machine. Check with your teacher before installing
+   anything!
+
+.. index:: command line interface, CLI
+
+The *command line interface* (CLI) is a vital tool to learn for any programmer.
+This page provides installation instructions for Mac, Windows, and Chromebooks.
+
+Once you have the CLI up an running on your machine, return to the
+:ref:`Terminal chapter <terminal-local-dev>` to practice how to use it.
 
 Mac Users
 ---------
 
-Good news! The Terminal application comes with every Mac.
-
-You can access it one of two ways:
-
-Through the Finder
-^^^^^^^^^^^^^^^^^^
-
-1. Open a new Finder window and navigate to the Applications folder.
-2. Inside the Applications folder, you will find inside a Utilities folder.
-3. Open the Utilities folder and inside is the Terminal application!
-
-Through LaunchPad
-^^^^^^^^^^^^^^^^^
-
-1. If you are a fan of the LaunchPad features on Apple computers, hit the F4 key.
-2. Inside the Other or Utilities folder, you can find the Terminal.
-
-If you are still struggling to find the Terminal application, you can do a simple search in the Finder for it!
-
-.. _terminal-setupinstructions-sudo:
-
-.. index:: ! sudo
-
-``sudo`` Commands
-^^^^^^^^^^^^^^^^^
-
-Some terminal commands require the addition of **sudo** at the front of the command. This name
-gives the user *super user* rights. ``sudo`` is often required when installing software from the terminal.
-
-.. sourcecode:: Bash
-
-   $ sudo install mocha
-   Password:
-   
-The Terminal will ask you for your machine's password. 
-
-.. tip::
-   
-   When typing, don't be alarmed if you don't see your keystrokes while typing 
-   your password. Your machine is still receiving this information.
-      
-Press *enter* when you are finished. If you're attempting to run a command from the terminal and receive a permissions error, 
-check if adding ``sudo`` to your command will resolve the error.
+Good news! The CLI application is called *Terminal*, and it comes with every
+Mac. Return to the :ref:`Launch the Terminal <launch-terminal>` section to see
+where to find the application.
 
 Windows Users
 -------------
 
-1. In order to get your CLI up and running, you have to first install `Git Bash <https://git-scm.com/downloads/>`_.
+#. Download the `Git for Windows <https://gitforwindows.org/>`__ installer.
+#. After the installer has fully downloaded, run it. You will then move through
+   several screens of options.
 
-   .. note::
+   a. On the first screen, select *Additional icons --> On the Desktop*.
 
-      When you are doing your Git Bash setup, you only need to leave the default selected.
+      .. figure:: figures/git-bash-install-1.png
+         :alt: Check the boxes labeled Additional icons and On the Desktop.
 
-2. Once Git Bash is installed on your machine, you can find the folder for it through the Home screen.
-3. Inside the folder, simply select Git Bash to open the appropriate CLI.
+   b. On all of the other screens, just use the pre-selected choices.
+
+#. Return to the :ref:`Launch the Terminal <launch-terminal>` section to see
+   where to find the application. It is called *Git Bash*.
+
+Chromebook Users
+----------------
+
+Before installing the terminal application, you should first update your device
+to the latest operating system.
+
+Update ChromeOS
+^^^^^^^^^^^^^^^
+
+#. Click on the clock area in the lower right-hand corner of the desktop. Open
+   the *Settings* panel by clicking on the gear icon.
+
+   .. figure:: figures/c-book-settings.png
+      :alt: Access the settings by clicking in the lower right corner of the desktop.
+      :width: 50%
+
+#. From the menu options shown on the left of the panel, select *About Chrome
+   OS*.
+
+   .. figure:: figures/about-chromeOS.png
+      :alt: Select About Chrome OS from the list of options.
+
+#. Click the *Check for Updates* button and then wait for the device to finish
+   any installations.
+
+   .. admonition:: Note
+   
+      Fully updating the operating system might require several checks. Repeat
+      steps 2 and 3 until you receive the ``Your Chromebook is up to date``
+      message.
+
+OK. Now you're ready to install the CLI software.
+
+Activate Linux Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Open the *Settings* panel again.
+#. From the menu options shown on the left of the panel, click *Linux (Beta)*.
+
+   .. figure:: figures/linux-beta.png
+      :alt: Select Linux (Beta) from the list of options.
+
+#. If Linux is not yet active on the Chromebook, you will see a *Turn On*
+   button. If the button is absent, Linux is already active.
+
+   .. figure:: figures/activate-linux.png
+      :alt: Click the Turn On button to activate Linux on your Chromebook.
+
+#. Click the *Turn On* button and follow the steps on the screen. The setup may
+   take 10 minutes (or more) to finish.
+#. When done, a terminal window opens automatically.
+
+Return to the :ref:`Launch the Terminal <launch-terminal>` section to see where
+to find the application again after you close it.
+
+.. admonition:: Note
+
+   Chromebooks are designed to use applications stored in the cloud. Installing
+   and running apps directly on your Chromebook will likely slow down its
+   performance.

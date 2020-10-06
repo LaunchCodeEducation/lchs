@@ -34,7 +34,7 @@ must follow to find a particular item. This begins with the root directory and
 ends with the name of the required item. Think of a path as a set of directions
 to get from point A to point B.
 
-.. todo:: Insert screenshot of the path seen in a terminal window.
+.. todo:: Insert screenshot of a file tree with the path in text.
 
 Filesystems use two different types of paths: *absolute* and *relative*.
 The **absolute path** starts at the root directory and ends with the file name.

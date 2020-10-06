@@ -1,4 +1,4 @@
-.. _terminal-chapter:
+.. _terminal-local-dev:
 
 Terminal & Local Development
 ============================
