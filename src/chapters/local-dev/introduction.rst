@@ -102,8 +102,8 @@ The terminal application we will use in this course is called **Git Bash**.
 #. Open the *Start* menu by clicking on the Windows icon found in the lower
    left corner of the screen.
 #. From the list of items that pops up, select *Git Bash* to open the CLI.
-#. If the list is long, try typing “Git Bash” into Start menu search bar. This
-   narrows down the options displayed.
+#. If the list is long, try typing “Git Bash” into the Start menu search bar.
+   This narrows down the options displayed.
 
 .. admonition:: Tip
 
@@ -114,10 +114,18 @@ The terminal application we will use in this course is called **Git Bash**.
 Chromebook Users
 ^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+.. admonition:: Note
 
-More options/programs from toolbar...
+   If you use a virtual desktop for this class, login to that service. Follow
+   the instructions for Mac or Windows, depending on the OS used for the
+   desktop.
 
-Open *Linux* subfolder...
+#. Expand the dock at the bottom of your Chromebook desktop.
+#. Find *Terminal* in the list of icons that appears. The application is
+   probably inside the *Linux apps* subfolder. It's icon shows the ``>_``
+   symbols.
 
-Select Terminal...
+   .. figure:: figures/linux-apps-subfolder.png
+      :alt: Find the terminal app inside the Linux subfolder.
+
+#. Click on the icon to launch the program.
