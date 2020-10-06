@@ -9,6 +9,7 @@ Terminal & Local Development
    before-starting
    introduction
    filesystem-and-paths
+   terminal-nav
    basic-commands
    running-programs
    vscode-intro

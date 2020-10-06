@@ -45,11 +45,11 @@ to get from point A to point B.
             device_name:directory_name username$
 
          Windows
-            username: path$
+            username@device_name MINGW64 path$
 
       ``device_name`` is the name for your machine, like ``MyLaptop``.
       ``directory_name`` and ``path`` show your current location in the file
-      system. ``username`` is you.
+      system. ``username`` is you. ``MINGW64`` you can ignore.
    
       The symbol that appears after your username can vary (``$``, ``%``,
       ``>``, etc.), but it indicates where to type commands.
@@ -97,3 +97,10 @@ We will practice this in the next section.
 
 As we work with the CLI more, paying attention to correct file paths becomes
 very important!
+
+Picture This
+------------
+
+Lorem ipsum...
+
+.. todo:: Add an image comparing a path to a visual file tree.
