@@ -34,7 +34,34 @@ must follow to find a particular item. This begins with the root directory and
 ends with the name of the required item. Think of a path as a set of directions
 to get from point A to point B.
 
-.. todo:: Insert screenshot of a file tree with the path in text.
+.. admonition:: Try It!
+
+   #. Open the terminal on your device. The window won't show much, but the
+      last line of text will include a prompt similar to:
+
+      .. sourcecode:: bash
+
+         Mac
+            device_name:directory_name username$
+
+         Windows
+            username: path$
+
+      ``device_name`` is the name for your machine, like ``MyLaptop``.
+      ``directory_name`` and ``path`` show your current location in the file
+      system. ``username`` is you.
+   
+      The symbol that appears after your username can vary (``$``, ``%``,
+      ``>``, etc.), but it indicates where to type commands.
+   
+   #. At the prompt, type the command ``pwd`` and tap *Enter*.
+   #. ``pwd`` stands for ``print working directory``. The output shows the path
+      from the root directory to your current location in the file system. For
+      example:
+
+      .. sourcecode:: bash
+
+         /Users/mjordan/lchs/projects
 
 Filesystems use two different types of paths: *absolute* and *relative*.
 The **absolute path** starts at the root directory and ends with the file name.
