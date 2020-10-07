@@ -144,7 +144,7 @@ command. In the navigation examples above, we used the :ref:`pwd <terminal_pwd>`
 and the :ref:`ls <terminal_ls>` commands to check our location and see what
 directories were available to us.
 
-Click here to return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Click here to return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_clear:
 
@@ -165,7 +165,7 @@ command, the window looks as good as new!
 
    LCHS$
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_cp:
 
@@ -210,34 +210,126 @@ And of course, now there are two ``lakes.json``.
 We can think of ``cp`` as basically copy *and* paste, since the target path is
 included in the command.
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_ls:
 
 ``ls`` Command
 --------------
 
-Lorem ipsum...
+Entering the ``ls`` command in the terminal returns the contents of the current
+directory.
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+.. admonition:: Example
+
+   Assume we are in the ``Photos`` directory.
+
+   [INSERT FIGURE HERE - Photos location]
+
+      We're still in ``Photos``.
+
+   .. sourcecode:: bash
+      :linenos:
+
+      Photos$ pwd
+      /MyLaptop/Photos
+      Photos$ ls
+      cake.jpg    puppy.jpg   bff.jpg
+
+All of that looks to be in order. Let's move up one level into ``MyLaptop`` and
+run ``ls`` from there.
+
+.. sourcecode:: bash
+   :linenos:
+
+   Photos$ pwd
+   /MyLaptop/Photos
+   Photos$ cd ..
+   MyLaptop $ pwd
+   /MyLaptop
+   MyLaptop $ ls
+   Desktop  Photos   School
+
+Notice that ``ls`` only gives us a view one level deep. The command shows us
+that ``MyLaptop`` holds 3 other directories, but we do not see the contents of
+those folders.
+
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_man:
 
 ``man`` Command
 ---------------
 
-Lorem ipsum...
+``man`` is a very good friend. Running ``man command`` gives you a summary of
+what that command does, what options it takes, and more documentation than we
+could ever need. It's so thorough, it makes this short tutorial blush.
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+Anytime we have questions about how to use a command, we can access the manual
+to get more info!
+
+.. admonition:: Try It!
+
+   Look up some of the commands you know. Maybe you'll learn a new option or
+   two!
+
+Some other terminal stuff we should know when using the manual:
+
+#. *Scrolling*: Some entries are very long! You'll know there's more to read if
+   you see ``:`` at the bottom of the terminal window. You can use your
+   keyboard's arrow keys to scroll through the text. Once you reach the bottom
+   of the entry, you'll see a line that reads ``END``.
+#. *Exiting*: Once you're finished reading, exit the manual page by typing the
+   letter ``q``.
+
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_mkdir:
 
 ``mkdir`` Command
 -----------------
 
-Lorem ipsum...
+``mkdir folder_name`` creates a new directory *inside* your current location.
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+We're in the ``Photos`` directory.
+
+[INSERT FIGURE HERE - Photos location]
+
+   We're back in ``Photos``.
+
+Let's create a directory for pet photos.
+
+.. sourcecode:: bash
+   :linenos:
+
+   Photos$ pwd
+   /MyLaptop/Photos
+   Photos$ ls
+   cake.jpg    puppy.jpg   bff.jpg
+   Photos$ mkdir fur_babies
+   Photos$ ls
+   cake.jpg    fur_babies  puppy.jpg   bff.jpg
+
+Again, the computer does not return anything after the ``mkdir`` command on
+line 5. It just responds with another prompt. However, by using the helpful
+:ref:`ls <terminal_ls>` command, we see that a new directory was created.
+
+And we can visualize our changes like this:
+
+[INSERT IMAGE HERE - Photos subfolder]
+
+   mkdir creates a new directory
+
+.. admonition:: Note
+
+   While ``mkdir`` creates a new directory, it does not move us into that
+   directory. Also, we don't need to be in the parent of the newly created
+   folder.
+
+   We can run ``mkdir`` from anywhere within the file system, as long as we use
+   the correct file path.
+
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_mv:
 
@@ -246,16 +338,41 @@ Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
 
 Lorem ipsum...
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_pwd:
 
 ``pwd`` Command
 ---------------
 
-Lorem ipsum...
+Entering the ``pwd`` command in the terminal returns our current location in
+the file tree. This is called our **working directory**.
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+.. sourcecode:: bash
+   :linenos:
+
+   LCHS $ pwd
+   /MyLaptop/School/LCHS
+
+The working directory is another term for the current directory. Think of this
+command like the *You Are Here* dot on our file maps.
+
+[INSERT FIGURE HERE - pwd]
+
+   Our current directory is ``LCHS``.
+
+We are basically just asking the computer to give us our current location. This
+may seem basic, but this information is critical.
+
+*You need to know your current location when working in the terminal.*
+
+A lot of beginners enter commands into the terminal without paying attention to
+where they are. This often leads to mistakes and confusion.
+
+``pwd`` is like a sanity check - a quick way to know where we are and
+what we are doing.
+
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_rm:
 
@@ -264,7 +381,7 @@ Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
 
 Lorem ipsum...
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal_touch:
 
@@ -273,7 +390,7 @@ Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
 
 Lorem ipsum...
 
-Return to the :ref:`Terminal chapter <basic-terminal-commands>`.
+(Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
 .. _terminal-exiting-programs:
 

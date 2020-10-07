@@ -10,8 +10,6 @@ programmers take.
 Clicking on a link in the table will lead to a :ref:`tutorial <terminal-commands-tutorial>`
 on how to use that command.
 
-.. todo:: Add a terminal commands tutorial page. Also, add links to it from the commands table.
-
 .. list-table:: Basic Terminal Commands
    :header-rows: 1
 
@@ -89,17 +87,45 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What line in a CLI indicates that the terminal is ready?
+   Which terminal command deletes a file completely from the computer?
 
-   a. prompt
-   b. command
-   c. shell
-   d. There isn't a line that does that.
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">cp</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">rm</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">mv</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">del</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
 
 .. admonition:: Question
 
    Which shortcut takes you to the parent directory?
 
-   a. ``.``
-   b. ``~``
-   c. ``..``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">..</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">~</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">.</span></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
