@@ -101,6 +101,43 @@ very important!
 Picture This
 ------------
 
-Lorem ipsum...
+.. index:: ! file tree
 
-.. todo:: Add an image comparing a path to a visual file tree.
+Computers are basically file storage systems. Sure, they have many applications
+installed, but where do these programs live? In directories, of course!
+
+**File trees** help us see the structure of the filesystem. They show the
+connections between different files and directories. We see them all the time
+when we open a window on our computer. For example:
+
+.. figure:: figures/library-file-tree.png
+   :alt: File tree showing the contents of a "Library" folder.
+
+   This file tree shows two levels of subfolders in the Library directory.
+
+The amount of indentation tells us which directories are at the same level
+(``Application Support`` and ``Audio``). It also helps us spot the
+subdirectories nested within a particular folder.
+
+The terminal gives us one way to navigate these directories. Let's use another
+file tree to help us visualize what a path represents.
+
+.. figure:: figures/laptop-file-tree.png
+   :alt: File tree showing subdirectories and files inside the "MyLaptop" folder.
+   :width: 70%
+
+   A path provides directions for moving through the file tree.
+
+In this diagram, ``MyLaptop`` represents the root directory. Subdirectories
+that are at the same level in the filesystem appear in the same row.
+
+Now imagine that we are standing inside of the file tree. A *path* gives us a
+map to follow to find a particular file or directory. For example, the path for
+the ``cake.jpg`` file is ``/MyLaptop/Photos/cake.jpg``. If we are standing
+inside the ``MyLaptop`` folder, the path tells us, *Move into the Photos
+subdirectory and look around. You should see a file called 'cake.jpg'.*
+
+For the ``hello.py`` file, the path is
+``/MyLaptop/School/LCHS/Homework/hello.py``. This map tells us, *Start in the
+MyLaptop directory. Move into the School folder, then the LCHS folder, then the
+Homework folder. Look around to find a file called 'hello.py'.*
