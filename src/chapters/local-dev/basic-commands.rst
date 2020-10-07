@@ -1,10 +1,14 @@
 How to Do Stuff in the Terminal
 ===============================
 
-There are many commands you can use in the terminal to move through the
-filesystem of your computer and projects.
+There are many commands we can use in the terminal to move through the
+filesystem of our computers. The list below shows some of the common actions
+programmers take.
 
-The list below shows some of the common actions we will take in the terminal:
+Clicking on a link in the table will lead to a tutorial on how to use that
+command.
+
+.. todo:: Add a terminal commands tutorial page. Also, add links to it from the commands table.
 
 .. list-table:: Basic Terminal Commands
    :header-rows: 1
@@ -13,13 +17,13 @@ The list below shows some of the common actions we will take in the terminal:
      - Result
    + - ``ls``
      - Lists all files and folders in the current directory.
-   + - ``cd new_directory``
+   + - ``cd new_directory_path``
      - ``cd`` stands for *change directory*. Navigates from the current
-       directory to ``new-directory``.
+       directory to ``new_directory``.
    + - ``pwd``
      - *Print working directory*. Prints the path of the current directory.
-   + - ``mkdir new_folder``
-     - *Make directory*. Creates ``new_folder`` inside the current directory.
+   + - ``mkdir folder_name``
+     - *Make directory*. Creates ``folder_name`` inside the current directory.
    + - ``touch new_filename``
      - Creates a file called ``new_filename`` in the current directory.
    + - ``rm file_name``
@@ -29,7 +33,7 @@ The list below shows some of the common actions we will take in the terminal:
        This includes the proper syntax and a description of how that command
        works.
    + - ``clear``
-     - Empties the terminal window of previous commands and output.
+     - Empties the terminal window of old commands and output.
    + - ``cp source_path target_path``
      - *Copies* the file or directory at ``source_path`` and puts it in the
        ``target_path``.
@@ -39,12 +43,13 @@ The list below shows some of the common actions we will take in the terminal:
 
 .. admonition:: Note
 
-   #. ``rm`` will permanently remove items from the computer and cannot be undone.
-   #. Git bash does not support ``man``. Instead, ``<command> --help`` provides a
-      scaled down alternative.
+   #. ``rm`` permanently deletes items from the computer. This action cannot be
+      undone.
+   #. Git Bash does not support ``man``. Instead, ``command --help`` provides
+      a similar result.
 
-Beyond these basic commands, there are some shortcuts if you don't want to type
-out the full name of a directory or simply can't remember it.
+Beyond these basic commands, there are some shortcuts we can use in place of
+typing out a full path or directory name.
 
 .. list-table:: Directory Shortcuts
    :header-rows: 1
@@ -59,7 +64,35 @@ out the full name of a directory or simply can't remember it.
    + - ``..``
      - The parent directory of the current directory
 
-For an in-depth tutorial of how to use a CLI to move through your daily life,
-refer to the terminal commands tutorial.
+.. admonition:: Tip
 
-.. todo:: Add a terminal commands tutorial page.
+   If we type the first few letters of a directory name and tap the *Tab* key,
+   the terminal will often automatically complete the name for us!
+
+   ::
+
+      $ ls
+      homework       really_long_directory_name
+      README.md      docs
+      $ cd re  <-- Tap the Tab key
+      $ cd really_long_directory_name  <-- Presto!
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   What line in a CLI indicates that the terminal is ready?
+
+   a. prompt
+   b. command
+   c. shell
+   d. There isn't a line that does that.
+
+.. admonition:: Question
+
+   Which shortcut takes you to the parent directory?
+
+   a. ``.``
+   b. ``~``
+   c. ``..``

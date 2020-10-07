@@ -74,6 +74,7 @@ Appendices
    appendices/string-methods/index
    appendices/random-module/index
    appendices/turtles/index
+   appendices/terminal-commands/index
    appendices/extras/index
 
 .. toctree::
