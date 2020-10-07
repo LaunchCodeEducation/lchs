@@ -1,7 +1,7 @@
 Navigating the Terminal Window
 ==============================
 
-Moving from a GUI to a CLI can be tricky because we are so used to dragging our
+Moving from a GUI to a CLI can be tricky because we are used to dragging our
 files from one folder to another. The first skill we need to practice is how to
 figure out where we are in the filesystem!
 
@@ -40,40 +40,49 @@ indicate our current location.
 
 .. admonition:: Example
 
-   .. todo:: Insert figure of a file tree with current location marked (``cd`` syntax).
-
    Let's assume we want to move from our current location in the file tree
-   (``dir_name``) to ``other_dir_name``. The terminal command would be:
+   (``Photos``) to ``Chemistry``.
+
+   .. figure:: figures/cd-tree.png
+      :alt: File tree with "Photos" marked as the current directory and "Chemistry" marked as the target.
+
+   The terminal command to make this move appears on line 3:
 
    .. sourcecode:: bash
       :linenos:
 
       $ pwd
-      current-path
-      $ cd absolute-path-to-new-dir
+      /MyLaptop/Photos
+      $ cd /MyLaptop/School/Chemistry
       $ pwd
-      new-path
+      /MyLaptop/School/Chemistry
+
+   In this case, we included ``pwd`` to show our starting and ending locations.
+   However, these commands were not necessary for the move.
 
 Navigation Shortcuts
 ^^^^^^^^^^^^^^^^^^^^
 
 When moving through a file tree, we often only need to move up or down one
-level. For quick changes like this, we can use a relative path instead of
-the absolute one.
+level. For quick changes like this, we don't need to type out a full path.
 
-.. admonition:: Example
+.. admonition:: Examples
 
-   Let's say we want to move up one level from ``dir_name`` to ``dir_name-1``.
-   The terminal shortcut uses ``..``:
+   Let's say we want to move up one level from ``Chemistry`` to ``School``.
+   Instead of typing out the entire absolute path, we can use a terminal
+   shortcut!
 
    .. sourcecode:: bash
       :linenos:
 
       $ pwd
-      current-path
+      /MyLaptop/School/Chemistry
       $ cd ..
       $ pwd
-      new-path
+      /MyLaptop/School
+
+   The ``cd ..`` shortcut tells the terminal, *From the current directory, move
+   up one level*.
 
    To move down one level from a parent directory into a subdirectory, the
    path syntax is ``./directory_name``.
@@ -82,20 +91,24 @@ the absolute one.
       :linenos:
 
       $ pwd
-      current-path
-      $ cd ./directory_name
+      /MyLaptop/School
+      $ cd ./LCHS
       $ pwd
-      new-path
+      /MyLaptop/School/LCHS
+   
+   The ``.`` represents the path to the current directory. In this case, it
+   stands for ``/MyLaptop/School``. The command on line 3 tells the terminal,
+   *From the current directory, move into the LCHS subdirectory*.
 
-The ``..`` and ``.`` shortcuts can also be part of a longer path. ``../..``
-moves us up two levels from our current directory, while
-``./directory_name/other_dir_name`` moves us down two levels.
+The ``..`` and ``.`` shortcuts can also be part of a longer path. For example,
+``cd ../..`` moves us up two levels from our current directory, while
+``cd ./directory_name/other_directory_name`` moves us down two levels.
 
 Feedback
 --------
 
 Another big difference between a GUI and a CLI involves the amount of feedback
-we receive. With a GUI, we can see when we move, create, or delete a file. The
+we receive. With a GUI, we can see when we move, create, or delete a file. An
 icon appears, moves, or disappears as we perform the action. Sometimes a window
 even pops up to give us more information.
 
@@ -111,7 +124,74 @@ results of our commands.
 Check Your Understanding
 ------------------------
 
-Navigating file tree questions. Where is the end point for:
+Use this file tree to help answer the following questions:
 
-- Double up,
-- Up, over, and down,
+.. figure:: figures/file-tree-cc.png
+   :alt: File tree with "Homework" marked as the current directory and "Misc Docs" marked as the target.
+
+.. admonition:: Question
+
+   Assume we start in the ``Homework`` directory. In the terminal, we execute
+   the following command:
+
+   ::
+
+      $ cd ../..
+
+   What is the path to our new location in the filesystem?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS/Homework</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   Which TWO of the following terminal commands gets us from ``Homework`` to
+   ``Misc Docs``?
+
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "A2" onclick="highlight('A2', true)">cd /MyLaptop/Desktop/MiscDocs</span></li>
+         <li><span id = "B2" onclick="highlight('B2', false)">cd /LCHS/School/MyLaptop/Desktop/MiscDocs</span></li>
+         <li><span id = "C2" onclick="highlight('C2', true)">cd ../../../Desktop/MiscDocs</span></li>
+         <li><span id = "D2" onclick="highlight('D2', false)">cd ./Desktop/MiscDocs</span></li>
+      </ol>
+
+.. Answers = a, c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>

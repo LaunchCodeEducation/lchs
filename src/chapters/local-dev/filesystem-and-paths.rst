@@ -128,7 +128,7 @@ file tree to help us visualize what a path represents.
 
    A path provides directions for moving through the file tree.
 
-In this diagram, ``MyLaptop`` represents the root directory. Subdirectories
+In this diagram, ``MyLaptop`` represents the parent directory. Subdirectories
 that are at the same level in the filesystem appear in the same row.
 
 Now imagine that we are standing inside of the file tree. A *path* gives us a
