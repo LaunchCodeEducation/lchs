@@ -336,7 +336,33 @@ And we can visualize our changes like this:
 ``mv`` Command
 --------------
 
-Lorem ipsum...
+``mv source_path target_path`` moves a file or directory from its old location
+in the file tree to a new one.
+
+[INSERT IMAGE - Photos location]
+
+Let's start in the ``Photos`` directory like we did with the
+:ref:`cp command <terminal_cp>` example. This time, instead of copying the
+``cake.jpg`` file, we will *move* it into the ``Desktop`` folder.
+
+.. sourcecode:: bash
+   :linenos:
+
+   Photos$ ls
+   cake.jpg    puppy.jpg   bff.jpg
+   Photos$ mv ./cake.jpg ../Desktop
+   Photos$ ls
+   puppy.jpg   bff.jpg
+   Photos$ cd ../Desktop
+   Desktop$ ls
+   cake.jpg    MiscDocs
+
+As usual, we use ``ls`` to verify our results. Now our map looks like the
+following:
+
+[INSERT IMAGE - cake.jpg moved to Desktop]
+
+   ``mv`` moves ``cake.jpg`` from ``Photos`` into ``Desktop``.
 
 (Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
@@ -379,7 +405,101 @@ what we are doing.
 ``rm`` Command
 --------------
 
-Lorem ipsum...
+``rm file_name`` removes a given item from the file tree. This item can be a
+single file or an entire directory.
+
+Removing a Single File
+^^^^^^^^^^^^^^^^^^^^^^
+
+Let's say we no longer want our ``cake.jpg`` photo. We can remove it!
+
+Like many of the other terminal commands, we do NOT need to be in the same
+directory as the file we want to delete. For fun - and practice! - let's remove
+``cake.jpg`` while we're located in the ``Homework`` directory.
+
+[INSERT IMAGE - Desktop start]
+
+.. sourcecode:: bash
+   :linenos:
+
+   Homework$ pwd
+   /MyLaptop/School/LCHS/Homework
+   Homework$ rm /MyLaptop/Photos/cake.jpg
+   Homework$ cd /MyLaptop/Photos
+   Photos$ ls
+   puppy.jpg   bff.jpg
+
+See what we did there? Instead of moving into the parent directory of
+``cake.jpg``, we just used the full path to the file.
+
+To check that our ``rm`` command did what we expected, we first used the
+:ref:`cd command <terminal_cd>` in line 4. This moved us to the ``Photos``
+directory. Then, a simple :ref:`ls command <terminal_ls>` returned the contents
+of that folder.
+
+Here's the map of what we've done:
+
+[INSERT FIGURE - In Photos, cake.jpg gone]
+
+   ``cake.jpg`` is gone!
+
+Removing a Directory
+^^^^^^^^^^^^^^^^^^^^
+
+.. admonition:: Warning
+
+   Removing a directory also deletes all of its contents.
+
+.. index:: ! command option
+
+To remove a directory, we need to include an **option** on the command. An
+option is an additional character, or set of characters, added on the end of a
+command. These characters give the computer more instructions about what you
+want it to do. Options are usually indicated with a ``-``.
+
+A common method to remove a directory is to use the ``-r`` option, although
+there are other choices.
+
+Let's say we no longer want our ``Photos`` directory. Assume we are in the
+``MyLaptop`` directory. Let's see what happens when we try to use ``rm`` by
+itself:
+
+.. sourcecode:: bash
+   :linenos:
+
+   MyLaptop$ ls
+   Desktop   Photos  School
+   MyLaptop$ rm Photos
+   rm: Photos: is a directory
+   MyLaptop $ ls
+   Desktop   Photos  School
+
+Notice that simply using ``rm`` in line 3 returns a message telling us that
+``Photos`` is a directory. The command does NOT delete the folder. This feature
+of ``rm`` helps prevent us from accidentally deleting a directory and all of
+its contents. Imagine what would happen if we entered ``rm /MyLaptop`` without
+this safety net!
+
+Let's try again, but this time we will add the ``-r`` option:
+
+.. sourcecode:: bash
+   :linenos:
+
+   MyLaptop$ ls
+   Desktop   Photos  School
+   MyLaptop$ rm -r Photos
+   MyLaptop $ ls
+   Desktop   School
+
+The ``rm`` command does not tell us when it successfully runs. The ``ls`` check
+on line 4 shows us that we've removed the ``Photos`` folder everything inside
+of it.
+
+Back in our map:
+
+[INSERT IMAGE - No Photos directory]
+
+   ``Photos`` is gone without a trace!
 
 (Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
