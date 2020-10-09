@@ -15,7 +15,7 @@ when you enter some common commands.
 
    We will also use this file tree for the examples:
 
-   .. figure:: ../../chapters/local-dev/figures/laptop-file-tree.png
+   .. figure:: ../../chapters/terminal/figures/laptop-file-tree.png
       :alt: File tree for terminal tutorial exercises.
       :width: 80%
 
