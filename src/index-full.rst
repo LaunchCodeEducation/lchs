@@ -45,7 +45,6 @@ Projects
    chapters/classes-and-objects/project
    chapters/html/project
    chapters/css/project
-   chapters/terminal/project
 
 Assignments
 ===========

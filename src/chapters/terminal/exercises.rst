@@ -1,10 +1,5 @@
-Exercises: Local Development
-============================
-
-Lorem ipsum...
-
-Part A: Terminal
-----------------
+Exercises: Terminal
+===================
 
 Launch the terminal application and perform the following tasks:
 
@@ -34,8 +29,3 @@ Launch the terminal application and perform the following tasks:
 #. ``cd ..`` to get back to your Desktop.
 #. Type ``rm -r my_first_directory/``. Use ``ls`` and a visual check to verify
    that you removed the directory.
-
-Part B: Visual Studio Code
---------------------------
-
-Lorem ipsum...
