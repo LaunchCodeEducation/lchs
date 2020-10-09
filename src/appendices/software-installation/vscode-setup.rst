@@ -26,3 +26,8 @@ The terminal is in powershell, not Git Bash. To change this, open the Command Pa
 Change the default to Git Bash.
 
 Now every time you open the terminal, it will default to bash!
+
+Adding Extensions
+-----------------
+
+Python, HTML, etc.

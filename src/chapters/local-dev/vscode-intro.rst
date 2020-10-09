@@ -1,9 +1,14 @@
-Local Development
-=================
+Visual Studio Code
+==================
 
 Lorem ipsum...
 
-Visual Studio Code
+The Workspace
+-------------
+
+Lorem ipsum...
+
+Opening a Terminal
 ------------------
 
 Lorem ipsum...
