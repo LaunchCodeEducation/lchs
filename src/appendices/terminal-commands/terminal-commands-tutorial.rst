@@ -24,15 +24,18 @@ when you enter some common commands.
 ``cd`` Command
 --------------
 
-``cd directory_path`` moves us to the provided path.
+``cd directory_path`` moves us to the location described by ``directory_path``.
 
 Let's start inside the ``LCHS`` directory.
 
-[INSERT FILE TREE HERE]
+.. figure:: figures/cd-tree-start.png
+   :alt: MyLaptop file tree with the LCHS directory marked as the current location.
+   :width: 80%
 
-   We're in ``LCHS``.
+   Our current position is in the ``LCHS`` folder.
 
-To move up one level into the parent directory, run the following:
+To move up one level into the *parent directory*, run the following commands in
+the terminal:
 
 .. sourcecode:: bash
    :linenos:
@@ -44,6 +47,20 @@ To move up one level into the parent directory, run the following:
    /MyLaptop/School
 
 Great! Now we're inside the ``School`` folder.
+
+.. figure:: figures/cd-tree-next.png
+   :alt: MyLaptop file tree with the School directory marked as the current location.
+   :width: 80%
+
+   Our current position is now in the ``School`` folder.
+
+.. admonition:: Note
+
+   The terminal does not display anything after a successful ``cd`` command. In
+   the example above, we used the :ref:`pwd <terminal_pwd>` command in lines 1
+   and 4 to check our location.
+
+   To make the actual move, only the ``cd`` command on line 3 is necessary.
 
 To go back down into ``LCHS``, we run ``cd ./LCHS``:
 
@@ -59,14 +76,18 @@ To go back down into ``LCHS``, we run ``cd ./LCHS``:
 OK, we've returned to where we started.
 
 What if we want move to ``Chemistry`` from where we are now, in ``LCHS``?
-Looking at the file tree again, we see that we must move up one level from
-``LCHS`` and then down into the ``Chemistry`` directory.
+Looking at the file tree again, we can trace the path we need to follow.
 
-[INSERT IMAGE]
+.. figure:: figures/cd-tree-move.png
+   :alt: File tree showing how to move from LCHS, into School, and down into the Chemistry directory.
+   :width: 80%
 
-In order to move to a directory that is contained within the same parent as our
-working directory, we need to first go back up into the parent. One way to do
-this is with two separate commands:
+   Path to move from ``LCHS`` into the ``Chemistry`` directory.
+
+To make this move, first we need to go up one level into the parent directory,
+``School``. Next, we must move down into the ``Chemistry`` folder.
+
+One way to do this is with two separate commands:
 
 .. sourcecode:: bash
    :linenos:
@@ -81,19 +102,16 @@ this is with two separate commands:
 Line 3 moves us up one level into the ``School`` folder. Line 4 moves us from
 there down one level into ``Chemistry``.
 
-.. admonition:: Note
+.. admonition:: Tip
 
-   We can also combine more than one navigation step into a single command. In
-   the code above, we could replace lines 3 and 4 with ``cd ../Chemistry``.
+   We can combine more than one navigation step into a single command. In the
+   code above, we could replace lines 3 and 4 with ``cd ../Chemistry``.
 
-Here's a visual of what we just accomplished:
+For more practice, let's go from our current spot in ``Chemistry`` into the
+``Homework`` folder. Looking back at the file tree, we need to move up one
+level (into ``School``) and then down two levels into ``Homework``.
 
-[INSERT FIGURE]
-
-   Path to move to a peer directory.
-
-For practice, let's go from our current spot in ``Chemistry``, down into the
-``Homework`` folder.
+Let's start with a 3 step process:
 
 .. sourcecode:: bash
    :linenos:
@@ -101,19 +119,15 @@ For practice, let's go from our current spot in ``Chemistry``, down into the
    Chemistry$ pwd
    /MyLaptop/School/Chemistry
    Chemistry$ cd ..
-   School$ pwd
-   /MyLaptop/School
-   School$ ls
-   Chemistry    LCHS
    School$ cd LCHS
-   LCHS$ ls
-   Homework
    LCHS$ cd Homework
    Homework$ pwd
    /MyLaptop/School/LCHS/Homework
 
-Above, we checked our location in lines 1, 4, and 12 to keep track of where we
-were going. If we're really confident, we can complete the move in a single
+Notice that we used ``pwd`` again in lines 1 and 6 to check our location. We
+made the actual move in lines 3 - 5.
+
+If we're really confident, we can complete the move in a single
 command:
 
 .. sourcecode:: bash
@@ -139,10 +153,8 @@ to do is:
    Chemistry$ pwd
    /MyLaptop/School/Chemistry
 
-Notice that the computer does not display anything after a successful ``cd``
-command. In the navigation examples above, we used the :ref:`pwd <terminal_pwd>`
-and the :ref:`ls <terminal_ls>` commands to check our location and see what
-directories were available to us.
+``cd ../../Chemistry`` tells the terminal, *Move up one level, then move up
+another level, then move down into the Chemistry directory*.
 
 (Click here to return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
@@ -172,10 +184,14 @@ command, the window looks as good as new!
 ``cp`` Command
 --------------
 
-``cp source_path target_path`` copies the item at the source and puts it in
-the target path. The item can be a file or whole directory.
+``cp source_path target_path`` copies the item at the source and places a new
+version at the target path. The item can be a file or whole directory.
 
-[INSERT IMAGE - Photos location]
+.. figure:: figures/cp-start.png
+   :alt: File tree showing our location in the Photos directory.
+   :width: 80%
+
+   Our location is inside the ``Photos`` directory.
 
 Let's say we want to copy our ``cake.jpg`` file and place that copy inside the
 ``Desktop`` directory.
@@ -188,24 +204,25 @@ Let's say we want to copy our ``cake.jpg`` file and place that copy inside the
    Photos$ cp /MyLaptop/Photos/cake.jpg /MyLaptop/Desktop
    Photos$ ls
    cake.jpg    puppy.jpg   bff.jpg
-   Photos$ ls ../Desktop/
+   Photos$ ls ../Desktop
    cake.jpg
 
 #. Line 1 checks the contents of our current directory.
-#. Line 3 copies the ``cake.jpg`` file from its current location
-   (``/MyLaptop/Photos``) into a new one (``/MyLaptop/Desktop``).
-#. Lines 4 and 6 verify that ``cake.jpg`` now exists in two places on our
-   device.
+#. Line 3 makes a copy of the ``cake.jpg`` file (found at
+   ``MyLaptop/Photos/cake.jpg``) and places it into the ``/MyLaptop/Desktop``
+   location.
+#. Lines 4 and 6 use the :ref:`ls command <terminal_ls>` to verify that
+   ``cake.jpg`` now exists in two places on our device.
+
+.. figure:: figures/cp-end.png
+   :alt: File tree showing our location in the Photos directory.
+   :width: 80%
+
+   ``cake.jpg`` double take
 
 We don't actually need to be in the ``Photos`` directory to copy the
 ``cake.jpg`` file. We can run the ``cp`` command from any location. However,
 starting at the ``source_path`` helps us think through the process.
-
-And of course, now there are two ``lakes.json``.
-
-[INSERT IMAGE HERE]
-
-   ``lakes.json`` double take
 
 We can think of ``cp`` as basically copy *and* paste, since the target path is
 included in the command.
@@ -220,24 +237,25 @@ included in the command.
 Entering the ``ls`` command in the terminal returns the contents of the current
 directory.
 
-.. admonition:: Example
+For example, let's assume we are in the ``Photos`` directory.
 
-   Assume we are in the ``Photos`` directory.
+.. figure:: figures/cp-start.png
+   :alt: File tree showing our location in the Photos directory.
+   :width: 80%
 
-   [INSERT FIGURE HERE - Photos location]
+   Our location is inside the ``Photos`` directory.
 
-      We're still in ``Photos``.
+Now let's display a list of the contents of the folder:
 
-   .. sourcecode:: bash
-      :linenos:
+.. sourcecode:: bash
+   :linenos:
 
-      Photos$ pwd
-      /MyLaptop/Photos
-      Photos$ ls
-      cake.jpg    puppy.jpg   bff.jpg
+   Photos$ ls
+   cake.jpg    puppy.jpg   bff.jpg
 
-All of that looks to be in order. Let's move up one level into ``MyLaptop`` and
-run ``ls`` from there.
+Line 1 is the command, and line 2 displays the returned message. All of that
+looks to be in order. Let's move up one level into ``MyLaptop`` and run ``ls``
+from there.
 
 .. sourcecode:: bash
    :linenos:
@@ -291,13 +309,15 @@ Some other terminal stuff we should know when using the manual:
 
 ``mkdir folder_name`` creates a new directory *inside* your current location.
 
-We're in the ``Photos`` directory.
+We will use the ``Photos`` directory for this example.
 
-[INSERT FIGURE HERE - Photos location]
+.. figure:: figures/cp-start.png
+   :alt: File tree showing our location in the Photos directory.
+   :width: 80%
 
-   We're back in ``Photos``.
+   Our location is inside the ``Photos`` directory.
 
-Let's create a directory for pet photos.
+Let's create a directory for pet photos:
 
 .. sourcecode:: bash
    :linenos:
@@ -312,18 +332,20 @@ Let's create a directory for pet photos.
 
 Again, the computer does not return anything after the ``mkdir`` command on
 line 5. It just responds with another prompt. However, by using the helpful
-:ref:`ls <terminal_ls>` command, we see that a new directory was created.
+:ref:`ls command <terminal_ls>`, we see that a new directory was created.
 
-And we can visualize our changes like this:
+Our file tree now looks like this:
 
-[INSERT IMAGE HERE - Photos subfolder]
+.. figure:: figures/mkdir-final.png
+   :alt: File tree showing our location in the Photos directory and the new fur_babies folder.
+   :width: 80%
 
-   mkdir creates a new directory
+   ``mkdir`` creates a new directory.
 
 .. admonition:: Note
 
    While ``mkdir`` creates a new directory, it does not move us into that
-   directory. Also, we don't need to be in the parent of the newly created
+   location. Also, we don't need to be in the parent of the newly created
    folder.
 
    We can run ``mkdir`` from anywhere within the file system, as long as we use
@@ -339,7 +361,11 @@ And we can visualize our changes like this:
 ``mv source_path target_path`` moves a file or directory from its old location
 in the file tree to a new one.
 
-[INSERT IMAGE - Photos location]
+.. figure:: figures/cp-start.png
+   :alt: File tree showing our location in the Photos directory.
+   :width: 80%
+
+   Our location is inside the ``Photos`` directory.
 
 Let's start in the ``Photos`` directory like we did with the
 :ref:`cp command <terminal_cp>` example. This time, instead of copying the
@@ -357,10 +383,19 @@ Let's start in the ``Photos`` directory like we did with the
    Desktop$ ls
    cake.jpg    MiscDocs
 
-As usual, we use ``ls`` to verify our results. Now our map looks like the
-following:
+Note the following:
 
-[INSERT IMAGE - cake.jpg moved to Desktop]
+#. In line 3, we used relative paths instead of absolute paths. ``./cake.jpg``
+   means, *Look in the current directory for the file called cake.jpg*. The
+   path ``../Desktop`` means, *Move up into the parent directory, then down
+   into the Desktop folder*.
+#. On lines 1, 4, and 7, we use ``ls`` to verify our results.
+
+Now our file tree looks like this:
+
+.. figure:: figures/mv-final.png
+   :alt: File tree showing the cake.jpg file in the Desktop directory.
+   :width: 80%
 
    ``mv`` moves ``cake.jpg`` from ``Photos`` into ``Desktop``.
 
@@ -381,22 +416,22 @@ the file tree. This is called our **working directory**.
    /MyLaptop/School/LCHS
 
 The working directory is another term for the current directory. Think of this
-command like the *You Are Here* dot on our file maps.
+command like the *You Are Here* dot on our file tree.
 
-[INSERT FIGURE HERE - pwd]
+.. figure:: figures/cd-tree-start.png
+   :alt: MyLaptop file tree with the LCHS directory marked as the current location.
+   :width: 80%
 
-   Our current directory is ``LCHS``.
+   Our working directory is ``LCHS``.
 
 We are basically just asking the computer to give us our current location. This
-may seem basic, but this information is critical.
+may seem basic, but the information is critical.
 
-*You need to know your current location when working in the terminal.*
+   You need to know your current location when working in the terminal.
 
 A lot of beginners enter commands into the terminal without paying attention to
-where they are. This often leads to mistakes and confusion.
-
-``pwd`` is like a sanity check - a quick way to know where we are and
-what we are doing.
+where they are. This often leads to mistakes and confusion. ``pwd`` is like a
+sanity check - a quick way to know where we are and what we are doing.
 
 (Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
 
@@ -417,7 +452,11 @@ Like many of the other terminal commands, we do NOT need to be in the same
 directory as the file we want to delete. For fun - and practice! - let's remove
 ``cake.jpg`` while we're located in the ``Homework`` directory.
 
-[INSERT IMAGE - Desktop start]
+.. figure:: figures/rm-start.png
+   :alt: MyLaptop file tree with the Homework directory marked as the current location.
+   :width: 80%
+
+   Our current directory is ``Homework``.
 
 .. sourcecode:: bash
    :linenos:
@@ -429,17 +468,20 @@ directory as the file we want to delete. For fun - and practice! - let's remove
    Photos$ ls
    puppy.jpg   bff.jpg
 
-See what we did there? Instead of moving into the parent directory of
-``cake.jpg``, we just used the full path to the file.
+See what we did in line 3? Instead of moving into the parent directory of
+``cake.jpg`` before removing it, we stayed in the ``Homework`` folder and used
+the full path to the file.
 
-To check that our ``rm`` command did what we expected, we first used the
+To check that our ``rm`` command did what we expected, we used the
 :ref:`cd command <terminal_cd>` in line 4. This moved us to the ``Photos``
 directory. Then, a simple :ref:`ls command <terminal_ls>` returned the contents
 of that folder.
 
 Here's the map of what we've done:
 
-[INSERT FIGURE - In Photos, cake.jpg gone]
+.. figure:: figures/rm-end.png
+   :alt: MyLaptop file tree with cake.jpg file missing from the Photos directory.
+   :width: 80%
 
    ``cake.jpg`` is gone!
 
@@ -458,7 +500,8 @@ command. These characters give the computer more instructions about what you
 want it to do. Options are usually indicated with a ``-``.
 
 A common method to remove a directory is to use the ``-r`` option, although
-there are other choices.
+there are other choices. (Feel free to use the :ref:`man rm <terminal_man>`
+command to read about these).
 
 Let's say we no longer want our ``Photos`` directory. Assume we are in the
 ``MyLaptop`` directory. Let's see what happens when we try to use ``rm`` by
@@ -492,12 +535,14 @@ Let's try again, but this time we will add the ``-r`` option:
    Desktop   School
 
 The ``rm`` command does not tell us when it successfully runs. The ``ls`` check
-on line 4 shows us that we've removed the ``Photos`` folder everything inside
-of it.
+on line 4 shows us that we've removed the ``Photos`` folder and everything
+inside of it.
 
 Back in our map:
 
-[INSERT IMAGE - No Photos directory]
+.. figure:: figures/rm-dir-final.png
+   :alt: MyLaptop file tree with the Photos directory missing.
+   :width: 80%
 
    ``Photos`` is gone without a trace!
 
@@ -508,30 +553,31 @@ Back in our map:
 ``touch`` Command
 -----------------
 
-Lorem ipsum...
+``touch new_filename`` creates a new file.
+
+.. figure:: figures/rm-start.png
+   :alt: MyLaptop file tree with the Homework directory marked as the current location.
+   :width: 80%
+
+   Our current directory is ``Homework``.
+
+In the ``Homework`` directory, lets add a new file called ``loop_practice.py``.
+
+.. sourcecode:: bash
+   :linenos:
+
+   Homework$ ls
+   hello.py   user_input.py
+   Homework$ touch loop_practice.py
+   Homework$ ls
+   hello.py   loop_practice.py   user_input.py
+
+Here's what the command on line 3 gives us:
+
+.. figure:: figures/touch-end.png
+   :alt: MyLaptop file tree with loop_practice.py added to the Homework directory.
+   :width: 80%
+
+   ``touch`` adds a file.
 
 (Return to the :ref:`Terminal chapter <basic-terminal-commands>`).
-
-.. _terminal-exiting-programs:
-
-Exiting Programs
-----------------
-
-.. _terminal-ctrlc:
-
-``ctrl + c`` Details
-^^^^^^^^^^^^^^^^^^^^
-
-*ctrl + c* can be used to exit a running program.
-
-Some programs take different commands to exit. *ctrl + c* is sometimes the
-command to quit a running program and other times used to prompt the running
-program for an different exit command.
-
-.. _terminal-q:
-
-``q``
-^^^^^
-
-``q`` is another command for exiting a running program. Notably, it is needed
-to exit the :ref:`terminal_man` pages.
