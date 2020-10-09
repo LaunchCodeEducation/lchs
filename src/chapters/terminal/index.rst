@@ -1,7 +1,7 @@
 .. _terminal-local-dev:
 
-Terminal & Local Development
-============================
+Terminal
+========
 
 .. toctree::
    :maxdepth: 3
@@ -12,8 +12,4 @@ Terminal & Local Development
    terminal-nav
    basic-commands
    running-programs
-   vscode-intro
-   vscode-python
-   vscode-html-css
    exercises
-   project
