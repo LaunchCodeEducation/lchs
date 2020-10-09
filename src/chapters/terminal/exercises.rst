@@ -16,6 +16,12 @@ Launch the terminal application and perform the following tasks:
    yourself a message!)
 #. Make a copy of ``my_first_file.txt`` onto the Desktop with
    ``cp my_first_file.txt ../my_first_copy.txt``.
+
+   .. admonition:: Tip
+
+      Notice the different file name in the command! This keeps us from making
+      two files that have the same name.
+
 #. Move up to your Desktop directory with ``cd ..``.
 #. Use ``ls`` to verify that ``my_first_copy.txt`` appears on your Desktop.
    (*Bonus*: Open it up. Is it the same as your first file?)
@@ -23,7 +29,7 @@ Launch the terminal application and perform the following tasks:
    ``mv my_first_copy.txt my_first_directory/``.
 #. Use ``ls`` to see that the copied file is no longer on your Desktop.
 #. Type ``cd my_first_directory``, followed by ``ls`` to confirm that
-   ``my_first_copy.txt`` has been moved into ``my_first_directory``.
+   ``my_first_copy.txt`` has been moved into that folder.
 #. Type ``rm my_first_copy.txt`` followed by ``ls``. Congratulations, you just
    deleted the file!
 #. ``cd ..`` to get back to your Desktop.
