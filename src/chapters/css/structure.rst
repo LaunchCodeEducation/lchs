@@ -132,6 +132,8 @@ CSS Examples
 Here are three different ways we can use selectors to make some of the text on
 a page pink.
 
+.. _element-selector:
+
 Element Selector
 ^^^^^^^^^^^^^^^^
 
@@ -146,6 +148,8 @@ This element selector sets the text color for ``<p></p>`` elements:
 
 Using the element selector makes all paragraph elements on the page have pink
 text.
+
+.. _class-selector:
 
 Class Selector
 ^^^^^^^^^^^^^^
@@ -184,6 +188,8 @@ pink heading on our page, the HTML would look something like:
 By giving the elements on lines 2 and 6 the ``class`` attribute, we apply the
 ``pink-text`` styling rule to both. By leaving ``class="pink-text"`` out of the
 other tags, the text in those elements remains the default color (black).
+
+.. _id-selector:
 
 ID Selector
 ^^^^^^^^^^^

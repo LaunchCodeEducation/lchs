@@ -1,4 +1,4 @@
 Project: HTML
 =============
 
-Complete part 1 of the :ref:`HTML Me Something <html-me-something>` assignment.
+Complete Part 1 of the :ref:`HTML Me Something <html-me-something>` assignment.
