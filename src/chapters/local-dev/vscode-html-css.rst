@@ -26,3 +26,5 @@ Create a folder and two MT files...
 Copy/paste your HTML Me Something code into those files.
 
 Open the .html file in a browser.
+
+Live Server package!

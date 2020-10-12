@@ -2,10 +2,10 @@ Before You Begin
 ================
 
 For the remaining chapters of this book, we will use a *local* code editor.
-This is an application that we run from our personal devices instead of online
-through a browser.
+This is an application that we run directly on our personal devices instead of
+online through a browser.
 
-.. index:: ! Visual Studio Code, ! IDE
+.. index:: ! Visual Studio Code, ! IDE, ! Visual Studio Code
 
 Programmers use **integrated development environments** (IDE) to write and run
 their code. The IDE we will use for this course is called **Visual Studio
