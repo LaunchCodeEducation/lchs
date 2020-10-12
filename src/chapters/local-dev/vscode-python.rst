@@ -8,6 +8,8 @@ Checking Python Version
 
 Lorem ipsum...
 
+pylint via terminal...
+
 First Local Program
 -------------------
 

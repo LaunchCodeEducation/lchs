@@ -201,26 +201,29 @@ keywords, flagging syntax errors, providing suggestions, etc. We used these
 features in the repl.it and Trinket online editors. Now we want to include them
 in our VSCode workspace.
 
-#. Open VS Code and select the *Extensions* icon on the left side of the
+#. Open VSCode and select the *Extensions* icon on the left side of the
    workspace.
 
-   [IMAGE]
+   .. figure:: figures/extensions-icon.png
+      :alt: Extensions button in the VSCode toolbar.
+
+      Extensions add helpful tools to VSCode!
 
 #. In the search bar, enter ``Python``. Select the *Python* extension from
    ``Microsoft``. Click the *Install* button.
 
    .. figure:: figures/python-ext.png
       :alt: Python extension for VSCode.
-      :width: 80%
+      :width: 70%
 
       This extension allows VSCode to recognize and run Python code.
 
-#. Back in the search bar, enter ``html css support``. Select the option from
-   ``ecmel``.
+#. Back in the search bar, enter ``html css support``. Select and install the
+   option from ``ecmel``.
 
    .. figure:: figures/html-css-ext.png
       :alt: HTML/CSS extension for VSCode.
-      :width: 80%
+      :width: 70%
 
       This extension allows VSCode to recognize HTML and CSS code.
 
@@ -228,12 +231,25 @@ Optional Extensions
 ^^^^^^^^^^^^^^^^^^^
 
 Besides writing and running code, IDEs also provide support for coders! This
-includes being able to preview a web page right inside the workspace, providing
-suggestions for completing code statements, or adding colors to help keep track
-of indentations.
+includes being able to preview a web page right inside the workspace or
+providing suggestions for how to complete code statements.
 
 While not necessary, the following extensions help you work:
 
 #. Visual Studio IntelliCode by ``Microsoft``.
+
+   .. figure:: figures/intellicode.png
+      :alt: Intellicode extension for VSCode.
+      :width: 70%
+
+      This extension provides suggestions for completing code statements.
+
 #. Close HTML/XML tag by ``Compulim``.
-#. Indent-Rainbow by ``oderwa``.
+
+   .. figure:: figures/close-tags.png
+      :alt: Close HTML/XML extension for VSCode.
+      :width: 70%
+
+      This extension automatically adds closing tags as you write HTML code.
+
+There are LOTS of other extensions available. Feel free to explore the options!
