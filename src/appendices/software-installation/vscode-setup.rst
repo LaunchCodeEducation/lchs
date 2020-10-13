@@ -51,8 +51,8 @@ few more steps.
 Configure VSCode to Use Git Bash
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let’s configure VSCode to use Git Bash instead of other Windows terminal
-programs like PowerShell:
+Let’s configure VSCode to use :ref:`Git Bash <terminal-setup>` instead of other
+Windows terminal programs like PowerShell:
 
 #. Open VSCode.
 #. Open the Terminal menu from the top of the app and select *New Terminal*.
