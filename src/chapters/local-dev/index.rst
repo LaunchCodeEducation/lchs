@@ -9,6 +9,8 @@ Local Development
    before-starting
    vscode-intro
    vscode-python
+   vscode-turtles
+   vscode-custom-modules
    vscode-html-css
    exercises
    project

@@ -1,3 +1,5 @@
+.. _functions-project:
+
 Project: Functions
 ==================
 

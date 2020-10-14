@@ -131,12 +131,48 @@ the workspace.
 Clicking the button runs the code in the currently open tab. Try this with
 ``hello.py``. 
 
-Local Turtles
--------------
+Try It!
+-------
 
-Lorem ipsum...
+#. Now that you've got the classic ``Hello, World`` program under your belt,
+   add a loop and a conditional to your program. Run ``hello.py`` again to see
+   the change.
+#. Create a new Python file in the ``local_practice`` folder. Be sure to
+   include the ``.py`` extension.
+#. Your new file should open into its own tab in VSCode. If it does not, click
+   on its name in the file tree.
+#. Log into `repl.it <https://repl.it/login>`__ or `Trinket <https://trinket.io/login>`__
+   and find one of your favorite exercises, activities, or assignments.
+   Copy your code from there and paste it into VSCode. Some nice options
+   include:
 
-Check Your Understanding
-------------------------
+   a. Your *Choose Your Own Adventure* activity.
+   b. Your :ref:`Candidate Quiz <candidate-quiz>` assignment.
+   c. Anything from the :ref:`Functions chapter project <functions-project>`.
+   
+   .. admonition:: Note
 
-Lorem ipsum...
+      Steer clear of turtle programs for now. They require a little extra
+      attention to get them working in VSCode. We will take a closer look at
+      Python turtles on the next page.
+
+#. Check to see if VSCode flags any errors in your code. Fix these first, then
+   run your program. If it works, great! If not, debug your code and get it
+   running.
+#. Practice renaming your program file. Right-click on its name in the file
+   tree and choose *Rename*. Type in a new option and hit *Enter*. Be sure to
+   keep the ``.py`` extension!
+
+Naming Python Files
+-------------------
+
+We learned the naming rules for Python files in the
+:ref:`Modules chapter <custom-modules>`. Just as a reminder, here they are
+again.
+
+Python file names should:
+
+#. Begin with a letter and contain only lowercase letters.
+#. Be as short as possible, but still descriptive.
+#. Separate words with an underscore ``_``.
+#. End with the extension ``.py``.
