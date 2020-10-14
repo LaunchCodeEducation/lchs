@@ -51,10 +51,12 @@ The workspace in Visual Studio Code consists of three main panels:
 #. **Terminal Panel**: VSCode allows us to run our terminal application inside
    the workspace. All of the actions we practiced in the
    :ref:`Terminal chapter <terminal-chapter>` will work here.
-#. **Toolbar and File Tree**: This panel lets us navigate our file system,
+#. **Toolbar and File Tree**: This panel lets us navigate the file system,
    perform searches, install extensions, update the software, etc.
 #. **Editor Panel**: Our code goes here! VSCode recognizes most major
    programming languages.
+
+.. _local-practice:
 
 Terminal Panel
 --------------
@@ -86,7 +88,8 @@ Now use the terminal to create a new directory in the Desktop:
    Jims-Air:Desktop jimflores$ ls
    LCHS Notebook files     Training files          local_practice
 
-Check your computer Desktop to see that a ``local_practice`` folder appeared.
+Check your computer to see that a ``local_practice`` folder appeared on the
+Desktop.
 
 When we write our first local Python program, we will use the terminal to run
 that code.
@@ -105,36 +108,48 @@ will only look at three of them right now.
 
    a. Clicking on the ``>`` symbol next to a folder displays the contents of
       that directory.
-   b. The file tree includes buttons for adding new files and folders to the
+   b. Clicking on a file name opens that file in the editor.
+   c. The file tree includes buttons for adding new files and folders to the
       current directory.
 
 #. **Settings**: Clicking on the gear icon at the bottom of the toolbar brings
    up options for customizing the workspace. For example, if you don't like the
    default theme (dark background with light text), you can change it!
-#. **Extensions**: Search, install, update, or uninstall extensions for VSCode.
-   Click on the fifth icon from the top to make sure that extensions for Python
-   and HTML/CSS are installed. If not, follow the instructions in the
-   :ref:`Setting UP VSCode <vscode-extensions>` appendix to add them.
+#. **Extensions**: Install, update, or uninstall extensions for VSCode. Click
+   on the fifth icon from the top to make sure that extensions for Python and
+   HTML/CSS are installed. If not, follow the instructions in the
+   :ref:`Setting Up VSCode <vscode-extensions>` appendix to add them.
 
 Add a New File
 ^^^^^^^^^^^^^^
 
-#. Click on the File Explorer icon to show the file tree.
+#. Click on the *File Explorer* icon to display the file tree.
 #. Select the ``local_practice`` directory, which is currently empty.
 #. Click on the *New File* button.
 
    .. figure:: figures/new-file-button.png
       :alt: The New File button appears next to the directory name.
 
-#. Notice that a space opens in the file tree where we can enter a filename.
-   Type ``hello.py`` and hit *Enter*.
+#. Notice that a space opens under the ``local_practice`` directory where we
+   can enter a filename. Type ``hello.py`` and hit *Enter*.
+#. A ``hello.py`` tab appears in the editor panel. We will add some code to
+   this file soon.
 
-A ``hello.py`` tab appears in the editor panel. Clicking on any filename in the
-Explorer will open that file in the editor.
+.. admonition:: Note
+
+   The ``.py`` extension indicates that the file contains Python code. Remember
+   to add this extension to all of your Python programs!
 
 Editor Panel
 ------------
 
-This is where we will do most of our work in VSCode.
+This is where we will do most of our work in VSCode. From our practice in
+`repl.it <https://repl.it/login>`__ and `Trinket <https://trinket.io/login>`__,
+we are familiar with the features of a code editor.
 
-Let's do some local coding!
+.. admonition:: Fun Fact
+
+   The developers behind repl.it modeled their editor on the look of Visual
+   Studio Code!
+
+Now let's do some local coding!
