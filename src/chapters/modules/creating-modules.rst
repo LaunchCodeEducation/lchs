@@ -141,6 +141,8 @@ Follow these instructions to create the ``turtle_prep`` module:
 
 Cool, we now have a set of code that we can pull into future turtle projects!
 
+.. _module-location:
+
 File Locations
 --------------
 
