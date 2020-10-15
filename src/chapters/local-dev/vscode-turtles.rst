@@ -148,8 +148,3 @@ Replace the code in ``turtle_fun.py`` with the following:
      - .. figure:: figures/bob-advanced-bounce.png
           :alt: Turtle object bounces off all four screen edges.
           :width: 80%
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...
