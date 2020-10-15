@@ -31,11 +31,11 @@ Observations line by line:
 
 #. In the line 2, we print some text, which is surrounded by quotes.
 #. In the line 3, we print a number. Note the absence of quote marks.
-#. In line 4, we use three words separated by commas, all within the same
+#. In line 4, we use four words separated by commas, all within the same
    set of parentheses ``()``. When the words print, they show up on the same
    line separated by spaces.
-#. The code in line 5 is just like line 4, only there are no spaces after the
-   commas. How does this affect the output?
+#. The code in line 5 puts extra spaces after the commas. How does this affect
+   the output?
 #. Line 6 prints two words, but in this case the code uses ``+`` instead of a
    comma. This prints the words without spaces in between.
 #. Line 7 prints text and a number with a space in between.
@@ -64,5 +64,5 @@ combination ``\n``.
       print("Python\nJavaScript\nJava\nC#\nSwift")
 
 In addition to the newline character, there is also a special tab character,
-``\t``. Go back to the above examples and play around with using ``\t``
+``\t``. Go back to the examples above and play around with using ``\t``
 and ``\n``.
