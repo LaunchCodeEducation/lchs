@@ -18,7 +18,7 @@ throughout the course.
    you can take additional steps to personalize your workspace such as changing
    the theme.
 
-Follow the instructions below to install VSCode on your device.
+Follow the instructions below to install VS Code on your device.
 
 #. :ref:`Windows <vscode-win-install>`
 #. :ref:`Mac <vscode-mac-install>`
@@ -30,7 +30,7 @@ Follow the instructions below to install VSCode on your device.
 Windows Users
 -------------
 
-Visit the VSCode `website <https://code.visualstudio.com/>`__ and download the
+Visit the VS Code `website <https://code.visualstudio.com/>`__ and download the
 Windows installer. (If the *Download for Windows* message is not displayed on
 the large button, select the *Stable* Windows package using the dropdown
 arrow).
@@ -48,13 +48,13 @@ few more steps.
 
 .. _term-gitbash:
 
-Configure VSCode to Use Git Bash
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure VS Code to Use Git Bash
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let’s configure VSCode to use :ref:`Git Bash <terminal-setup>` instead of other
+Let’s configure VS Code to use :ref:`Git Bash <terminal-setup>` instead of other
 Windows terminal programs like PowerShell:
 
-#. Open VSCode.
+#. Open VS Code.
 #. Open the Terminal menu from the top of the app and select *New Terminal*.
    
    .. figure:: figures/terminal-menu.png
@@ -92,7 +92,7 @@ Windows terminal programs like PowerShell:
 
 Now every time you open the terminal, it will default to Git Bash!
 
-To finish setting up VSCode, complete the steps in the
+To finish setting up VS Code, complete the steps in the
 :ref:`Adding Extensions <vscode-extensions>` section below.
 
 .. _vscode-mac-install:
@@ -100,16 +100,16 @@ To finish setting up VSCode, complete the steps in the
 Mac Users
 ---------
 
-#. Visit the VSCode `website <https://code.visualstudio.com/>`__ and download
+#. Visit the VS Code `website <https://code.visualstudio.com/>`__ and download
    the Mac installer. (If the *Download for Mac* message is not displayed on
    the large button, select the *Stable* macOS package using the dropdown
    arrow).
 #. Double-click the downloaded file and follow the installer instructions (the
    default selections are all fine). If there is an option to set the PATH
    environment variable, select it.
-#. Find VSCode in the *Applications* folder and open the program. Once VSCode
+#. Find VS Code in the *Applications* folder and open the program. Once VS Code
    is running, right-click on its icon in the dock and select
-   *Options > Keep in Dock*. We’ll be using VSCode quite a bit, and this will
+   *Options > Keep in Dock*. We’ll be using VS Code quite a bit, and this will
    keep it handy.
 #. Open the Terminal menu from the top of the app and select *New Terminal*.
 
@@ -127,9 +127,9 @@ Mac Users
       The terminal dropdown bar displays ``bash``.
 
    If ``bash`` does not appear, follow steps 3-5 in the
-   :ref:`Configure VSCode <term-gitbash>` section above.
+   :ref:`Configure VS Code <term-gitbash>` section above.
 
-#. To finish setting up VSCode, complete the steps in the
+#. To finish setting up VS Code, complete the steps in the
    :ref:`Adding Extensions <vscode-extensions>` section below.
 
 .. _vscode-chrome-install:
@@ -140,7 +140,7 @@ Chromebook Users
 These instructions assume that you have already activated the
 :ref:`Linux terminal <terminal-setup>` on your device.
 
-#. Visit the VSCode `download page <https://code.visualstudio.com/download>`__.
+#. Visit the VS Code `download page <https://code.visualstudio.com/download>`__.
 #. Click on the ``.deb`` option under the Linux penguin.
 
    .. figure:: figures/download-vscode-chrome.png
@@ -162,7 +162,7 @@ These instructions assume that you have already activated the
    run it. Confirm the action, then wait. Accept all of the default options.
 
    .. figure:: figures/chrome-install-launch.png
-      :alt: Confirmation window for installing VSCode.
+      :alt: Confirmation window for installing VS Code.
       :width: 50%
 
       Run the installer!
@@ -185,9 +185,9 @@ These instructions assume that you have already activated the
       The terminal dropdown bar displays ``bash``.
 
    If ``bash`` does not appear, follow steps 3-5 in the
-   :ref:`Configure VSCode <term-gitbash>` section above.
+   :ref:`Configure VS Code <term-gitbash>` section above.
 
-#. To finish setting up VSCode, complete the steps in the
+#. To finish setting up VS Code, complete the steps in the
    :ref:`Adding Extensions <vscode-extensions>` section below.
 
 .. _vscode-extensions:
@@ -199,33 +199,33 @@ Now that Visual Studio Code is up and running, we need to install some
 *extensions*. These are small programs that support our work by highlighting
 keywords, flagging syntax errors, providing suggestions, etc. We used these
 features in the repl.it and Trinket online editors. Now we want to include them
-in our VSCode workspace.
+in our VS Code workspace.
 
-#. Open VSCode and select the *Extensions* icon on the left side of the
+#. Open VS Code and select the *Extensions* icon on the left side of the
    workspace.
 
    .. figure:: figures/extensions-icon.png
-      :alt: Extensions button in the VSCode toolbar.
+      :alt: Extensions button in the VS Code toolbar.
 
-      Extensions add helpful tools to VSCode!
+      Extensions add helpful tools to VS Code!
 
 #. In the search bar, enter ``Python``. Select the *Python* extension from
    ``Microsoft``. Click the *Install* button.
 
    .. figure:: figures/python-ext.png
-      :alt: Python extension for VSCode.
+      :alt: Python extension for VS Code.
       :width: 70%
 
-      This extension allows VSCode to recognize and run Python code.
+      This extension allows VS Code to recognize and run Python code.
 
 #. Back in the search bar, enter ``html css support``. Select and install the
    option from ``ecmel``.
 
    .. figure:: figures/html-css-ext.png
-      :alt: HTML/CSS extension for VSCode.
+      :alt: HTML/CSS extension for VS Code.
       :width: 70%
 
-      This extension allows VSCode to recognize HTML and CSS code.
+      This extension allows VS Code to recognize HTML and CSS code.
 
 Optional Extensions
 ^^^^^^^^^^^^^^^^^^^
@@ -239,7 +239,7 @@ While not necessary, the following extensions help you work:
 #. Visual Studio IntelliCode by ``Microsoft``.
 
    .. figure:: figures/intellicode.png
-      :alt: Intellicode extension for VSCode.
+      :alt: Intellicode extension for VS Code.
       :width: 70%
 
       This extension provides suggestions for completing code statements.
@@ -247,7 +247,7 @@ While not necessary, the following extensions help you work:
 #. Close HTML/XML tag by ``Compulim``.
 
    .. figure:: figures/close-tags.png
-      :alt: Close HTML/XML extension for VSCode.
+      :alt: Close HTML/XML extension for VS Code.
       :width: 70%
 
       This extension automatically adds closing tags as you write HTML code.

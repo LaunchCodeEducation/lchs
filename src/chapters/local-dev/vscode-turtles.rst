@@ -19,11 +19,11 @@ extra steps.
 Screen Control
 --------------
 
-In VSCode, create a new file inside the ``local_practice`` directory. Call the
+In VS Code, create a new file inside the ``local_practice`` directory. Call the
 file ``turtle_fun.py``.
 
-Copy and paste the following code into ``turtle_fun``. It makes our turtle,
-``bob``, draw a circle.
+Copy and paste the following code into ``turtle_fun``. It makes our turtle
+object, ``bob``, draw a circle with a radius of 50 pixels.
 
 .. sourcecode:: python
    :linenos:
@@ -100,6 +100,7 @@ Replace the code in ``turtle_fun.py`` with the following:
 
    import turtle
 
+   # Create a Turtle object & assign properties:
    bob = turtle.Turtle()
    bob.shape('turtle')
    bob.color('black')
@@ -107,10 +108,12 @@ Replace the code in ``turtle_fun.py`` with the following:
    bob.pensize(3)
    bob.speed(10)
 
+   # Draw a filled circle:
    bob.begin_fill()
    bob.circle(100)
    bob.end_fill()
 
+   # Draw and fill some half-circles:
    bob.fillcolor('#3c79b8')
    bob.begin_fill()
    bob.circle(50,180)
@@ -122,10 +125,10 @@ Replace the code in ``turtle_fun.py`` with the following:
 #. Create a ``Screen`` object and use it to keep the drawing space open until
    you click in the window.
 #. Add a title to the drawing window.
-#. Change the width of the drawing space. For your device, how large can you
-   make the width before a scroll bar appears?
-#. Change the height of the drawing space. For your device, how large can you
-   make the width before a scroll bar appears? 
+#. Change the width of the drawing space. For your device, how wide can you
+   make the screen?
+#. Change the height of the drawing space. For your device, how tall can you
+   make the screen?
 #. Resize of the window to be 400 pixels wide and 500 pixels tall.
 #. Change the background color of the window.
 #. Change the movement commands to make ``bob`` draw something else. Can
@@ -134,6 +137,17 @@ Replace the code in ``turtle_fun.py`` with the following:
    methods. Add a conditional to turn ``bob`` around when the object gets too
    close to one edge of the screen. Can you make the turtle bounce back and
    forth several times between the edges of the screen?
+
+.. list-table:: Bouncing Turtle Object
+   :header-rows: 1
+
+   * - ``bob``, Level 1
+     - ``bob``, Level 10
+   * - .. figure:: figures/turtle-bounce.gif
+          :alt: Turtle object moving back and forth across the drawing space.
+     - .. figure:: figures/bob-advanced-bounce.png
+          :alt: Turtle object bounces off all four screen edges.
+          :width: 80%
 
 Check Your Understanding
 ------------------------

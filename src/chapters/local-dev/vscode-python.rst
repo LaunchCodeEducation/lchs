@@ -1,5 +1,5 @@
-Python in VSCode
-================
+Python in VS Code
+=================
 
 Now that we have installed all the tools we need, we are almost ready to write
 our first local Python program. We just need to run one last check.
@@ -19,7 +19,7 @@ our first local Python program. We just need to run one last check.
 Checking Python Version
 -----------------------
 
-Open VSCode and a terminal pane (if it isn’t already open). In the terminal,
+Open VS Code and a terminal pane (if it isn’t already open). In the terminal,
 type ``python -V`` (note the capital ``-V``). You should see something similar
 to:
 
@@ -61,12 +61,12 @@ First Local Program
 Linting
 ^^^^^^^
 
-When you type in your first Python statement, VSCode may ask you to install a
+When you type in your first Python statement, VS Code may ask you to install a
 **linter**. This is a feature that provides some extra assistance while you
 code. For example, the linter flags syntax errors, undefined variables, etc. 
 
 Go ahead and click *Install* if you see this popup. If it works, great! If
-not, don't worry about it. VSCode provides a basic level of linting by default. 
+not, don't worry about it. VS Code provides a basic level of linting by default. 
 
 .. figure:: figures/linter-popup.png
    :alt: Linter pop up box with 3 options: Install, Select Linter, Don't Show Again.
@@ -120,7 +120,7 @@ pane.
 Run Button
 ^^^^^^^^^^
 
-The Python extension for VSCode adds a green *Run* button at the top right of
+The Python extension for VS Code adds a green *Run* button at the top right of
 the workspace.
 
 .. figure:: figures/run-button.png
@@ -139,11 +139,11 @@ Try It!
    the change.
 #. Create a new Python file in the ``local_practice`` folder. Be sure to
    include the ``.py`` extension.
-#. Your new file should open into its own tab in VSCode. If it does not, click
+#. Your new file should open into its own tab in VS Code. If it does not, click
    on its name in the file tree.
 #. Log into `repl.it <https://repl.it/login>`__ or `Trinket <https://trinket.io/login>`__
    and find one of your favorite exercises, activities, or assignments.
-   Copy your code from there and paste it into VSCode. Some nice options
+   Copy your code from there and paste it into VS Code. Some nice options
    include:
 
    a. Your *Choose Your Own Adventure* activity.
@@ -153,10 +153,10 @@ Try It!
    .. admonition:: Note
 
       Steer clear of turtle programs for now. They require a little extra
-      attention to get them working in VSCode. We will take a closer look at
+      attention to get them working in VS Code. We will take a closer look at
       Python turtles on the next page.
 
-#. Check to see if VSCode flags any errors in your code. Fix these first, then
+#. Check to see if VS Code flags any errors in your code. Fix these first, then
    run your program. If it works, great! If not, debug your code and get it
    running.
 #. Practice renaming your program file. Right-click on its name in the file

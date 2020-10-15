@@ -9,19 +9,19 @@ Open the Visual Studio Code program and take a look around.
 Welcome Screen
 --------------
 
-The first time we run VSCode, the program displays the Welcome screen to get us
+The first time we run VS Code, the program displays the Welcome screen to get us
 started. Go ahead and click the *Open Folder* option and then select the
 *Desktop* directory. (Opening any directory activates the workspace, but for
 now we will practice on the Desktop).
 
 .. admonition:: Note
 
-   When we launch VSCode, it tries to open the last project we worked on. If
+   When we launch VS Code, it tries to open the last project we worked on. If
    this happens now, don't worry. Select *New Window* from the *File* menu to
    bring up the Welcome screen.
 
 .. figure:: figures/vscode-welcome.png
-   :alt: The VSCode Welcome screen.
+   :alt: The VS Code Welcome screen.
    :width: 80%
 
    Welcome to Visual Studio Code!
@@ -29,10 +29,10 @@ now we will practice on the Desktop).
 Next, click on the *Terminal* menu and select *New Terminal*.
 
 .. figure:: figures/terminal-menu.png
-   :alt: VSCode Terminal menu options.
+   :alt: VS Code Terminal menu options.
    :width: 70%
 
-   Open the terminal inside VSCode.
+   Open the terminal inside VS Code.
 
 We now have several different panels, buttons, and menus that allow us to edit,
 debug, and run our code.
@@ -43,17 +43,17 @@ The Workspace
 The workspace in Visual Studio Code consists of three main panels:
 
 .. figure:: figures/labeled-workspace.png
-   :alt: VSCode workspace with the terminal, main toolbar, and code editor labeled.
+   :alt: VS Code workspace with the terminal, main toolbar, and code editor labeled.
    :width: 80%
 
-   The VSCode workspace.
+   The VS Code workspace.
 
-#. **Terminal Panel**: VSCode allows us to run our terminal application inside
+#. **Terminal Panel**: VS Code allows us to run our terminal application inside
    the workspace. All of the actions we practiced in the
    :ref:`Terminal chapter <terminal-chapter>` will work here.
 #. **Toolbar and File Tree**: This panel lets us navigate the file system,
    perform searches, install extensions, update the software, etc.
-#. **Editor Panel**: Our code goes here! VSCode recognizes most major
+#. **Editor Panel**: Our code goes here! VS Code recognizes most major
    programming languages.
 
 .. _local-practice:
@@ -72,7 +72,7 @@ Let's run a couple of terminal commands just to see where we are:
    LCHS Notebook files     Training files
 
 Take a look at the file path returned by ``pwd``. By opening the Desktop folder
-from the Welcome screen, VSCode automatically put us in that directory when we
+from the Welcome screen, VS Code automatically put us in that directory when we
 opened the terminal.
 
 The ``ls`` command displays the files and folders currently in ``Desktop``.
@@ -115,10 +115,10 @@ will only look at three of them right now.
 #. **Settings**: Clicking on the gear icon at the bottom of the toolbar brings
    up options for customizing the workspace. For example, if you don't like the
    default theme (dark background with light text), you can change it!
-#. **Extensions**: Install, update, or uninstall extensions for VSCode. Click
+#. **Extensions**: Install, update, or uninstall extensions for VS Code. Click
    on the fifth icon from the top to make sure that extensions for Python and
    HTML/CSS are installed. If not, follow the instructions in the
-   :ref:`Setting Up VSCode <vscode-extensions>` appendix to add them.
+   :ref:`Setting Up VS Code <vscode-extensions>` appendix to add them.
 
 Add a New File
 ^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ Add a New File
 Editor Panel
 ------------
 
-This is where we will do most of our work in VSCode. From our practice in
+This is where we will do most of our work in VS Code. From our practice in
 `repl.it <https://repl.it/login>`__ and `Trinket <https://trinket.io/login>`__,
 we are familiar with the features of a code editor.
 
@@ -153,3 +153,40 @@ we are familiar with the features of a code editor.
    Studio Code!
 
 Now let's do some local coding!
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   In VS Code, how do we add a new file to a directory? Select ALL correct
+   options.
+
+   .. raw:: html
+      
+      <ol type="a">
+         <li><span id = "A1" onclick="highlight('A1', true)">Click on the directory in the file tree and press the <em>New File</em> button.</span></li>
+         <li><span id = "B1" onclick="highlight('B1', false)">Click on the directory in the file tree and press the <em>New Folder</em> button.</span></li>
+         <li><span id = "C1" onclick="highlight('C1', true)">In the terminal, navigate to the directory and use <em>touch new_filename</em>.</span></li>
+         <li><span id = "D1" onclick="highlight('D1', false)">In the terminal, navigate to the directory and use <em>mkdir new_filename</em>.</span></li>
+      </ol>
+
+.. Answers = a & c.
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function highlight(id, answer) {
+         text = document.getElementById(id).innerHTML
+         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
+            return
+         }
+         if (answer) {
+            document.getElementById(id).style.background = 'lightgreen';
+            document.getElementById(id).innerHTML = text + ' - Correct!';
+         } else {
+            document.getElementById(id).innerHTML = text + ' - Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
