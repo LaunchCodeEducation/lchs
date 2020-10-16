@@ -46,6 +46,8 @@ three different places to add CSS in an HTML file:
    Note that the syntax for the CSS rules follows the format we used on the
    previous page.
 
+.. _link-external-css:
+
 #. **External**: The CSS style rules are placed in a separate file. This
    document only contains CSS code, and it is saved with a ``.css`` extension.
    The external CSS file must be linked to the HTML document in the ``head``

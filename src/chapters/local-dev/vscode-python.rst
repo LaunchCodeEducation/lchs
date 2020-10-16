@@ -134,9 +134,15 @@ Clicking the button runs the code in the currently open tab. Try this with
 Try It!
 -------
 
+.. admonition:: Tip
+
+   Be sure to save your work after you change your code! If you forget to do
+   this, VS Code will run the last saved version of your program instead of
+   the newer one.
+
 #. Now that you've got the classic ``Hello, World`` program under your belt,
-   add a loop and a conditional to your program. Run ``hello.py`` again to see
-   the change.
+   add a loop and a conditional to your program. Save your work, then run
+   ``hello.py`` again to see the change.
 #. Create a new Python file in the ``local_practice`` folder. Be sure to
    include the ``.py`` extension.
 #. Your new file should open into its own tab in VS Code. If it does not, click

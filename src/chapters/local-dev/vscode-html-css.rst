@@ -56,21 +56,161 @@ There are two ways to view our local HTML file in a browser.
    .. figure:: figures/open-html-file.png
       :alt: File menu and dialog box for opening a local file in a browser.
 
-#. Option 2...
+#. In VS Code, right-click on the tab of the file we want. Choose the
+   *Copy Path* option. Next, open a web browser and paste the path into the
+   address bar.
 
-Make a change...
+   .. figure:: figures/copy-path.png
+      :alt: Menu options that appear after right-clicking a file tab in VS Code. "Copy Path" is highlighted.
+      :width: 30%
 
-Your page can ONLY be seen by you right now...
+Ta da! Our webpage appears. Notice the path in the address bar. This will
+change depending on the file chosen.
+
+.. figure:: figures/hello-web.png
+   :alt: "Hello, Local Web!" heading, with the address bar displayed.
+
+Add More Elements
+^^^^^^^^^^^^^^^^^
+
+#. Return to VS Code and add a few more elements to the ``index.html``
+   document. Be sure to use some of the :ref:`semantic HTML <semantic-tag-list>`
+   we learned about in an earlier chapter.
+#. Save your work.
+#. Go back into the browser and refresh the tab for your HTML file. You should
+   see the results of your work appear.
+
+.. admonition:: Tip
+
+   VS Code has a nice feature to let us know if we have saved our work
+   recently! In the editor tabs, if we see a solid dot (``•``) next to a
+   filename, that means we have unsaved changes in our code. If we see an
+   ``X`` instead, then all of the code in the file has been saved.
+
+   .. figure:: figures/save-dot.png
+      :alt: Two tabs, one marked with a dot to indicate unsaved changes.
+      :width: 70%
+
+For Your Eyes Only
+^^^^^^^^^^^^^^^^^^
+
+Only you can see your local webpage. Looking at the address bar tells us this.
+Instead of ``https://www.etc.``, we see the ``file://`` prefix. This indicates
+that the browser opened a file on your personal machine. No one else in the
+world can view your page unless they are looking over your shoulder right now
+(or hacked into your device).
+
+Much later in this course, we will learn how to *deploy* a website and make it
+visible to anyone who can access the web.
 
 Adding CSS
 ----------
 
-Same directory...
+Since the ``index.html`` and ``style.css`` files are in the same directory, we
+can link them together by adding one statement to our ``head`` element:
 
-Different directory...
+.. sourcecode:: html
+   :lineno-start: 3
+
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>Hello, Web!</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+
+Line 7 uses the identical format to what we learned in the
+:ref:`Linking CSS to HTML <link-external-css>` section.
+
+Try It!
+^^^^^^^
+
+#. Paste this code into the ``style.css`` file:
+
+   .. sourcecode:: html
+      :linenos:
+
+      h1 {
+         color: purple;
+         text-align: center;
+         text-decoration: underline;
+         font-family: impact, helvetica;
+      }
+
+      section {
+         background-color: lightgreen;
+         text-align: center;
+         font-size: 36px;
+         border: solid 2px;
+         width: 50%;
+      }
+
+      .shadow {
+         color: green;
+         text-shadow: 3px 3px 4px blue;
+      }
+
+#. Save your work in both the ``index.html`` and ``style.css`` files. Return to
+   the browser and refresh the tab. Properly done, the ``Hello, Local Webpage!``
+   heading changed appearance. Also, if you added any ``<section>`` elements on
+   the page, they will also look different.
+
+   .. figure:: figures/styled-local-page.png
+      :alt: The local webpage with CSS style rules applied.
+
+      A styled local webpage.
+
+#. Notice that the CSS code defines a class called ``shadow``. Add this class
+   inside one of your HTML tags, then see the result in the browser.
+
+``style.css`` in Different Directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the CSS file is located in a different directory from the HTML page that
+uses it, we need to add the proper path inside the ``<link>`` tag. Let's take a
+look at three possible cases:
+
+.. admonition:: Example
+
+   [IMAGE]
+
+   When the stylesheet is one level down from our HTML file, update the
+   ``href`` attribute by adding a relative path that points to the CSS file.
+
+   .. sourcecode:: html
+
+      <link rel="stylesheet" type="text/css" href="./the_styles/style.css">
+
+.. admonition:: Example
+
+   [IMAGE]
+
+   When the stylesheet is one level up from our HTML file, use the ``..``
+   shortcut instead of ``.`` in the ``href`` path.
+
+   .. sourcecode:: html
+
+      <link rel="stylesheet" type="text/css" href="../style.css">
+
+.. admonition:: Example
+
+   If we pull a stylesheet from a website (like `Boostrap <https://getbootstrap.com/docs/4.5/getting-started/introduction/>`),
+   use the web address for the ``href`` attribute.
+
+   .. sourcecode:: html
+
+      <link rel="stylesheet" href="https://websiteURL">
+
+   Notice that the external link does not include the ``type`` attribute.
 
 Local Project
 -------------
+
+#. In the :ref:`HTML Me Something <html-me-something>` assignment, you built and decorated your
+   own webpage in repl.it. Login to your account now and open up that project.
+#. In VS Code, create a new directory called ``html_me``.
+#. Inside this directory, create an ``index.html`` file.
+#. Copy your HTML code from your repl.it project
 
 Copy/paste your HTML Me Something code into those files.
 
