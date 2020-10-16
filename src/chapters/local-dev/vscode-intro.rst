@@ -115,9 +115,9 @@ will only look at three of them right now.
 #. **Settings**: Clicking on the gear icon at the bottom of the toolbar brings
    up options for customizing the workspace. For example, if you don't like the
    default theme (dark background with light text), you can change it!
-#. **Extensions**: Install, update, or uninstall extensions for VS Code. Click
-   on the fifth icon from the top to make sure that extensions for Python and
-   HTML/CSS are installed. If not, follow the instructions in the
+#. **Extensions**: We can install, update, or uninstall extensions for VS Code.
+   Click on the fifth icon from the top to make sure that extensions for Python
+   and HTML/CSS are installed. If not, follow the instructions in the
    :ref:`Setting Up VS Code <vscode-extensions>` appendix to add them.
 
 Add a New File

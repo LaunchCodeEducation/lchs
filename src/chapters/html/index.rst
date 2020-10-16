@@ -1,3 +1,5 @@
+.. _html-chapter:
+
 We Built The Internet on HTML
 =============================
 
