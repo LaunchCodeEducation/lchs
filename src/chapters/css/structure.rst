@@ -62,6 +62,8 @@ CSS includes a lot of different properties, and it would be difficult to
 memorize the names for them all. In this chapter, we will use only a few of the
 most common.
 
+.. _css-selectors:
+
 CSS Selectors
 ^^^^^^^^^^^^^
 
