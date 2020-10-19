@@ -120,20 +120,20 @@ without special characters.
    Include special characters (Y/N)? y
    Your new password is: Sd"A%OO0nSzU?52
 
-Part D: Add a ``User`` Class
-----------------------------
+Part D: Add a ``Login`` Class
+-----------------------------
 
-Below the ``import`` statements, define a ``User`` class.
+Below the ``import`` statements, define a ``Login`` class.
 
-#. Use the ``__init__`` method to initialize properties for a username and a
-   password.
+#. Use the ``__init__`` method to initialize properties for a site name, a
+   username, and a password.
 #. Define a method called ``change_password`` that calls the ``make_password``
    function and updates the password property.
-#. Define a ``__str__`` method that displays the username and password in a
-   clean way.
+#. Define a ``__str__`` method that displays the login information in a clean
+   way.
 
-Test your class by creating a new ``User`` object (you will need to prompt for
-the username).
+Test your class by creating a new ``Login`` object (you will need to prompt for
+the site and username).
 
 Be sure to print the object to the console before and after calling the
 ``change_password`` method.
@@ -148,16 +148,19 @@ Be sure to print the object to the console before and after calling the
 ::
 
    Welcome to the password generator!
+   Please enter the site name: WOPR
    Please create a username: imsai8080
    Choose a password length (8 - 30 characters): 8
    Include special characters (Y/N)? n
+   
+   Login for: WOPR
    Username: imsai8080
    Password: 0cFqu5hc
 
    Would you like to change your password (Y/N)? y
    Choose a password length (8 - 30 characters): 30
    Include special characters (Y/N)? y
-   imsai8080, your new password is: &,|]ws@Rlb[)Rj&^5BOg)(]m&|Aj__
+   imsai8080, your new WOPR password is: &,|]ws@Rlb[)Rj&^5BOg)(]m&|Aj__
 
 Part E: Final Touch (Optional)
 ------------------------------
