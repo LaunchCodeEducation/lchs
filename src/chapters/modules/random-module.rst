@@ -1,3 +1,5 @@
+.. _random-module:
+
 The ``random`` Module
 =====================
 

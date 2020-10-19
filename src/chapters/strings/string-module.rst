@@ -1,3 +1,5 @@
+.. _string-module:
+
 .. index:: ! string module
 
 The ``string`` Module
