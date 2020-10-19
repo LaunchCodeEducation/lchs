@@ -136,17 +136,51 @@ the start and finish lines should always match in length.
    numbers! *Hint*: Maybe you can relate ``y_value`` to an ``index`` in the
    ``racers`` list... 
 
-Part D: Racing Loop
--------------------
+Part D: Racing Loops
+--------------------
 
-Lorem ipsum...
+The statements to control the turtle race go inside the ``main()`` function.
+
+After the window setup statements, the function should:
+
+#. Create the turtles and put the objects in the ``racers`` list.
+#. Call the ``draw_finish``  and ``start_position`` functions.
+#. Use one or more loops to move the turtles:
+
+   a. Every turn, each turtle moves forward a random number of pixels. Values
+      in the range of 5 - 20 pixels are a good place to start, but you can
+      adjust the end points as you wish.
+   b. Use a conditional to check each turtle after it moves. The objects all
+      start at ``-200`` and move toward ``200``. How can you determine if the
+      turtle crossed the finish line? (There are multiple correct ways to do
+      this).
+   c. When a turtle crosses the finish line, use the ``.write()`` method to
+      display a victory message on the screen!
+
+      .. sourcecode:: python
+
+            turtle_name.write("I win!\t", align='right')
+
+#. Ties are possible! When a turtle crosses the finish line, the racing loop(s)
+   should not repeat. However, they should end AFTER all of the turtles in the
+   list get a chance to move. (Without this condition, the turtle at index 0
+   gets a big advantage in the race, since it moves first).
 
 Part E: Sanity Check
 --------------------
 
 Lorem ipsum...
 
-Bonus Mission
--------------
+Bonus Missions
+--------------
 
-Replay option...
+Once you get your four turtles racing, try adding one of these enhanced
+features:
+
+#. Assign a random color or shape to each turtle.
+#. Randomly select the number of turtles, from 2 - 6. Use a loop to create the
+   objects and append them into ``racers``.
+#. Add a *Replay* option to your code to ask the user if they want to run
+   another race.
+
+[GIF of enhanced racing program]
