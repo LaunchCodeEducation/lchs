@@ -1,6 +1,6 @@
 .. _software-installations:
 
-Setting up Software for LCHS
+Installing Software for LCHS
 ============================
 
 .. toctree::
