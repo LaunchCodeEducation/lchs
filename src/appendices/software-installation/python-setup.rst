@@ -55,6 +55,60 @@ Mac Users
 Chromebook Users
 ----------------
 
-Lorem ipsum...
+#. Visit the `Miniconda download <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`__
+   page and select the Linux installer for the most recent version of Python.
 
-https://installpython3.com/chromebook/
+   .. figure:: figures/miniconda-package.png
+      :alt: Miniconda webpage with the desired Python package indicated.
+      :width: 70%
+
+#. IMPORTANT: Locate the installation package in the *Downloads* folder. Drag
+   it into the *Linux files* folder.
+
+   .. figure:: figures/miniconda-file.png
+      :alt: Drag and drop the Miniconda file into the 'Linux files' folder.
+
+#. Launch the *Terminal* application, or open a new terminal panel in VS Code.
+#. Use the following set of commands to start the installation:
+
+   ::
+
+      $ pwd
+      /home/your_username
+      $ ls
+      Miniconda3-latest-Linux-x86_64.sh
+      $ sudo bash Miniconda3-latest-Linux-x86_64.sh
+
+   .. admonition:: Note
+
+      The actual Miniconda file name may be different depending on version
+      updates.
+
+#. During installation, you will be asked several questions:
+
+   a. View and then accept the license terms (``yes``).
+   b. When asked for the installation location, use ``/opt/miniconda3``
+      instead of the default.
+
+      ::
+
+         Miniconda 3 will now be installed into this location /root/miniconda3
+
+            - Press ENTER to confirm
+            - Press CTRL-C to abort
+            - Or specify a different location below
+         
+         [/root/miniconda3] >>> /opt/miniconda3
+   
+   c. Finally, enter ``yes`` when asked to initialize Miniconda3.
+
+#. Close and reopen the terminal.
+#. To run Python code, you must *activate* Miniconda in the terminal with the
+   command ``source /opt/miniconda3/bin/activate``. This will give you access
+   to all of the features and modules installed with the language.
+
+   ::
+
+      username:~ $ source /opt/miniconda3/bin/activate.
+      (base) username:~ $ python --version
+      Python 3.8.3

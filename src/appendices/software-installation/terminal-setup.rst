@@ -31,7 +31,7 @@ to find the application.
 Windows Users
 -------------
 
-#. Download the `Git for Windows <https://gitforwindows.org/>`__ installer.
+#. Download the `Git for Windows <https://git-scm.com/downloads/>`__ installer.
 #. After the installer has fully downloaded, run it. You will then move through
    several screens of options.
 

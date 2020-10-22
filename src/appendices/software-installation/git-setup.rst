@@ -64,7 +64,7 @@ Chromebook Users
    ::
 
       $ git --version
-      git version 2.11.0
+      git version 2.20.1
 
 #. If the output does not include a version number, then you will need to
    install the software from the terminal. Enter the command
