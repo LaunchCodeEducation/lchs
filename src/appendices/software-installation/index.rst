@@ -10,4 +10,3 @@ Installing Software for LCHS
    vscode-setup
    python-setup
    git-setup
-   flask-setup

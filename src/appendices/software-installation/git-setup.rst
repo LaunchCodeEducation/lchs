@@ -1,6 +1,6 @@
 .. _git-install:
 
-Setting Up Git
+Installing Git
 ==============
 
 One of the most important habits for a programmer deals with proper version

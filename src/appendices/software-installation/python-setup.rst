@@ -55,6 +55,12 @@ Mac Users
 Chromebook Users
 ----------------
 
+.. admonition:: Warning
+
+   If you use a virtual desktop for your programming course, do NOT install VS
+   Code on your device. Use the login information your teacher gave you to
+   access the application.
+
 #. Visit the `Miniconda download <https://docs.conda.io/en/latest/miniconda.html#linux-installers>`__
    page and select the Linux installer for the most recent version of Python.
 

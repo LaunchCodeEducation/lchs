@@ -1,6 +1,6 @@
 .. _vsc-install:
 
-Setting Up Visual Studio Code
+Installing Visual Studio Code
 =============================
 
 .. admonition:: Note
