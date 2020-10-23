@@ -4,10 +4,8 @@ Installing Git
 ==============
 
 One of the most important habits for a programmer deals with proper version
-control. The `Git Some Control <https://education.launchcode.org/lchs/chapters/git/index.html>`__
-chapter discusses this critical process.
-
-.. todo:: Replace external chapter link with an internal one (Git install).
+control. The :ref:`Git Some Control <git-chapter>` chapter deals with this
+critical process.
 
 .. admonition:: Note
 
