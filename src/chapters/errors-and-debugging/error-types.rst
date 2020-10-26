@@ -135,6 +135,8 @@ that Python cannot solve. For example, on line 8, we try to print the value
 ``first_name``, but the variable does not exist! (In line 4, we defined
 ``first_Name`` instead).
 
+.. _logic-error:
+
 Logic Errors
 ------------
 

@@ -8,8 +8,8 @@ save and track our changes.
 Create a Repository
 -------------------
 
-To start adding content to a git repository, we must first create one. We will
-use Visual Studio Code, the terminal, and a series of commands to do this.
+To create a Git repository, we will use Visual Studio Code, the terminal, and a
+series of specific commands.
 
 .. index::
    single: git; repository
@@ -17,8 +17,8 @@ use Visual Studio Code, the terminal, and a series of commands to do this.
 
 .. admonition:: Try It!
 
-   Follow these steps to create your first git repository (called a **repo**
-   for short).
+   Follow these steps to create your first repository (called a **repo** for
+   short).
 
    #. Launch Visual Studio Code and open the ``local_practice`` folder you
       created in the last chapter.
@@ -36,8 +36,6 @@ use Visual Studio Code, the terminal, and a series of commands to do this.
       .. sourcecode:: bash
          :linenos:
 
-         $ pwd
-         /Users/username/Desktop/local_practice
          $ ls
          git_practice   hello.py   hello_web   module_practice   turtle_fun.py
          $ cd git_practice
@@ -49,22 +47,19 @@ use Visual Studio Code, the terminal, and a series of commands to do this.
       .. sourcecode:: bash
          :lineno-start: 6
 
-         $ pwd
-         /Users/username/Desktop/local_practice/git_practice
          $ git init
             Initialized empty Git repository in /Users/username/Desktop/local_practice/git_practice/.git
 
 We are now set up to have Git track all changes made inside the
-``git_practice`` folder.
-
-Let's add some code and see how to track our project!
+``git_practice`` folder. Let's make some changes and see how to track our
+project!
 
 Making Commits
 --------------
 
-Right now, ``git_practice`` is empty. However, the version control has already
-begun keeping track of the directory. We can see this by trying out our second
-git command in the terminal:
+Right now, ``git_practice`` is empty. However, the version control is already
+tracking the directory. We can see this by trying out a second Git command in
+the terminal:
 
 .. sourcecode:: bash
    :linenos:
@@ -74,7 +69,7 @@ git command in the terminal:
 
    No commits yet
 
-   nothing to commit \(create/copy files and use "git add" to track\)
+   nothing to commit, create/copy files and use "git add" to track
 
 We will deal with ``On branch master`` later in this chapter, but the next two
 lines deserve some attention.
@@ -84,98 +79,265 @@ lines deserve some attention.
 .. index::
    single: git; commit
 
-Line 4 tells us that we have made no **commits** yet. A commit is a saved
-change recorded in the repo. If we think of the repository as a container, then
-the commits are smaller containers stacked on top of each other inside the
-repo. Each commit includes a time stamp and a copy of all the files as they
-existed at that time. The more we dig down inside a repository, the farther
-back in time we go.
-
-Line 6 tells us, *Hey, if you want to track your project, you need to put
-something in this directory!*
+#. Line 4 tells us that we have made ``No commits yet``. A **commit** is an
+   update recorded in the repo. If we think of the repository as a container,
+   then the commits are smaller containers stacked on top of each other inside
+   the repo. Each commit includes a time stamp and a copy of all the files as
+   they existed at that time. The deeper we dig down inside a repository, the
+   farther back in time we go.
+#. Line 6 tells us, *Hey, if you want to track your project, you need to put
+   something in this directory!*
 
 Let's add a new file to the ``git_practice`` folder and then make our first
 commit.
 
-Lorem ipsum...
+.. admonition:: Try It!
 
-After a while, the programmer has made a lot of changes and saved their code
-files many times over.
-So when do they make a commit to their repository?
+   In VS Code, complete the steps described in the next three sections.
 
-.. admonition:: Tip
+Step 1: Make a Change
+^^^^^^^^^^^^^^^^^^^^^
 
-   The general rule of thumb is that any time a significant change is made to
-   the code, a commit should be made.
+#. Using either the terminal or the buttons in VS Code, create the file
+   ``num_guess.py`` in the ``git_practice`` folder. This action makes a change
+   to the repository.
+#. In the terminal, make sure you are in the ``git_practice`` folder.
+#. Enter the command ``git status``.
 
-If the programmer has created the Git repository and is ready to commit, they can do so by following the commit process.
+   .. sourcecode:: bash
+      :linenos:
+
+      $ pwd
+      /Users/username/Desktop/local_practice/git_practice
+      $ git status
+      On branch master
+
+      Initial commit
+
+      Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+         num_guess.py
+
+      nothing added to commit but untracked files present (use "git add" to track)
+
+The ``git status`` command returns information about two types of changes:
+modified *tracked* files and modified *untracked* files. *Tracked* means that
+the file already exists in the Git repository, but it has been recently
+changed. *Untracked* means that the file is new and not currently in the repo.
+
+Since we just added ``num_guess.py``, lines 8 - 11 list it as an untracked
+file. Line 13 tells us about changes found in the ``git_practice`` directory,
+but the updates are not set up as part of the tracking. The output also gives
+us a clue about what we need to do next.
+
+Step 2: Add Changes to a Commit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Currently, Git notices ``num_guess.py``, but it will NOT track the changes we
+make to the file yet. Our next step is to add the file to the tracking record
+to make it part of our first *commit*.
+
+#. In the terminal, use the command ``git add .`` (The period is part of the
+   command).
+#. Follow this with ``git status`` to see what happens as a result.
+
+   .. sourcecode:: bash
+      :linenos:
+
+      $ git add .
+      $ git status
+      On branch master
+
+      Initial commit
+
+      Changes to be committed:
+      (use "git rm --cached <file>..." to unstage)
+
+         new file:   num_guess.py
+
+The command ``git add .`` takes all of the tracked and untracked files in the
+current directory and adds them to the commit. We only have one change this
+time, but later on the list will be longer.
+
+Lines 7 - 10 tell us that ``num_guess.py`` will be included in the repository
+once we finish the commit.
 
 .. admonition:: Note
 
-   Git does have a simple commit command, however, making a proper commit requires that the programmers follow a longer procedure than just one command.
+   If we have a long list changes and only want to add a few of them to the
+   commit, we can do that. Just replace the ``.`` with a list of specific file
+   names.
+
+Step 3: Commit the Changes
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The last step of the commit process is to give the saved changes a description
+and add them to the repository.
+
+In the terminal, enter the command ``git commit -m "My first commit."``
+
+.. sourcecode:: bash
+   :linenos:
+
+   $ git commit -m "My first commit."
+   [master (root-commit) 84310df] My first commit.
+   1 file changed, 0 insertions(+), 0 deletions(-)
+   create mode 100644 num_guess.py
+
+#. The ``git commit`` command creates a new commit in the repository. It
+   contains all of the files that we created or modified since our last commit.
+#. The ``-m`` syntax adds a message to the commit. The message itself follows
+   the ``-m`` and is inside quotation marks. In this case, we added the comment
+   ``"My first commit."``
+#. Using the ``-m`` feature is helpful because it lets us leave notes for when
+   we look back into the history. ALWAYS add detailed comments to describe the
+   changes made in each commit.
+
+Note that line 3 in the output gives us some details about the changes we just
+saved to the repository. ``0 insertions(+), 0 deletions(-)`` means we
+modified no lines inside the file. This makes sense, because all we did was
+to create the new Python file. We haven't added any code to it yet.
+
+Make Another Commit
+-------------------
+
+#. In ``num_guess.py``, use the ``random`` module to select an integer from 1 -
+   100. Print that number to the console.
+#. Once you have your program running, save your work and go through the commit
+   process again. The terminal output will look something like this:
+
+   .. sourcecode:: bash
+      :linenos:
+
+      $ git status
+      On branch master
+      Changes not staged for commit:
+         (use "git add <file>..." to update what will be committed)
+         (use "git checkout -- <file>..." to discard changes in working directory)
+
+            modified:   num_guess.py
+
+      no changes added to commit (use "git add" and/or "git commit -a")
+      $ git add .
+      $ git commit -m "Added random number selection code."
+      [master 9bdcaab] Added random number selection code.
+      1 file changed, 4 insertions(+)
+
+#. You now have two sets of changes recorded in your Git repository.
+
+Lines 3 - 7 show the changes Git found since our first commit. Since we set up
+tracking for ``num_guess.py`` earlier, the file is listed as ``modified``. Line
+10 adds all of the changes found in the directory. Line 13 summarizes the
+changes saved to this commit. The output will vary depending on what you did
+in ``num_guess.py``, but in this example 4 new lines were added to 1 file.
+
+When to Commit Changes
+----------------------
+
+As we take a project from start to finish, we will make lots of changes and
+save our files many times over. How often should we add commits to the
+repository?
+
+The general rule of thumb is that any time we make a significant change to the
+project, we should also do a commit. This includes things like:
+
+#. The initial setup when we make our new project directory and add the first
+   empty file.
+#. After we add a new, working feature (loop, function, module, HTML/CSS, etc.)
+   to our code.
+#. Just before we share our project with another developer, especially if they
+   want to modify the code.
+
+There is nothing wrong with making lots of tiny commits. However, there will be
+a problem if we make too few. Commit early, and commit often!
+
+Imagine we are working on a big project, and we're almost done. Unfortunately,
+somewhere along the line we created some :ref:`logic errors <logic-error>`. Now
+imagine that the debugging causes other problems in the program. Frustrating!
+However, if we made plenty of commits to the repository, one solution is to
+search through the history and find a spot BEFORE we introduced the errors. We
+can then restore that working version and move on from there.
+
+If we didn't make any commits, then we might just have to start all over again.
+Many developers have ignored version control and regretted it later!
+
+.. figure:: figures/git-happens.png
+   :alt: Compare the situations of not committing enough vs. doing so often.
+   :width: 80%
+
+   Committing often makes it easy to roll back to an earlier, working version of your program.
+
+.. admonition:: Tip
+
+   NEVER commit flawed code! If your program isn't working, then don't save it
+   as part of the version control.
+
+   You want your version history to be clean. Saving a bug means that if you
+   roll back to that earlier version, you will need to re-fix the same error.
+
+Commit Process Summary
+----------------------
 
 The procedure for making a commit to a Git repository includes 4 stages.
 
-1. ``git status`` gives the programmer information about files that have been changed.
-2. ``git add`` allows the programmers to add specific or all changed files to a commit.
-3. ``git commit`` creates the new commit with the files that the programmer added.
-4. ``git log`` displays a log of every commit in the repository.
+#. Make one or more changes to the project files.
+#. Use ``git status`` to see information about files that have been changed.
+#. Use ``git add`` to include some or all of the changed files to the commit.
+#. Use ``git commit -m "Notes..."`` to create the new commit (with a message)
+   in the repo.
 
-If the steps above are followed correctly, the programmer will find their latest commit at the top of the log.
+.. admonition:: Warning
 
-Here is how the process will look in the terminal:
-
-::
-
-   Students-Computer:homework student$ git status
-   On branch master
-
-   Initial commit
-
-   Untracked files:
-     (use "git add <file>..." to include in what will be committed)
-
-         learning-git.js
-
-   nothing added to commit but untracked files present (use "git add" to track)
-   Students-Computer:homework student$ git add .
-   Students-Computer:homework student$ git commit -m "My first commit"
-   [master (root-commit) 2c1e0af] My first commit
-     1 file changed, 1 insertion(+)
-     create mode 100644 learning-git.js
-   Students-Computer:homework student$ git log
-   commit 2c1e0af9467217d76c7e3c48bcf9389ceaa4714b
-   Author: Student <lc101.student@email.com>
-   Date:  Wed Apr 24 14:44:59 2019 -0500
-
-      My first commit
-
-To break down what happens in a commit even further:
-
-When using ``git status``, the output shows two categories: modified tracked files and modified untracked files.
-Modified tracked means that the file exists in the Git repository already, but is different than the version in the repository.
-Modified untracked means that it is a new file that is not currently in the repository.
-
-``git add`` adds files to the commit, but it does not commit those files.
-By using ``git add .``, all the modified files were added to the commit.
-If a programmer only wants to add one modified file, they can do so.
-
-``git commit`` actually commits the files that were added to the repository.
-By adding ``-m "My first commit"``, a comment was added to the commit.
-This is helpful for looking through the log and seeing detailed comments of the changes made in each commit.
-
-``git log`` shows the author of the commit, the date made, the comment, and a 40-character hash.
-This hash or value is a key for Git to refer to the version.
-Programmers use these hashes to reference specific commits, or snapshots, in the repository's history.
+   ``git add`` only collects a list of changes that need to be recorded. It
+   does NOT save them to the repository. Remember to follow ``git add`` with
+   ``git commit -m``.
 
 Check Your Understanding
 ------------------------
 
 .. admonition:: Question
 
-   What git command is NOT a part of the commit process?
+   Which command creates a new repository?
 
-   #. ``git add``
-   #. ``git log``
-   #. ``git status``
-   #. ``git push``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git add .</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">git init</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git commit -m "notes..."</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git status</span></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   Which command saves a group of changes to an existing repository?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git add .</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git init</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">git commit -m "notes..."</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">git status</span></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
+
+.. raw:: html
+
+   <script type="text/JavaScript">
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = 'Nope!';
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>
