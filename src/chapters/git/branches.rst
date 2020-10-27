@@ -13,9 +13,14 @@ previous page, this is not a good idea.
 
 Unless...
 
-.. todo:: Insert initial Git branch image here.
+.. figure:: figures/git-branch-intro.png
+   :alt: The HTML and CSS code can be split from the main program.
+   :width: 70%
 
-CAPTION: "Branches to the rescue."
+   Branches to the rescue.
+
+Not only does Git allow us to store the version history of our project, it also
+lets us split the development into different paths.
 
 .. index:: ! branch
 
@@ -25,17 +30,15 @@ CAPTION: "Branches to the rescue."
 Branching in Git
 ----------------
 
-Git allows us to store different versions of our code as we create a project.
-It also lets us split project development into different paths.
-
 A Git **branch** is a separate version of the same master code. Like a branch
-on a tree, a branch in Git shares the same trunk as other limbs. However, each
-branch is distinct from all of the others.
+on a tree, a branch in Git shares the same trunk as the other limbs. However,
+each branch is distinct from all of the others.
 
 With branches, the two students can work on *separate* versions of the same
 project. They won't need to worry about messing up each other's work every time
-they want to make a new commit. They will share the same base code, and they
-will update their own parts of it.
+they want to make a new commit. They share the same base code, but they update
+their own parts of it. Eventually, they will merge their separate branches back
+into the main program.
 
 Branches let programmers start, update, store, and test new features for their
 code without disrupting the main flow of the Git history.
@@ -48,17 +51,21 @@ check the state of the ``git_practice`` repository. The first line in the
 output was ``On branch master``.
 
 When we run ``git init`` to start a new repo, part of the process creates a
-single, default branch called ``master``. Many programmers consider this Like
+single, default branch called ``master``. Many programmers consider this like
 the trunk of a tree. They use master to store and track the main, working
 part of their code. They use other branches to experiment with new features and
 split up work between partners.
 
+.. figure:: figures/git-branches.png
+   :alt: Diagram showing two branches coming off of the main one.
+   :width: 70%
+
+   Master contains the main, working code for the project. Branches 1 & 2 contain separate copies of the main code.
+
 .. admonition:: Tip
 
-   Working on a new part for your code? Do that in a different branch! That
+   Working on a new piece of your project? Do that in a different branch! That
    way, your commits won't interfere with the working copy of your program.
-
-.. todo:: Insert second Git branch image here (master with side branches and commits.
 
 To see a list of all the active branches in a project, enter ``git branch`` in
 the terminal.
@@ -148,25 +155,26 @@ file tree in VS Code and the ``greeting.py`` tab in the editor.
 
 .. todo:: Insert GIF of switching between branches.
 
-Notice that ``greeting.py`` disappears from the file tree! Also, the note
+Notice that ``greeting.py`` disappears from the file tree! Also, the note that
 ``(deleted)`` appears in its editor tab.
 
 Fear not! Our work hasn't gone away. Enter ``git checkout hello-branch`` in the
 terminal to see the file and its code reappear.
 
 The ``checkout`` command switches between branches. When we first made
-``hello-branch``, it was identical to master. Once me committed some changes,
-however, the two branches became different. By flipping back and forth between
+``hello-branch``, it was identical to master. Once me commit some changes,
+however, the two branches no longer match. By flipping back and forth between
 them, we call up different versions of our project.
 
 .. admonition:: Try It!
 
+   #. Return to the master branch in the ``git_practice`` repository.
    #. Create a new branch off of master.
-   #. Add some comments to ``num_guess.py``.
+   #. In the new branch, add some comments to ``num_guess.py``.
    #. Save and commit the changes.
    #. Use ``git branch`` to see a list of branches in the repo.
    #. Use ``git checkout`` to switch between the branches. Notice how the file
-      tree and code update as you do so.
+      tree and code both update as you do so.
 
 Check Your Understanding
 ------------------------
@@ -189,9 +197,11 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Do you think we can create a branch off of a branch?
+   Do you think we can create a branch off of a branch, like this?
 
-   [IMAGE]
+   .. figure:: figures/branches-cc.png
+      :alt: A two-level branch: Branch 1 splits off of master, and brach 2 splits off of branch 1.
+      :width: 60%
 
    .. raw:: html
 
