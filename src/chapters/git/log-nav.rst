@@ -159,19 +159,26 @@ discouraged in the coding community. Consider this example:
    Imagine that we move ``HEAD`` from the most recent commit back to the very
    first one we made.
 
-   {IMAGE}
+   .. figure:: figures/move-head.png
+      :alt: Move the HEAD bookmark back to the earliest commit in the log.
+      :width: 60%
 
-   Next, we make some changes to the code and commit them. What happens to
-   the two old commits from the log?
+   What happens to the second and third commits we saved to the repository?
 
-Once a commit is made, Git remembers it. Even though we ``reset`` to the very
-first commit in the log, the other two remain in the history. They form a dead
-end in our code, but they still appear in the log. They will be sandwiched
-between the first commit (now the ``HEAD``) and the next one we make. The log
-won't tell us, *Hey, these middle commits are not part of the path*. Resetting
-to anything but the most recent commit complicates the history.
+In our local version of the repo, the second and third commits would be wiped
+out if we use ``--hard`` in our reset command. It's the nuclear option.
 
-{IMAGE}
+This might not sound like a problem, but it is if other coders are working on
+our project. Their logs will now be different, since they are still working off
+of the old commits. This causes problems when it comes time to merge everyone's
+work together. By moving ``HEAD`` back to the beginning on our machine, we
+created a separate path for the project:
 
-Fortunately, Git offers us a nice way to experiment with our code and add new
-commits without disrupting the flow of the log.
+.. figure:: figures/compromised-path.png
+   :alt: Moving HEAD off of the most recent commit creates conflicting paths.
+
+Resetting to anything but the most recent commit complicates the history for
+the repository.
+
+Fortunately, Git provides a way for us to preserve the work flow history and
+let us experiment with new features and code.
