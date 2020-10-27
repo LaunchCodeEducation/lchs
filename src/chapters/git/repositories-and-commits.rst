@@ -54,6 +54,8 @@ We are now set up to have Git track all changes made inside the
 ``git_practice`` folder. Let's make some changes and see how to track our
 project!
 
+.. _check-git-status:
+
 Making Commits
 --------------
 
