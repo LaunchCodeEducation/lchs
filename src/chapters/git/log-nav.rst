@@ -27,6 +27,8 @@ In the terminal, enter the command ``git log`` and examine the output. The
 command displays a record of every commit in the repository. The top entry is
 the most recent.
 
+.. _git-log-example:
+
 .. admonition:: Example
 
    The log for the three entries in the ``git_practice`` repo will look
@@ -61,25 +63,115 @@ the most recent.
 
 Each entry in the log contains four items:
 
-#. ``commit`` shows a 40-character long code. This code provides a key that Git
+#. ``commit`` shows a 40-character long code. This provides the key that Git
    uses to organize the commits in the repository.
 #. ``Author`` indicates who made the commit. This becomes important when
-   multiple coders work on the same project. For now, this line shows the name
-   used to login to the computer.
+   multiple coders work on the same project.
 #. ``Date`` indicates the day and time the commit was made.
 #. The indented line shows the comment saved with the commit. The more details
    we include in each comment, the easier it is to look through the log and
    know what changes were made between saves.
 
+Undo Changes Since Last Commit
+------------------------------
+
+New code usually doesn't work perfectly on the first try. This is especially
+true as our programs get larger.
+
+One big advantage of version control is that it allows us to save working code
+before we add and test a new feature. If the feature works, great! If not, we
+tinker with it until it does. However, sometimes we will just create a complete
+mess. When this happens, we need to step back, take a break, and then rethink
+how to make the feature work.
+
+Since we made a commit just before adding the new code, we can *restore* our
+most recent version. This wipes away all of the changes made since that commit.
+We can then start with our old, working code and try something different.
+
+Let's see how this works.
+
+.. admonition:: Try It!
+
+   Restoring your most recent commit acts like a great big *Undo*.
+
+   #. Add a few comment lines after the ``import`` statement in
+      ``num_guess.py``. It doesn't matter what you type, as long as you make
+      an obvious change.
+
+      .. sourcecode:: python
+         :linenos:
+
+         import random
+
+         # Git pun number 1...
+         # Git pun number 2...
+         # This lets us git some practice.
+
+   #. Save your work in VS Code, but do NOT commit it.
+   #. Use ``git status`` to verify that you have uncommitted changes in the
+      file.
+
+      ::
+
+         $ git status
+         On branch master
+         Changes not staged for commit:
+         (use "git add <file>..." to update what will be committed)
+         (use "git checkout -- <file>..." to discard changes in working directory)
+
+               modified:   num_guess.py
+
+         no changes added to commit (use "git add" and/or "git commit -a")
+
+   #. Now enter the following command in the terminal. Pay close attention to
+      what happens to the comments you added in ``num_guess.py``.
+
+      ::
+
+        $ git reset --hard HEAD
+   
+   Whoa, the added statements disappear!
+
+**Syntax review**:
+
+#. ``git reset`` moves us backwards through the commit history.
+#. ``HEAD`` identifies the commit to move to. Looking at the output from the
+   :ref:`git log example <git-log-example>`, we see that the first entry is
+   labeled with ``(HEAD -> master)``. Think of ``HEAD`` like a bookmark in the
+   log.
+#. ``--hard`` removes all changes made after the ``HEAD`` commit.
+
+.. figure:: figures/git-reset.gif
+   :alt: The git reset command removes uncommitted changes from the files.
+
 Switching Between Commits
 -------------------------
 
-Lorem ipsum...
+What if we want to move further back in the commit history? This is possible.
+Git allows us to move the ``HEAD`` bookmark to any commit in the log. We can
+then ``reset`` to that state of the code and move forward from there.
 
-How to switch...
+However, this is not the best option. In fact, doing this is actively
+discouraged in the coding community. Consider this example:
 
-Note how the latest code "disappears" when switching to an earlier commit...
+.. admonition:: Example
 
-Restoring earlier commit...
+   Imagine that we move ``HEAD`` from the most recent commit back to the very
+   first one we made.
 
-Advancing code, make a mistake, and need to return to the most recent commit...
+   {IMAGE}
+
+   Next, we make some changes to the code and commit them. What happens to
+   the two old commits from the log?
+
+Once a commit is made, Git remembers it. Even though we ``reset`` to the very
+first commit in the log, the other two remain in the history. They form a dead
+end in our code, but they still appear in the log. They will be sandwiched
+between the first commit (now the ``HEAD``) and the next one we make. The log
+won't tell us, *Hey, these middle commits are not part of the path*. Resetting
+to anything but the most recent commit complicates the history.
+
+{IMAGE}
+
+Fortunately, Git offers us a nice way to experiment with our code and add new
+commits without disrupting the flow of the log.

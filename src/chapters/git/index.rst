@@ -8,8 +8,8 @@ Git Some Control
    background
    repositories-and-commits
    log-nav
-   remote-repository
    branches
    merge
+   remote-repository
    exercises
    project
