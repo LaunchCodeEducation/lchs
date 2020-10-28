@@ -153,17 +153,21 @@ them with the syntax:
 Enter ``git checkout master`` into the terminal. Pay close attention to the
 file tree in VS Code and the ``greeting.py`` tab in the editor.
 
-.. todo:: Insert GIF of switching between branches.
+.. figure:: figures/git-checkout.gif
+   :alt: Switching between branches updates the files and code in the project.
+   :width: 70%
 
-Notice that ``greeting.py`` disappears from the file tree! Also, the note that
+   Branches contain different versions of the project files and code.
+
+Notice that ``greeting.py`` disappears from the file tree! Also, note that
 ``(deleted)`` appears in its editor tab.
 
 Fear not! Our work hasn't gone away. Enter ``git checkout hello-branch`` in the
 terminal to see the file and its code reappear.
 
 The ``checkout`` command switches between branches. When we first made
-``hello-branch``, it was identical to master. Once me commit some changes,
-however, the two branches no longer match. By flipping back and forth between
+``hello-branch``, it was identical to master. However, once we commit some
+changes, the two branches no longer match. By flipping back and forth between
 them, we call up different versions of our project.
 
 .. admonition:: Try It!
@@ -172,9 +176,9 @@ them, we call up different versions of our project.
    #. Create a new branch off of master.
    #. In the new branch, add some comments to ``num_guess.py``.
    #. Save and commit the changes.
-   #. Use ``git branch`` to see a list of branches in the repo.
+   #. Use ``git branch`` to see the list of branches in the repo.
    #. Use ``git checkout`` to switch between the branches. Notice how the file
-      tree and code both update as you do so.
+      tree and code both update.
 
 Check Your Understanding
 ------------------------
@@ -206,7 +210,7 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Yes.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Yes we can, but we should really keep branches only one layer deep.</li>
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> No.</li>
       </ol>
       <p id="Q2"></p>
