@@ -38,13 +38,13 @@ Imagine that you want to add a few more lines to the text file in the
 
    ::
 
-   $ git status
-   On branch master
-   Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git checkout -- <file>..." to discard changes in working directory)
+      $ git status
+      On branch master
+      Changes not staged for commit:
+         (use "git add <file>..." to update what will be committed)
+         (use "git checkout -- <file>..." to discard changes in working directory)
 
-        modified:   conflict_demo.txt
+         modified:   conflict_demo.txt
 
 #. Enter ``git stash`` in the terminal and notice how the changes made in
    the text file disappear. Those changes are stored by Git, but they are no
@@ -114,4 +114,11 @@ that action.
 Git More Information
 --------------------
 
-Link(s) to outside resources and/or tutorials...
+If you would like to explore additional discussions, tutorials, and videos
+about Git, here are some resources you can explore on your own:
+
+#. `What is Version Control <https://www.git-tower.com/learn/git/ebook/en/command-line/basics/what-is-version-control/#start>`__
+#. `Git branches <https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/branching-can-change-your-life/#start>`__
+#. `Git video tutorial <https://www.git-tower.com/learn/git/videos/#episodes>`__
+   (24 topics to choose from)
+#. `Official Git documentation <https://git-scm.com/doc>`__
