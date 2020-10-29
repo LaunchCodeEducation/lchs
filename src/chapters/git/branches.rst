@@ -64,8 +64,8 @@ split up work between partners.
 
 .. admonition:: Tip
 
-   Working on a new piece of your project? Do that in a different branch! That
-   way, your commits won't interfere with the working copy of your program.
+   Working on a new piece for your project? Do it in a different branch! That
+   way your commits won't interfere with the working copy of your program.
 
 To see a list of all the active branches in a project, enter ``git branch`` in
 the terminal.
@@ -82,6 +82,8 @@ the terminal.
 
 For our ``git_practice`` repo, we only have one branch so far. Let's add
 another.
+
+.. _create-git-branch:
 
 Create a New Branch
 -------------------

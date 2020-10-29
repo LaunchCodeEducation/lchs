@@ -1,0 +1,4 @@
+Git Tips
+========
+
+Lorem ipsum...

@@ -10,6 +10,7 @@ Git Some Control
    log-nav
    branches
    merge
+   git-tips
    remote-repository
    exercises
    project
