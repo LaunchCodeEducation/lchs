@@ -15,15 +15,38 @@ Use your terminal powers to move through these Git exercises.
    ``status/add/commit`` commands to commit the changes to the repository.
 #. Paste in this boilerplate HTML code into ``index.html``, then commit again.
 
-   [Code Block Here]
+   .. sourcecode:: html
+      :linenos:
 
-#. Use ``git checkout`` to create a new branch called ``html-code``. While in
-   that branch, add at least 5 new elements to the HTML file. Save and commit
-   your changes.
+      <!DOCTYPE html>
+      <html>
+         <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Commit to Git!</title>
+            <link href="style.css" rel="stylesheet" type="text/css" />
+         </head>
+         <body>
+            
+         </body>
+      </html>
+
+#. Use ``git checkout -b`` to create a new branch called ``html-code``. While
+   in that branch, add at least 5 new elements to the HTML file. Save and
+   commit your changes.
 #. Return to ``master``. Use ``checkout`` again to create a third branch called
    ``css-styles``. While in this new branch, open the CSS file and add style
    rules for at least three different elements. Also, include at least one
    :ref:`class selector <css-selectors>`. Save and commit your changes.
+
+You should have 3 branches in your repository now:
+
+::
+
+   $ git branch
+   * css-styles
+     html-code
+     master
 
 Merging
 ^^^^^^^
@@ -45,7 +68,8 @@ merges.
 Properly done, at the end of these steps, the ``master`` branch will hold the
 complete code for the project. The HTML and CSS branches will only hold parts.
 
-*Bonus*: Try merging ``master`` into the ``css-style`` branch. Is this allowed?
+*Bonus*: Try merging ``master`` into the ``css-styles`` branch. Is this
+allowed?
 
 .. admonition:: Tip
 
@@ -63,7 +87,7 @@ Right now, the ``master`` and ``css-styles`` branches have the same code in the
 
 #. Return to ``master``. Open the CSS file and make the following changes:
 
-   a. In one of the existing element selectors, change the ``color`` property
+   a. In one of your existing element selectors, change the ``color`` property
       for the text.
    b. Add another class selector and assign it some property values.
    c. Add an :ref:`id selector <css-selectors>` and assign it some property
@@ -74,21 +98,25 @@ Right now, the ``master`` and ``css-styles`` branches have the same code in the
 
    a. In the SAME element selector you changed in ``master``, choose a
       different ``color`` for the text.
-   b. Add another class selector. Give it the same name as in ``master``, but
-      assign it different property values.
+   b. Add another class selector. Give it the same name as in ``master``. For
+      the properties, keep the first one the same but change the other(s).
    c. Add an :ref:`id selector <css-selectors>` and assign it some property
-      values. Give this selector a different name that the one defined in
+      values. Give this selector a different name than the one defined in
       ``master``.
 
 #. Save and commit your changes.
 #. Return to ``master`` and try merging in the ``css-styles`` branch. Spoiler
-   alert! There will be a merge conflict.
+   alert! There will be some merge conflicts.
 
-As you resolve the conflict(s), answer the following:
+As you resolve the conflicts, consider the following:
 
-#. Which changes (parts a - c) resulted in conflicts?
+#. Which changes from parts a - c resulted in conflicts?
+#. For which conflict would the option to ``Accept Both Changes`` be a good
+   choice?
 #. When does changing the same file in two different branches result in a
    conflict?
+
+Don't forget to commit again!
 
 Set up a Github Account
 -----------------------
