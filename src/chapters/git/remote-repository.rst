@@ -68,7 +68,7 @@ need to get a copy of the repository. Fortunately, the team uses GitHub!
 
 Even without an account, we can *clone* our team's work and save it on our own
 machine. Once we have an account (and permission from our team), we can push
-changes to the repo from our machine up to GitHub. Neat!
+changes we make to the repo from our machine up to GitHub. Neat!
 
 To clone a remote repository, the terminal command is:
 
