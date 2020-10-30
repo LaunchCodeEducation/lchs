@@ -62,6 +62,7 @@ Assignments
    assignments/coded-messages
    assignments/console-game
    assignments/html-me-something
+   assignments/communication-log
 
 Appendices
 ==========

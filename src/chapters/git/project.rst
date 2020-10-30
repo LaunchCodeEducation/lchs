@@ -1,4 +1,6 @@
-Project: Communication Log
-==========================
+.. _git-project:
+
+Project: Git a Remote Repository
+================================
 
 Lorem ipsum...
