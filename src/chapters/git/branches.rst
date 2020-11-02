@@ -43,12 +43,23 @@ into the main program.
 Branches let programmers start, update, store, and test new features for their
 code without disrupting the main flow of the Git history.
 
-On Branch Master
-----------------
+On Branch ``main``
+------------------
 
 In the :ref:`previous section <check-git-status>`, we used ``git status`` to
 check the state of the ``git_practice`` repository. The first line in the
 output was ``On branch main``.
+
+.. admonition:: Note
+
+   If your installed version of ``git`` gives the default branch a name other
+   than ``main``, you can rename it with the command:
+
+   ::
+
+      $ git branch -m old-branch-name main
+
+   In this case, ``old-branch-name`` becomes ``main``.
 
 When we run ``git init`` to start a new repo, part of the process creates a
 single, default branch called ``main``. Many programmers consider this like
@@ -60,7 +71,7 @@ split up work between partners.
    :alt: Diagram showing two branches coming off of the main one.
    :width: 70%
 
-   Master contains the main, working code for the project. Branches 1 & 2 contain separate copies of the main code.
+   ``main`` contains the central, working code for the project. Branches 1 & 2 contain separate copies of the main code.
 
 .. admonition:: Tip
 
@@ -136,6 +147,9 @@ us into that branch.
          1 file changed, 1 insertion (+)
          create mode 100644 greeting.py
 
+      Just like before, ``git status`` identifies our current branch
+      (``hello-branch``), and it lists the files that contain changes.
+
    #. Enter ``git log`` again and notice that there is a new entry at the top
       of the output.
 
@@ -161,7 +175,7 @@ file tree in VS Code and the ``greeting.py`` tab in the editor.
 
    Branches contain different versions of the project files and code.
 
-Notice that ``greeting.py`` disappears from the file tree! Also, note that
+Notice that ``greeting.py`` disappears from the file tree. Also, note that
 ``(deleted)`` appears in its editor tab.
 
 Fear not! Our work hasn't gone away. Enter ``git checkout hello-branch`` in the
