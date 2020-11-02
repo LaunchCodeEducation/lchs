@@ -92,14 +92,31 @@ repository we want to clone.
          $ pwd
          /Users/username/Desktop/local_practice
 
-   #. Now clone an existing project from GitHub. Enter the command:
+   #. Now clone an existing project from GitHub. Copy and paste this command
+      into the terminal:
 
       ::
 
-         $ git clone URL GOES HERE
+         $ git clone https://github.com/LaunchCodeEducation/LCHS-git-clone-example.git
 
-   Import an LCHS repo from GitHub. Maybe a turtle drawing, a console game,
-   or an HTML/CSS project?
+   #. Use the file tree or the ``ls`` command so see that a new folder has been
+      saved in the ``local_practice`` directory. Navigate into that folder and
+      look around.
+
+      ::
+
+         $ cd LCHS-git-clone-example
+         $ ls
+         main.py
+         $ python main.py
+
+      *Mac users*: Remember to use ``python3`` instead of ``python`` in the
+      terminal.
+   
+   You can view the code you cloned by opening ``main.py`` in VS Code. Any
+   branches, changes, and commits you make will be saved to your local version
+   of the repository. The remote version remains unchanged by the actions you
+   take on your device.
 
 Saving to a Remote Repository
 -----------------------------
