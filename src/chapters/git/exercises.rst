@@ -34,7 +34,7 @@ Use your terminal powers to move through these Git exercises.
 #. Use ``git checkout -b`` to create a new branch called ``html-code``. While
    in that branch, add at least 5 new elements to the HTML file. Save and
    commit your changes.
-#. Return to ``master``. Use ``checkout`` again to create a third branch called
+#. Return to ``main``. Use ``checkout`` again to create a third branch called
    ``css-styles``. While in this new branch, open the CSS file and add style
    rules for at least three different elements. Also, include at least one
    :ref:`class selector <css-selectors>`. Save and commit your changes.
@@ -46,29 +46,29 @@ You should have 3 branches in your repository now:
    $ git branch
    * css-styles
      html-code
-     master
+     main
 
 Merging
 ^^^^^^^
 
 Notice that none of the three branches contains a complete set of code.
-``master`` and ``html-code`` have a blank ``style.css`` file, while ``master``
+``main`` and ``html-code`` have a blank ``style.css`` file, while ``main``
 and ``css-styles`` do not have the updated HTML. You will fix this with two
 merges.
 
-#. Return to ``master`` and use the ``git merge`` command pull in the changes
+#. Return to ``main`` and use the ``git merge`` command pull in the changes
    from ``html-code``.
 #. Check inside ``index.html`` and use ``git log`` in the terminal to confirm
-   that ``master`` contains the commits you made in the other branch.
+   that ``main`` contains the commits you made in the other branch.
 #. Repeat steps 1 and 2 for the ``css-styles`` branch.
 #. Can you merge the same two branches again? Find out by moving into the
    ``html-code`` branch and adding more code and commits. Then try merging the
-   branch into ``master``. Does it work?
+   branch into ``main``. Does it work?
 
-Properly done, at the end of these steps, the ``master`` branch will hold the
+Properly done, at the end of these steps, the ``main`` branch will hold the
 complete code for the project. The HTML and CSS branches will only hold parts.
 
-*Bonus*: Try merging ``master`` into the ``css-styles`` branch. Is this
+*Bonus*: Try merging ``main`` into the ``css-styles`` branch. Is this
 allowed?
 
 .. admonition:: Tip
@@ -82,10 +82,10 @@ Merge Conflicts
 The best way to learn how to deal with merge conflicts is to solve merge
 conflicts! Avoiding them is preferred, but some will sneak in anyway.
 
-Right now, the ``master`` and ``css-styles`` branches have the same code in the
+Right now, the ``main`` and ``css-styles`` branches have the same code in the
 ``style.css`` file. Time to bring in some conflicts...
 
-#. Return to ``master``. Open the CSS file and make the following changes:
+#. Return to ``main``. Open the CSS file and make the following changes:
 
    a. In one of your existing element selectors, change the ``color`` property
       for the text.
@@ -96,16 +96,16 @@ Right now, the ``master`` and ``css-styles`` branches have the same code in the
 #. Save and commit your changes.
 #. Move into the ``css-styles`` branch and make the following changes:
 
-   a. In the SAME element selector you changed in ``master``, choose a
+   a. In the SAME element selector you changed in ``main``, choose a
       different ``color`` for the text.
-   b. Add another class selector. Give it the same name as in ``master``. For
+   b. Add another class selector. Give it the same name as in ``main``. For
       the properties, keep the first one the same but change the other(s).
    c. Add an :ref:`id selector <css-selectors>` and assign it some property
       values. Give this selector a different name than the one defined in
-      ``master``.
+      ``main``.
 
 #. Save and commit your changes.
-#. Return to ``master`` and try merging in the ``css-styles`` branch. Spoiler
+#. Return to ``main`` and try merging in the ``css-styles`` branch. Spoiler
    alert! There will be some merge conflicts.
 
 As you resolve the conflicts, consider the following:

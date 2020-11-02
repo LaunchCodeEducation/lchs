@@ -1,9 +1,9 @@
 Merging in Git
 ==============
 
-Let's say we branch off of ``master`` to work on a new feature for our program.
+Let's say we branch off of ``main`` to work on a new feature for our program.
 After some work, debugging, and several commits, we finally get the new code
-running (yay). Our next step is to git that code into the master branch of our
+running (yay). Our next step is to git that code into the main branch of our
 program.
 
 .. index:: ! merge
@@ -18,7 +18,7 @@ branches become one, with a combined history and Git log.
    :alt: Merging combines two Git branches into one.
    :width: 80%
 
-   The ``html-code`` branch is merged into ``master``.
+   The ``html-code`` branch is merged into ``main``.
 
 How to Merge
 ------------
@@ -30,8 +30,8 @@ To combine two branches, we must check a few things first:
 #. Once the line ``nothing to commit, working tree clean`` appears in the
    ``status`` output for both branches, they are ready to merge.
 #. Use ``git checkout`` to switch to the branch that will *receive* the other
-   one. For example, if we want to merge ``html-code`` into ``master``, then we
-   need to switch into ``master``.
+   one. For example, if we want to merge ``html-code`` into ``main``, then we
+   need to switch into ``main``.
 
 After completing these checks, the terminal syntax for a merge is:
 
@@ -44,7 +44,7 @@ This merges ``branch-name`` into the current one.
 .. admonition:: Example
 
    Use the figure at the top of this page as a model. We want to merge the
-   ``html-code`` branch into ``master``.
+   ``html-code`` branch into ``main``.
    
    After we finish the ``git status`` checks, the terminal output would look
    something like this:
@@ -53,9 +53,9 @@ This merges ``branch-name`` into the current one.
 
       $ git branch
        * html-code
-         master
-      $ git checkout master
-      Switched to branch 'master'
+         main
+      $ git checkout main
+      Switched to branch 'main'
       $ git merge html-code
       Updating db231f2..5e43d6f
       index.html | 5 ++++-
@@ -68,7 +68,7 @@ Try It!
 -------
 
 On the :ref:`previous page <create-git-branch>`, you created a second branch in
-the ``git_practice`` repository. Let's merge that branch into ``master``.
+the ``git_practice`` repository. Let's merge that branch into ``main``.
 
 #. In VS Code, use the terminal pane to navigate into the ``git_practice``
    folder.
@@ -77,8 +77,8 @@ the ``git_practice`` repository. Let's merge that branch into ``master``.
 #. Use ``git checkout`` to move into ``hello-branch``.
 #. Use ``git status`` to check for uncommitted changes in the branch. If
    necessary, add and commit those changes to the repo.
-#. Repeat steps 3 and 4 for the ``master`` branch.
-#. Make sure you are in ``master``, then enter ``git merge hello-branch`` to
+#. Repeat steps 3 and 4 for the ``main`` branch.
+#. Make sure you are in ``main``, then enter ``git merge hello-branch`` to
    combine the two branches. Properly done, you should see ``greeting.py``
    appear in the file tree.
 #. Enter ``git log`` to see the updated history for the repo. Notice that it
@@ -114,7 +114,7 @@ practice resolving it.
 Conflict Demo
 ^^^^^^^^^^^^^
 
-Let's return to the master branch in our ``git_practice`` repo. Make sure you
+Let's return to the main branch in our ``git_practice`` repo. Make sure you
 have committed all recent changes before diving into the steps below.
 
 Setup
@@ -134,7 +134,7 @@ Setup
       Switched to a new branch 'make-conflict'
       $ git branch
       * make-conflict
-        master
+        main
 
 OK. Let's do some typing in ``conflict_demo.txt``.
 
@@ -152,7 +152,7 @@ Add Text In Both Branches
 
       Changes made to ``conflict_demo.txt`` in the ``make-conflict`` branch.
 
-#. Use ``git checkout`` to switch back to the ``master`` branch.
+#. Use ``git checkout`` to switch back to the ``main`` branch.
 #. Add a few lines of text to ``conflict_demo.txt``. Make sure these lines are
    different than the ones you used before. Save and commit the changes to the
    repo.
@@ -161,18 +161,18 @@ Add Text In Both Branches
       :alt: Excerpt from the LCHS textbook added to the conflict_demo.txt file.
       :width: 80%
 
-      Changes made to ``conflict_demo.txt`` in the ``master`` branch.
+      Changes made to ``conflict_demo.txt`` in the ``main`` branch.
 
 Resolving the Conflict
 ~~~~~~~~~~~~~~~~~~~~~~
 
-#. Try merging the ``make-conflict`` branch into ``master``.
+#. Try merging the ``make-conflict`` branch into ``main``.
 
    ::
 
       $ git branch
         make-conflict
-      * master
+      * main
       $ git merge make-conflict
       Auto-merging conflict_demo.txt
       CONFLICT (content): Merge conflict in conflict_demo.txt
@@ -191,7 +191,7 @@ Resolving the Conflict
       ``conflict_demo.txt`` was changed in both branches.
 
    The green area points out the changes made in our *current* branch
-   (``master``), and the blue area shows the changes coming in from
+   (``main``), and the blue area shows the changes coming in from
    ``make-conflict``.
 #. Just above the green area, we see several options for resolving the conflict:
 
@@ -200,7 +200,7 @@ Resolving the Conflict
       on this option:
 
       .. figure:: figures/merge-conflict4.png
-         :alt: Kept the changes made in the master branch.
+         :alt: Kept the changes made in the main branch.
          :width: 60%
 
    b. **Accept Incoming Change** keeps the blue highlighted text and uses it to
@@ -250,7 +250,7 @@ are some tips:
 #. Deal with any uncommitted work before trying to merge.
 #. Try to avoid working on the same file, at the same time, in two different
    branches.
-#. Try to avoid adding code directly into ``master``. New ideas should be
+#. Try to avoid adding code directly into ``main``. New ideas should be
    explored in a different branch first and then merged.
 
 Check Your Understanding
@@ -262,19 +262,19 @@ Check Your Understanding
 
       $ git log
         feature
-        master
+        main
       * test
 
    A programmer is on the branch ``test`` and wants to merge ``feature`` into
-   ``master``. What should they enter in the terminal? Assume that the status
+   ``main``. What should they enter in the terminal? Assume that the status
    for all branches is clean.
 
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout feature</code>, then <code class="pre">git merge master</code>.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git checkout master</code>, then <code class="pre">git merge feature</code>.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout master</code>, then <code class="pre">git merge test</code>.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout feature</code>, then <code class="pre">git merge main</code>.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git checkout main</code>, then <code class="pre">git merge feature</code>.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout main</code>, then <code class="pre">git merge test</code>.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout feature</code>, then <code class="pre">git merge test</code>.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Just <code class="pre">git checkout feature</code>.</li>
       </ol>

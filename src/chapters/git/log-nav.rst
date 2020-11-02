@@ -37,7 +37,7 @@ the most recent.
    ::
 
       $ git log
-      commit 39ab2d77c7813c67958e996961ddbca7a32b6762 (HEAD -> master)
+      commit 39ab2d77c7813c67958e996961ddbca7a32b6762 (HEAD -> main)
       Author: I. M. Great <student@schoolname.edu>
       Date:   Mon Oct 26 15:46:41 2020 -0500
 
@@ -114,7 +114,7 @@ Let's see how this works.
       ::
 
          $ git status
-         On branch master
+         On branch main
          Changes not staged for commit:
          (use "git add <file>..." to update what will be committed)
          (use "git checkout -- <file>..." to discard changes in working directory)
@@ -137,7 +137,7 @@ Let's see how this works.
 #. ``git reset`` moves us backwards through the commit history.
 #. ``HEAD`` identifies the commit to move to. Looking at the output from the
    :ref:`git log example <git-log-example>`, we see that the first entry is
-   labeled with ``(HEAD -> master)``. Think of ``HEAD`` like a bookmark in the
+   labeled with ``(HEAD -> main)``. Think of ``HEAD`` like a bookmark in the
    log.
 #. ``--hard`` removes all changes made after the ``HEAD`` commit.
 

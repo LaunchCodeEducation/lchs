@@ -6,10 +6,9 @@ backups of our code. This version history (the repository) is stored on our
 personal machine.
 
 One advantage of keeping the local repo is that we can work on our project
-anytime we want. We don't need access to the internet.
-
-One issue with a local repo, however, is that keeping a copy on our personal
-device does not always fit how we code. For example:
+anytime we want. We don't need access to the internet. One issue with a local
+repo, however, is that keeping a copy on our personal device does not always
+fit how we code. For example:
 
 #. Students often use different devices in class and at home.
 #. In a school, the same computer gets used by multiple students.
@@ -29,19 +28,19 @@ Local, Remote, GitHub, Oh My!
 .. index:: 
    single: repository; remote
 
-How can we update our saved code when we need to use a different device? This
+How can we work on our saved code when we need to use a different device? This
 is where **remote repositories** come in. Unlike a *local* repo (stored on our
 machine), a remote repository is stored online.
 
 If you've ever used the Dropbox service, or created a Google doc (or
 spreadsheet, presentation, etc.), then you have used a remote repository. For
-example, we can login to our Google account from a computer at school and start
-working on a slide presentation. Google stores our work and lets us access it
-from any other computer that can connect to the web. We just login to Google
-again and continue working on the same file right where we left off. We can
-also share our work with one or more partners. Changes made by one person
-update the slides for everyone else. That way, the entire team sees the most
-current version.
+example, you can login to your Google account from a computer at school and
+start working on a slide presentation. Google stores your work and lets you
+access it from any other computer that can connect to the web. You just login
+to Google again and continue working on the same file right where you left off.
+You can also share your work with one or more partners. Changes made by one
+person update the slides for everyone else. That way, the entire team sees the
+most current version.
 
 Instead of keeping a Git repository only on our local machine, we can use an
 online service to store the repo instead. Then we pull down copies of that repo
@@ -68,7 +67,7 @@ need to get a copy of the repository. Fortunately, the team uses GitHub!
 
 Even without an account, we can *clone* our team's work and save it on our own
 machine. Once we have an account (and permission from our team), we can push
-changes we make to the repo from our machine up to GitHub. Neat!
+the commits we make from our machine up to GitHub. Neat!
 
 To clone a remote repository, the terminal command is:
 
@@ -81,7 +80,23 @@ repository we want to clone.
 
 .. admonition:: Try It!
 
-   Lorem ipsum...
+   Since you already initialized the ``git_practice`` directory as a Git
+   repository, it's important to move out of that folder before cloning a new
+   repo!
+
+   #. In VS Code, use the terminal to return to the ``local_practice``
+      directory. Confirm your location with the ``pwd`` command.
+
+      ::
+
+         $ pwd
+         /Users/username/Desktop/local_practice
+
+   #. Now clone an existing project from GitHub. Enter the command:
+
+      ::
+
+         $ git clone URL GOES HERE
 
    Import an LCHS repo from GitHub. Maybe a turtle drawing, a console game,
    or an HTML/CSS project?

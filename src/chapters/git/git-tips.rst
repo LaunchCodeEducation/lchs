@@ -2,7 +2,7 @@ Git Tips
 ========
 
 Now that we've got the idea of branching in our toolkit, we should definitely
-use them often. Keeping the core, working code in ``master`` and growing that
+use them often. Keeping the core, working code in ``main`` and growing that
 code in branches is a very strong technique.
 
 This page explores some details that often come up as we work with branches.
@@ -30,16 +30,16 @@ Try It!
 Imagine that you want to add a few more lines to the text file in the
 ``make-conflict`` branch.
 
-#. Return to the ``master`` branch in the ``git_practice`` repo.
+#. Return to the ``main`` branch in the ``git_practice`` repo.
 #. Add new lines to ``conflict_demo.txt`` and save the file.
 #. Type ``git status`` in the terminal. The first line of the output tells us
    that we're in the wrong branch. We want to be in ``make-conflict``, not
-   ``master``!
+   ``main``!
 
    ::
 
       $ git status
-      On branch master
+      On branch main
       Changes not staged for commit:
          (use "git add <file>..." to update what will be committed)
          (use "git checkout -- <file>..." to discard changes in working directory)
@@ -48,7 +48,7 @@ Imagine that you want to add a few more lines to the text file in the
 
 #. Enter ``git stash`` in the terminal and notice how the changes made in
    the text file disappear. Those changes are stored by Git, but they are no
-   longer in ``master``. Entering ``git status`` again shows a clean branch.
+   longer in ``main``. Entering ``git status`` again shows a clean branch.
 #. Use ``git checkout`` to move into the ``make-conflict`` branch. Follow this
    with the ``git stash pop`` command.
 
@@ -67,7 +67,7 @@ Imagine that you want to add a few more lines to the text file in the
       no changes added to commit (use "git add" and/or "git commit -a")
       Dropped refs/stash@{0} (dedea22f5c66ef992103fcc82d7eaed82d4463f5)
 
-#. Aha! The changes we made in ``master`` appear in the ``make-conflict``
+#. Aha! The changes we made in ``main`` appear in the ``make-conflict``
    branch. We can use ``status/add/commit`` to add them to the repository.
 
 ``stash`` is similar to the ``append`` list method in Python. We don't need to
@@ -81,7 +81,7 @@ Deleting a Branch
 -----------------
 
 Imagine that we finish our work in a branch and successfully merge it into
-``master``. Now that the code exists in ``master``, we might not need the old
+``main``. Now that the code exists in ``main``, we might not need the old
 branch anymore. To delete a branch, the terminal syntax is:
 
 .. sourcecode:: bash
@@ -104,12 +104,12 @@ that action.
       $ git branch
         hello-branch
       * make-conflict
-        master
+        main
       $ git branch -d hello-branch
       Deleted branch hello-branch (was d99e424).
       $ git branch
       * make-conflict
-        master
+        main
 
 Git More Information
 --------------------

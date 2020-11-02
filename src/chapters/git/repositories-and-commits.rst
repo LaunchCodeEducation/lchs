@@ -67,13 +67,13 @@ the terminal:
    :linenos:
 
    $ git status
-   On branch master
+   On branch main
 
    No commits yet
 
    nothing to commit, create/copy files and use "git add" to track
 
-We will deal with ``On branch master`` later in this chapter, but the next two
+We will deal with ``On branch main`` later in this chapter, but the next two
 lines deserve some attention.
 
 .. index:: ! commit
@@ -112,7 +112,7 @@ Step 1: Make a Change
       $ pwd
       /Users/username/Desktop/local_practice/git_practice
       $ git status
-      On branch master
+      On branch main
 
       Initial commit
 
@@ -149,7 +149,7 @@ to make it part of our first *commit*.
 
       $ git add .
       $ git status
-      On branch master
+      On branch main
 
       Initial commit
 
@@ -183,7 +183,7 @@ In the terminal, enter the command ``git commit -m "My first commit."``
    :linenos:
 
    $ git commit -m "My first commit."
-   [master (root-commit) 84310df] My first commit.
+   [main (root-commit) 84310df] My first commit.
    1 file changed, 0 insertions(+), 0 deletions(-)
    create mode 100644 num_guess.py
 
@@ -213,7 +213,7 @@ Make Another Commit
       :linenos:
 
       $ git status
-      On branch master
+      On branch main
       Changes not staged for commit:
          (use "git add <file>..." to update what will be committed)
          (use "git checkout -- <file>..." to discard changes in working directory)
@@ -223,7 +223,7 @@ Make Another Commit
       no changes added to commit (use "git add" and/or "git commit -a")
       $ git add .
       $ git commit -m "Added random number selection code."
-      [master 9bdcaab] Added random number selection code.
+      [main 9bdcaab] Added random number selection code.
       1 file changed, 4 insertions(+)
 
 #. You now have two sets of changes recorded in your Git repository.

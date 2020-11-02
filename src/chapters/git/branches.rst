@@ -30,7 +30,7 @@ lets us split the development into different paths.
 Branching in Git
 ----------------
 
-A Git **branch** is a separate version of the same master code. Like a branch
+A Git **branch** is a separate version of the same ``main`` code. Like a branch
 on a tree, a branch in Git shares the same trunk as the other limbs. However,
 each branch is distinct from all of the others.
 
@@ -48,11 +48,11 @@ On Branch Master
 
 In the :ref:`previous section <check-git-status>`, we used ``git status`` to
 check the state of the ``git_practice`` repository. The first line in the
-output was ``On branch master``.
+output was ``On branch main``.
 
 When we run ``git init`` to start a new repo, part of the process creates a
-single, default branch called ``master``. Many programmers consider this like
-the trunk of a tree. They use master to store and track the main, working
+single, default branch called ``main``. Many programmers consider this like
+the trunk of a tree. They use ``main`` to store and track the central, working
 part of their code. They use other branches to experiment with new features and
 split up work between partners.
 
@@ -78,7 +78,7 @@ the terminal.
       :linenos:
 
       $ git branch
-      * master
+      * main
 
 For our ``git_practice`` repo, we only have one branch so far. Let's add
 another.
@@ -109,14 +109,14 @@ us into that branch.
          Switched to a new branch 'hello-branch'
          $ git branch
          * hello-branch
-           master
+           main
       
       Notice that in the list of branch names, the one we are currently on is
       highlighted with a ``*``. The name might also appear in a different
       color.
    #. Enter ``git log`` into the terminal. Notice that the repo history is the
       same as before. When we created ``hello-branch``, we split it off of
-      master and made a copy of all its code.
+      ``main`` and made a copy of all its code.
    #. Add a new file to ``git_practice`` called ``greeting.py``. Inside this
       Python file, add statements to print a simple, polite greeting.
    #. Save and commit your changes. The terminal output will look something
@@ -140,7 +140,7 @@ us into that branch.
       of the output.
 
 OK. We created a new branch, added a file, put in some code, and committed all
-of those changes to the repository. What's going on back in ``master``?
+of those changes to the repository. What's going on back in ``main``?
 
 Switching Between Branches
 --------------------------
@@ -152,7 +152,7 @@ them with the syntax:
 
    git checkout branch-name
 
-Enter ``git checkout master`` into the terminal. Pay close attention to the
+Enter ``git checkout main`` into the terminal. Pay close attention to the
 file tree in VS Code and the ``greeting.py`` tab in the editor.
 
 .. figure:: figures/git-checkout.gif
@@ -168,14 +168,14 @@ Fear not! Our work hasn't gone away. Enter ``git checkout hello-branch`` in the
 terminal to see the file and its code reappear.
 
 The ``checkout`` command switches between branches. When we first made
-``hello-branch``, it was identical to master. However, once we commit some
+``hello-branch``, it was identical to ``main``. However, once we commit some
 changes, the two branches no longer match. By flipping back and forth between
 them, we call up different versions of our project.
 
 .. admonition:: Try It!
 
-   #. Return to the master branch in the ``git_practice`` repository.
-   #. Create a new branch off of master.
+   #. Return to the ``main`` branch in the ``git_practice`` repository.
+   #. Create a new branch off of ``main``.
    #. In the new branch, add some comments to ``num_guess.py``.
    #. Save and commit the changes.
    #. Use ``git branch`` to see the list of branches in the repo.
@@ -206,7 +206,7 @@ Check Your Understanding
    Do you think we can create a branch off of a branch, like this?
 
    .. figure:: figures/branches-cc.png
-      :alt: A two-level branch: Branch 1 splits off of master, and brach 2 splits off of branch 1.
+      :alt: A two-level branch: Branch 1 splits off of main, and brach 2 splits off of branch 1.
       :width: 60%
 
    .. raw:: html
