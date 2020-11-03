@@ -88,13 +88,21 @@ Some sections provide coding practice. These short examples include code
 you can run and/or modify to quickly reinforce what you just read. Play around
 with these!
 
-We use two sites to provide the embedded code editors---Repl.it and Trinket.
+We use two sites to provide the embedded code editors: Repl.it and Trinket.
 The appearance of the editors differs, but they both function in a similar
 manner. You type your code into one panel, click the *Run* button, and the
 program results get displayed in a second panel.
 
 Try It!
 ^^^^^^^
+
+.. admonition:: Tip
+
+   If you find the coding space in the embedded editors a little too small, you
+   can expand them. For repl.it editors, clicking on the *open in repl.it*
+   button in the upper-right corner opens the editor into its own browser tab.
+   For Trinket editors, click on the three horizontal bars in the upper-left
+   corner. Choose the *Fullscreen* option to expand the workspace.
 
 Here is an example of the repl.it code editor. The coding panel appears at the
 top of the frame, with the output below.
