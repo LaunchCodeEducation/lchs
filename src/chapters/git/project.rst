@@ -148,8 +148,8 @@ branch. In the steps above, you updated ``main``.
 
    [IMAGE - branch dropdown menu]
 
-In :ref:`Assignment #5`, you will learn how to perform a merge in GitHub. For
-now, we will leave the branches separate.
+In :ref:`Assignment #5 <communication-log>`, you will learn how to perform a
+merge in GitHub. For now, we will leave the branches separate.
 
 Step 4: Pull Down Changes From the Remote
 -----------------------------------------
