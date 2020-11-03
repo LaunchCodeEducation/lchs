@@ -101,20 +101,97 @@ the same.
 #. In VS Code, add a new text file called ``README.txt``. Inside the file,
    add a short description of your Turtle Races project.
 #. Save and commit your changes to the local repo.
-#. Now you need to update the GitHub repo. Enter the command
-   ``git push origin main`` in the terminal. The output will look something
-   like:
+#. To update the version stored on GitHub, enter the command
+   ``git push origin main`` in the terminal. The output includes information
+   about what's happening on GitHub. The final lines indicate if the push was
+   successful, and they will look something like: 
 
    ::
 
-      $ git push origin main
+      To github.com:username/turtle-races.git
+         7d893b9..20df60b  main -> main
+
+#. After making the push, you should see ``README.txt`` added to the GitHub
+   repository.
+
+   [IMAGE - GitHub GUI after push.]
 
 Push up a New Branch
 ^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+Whenever you push changes up to GitHub, the action only affects the current
+branch. In the steps above, you updated ``main``.
+
+#. Back in VS Code, use ``git checkout -b`` in the terminal to create a new
+   branch called ``readme``.
+#. In the new branch, make some changes to the ``README.txt`` file. Save and
+   commit those changes.
+#. Your local repository contains two branches now, but GitHub only knows about
+   one. If we try ``git push origin readme``, we get an error message:
+
+   ::
+
+      $ git push origin readme
+
+      Lorem ipsum...
+
+#. Fortunately, Git gives us instructions for fixing this. Copy and paste the
+   suggested command into the terminal.
+
+   ::
+
+      Lorem ipsum...
+
+#. After this push, you see a list of branches in the main project page of the
+   repo. Selecting from the list brings up the files and code stored in that
+   branch.
+
+   [IMAGE - branch dropdown menu]
+
+In :ref:`Assignment #5`, you will learn how to perform a merge in GitHub. For
+now, we will leave the branches separate.
 
 Step 4: Pull Down Changes From the Remote
 -----------------------------------------
+
+If you are working with a team on a project, it is very likely that one of your
+partners will push up changes to GitHub. When this happens, you need to *pull*
+those changes down to your own device.
+
+To practice this, you will make a change in GitHub and then move those changes
+to your local repo.
+
+#. In your GitHub project page, select the ``readme`` branch.
+#. Click on the ``README.txt`` file name, then select *Edit*.
+
+   [IMAGE - Open the file editor in GitHub]
+
+#. Add some more text to the file, or change the words already there. Click the
+   *Save* button when done.
+
+   [IMAGE - Save edits.]
+
+#. Return to VS Code, and make sure you are in the ``readme`` branch.
+
+   ::
+
+      $ git branch
+      * main
+      readme
+      $ git checkout readme
+
+#. Enter the command ``git pull origin readme``. Just like ``git push``, the
+   output tells you what's happening to your local files. The final lines indicate if the push was
+   successful, and they will look something like:
+
+   ::
+
+      Output...
+
+   The ``+`` and ``-`` symbols indicate additions or deletions from the listed
+   files.
+
+Bonus: Clone Your Repository to Another Machine
+-----------------------------------------------
 
 Lorem ipsum...
