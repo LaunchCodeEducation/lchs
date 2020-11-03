@@ -7,6 +7,8 @@ code in branches is a very strong technique.
 
 This page explores some details that often come up as we work with branches.
 
+.. _git-stash:
+
 Git Stash
 ---------
 
