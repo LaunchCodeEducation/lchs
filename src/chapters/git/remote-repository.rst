@@ -69,6 +69,8 @@ Even without an account, we can *clone* our team's work and save it on our own
 machine. Once we have an account (and permission from our team), we can push
 the commits we make from our machine up to GitHub. Neat!
 
+.. _clone-remote-repo:
+
 To clone a remote repository, the terminal command is:
 
 .. sourcecode:: bash

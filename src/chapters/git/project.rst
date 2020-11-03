@@ -73,13 +73,20 @@ Step 2: Create a Remote Repository
       $ git branch -M main
       $ git push -u origin main
 
-#. GitHub should now have the same files and code as your local project. Look
-   around to see what's there. You can see all of your code on GitHub by
+   The final command produces quite a bit of output. The final line,
+   ``Branch 'main' set up to track remote branch 'main' from 'origin'`` lets
+   you know that the process worked.
+
+#. GitHub should now have the same files and code as your local project. Click
+   on the project name link at the top of the page. This takes you to a
+   dashboard that shows you what's stored in the repo. You can see your code by
    clicking on different file names.
 
-   [IMAGE - First commit of turtle races]
+   .. figure:: figures/project/repo-first-commit.png
+      :alt: A repository with one commit in GitHub.
+      :width: 80%
 
-      A repository with one commit in GitHub
+      A GitHub repository with one commit.
 
 #. Your local and remote repositories are now linked. In the terminal, use the
    ``git remote -v`` command to check for the URL of the remote repo.
@@ -94,8 +101,8 @@ Step 3: Push to the Remote Repository
 -------------------------------------
 
 Right now, your local and remote repositories match. As you continue working on
-your local device, the two repos become different. From time to time, you need
-to *push* your local commits up to GitHub to keep the local and remote versions
+your device, the two repos become different. From time to time, you need to
+*push* your local commits up to GitHub to keep the local and remote versions
 the same.
 
 #. In VS Code, add a new text file called ``README.txt``. Inside the file,
@@ -108,16 +115,21 @@ the same.
 
    ::
 
-      To github.com:username/turtle-races.git
-         7d893b9..20df60b  main -> main
+      To https://github.com/username/turtle-races.git
+         51dbfe6..2e6f4fa  main -> main
 
 #. After making the push, you should see ``README.txt`` added to the GitHub
-   repository.
+   repository. The contents of that file also appear below the list of file
+   names.
 
-   [IMAGE - GitHub GUI after push.]
+   .. figure:: figures/project/repo-readme-push.png
+      :alt: The turtle-races GitHub repo with README.txt added.
+      :width: 80%
 
-Push up a New Branch
-^^^^^^^^^^^^^^^^^^^^
+      ``git push`` added our local commits to the remote repository.
+
+Push a New Branch
+^^^^^^^^^^^^^^^^^
 
 Whenever you push changes up to GitHub, the action only affects the current
 branch. In the steps above, you updated ``main``.
@@ -127,29 +139,32 @@ branch. In the steps above, you updated ``main``.
 #. In the new branch, make some changes to the ``README.txt`` file. Save and
    commit those changes.
 #. Your local repository contains two branches now, but GitHub only knows about
-   one. If we try ``git push origin readme``, we get an error message:
+   one. To add the new branch to the remote, just use its name instead of
+   ``main`` in the ``git push`` command:
 
    ::
 
       $ git push origin readme
+      
+      To https://github.com/username/turtle-races.git
+         * [new branch]      readme -> readme
 
-      Lorem ipsum...
+#. After this push, your GitHub project shows a list of branches in a dropdown
+   menu.
 
-#. Fortunately, Git gives us instructions for fixing this. Copy and paste the
-   suggested command into the terminal.
+   .. figure:: figures/project/branch-dropdown.png
+      :alt: The dropdown menu lists the branches in the repository.
 
-   ::
+      Select different branches from the dropdown menu.
 
-      Lorem ipsum...
+#. Click on ``README.txt`` to see its contents. Use the dropdown menu to switch
+   between the ``main`` and ``readme`` branches. Notice how the text changes
+   inside the file.
 
-#. After this push, you see a list of branches in the main project page of the
-   repo. Selecting from the list brings up the files and code stored in that
-   branch.
+.. admonition:: Note
 
-   [IMAGE - branch dropdown menu]
-
-In :ref:`Assignment #5 <communication-log>`, you will learn how to perform a
-merge in GitHub. For now, we will leave the branches separate.
+   In :ref:`Assignment #5 <communication-log>`, you will learn how to perform a
+   merge in GitHub. For now, we will leave the branches separate.
 
 Step 4: Pull Down Changes From the Remote
 -----------------------------------------
@@ -158,18 +173,23 @@ If you are working with a team on a project, it is very likely that one of your
 partners will push up changes to GitHub. When this happens, you need to *pull*
 those changes down to your own device.
 
-To practice this, you will make a change in GitHub and then move those changes
-to your local repo.
+To practice this, make a change in GitHub and then move those changes to your
+local repo.
 
-#. In your GitHub project page, select the ``readme`` branch.
-#. Click on the ``README.txt`` file name, then select *Edit*.
+#. In your GitHub project page, select the ``readme`` branch from the dropdown
+   menu.
+#. Click on the ``README.txt`` file name, then select pencil icon to edit the
+   file.
 
-   [IMAGE - Open the file editor in GitHub]
+   .. figure:: figures/project/pencil-edit-button.png
+      :alt: The pencil icon opens the GitHub file editor.
 
-#. Add some more text to the file, or change the words already there. Click the
-   *Save* button when done.
+#. Add some more text to the file, or change the words already there. When
+   done, click the *Commit changes* button at the bottom of the page.
 
-   [IMAGE - Save edits.]
+   .. figure:: figures/project/GitHub-commit.png
+      :alt: The GitHub 'Commit changes' button.
+      :width: 40%
 
 #. Return to VS Code, and make sure you are in the ``readme`` branch.
 
@@ -177,21 +197,33 @@ to your local repo.
 
       $ git branch
       * main
-      readme
+        readme
       $ git checkout readme
 
-#. Enter the command ``git pull origin readme``. Just like ``git push``, the
-   output tells you what's happening to your local files. The final lines indicate if the push was
-   successful, and they will look something like:
+#. Enter the command ``git pull``. Just like ``git push``, the output tells you
+   what's happening to your local files. The final lines indicate if the pull
+   was successful, and they will look something like:
 
    ::
 
-      Output...
+      $ git pull
+      Lots of output...
+
+      Updating b407366..03f9f4c
+      README.txt | 5 ++++-
+      1 file changed, 4 insertions(+), 1 deletion(-)
 
    The ``+`` and ``-`` symbols indicate additions or deletions from the listed
    files.
 
-Bonus: Clone Your Repository to Another Machine
------------------------------------------------
+After the pull, you will see the updated text appear in VS Code.
 
-Lorem ipsum...
+Success
+-------
+
+Nice work! You now have experience with:
+
+#. Creating a new local repository.
+#. Creating a remote repository on GitHub.
+#. Linking your local and remote repos.
+#. Pushing and pulling changes between your local and remote versions.
