@@ -8,7 +8,7 @@ Use your terminal powers to move through these Git exercises.
 
 #. Launch Visual Studio Code and open the terminal pane.
 #. In your ``local_practice`` folder, make a new directory called
-   ``Git-Exercises``. Go to *File --> Open* and select this new folder.
+   ``Git-Exercises``. Next, go to *File --> Open* and select this new folder.
 #. In the terminal, make sure that you are in the ``Git-Exercises`` directory.
    Initialize it as a new repository with ``git init``.
 #. Add two files to the directory: ``index.html`` and ``style.css``. Use the
@@ -128,7 +128,7 @@ Before you attempt these two tasks, check with your teacher for permission to
 create a free account. Depending on your school and your course, you might use
 a different service to create and share remote repositories.
 
-If you will be using GitHub create your account by following these steps:
+If you will be using GitHub, create your account by following these steps:
 
 #. Navigate to GitHub's site using the link above.
 #. Sign up for an account on the homepage either by filling out the form or
