@@ -224,7 +224,7 @@ allow partners to work on a project at the same time and at their own pace.
 
       $ git push origin open-mic
 
-#. **Base**: To pull down the new branch, enter the command:
+#. **Base**: To pull down the new ``open-mic`` branch, enter the command:
 
    ::
 
@@ -238,351 +238,199 @@ allow partners to work on a project at the same time and at their own pace.
 #. **Pilot and Base**: If you haven't already done so, open ``index.html`` in
    a browser to see what it looks like.
 
-Great! Now let's figure out how to merge two branches in GitHub.
+Great progress! Now let's figure out how to merge two branches in GitHub.
 
 Part E: Create a Pull Request In GitHub
 ---------------------------------------
 
-You and your partner should both now find a second branch on the GitHub project
-page. To see the branches, open the dropdown menu just above the list of files.
+#. **Pilot and Base**: In a browser, navigate to the shared GitHub project
+   page. Click on the dropdown menu just above the list of files to show a list
+   of the branches. Select *open-mic*.
 
    .. figure:: figures/com-log/branches-dropdown.png
       :alt: GitHub dropdown menu showing available branches.
       :width: 60%
 
-**Pilot**: If you haven't already, in your browser, go to the GitHub project
-and click on *Branches* and make sure you see the new branch name, *open-mic*.
+#. **Pilot**: After selecting the ``open-mic`` branch, click the *Pull request*
+   button.
 
-   [IMAGE: New PR button. (Height = 300 px)]
+   .. figure:: figures/com-log/pull-request-button.png
+      :alt: GitHub pull request button.
 
-Click *New Pull Request* to begin the process of requesting that your changes
-in the ``open-mic`` branch be incorporated into the ``master`` branch. Add some
-text in the description box to let Base know what you did and why.
+   This sets up a request to merge the changes from ``open-mic`` into the
+   ``main`` branch. Add some text in the description box to let **Base** know
+   what you did and why.
 
-Note that the branch selected in the *base* dropdown is the one you want to
-merge *into*, while the selected branch in the *compare* dropdown is the one
-you want to merge *from*.
+#. **Pilot**: The branch selected in the *base* dropdown is the one you want to
+   merge *into*, while the branch in the *compare* dropdown is the one you want
+   to merge *from*.
 
-   [IMAGE: Create PR. (Height = 500 px)]
+   .. figure:: figures/com-log/PR-window.png
+      :alt: GitHub pull request window.
+      :width: 70%
 
-This is what an opened pull request looks like:
+      Open a PR in GitHub.
 
-   [IMAGE: Open PR. (Height = 500 px)]
+#. **Pilot**: Once everything looks good, click the *Create pull request*
+   button.
 
-Make a Change in the New Branch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Merge the Pull Request
+^^^^^^^^^^^^^^^^^^^^^^
 
-**Base**: You will notice that you do not see the new ``style.css`` file
-locally. Type this command to see what branches are on your local computer:
+**Pilot** opened a new Pull Request. Now, **Base** will take care of it!
 
-::
+#. **Base**: In your browser, return to your repo in GitHub. Click on the
+   *Pull Requests* button. Next, click on the title for the one and only PR.
 
-   $ git branch
-   * master
+   .. figure:: figures/com-log/check-pr-info.png
+      :alt: Review the PR details.
 
-If you want to work with the branch before merging it in, you can do so by
-typing these commands:
+      Click to review the details of the pull request.
 
-::
+#. **Base**: THe page that opens shows the history of all the commits made to
+   the ``open-mic`` branch. When ready, click the green *Merge Pull Request*
+   button, followed by *Confirm Merge*.
 
-   $ git fetch origin open-mic
-   ...
-   $ git branch
-   open-mic
-   * master
+   .. figure:: figures/com-log/confirm-merge.png
+      :alt: Confirm the merge request.
 
-::
+      Finally! Merge the pull request.
 
-   $ git checkout open-mic
-   Switched to branch 'open-mic'
-   Your branch is up-to-date with 'origin/open-mic'.
+   Upon a successful merge, you should see feedback similar to:
 
-Make a change, commit, and push this branch--you will see that the pull request
-in GitHub is updated to reflect the changes you added. The context in the
-description box is NOT updated, however, so be sure to add comments to the pull
-request to explain what you did and why.
+   .. figure:: figures/com-log/successful-merge.png
+      :alt: Feedback given for a successful merge.
 
-Now switch back to the ``master`` branch:
+      Nice! Another successful merge of remote branches.
 
-::
+#. **Pilot and Base**: The changes from ``open-mic`` are now in the ``main``
+   branch, but only on GitHub. You need to pull the updates to your ``main``
+   branch.
 
-   $ git checkout master
-   Switched to branch 'master'
-   Your branch is up-to-date with 'origin/master'.
+   ::
 
-You will see your files no longer have the changes made in the ``open-mic``
-branch. Let's go merge those changes in, so that the ```master``` branch adopts
-all the changes in the ``open-mic`` branch.
+      $ git checkout main
+      $ git pull origin main
 
-Part F: Merge the Pull Request
-------------------------------
+Bonus: Merge Conflicts!
+-----------------------
 
-**Base**: Go to the repo in GitHub. Click on *Pull Requests*.
+When teaming up on a project, things won't always go smoothly. It's common for
+two people to change the same line(s) of code on their separate machines. This
+prevents Git from being able to automatically finish a merge.
 
-   [IMAGE: PR-link.]
+.. figure:: figures/com-log/merge-conflict.gif
+   :alt: An animated GIF file showing two opposing armies colliding in a mess.
 
-Explore this page to see all the information GitHub shows you about the pull
-request.
+   Merge conflicts!
 
-   [IMAGE: open-pr.png. (Height = 500 px)]
+Merge conflicts often occur, and they are not a big deal. You learned how to
+deal with them locally in the :ref:`Git chapter <local-merge-conflict>`. Now,
+you will set up a conflict with the remote repository.
 
-When you're happy with the changes, merge them in. Click *Merge Pull Request*
-then *Confirm Merge*.
+#. **Pilot**: In VS Code, switch back to the ``main`` branch.
+#. **Pilot**: Change the ``style.css`` file. The HTML is looking pretty plain,
+   so spice up the ``body`` style rule to look like this:
 
-   [IMAGE: Confirm merge. (Height = 500 px)]
+   .. sourcecode:: css
+      :linenos:
 
-Upon a successful merge, you should see a screen similar to the following:
+      body {
+         color: white;
+         background-color: #333;
+         font-size: 150%;
+         font-family: 'Satisfy', cursive;
+         margin: 5em 25%;
+      }
 
-   [IMAGE: pr-merged.png. (Height = 500 px)]
+   The result:
 
-The changes from ``open-mic`` are now in the ``master`` branch, but only in
-the remote repository on GitHub. You will need to pull the updates to your
-``master`` for them to be present locally.
+   .. figure:: figures/com-log/fancy-text.png
+      :alt: Our HTML page with a fancy font
 
-::
+      Satisfying!
 
-   $ git checkout master
-   $ git pull origin master
+#. Save and commit the changes, then push them up to GitHub.
 
-Git is able to merge these files on its own.
+   ::
 
-Merge Conflicts!
-^^^^^^^^^^^^^^^^
-
-When collaborating on a project, things won't always go smoothly. It's common
-for two people to make changes to the same line(s) of code, at roughly the same
-time, which will prevent Git from being able to merge the changes together.
-
-   [GIF: Merge conflict!]
-
-This isn't such a big deal. In fact, it's very common. To see how we can handle
-such a situation, we'll intentionally create a merge conflict and then resolve
-it.
-
-**Pilot**: Let's change something about the style file. Our HTML is looking
-pretty plain, so let's pick a nice font and add some margins.
-
-First, switch back to the ``master`` branch.
-
-::
-
-   $ git checkout master
-
-Let's change our font. To do so, add this link to your ``index.html`` file,
-right after the first stylesheet link:
-
-.. sourcecode:: html
-
-   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-
-
-And spice up your ``style.css`` file to look like this:
-
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: #333;
-      font-size: 150%;
-      font-family: 'Satisfy', cursive;
-      margin: 5em 25%;
-   }
-
-The result:
-
-   [IMAGE: fancy-text.png]
-
-Stage and commit your changes and push them up to GitHub. If you don't remember
-how to do this, follow the instructions above. Make sure you're back in the
-``master`` branch! If you're still in ``open-mic``, then your changes will be
-isolated, and you won't get the merge conflict you need to learn about.
+      $ git push origin main
 
 Meanwhile...
 
-**Base**: Let's change something about the style file that Pilot just
-edited. Change it to look like this:
+#. **Base**: In VS Code, switch back to the ``main`` branch.
+#. **Base**: In your local ``style.css`` file, change the ``body`` rule to look
+   like this:
 
-.. sourcecode:: css
-   :linenos:
+   .. sourcecode:: css
+      :linenos:
 
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 32px;
-      margin-top: 5%;
-      margin-left: 20%;
-      margin-right: 20%;
-   }
+      body {
+         color: white;
+         background-color: black;
+         font-family: 'Sacramento', cursive;
+         font-size: 32px;
+         margin-top: 5%;
+         margin-left: 20%;
+         margin-right: 20%;
+      }
 
-Don't forget to link the new font in your ``index.html`` file, after the other
-link:
+#. **Base**: Save and commit your changes to ``main``.
 
-.. sourcecode:: html
-
-  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
-
-Commit your changes to branch ``master``.
-
-Resolving Merge Conflicts
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Fix the Merge Conflicts
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Base**: Try to push your changes up to GitHub. You should get an error
 message. How exciting!
 
 ::
 
-   $ git push origin master
+   $ git push origin main
 
    To git@github.com:username/communication-log.git
-   ! [rejected]        master -> master (fetch first)
+   ! [rejected]        main -> main (fetch first)
    error: failed to push some refs to 'git@github.com:username/communication-log.git'
    hint: Updates were rejected because the remote contains work that you do
    hint: not have locally. This is usually caused by another repository pushing
    hint: to the same ref. You may want to first integrate the remote changes
    hint: (e.g., 'git pull ...') before pushing again.
-   hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
+There's a lot of text in the message. However, the main idea is clear:
+``Updates were rejected because the remote contains work that you do not have
+locally.``
 
-There's a lot of jargon in that message, including some terminology we haven't
-encountered. However, the core of the message is indeed understandable to us:
-"Updates were rejected because the remote contains work that you do not have
-locally." In other words, somebody (Pilot, in this case), pushed changes to the
-same branch, and you don't have those changes on your computer. Git will not
-let you push to a branch in another repository unless you have incorporated all
-of the work present in that branch.
-
-Let's pull these outstanding changes into our branch and resolve the errors.
+Somebody (**Pilot**, in this case), pushed changes to ``main``, and you don't
+have those commits on your computer. To fix this, begin by pulling those
+changes down from GitHub:
 
 ::
 
    $ git pull
-   remote: Counting objects: 4, done.
-   remote: Compressing objects: 100% (3/3), done.
-   remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
-   Unpacking objects: 100% (4/4), done.
+   
    From github.com:username/communication-log
-      7d7e42e..0c21659  master     -> origin/master
+      7d7e42e..0c21659  main     -> origin/main
    Auto-merging style.css
    CONFLICT (content): Merge conflict in style.css
-   Auto-merging index.html
-   CONFLICT (content): Merge conflict in index.html
    Automatic merge failed; fix conflicts and then commit the result.
 
+Since **Pilot** and **Base** both made changes to the same lines of code, Git
+cannot automatically merge the changes.
 
-Since Pilot made changes to some of the same lines you did, Git was unable to
-automatically merge the changes.
+**Base**: Review how to :ref:`resolve merge conflicts <resolving-merge-conflict>`
+in VS Code. Follow the same steps to fix the problems in ``style.css``. Once
+done, save, commit, and push the final results up to GitHub.
 
-The specific locations where Git could not automatically merge files are
-indicated by the lines that begin with ``CONFLICT``. You will have to edit
-these files yourself to incorporate Pilot's changes. Let's start with
-``style.css``.
+**Pilot**: Once your partner finishes resolving the merge conflict, be sure to
+pull down the new ``main`` branch.
 
-   [IMAGE: Css conflicts.]
+More Merge Conflicts!
+^^^^^^^^^^^^^^^^^^^^^
 
-At the top and bottom, there is some code that could be merged without issue.
+Turn the tables so **Pilot** can practice resolving a merge conflict.
 
-Between the ``<<<<<<< HEAD`` and ``=======`` symbols is the version of the code
-that exists locally. These are *your* changes.
-
-Between ``=======`` and ``>>>>>>> a48e8a75...``
-are the changes that Pilot made (the hash ``a48e8a75...`` will be unique to
-the commit, so you'll see something slightly different on your screen).
-
-Let's unify our code. Change the CSS to look like this, making sure to remove
-the Git markers so that only valid CSS remains in the file.
-
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 150%;
-      margin: 5em 25%;
-   }
-
-.. tip:: Like many other editors, VS Code provides fancy buttons to allow you to resolve individual merge conflicts with a single click. There's nothing magic about these buttons; they do the same thing that you can do by directly editing the file.
-
-   Feel free to use them, but beware that they will not always work. If you need to incorporate parts of a change from both branches, you will need to manually edit the file to resolved the conflict.
-
-You will need to do the same thing for the ``index.html`` file. You only need
-the link for the Sacramento font, not the Satisfy font. Then stage, commit, and
-push your changes; you should not see an error message this time.
-
-Pulling the Merged Code
-^^^^^^^^^^^^^^^^^^^^^^^
-
-**Pilot**: Meanwhile, Pilot is sitting at home, minding their own business. A
-random ``git status`` seems reassuring:
-
-::
-
-   $ git status
-   On branch master
-   Your branch is up-to-date with 'origin/master'.
-   nothing to commit, working directory clean
-
-
-Your local Git thinks the status is quo. Little does it know that up at GitHub,
-the status is not quo. We'd find this out by doing either a ``git fetch``, or
-if we just want the latest version of this branch, ``git pull``:
-
-::
-
-   $ git pull
-   remote: Counting objects: 13, done.
-   remote: Compressing objects: 100% (8/8), done.
-   remote: Total 13 (delta 4), reused 13 (delta 4), pack-reused 0
-   Unpacking objects: 100% (13/13), done.
-   From Github.com:username/communication-log
-      0c21659..e0de62d  master     -> origin/master
-   Updating 0c21659..e0de62d
-   Fast-forward
-   index.html | 3 ++-
-   style.css  | 4 ++--
-   2 files changed, 4 insertions(+), 3 deletions(-)
-
-Great Scott! Looks like Base changed both ``index.html`` and ``style.css``.
-Note that *Pilot* didn't have to deal with the hassle of resolving merge
-conflicts. Since Base intervened, Git assumes that the team is okay with the
-way they resolved it, and *fast forwards* our local repo to be in sync with the
-remote one. Let's look at ``style.css`` to make sure:
-
-.. sourcecode:: css
-   :linenos:
-
-   body {
-      color: white;
-      background-color: black;
-      font-family: 'Sacramento', cursive;
-      font-size: 150%;
-      margin: 5em 25%;
-   }
-
-Part G: More Merge Conflicts!
------------------------------
-
-Let's turn the tables on the steps we just carried out, so Pilot can practice
-resolving merge conflicts.
-
-#. **Base and Pilot**: Confer to determine the particular lines in the code
-   that you will both change. Make different changes in those places.
-#. **Base**: Stage, commit, and push your changes.
-#. **Pilot**: Try to pull in Base's changes, and notice that there are merge
-   conflicts. Resolve these conflicts as we did above (ask Base for help, if
-   you're uncertain about the process). Then stage, commit, and push your
-   changes.
-#. **Base**: Pull in the changes that Pilot pushed, including the resolved
-   merge conflicts.
-
-Merge conflicts are a part of the process of team development. Resolve them
-carefully in order to avoid bugs in your code.
-
-Resources
----------
-
-* `Git Branching - Basic Branching and Merging <https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`__
-* `Adding Another Person To Your Repository <https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/>`__
+#. **Base and Pilot**: Decide which file and lines of code you will both
+   change. Make *different* changes in those places.
+#. **Base**: Save, commit, and push your changes up to GitHub.
+#. **Pilot**: Try to pull down the changes, and notice that there are merge
+   conflicts. Resolve them, then save, commit, and push the result.
+#. **Base**: Pull down the final, resolved code.

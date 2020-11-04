@@ -85,6 +85,8 @@ the ``git_practice`` repository. Let's merge that branch into ``main``.
    includes the commit messages from ``hello-branch`` in addition to one about
    the merge.
 
+.. _local-merge-conflict:
+
 Merge Conflicts
 ---------------
 
@@ -162,6 +164,8 @@ Add Text In Both Branches
       :width: 80%
 
       Changes made to ``conflict_demo.txt`` in the ``main`` branch.
+
+.. _resolving-merge-conflict:
 
 Resolving the Conflict
 ~~~~~~~~~~~~~~~~~~~~~~
