@@ -3,9 +3,6 @@
 Assignment #5: Communication Log
 ================================
 
-Getting Ready: Code Together
-----------------------------
-
 Coding together allows you to work as a team so you can build bigger projects
 faster. In this assignment, you will practice the common Git commands used when
 two or more people work on the same project.
@@ -20,18 +17,18 @@ repository. This assignment extends those ideas.
 
 You will practice:
 
-#. Quickly trading code in ``push`` + ``pull`` cycles.
+#. Forking and cloning a repository from GitHub.
 #. Adding partners to a shared GitHub Project.
-#. Cloning a repository from GitHub.
+#. Quickly trading code in ``push`` and ``pull`` cycles.
 #. Merging two branches in GitHub.
 #. Resolving merge conflicts (which are not as scary as they sound).
 
 The Story
 ---------
 
-You are going to carry out a conversation between a pilot and their control
-base. Between the two of you, choose who will be the **Pilot** and who will be
-the **Base**. If you have three people in your group, add another pilot role.
+You are going to carry out a conversation between a pilot and their base.
+Between the two of you, choose who will be the **Pilot** and who will be the
+**Base**. If you have three people in your group, add another pilot role.
 
 Even when it is not your turn to actively code something, watch what your
 partner is doing. The steps in this activity mimic a real-world Git workflow
@@ -51,225 +48,207 @@ This part needs to happen on ONE person's computer. Whoever plays the role of
 **Base** will git things rolling. However, the **Pilot** should definitely be
 looking over Base's shoulder.
 
-Instructions for forking a repo...
+#. **Base**: In a web browser, click the link to this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS-Communication-Log-starter>`__.
+   It contains the starter code needed for the assignment.
+#. **Base**: In the upper right corner of the page, click the *Fork* button.
+   This adds a copy of the repository to your own GitHub account.
 
-Part B: Share Your Repository On GitHub
----------------------------------------
+   .. figure:: figures/com-log/fork-button.png
+      :alt: The GitHub Fork button.
 
-Instructions for adding a collaborator to a repo...
+#. **Base**: Return to *your* GitHub home page and check for the
+   ``communication-log`` repo. Click on its name to view it. The URL will look
+   something like
+   ``https://github.com/your-username/LCHS-Communication-Log-starter``. The
+   ``your-username`` part of the address will show your GitHub name.
 
-**Base**: In your web browser, go to your ``communication-log`` repo. Click
-the *Settings* button then click on *Collaborators*. Enter in Pilot's GitHub
-username and click *Add Collaborator*.
+**Pilot**: Thanks for sitting by patiently!
 
-   [IMAGE - Add a collaborator]
+Clone the Project from GitHub
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   CAPTION: Add a collaborator to your repo in GitHub
+**Base** now has a copy of the repository in their GitHub account. The next
+step is for each team member to *clone* that repo onto their personal device.
 
-**Pilot**: You should receive an email invitation to join this repository.
-View and accept the invitation.
+#. **Pilot and Base**: Open Visual Studio code. Use terminal commands to
+   navigate into your ``local_practice`` directory. Use ``pwd`` to confirm your
+   location.
+
+   ::
+
+      $ pwd
+      /Users/username/Desktop/local_practice
+
+#. **Pilot and Base**: In a browser, navigate to Base's copy of the repo (see
+   step 3 above). Click on the green *Code* button. Select the ``HTTPS``
+   option, then click the *Copy* button.
+
+   .. figure:: figures/com-log/clone-button.png
+      :alt: The GitHub Clone button.
+
+      Clone a repository from GitHub.
+
+#. **Pilot and Base**: In the terminal pane of VS Code, enter the
+   ``git clone URL`` command. Replace ``URL`` with the address you copied from
+   GitHub.
+
+Add a Partner to the Repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All team members should now have a local copy of the repository. However, only
+**Base** can make changes to what is stored on GitHub. To fix this, one more
+setup action is necessary.
+
+#. **Base**: In your web browser, go to your ``communication-log`` repo. Click
+   the *Settings* button then select the *Manage Access* option.
+
+   .. figure:: figures/com-log/manage-access.png
+      :alt: Click "Settings" and "Manage Access" to let other users modify the repo.
+      :width: 70%
+
+      Manage access to your repo.
+
+#. **Base**: Click on the green *Invite a collaborator* button. Enter your
+   partner's GitHub username and click *Add to repository*.
+
+   .. figure:: figures/com-log/add-repo-partners.png
+      :alt: Enter a GitHub username, then click the Add button.
+      :width: 40%
+
+      Choose who else can modify your GitHub repo.
+
+#. **Pilot**: You should receive an email invitation to join this repository.
+   View and accept the invitation.
 
 .. admonition:: Note
 
-   If you don't see an email (it may take a few minutes to arrive in your inbox),
-   check your Spam folder. If you still don't have an email, visit the
-   repository page for the repo that Base created (ask them for the link), and
-   you'll see a notification at the top of the page.
+   **Pilot**: If you don't see the email, check your Spam folder. If you still
+   don't have the email, login to your GitHub account. Visit the URL for Base's
+   copy of the repo. You should see an invite notification at the top of the
+   page.
 
-   [IMAGE - The email invite to join a GitHub repository (height = 400 px)]
+Whew! That was quite the setup experience. Now you're ready to dive into the
+main part of the assignment.
 
-   CAPTION: Invited to collaborate email in GitHub
-
-Part C: Clone the Project from GitHub
--------------------------------------
-
-Both pilot and base do this...
-
-Go to Base's GitHub profile and find the ``communication-log`` repo.
-Click on the green *Clone or download* button. Use HTTPS (not SSH). Copy the
-URL to your clipboard.
-
-   [IMAGE - Clone button]
-
-   CAPTION: Cloning a repository in GitHub  
-
-In the terminal pane in VS Code, navigate to your Desktop folder and enter the
-``git clone URL`` command. Replace ``URL`` with the address you copied from
-GitHub.
-
-Part D: First Message Exchange
+Part B: First Message Exchange
 ------------------------------
 
-Lorem ipsum...
+In this part, you and your partner will take turns adding commits to the shared
+code. Follow the steps carefully, and try not to get ahead of each other.
 
-Base first, then pilot pulls, then pilot responds, then base pulls...
+#. **Base**: In Visual Studio Code, open the ``index.html`` file from the
+   repository. Replace ``Enter the first communication line here`` with a short
+   greeting to your Pilot.
+#. **Base**: Save and commit your change with the usual ``status/add/commit``
+   process. Next, send your commit up to GitHub with the command:
+   
+   ::
+   
+      $ git push origin main
 
-Now you can respond to Base! Open the ``index.html`` file in your editor and
-add your response to mission control. Be creative---the communication can go
-anywhere! Just don't ask your partner what you should write. After you finish,
-commit your change.
+.. admonition:: Tip
 
-::
+   Remember that you can :ref:`open a local HTML file in your browser <view-local-html>`.
+   If you do this with ``index.html``, then you can track your progress by
+   refreshing the page after each change.
 
-   $ git status
-   On branch master
-   Your branch is up-to-date with 'origin/master'.
-   nothing to commit, working directory clean
-   $ git add index.html
-   $ git commit -m 'Added second line to log.'
+Pull Base's Line and Add Another Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now we need to push up your changes so Base can use them as well.
+#. **Pilot**: In Visual Studio Code, open your local version of ``index.html``.
+   Notice you don't have the new line of code that Base just added.
+#. **Pilot**: In the terminal, enter this command to pull down the new code
+   from GitHub:
 
-Now let's go enter that command again to push up our code.
+   ::
 
-Anyone reading the HTML through GitHub's browser interface should now see the
-new second line.
+      $ git pull origin main
 
-Part E: Pull Pilot's Line and Add Another Line
-----------------------------------------------
+#. **Pilot**: In VS Code, you should now see Base's greeting! Respond to this
+   by adding a new HTML element and some text. Save, commit, and push your
+   changes up to GitHub.
 
-**Base**: You might notice you don't have the second line of code in your
-copy of the project on your computer. Let's fix that. Go to the terminal and
-enter this command to pull down the updated code into your local git
-repository.
+Pull Pilot's Line and Add Another
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+#. **Base**: Notice that *you* can't see what Pilot added yet. Fix this by
+   entering ``git pull origin main`` in the terminal.
+#. **Base**: Now add a third line to the log. Save, commit, and push your
+   change up to GitHub.
 
-   $ git pull origin master
-   remote: Counting objects: 3, done.
-   remote: Compressing objects: 100% (2/2), done.
-   remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
-   Unpacking objects: 100% (3/3), done.
-   From github.com:username/communication-log
-      e0de62d..e851b7e  master     -> origin/master
-   Updating e0de62d..e851b7e
-   Fast-forward
-   index.html | 1 +
-   1 file changed, 1 insertion(+)
+Part C: Rinse and Repeat
+------------------------
 
+**Pilot and Base**: You can both play with this for a while! Repeat the cycle a
+few more times to add to your story.
 
-Now, in your editor, add a third line to the communication. Then add, commit,
-and push it up.
+.. admonition:: Tip
 
-You can have your story go anywhere! Try to tie it in with what the pilot
-wrote, without discussing with them any plans on where the story will go.
+   The story can go anywhere! Be creative, and try to make each other laugh. If
+   possible, keep your new lines secret from your partner. That way, the
+   ``pull`` result will be a surprise.
 
-Step 7: Do It Again: Pull, Change, and Push!
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Part D: Create a New Branch
+---------------------------
 
-**Pilot**: You might notice now *you* don't have the third line on your
-computer. Go to the terminal and enter this command to pull in the changes that
-Base just made.
+This back-and-forth workflow is nice, but it can get in the way. After all,
+professional developers don't sit around waiting for their teammates to commit
+and push a change before starting their own work. Fortunately, Git branches
+allow partners to work on a project at the same time and at their own pace.
 
-::
+#. **Pilot**: While Base is working on the next part of the story, use the
+   terminal to create a new branch called ``open-mic``.
 
-   $ git pull origin master
-   remote: Counting objects: 3, done.
-   remote: Compressing objects: 100% (2/2), done.
-   remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
-   Unpacking objects: 100% (3/3), done.
-   From github.com:username/communication-log
-      e851b7e..167684c  master     -> origin/master
-   Updating e851b7e..167684c
-   Fast-forward
-   index.html | 1 +
-   1 file changed, 1 insertion(+)
+   ::
 
-Now add a fourth line to the log. Again, be creative, but no planning!
+      $ git checkout -b open-mic
+      Switched to a new branch 'open-mic'
+      $ git branch
+        main
+      * open-mic
 
-Then add, commit, and push your change.
+#. **Pilot**: In VS Code, open ``style.css`` and add the following rule:
 
-You can both play like this for a while! Feel free to repeat this cycle a few
-times to add to the story.
+   .. sourcecode:: css
+      :linenos:
 
-Step 8: Create a Branch In Git
-------------------------------
+      body {
+         color: white;
+         background-color: black;
+      }
 
-This workflow is a common one in team development situations. You might wonder,
-however, if professional developers sit around waiting for their teammates to
-commit and push a change before embarking on additional work on their own. That
-would be a drag, and thankfully, there is a nice addition to this workflow that
-will allow for simultaneous work to be carried out in a reasonable way.
+#. **Pilot**: Save and commit your changes. Next, push the new branch up to
+   GitHub with the command:
 
-**Pilot**: While Base is working on an addition to the story, let's make
-another change simultaneously. In order to do that, we'll create a new branch.
-Recall that a branch is a separate "copy" of the codebase that you can commit
-to without affecting code in the ``master`` branch.
+   ::
 
-::
+      $ git push origin open-mic
 
-   $ git checkout -b open-mic
-   Switched to a new branch 'open-mic'
+#. **Base**: To pull down the new branch, enter the command:
 
-This command creates a new branch named ``open-mic``, and switches your local
-repository to use that branch.
+   ::
 
-Create a new file named ``style.css`` and add the following rules:
+      $ git pull origin open-mic
 
-.. sourcecode:: css
-   :linenos:
+   .. admonition:: Note
 
-   body {
-      color: white;
-      background-color: black;
-   }
+      If you don't know the name of the new branch, then just enter ``git pull``.
+      This will pull down *all* new branches and show you a list of the options.
 
-Then link it in ``index.html``. It should look something like this:
+#. **Pilot and Base**: If you haven't already done so, open ``index.html`` in
+   a browser to see what it looks like.
 
-.. sourcecode:: html
-   :linenos:
+Great! Now let's figure out how to merge two branches in GitHub.
 
-   <html>
-      <head>
-         <link rel="stylesheet" type="text/css" href="style.css">
-      </head>
-      <body>
-         <p>Radio check. Pilot, please confirm.</p>
-         ... your content here
-      </body>
-   </html>
+Part E: Create a Pull Request In GitHub
+---------------------------------------
 
-Now stage and commit these changes.
+You and your partner should both now find a second branch on the GitHub project
+page. To see the branches, open the dropdown menu just above the list of files.
 
-::
-
-   $ git add .
-   $ git commit -m 'Added style.css'
-   $ git push origin open-mic
-
-Note that the last command is a bit different than what we've used before
-(`git push origin master`). The final piece of this command is the name of the
-branch that we want to push to GitHub.
-
-You and your partner should both now see a second branch present on the GitHub
-project page. To view branches on GitHub, select *Branches* from the navigation
-section just below the repository title.
-
-   [IMAGE: Branches button in GitHub]
-
-In your terminal, you can type this command to see a list of the available
-branches:
-
-::
-
-   $ git branch
-   * open-mic
-   master
-
-Note that creating and being able to see a branch in your local repository via
-this command does NOT mean that the branch is on GitHub. You'll need to push
-the branch for it to appear on GitHub.
-
-.. note::
-
-   The \* to the left of ``open-mic`` indicates that this is the active branch.
-
-
-Great! Now let's show the other player your work in GitHub and ask them to
-merge it in to the main branch.
-
-Create a Pull Request In GitHub
--------------------------------
+   .. figure:: figures/com-log/branches-dropdown.png
+      :alt: GitHub dropdown menu showing available branches.
+      :width: 60%
 
 **Pilot**: If you haven't already, in your browser, go to the GitHub project
 and click on *Branches* and make sure you see the new branch name, *open-mic*.
@@ -290,8 +269,8 @@ This is what an opened pull request looks like:
 
    [IMAGE: Open PR. (Height = 500 px)]
 
-Step 10: Make a Change in the New Branch
-----------------------------------------
+Make a Change in the New Branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Base**: You will notice that you do not see the new ``style.css`` file
 locally. Type this command to see what branches are on your local computer:
@@ -335,8 +314,8 @@ You will see your files no longer have the changes made in the ``open-mic``
 branch. Let's go merge those changes in, so that the ```master``` branch adopts
 all the changes in the ``open-mic`` branch.
 
-Step 11: Merge the Pull Request
--------------------------------
+Part F: Merge the Pull Request
+------------------------------
 
 **Base**: Go to the repo in GitHub. Click on *Pull Requests*.
 
@@ -367,8 +346,8 @@ the remote repository on GitHub. You will need to pull the updates to your
 
 Git is able to merge these files on its own.
 
-Step 12: Merge Conflicts!
--------------------------
+Merge Conflicts!
+^^^^^^^^^^^^^^^^
 
 When collaborating on a project, things won't always go smoothly. It's common
 for two people to make changes to the same line(s) of code, at roughly the same
@@ -446,8 +425,8 @@ link:
 
 Commit your changes to branch ``master``.
 
-Step 13: Resolving Merge Conflicts
-----------------------------------
+Resolving Merge Conflicts
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Base**: Try to push your changes up to GitHub. You should get an error
 message. How exciting!
@@ -533,8 +512,8 @@ You will need to do the same thing for the ``index.html`` file. You only need
 the link for the Sacramento font, not the Satisfy font. Then stage, commit, and
 push your changes; you should not see an error message this time.
 
-Step 14: Pulling the Merged Code
---------------------------------
+Pulling the Merged Code
+^^^^^^^^^^^^^^^^^^^^^^^
 
 **Pilot**: Meanwhile, Pilot is sitting at home, minding their own business. A
 random ``git status`` seems reassuring:
@@ -583,8 +562,8 @@ remote one. Let's look at ``style.css`` to make sure:
       margin: 5em 25%;
    }
 
-Step 15: More Merge Conflicts!
-------------------------------
+Part G: More Merge Conflicts!
+-----------------------------
 
 Let's turn the tables on the steps we just carried out, so Pilot can practice
 resolving merge conflicts.
@@ -603,7 +582,7 @@ Merge conflicts are a part of the process of team development. Resolve them
 carefully in order to avoid bugs in your code.
 
 Resources
-^^^^^^^^^^
+---------
 
 * `Git Branching - Basic Branching and Merging <https://Git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>`__
 * `Adding Another Person To Your Repository <https://help.Github.com/articles/inviting-collaborators-to-a-personal-repository/>`__
