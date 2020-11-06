@@ -47,9 +47,11 @@ include Charter, Verizon, and AT&T.
 
 To update our picture, let's connect some extra equipment to the wire.
 
-   [IMAGE: Client-server]
+.. figure:: figures/client-server.png
+   :alt: A server connected by wires to two client computers. Arrows indicate a request/response.
+   :width: 70%
 
-   CAPTION: Several clients communicating with a server.
+   Two clients communicating with a server.
 
 Addresses
 ---------
@@ -65,12 +67,17 @@ numerical address, called an **IP address**. "IP" stands for *internet
 protocol*. The links we click on a webpage contain IP addresses, which identify
 the server we need to contact. Requests also include the address of our device.
 
-Anytime our request passes through a different device on its way to the server,
+Any time our request passes through a different device on its way to the server,
 that device adds its own IP address to the request. Think of this like a trail
 of breadcrumbs, or as a series of directions on a map. When the server responds
-to our request, it sends the data back through the same path of IP addresses.
+to our request, it sends the data through the same IP addresses, but in reverse
+order.
 
-   [IMAGE: IP address map build]
+.. figure:: figures/ip-trail.png
+   :alt: A series of IP addresses are gathered as a request makes its way to the server.
+   :width: 80%
+
+   IP addresses provide a path for data to follow.
 
 DNS
 ^^^
