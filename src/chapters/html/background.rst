@@ -12,6 +12,8 @@ most common languages for organizing content and making it look beautiful.
 Before jumping in to learn HTML and CSS, we need to first understand how web
 pages appear on screens.
 
+.. _internet-vs-web:
+
 The Internet vs. The Web
 ------------------------
 
