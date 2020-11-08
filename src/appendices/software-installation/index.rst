@@ -8,5 +8,6 @@ Setting up Software for LCHS
 
    terminal-setup
    vscode-setup
+   python-setup
    git-setup
    flask-setup

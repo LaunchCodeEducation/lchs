@@ -1,4 +1,4 @@
-.. _terminal-local-dev:
+.. _terminal-chapter:
 
 Terminal
 ========

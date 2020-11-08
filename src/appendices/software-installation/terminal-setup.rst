@@ -6,7 +6,7 @@ Setting Up Your Terminal
 .. admonition:: Warning
 
    Are you here too early? The content on this page fits with chapters 16 and
-   higher. If you have not made it to the :ref:`Terminal chapter <terminal-local-dev>`
+   higher. If you have not made it to the :ref:`Terminal chapter <terminal-chapter>`
    yet, you should probably wait a bit before using this page.
 
    If you are a student using a school-issued device, then the CLI software is
@@ -19,7 +19,7 @@ The *command line interface* (CLI) is a vital tool to learn for any programmer.
 This page provides installation instructions for Mac, Windows, and Chromebooks.
 
 Once you have the CLI up an running on your machine, return to the
-:ref:`Terminal chapter <terminal-local-dev>` to practice how to use it.
+:ref:`Terminal chapter <terminal-chapter>` to practice how to use it.
 
 Mac Users
 ---------

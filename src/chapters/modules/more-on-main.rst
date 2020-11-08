@@ -1,3 +1,5 @@
+.. _more-about-main:
+
 More About ``main()``
 =====================
 

@@ -1,3 +1,5 @@
+.. _custom-modules:
+
 Creating Modules
 ================
 
@@ -138,6 +140,8 @@ Follow these instructions to create the ``turtle_prep`` module:
    <iframe src="https://trinket.io/embed/python/02c9ec9aef" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 Cool, we now have a set of code that we can pull into future turtle projects!
+
+.. _module-location:
 
 File Locations
 --------------
