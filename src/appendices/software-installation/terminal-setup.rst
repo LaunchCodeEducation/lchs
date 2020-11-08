@@ -7,7 +7,7 @@ Setting Up Your Terminal
 
    Are you here too early? The content on this page fits with chapters 16 and
    higher. If you have not made it to the :ref:`Terminal chapter <terminal-chapter>`
-   yet, you should probably wait a bit before using this page.
+   yet, you should probably wait a bit before reading this page.
 
    If you are a student using a school-issued device, then the CLI software is
    probably already on your machine. Check with your teacher before installing
@@ -25,13 +25,13 @@ Mac Users
 ---------
 
 Good news! The CLI application is called *Terminal*, and it comes with every
-Mac. Return to the :ref:`Launch the Terminal <launch-terminal>` section to see
-where to find the application.
+Mac. Read the :ref:`Launch the Terminal <launch-terminal>` section to see where
+to find the application.
 
 Windows Users
 -------------
 
-#. Download the `Git for Windows <https://gitforwindows.org/>`__ installer.
+#. Download the `Git for Windows <https://git-scm.com/downloads/>`__ installer.
 #. After the installer has fully downloaded, run it. You will then move through
    several screens of options.
 
@@ -42,8 +42,8 @@ Windows Users
 
    b. On all of the other screens, just use the pre-selected choices.
 
-#. Return to the :ref:`Launch the Terminal <launch-terminal>` section to see
-   where to find the application. It is called *Git Bash*.
+#. Read the :ref:`Launch the Terminal <launch-terminal>` section to see where
+   to find the application. It is called *Git Bash*.
 
 Chromebook Users
 ----------------
@@ -97,8 +97,8 @@ Activate Linux Environment
    take 10 minutes (or more) to finish.
 #. When done, a terminal window opens automatically.
 
-Return to the :ref:`Launch the Terminal <launch-terminal>` section to see where
-to find the application again after you close it.
+Read the :ref:`Launch the Terminal <launch-terminal>` section to see where to
+find the application again after you close it.
 
 .. admonition:: Note
 

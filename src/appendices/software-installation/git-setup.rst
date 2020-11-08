@@ -1,25 +1,74 @@
 .. _git-install:
 
-Setting Up Git
+Installing Git
 ==============
 
-Mac Users
----------
+One of the most important habits for a programmer deals with proper version
+control. The `Git Some Control <https://education.launchcode.org/lchs/chapters/git/index.html>`__
+chapter discusses this critical process.
 
-1. Open a new terminal window.
-2. Type the command, ``git --version``, in the terminal.
-3. If the output includes a Git version, like the code below, then you are ready to use Git!
+.. todo:: Replace external chapter link with an internal one (Git install).
 
-   ::
+.. admonition:: Note
 
-      LaunchCode-Super-Computer:~ launchcode-student$ git --version
-      git version 2.6.4 (Apple Git-63)
+   Before starting the Git installation, make sure you finished setting up
+   :ref:`terminal <terminal-setup>`, :ref:`VS Code <vsc-install>`, and
+   :ref:`Python <python-install>` on your machine.
 
-4. If the output does not include a Git version, then a popup will open and ask you to install Developer Tools. Click "Install"!
-5. After the installation is done, you can double check that it worked by typing ``git --version`` and the version of Git will be part of the output!
+Follow the instructions below to install the latest version of Python:
+
+#. :ref:`Windows <git-win-install>`
+#. :ref:`Mac <git-mac-install>`
+#. :ref:`Chromebook <git-chrome-install>`
+
+.. _git-win-install:
 
 Windows Users
 -------------
 
-Since you already installed Git Bash when you set up your terminal, you are good to go!
+Since you already installed Git Bash when you set up your terminal, you are
+good to go!
 
+.. _git-mac-install:
+
+Mac Users
+---------
+
+#. Launch the *Terminal* application, or open a new terminal panel in VS Code.
+#. Type the command ``git --version`` in the terminal.
+#. If the output includes a version number, like the sample below, then you are
+   ready to go! The actual version isn't that important, as long as you see
+   ``2.x`` or higher.
+
+   ::
+
+      $ git --version
+      git version 2.20.1
+
+#. If the output does not include a version number, then a popup will open and
+   ask to install some tools on your computer. Accept the invitation!
+#. After the installation is done, double check that it worked by typing
+   ``git --version`` again.
+
+.. _git-chrome-install:
+
+Chromebook Users
+----------------
+
+#. Launch the *Terminal* application, or open a new terminal panel in VS Code.
+#. Type the command ``git --version`` in the terminal.
+#. If the output includes a version number, like the sample below, then you are
+   ready to go! The actual version isn't that important, as long as you see
+   ``2.x`` or higher.
+
+   ::
+
+      $ git --version
+      git version 2.20.1
+
+#. If the output does not include a version number, then you will need to
+   install the software from the terminal. Enter the command
+   ``sudo apt-get install git``. You will see lots of text appear as the
+   installation runs. If you are prompted to give permission, enter ``y``.
+#. After the installation is done, double check that it worked by typing
+   ``git --version`` again.

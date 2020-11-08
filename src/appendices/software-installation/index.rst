@@ -1,6 +1,6 @@
 .. _software-installations:
 
-Setting up Software for LCHS
+Installing Software for LCHS
 ============================
 
 .. toctree::
@@ -10,4 +10,3 @@ Setting up Software for LCHS
    vscode-setup
    python-setup
    git-setup
-   flask-setup
