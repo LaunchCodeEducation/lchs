@@ -17,8 +17,8 @@ installations before continuing.
 
 Instructions for installing the necessary software on your machine can be found
 in the :ref:`Setting up Software <software-installations>` appendix. In this
-chapter, we introduce two programs: Terminal and Visual Studio Code. Check to
-make sure you have these on your machine.
+chapter, we introduce one new program: the Terminal (called *Git Bash* on a
+Windows machine). Check to make sure you have this application on your device.
 
 Chromebook Users
 ----------------
