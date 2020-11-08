@@ -2,7 +2,9 @@ HTTP At a Glance
 ================
 
 While we can get away with knowing only a few details about TCP/IP and DNS,
-HTTP is a different story. Let's start with a high-level view.
+HTTP is a different story. We must understand HTTP much more deeply.
+
+Let's start with a high-level view.
 
 Requests and Responses
 ----------------------
@@ -16,7 +18,9 @@ The fundamental units of HTTP are **requests** and **responses**. A client
 the request, the server builds and sends a response. The client receives the
 response, executes the code, and displays the result.
 
-   [IMAGE - Client and server exchanging HTTP R/R]
+.. figure:: figures/http-request-response.png
+   :alt: A client and a server exchanging HTTP requests and responses
+   :height: 300px
 
 As long as the server is available, *every* request receives a single response. 
 
@@ -24,8 +28,8 @@ Requests contain several types of data, including:
 
 #. The URL for the server.
 #. The action the client needs the browser to take.
-#. Information like the browser involved and the type of data the client can
-   accept in return.
+#. Information like the browser involved and the type of data the client needs
+   in return.
 #. An optional request message.
 
 Responses include:
@@ -43,7 +47,11 @@ the invite and question on a piece of paper and stuff it into an envelope. On
 each one, you include an address, a return address, and you place a stamp in
 the top-right corner.
 
-   [IMAGE - Envelope image]
+.. figure:: figures/envelope.jpg
+   :alt: An addressed envelope, with a stamp.
+   :height: 250px
+   
+   Image is in the public domain
 
 The address, return address, and stamp are all required for a letter to be
 delivered. Once we drop it into a mailbox, it travels from one post office
@@ -56,10 +64,6 @@ the request to reach the server.
 
 We don't need to know *how* our HTTP request gets to the server. As long as we
 use the correct format, it *will* be delivered.
-
-   [IMAGE - Postal facility vs. cables.]
-
-   Both the postal service and the Internet deliver messages, as long as you follow their formatting rules. Images used with permission. L: via `US Air Force <https://www.af.mil/News/Article-Display/Article/1399724/deployed-airmen-volunteer-to-enhance-morale-downrange/>`_, R: via Flickr user `verkeorg <https://www.flickr.com/photos/verkeorg/24501780183>`_
 
 Just like your friends and family will respond with notes telling you they will
 absolutely attend your graduation, an HTTP request will receive a response from
