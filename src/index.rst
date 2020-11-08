@@ -21,6 +21,7 @@ Chapters
    chapters/classes-and-objects/index
    chapters/html/index
    chapters/css/index
+   chapters/terminal/index
 
 .. toctree::
 
@@ -67,11 +68,13 @@ Appendices
 
    appendices/about-this-book
    appendices/classrooms/index
+   appendices/software-installation/index
    appendices/dictionary-methods/index
    appendices/list-methods/index
    appendices/string-methods/index
    appendices/random-module/index
    appendices/turtles/index
+   appendices/terminal-commands/index
    appendices/extras/index
 
 .. toctree::
