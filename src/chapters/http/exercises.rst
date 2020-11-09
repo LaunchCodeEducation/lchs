@@ -119,7 +119,7 @@ produces a noticeable lag in the time it takes the browser to display the
 complete page.
 
 Imagine we slowed the loading process way down for the sample webpage. We would
-first see the text from the plain, unstyled HTML elements. Next, we would see
+first see the text from the plain HTML elements. Next, we would see
 when the CSS rules finish loading, because we would notice the text and
 background styles change. Finally, we would see the image fill into the middle
 of the ``figure`` element.
