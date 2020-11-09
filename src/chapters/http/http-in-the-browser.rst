@@ -8,11 +8,11 @@ behind the scenes. To to view them, we need to open up a new tool.
 Viewing Requests and Responses
 ------------------------------
 
-Let's start with the simple webpage used for one of the CSS examples:
+Let's start with a simple webpage similar to one of the CSS examples:
 
-.. figure:: figures/open-dev-tools.png
-   :alt: Use the menu to open Firefox's developer tools (Network option).
-   :height: 300 px
+.. figure:: figures/hello-http.png
+   :alt: A simple webpage with external CSS and a single image.
+   :width: 80%
 
    A simple webpage for HTTP viewing.
 
