@@ -50,7 +50,6 @@ Projects
    chapters/css/project
    chapters/local-dev/project
    chapters/git/project
-   chapters/http/project
 
 Assignments
 ===========

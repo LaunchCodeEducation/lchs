@@ -1,4 +1,0 @@
-Project: HTTP
-=============
-
-Lorem ipsum...

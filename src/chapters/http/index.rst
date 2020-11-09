@@ -9,6 +9,4 @@ HTTP and the Internet
    http-at-a-glance.rst
    http-requests.rst
    http-responses.rst
-   http-in-the-browser.rst
-   exercises
-   project
+   exercises.rst
