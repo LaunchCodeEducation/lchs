@@ -89,19 +89,3 @@ Check Your Understanding
       </ol>
 
 .. Answers = True, False, False, True
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function revealTrueFalse(id, correct) {
-         if (document.getElementById(id).innerHTML != '') {
-            document.getElementById(id).innerHTML = '';
-         } else if (correct) {
-            document.getElementById(id).innerHTML = 'True';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'False';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

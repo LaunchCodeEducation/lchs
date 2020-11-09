@@ -149,16 +149,3 @@ Check Your Understanding
       </ol>
 
 .. Answers = POST, POST, GET, GET, GET, POST.
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function revealAnswer(id, answer) {
-         if (document.getElementById(id).innerHTML != '') {
-            document.getElementById(id).innerHTML = '';
-         } else {
-            document.getElementById(id).innerHTML = '- ' + answer;
-            document.getElementById(id).style.color = 'blue';
-         }
-      }
-   </script>
