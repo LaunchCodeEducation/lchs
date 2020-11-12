@@ -63,6 +63,8 @@ from now on.
 #. :ref:`Save and commit <commit-summary>` your work.
 #. Open ``index.html`` in a new tab of your browser to confirm that your setup
    works.
+#. Use ``git branch`` to check the name of your default branch. If necessary,
+   use ``git branch -m old-branch-name main`` to change its name to ``main``.
 
 .. _input-tag:
 

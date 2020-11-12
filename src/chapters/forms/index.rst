@@ -9,6 +9,7 @@ User Input with Forms
    form-post
    text-inputs
    check-radio-select
+   input-extras
    html-validation
    form-style
    exercises
