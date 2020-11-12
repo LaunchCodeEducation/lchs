@@ -46,9 +46,9 @@ in the *Demo* column to see how it behaves.
      - :raw-html:`<input type="number" name="num-choice"/>`
    * - email
      - ``<input type="email" name="email-address"/>``
-     - Requires the user to enter an email address with the format text@address.xxx.
-       The browser displays an error message if the user tries to submit an
-       invalid address.
+     - Requires the user to enter an email address with the format
+       ``text@server``. The browser displays an error message if the user tries
+       to submit an invalid address.
      - :raw-html:`<input type="email" name="email-address"/>`
    * - date
      - ``<input type="date" name="grad-date"/>``
@@ -61,8 +61,35 @@ in the *Demo* column to see how it behaves.
        browsers provide a *time picker*.
      - :raw-html:`<input type="time" name="nvr-L8"/>`
 
+Try It!
+-------
+
+Return to your ``index.html`` form.
+
+#. Save and commit the changes you made from the previous page.
+#. Change one input type to ``number``. Use the ``max`` and ``min`` attributes
+   to set the allowed range between ``1`` and ``5``.
+#. Save the change, then refresh the page in your browser. Try to submit the
+   form with invalid entries in the field (e.g. ``abc``, ``-38``, or ``3.33``).
+   What happens?
+#. Change a different input type to ``email``. Try submitting an entry without
+   the ``@`` symbol. When ``@`` is included, does text have to appear on both
+   sides of the symbol?
+
+.. index:: ! client-side validation
+   single: form; client-side validation
+
+By choosing different HTML input types, we can add **client-side validation**
+to our forms. This means that the browser will prevent form submission if any
+of the input fields contain invalid data.
+
+.. figure:: figures/number-validation.png
+   :alt: Form showing an error message for an invalid number input.
+
+   The user tried to submit a number outside of the allowed range.
+
 A Larger Text Input Field
-^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 Sometimes, we need a larger text box to accept multi-line user input. In these
 cases, we use the ``textarea`` HTML element instead of ``input``. It functions
