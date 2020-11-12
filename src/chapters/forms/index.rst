@@ -10,5 +10,6 @@ User Input with Forms
    text-inputs
    check-radio-select
    html-validation
+   form-style
    exercises
    project
