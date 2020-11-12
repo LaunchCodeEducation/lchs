@@ -60,7 +60,7 @@ from now on.
    ``git init``.
 #. Create an ``index.html`` and ``style.css`` file inside the folder.
 #. Paste your code from the Trinket editor above into the ``index.html`` file.
-#. Save and commit your work.
+#. :ref:`Save and commit <commit-summary>` your work.
 #. Open ``index.html`` in a new tab of your browser to confirm that your setup
    works.
 

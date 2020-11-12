@@ -278,6 +278,8 @@ Many developers have ignored version control and regretted it later!
    You want your version history to be clean. Saving a bug means that if you
    roll back to that earlier version, you will need to re-fix the same error.
 
+.. _commit-summary:
+
 Commit Process Summary
 ----------------------
 

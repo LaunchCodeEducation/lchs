@@ -103,10 +103,10 @@ When a form is submitted, an HTTP request is sent to a server. However, we need
 to identify *where* to send the data. To do this, we must include an attribute
 inside the ``<form>`` tag, and this attribute is called ``action``.
 
-We will learn more about using ``action`` in later chapters. For now, recognize
-that when the attribute is missing or empty, the form submits all of the
-collected data to the current URL. This is why we saw a change in the address
-bar after we clicked *Submit*.
+We will learn more about using ``action`` later. For now, recognize that when
+the attribute is missing or empty, the form submits all of the collected data
+to the current URL. This is why we saw a change in the address bar after we
+clicked *Submit*.
 
 .. index::
    single: url; query parameter
@@ -141,6 +141,8 @@ match the data entered into each box of the form.
    Let's take a close look at the HTML code for our form as well as the query
    string from the URL.
 
+   **HTML Code:**
+
    .. sourcecode:: html
       :lineno-start: 14
 
@@ -153,9 +155,9 @@ match the data entered into each box of the form.
 
       file:///username/Desktop/local_practice/forms_chapter/index.html?username=Bob&team=Python
 
-   Line 14 in the HTMl gives us the first *key* in the query string,
+   Line 14 in the HTML gives us the first *key* in the query string,
    ``username``. The *value* assigned to that key is whatever we typed into
-   the box (``Bob``, in this case).
+   that input box (``Bob``, in this case).
    
    The second key, ``team``, comes from the ``name`` attribute in line 15. The
    second value is ``Python``, or whatever else we typed into the field before
@@ -215,7 +217,7 @@ deal with this exact situation.
 
 *HOWEVER*...
 
-Enter a simple string of characters into your form and click submit. Now check
+Enter a simple string of characters into your form and click *Login*. Now check
 the updated URL.
 
 .. figure:: figures/pw-in-url.png
