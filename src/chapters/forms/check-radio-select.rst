@@ -119,8 +119,8 @@ Same vs. Different ``name``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the examples above, each ``input`` element had a different ``name``
-attribute. Each checkbox was considered ``on`` or ``off`` on its own. Let's see
-what happens when we give all the checkboxes in a group the same ``name``:
+attribute. Let's see what happens when we give all the checkboxes in a group
+the same ``name``:
 
 .. admonition:: Example
 
@@ -156,43 +156,253 @@ the results from the entire set of boxes.
    Return to your local ``index.html`` form.
 
    #. Save and commit your previous work to the repository.
-   #. Use ``git checkout -b`` to make a branch off of ``main``.
-   #. In this new branch, modify your form to use a checkbox list with at least
-      three options.
+   #. Use ``git checkout -b`` to make a branch off of ``main``. Call it
+      ``checkboxes``.
+   #. In this new branch, modify your form to use at least three checkboxes.
    #. Experiment with the ``name`` and ``value`` attributes to see how they
       behave.
 
 Radio Buttons
 -------------
 
-Lorem ipsum...
+Radio buttons appear as small circles instead of boxes. They allow a user to
+pick one option from a group of choices. Only one radio input in a group can be
+chosen at a time. The ``value`` attribute for that input will be submitted with
+the form. Just like with checkboxes, every radio input should have its own
+``<label>`` tags.
 
-Naming options - same vs. different.
+The general syntax is:
+
+.. sourcecode:: html
+
+   <input type="radio" name="..." value="value-when-selected"/>
+
+To make a radio group work, all of the input elements must have the same
+``name`` attribute.
+
+.. admonition:: Example
+
+   Let's convert the color checkboxes to a set of radio buttons.
+
+   .. sourcecode:: html
+      :linenos:
+
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+         <label><input type="radio" name="color" value="red"/> Red</label><br>
+         <label><input type="radio" name="color" value="green"/> Green</label><br>
+         <label><input type="radio" name="color" value="blue"/> Blue</label><br>
+         <button>Send to Parrot</button>
+      </form>
+      
+   .. figure:: figures/radio-parrot.png
+      :alt: The 'Green' radio button is selected. This assigns the value 'green' to the 'color' key.
+      :width: 70%
+
+      The selected radio input sets the value for the ``color`` key.
 
 Unselecting a Radio Button
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can't... Note the two alternatives...
+Take a look at the checkbox and radio options below. Try selecting and then
+unselecting each one to see a key difference between the two input types.
 
-Try It with the parrot server to see the format for the data returned.
+.. raw:: html
+
+   <label><input type="checkbox" name="newsletter"/> Sign me up for the newsletter!</label><br>
+   <label><input type="radio" value="got-em"/> Yes, please send me more spam emails!</label>
+
+Hmmm. Once we click the radio input, there is no quick way to undo that choice.
+Depending on the browser settings, refreshing the page may or may not clear the
+button. Try it. If that doesn't work, try a *hard refresh* by pressing
+``control+shift+R`` on the keyboard (``command+shift+R`` on a Mac).
+
+So how to we clear a radio input without refreshing the page? The quick answer
+is, we can't. Once a user clicks a radio button in a group, one of the options
+WILL be submitted with the form. The only way to avoid this is to not click any
+of the choices in the first place, but that defeats the whole purpose of the
+form.
+
+The longer answer involves the user experience. It IS possible to clear a radio
+group, but doing so is not straightforward. One option is to do a hard refresh,
+but this clears the *entire* form. The user would have to start all over again,
+which is annoying. Other options involve hacking into the form HTML inside the
+browser. As good web developers, we shouldn't expect our users to need to do
+this.
+
+For a radio group, the best approach is to avoid the need to undo a choice. We
+will revisit this idea later in the chapter. For now, here is one easy,
+excellent tip:
+
+.. admonition:: Tip
+
+   In a radio group, ALWAYS include some kind of *No Choice* option. This gives
+   the user an escape route if they don't like any of the other options.
+
+   .. raw:: html
+
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+         <label><input type="radio" name="color" value="red"/> Red</label><br>
+         <label><input type="radio" name="color" value="green"/> Green</label><br>
+         <label><input type="radio" name="color" value="blue"/> Blue</label><br>
+         <label><input type="radio" name="color" value=""/> None of the above</label><br>
+      </form>
+
+.. admonition:: Try It!
+
+   Return to your local ``index.html`` form.
+
+   #. Save and commit the work in the ``checkboxes`` branch.
+   #. Return to ``main`` and checkout a new branch called ``radio``.
+   #. In the new branch, modify your form to include at least three radio
+      inputs.
+   #. Submit your form to the parrot server to see how the data gets reported.
+   #. What happens if you submit the form without clicking any of the radio
+      buttons?
+   #. What happens if you give each radio input a different ``name`` attribute?
 
 Select
 ------
 
-Lorem ipsum...
+A *select* input creates a clickable menu that gives the user a drop-down list
+of options. While it is possible to make the input accept more than one choice,
+it's usually best to stick with allowing just one item.
 
-Syntax - select element with nested option elements...
+The select input combines two HTML tags: ``<select>`` and ``<option>``. The
+general syntax is:
 
-disabled/selected/hidden/default attributes...
+.. sourcecode:: html
 
-Choosing multiple options from the menu...
+   <select name="...">
+      <option value="...">First menu option.</option>
+      <option value="...">Second menu option.</option>
+      <!-- etc. -->  
+   </select>
 
-Try It!
+When the form gets submitted, the ``name`` attribute in the ``<select>`` tag
+provides the key. The ``value`` attribute from the chosen ``<option>`` is
+assigned to that key.
 
-Other
------
+A select input works very much like a group of radio buttons.
 
-https://community.appway.com/screen/kb/article/checkboxes-radio-buttons-dropdowns-when-to-use-what-1482810890174
+.. admonition:: Example
+
+   Let's use a drop-down menu to select our color choice.
+
+   .. sourcecode:: html
+      :linenos:
+
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+         <select name="color">
+            <option value="red"> Red</option>
+            <option value="green"> Green</option>
+            <option value="blue"> Blue</option>
+         </select>
+         <button>Send to Parrot</button>
+      </form>
+
+   .. figure:: figures/select-parrot.png
+      :alt: The 'Red' menu option is selected. This assigns the value 'red' to the 'color' key.
+      :width: 70%
+
+      The value of the selected ``option`` element is assigned to the ``color`` key.
+
+Setting a Default ``<option>``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A ``select`` input always returns a value when a form is submitted, even if the
+user never clicks on the menu. By default, ``select`` displays the first
+``option`` element as the current choice.
+
+Just like a radio button group, we should ALWAYS offer the user a *No Choice*
+option. This can be an empty menu slot or some form of non-selectable title.
+
+.. admonition:: Example
+
+   Here are two examples of *no choice* options. Each one is placed first
+   inside the ``select`` element, and the ``value`` attribute is assigned the
+   empty string.
+
+   .. sourcecode:: HTML
+      :linenos:
+   
+      <!-- Example 1: Empty Top Slot -->
+      <select name="color">
+         <option value="" selected></option>
+         <option value="red"> Red</option>
+         <option value="green"> Green</option>
+         <option value="blue"> Blue</option>
+      </select>
+
+      <!-- Example 2: Title -->
+      <select name="color">
+         <option value="" disabled selected>Choose a color:</option>
+         <option value="red"> Red</option>
+         <option value="green"> Green</option>
+         <option value="blue"> Blue</option>
+      </select>
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Example 1
+        - Example 2
+      * - .. raw:: html
+
+              <select name="color"> Example #1
+                 <option value="" selected></option>
+                 <option value="red"> Red</option>
+                 <option value="green"> Green</option>
+                 <option value="blue"> Blue</option>
+              </select>
+        - .. raw:: html
+
+              <select name="color">
+                 <option value="" disabled selected>Choose a color:</option>
+                 <option value="red"> Red</option>
+                 <option value="green"> Green</option>
+                 <option value="blue"> Blue</option>
+              </select>
+
+   The ``selected`` attribute sets the option as the default choice, which will
+   be displayed when the user first loads the page. In Example 1, the blank
+   menu slot can be chosen as an option.
+   
+   The ``disabled`` attribute in Example 2 (line 11) means that once the user
+   picks a different option, the default title cannot be re-selected.
+
+.. admonition:: Try It!
+
+   Return to your local ``index.html`` form.
+
+   #. Save and commit the work in the ``radio`` branch.
+   #. Return to ``main`` and checkout a new branch called ``select``.
+   #. In the new branch, modify your form to use a select input with at least
+      three options.
+   #. What happens if you submit the form without clicking the select menu?
+   #. Experiment by placing the ``selected`` and ``disabled`` attributes inside
+      different ``<option>`` tags.
+   #. Try using the ``hidden`` attribute in place of ``disabled``. What does it
+      do to the input?
+
+When to Use What
+----------------
+
+Checkboxes, radio buttons, and the select drop-down menus all behave in a
+similar way. However, they are NOT always interchangeable. When should we use
+each input type?
+
+Here are a few guidelines:
+
+#. If the user needs to select multiple options, or be able to unselect items,
+   go with checkboxes.
+#. If the user must make a single choice from a long list, radio buttons work
+   better than a drop-down menu.
+#. Top-down lists are easier to read. Whenever possible, arrange a list of
+   choices vertically instead of side-by-side.
+
+`This article <https://community.appway.com/screen/kb/article/checkboxes-radio-buttons-dropdowns-when-to-use-what-1482810890174>`__
+gives a nice summary of when to use each type of input and how to present clear
+choices.
 
 Check Your Understanding
 ------------------------
