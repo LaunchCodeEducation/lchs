@@ -8,7 +8,8 @@ User Input with Forms
    form-submission
    form-post
    text-inputs
-   check-radio-select
+   check-radio-input
+   select-input
    input-extras
    html-validation
    form-style
