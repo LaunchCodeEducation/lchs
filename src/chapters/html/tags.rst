@@ -227,6 +227,8 @@ The ``<img>`` tag has two attributes that we will see a lot. ``src`` (for
 alternate text for anyone using a screen reader. For this reason, ``alt``
 should provide a short description of what is going on in the image.
 
+.. _block-vs-inline-elements:
+
 Block vs. Inline Elements
 -------------------------
 
