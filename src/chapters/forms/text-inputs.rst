@@ -64,6 +64,8 @@ in the *Demo* column to see how it behaves.
 Try It!
 -------
 
+.. _client-side-validation:
+
 Return to your ``index.html`` form.
 
 #. Save and commit the changes you made from the previous page.
