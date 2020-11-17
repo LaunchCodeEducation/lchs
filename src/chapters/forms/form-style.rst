@@ -82,11 +82,13 @@ elements will be.
 #. What happens to the form if you add a ``label`` selector that also
    includes a ``margin`` value?
 
-.. todo:: Insert interactive editor here (margin property).
+   .. raw:: html
 
-Once you finish exploring ``margin``, paste the CSS code into your local
-``style.css`` file. Be sure to refresh the page in your browser to see how it
-looks.
+      <iframe src="https://trinket.io/embed/html/728e86b6f9" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Once you finish exploring ``margin``, open Visual Studio Code and paste the CSS
+code into your local ``style.css`` file. Be sure to refresh the page in your
+browser to see how it looks.
 
 Field Size
 ^^^^^^^^^^
@@ -109,20 +111,20 @@ since this changes the field size to always fit within a given space.
    remains the same size.
 
 #. In the editor above, add a ``width`` property to the ``input`` selector.
-   Experiment by assigning different values to the property.
+   Experiment by assigning different ``px`` and ``%`` values to the property.
 #. What about the ``type="number"`` input? That field doesn't need to be as
    large as the others. With CSS we can either add a *class* to set the width,
-   or we can try out a new technique. Add this to the CSS code:
+   or we can try out a new technique. Add this to the CSS code in the editor:
 
    .. sourcecode:: css
 
       input[type=number] {
-         width: 5%;
+         width: 10%;
       }
 
    ``input[type=number]`` sets the style rules for ``input`` elements that have
    the ``type="number"`` attribute. Since we don't include a ``margin``
-   property, the number type uses the same value set in the other ``input``
+   property, the number type uses the value set in the other ``input``
    selector.
 
 Once you finish exploring ``width``, paste the CSS code into your local
@@ -131,67 +133,62 @@ Once you finish exploring ``width``, paste the CSS code into your local
 Button Style
 ^^^^^^^^^^^^
 
-Note that the HTML uses ``<button>`` tags instead of ``<input>``. This lets us
-separate the styles for the submit button vs. the other input fields.
+Note that the HTML form uses ``<button>`` tags for *Send to Parrot* instead of
+``<input>``. This lets us separate the styles for the submit button vs. the
+other input fields.
 
 In the editor below, open the ``style.css`` tab and play around with the
 properties in the ``button`` selector. What does each property do? In
 particular, how is ``padding`` different from ``margin``?
 
-.. todo:: Insert interactive editor here (button CSS).
+.. raw:: html
 
-Once you've designed button you like, paste the CSS code into your local
+   <iframe src="https://trinket.io/embed/html/14d550fada" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Once you've designed a button you like, paste the CSS code into your local
 ``style.css`` file. Save and commit your work.
 
 Alignment
 ^^^^^^^^^
 
 Right now, the edges of the input fields do not line up because their labels
-are all different lengths. There are *lots* of ways to address this, but one
-simple fix is to put the labels and input fields on different lines.
+are different lengths. There are *lots* of ways to address this, but one simple
+fix is to put the labels and input fields on different lines.
 
-   [IMAGE - label-over-box] (It's not fancy, but it's quick and easy).
+.. figure:: figures/label-over-input.png
+   :alt: Form with each label on the line above its input field.
+
+   It's not fancy, but it's quick and easy.
 
 By default, ``label`` and ``input`` elements start out aligned on the left
 side of the screen. As long as they have the same ``margin`` value, they should
 line up nicely.
 
-Update your HTML code to align the input fields how you like.
-
-For an added amount of control, you can add ``section`` elements inside the
-form to help align the content.
+In VS Code, update your HTML code to align the input fields how you like. For
+an added amount of control, you can add ``section`` elements inside the form to
+help align the content.
 
 Finally, include a ``form`` element inside ``styles.css`` to add a few final
 touches, like a background color or border.
 
 .. figure:: figures/styled-form.png
    :alt: A styled HTML form with a heading, background color, aligned fields, and large button. 
+   :width: 40%
 
    One option for a styled form.
 
+Refresh your ``index.html`` page in your browser to make sure it looks the way
+you want. When you are happy with the result, save and commit your work.
+
 Resources
-^^^^^^^^^
+---------
 
-Lorem ipsum...
+The following websites provide more detailed information about styling forms
+with CSS:
 
-#. How to style forms with CSS: A beginner’s guide:
-   https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/
-#. W3Schools: https://www.w3schools.com/css/css_form.asp
-#. Dive deep with MDN docs:
-   https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms
-
-Use Bootstrap
--------------
-
-Lorem ipsum...
-
-Return to starter (vanilla) code...
-
-Paste link into local repo...
-
-Add classes to make a *form group*...
-
-Try It!
--------
-
-Lorem ipsum...
+#. `How to style forms with CSS: A beginner’s guide <https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/>`__
+#. `W3Schools CSS Forms <https://www.w3schools.com/css/css_form.asp>`__
+#. Dive deep with the `MDN documentation <https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms>`__.
+#. `Bootstrap Form Styles <https://getbootstrap.com/docs/4.5/components/forms/>`__
+   (Review the :ref:`Bootstrap <bootstrap-classes>` section in the CSS chapter
+   if necessary).

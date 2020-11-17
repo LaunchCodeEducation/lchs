@@ -1,3 +1,5 @@
+.. _bootstrap-classes:
+
 Bootstrap
 =========
 
