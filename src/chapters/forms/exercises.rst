@@ -23,7 +23,7 @@ Part A: First Input
       ``"https://handlers.education.launchcode.org/request-parrot"``.
 
 #. Inside the ``form`` element, add a ``<label>`` and ``<input>`` for
-   ``Test Name``.
+   ``Test Name``:
 
    .. sourcecode:: html
 
@@ -31,49 +31,58 @@ Part A: First Input
 
 #. Save your work, then open ``rocket-sim.html`` in your browser. What keeps
    you from submitting the form right now?
-#. Add ``<button>Run Simulation</button>`` to the ``<form>``.
+#. Add ``<button>Run Simulation</button>`` to your form.
 #. Enter a value into the ``test-name`` input and submit the form. Was the
    key/value pair properly submitted to the server?
+
+Save and commit your work before starting Part B.
 
 Part B: More Inputs
 -------------------
 
-#. Next add these five ``inputs`` to the ``<form>``.
+#. Next, add these five ``inputs`` to your form.
 
-   a. Pay attention to the types and possible options.
-   b. Also add a ``<label>`` for each input.
+   a. Pay attention to the types and required values.
+   b. Be sure to add a ``<label>`` for each input.
 
-.. list-table::
-   :header-rows: 1
+   .. list-table::
+      :header-rows: 1
 
-   * - Display Name
-     - Input Type
-     - Input Name
-     - Possible Values
-   * - Test Name
-     - text
-     - ``testName``
-     - No limitations
-   * - Test Date
-     - date
-     - ``testDate``
-     - Date format mm/dd/yyyy
-   * - Rocket Type
-     - select
-     - ``rocketType``
-     - Brant, Lynx, Orion, Terrier
-   * - Number of Rocket Boosters
-     - number
-     - ``boosterCount``
-     - A positive number less than 10
-   * - Wind Rating
-     - radio
-     - ``windRating``
-     - No Wind: with value 0, Mild: with value 10, Strong: with value 20
-   * - Use production grade servers
-     - checkbox
-     - ``productionServers``
-     - on or off
+      * - Label
+        - Input Type
+        - Input Name
+        - Required Values
+      * - Test Date
+        - ``date``
+        - ``test-date``
+        - Date format ``mm/dd/yyyy``
+      * - Rocket Type
+        - ``select``
+        - ``rocket-type``
+        - Options for ``Falcon``, ``Saturn``, ``Orion``, and ``Terrier``.
+      * - Number of Engines
+        - ``number``
+        - ``engine-count``
+        - A positive number less than 10.
+      * - Wind Rating
+        - ``radio``
+        - ``wind-rating``
+        - Options for ``No Wind``, ``Mild``, and ``Strong`` (see note below).
+      * - Use Autopilot
+        - ``checkbox``
+        - ``autopilot``
+        - ``on`` or ``off``
+
+#. *Note*: Each ``wind-rating`` radio input needs to include a ``value``
+   attribute. For ``No Wind``, set the value to ``0``. For ``Mild``, set the
+   value to ``10``. For ``Strong``, set the value to ``20``.
+#. Add placeholder text to the ``test-name`` and ``engine-count`` input fields.
+#. Add an empty ``<option>`` element to the ``select`` input. Make it the
+   default choice, include the ``value=""`` attribute, and set it to be
+   ``disabled``.
+#. Use the ``required`` attribute to add validation to the form. Prevent
+   submission if any input *besides* ``autopilot`` is left blank.
+#. Add a *Scrub Launch* button that resets the form.
 
 .. admonition:: Example
 
@@ -81,19 +90,12 @@ Part B: More Inputs
 
       [IMAGE - Rocket sim example.]
 
-   **Submitted Values**
+   **Parrot Result**
 
-   ::
+      [IMAGE - Parrot results for rocket sim form.]
 
-      testName=Moon+Shot
-      testDate=2020-07-16
-      rocketType=Lynx
-      boosterCount=3
-      windRating=10
-      productionServers=on
+Part C: CSS Styling
+-------------------
 
-Bonus Mission
--------------
-
-Use an event handler and the *submit* event to validate that all inputs have
-values. Do NOT let the form be submitted if inputs are empty.
+#. Add a heading, border, and background color to the form.
+#. Lorem ipsum...
