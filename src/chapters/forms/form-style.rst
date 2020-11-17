@@ -15,10 +15,9 @@ plain, and the button blends into the background.
 
 Vanilla is a great ice cream flavor, but *vanilla HTML* makes a pretty weak web
 form. We want visitors to our site to have a good experience, and presenting an
-attractive page is a key part of this.
-
-Here are a few tips to keep in mind when coding a form. None of these items are
-*required*, but each one improves a user's experience with our work.
+attractive page is a key part of this. Here are a few tips to keep in mind when
+coding a form. None of these items are *required*, but each one improves a
+user's experience with our work.
 
 #. Include a short heading that identifies the purpose of the form.
 #. Place only one input element on each line of the form. Vertically stacked
@@ -36,6 +35,9 @@ Here are a few tips to keep in mind when coding a form. None of these items are
 
 Fortunately, we can meet these guidelines by applying some CSS style rules!
 
+Add CSS
+-------
+
 .. admonition:: Note
 
    One thing to keep in mind as we style our forms is that ``label``,
@@ -44,9 +46,6 @@ Fortunately, we can meet these guidelines by applying some CSS style rules!
    separate lines in our HTML code, they will appear in the same line of our
    webpage.
 
-Add CSS
--------
-
 Return to the ``main`` branch of your ``forms_chapter`` repository. Save and
 commit any work, then use ``git checkout -b`` to make a new branch called
 ``form-style``.
@@ -54,7 +53,7 @@ commit any work, then use ``git checkout -b`` to make a new branch called
 Paste in this starter code for the ``form`` element:
 
 .. sourcecode:: html
-   :lineno-start: 13
+   :lineno-start: 10
 
    <form method="POST">
       <h2>A Few Of My Favorite Things</h2>
@@ -70,37 +69,110 @@ Save your work, then open the ``index.html`` file in your browser.
 Margins
 ^^^^^^^
 
-Let's start by putting some space between the inputs in our form. We will do
-this by using the **margin** CSS property. *Margin* sets the amount of
-whitespace that surrounds an element. The larger its value, the more spaced out
-two neighboring elements will be.
+.. index:: ! margin property
 
-#. Open the ``style.css`` file in Visual Studio Code.
-#. Add this element selector in the file:
+Let's start by putting some space between the inputs in our form. We do this
+with the **margin** property. *Margin* sets the amount of whitespace that
+surrounds an element. The larger its value, the more spaced out two neighboring
+elements will be.
+
+#. Open the ``style.css`` tab in the editor below. Note how the ``margin``
+   property is assigned inside the element selector. Experiment with changing
+   the number of pixels (``px``) assigned.
+#. What happens to the form if you add a ``label`` selector that also
+   includes a ``margin`` value?
+
+.. todo:: Insert interactive editor here (margin property).
+
+Once you finish exploring ``margin``, paste the CSS code into your local
+``style.css`` file. Be sure to refresh the page in your browser to see how it
+looks.
+
+Field Size
+^^^^^^^^^^
+
+We can change the size of an input field with the ``width`` property. The value
+assigned can be in pixels or a percentage. Using a percentage is recommended,
+since this changes the field size to always fit within a given space.
+
+.. admonition:: Example
+
+   Resize your browser window to see how these two fields respond:
+
+   .. raw:: html
+
+      <input style="width:50%" type="text" placeholder="Width set to 50%."/><br><br>
+      <input style="width:600px" type="text" placeholder="Width set to 600 pixels."/>
+
+   Note that the input field set at ``50%`` *always* stretches halfway across
+   this Example box, no matter how small we make the window. The ``600px`` box
+   remains the same size.
+
+#. In the editor above, add a ``width`` property to the ``input`` selector.
+   Experiment by assigning different values to the property.
+#. What about the ``type="number"`` input? That field doesn't need to be as
+   large as the others. With CSS we can either add a *class* to set the width,
+   or we can try out a new technique. Add this to the CSS code:
 
    .. sourcecode:: css
-      :linenos:
 
-      input, label {
-         margin: 5px;
+      input[type=number] {
+         width: 5%;
       }
 
-#. Save, then refresh the page in your browser. Experiment with different
-   ``margin`` values and note how the appearance of the form changes.
-#. What happens to the form if your remove ``input`` or ``label`` from the CSS
-   style rule?
+   ``input[type=number]`` sets the style rules for ``input`` elements that have
+   the ``type="number"`` attribute. Since we don't include a ``margin``
+   property, the number type uses the same value set in the other ``input``
+   selector.
 
-Next, box width and alignment (right for label: input, left for label\ninput)...
+Once you finish exploring ``width``, paste the CSS code into your local
+``style.css`` file. Save and commit your work.
 
-Field shape, border, color...
+Button Style
+^^^^^^^^^^^^
 
-Button shape, border, color...
+Note that the HTML uses ``<button>`` tags instead of ``<input>``. This lets us
+separate the styles for the submit button vs. the other input fields.
 
-Add sections to adjust internal alignment...
+In the editor below, open the ``style.css`` tab and play around with the
+properties in the ``button`` selector. What does each property do? In
+particular, how is ``padding`` different from ``margin``?
 
-Add types to element selector to control style (e.g. input[type=text] {})...
+.. todo:: Insert interactive editor here (button CSS).
 
-References:
+Once you've designed button you like, paste the CSS code into your local
+``style.css`` file. Save and commit your work.
+
+Alignment
+^^^^^^^^^
+
+Right now, the edges of the input fields do not line up because their labels
+are all different lengths. There are *lots* of ways to address this, but one
+simple fix is to put the labels and input fields on different lines.
+
+   [IMAGE - label-over-box] (It's not fancy, but it's quick and easy).
+
+By default, ``label`` and ``input`` elements start out aligned on the left
+side of the screen. As long as they have the same ``margin`` value, they should
+line up nicely.
+
+Update your HTML code to align the input fields how you like.
+
+For an added amount of control, you can add ``section`` elements inside the
+form to help align the content.
+
+Finally, include a ``form`` element inside ``styles.css`` to add a few final
+touches, like a background color or border.
+
+.. figure:: figures/styled-form.png
+   :alt: A styled HTML form with a heading, background color, aligned fields, and large button. 
+
+   One option for a styled form.
+
+Resources
+^^^^^^^^^
+
+Lorem ipsum...
 
 #. How to style forms with CSS: A beginner’s guide:
    https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/
