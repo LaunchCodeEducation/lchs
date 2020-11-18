@@ -180,6 +180,12 @@ touches, like a background color or border.
 Refresh your ``index.html`` page in your browser to make sure it looks the way
 you want. When you are happy with the result, save and commit your work.
 
+Wrap-Up
+-------
+
+Return to the ``main`` branch in your repo. Use ``git merge form-style`` to
+combine the two branches. Resolve any merge conflicts.
+
 Resources
 ---------
 
