@@ -64,8 +64,13 @@ Getting Started
    from different locations or devices. It would be a good idea to add a
    :ref:`remote repository <git-project>` on GitHub to help track your work.
 
-Create the Message Input
-------------------------
+Collect a Message From the User
+-------------------------------
+
+The `Caesar Cipher <coded-messages>`__ codes a message by shifting each letter
+a certain number of places in the alphabet. In your old assignment 2 Python
+code, you used the console to collect input from the user. In this updated
+project, you will use a web form to gather the same information.
 
 #. Create a new ``form`` element in your HTML file. For now, assign the URL for
    the parrot server to ``action``.
@@ -76,32 +81,73 @@ Create the Message Input
 
 #. Add a heading inside the form.
 #. Add a ``textarea`` element where the user will enter their original message.
-   Be sure to give this input a ``label``.
+   Be sure to give this input a ``label``. Also, add some placeholder text.
 #. Add a *Submit* button to the form. However, label it something more clever
    than *Submit*.
 #. Save your code, then open the ``.html`` file in your browser. Test your form
-   to make sure that it works.
+   to make sure it works.
 
-   .. figure:: figures/boilerplate-html.gif
-      :alt: Typing html:5 in VS Code automatically adds boilerplate HTML.
+   .. figure:: figures/textarea-input.png
+      :alt: Showing a label and textarea input, followed by the response.
+      :width: 70%
 
-      OK, that's really cool.
+      Check that the form sends a key/value pair for the ``textarea`` input.
 
-#. Commit your work to the repo before moving to the next section.
+#. Commit your work before moving to the next section.
 
 Add Number and Radio Inputs
 ---------------------------
 
-Lorem ipsum...
+Now that you have the ``textarea`` element working, you need to gather the rest
+of the required information.
+
+#. Below the ``textarea``, add an ``input`` element that accepts an integer.
+   The user will use this field to set how many places to shift each letter in
+   the original message.
+#. Use the ``max`` and ``min`` attributes to add validation to the field.
+   Allowed values for this input run from ``1`` to ``25``.
+#. Add placeholder text to this input to tell the user the allowed range.
+#. Below the number field, use radio buttons to let the user select if the
+   message should be encrypted or decrypted. Use the ``checked`` attribute to
+   select one of the choices as the default.
+#. Save your code, then refresh the page in your browser. Test the form to make
+   sure it sends three key/value pairs to the server.
+
+   .. figure:: figures/parrot-project-response.png
+      :alt: Request Parrot response to sending 3 input values from the form.
+
+      The form sends key/value pairs for the message, shift value, and whether to encrypt or translate the message.
+
+#. Commit your work before moving to the next section.
 
 Style the Form
 --------------
 
-Lorem ipsum...
+Now you need to make your form look nice.
+
+#. Open the empty ``.css`` file. Add style rules for the form, input fields,
+   and submit button.
+#. Center the form on the page. By default, the browser displays it on the left
+   side of the screen. Here's one way to change this:
+
+   a. In the CSS file, define a new class called ``centered``. Inside this
+      class, add the rule ``text-align: center;``.
+   b. Wrap the ``form`` element between ``<section>`` tags.
+   c. Add the ``class="centered"`` attribute to the ``<section>`` tag.
+   d. Back in the CSS file, add ``display: inline-block;`` to the ``form``
+      selector.
+
+#. Save your CSS code, then refresh the page in the browser. Properly done,
+   your form should now be horizontally centered on the screen. Try changing
+   the ``text-align`` value to ``left`` or ``right`` to see how this affects
+   the view.
+#. Commit your work. If you created a remote repository, don't forget to
+   ``push`` the changes up to GitHub.
 
 Coming Up Next
 --------------
 
 In Part 2 of this project, you will write some Python code that will collect
-the form data, use it to select the proper search engine, and then run the
-search request with that engine.
+the form data and then update the page to show the coded or translated message.
+
+.. todo:: Insert internal link to the Part 2 project page.
