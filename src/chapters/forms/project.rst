@@ -1,97 +1,96 @@
-Project: Search Form (Part 1)
-=============================
+Project: Web Coded Messages (Part 1)
+====================================
+
+In this chapter, we coded several forms and used the *Parrot Server* to check
+the data submitted. Of course, the parrot isn't a real server. It stores no
+data, and it performs no actions other than sending back the key/value pairs it
+receives in an HTTP request. It behaves like an electronic mirror.
+
+In the next few chapters, we will learn how to run a *local* server on our
+computer. This will allow us to receive form data, *do something* with it,
+and then send back a carefully crafted response. By doing this, we can create
+truly interactive webpages and websites.
+
+With this in mind, we are going to split this project across two chapters. In
+Part 1 (this chapter), you will create a form and verify that it submits its
+data correctly. In Part 2 (next chapter), you will write Python code to collect
+the data and act on it.
 
 Introduction
 ------------
 
-In this chapter and the next, you will build a *search engine selector*. This
-consists of a form where the user enters a topic and then chooses which search
-engine to run.
+In :ref:`Assignment #2 <coded-messages>`, you wrote a Python program that takes
+a string and *encrypts* it to create a coded message. The program also changes
+a coded message back into plain text.
 
-A basic search engine selector looks something like this:
+Your old program ran in the console. In this project, you will adapt the
+program to run in a browser. To do this, you will need to create a form with
+inputs for the original message, the size of the character shift, and whether
+to encrypt or decrypt the message.
 
-.. todo:: Insert image here (basic search engine selector).
+.. figure:: figures/caesar-form.png
+   :alt: A Caesar Cipher form, with inputs for the original message, the amount to shift, and whether to encrypt or decrypt the text.
 
-Most search engines work the same way. They use a single text input, and they
-submit data using a ``GET`` request. Also, many of the most popular engines use
-the character ``q`` to indicate the search parameter.
+   One possible form style.
 
-.. admonition:: Try It!
-
-   Use 2-3 different engines to search for *Recent NASA Images*. On the each
-   result page, look at the URL in the address bar. If the search engine used a
-   ``GET`` request, you should see the ``?`` and ``q`` characters included. You
-   will find your query listed as ``q=recent+nasa+images``.
-   
-   Each engine adds extra characters into the address, so you will need to
-   examine the URL carefully.
-
-   **Examples**:
-
-   #. Google: ``www.google.com/search?source=hp&ei=hme1X-K2NMnRtQaKgarYDw&q=recent+nasa+images``
-   #. DuckDuckGo: ``duckduckgo.com/?q=recent+nasa+images``
-   #. Bing: ``www.bing.com/search?q=recent+nasa+images``
-   #. Ask: ``www.ask.com/web?o=0&l=dir&qo=homepageSearchBox&q=recent+nasa+images``
-
-The fact that most search engines use the name ``q`` for their search boxes
-allows us to create a form that sends a search request to specific engine.
-
-In Part 1 of this project, you will build the form for your search engine
-selector. You will also test it with the *Parrot Server* to verify that it
-sends out the correct data.
-
-In Part 2 of this project, you will write some Python code that will collect
-the form data, use it to select the proper search engine, and then run the
-search request with that engine.
+You will deal with the Python code later. For now, your job is to build a nice
+looking form.
 
 Getting Started
 ---------------
 
-1. Go to the `studio repository <https://github.com/LaunchCodeEducation/HTTP-and-Forms-Studio/>`_ and fork to your Github account.
-2. Clone the repository and ``cd`` into the new directory.
+#. Launch Visual Studio Code and open your ``forms_chapter`` folder.
+#. Save and commit any recent work in the repository.
+#. From ``main``, checkout a new branch called ``web-caesar``.
+#. In the *File Explorer* panel, use the buttons to create a new folder. Call
+   it ``project``.
+#. Inside ``project`` create empty ``.html`` and ``.css`` files. Be sure to
+   give the files descriptive names.
+#. In the empty HTML file, type ``html:5`` and hit *Enter*. Whoa! Instant
+   starter code appears!
 
-.. admonition:: Note
+   .. figure:: figures/boilerplate-html.gif
+      :alt: Typing html:5 in VS Code automatically adds boilerplate HTML.
 
-   We remarked previously that most forms use ``POST`` because they cause data
-   to be changed on the server. A web search only *retrieves* data. It does not
-   change data. Therefore it's safe to use a ``GET`` request for searches.
+      OK, that's really cool.
 
-Create Form Inputs
-------------------
+#. Change the text in the ``title`` element, then add a ``<link>`` to your
+   project's CSS file.
+#. Save and commit your work.
 
-Let's build out the form in ``index.html``. We will need some data for the
-search engines we want to work with.
+.. admonition:: Tip
 
-.. list-table:: Search Engine Options
-   :header-rows: 1
+   You will be working on this project over multiple chapters, and possibly
+   from different locations or devices. It would be a good idea to add a
+   :ref:`remote repository <git-project>` on GitHub to help track your work.
 
-   * - Label
-     - Value
-     - Search URL
-   * - Google
-     - ``google``
-     - https://www.google.com/search
-   * - DuckDuckGo
-     - ``duckDuckGo``
-     - https://duckduckgo.com/
-   * - Bing
-     - ``bing``
-     - https://www.bing.com/search
-   * - Ask
-     - ``ask``
-     - https://www.ask.com/web
+Create the Message Input
+------------------------
 
-#. Create a text input within the form and set its ``name`` attribute to the
-   value ``"q"``.
-#. Create a radio group with one radio button for each search engine. Recall
-   that radio buttons with the same ``name`` are grouped, so use the same
-   value for this attribute, ``"engine"``, on each radio button.
-#. Create a ``label`` element for each radio button.
-#. Finally, add a submit button to the form and set it's ``value`` to
-   ``"Go!"``.
+#. Create a new ``form`` element in your HTML file. For now, assign the URL for
+   the parrot server to ``action``.
 
-Test Form Submission
---------------------
+   .. sourcecode:: html
+
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+
+#. Add a heading inside the form.
+#. Add a ``textarea`` element where the user will enter their original message.
+   Be sure to give this input a ``label``.
+#. Add a *Submit* button to the form. However, label it something more clever
+   than *Submit*.
+#. Save your code, then open the ``.html`` file in your browser. Test your form
+   to make sure that it works.
+
+   .. figure:: figures/boilerplate-html.gif
+      :alt: Typing html:5 in VS Code automatically adds boilerplate HTML.
+
+      OK, that's really cool.
+
+#. Commit your work to the repo before moving to the next section.
+
+Add Number and Radio Inputs
+---------------------------
 
 Lorem ipsum...
 
@@ -99,3 +98,10 @@ Style the Form
 --------------
 
 Lorem ipsum...
+
+Coming Up Next
+--------------
+
+In Part 2 of this project, you will write some Python code that will collect
+the form data, use it to select the proper search engine, and then run the
+search request with that engine.
