@@ -94,7 +94,7 @@ and they stand in for the actual server IP addresses.
 
 .. admonition:: Example
 
-   The domain names for ``104.25.127.113`` and ``172.217.5.229`` are
+   The domain names for ``104.25.127.113`` and ``172.217.8.5`` are
    ``launchcode.org`` and ``mail.google.com``, respectively.
 
 .. admonition:: Try It!
