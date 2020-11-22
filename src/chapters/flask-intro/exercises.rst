@@ -1,4 +1,4 @@
-Exercises: Basic Flask
-======================
+Exercises: Flask
+================
 
 Lorem ipsum...
