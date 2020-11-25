@@ -1,20 +1,24 @@
 Install Flask
 =============
 
-Every new Flask project we create starts with the same basic steps. Follow the
-instructions below to get set up for your first Flask web application.
+Starting a new Flask project begins with the same basic steps. These are the
+housekeeping tasks we must complete before diving into our actual code.
+
+In the sections below, you will complete these setup steps for your first Flask
+application.
 
 Create a Project Directory
 --------------------------
 
 Every application we develop should have its own directory on our machine. This
-allows us to initialize each one as its own Git repository.
+allows us to keep our work organized and track each project with its own Git
+repository.
 
 #. On your device, create a new directory called ``flask_projects``. Inside
    this folder, create a sub-directory called ``hello_flask``.
 #. Launch Visual Studio Code and open the ``hello_flask`` folder.
-#. In the terminal pane, use the ``pwd`` command to verify that you are in
-   ``hello_flask``.
+#. In the terminal pane, use the ``pwd`` command to verify that you are in the
+   ``hello_flask`` directory.
 #. Use ``git init`` to initialize a new repository.
 
 Create a Virtual environment
@@ -24,41 +28,45 @@ Create a Virtual environment
 
 To run a Flask application, we must create a **virtual environment** inside the
 project directory. Think of this like a collection of tools needed to make the
-application run.
+application work.
 
 .. admonition:: Note
 
    We won't go into detail about *why* we need a virtual environment. For now,
    we just need to know *how* to set one up.
 
-In the terminal, type the following command:
+#. In the terminal, type the following command.
 
-::
+   ::
 
-   Mac Users:
-   $ python3 -m venv hello-env
+      Mac Users:
+      $ python3 -m venv hello-env
 
-   Windows Users:
-   $ py -3 -m venv hello-env
+      Windows Users:
+      $ py -3 -m venv hello-env
 
-``venv`` creates a new Virtual ENVironment. In this case, the environment is
-called ``hello-env``.
+#. Be patient! The command takes some time to finish its work, and you won't
+   see much happen in the terminal while its running. The process is done when
+   the terminal prompt (``$``) reappears. Also, the folder ``hello-env`` shows
+   up inside the project directory.
 
-Note that a ``hello-env`` folder appears in the project directory.
+   .. figure:: figures/hello-env.png
+      :alt: The file tree now shows the hello-env directory.
 
-.. figure:: figures/hello-env.png
-   :alt: The file tree now shows the hello-env directory.
+      The ``hello-env`` directory contains the tools needed to make our web application run in our browser.
 
-   The ``hello-env`` directory contains all of the tools needed to make our web application run in our browser.
+#. The ``venv`` keyword creates a new Virtual ENVironment. In this case, the
+   environment is called ``hello-env``.
 
-Each Flask application we create will have its own virtual environment
-directory.
+Each Flask application you create will have its own virtual environment
+directory. You can name these environments whatever you want, but a good
+practice is to use something like ``project_name-env``.
 
 Add Flask
 ---------
 
 #. The next step is to *activate* the virtual environment. In the terminal,
-   type the following command:
+   make sure you are in the ``hello-flask`` directory, then enter the command:
 
    ::
 
@@ -70,13 +78,15 @@ Add Flask
       $ hello-env/Scripts/activate
       (hello-env) $
 
-#. ``(hello-env)`` now appears at the start of the terminal prompt. This
+#. ``(hello-env)`` now appears to the left of the terminal prompt. This
    indicates which virtual environment is currently active.
 #. Now install Flask with the command:
 
    ::
 
       (hello-env) $ pip install Flask
+
+   Unlike ``venv``, this command produces LOTS of text in the terminal panel.
 
 #. Once the installation is done, check for success by using the command
    ``flask --version``.
@@ -91,7 +101,13 @@ Add Flask
 #. To exit an environment, just enter the command ``deactivate`` in the
    terminal.
 
-Ready to Go
------------
+   ::
 
-Lorem ipsum...
+      (hello-env) $ deactivate
+      $
+
+Ready to Go!
+------------
+
+OK, the virtual environment is set up, and Flask is installed. We can now add
+some Python code and link it to a webpage.

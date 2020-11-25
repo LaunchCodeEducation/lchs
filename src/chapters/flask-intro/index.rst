@@ -11,5 +11,6 @@ Hello, Flask!
    data-exchange
    validation
    more-validation
+   style-templates
    exercises
    project
