@@ -63,10 +63,18 @@ dynamic webpages. For example, instead of sending form data to the parrot
 server, we can use Flask to collect the data, perform actions with it, and then
 display new information on the page.
 
+.. admonition:: Example
+
+   When the user submits this form, the webpage displays the original and
+   modified text.
+
+   .. figure:: figures/demo-flask-app.gif
+      :alt: An interactive form that adds text to the screen when the user submits an entry.
+
+      Flask helps us develop interactive webpages.
+
 In this chapter, we create some simple Flask applications to get a feel for how
 to use the framework.
-
-.. todo:: Add GIF for a simple Flask web app here.
 
 .. admonition:: Tip
 

@@ -11,12 +11,34 @@ In the ``hello_flask`` directory, create a new Python file called ``hello.py``.
 Next, paste this code into the file, then save. We'll discuss what each line
 does in a moment.
 
-.. todo:: Insert Python starter code for first Flask app.
+.. sourcecode:: Python
+   :linenos:
 
-**Code explanation**: (Syntax and explanation of terms...)
+   from flask import Flask
 
-#. Lorem ipsum...
-#. More ipsum...
+   app = Flask(__name__)
+   app.config['DEBUG'] = True
+
+   @app.route('/')
+   def index():
+      text = "Hello, Flask!"
+      return text
+
+   if __name__ == '__main__':
+      app.run()
+
+**Code explanation**:
+
+#. Line 1: This imports the ``Flask`` class from the module.
+#. Line 3: A lot of work goes on behind the scenes when this statement runs. It
+   creates an object called ``app`` from the ``Flask`` class. The ``__name__``
+   argument contains data that tells Flask where to look for any modules or
+   other custom files needed by the program.
+#. Line 4: Lorem ipsum...
+#. Lines 6 - 9: Lorem ipsum...
+#. Lines 11 - 12: This checks to make sure the Python file is being run as the
+   main program instead instead of a module. If the condition is ``True``, then
+   ``app.run()`` executes and starts the application.
 
 Launch the App
 --------------
