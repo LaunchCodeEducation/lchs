@@ -75,7 +75,7 @@ Add Flask
       (hello-env) $
 
       Windows Users:
-      $ hello-env/Scripts/activate
+      $ . hello-env/Scripts/activate
       (hello-env) $
 
 #. ``(hello-env)`` now appears to the left of the terminal prompt. This

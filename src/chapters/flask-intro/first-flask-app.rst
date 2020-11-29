@@ -1,8 +1,9 @@
 Your First Flask App
 ====================
 
-A Flask application is just a Python program. However, we need to organize our
-code in a very specific way, and we need to learn some new syntax.
+A Flask application is just a Python program that uses some specific tools. To
+use these resources, we must first import them. We also need to learn some new
+syntax and organize our code in a very specific way.
 
 Initial Code
 ------------
@@ -20,55 +21,208 @@ does in a moment.
    app.config['DEBUG'] = True
 
    @app.route('/')
-   def index():
-      text = "Hello, Flask!"
-      return text
+   def hello():
+      message = "Hello, Flask!"
+      return message
 
    if __name__ == '__main__':
       app.run()
 
-**Code explanation**:
+.. index:: ! decorator
 
-#. Line 1: This imports the ``Flask`` class from the module.
-#. Line 3: A lot of work goes on behind the scenes when this statement runs. It
-   creates an object called ``app`` from the ``Flask`` class. The ``__name__``
-   argument contains data that tells Flask where to look for any modules or
-   other custom files needed by the program.
-#. Line 4: Lorem ipsum...
-#. Lines 6 - 9: Lorem ipsum...
-#. Lines 11 - 12: This checks to make sure the Python file is being run as the
-   main program instead instead of a module. If the condition is ``True``, then
-   ``app.run()`` executes and starts the application.
+Here is the breakdown for the code:
+
+#. **Line 1**: This imports the ``Flask`` class from the ``flask`` module.
+#. **Line 3**: A lot of work goes on behind the scenes when this statement
+   runs.
+   
+   a. It creates an object called ``app`` from the ``Flask`` class. We will use
+      the object's methods to control the flow of data between the Python code
+      and our webpages.
+   b. The ``__name__`` argument tells Flask where to find any other files we
+      create for our program.
+
+#. **Line 4**: Turns on a debugging mode. This allows us to update our Python
+   code and see the results while the program is running.
+#. **Line 6**: ``@app.route()`` is called a **decorator**. This links a
+   function to a particular URL. When the user visits that URL in their
+   browser, it triggers the function. We will take a closer look at this on the
+   next page.
+#. **Lines 7 - 9**: The ``hello()`` function returns the ``message`` string we
+   want to display in the browser.
+#. **Lines 11 - 12**: Checks to make sure the Python file is being run as the
+   main program instead of a module. If the condition is ``True``, then
+   ``app.run()`` executes and starts our Flask application.
 
 Launch the App
 --------------
 
-Lorem ipsum...
+The code above is a very small, but still functional, web application. Our next
+step is to launch it and see what it looks like in a browser.
 
-Activate Flask ---> run Python program (start server) ---> open port in the
-browser.
+To start a Flask application, we follow three basic steps:
 
-Try changing the Python code. Refresh the page vs. stopping/restarting the
-server. Explain what's going on.
+#. Activate the virtual environment,
+#. Launch a Python/Flask program,
+#. Open a web browser and navigate to a specific IP address.
 
-Add random number to the output displayed on the page.
+.. admonition:: Try It!
 
-Routes
-^^^^^^
+   Make sure you are in the ``hello_flask`` directory first. Then:
 
-Add a second page with different text.
+   #. In the terminal, activate the virtual environment with the command
+      ``. hello-env/bin/activate`` on a Mac, or ``. hello-env/Scripts/activate``
+      on Windows. You should see ``(hello-env)`` appear before the terminal
+      prompt.
+   #. From the terminal, run the ``hello.py`` program. LOTS of text will follow
+      the command.
+
+      .. sourcecode:: bash
+         :linenos:
+
+         (hello-env) $ python hello.py
+         * Serving Flask app "hello" (lazy loading)
+         * Environment: production
+         WARNING: This is a development server. Do not use it in a production deployment.
+         Use a production WSGI server instead.
+         * Debug mode: on
+         * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+         * Restarting with stat
+         * Debugger is active!
+         * Debugger PIN: 722-822-088
+
+      *Mac users*:  Remember to use ``python3``.
+
+   #. You only need to pay attention to two lines:
+      
+      a. Line 1 launches the ``hello.py`` program.
+      b. Line 7 shows you an IP address. In this example, the address is
+         ``http://127.0.0.1:5000``. The exact numbers might be different on
+         your machine.
+
+   #. Open a new tab in your web browser. Copy/paste the URL into the address
+      bar.
+   #. Ta da! There's our webpage.
+
+      .. figure:: figures/hello-flask.png
+         :alt: Webpage showing the text, "Hello, Flask!"
+
+         Navigate to the IP address shown in the terminal to see the message from your Python code.
+
+Change the Python Code
+^^^^^^^^^^^^^^^^^^^^^^
+
+Right now, the webpage at ``http://127.0.0.1:5000`` displays the text ``Hello,
+Flask!`` This matches the value assigned to the ``message`` variable in the
+Python code. Let's see what happens when we change this.
+
+#. Assign a different string to the ``message`` variable. Save, then refresh
+   the page in the browser.
+#. Notice that the text on the webpage changes to match. Updating the Python
+   code affects what we see in the browser! This is what Flask does. It
+   connects a Python program to a webpage.
+#. Let's do more. On line 2 in ``hello.py``, import the ``random`` module.
+
+   .. sourcecode:: python
+      :linenos:
+
+      from flask import Flask
+      import random
+
+#. Now update the ``hello()`` function as follows:
+
+   .. sourcecode:: python
+      :lineno-start: 7
+
+      @app.route('/')
+      def hello():
+         message = "Here's a random number: {0}"
+         num = random.randint(1, 25)   # Select a random number from 1 - 25.
+         return message.format(num)
+
+#. Save, then refresh the webpage several times. With every refresh, the
+   ``hello()`` function runs again, and line 10 assigns a new random number to
+   ``num``. Notice that the message in the browser changes to display the new
+   number.
+
+   .. figure:: figures/random-message.gif
+      :alt: Every time the webpage gets refreshed, a random number gets displayed.
 
 Add Some HTML
 -------------
 
-Replace simple text with HTML enclosed in quotes. Note that this renders as
-normal HTML on the page!
+Right now, the ``hello()`` function returns a string, which appears on the
+webpage. However, this string value does not have to be simple text. Let's see
+what happens when we include some HTML tags:
 
-Render first simple form: Use a button as only element inside a form. Pushing
-the button just changes the random number, since all it does is refreshes the
+.. admonition:: Example
+
+   Let's add some ``h1`` tags around the message in line 9:
+
+   .. sourcecode:: python
+      :lineno-start: 9
+
+      message = "<h1>Here's a random number: {0}</h1>"
+
+   After saving, we should refresh the page in the browser.
+
+   .. figure:: figures/string-with-html.png
+      :alt: The message in the webpage now appears as an h1 heading.
+
+      Nice! We now have an ``h1`` heading on the page.
+
+When the ``hello()`` function returns a string, Flask then sends that string to
+the browser. Just like we saw with :ref:`the first HTML page <first-html-page>`
+we built, a browser *renders* plain text as... plain text. However, by adding
+HTML tags to the string, we can tell the browser how we want to structure the
 page.
 
-Try It!
--------
+.. admonition:: Try It!
 
-Add a third page to the Python code. Update the route to check the page.
+   Let's add a form and a button to our webpage.
+
+   #. Modify the ``hello()`` function as follows:
+
+      .. sourcecode:: python
+         :lineno-start: 8
+
+         def hello():
+            page = """
+               <h1>Here's a random number: {0}</h1>
+               <form>
+                  <button>New Number</button>
+               </form>
+            """
+            num = random.randint(1, 25)
+            return page.format(num)
+   
+   #. Save, then refresh the page. Click the *New Number* button several times.
+   #. Since we include no ``action`` attribute inside the ``<form>`` tag,
+      clicking the button submits the form to the current URL. This causes the
+      page to refresh and display a new random number.
+
+   Note how lines 9 - 14 resemble a simple HTML document. By enclosing the HTML
+   code in triple quotes (to allow for multiple lines), we can return it from
+   the function as a single string value.
+   
+   When the browser receives the results of ``page.format(num)``, it ignores
+   the quotes and renders the HTML code.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   In the terminal, how can we tell if a virtual environment is active?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The command <code class="pre">python --version</code> works.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The name of the environment appears before the terminal prompt.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A directory for the environment appears in the project's file tree.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Global temperatures stabilize because of our new, carefully maintained environment.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b

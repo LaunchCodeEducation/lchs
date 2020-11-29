@@ -7,6 +7,7 @@ Hello, Flask!
    what-is-flask
    install-flask
    first-flask-app
+   routes
    form-template
    data-exchange
    validation
