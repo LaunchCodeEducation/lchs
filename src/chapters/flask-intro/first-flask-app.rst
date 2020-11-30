@@ -223,6 +223,11 @@ terminal. Once done, refreshing the page in the browser results in an
 *Unable to connect* error. The server is off, so requests made to it receive no
 response.
 
+.. admonition:: Tip
+
+   Now would be a good time to commit your work to the ``hello_flask``
+   repository.
+
 Check Your Understanding
 ------------------------
 

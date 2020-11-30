@@ -1,8 +1,15 @@
 Routes
 ======
 
-Let's take a closer look at what's happening with ``http://127.0.0.1:5000`` and
-``@app.route('/')``.
+.. index:: ! routing
+
+**Routing** manages the flow of data within a network. When a server receives a
+request, it needs to know where to send the information and how to handle the
+response. Proper routing helps control this process.
+
+In the case of Flask applications, different HTTP requests trigger different
+functions in the Python program. Let's take a closer look at how this works
+with ``http://127.0.0.1:5000`` and ``@app.route('/')``.
 
 Server IP Address
 -----------------
@@ -26,25 +33,34 @@ When we open a tab in our browser and enter the address
 ``http://127.0.0.1:5000``, we send a ``GET`` request to the Flask server. When
 the server receives that request, our program jumps into action. The
 ``hello()`` function runs and returns a string. The ``return`` statement in the
-function is the *response* to the HTTP *request*. Flask then steps in to send
-the response from its server to our browser. This generates the content we see
-on the page (e.g. ``Hello, Flask!``).
+function is the *response* to the HTTP *request*. Flask sends the response from
+its server to our browser. This generates the content we see on the page (e.g.
+``Hello, Flask!``).
 
-Note that the server and our application are both running locally. Only *we*
-can see our live webpage, since the requests and responses occur on the same
-machine.
+How does Flask know what data to send back from the server? This is why we
+include the ``app.route()`` decorator. The argument inside the parentheses
+corresponds to a specific URL. When the sever receives a request with that web
+address, it runs the function immediately below the decorator. In our simple
+Flask application, this is the ``hello()`` function.
 
-Pages and Paths
----------------
+.. admonition:: Note
+
+   We use ``app.route('/')`` in our code instead of
+   ``app.route('127.0.0.1:5000')``. The ``/`` symbol is an abbreviation. It
+   stands for the address of the server. Even if the IP address for the server
+   changes, Flask will automatically use the proper URL.
+
+Paths
+-----
 
 As mentioned before, the ``app.route()`` decorator links a specific URL to one
-function in our Python code. The best way to see what this means is to do some
-live coding.
+Python function. The best way to see what this means is to do some live coding.
 
 .. admonition:: Try It!
 
-   #. If the application is not currently running, launch it again from the
-      terminal. Make sure you see the most recent content in your browser.
+   #. If the ``hello.py`` application is not currently running, launch it again
+      from the terminal. Make sure you see the most recent content in your
+      browser.
 
       .. figure:: figures/flask-form.png
          :alt: A page with an h1 heading and a "New Number" button.
@@ -54,7 +70,7 @@ live coding.
       explains that the URL you entered isn't on the server.
 
       .. figure:: figures/page-not-found.png
-         :alt: The URL in the address bar is not recognized by the server.
+         :alt: Not Found: The URL in the address bar is not recognized by the server.
 
    #. In ``hello.py``, change the decorator as follows:
 
@@ -66,21 +82,44 @@ live coding.
    #. Save the code, then refresh the tab in your browser. Properly done, you
       should once again see the heading and button.
 
-   Let's explore what just happened.
+   Let's think about what just happened.
 
-.. index:: ! routing
+Recall that URLs can include a *path* as part of the address. The path consists
+of one or more names separated by ``/``. The URL
+``http://127.0.0.1:5000/hello`` includes the IP address for the server AND a
+path to follow.
 
-**Routing** manages the flow of data within a network. ..
+When we entered ``http://127.0.0.1:5000/hello`` in the address bar, we sent a
+different ``GET`` request to the server. We still asked for data, but this time
+we told the server to look inside a directory called ``hello``.
 
-In ``hello.py``, change to ``@app.route('/hello')``...
+In the Python code, ``app.route('/')`` tells Flask, *When a GET request comes
+for 127.0.0.1:5000, run the hello() function*. However, there is nothing in
+the code that recognizes the address ``127.0.0.1:5000/hello``. When the server
+receives that request, Flask scans the Python program for a matching decorator.
+Since it doesn't find one, it returns the *Not Found* error message.
 
-Explain what **routing** means...
+By changing ``app.route('/')`` to ``app.route('/hello')``, we fixed the
+mismatch. However, this came with a cost.
 
-Opening a browser and navigating to ``http://127.0.0.1:5000`` triggers the
-``@app.route('/')`` decorator. This is the default location (the address with
-nothing after the ``5000``).
+.. admonition:: Try It!
 
-We can add more pages to our website by adding more *routes*...
+   Return to your browser and enter ``http://127.0.0.1:5000`` in the address
+   bar. What happens?
+
+Navigating to ``http://127.0.0.1:5000`` triggers the ``@app.route('/')``
+decorator. Unfortunately, we removed that reference when we replaced ``'/'``
+with ``'/hello'``.
+
+What if we want our program to respond to more than one URL? We can do this by
+adding more *routes* to the Python code.
+
+Add a Second Page
+-----------------
+
+Checkout a new branch in the repo...
+
+Two URLs, same function...
 
 Try It! Add a second page with different text...
 
@@ -92,3 +131,9 @@ Practice!
 ---------
 
 Add a third page to the Python code. Update the route to check the page.
+
+.. admonition:: Note
+
+   The server and our application are both running locally. Only *we* can see
+   our live webpage, since the requests and responses occur on the same
+   machine.
