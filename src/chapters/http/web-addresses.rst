@@ -1,3 +1,5 @@
+.. _web-addresses:
+
 Web Addresses
 =============
 

@@ -96,9 +96,10 @@ To start a Flask application, we follow three basic steps:
    #. You only need to pay attention to two lines:
       
       a. Line 1 launches the ``hello.py`` program.
-      b. Line 7 shows you an IP address. In this example, the address is
-         ``http://127.0.0.1:5000``. The exact numbers might be different on
-         your machine.
+      b. Line 7 tells you that Flask started a server on your machine. It also
+         shows you the IP address for that server.
+      c. In this example, the address is ``http://127.0.0.1:5000``. The exact
+         numbers might be different on your machine, however.
 
    #. Open a new tab in your web browser. Copy/paste the URL into the address
       bar.
@@ -137,7 +138,7 @@ Python code. Let's see what happens when we change this.
       @app.route('/')
       def hello():
          message = "Here's a random number: {0}"
-         num = random.randint(1, 25)   # Select a random number from 1 - 25.
+         num = random.randint(1, 25)   # Select a random integer from 1 - 25.
          return message.format(num)
 
 #. Save, then refresh the webpage several times. With every refresh, the
@@ -157,25 +158,25 @@ what happens when we include some HTML tags:
 
 .. admonition:: Example
 
-   Let's add some ``h1`` tags around the message in line 9:
+   Put some ``h1`` tags around the message in line 9:
 
    .. sourcecode:: python
       :lineno-start: 9
 
       message = "<h1>Here's a random number: {0}</h1>"
 
-   After saving, we should refresh the page in the browser.
+   When we save our code and refresh the page in the browser, we will see a
+   change in the text:
 
    .. figure:: figures/string-with-html.png
       :alt: The message in the webpage now appears as an h1 heading.
 
       Nice! We now have an ``h1`` heading on the page.
 
-When the ``hello()`` function returns a string, Flask then sends that string to
-the browser. Just like we saw with :ref:`the first HTML page <first-html-page>`
-we built, a browser *renders* plain text as... plain text. However, by adding
-HTML tags to the string, we can tell the browser how we want to structure the
-page.
+When the ``hello()`` function returns a string, Flask sends that string to the
+browser. Just like we saw with :ref:`the first HTML page <first-html-page>` we
+built, a browser *renders* plain text as... plain text. However, by adding HTML
+tags to the string, we can tell the browser how we want to structure the page.
 
 .. admonition:: Try It!
 
@@ -196,7 +197,8 @@ page.
             num = random.randint(1, 25)
             return page.format(num)
    
-   #. Save, then refresh the page. Click the *New Number* button several times.
+   #. Save the code, then refresh the page. Click the *New Number* button
+      several times.
    #. Since we include no ``action`` attribute inside the ``<form>`` tag,
       clicking the button submits the form to the current URL. This causes the
       page to refresh and display a new random number.
@@ -207,6 +209,19 @@ page.
    
    When the browser receives the results of ``page.format(num)``, it ignores
    the quotes and renders the HTML code.
+
+Stopping the Application
+------------------------
+
+The ``app.run()`` statement loops continuously. This lets the Flask server wait
+for incoming HTTP requests. The program runs in a holding pattern until it
+receives a request, then it processes the data and sends back a response.
+This wait/receive/respond cycle continues until we deliberately shut it down.
+
+To stop our Flask sever and web application, type ``Control+c`` in the
+terminal. Once done, refreshing the page in the browser results in an
+*Unable to connect* error. The server is off, so requests made to it receive no
+response.
 
 Check Your Understanding
 ------------------------
