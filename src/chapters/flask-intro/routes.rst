@@ -37,7 +37,10 @@ function is the *response* to the ``GET`` request. Flask sends the response
 from its server to our browser. This generates the content we see on the page
 (e.g. ``Hello, Flask!``).
 
-.. todo:: Insert diagram here (request/response flow for a Flask app).
+.. figure:: figures/flask-cycle.png
+   :alt: The request/response flow between the local client and server.
+
+   The request/response cycle between the browser and Flask server.
 
 How does Flask know what data to send back from the server? This is why we
 include the ``@app.route()`` decorator. The argument inside the parentheses
@@ -125,7 +128,7 @@ Add a Second Page
 Take a moment to run through the usual ``git status/add/commit`` sequence.
 Next, use ``git checkout -b`` to create a new branch in the repository.
 
-Right now, our code looks something like this:
+In the new branch, our code looks something like this:
 
 .. sourcecode:: Python
    :linenos:
@@ -178,7 +181,7 @@ Now let's add another function to our Python code.
 
    #. Open up some space between the ``hello()`` function and the ``app.run()``
       conditional.
-   #. Add a new decorator and function:
+   #. Add this new decorator and function:
 
       .. sourcecode:: Python
          :lineno-start: 17
@@ -229,8 +232,8 @@ More Practice
    above ``def hello():``).
 
    Matching the path and function names is NOT required, but doing so helps you
-   organize your code. Looking at the path in a URL tells you which function
-   controls its content.
+   organize your code. For example, looking at the path in a URL tells you
+   which function controls its content.
 
 Check Your Understanding
 ------------------------
