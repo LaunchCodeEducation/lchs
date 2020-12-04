@@ -13,5 +13,6 @@ Hello, Flask!
    validation
    more-validation
    style-templates
+   videos
    exercises
    project
