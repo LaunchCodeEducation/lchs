@@ -2,21 +2,21 @@ HTML Templates
 ==============
 
 In our first Flask app, we simply returned a string to display on a webpage.
-By including HTML tags, we can provide some structure for the content. However,
+By including HTML tags, we provided some structure for the content. However,
 this is inefficient. Even for simple webpages, properly formatting the strings
-becomes tedious, and avoiding errors is difficult. Why reinvent the wheel? We
-already learned how to create quality webpages using ``.html`` and ``.css``
-files.
+becomes tedious, and avoiding errors is difficult. Since every page needs its
+own string, adding these to our Python functions clutters up our code and makes
+our program harder to debug. A better approach is to put all of the HTML in a
+separate file.
 
-Adding long, triple-quoted strings to our Python functions really isn't a good
-idea. Every page in our website needs its own string. Adding all of these would
-clutter up our code and make our program harder to debug. A better approach is
-to keep the HTML in a separate file. Instead of returning a string, each Python
-function points to a specific ``.html`` file. Flask sends that file to the
-browser, which *renders* the webpage we want.
+This idea lets us separate the *logic* of our application (the Python code)
+from the *view* (what the user sees in their browser).
 
-This idea lets us separate the *logic* of our application (Python code) from
-the *view* (what the user sees in their browser).
+Why reinvent the wheel? We already learned how to create nice webpages using
+HTML and CSS, so we can build those files and include them in our project.
+Instead of returning a string, we have each Python function point to a specific
+``.html`` file. Flask sends that file to the browser, which *renders* the
+webpage we want.
 
 What are Templates?
 -------------------
@@ -24,8 +24,8 @@ What are Templates?
 .. index:: ! template
    single: Flask; template
 
-A **template** is an outline or structure that can be used multiple times to
-produce similar results. For example, think of a simple thank-you note:
+A **template** is an outline that can be used multiple times to produce similar
+results. For example, think of a simple thank-you note:
 
 .. figure:: figures/form-letter.png
    :alt: A thank-you note with blanks for filling in names, etc.
@@ -38,9 +38,8 @@ the text stays the same. We just need to fill in the blanks (or write some code
 to do it for us). The template itself stays the same, but each message looks
 slightly different.
 
-Templates allow us to DRY our website. We can use one ``.html`` file to fill in
-most of the content for a page. Our Python functions add more specific details,
-just like filling in the blanks for our thank-you letters.
+For our web applications, we can use a ``.html`` template to fill in most of
+the content for a page. Then we call a Python function to fill in the blanks.
 
 Templates with Flask
 --------------------
@@ -53,7 +52,8 @@ specific way. We'll start by creating a ``templates`` directory.
 #. In the File Explorer, use the buttons to create a new directory called
    ``templates``.
 
-   .. todo:: Insert render_template file tree here.
+   .. figure:: figures/templates-in-filetree.png
+      :alt: File tree showing the 'templates' directory inside 'hello_flask'.
 
 #. Any file we want to use as a template MUST go inside this directory. If we
    don't put it there, then Flask won't be able to find the file when we need
@@ -179,12 +179,108 @@ note shown at the top of this page.
 #. Note that instead of blanks, the text includes *placeholders* where we want
    to insert data. Each placeholder contains a variable inside a set of double
    curly braces ``{{}}``.
+#. Now add this function to ``hello.py``:
 
-Can also evaluate expressions inside the {{}}...
+   .. sourcecode:: Python
 
-Add Another Template
---------------------
+      @app.route('/thanks')
+      def thanks():
+         return render_template("tynote.html")
 
-Lorem ipsum...
+#. Save the code, then run the program. Open a browser and navigate to
+   ``http://127.0.0.1:5000/thanks``.
 
-``render`` vs. ``return redirect``...
+   .. figure:: figures/thank-you-blanks.png
+      :alt: Thank-you text with blank spaces.
+      :width: 80%
+
+Notice that the text appears on the screen, but NOT any of the placeholders
+like ``{{name}}``. To fill in the blank spaces, we need to send some data to
+the template.
+
+Arguments with ``render_template``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let's start by filling in the ``{{name}}`` placeholder. We do this by adding
+another argument to ``render_template`` function call. The general syntax is:
+
+.. sourcecode:: Python
+
+   render_template("name_of_template", placeholder_name = value)
+
+``placeholder_name`` is the variable used in the template. ``value`` is what we
+want to display on the page. For our thank-you message, this looks something
+like:
+
+.. sourcecode:: Python
+
+   render_template("tynote.html", name = "Bob")
+
+Updating the Python code and refreshing the page gives us:
+
+.. figure:: figures/ty-note-name.png
+   :alt: Template text with the name space filled in with 'Bob'.
+   :width: 80%
+
+.. admonition:: Tip
+
+   Instead of hard-coding values inside ``render_template``, we can use
+   variables instead.
+
+   .. sourcecode:: Python
+
+      @app.route('/thanks')
+         def thanks():
+            person = "Bob"
+            action = "dancing"
+            return render_template("tynote.html", name = person, verb = action)
+
+.. admonition:: Try It!
+
+   #. Add arguments to ``render_template()`` to complete the thank you note.
+
+      .. figure:: figures/ty-note-done.png
+         :alt: Template text with all placeholders filled.
+
+         The ``tynote.html`` template will all placeholders filled.
+
+   #. Move the ``name = person`` argument to the end of the list in
+      ``render_template()``. Does this change where the ``name`` value appears
+      on the webpage?
+
+Expressions in Placeholders
+---------------------------
+
+``render_template`` sends data to a selected file. When Flask sees a
+placeholder like ``{{name}}`` in that template, it replaces it with the
+matching value from the data.
+
+Besides variables, Flask can also evaluate simple expressions.
+
+.. admonition:: Try It!
+
+   #. In ``tynote.html``, replace the ``{{name}}`` placeholder with
+      ``{{name*3}}``. What happens?
+   #. Replace ``{{verb}}`` with ``{{verb.capitalize()}}``. What happens?
+   #. Replace ``{{gift}}`` with ``{{gift=='wand'}}``. What happens?
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   In ``render_template()``, the name of the template must come first in the
+   list of arguments. But what about the other entries?
+   
+   Does changing the order of the arguments change where their values appear on
+   the webpage?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Yes</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> No</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
