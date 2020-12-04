@@ -79,9 +79,9 @@ Inside the ``templates`` folder, create a new file called
          <form>
             <h2>A Few Of My Favorite Things</h2>
             <label>Favorite Color: <input type="text" name="color"/></label><br>
-            <label>Lucky Number: <input type="number" name="luck-num"/></label><br>
-            <label>Favorite Class: <input type="text" name="fav-class"/></label><br>
-            <label>Favorite Pixar Movie: <input type="text" name="best-pix"/></label><br>
+            <label>Lucky Number: <input type="number" name="luck_num"/></label><br>
+            <label>Favorite Class: <input type="text" name="fav_class"/></label><br>
+            <label>Favorite Pixar Movie: <input type="text" name="best_pix"/></label><br>
             <button>Submit</button>
          </form>     
       </body>
