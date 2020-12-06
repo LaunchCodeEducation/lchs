@@ -34,7 +34,10 @@ Let's start by collecting one piece of data from our ``favorite_form.html``
 template. When the user fills in the input fields and clicks *Submit*, we will
 send them to a different page that displays their choice.
 
-.. todo:: Insert GIF here (color display after submitting form).
+.. figure:: figures/color-submit.gif
+   :alt: GIF showing the collection of a color value from the form.
+
+   Collecting the color choice from the form.
 
 Update ``favorite_form.html``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,20 +120,23 @@ Paste in this code:
 Notice that the code includes a ``{{color}}`` placeholder. This variable name
 matches the argument from the ``render_template()`` function above.
 
-After saving the code, our website now deals with the form submission.
+After saving the code, our web application can now handle the form submission.
 
-.. todo:: Insert before/after image of form submission (Flask).
+.. figure:: figures/color-submission.png
+   :alt: Showing the submitted color on the results page.
+   :width: 80%
+
+   The value ``purple`` fills in for the ``{{color}}`` placeholder.
 
 Try It!
 -------
 
-#. Update the ``form_results`` page to display the value from the
-   ``Lucky Number`` field.
+#. Update ``form_results.html`` to display the value from the ``Lucky Number`` field.
 
    .. sourcecode:: html
       :lineno-start: 11
 
-      <li><strong>Favorite Color:</strong> {{color_choice}}</li>
+      <li><strong>Favorite Color:</strong> {{color}}</li>
       <li><strong>Lucky Number:</strong> {{lucky_number}}</li>
 
 #. Update the ``results()`` function to collect the value from the
@@ -149,6 +155,12 @@ Try It!
 #. Save your code and check to make sure the form submission works.
 #. Repeat steps 1 - 3 for the rest of the fields in the form. 
 
+.. figure:: figures/final-favorite.png
+   :alt: Showing the 'results' page with all 4 labels and submitted values
+   :width: 80%
+
+   The ``form_results.html`` page showing four values collected from the form.
+
 Template Variable Names
 -----------------------
 
@@ -157,11 +169,19 @@ variable names to refer to the same value. The input field had
 ``name="luck_num"``, the Python code used ``fav_num``, and the placeholder in
 the results template used ``lucky_number``.
 
-To avoid confusion, many developers prefer to use the SAME variable names
-between the Python code and the HTML files. With this in mind, we can
-*refactor* our ``hello.py`` and ``form_results.html`` files.
+To avoid confusion, many developers prefer to use the SAME variable names between
+their Python code and the templates. With this in mind, we can *refactor* ``hello.py``
+and ``form_results.html`` to match the names used in ``favorite_form.html``.
 
 .. admonition:: Example
+
+   ``favorite_form.html``:
+
+   .. sourcecode:: html
+      :lineno-start: 11
+
+      <label>Favorite Color: <input type="text" name="color"/></label><br>
+      <label>Lucky Number: <input type="number" name="luck_num"/></label><br>
 
    ``hello.py``:
 
@@ -185,4 +205,33 @@ between the Python code and the HTML files. With this in mind, we can
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Indicate whether each of the following is a *class*, *function*, *method*, or
+   *object*. (Click on each option to display the answer).
+
+   .. raw:: html
+
+      <ol type="a">
+         <li onclick="revealAnswer('A', 'class')"><code class="pre">Flask</code> <span id="A"></span></li>
+         <li onclick="revealAnswer('B', 'object')"><code class="pre">request</code> <span id="B"></span></li>
+         <li onclick="revealAnswer('C', 'function')"><code class="pre">render_template</code> <span id="C"></span></li>
+      </ol>
+
+.. Answers = class, object, function
+
+.. admonition:: Question
+
+   What goes inside the brackets for ``request.form['___']``?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> The <code class="pre">name</code> of the input field from the form.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">id</code> of the input field from the form.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">type</code> of the input field from the form.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">value</code> of the input field from the form.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
