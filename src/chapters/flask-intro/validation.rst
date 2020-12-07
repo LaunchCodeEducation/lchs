@@ -5,10 +5,10 @@ Whenever we ask users for input, it is critical that we *validate* the
 information they submit. Users will often submit something that doesn't fit our
 requirements or doesn't make sense in some way. Most of the time, this happens
 by accident. Sometimes, however, users will try to mess with our application by
-sending invalid data.
+sending bad data.
 
 Our applications should respond by rejecting forms that contain invalid
-information. We should also include code that notifies the user what they did
+information. We should also include code that tells the user what they did
 wrong.
 
 Validation
@@ -23,10 +23,10 @@ requirements for our program. For example, if we want the user to schedule an
 appointment, then we need to make sure they enter a date and time within a
 certain range.
 
-At best, invalid data produces incorrect, harmless results. However, bad data
-can also cause our program to crash or allow outside users to access our code.
-Either way, we want to make sure our applications catch any errors and deal
-with them in a smooth way.
+Invalid data might just produce incorrect, harmless results. However, it might
+cause our program to crash, or allow outside users to access our code. Either
+way, we want to make sure our applications catch any errors and deal with them
+in a smooth way.
 
 **Client-side validation** takes place inside the browser window, and it
 prevents a form from being submitted. In this case, the invalid data never
@@ -39,7 +39,7 @@ HTTP request over the internet. In this case, the server receives the request
 and runs some code to check the data. If a problem is found, the server sends a
 response back to the user's browser with information about what went wrong.
 Although the faulty data reaches the server, it doesn't make it very far. The
-program catches and responds to the mistake before it can cause any harm.
+program catches and responds to a mistake before it can cause any harm.
 
 Whenever we build a web application that requires user input, we should include
 both types of validation.
@@ -47,8 +47,9 @@ both types of validation.
 Why Do Both?
 ^^^^^^^^^^^^
 
-Each type of validation has its benefits and drawbacks, so using both helps us
-cover the bases. Here's a summery of what each type brings to our application:
+Each type of validation has its strengths and weaknesses, so using both helps
+us cover the bases. Here's a summery of what each type brings to our
+application:
 
 Client-side:
 
@@ -65,10 +66,10 @@ Server-side:
 #. **Con**: Requires more work to put in place, and it only operates after
    a request reaches the server.
 
-Whenever our applications receive data from a user, we should *never* assume
-that the information is valid or safe. We should *always* check the data to
-make sure it will work with our program. Combining client and server-side
-validation allows us to double-check for mistakes.
+Whenever our applications collect user input, we should *never* assume that the
+information will be valid or safe. We must *always* check the data to make sure
+it will work with our program. By combining client and server-side validation,
+we decrease the chances that our program will crash when it receives bad data.
 
 Server-Side Validation
 ----------------------
@@ -114,8 +115,8 @@ that's where we need to add some new Python code.
 
             return render_template('form_results.html', best_pix = best_pix)
 
-   #. As of December, 2020, Pixar released 23 full-length movies. Copy/paste
-      the list of the titles into your code.
+   #. As of December, 2020, Pixar had released 23 full-length movies.
+      Copy/paste the list of the titles into your code.
 
       .. sourcecode:: python
          :lineno-start: 23
@@ -133,7 +134,7 @@ that's where we need to add some new Python code.
             return render_template('form_results.html', best_pix = best_pix)
          
       Note that all of the titles in the list are lowercase. This matches the
-      format for the string assigned to ``best_pix``.
+      format of the string assigned to ``best_pix``.
    
    #. Add a conditional to check if the title entered by the user is NOT part
       of the ``films`` list:
@@ -152,7 +153,7 @@ that's where we need to add some new Python code.
                "toy story 4","onward","soul"]
 
             if best_pix not in films:
-               best_pix = "Sorry, {0} isn't a Pixar film.".format(best_pix.title())
+               best_pix = "Sorry, '{0}' isn't a Pixar film.".format(best_pix.title())
             else:
                best_pix = best_pix.title()
 
@@ -161,32 +162,39 @@ that's where we need to add some new Python code.
       If the boolean expression in line 33 returns ``True``, then we assign an
       error message to the ``best_pix`` variable. If ``False``, line 36 casts
       the user's entry into Title Case.   
-   #. Save your code, then launch the application. Navigate to
-      ``http://127.0.0.1:5000/form`` and test out the validation code by
-      entering different options for the ``Favorite Pixar Movie`` field. Be
-      sure to test cASe differences, leading/trailing whitespace, non-Pixar
-      movies, and (of course) your favorite Pixar film.
+   #. Save your code, then launch the application and navigate to
+      ``http://127.0.0.1:5000/form``. Test out the validation code by entering
+      different options in the ``Favorite Pixar Movie`` field. Be sure to test
+      cASe differences, leading/trailing whitespace, non-Pixar movies, and (of
+      course) your favorite Pixar film.
 
       .. figure:: figures/valid-movie.png
          :alt: Before and after pages showing the form and the results page (with an error message).
 
          The user sees an error message on the results page.
 
+Following the example above, add validation for the ``color`` input. Limit the
+user to only 1 of 3 choices: ``red``, ``green``, or ``blue``.
+
+.. admonition:: Note
+
+   You could replace the ``color`` input with either radio buttons or a select
+   menu. This would fit well with client-side validation.
+   
+   However, you need to practice server-side validation! For now keep the input
+   as ``type="text"``. 
+
 A Better User Experience
 ------------------------
 
-Following the example above, we could add more Python code to the ``results()``
-function to validate the other three input fields. However, with server-side
-checks, the user will only know if they did something wrong AFTER they submit
-the form. Also, they will be on the results page, which means they need to
-navigate back to the form in order to fix their mistakes. Many users will find
-this annoying, or won't know how to go back a step.
+With server-side validation, the user will only know if they did something
+wrong AFTER they submit the form. Also, they will be on the results page, which
+means they need to navigate back to the form in order to fix their mistakes.
+Many users will find this annoying, or won't know how to go back a step.
 
 We want to give our users a smoother experience if they make a mistake. One
 thing we can do is to return them to the original form instead of rendering the
-results page.
-
-We will learn how to do this on the next page.
+results page. This will be our next task.
 
 Check Your Understanding
 ------------------------
