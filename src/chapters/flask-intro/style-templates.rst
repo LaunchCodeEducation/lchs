@@ -5,7 +5,7 @@ So far, we've used plain HTML for our sample form. However, in the
 :ref:`last chapter <style-forms>`, we applied some CSS rules to spice up how
 it looks.
 
-.. figure:: ../forms/figures/styled-form.png
+.. figure:: figures/styled-favorite-form.png
    :alt: A styled HTML form with a heading, background color, aligned fields, and large button. 
    :width: 40%
 
@@ -18,11 +18,15 @@ within our project.
 The ``static`` Directory
 ------------------------
 
+.. index:: ! dynamic, ! static
+
 By adding placeholders to our templates, we can change the content on a webpage
-based on a user's actions. This makes the page *dynamic*. Style rules, on the
-other hand, remain fixed. Our CSS code is an example of a *static* file. It
-does not change as the user interacts with the page. Other examples of static
-files include images, video clips, and JavaScript code.
+based on a user's actions. This makes the page **dynamic**. Style rules, on the
+other hand, remain fixed.
+
+CSS code is an example of a **static** file. It does not change as the user
+interacts with the page. Other examples of static files include images, video
+clips, and JavaScript code.
 
 In our Flask project, the ``templates`` folder holds all of the ``.html`` files
 for our website. We need to create a similar directory for our static files.
@@ -31,7 +35,10 @@ for our website. We need to create a similar directory for our static files.
    Explorer pane) to create a new directory called ``static``. The folder
    should be at the same level as ``hello.py`` and ``templates``.
 
-      [INSERT FILE TREE IMAGE HERE]
+   .. figure:: figures/static-directory.png
+      :alt: A file tree showing the 'static' folder in the 'hello_flask' directory.
+
+      The ``static`` folder in the ``hello_flask`` project tree.
 
 #. Inside the ``static`` folder, create a new file called ``style.css``.
 #. Find the CSS code you used in the :ref:`last chapter <style-forms>` to
@@ -87,18 +94,29 @@ Note the following:
    #. Save the changes, then launch the application.
    #. Navigate to ``http://127.0.0.1:5000/form`` to see if your CSS styles were
       applied to the form.
-   #. Depending on the CSS rules you designed, you may need to tweak your HTML
-      code a little bit. For example, when applied to a ``label``, the rule
-      ``display: inline-block;`` puts each element on a new line. This means
-      you can remove any ``<br>`` elements that follow ``</label>`` tags.
+   #. Tweak your HTML and CSS code as necessary to get the form to look the way
+      you want.
+
+Pro Tip
+-------
+
+When we save a change to our HTML code, clicking the *Refresh* button in the
+browser displays the new layout. However, this doesn't always work for changes
+made to the CSS. Browsers often save the stylesheet in memory to speed up
+reloading. If the browser continues to use the old code, we we won't be able to
+see our new styles.
+
+To fix this, we need to force a clean reload of the page. For most browsers
+(like Firefox, Chrome, and Safari), hold down the ``Shift`` key and click
+*Refresh*. For Microsoft Edge, use the ``Control`` key plus *Refresh*.
 
 Style Another Template
 ----------------------
 
 The ``form_results.html`` template also contains plain HTML.
 
-#. Add a ``<link>`` to the same stylesheet you used for the form.
+#. Add a ``<link>`` to the same stylesheet you used for your form.
 #. Navigate to the form in your browser. Fill in the fields and click *Submit*.
-#. Once on the results page, check out how your style rules look.
-#. If necessary, adjust your HTML and CSS code. Refine the appearance of the
-   results page WITHOUT altering the look of the form.
+#. Once on the results page, check to make sure your style rules were applied.
+#. If necessary, adjust your HTML and CSS code. Try to refine the appearance of
+   the results page WITHOUT altering the look of the form.
