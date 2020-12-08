@@ -1,3 +1,5 @@
+.. _style-forms:
+
 Styling Forms
 =============
 
