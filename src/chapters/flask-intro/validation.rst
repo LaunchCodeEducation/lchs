@@ -181,20 +181,20 @@ user to only 1 of 3 choices: ``red``, ``green``, or ``blue``.
    You could replace the ``color`` input with either radio buttons or a select
    menu. This would fit well with client-side validation.
    
-   However, you need to practice server-side validation! For now keep the input
-   as ``type="text"``. 
+   However, you need to practice server-side validation! For now, keep the
+   input as ``type="text"``. 
 
 A Better User Experience
 ------------------------
 
-With server-side validation, the user will only know if they did something
+With server-side validation, the user only finds out if they did something
 wrong AFTER they submit the form. Also, they will be on the results page, which
 means they need to navigate back to the form in order to fix their mistakes.
 Many users will find this annoying, or won't know how to go back a step.
 
 We want to give our users a smoother experience if they make a mistake. One
 thing we can do is to return them to the original form instead of rendering the
-results page. This will be our next task.
+results page. We will handle this in the next chapter.
 
 Check Your Understanding
 ------------------------
