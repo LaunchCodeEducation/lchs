@@ -13,7 +13,7 @@ Part A: Setup
 -------------
 
 The starter code for this project is stored in a GitHub repository. You will
-need to :ref:`clone this repo <clone-repo>` to your device.
+need to :ref:`clone the repo <clone-repo>` to your device.
 
 #. Open your ``flask_projects`` folder in Visual Studio Code. Enter ``pwd`` in
    the terminal to verify your path.
@@ -35,8 +35,6 @@ need to :ref:`clone this repo <clone-repo>` to your device.
 
    .. figure:: figures/exercises-start.png
       :alt: File tree showing 5 items.
-
-      Your starter code is ready!
 
 Install Flask
 ^^^^^^^^^^^^^
@@ -137,23 +135,26 @@ input boxes change when the form is submitted.
 #. In line 21, replace the ``Feedback will appear here...`` text with a
    different placeholder. Use whatever variable name you want, but remember to
    surround it with double curly braces ``{{}}``.
-#. Now open ``hexcode.py``. Add the ``hex`` and your feedback variable, and
-   assign values to them. Also, add arguments to the ``render_template()``
-   function to pass those values to the template.
+#. Now open ``hexcode.py``. In the ``hex_form()`` function, add ``hex`` and
+   your feedback variable. Assign values to them.
+   
+   Also, add arguments to the ``render_template()`` function to pass the values
+   to the template.
 
    .. sourcecode:: python
       :lineno-start: 6
 
       @app.route('/hex_form')
       def hex_form():
-         hex = "FF0000"
-         feedback = ""
+         hex = 'FF0000'
+         feedback = ''
 
          return render_template('hex_form.html', hex=hex, feedback=feedback)
 
 #. Save your changes and make sure the webpage still works.
-#. In the Python code, change the value of ``hex`` to ``00FF00``, ``0000FF``, or ``987654``, then
-   refresh the page. It should respond differently to each of the values.
+#. In the Python code, change the value of ``hex`` to ``00FF00``, ``0000FF``, or
+   ``987654``. Save, then refresh the page. It should respond differently to
+   each of the values.
 #. Test your feedback placeholder by changing its string in the Python code.
 #. Once you have the template responding to the data you send to it, save and
    commit your work.
@@ -166,13 +167,88 @@ input boxes change when the form is submitted.
 Part C: Collect User Input
 --------------------------
 
-Add ``action`` and ``method`` attributes.
+Right now, nothing much happens when you click the *Check Hex Code* button. You
+need to add more code so you can do something with the form data.
 
-Add GET and POST methods to route decoration.
+#. In ``hex_form.html`` add ``action`` and ``method`` attributes inside the
+   ``<form>`` tag. Assign them values of ``"/hex_form"`` and ``"POST"``, 
+   respectively. Refresh the webpage, then submit the form. You should see an
+   error message.
 
-Show request.form == "POST" in a conditional.
+   .. figure:: figures/method-not-allowed.png
+      :alt: The "Method Not Allowed" error.
 
-Submit several valid codes and note how the page changes.
+   Your form sends a ``POST`` request, but the Python function is expecting a
+   ``GET`` request. This is why the page renders OK initially, but not after
+   the button is clicked.
+#. To fix this, return to the ``hexcode.py`` file. Update the ``@app.route``
+   decorator to accept two types of HTTP requests. This should take care of the
+   *Method Not Allowed* error.
+
+   .. sourcecode:: Python
+      :lineno-start: 8
+
+      @app.route('/hex_form', methods=["GET", "POST"])
+
+Check the Method
+^^^^^^^^^^^^^^^^
+
+When the page first loads, the browser sends a ``GET`` request and receives the
+``hex_form`` template from the Flask server. The browser sends a ``POST``
+request when the form is submitted, and we want the page to change in response.
+
+To make this happen, update your Python code.
+
+#. Add this conditional to the ``hex_form()`` function:
+
+   .. sourcecode:: python
+      :lineno-start: 9
+
+      def hex_form():
+         if request.method == 'POST':
+            # More code will go here...
+         else:
+            hex = 'FF0000'
+            feedback = ''
+         
+         return render_template('hex_form.html', hex=hex, feedback=feedback)
+
+   ``request.method`` returns the type of HTTP request received by the server.
+   If ``request.method == 'POST'`` returns ``True``, then the form was
+   submitted. You need to recover the data.
+#. Use ``request.form`` to get the hex code and assign it to a variable.
+
+   .. sourcecode:: python
+      :lineno-start: 9
+
+      def hex_form():
+         if request.method == 'POST':
+            hex = request.form['hex']
+            feedback = "Successful submission!"
+         else:
+            hex = 'FF0000'
+            feedback = ''
+         
+         return render_template('hex_form.html', hex=hex, feedback=feedback)
+
+   Line 11 recovers the value from the input element with ``name="hex"``.
+#. There is no form data for ``feedback``, but it does need a value. Assign it
+   any message you like on line 12.
+#. Save the changes, then reload the webpage. Use the form to submit several
+   valid hex codes. You should see the input boxes change, and the feedback line
+   should appear.
+#. What happens when you submit an INVALID hex code, like ``AA9``?
+#. Be sure to commit your changes before continuing.
+
+.. admonition:: Note
+
+   If the browser sends a ``GET`` request to the server,
+   ``request.method == 'POST'`` returns ``False``. In that case, the ``else``
+   clause runs. ``hex`` and ``feedback`` get assigned the default values of
+   ``FF0000`` and the empty sting.
+
+   You can make this happen by clicking in the address bar of the browser and
+   tapping *Enter*. This resets the form to its original appearance.
 
 Part D: Validate the Input
 --------------------------
