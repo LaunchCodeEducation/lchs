@@ -64,6 +64,8 @@ looking over Base's shoulder.
 
 **Pilot**: Thanks for sitting by patiently!
 
+.. _clone-repo:
+
 Clone the Project from GitHub
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
