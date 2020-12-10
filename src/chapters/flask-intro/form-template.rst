@@ -141,6 +141,8 @@ this.
 Our form doesn't actually do anything yet, but we'll deal with that on the next
 page.
 
+.. _template-placeholders:
+
 Sending Data to a Template
 --------------------------
 

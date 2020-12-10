@@ -45,6 +45,8 @@ for our website. We need to create a similar directory for our static files.
    style your form. Copy and paste that code into ``style.css``.
 #. Save and commit your work.
 
+.. _link-stylesheet-flask:
+
 Link to the Stylesheet
 ^^^^^^^^^^^^^^^^^^^^^^
 

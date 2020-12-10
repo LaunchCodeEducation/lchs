@@ -1,7 +1,7 @@
 Exercises: Flask Intro
 ======================
 
-In the following exercises, you will set up a Flask application that does the
+In the following exercises, you will create a Flask application that does the
 following:
 
 #. Uses a form to collect a :ref:`hex code <turtle-color>` from the user.
@@ -76,17 +76,92 @@ in specific places inside your project.
 Part B: Render the Form
 -----------------------
 
-Launch the program, and navigate to the proper URL.
+#. From the terminal, use ``python hexcode.py`` to launch the application.
+#. Open your browser and navigate to ``http://127.0.0.1:5000/hex_form``.
+   Unfortunately, the form doesn't look very nice right now. By moving the
+   ``.html`` and ``.css`` files into different directories, we broke the link
+   between them.
 
-Show desired and actual appearance. (No CSS yet!)
+   .. figure:: figures/plain-hex-form.png
+      :alt: Hex form with no image or CSS rules applied.
+      :width: 60%
+   
+      Your webpage rendered, but it needs some work.
 
-Link to stylesheet and image with ``url_for``.
+#. Open the ``hex_form.html`` file in Visual Studio Code. On line 7, update the
+   ``href`` attribute. Replace ``style.css`` with the :ref:`url_for <link-stylesheet-flask>`
+   function.
 
-Add placeholder for feedback.
+   .. sourcecode:: html
+      :lineno-start: 7
 
-Add placeholder for ``value`` attributes.
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
 
-Assign hex and feedback values, and pass them to the template.
+#. On line 27, do the same thing to update the ``src`` attribute inside the
+   ``<img>`` tag. Be sure to change the filename to ``hex_figure.png``.
+#. Save your changes. Refresh the webpage to make sure the style rules and
+   image are now in place.
+
+   .. figure:: figures/hex-form-midway.png
+      :alt: Hex form with CSS rules and image applied.
+      :width: 40%
+   
+      Your form now.
+
+Add Placeholders
+^^^^^^^^^^^^^^^^
+
+Notice that the ``input`` elements on lines 23 and 24 use the hard-coded hex
+value ``FF0000``. Every time the page loads, the text in the input box will
+always show ``FF0000``, and the color box will always be red. 
+
+.. sourcecode:: html
+   :lineno-start: 23
+
+   <label>Enter a code: #<input type="text" name="hex" value="FF0000" required/></label><br>
+   <input type="color" value="#FF0000" disabled/>
+
+Add :ref:`placeholders <template-placeholders>` to the template to make the
+input boxes change when the form is submitted.
+
+#. In lines 23 and 24, replace ``FF0000`` with the ``{{hex}}`` placeholder:
+
+   .. sourcecode:: html
+      :lineno-start: 23
+
+      <label>Enter a code: #<input type="text" name="hex" value="{{hex}}" required/></label><br>
+      <input type="color" value="#{{hex}}" disabled/>
+
+   Be sure to keep the ``#`` symbol in line 24. 
+
+#. In line 21, replace the ``Feedback will appear here...`` text with a
+   different placeholder. Use whatever variable name you want, but remember to
+   surround it with double curly braces ``{{}}``.
+#. Now open ``hexcode.py``. Add the ``hex`` and your feedback variable, and
+   assign values to them. Also, add arguments to the ``render_template()``
+   function to pass those values to the template.
+
+   .. sourcecode:: python
+      :lineno-start: 6
+
+      @app.route('/hex_form')
+      def hex_form():
+         hex = "FF0000"
+         feedback = ""
+
+         return render_template('hex_form.html', hex=hex, feedback=feedback)
+
+#. Save your changes and make sure the webpage still works.
+#. In the Python code, change the value of ``hex`` to ``00FF00``, ``0000FF``, or ``987654``, then
+   refresh the page. It should respond differently to each of the values.
+#. Test your feedback placeholder by changing its string in the Python code.
+#. Once you have the template responding to the data you send to it, save and
+   commit your work.
+
+   .. figure:: figures/working-placeholders.png
+      :alt: Input fields responding to Python data.
+   
+      The values assigned in the Python code show up on the webpage.
 
 Part C: Collect User Input
 --------------------------
