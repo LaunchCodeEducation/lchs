@@ -60,8 +60,8 @@ Add Directories
 Remember that Flask requires you to store your templates and supporting files
 in specific places inside your project.
 
-#. Use the buttons in the file explorer to create the ``static`` and
-   ``templates`` directories.
+#. Use the buttons in VS Code to create the ``static`` and ``templates``
+   directories.
 #. Drag the HTML file into ``templates``. Move the image and CSS files into
    ``static``.
 #. Your file tree should now look like this:
@@ -253,6 +253,91 @@ To make this happen, update your Python code.
 Part D: Validate the Input
 --------------------------
 
-Add length check.
+Your application is working now and transferring data between the Python code
+and the HTML template. The next step is to add validation to check if the user
+submits a valid color code. 
 
-Add character check.
+The rules for hex codes are simple. They start with the ``#`` symbol, followed
+by 6 other characters. These characters can be any combination of digits
+(``0-9``) and the letters ``A-F``.
+
+As written, the HTML code includes the ``#`` symbol where it is needed. All you
+need to focus on is validating the 6 characters. You will do this in two steps.
+First, check the length of the input. Next, check the individual characters.
+
+Check Input Length
+^^^^^^^^^^^^^^^^^^
+
+Perform the validation right after you collect the user's hex code from the
+form.
+
+.. sourcecode:: python
+   :lineno-start: 10
+
+   if request.method == 'POST':
+      hex = request.form['hex']
+      # Your validation code goes here.
+
+#. ``hex`` must contain exactly 6 characters. Add a conditional to check the
+   length of the string collected from the form.
+#. If the string is NOT 6 characters long:
+
+   a. Assign an error message to the feedback variable. This should explain to
+      the user why their code didn't work.
+   b. Re-assign a value to ``hex`` to replace the user's invalid one. This can
+      be the empty string or a valid code. (Keep in mind that this value of
+      ``hex`` will be sent to the template).
+
+#. If the string is 6 characters long, assign the empty string to the feedback
+   variable.
+#. Save, then refresh the form in the browser. Submit at least 3 hex codes to
+   check your work (one too long, one valid, one too short).
+
+Once you have the length validation working, save and commit your progress.
+
+Check Characters
+^^^^^^^^^^^^^^^^
+
+You will use a separate function to check the characters in the hex code.
+
+#. Near the top of your Python program, define the ``valid_hex_chars``
+   function.
+
+   .. sourcecode:: python
+      :lineno-start: 4
+
+      app = Flask(__name__)
+      app.config['DEBUG'] = True
+
+      def valid_hex_chars(parameter_name):
+         # Your code here.
+
+#. The function should:
+
+   a. Include a parameter that accepts the user's hex code.
+   b. Use a loop to check if each character is either a digit (0-9) or a letter
+      (A-F). Case does NOT matter for the letters.
+   c. Return ``True`` if all 6 characters are valid.
+   d. Return ``False`` if even one character is incorrect.
+
+#. Back in the ``hex_form()`` function, modify your conditional by adding an
+   ``elif`` clause:
+
+   .. sourcecode:: python
+
+      elif not valid_hex_chars(hex):
+         # Your new code here.
+      else:
+         # Your old code here.
+
+#. Note that the ``elif`` statement calls the ``valid_hex_chars()`` function.
+   If the hex characters are invalid, assign a different error message to the
+   feedback variable.
+#. Save, then refresh the form in the browser. Submit several different hex
+   codes to test this part of the validation.
+
+   .. admonition:: Tip
+
+      Valid hex codes: ``987654``, ``AaBbCf``, ``3CF98b``
+      
+      Invalid hex codes: ``1234AG``, ``k23Wb4``, ``87*654``
