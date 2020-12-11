@@ -192,6 +192,8 @@ need to add more code so you can do something with the form data.
 
       @app.route('/hex_form', methods=["GET", "POST"])
 
+.. _flask-check-method:
+
 Check the Method
 ^^^^^^^^^^^^^^^^
 

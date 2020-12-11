@@ -47,7 +47,7 @@ The starter code is located in a different branch in the repository.
       The ``static`` and ``templates`` directories are ready for your HTML and CSS files.
 
 Pull in Your Part 1 Work
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 You have a couple of different ways of getting the form from Part 1 into your
 Flask project.
@@ -76,21 +76,68 @@ Flask project.
 
 #. When your form renders properly, save and commit your setup.
 
-Part B: Render Form
--------------------
+Part B: Update the Form Page
+----------------------------
 
-Lorem ipsum...
+#. Update the ``action`` and ``method`` attributes in the ``<form>`` tag. When
+   you submit the form, you want the data to go to the route prepared in
+   ``webcaesar.py``.
+#. Add a section underneath the form to display the message the user submits
+   and the coded result. Use placeholders where you want the text to appear
+   on the page.
+#. In ``webcaesar.py``, add variables for the plain and coded message. Pass
+   their values to the template using ``render_template()``.
+#. Refresh the page to make sure the data moves correctly from your Python code
+   to the template.
+
+   [IMAGE HERE]
 
 Collect and Display Message
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+Return to ``webcaesar.py``.
+
+#. Update the ``@app.route('/user_message')`` handler to accept both ``GET``
+   and ``POST`` requests.
+#. Using the :ref:`hex code exercise <flask-check-method>` as an example, add
+   a conditional to check the type of request made when the page loads.
+#. If ``POST``:
+
+   a. Collect data from all 3 of the input fields on the form. This will
+      include the user's message, the number of letters to shift, and whether
+      to code or translate the text.
+   b. The ``Shift by`` value is a number, but *Flask pulls the data in as a
+      string*. You need to convert the value to ``int``.
+   c. For now, just send the user's message back to the form page. It should
+      appear below the form after submission.
+
+#. If ``GET``, assign the empty string to the placeholder variables, then
+   render the template.
+#. Use the form to submit a few test messages. Make sure they appear below the
+   form.
+
+Remember to save and commit your work before starting the next section.   
 
 Part C: Encrypt Message
 -----------------------
 
+In :ref:`Assignment #2 <coded-messages>`, you wrote a Python program that takes
+a string and converts it into a coded message. Now it's time to reuse that
+code!
+
+.. admonition:: Note
+
+   If your teacher didn't ask you to complete Assignment 2, never fear. You can
+   find the required functions here.
+
+   .. todo:: Insert GitHub link (Caesar Cipher code).
+
+   If you DID do assignment 2 and are thinking that the answers were posted the
+   whole time, NOPE! The assignment requires you to use dictionaries. The
+   posted code leaves those out.
+
 Pull old console code for Assignment 2. Alternatively, find ready-made
-encryption code poste on GitHub.
+encryption code posted on GitHub.
 
 Use request.form to gather message, rotation amount, and encrypt/decrypt
 option. Call function, send coded message to webpage for display.
