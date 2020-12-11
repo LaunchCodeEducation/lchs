@@ -9,6 +9,8 @@ following:
 #. Returns feedback to the user.
 #. Displays the color produced by the hex code.
 
+.. _flask-repo:
+
 Part A: Setup
 -------------
 
