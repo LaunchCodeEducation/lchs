@@ -193,23 +193,44 @@ Decrypt Message
      - 21
      - Flask ROCKS!
 
-Part D: Validation
-------------------
+Part D: Server-Side Validation
+------------------------------
 
-Client-side: Radio button choice, min/max range for number input.
+In :ref:`Part 1 of this project <web-caesar-part1>`, you used the ``max``,
+``min``, ``required``, and ``checked`` attributes to validate the form inputs.
+However, client-side checks are surprisingly easy to bypass, or they may not be
+specific enough to catch every error. It's always a good idea to combine client
+and server-side validation.
 
-Server-side: Mix/max option for number input (yes, even though the browser
-checks as well). Optional max length for message.
+Add code to ``webcaesar.py`` to catch the following errors:
+
+#. The message contains no letters or is blank.
+#. The shift value is less than 1 or greater than 25.
+#. The message exceeds a maximum number of characters or words.
+
+For any error, your program should generate a message that tells the user
+exactly what went wrong. Add a placeholder to the HTML page to display the
+message *inside* the form. If no problems occur, that space should remain
+empty.
 
 Bonus Mission
 -------------
 
-Bump up the difficulty of someone breaking the code!
+The Caesar Cipher is pretty easy to decode. All we need to do take the coded
+text try different shift values until we see a clear result.
 
-Use keyword in front of alphabet string. Ex: SLIDEabcfghjkmnopqrtuvwxyz.
-[Figure showing removal of letters from abc... to build slideabc...]
+To bump up the security of the cipher, we can add a *keyword* to the alphabet
+string. Instead of using ``"abcdef..."``, we move selected letters to the start
+of the string. This makes it harder to decode a captured message because the
+letter order isn't as predictable.
 
-Will need to add a keyword input field on the form, AND add validation. The
-keyword can have no repeated letters.
+.. figure:: figures/keyword-cipher.png
+   :alt: Rearrange letters to form a keyword at the start of the alphabet string.
+   :width: 80%
 
-Will need a new function to build the encoding string.
+   Difference between the original and keyword cipher. The shift value in each case is 1.
+
+Add a keyword input field to the form. This word can have no repeated
+letters, so you will need some server-side validation. Next, add a new function
+in ``encrypt.py`` to build the keyword string. Use that result instead of the
+plain alphabet to code a message.
