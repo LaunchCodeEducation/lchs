@@ -1,7 +1,7 @@
 .. _web-caesar-part1:
 
-Project: Web Coded Messages (Part 1)
-====================================
+Project: Web Form (Part 1)
+==========================
 
 In this chapter, we coded several forms and used the *Parrot Server* to check
 the data submitted. Of course, the parrot isn't a real server. It stores no

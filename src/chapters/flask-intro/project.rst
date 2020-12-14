@@ -1,7 +1,7 @@
 .. _web-caesar-part2:
 
-Project: Web Coded Messages (Part 2)
-====================================
+Project: Web Form (Part 2)
+==========================
 
 In :ref:`Part 1 of this project <web-caesar-part1>`, you designed a form to
 collect a text message and two other inputs from the user.
@@ -13,19 +13,20 @@ collect a text message and two other inputs from the user.
    One possible form style.
 
 Today, you will move your HTML/CSS code into a Flask application. The goal is
-to create a webpage that will encrypt or decrypt the user's message.
+to create a webpage that will encrypt or decrypt the user's message when they
+click *Run*.
 
 Part A: Setup
 -------------
 
-Good news! When you cloned the GitHub repository for the Flask
+Good news! When you cloned the GitHub repository for the
 :ref:`chapter exercises <flask-repo>`, you also got access to the starter code
 for this project.
 
 .. admonition:: Note
 
    If you didn't clone the repository, do that now. Return to the exercises
-   page and follow the Git instructions in the *Setup* section.
+   and follow the Git instructions in the *Setup* section.
 
 The starter code is located in a different branch in the repository.
 
@@ -49,7 +50,7 @@ The starter code is located in a different branch in the repository.
 Pull in Your Part 1 Work
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-You have a couple of different ways of getting the form from Part 1 into your
+You have a couple of different ways to move your form from Part 1 into this
 Flask project.
 
 #. On your device, locate the ``style.css`` file you created for Part 1.
@@ -58,21 +59,21 @@ Flask project.
    a. Drag-and-drop your old file into the ``static`` folder. A dialog box
       might pop up and ask if you really want to do this. Agree.
 
-         OR
+      *OR*
    
-   b. Copy/paste your old code into the empty ``style.css`` file. You now have
-      two copies of the same code on your machine. This isn't really DRY, but
-      we don't judge (much).
+   b. Copy your old code and paste it into the empty ``style.css`` file. You now
+      have two copies of the same code on your machine. This isn't really DRY,
+      but we won't judge (much).
 
-#. Do something similar to get your Part 1 HTML code into the ``user_message``
-   file.
+#. Follow a similar process to move your old HTML code into the
+   ``user_message`` file.
 #. Once the two files are in place, launch the ``webcaesar.py`` program. Open
    your browser and navigate to the form page.
 
    a. If you used a different name for your ``.html`` file, update the
       ``render_template()`` function in the Python code.
-   b. Remember to use ``url_for`` in your template to link the stylesheet to
-      the HTML.
+   b. Remember to use ``url_for`` in your template to link it to the
+      stylesheet.
 
 #. When your form renders properly, save and commit your setup.
 
@@ -80,8 +81,7 @@ Part B: Update the Form Page
 ----------------------------
 
 #. Update the ``action`` and ``method`` attributes in the ``<form>`` tag. When
-   you submit the form, you want the data to go to the route prepared in
-   ``webcaesar.py``.
+   you submit the form, send the data to the ``/user_message`` route.
 #. Add a section underneath the form to display the message the user submits
    and the coded result. Use placeholders where you want the text to appear
    on the page.
@@ -90,7 +90,11 @@ Part B: Update the Form Page
 #. Refresh the page to make sure the data moves correctly from your Python code
    to the template.
 
-   [IMAGE HERE]
+   .. figure:: figures/form-with-message.png
+      :alt: The Caesar Cipher form, with space underneath for displaying messages.
+      :width: 60%
+
+      Use one placeholder for each message. The italicized text changes after submitting the form.
 
 Collect and Display Message
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,47 +109,89 @@ Return to ``webcaesar.py``.
 
    a. Collect data from all 3 of the input fields on the form. This will
       include the user's message, the number of letters to shift, and whether
-      to code or translate the text.
+      to encrypt or decrypt the text.
    b. The ``Shift by`` value is a number, but *Flask pulls the data in as a
       string*. You need to convert the value to ``int``.
    c. For now, just send the user's message back to the form page. It should
       appear below the form after submission.
 
-#. If ``GET``, assign the empty string to the placeholder variables, then
-   render the template.
+#. For a ``GET`` request, assign the empty string to the placeholder variables,
+   then render the template.
 #. Use the form to submit a few test messages. Make sure they appear below the
    form.
 
 Remember to save and commit your work before starting the next section.   
 
-Part C: Encrypt Message
------------------------
+Part C: Change the Message
+--------------------------
 
 In :ref:`Assignment #2 <coded-messages>`, you wrote a Python program that takes
 a string and converts it into a coded message. Now it's time to reuse that
-code!
+code! At the time, you were still using repl.it or Trinket to store your
+projects. Login to your account and locate your ``Coded Messages`` program.
+
+#. Copy the ``alphabet_position()`` function and paste it into the
+   ``encrypt.py`` file in Visual Studio Code.
+#. Do the same thing for the ``shift_character()``, ``build_code_dict()``, and
+   ``encrypt_with_shift()`` functions.
+#. If your functions depend on any Python modules (like ``string``), import
+   those into ``encrypt.py``.
+#. Finally, return to ``webcaesar.py``. Add an ``import`` statement for the
+   ``encrypt_with_shift()`` function.
+
+   .. sourcecode:: Python
+      :lineno-start: 2
+
+      from encrypt import encrypt_with_shift
 
 .. admonition:: Note
 
    If your teacher didn't ask you to complete Assignment 2, never fear. You can
-   find the required functions here.
+   find a scaled down version of the functions
+   `on GitHub <https://github.com/LaunchCodeEducation/LCHS-web-form-part-2>`__.
 
-   .. todo:: Insert GitHub link (Caesar Cipher code).
+   Paste the posted code into ``encrypt.py``.
 
-   If you DID do assignment 2 and are thinking that the answers were posted the
-   whole time, NOPE! The assignment requires you to use dictionaries. The
-   posted code leaves those out.
+Encrypt the Message
+^^^^^^^^^^^^^^^^^^^
 
-Pull old console code for Assignment 2. Alternatively, find ready-made
-encryption code posted on GitHub.
+After all of the ``request.form`` statements execute, you should have the
+user's message and the amount to shift each letter.
 
-Use request.form to gather message, rotation amount, and encrypt/decrypt
-option. Call function, send coded message to webpage for display.
+#. Call the ``encrypt_with_shift()`` function. Send the message text and shift
+   value as arguments.
+#. The function returns a coded message. Assign this to a variable.
+#. Send the original text and the new message to the template.
+#. Save your work, then refresh the page in your browser.
+#. Test your code by submitting a simple message like ``abc`` and a shift
+   value of ``1``. If ``bcd`` appears on the page, congratulations!
+#. Test your code with more complicated messages with MixED CasE, digits,
+   symbols, etc.
 
 Decrypt Message
 ^^^^^^^^^^^^^^^
 
-Just call the encryption function and send in a negative shift.
+#. If the user submits the form with the ``Decrypt`` radio button selected,
+   call the ``encrypt_with_shift()`` function like before. However, send in the
+   *negative* of the shift value.
+#. Test your code again to make sure it correctly encrypts and decrypts
+   messages using the Caesar Cipher.
+
+.. list-table:: Sample Results
+   :header-rows: 1
+
+   * - Message
+     - Action
+     - Shift
+     - New Message
+   * - Hello, World.
+     - Encrypt
+     - 5
+     - Mjqqt, Btwqi.
+   * - Agvnf MJXFN!
+     - Decrypt
+     - 21
+     - Flask ROCKS!
 
 Part D: Validation
 ------------------
