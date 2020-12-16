@@ -18,7 +18,7 @@ The following example demonstrates one possible problem.
       <iframe src="https://trinket.io/embed/html/7a12452a92" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
    #. Enter your favorite color, then click *Submit*. Examine the results page,
-      then click *Run* to return to the form.
+      then click the *Run* button to return to the form.
    #. Repeat step 1, but this time put ``<h1>`` tags around your choice. For
       example, ``<h1>vermilion</h1>``. Click *Submit* and notice how the
       results page looks different.
