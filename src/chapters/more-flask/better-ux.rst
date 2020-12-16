@@ -54,11 +54,6 @@ Lorem ipsum...
 
 ``render`` vs. ``return redirect``...
 
-HTML Escaping
--------------
-
-Lorem ipsum...
-
 Check Your Understanding
 ------------------------
 
