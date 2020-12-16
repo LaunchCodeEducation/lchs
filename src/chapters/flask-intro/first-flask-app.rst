@@ -1,3 +1,5 @@
+.. _first-flask:
+
 Your First Flask App
 ====================
 

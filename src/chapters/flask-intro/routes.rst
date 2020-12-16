@@ -1,3 +1,5 @@
+.. _flask-routes:
+
 Routes
 ======
 
