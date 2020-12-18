@@ -10,7 +10,9 @@ Lorem ipsum...
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 First Flask Application
 -----------------------
@@ -20,24 +22,74 @@ and the :ref:`Routes <flask-routes>` pages.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/nSqwz99kyLI" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/nSqwz99kyLI" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Flask Templates
 ---------------
 
 Lorem ipsum...
 
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/zNM31X-l58I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 Passing Data
 ------------
 
-Lorem ipsum... (2 parts - send and receive)
+Sending data from Python to a template...
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/ZNvH2IbJck0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+Sending data from a template to Python...
+
+.. todo:: Insert video here (collecting form data with Flask).
 
 Server-Side Validation
 ----------------------
 
 Lorem ipsum...
 
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/K7dio-owR70" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 Styling Templates
 -----------------
 
 Lorem ipsum...
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/jR0xncreOVg" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+.. raw:: html
+
+   <style>
+      .vid_box {
+         position: relative;
+         overflow: hidden;
+         width: 80%;
+         height: 0;
+         padding-top: 45%; /* This is 80% of the desired aspect ratio */
+      }
+      
+      .vid {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+      }
+   </style>
