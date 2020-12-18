@@ -38,17 +38,16 @@ names.
 
 Now imagine we want to extend the list to the top 10, 20, 100, or 200 pet
 names. Typing the HTML for *that* task doesn't sound fun at all! Also, we would
-probably make several mistakes. We should plan on some debugging time.
+probably make several mistakes, so we should plan for some debugging time.
 
 Fortunately, there is a better way.
 
 Loops in Templates
 ------------------
 
-For now, let's just focus on the names for the dogs. In the template,
-``dogs[0]`` - ``dogs[2]`` refer to entries from the list. We can easily add or
-remove names to ``dogs`` in our Python code. To print these to the console, we
-would use a simple ``for`` loop.
+For now, let's just focus on the names for the dogs. With Python, we can easily
+add or remove names to the ``dogs`` list. If we want to print these to the
+console, we use a simple ``for`` loop.
 
 .. sourcecode:: Python
    :linenos:
@@ -65,9 +64,11 @@ for a loop is:
       {{item}}
    {% endfor %}
 
-The symbols ``{% %}`` show where the loop begins and ends. Each time the loop
-repeats, ``item`` takes the value of the next element in a ``collection_name``
-(string, list, or dictionary).
+The symbols ``{% %}`` surround code statements, and they show where the loop
+begins and ends. Each time the loop repeats, ``item`` takes the value of the
+next element in a ``collection_name`` (string, list, or dictionary). The code
+does NOT appear on the webpage, and the value for ``item`` gets inserted for
+the placeholder.
 
 For the pet name template, the for loop would look like this. Note how line 3
 looks just like the Python syntax, only without the ending colon, ``:``.
@@ -75,7 +76,7 @@ looks just like the Python syntax, only without the ending colon, ``:``.
 .. sourcecode:: html
    :linenos:
 
-   <h1>Top Pet Names of {{year}}</h1>
+   <h1>Top Dog Names of {{year}}</h1>
    <ol>
       {% for dog in dogs %}
          <li>{{dog}}</li>
@@ -89,13 +90,57 @@ template responds by resizing the list in the browser.
 .. admonition:: Note
 
    The purpose of loops in Jinja2 is *for display only*. They are NOT used to
-   perform calculations or process data. That type of logic belongs in your
+   perform calculations or process data. That type of logic belongs in our
    Python code. 
+
+Loops allow us to automatically create multiple HTML elements on a page. We
+provide the tags, attributes, and placeholder for a single entry. The iteration
+copies that format but inserts different values for each placeholder.
 
 Using Index Values
 ^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+If we want to loop through a collection by index instead of by item, the syntax
+for Python is:
+
+.. sourcecode:: Python
+
+   for index in range(len(collection)):
+
+For Jinja2, the syntax replaces the ``len`` function with ``|length``.
+
+.. sourcecode:: html
+
+   {% for index in range(collection|length) %}
+
+In both cases, ``index`` takes the values ``0, 1, 2,...`` as we are used to.
+
+.. admonition:: Example
+
+   We can use index values to complete our pet name list.
+
+   .. sourcecode:: html
+      :linenos:
+
+      <h1>Top Pet Names of {{year}} (Dogs / Cats / Birds)</h1>
+      <ol>
+         {% for index in range(dogs|length) %}
+            <li>{{dogs[index]}} / {{cats[index]}} / {{birds[index]}}</li>
+         {% endfor %}
+      </ol>
+
+   Even if the lists for ``dogs``, ``cats``, and ``birds`` are not the same
+   length, Jinja2 won't throw an *index out of range* error. Instead, the
+   placeholders for the missing values show up as empty spots on the page.
+
+   .. figure:: figures/animal-name-list.png
+      :alt: Heading and a list showing the top 3 pet names for dogs, cats, and birds (2020).
+      :width: 80%
+
+      The 5th most popular bird name of 2020 was "Chicken".
+
+These 6 lines of code only produce 4 lines of text on the webpage. However,
+they have the potential to add many more if we expand the list of pet names.
 
 Conditionals in Templates
 -------------------------
@@ -108,6 +153,11 @@ Labels and Inputs
 -----------------
 
 Checkbox list.  Use {{}} for value attribute and label text.
+
+Try It!
+-------
+
+Lorem ipsum...
 
 Check Your Understanding
 ------------------------
