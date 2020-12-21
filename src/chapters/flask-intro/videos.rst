@@ -8,12 +8,6 @@ Installing Flask
 
 Lorem ipsum...
 
-.. raw:: html
-
-   <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </section>
-
 First Flask Application
 -----------------------
 
@@ -50,7 +44,11 @@ Sending data from Python to a template...
 
 Sending data from a template to Python...
 
-.. todo:: Insert video here (collecting form data with Flask).
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/y9foALqPE6U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Server-Side Validation
 ----------------------
