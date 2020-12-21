@@ -12,6 +12,5 @@ Hello, Flask!
    data-exchange
    validation
    style-templates
-   videos
    exercises
    project

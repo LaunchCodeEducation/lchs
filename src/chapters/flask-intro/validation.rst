@@ -196,6 +196,17 @@ We want to give our users a smoother experience if they make a mistake. One
 thing we can do is to return them to the original form instead of rendering the
 results page. We will handle this in the next chapter.
 
+Video Summary
+-------------
+
+*Always* validate data collected from a user.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/K7dio-owR70" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 Check Your Understanding
 ------------------------
 

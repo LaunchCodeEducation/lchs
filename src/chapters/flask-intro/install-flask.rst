@@ -11,9 +11,9 @@ application.
 
 .. admonition:: Note
 
-   Several of the pages in this chapter include video summaries of the text. The
-   clips are intended to offer support. They do NOT serve as a replacement for
-   the reading.
+   Several of the pages in this chapter include video summaries at the bottom
+   of the page. The clips are intended to offer support. They do NOT serve as a
+   replacement for the reading.
 
 Create a Project Directory
 --------------------------
@@ -131,23 +131,3 @@ computer. However, the process is very similar for other operating systems.
    <section class="vid_box">
       <iframe class="vid" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
-
-.. raw:: html
-
-   <style>
-      .vid_box {
-         position: relative;
-         overflow: hidden;
-         width: 80%;
-         height: 0;
-         padding-top: 45%; /* This is 80% of the desired aspect ratio (16/9). */
-      }
-      
-      .vid {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-      }
-   </style>
