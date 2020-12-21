@@ -3,8 +3,6 @@ Chapter Ideas
 
 (This page will eventually be removed).
 
-gitignore for Flask files?
-
 Objectives
 ----------
 

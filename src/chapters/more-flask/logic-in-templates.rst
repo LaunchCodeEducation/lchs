@@ -33,8 +33,8 @@ The template code might look something like this:
       <li>{{dog[2]}} / {{cat[2]}} / {{bird[2]}}</li>
    </ol>
 
-While tedious, it doesn't take that long to type the HTML for the lists of
-names.
+While tedious, it doesn't take that long to type the HTML for a list with only
+three rows.
 
 Now imagine we want to extend the list to the top 10, 20, 100, or 200 pet
 names. Typing the HTML for *that* task doesn't sound fun at all! Also, we would
@@ -66,9 +66,8 @@ for a loop is:
 
 The symbols ``{% %}`` surround code statements, and they show where the loop
 begins and ends. Each time the loop repeats, ``item`` takes the value of the
-next element in a ``collection_name`` (string, list, or dictionary). The code
-does NOT appear on the webpage, and the value for ``item`` gets inserted for
-the placeholder.
+next element in ``collection_name``. The code does NOT appear on the webpage,
+and the value for ``item`` gets inserted for the placeholder.
 
 For the pet name template, the for loop would look like this. Note how line 3
 looks just like the Python syntax, only without the ending colon, ``:``.
@@ -94,8 +93,9 @@ template responds by resizing the list in the browser.
    Python code. 
 
 Loops allow us to automatically create multiple HTML elements on a page. We
-provide the tags, attributes, and placeholder for a single entry. The iteration
-copies that format but inserts different values for each placeholder.
+provide the tags, attributes, and any placeholders for a single entry. The
+iteration copies that format and inserts different values each time the loop
+repeats.
 
 Using Index Values
 ^^^^^^^^^^^^^^^^^^
@@ -113,7 +113,7 @@ For Jinja2, the syntax replaces the ``len`` function with ``|length``.
 
    {% for index in range(collection|length) %}
 
-In both cases, ``index`` takes the values ``0, 1, 2,...`` as we are used to.
+In both cases, ``index`` takes the values ``0, 1, 2...``
 
 .. admonition:: Example
 
@@ -140,24 +140,41 @@ In both cases, ``index`` takes the values ``0, 1, 2,...`` as we are used to.
       The 5th most popular bird name of 2020 was "Chicken".
 
 These 6 lines of code only produce 4 lines of text on the webpage. However,
-they have the potential to add many more if we expand the list of pet names.
+they have the potential to add many more as we expand the list of pet names.
 
-Conditionals in Templates
--------------------------
+Placement Matters
+^^^^^^^^^^^^^^^^^
 
-Useful for showing/not showing content based on a condition.
+``{% for... %}`` and ``{% endfor %}`` repeat every element placed between them.
+A small shift in the code can make a big difference in how the page renders.
+For example, let's bring the ``<ol>`` tags inside the loop.
 
-If/else if/else syntax and examples...
+.. sourcecode:: html
+   :linenos:
 
-Labels and Inputs
------------------
+   <h1>Top Pet Names of {{year}} (Dogs / Cats / Birds)</h1>
+   {% for index in range(dogs|length) %}
+      <ol>
+         <li>{{dogs[index]}} / {{cats[index]}} / {{birds[index]}}</li>
+      </ol>
+   {% endfor %}
 
-Checkbox list.  Use {{}} for value attribute and label text.
+Instead of one list with three different entries, this version of the code
+produces three separate lists, each with only one element.
+
+.. figure:: figures/repeat-ol.png
+   :alt: Three lists, each with a single item labeled "1".
+   :width: 60%
+
+What do you think would happen if we moved the ``h1`` element inside the loop
+as well?
 
 Try It!
 -------
 
-Lorem ipsum...
+Loops really come in handy whenever we need to build checkbox or radio inputs!
+
+Checkbox list.  Use {{}} for value attribute and label text.
 
 Check Your Understanding
 ------------------------

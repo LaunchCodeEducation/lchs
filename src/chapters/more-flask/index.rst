@@ -7,7 +7,9 @@ Refill the Flask
    ideas
    html-escaping
    what-is-jinja2
+   chapter-setup
    logic-in-templates
+   template-conditionals
    reusing-content
    page-navigation
    better-ux
