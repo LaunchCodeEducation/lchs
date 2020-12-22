@@ -173,10 +173,147 @@ Try It!
 -------
 
 Loops really come in handy whenever we need to build checkbox or radio inputs!
+Instead of having to code every single element, we can set up the template to
+build the form automatically.
 
-Checkbox list.  Use {{}} for value attribute and label text.
+#. In ``main.py``, paste in this starter code:
+
+   .. sourcecode:: Python
+      :linenos:
+
+      from flask import Flask, render_template, request
+
+      app = Flask(__name__)
+      app.config['DEBUG'] = True
+
+      @app.route('/')
+      def checkbox_form():
+
+         return render_template('checkbox_form.html')
+
+      if __name__ == '__main__':
+         app.run()
+
+#. On line 8, define a ``pizza_toppings`` variable. Assign it a list that
+   contains at least five options. (It's OK to have both pineapple and
+   pepperoni in the same list!)
+#. Inside ``render_template()``, pass the list of toppings to the HTML file.
+#. Open ``checkbox_form.html`` in the workspace. Paste in this starter code:
+
+   .. sourcecode:: html
+      :linenos:
+
+      <!DOCTYPE html>
+      <html>
+         <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Checkbox Logic</title>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+         </head>
+         <body>
+            <h1>Checkbox Logic</h1>
+            <h2>Select Your Pizza Toppings</h2>
+            <form>
+
+               <!-- Your form code goes here. -->
+
+            </form>
+         </body>
+      </html>
+
+#. Launch ``main.py`` and make sure ``checkbox_form`` renders. Add a
+   ``{{pizza_toppings}}`` placeholder to the page just to make sure your list
+   is being sent to the template. (You can remove the placeholder after that).
+
+   .. figure:: figures/pizza-form-start.png
+      :alt: A webpage with a heading and a pizza toppings list.
+      :width: 80%
+
+      Successfully sending a Python list to the webpage.
+
+#. On line 14, add a ``label`` and ``input`` element for one checkbox. Include
+   a ``{{topping}}`` placeholder for the label text and the ``value``.
+
+   .. sourcecode:: html
+
+      <label><input type="checkbox" name="toppings" value="{{topping}}"/> {{topping}}</label><br>
+
+#. On lines 13 and 15, add the statements
+   ``{% for topping in pizza_toppings %}`` and ``{% endfor %}``. Save your work
+   and refresh the page in your browser. 
+#. *Buona pizza*!
+
+   .. figure:: figures/pizza-form-mid.png
+      :alt: A form with checkboxes to select pizza toppings.
+
+      The hex code for one pizza crust color is ``#d79914``.
+
+Bonus Try It!
+^^^^^^^^^^^^^
+
+Convert the form to a radio button group!
+
+#. Instead of using ``type="checkbox"`` inside the input tag, replace it with a
+   placeholder. In ``main.py``, use ``render_template()`` to send the string
+   ``'radio'`` to the template. Switch the inputs back by sending
+   ``'checkbox'``.
+#. Be sure to update the ``title`` and ``h1`` as well.
+#. Can you make this happen?
+
+   .. figure:: figures/pizza-form-final.gif
+      :alt: A form that can switch dynamically between radio and checkbox inputs.
+      :width: 50%
+
+      Adding a loop to a template allows us to make dynamic changes to the structure of the page.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+The following questions refer to this code sample:
+
+.. sourcecode:: html
+   :linenos:
+
+   <section>
+      <h3>My Pets</h3>
+      <ul>
+         <li>{{pet}}</li>
+      </ul>
+   </section>
+
+Assume that we define a ``pets`` list that contains 4 animals.
+
+.. admonition:: Question
+
+   Adding ``{% for pet in pets %}`` and ``{% endfor %}`` around the ``<li>`` tag
+   produces:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 unordered lists</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 4 list items</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings each with 4 list items</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   Moving ``{% for pet in pets %}`` and ``{% endfor %}`` above and below the
+   ``<section>`` tags produces:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1 heading and 4 unordered lists with 4 pets each</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings and 4 unordered lists with 4 pets each</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1 heading and 4 unordered lists with 1 pet each</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 4 headings and 4 unordered lists with 1 pet each</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = d
