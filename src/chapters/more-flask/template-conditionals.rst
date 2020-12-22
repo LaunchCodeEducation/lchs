@@ -2,10 +2,11 @@ Conditionals in Templates
 =========================
 
 In addition to loops, we can also include conditionals inside our Jinja2
-templates. These evaluate a boolean expression, then add or remove HTML
-elements to the webpage.
+templates. These evaluate :ref:`boolean expressions <boolean-expression>`, then
+add or remove HTML elements to the webpage.
 
-Conditionals allow us to choose whether or not to display specific content.
+Conditionals come in handy when we need to choose whether or not to display
+specific content.
 
 ``if/elif/else`` Syntax
 -----------------------
@@ -19,10 +20,10 @@ The general syntax for a Jinja2 conditional is:
       <!-- HTML code block -->
    {% endif %}
 
-Just like in Python, ``condition`` is a :ref:`boolean expression <boolean-expression>`
-that evaluates to either ``True`` or ``False``. If ``True``, then the HTML code
-block is added to the webpage. If ``False``, then the HTML is NOT generated,
-and the content stays off the page.
+Just like in Python, ``condition`` is a boolean expression that evaluates to
+``True`` or ``False``. If ``True``, then the following code block is added to
+the webpage. If ``False``, the HTML is NOT generated, and the content stays off
+the page.
 
 We can include ``elif`` and ``else`` clauses to provide more flexibility for our
 page design.
@@ -44,20 +45,20 @@ any length and include any number of elements.
 
 .. admonition:: Note
 
-   An ``if`` statement determines if content is *added or removed* from a page.
-   This is different from deciding if content should be *displayed or hidden*.
+   A conditional determines if content is *added or removed* from a page. This
+   is different from deciding if content should be *displayed or hidden*.
 
    *Hidden* content still occupies space on a page and requires some amount of
-   memory. *Removed* content is absent from the page: requiring neither space
-   nor memory. This is an important consideration when adding items like images
-   or videos to your website.
+   memory. *Removed* content is absent from the page, requiring neither space
+   nor memory. This is an important point to consider when dealing with things
+   like images or videos.
 
 Try It!
 -------
 
-Return to the pizza toppings form. Your next goal is to display the selected
-options after the user clicks *Submit*. When the page first loads, this list
-and its heading should not appear.
+Return to the pizza toppings form. Your next goal is to display the user's
+selections after they click *Submit*. When the page first loads, this list and
+its heading should not appear.
 
 .. figure:: figures/toppings-list.png
    :alt: Checkbox form with selected options displayed to the side.
@@ -65,39 +66,61 @@ and its heading should not appear.
 
    You can show the choices below the form, if you wish.
 
-#. Begin with the Python code. Return to ``main.py`` and add some statements
-   to retrieve the user's toppings and save them to a list.
+#. Begin with the Python code. Open ``main.py`` and add some statements to
+   retrieve the user's toppings and save them to a list.
 
-   [TODO: Enter code block here.]
+   .. sourcecode:: Python
+      :lineno-start: 6
 
-   Note request.form.getlist('toppings')...
+      @app.route('/', methods=['GET', 'POST'])
+      def checkbox_form():
+         if request.method == 'POST':
+            choices = request.form.getlist('toppings')
+         else:
+            choices = []
 
-   Add MT choices list in else clause...
-#. Test the form to make sure the submission process works... (Add placeholder
-   for choices).
+         pizza_toppings = ['pineapple', 'pepperoni', 'black olives', 'green peppers',
+            'mushrooms', 'broccoli', 'extra cheese']
+         return render_template('checkbox_form.html', pizza_toppings=pizza_toppings, choices=choices)
 
-#. Return to ``checkbox_form.html``. Add a new section to display the user's
-   topping choices.
+   a. Note the new syntax in line 9. Since the ``toppings`` input is a set
+      of checkboxes, it is very likely that the user will select multiple
+      options. The command ``request.form.getlist('toppings')`` collects the
+      value from every checked box and adds it as an entry in the
+      ``choices`` list.
+   b. When the page first loads, it does so in response to a ``GET`` request.
+      In this case, the ``else`` clause runs, and ``choices`` is assigned an
+      empty list.
+   c. Line 13 is outside of the ``if/else`` block, so it executes for both
+      ``GET`` and ``POST`` requests.
+
+#. Return to ``checkbox_form.html``. Right after the form, add a new section to
+   display the user's topping choices.
 
    .. sourcecode:: html
-      :lineno-start: 11
-
-      <form action="/" method="POST">
-         <h2>Select Your Pizza Toppings</h2>
-         {% for topping in pizza_toppings %}
-               <label><input type="checkbox" name="toppings" value="{{topping}}"/> {{topping}}</label><br>
-         {% endfor %}
-         <section class="centered">
-               <button>Submit</button>
-         </section>
-      </form>
+      :lineno-start: 21
 
       <section>
          <h2>Your Choices</h2>
+         <ul>
+            {% for choice in choices %}
+               <li>{{choice}}</li>
+            {% endfor %}
+         </ul>
       </section>
 
-#. Save, then reload the page. The ``Your Choices`` heading should appear on the
-   page. However, we only want it there after the user submits some choices.
+#. Save your work, then run the Flask application. Test the form to make sure
+   the submission process works. Note that the ``Your Choices`` heading always
+   shows up on the page.
+
+Add the Conditional
+^^^^^^^^^^^^^^^^^^^
+
+The ``Your Choices`` heading and list should only appear after the user submits
+the form. Time to add a conditional to the template!
+
+#. Add just above h2.  If choices|length > 0
+#. Lorem ipsum... 
 
 Check Your Understanding
 ------------------------
