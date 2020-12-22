@@ -10,7 +10,7 @@ Students will:
 
 - Understand what an HTML **template** is. (done)
 - Describe the benefits of using templates with Flask. (done)
-- Build stand-alone templates using the **Jinja2** environment.
+- Build stand-alone templates using the **Jinja2** environment.(done)
 - Add variables inside a Jinja2 template. (done)
 - Upon validation errors, render a form with valid data left in-place.
 - Describe why HTML escaping is necessary when putting user-submitted data in

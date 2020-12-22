@@ -186,7 +186,7 @@ build the form automatically.
       app = Flask(__name__)
       app.config['DEBUG'] = True
 
-      @app.route('/')
+      @app.route('/', methods=['GET', 'POST'])
       def checkbox_form():
 
          return render_template('checkbox_form.html')
@@ -214,7 +214,7 @@ build the form automatically.
          <body>
             <h1>Checkbox Logic</h1>
             <h2>Select Your Pizza Toppings</h2>
-            <form>
+            <form action="/" method="POST">
 
                <!-- Your form code goes here. -->
 
