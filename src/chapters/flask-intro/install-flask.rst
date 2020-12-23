@@ -6,8 +6,14 @@ Install Flask
 Starting a new Flask project begins with the same basic steps. These are the
 housekeeping tasks we must complete before diving into our actual code.
 
-In the sections below, you will complete these setup steps for your first Flask
+In the sections below, you will complete the setup for your first Flask
 application.
+
+.. admonition:: Note
+
+   Several of the pages in this chapter include video summaries at the bottom
+   of the page. The clips are intended to offer support. They do NOT serve as a
+   replacement for the reading.
 
 Create a Project Directory
 --------------------------
@@ -96,7 +102,7 @@ Add Flask
    ::
 
       (hello-env) $ flask --version
-      Python 3.8.3
+      Python 3.8.5
       Flask 1.1.2
       Werkzeug 1.0.1
 
@@ -113,3 +119,15 @@ Ready to Go!
 
 OK, the virtual environment is set up, and Flask is installed. We can now add
 some Python code and link it to a webpage.
+
+Video Summary
+-------------
+
+The clip below provides a walkthrough for installing Flask on a Macintosh
+computer. However, the process is very similar for other operating systems.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>

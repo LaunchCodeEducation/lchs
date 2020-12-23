@@ -202,6 +202,18 @@ and ``form_results.html`` to match the names used in ``favorite_form.html``.
       <li><strong>Favorite Color:</strong> {{color}}</li>
       <li><strong>Lucky Number:</strong> {{luck_num}}</li>
 
+Video Summary
+-------------
+
+There are a LOT of details on this page. The video below is a little longer
+than the others in this chapter.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/y9foALqPE6U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 Check Your Understanding
 ------------------------
 

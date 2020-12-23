@@ -268,6 +268,26 @@ Besides variables, Flask can also evaluate simple expressions.
    #. Replace ``{{verb}}`` with ``{{verb.capitalize()}}``. What happens?
    #. Replace ``{{gift}}`` with ``{{gift=='wand'}}``. What happens?
 
+Video Summaries
+---------------
+
+Here is a walkthrough for creating an HTML template, then rendering it from a
+Flask application.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/zNM31X-l58I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+The next clip shows how to send data to a webpage from a Python program.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/ZNvH2IbJck0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 Check Your Understanding
 ------------------------
 

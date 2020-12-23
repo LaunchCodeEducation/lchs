@@ -1,3 +1,5 @@
+.. _first-flask:
+
 Your First Flask App
 ====================
 
@@ -227,6 +229,18 @@ response.
 
    Now would be a good time to commit your work to the ``hello_flask``
    repository.
+
+Video Summary
+-------------
+
+This video relates to the content on the :ref:`First Flask App <first-flask>`
+and the :ref:`Routes <flask-routes>` pages.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/nSqwz99kyLI" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Check Your Understanding
 ------------------------

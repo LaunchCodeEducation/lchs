@@ -122,3 +122,12 @@ The ``form_results.html`` template also contains plain HTML.
 #. Once on the results page, check to make sure your style rules were applied.
 #. If necessary, adjust your HTML and CSS code. Try to refine the appearance of
    the results page WITHOUT altering the look of the form.
+
+Video Summary
+-------------
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/jR0xncreOVg" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
