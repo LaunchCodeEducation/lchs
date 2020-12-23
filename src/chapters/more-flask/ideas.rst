@@ -16,7 +16,7 @@ Students will:
 - Describe why HTML escaping is necessary when putting user-submitted data in
   an HTTP response. (done)
 - Use **autoescaping** within Jinja2 templates.
-- Use conditionals and loops within Jinja2 templates.
+- Use conditionals and loops within Jinja2 templates. (done)
 - Create a multi-page, interactive website using Flask and Jinja2 templates.
 - Create Jinja2 templates that use **base templates** and **content blocks**.
 - Add links to related templates to allow users to easily navigate between
