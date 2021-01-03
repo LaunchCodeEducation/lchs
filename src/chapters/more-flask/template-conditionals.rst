@@ -40,8 +40,8 @@ page design.
    {% endif %}
 
 Depending on the results of ``condition_1`` and ``condition_2``, one of the
-three code blocks will be included on the page. The HTML in each part can be
-any length and include any number of elements.
+three code blocks will appear on the page. The HTML in each part can be any
+length and include any number of elements.
 
 .. admonition:: Note
 
@@ -57,13 +57,14 @@ Try It!
 -------
 
 Return to the pizza toppings form. Your next goal is to display the user's
-selections after they click *Submit*.
+selections after they click *Submit*. It doesn't matter if the choices appear
+below or next to the form.
 
 .. figure:: figures/toppings-list.png
    :alt: Checkbox form with selected options displayed to the side.
    :width: 60%
 
-   You can either show the choices below or next to the form. When the page first loads, the list and its heading should not appear.
+   When the page first loads, the ``Your Choices`` heading and list should not appear.
 
 #. Begin with the Python code. Open ``main.py`` and add statements to collect
    the user's toppings and save them to a list.

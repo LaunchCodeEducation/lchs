@@ -69,8 +69,8 @@ begins and ends. Each time the loop repeats, ``item`` takes the value of the
 next element in ``collection_name``. The code does NOT appear on the webpage,
 and the value for ``item`` gets inserted for the placeholder.
 
-For the pet name template, the for loop would look like this. Note how line 3
-looks just like the Python syntax, only without the ending colon, ``:``.
+For the pet name template, the ``for`` loop would look like this. Note how line
+3 looks just like the Python syntax, only without the ending colon, ``:``.
 
 .. sourcecode:: html
    :linenos:
@@ -93,7 +93,7 @@ template responds by resizing the list in the browser.
    Python code. 
 
 Loops allow us to automatically create multiple HTML elements on a page. We
-provide the tags, attributes, and any placeholders for a single entry. The
+provide the tags, attributes, and placeholders for a single entry. The
 iteration copies that format and inserts different values each time the loop
 repeats.
 
@@ -140,7 +140,7 @@ In both cases, ``index`` takes the values ``0, 1, 2...``
       The 5th most popular bird name of 2020 was "Chicken".
 
 These 6 lines of code only produce 4 lines of text on the webpage. However,
-they have the potential to add many more as we expand the list of pet names.
+they would add more if we expand the list of pet names.
 
 Placement Matters
 ^^^^^^^^^^^^^^^^^
@@ -195,8 +195,8 @@ build the form automatically.
          app.run()
 
 #. On line 8, define a ``pizza_toppings`` variable. Assign it a list that
-   contains at least five options. (It's OK to have both pineapple and
-   pepperoni in the same list!)
+   contains at least five options. (It's OK to have pineapple and pepperoni in
+   the same list!)
 #. Inside ``render_template()``, pass the list of toppings to the HTML file.
 #. Open ``checkbox_form.html`` in the workspace. Paste in this starter code:
 

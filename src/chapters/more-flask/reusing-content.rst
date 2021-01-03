@@ -3,7 +3,7 @@ Reusing Content
 
 Since the :ref:`HTML chapter <html-chapter>`, we've often pasted a block of
 starter code into an empty ``.html`` file. This *boilerplate code* often looks
-the same across different pages:
+the same:
 
 .. sourcecode:: html
    :linenos:
@@ -26,7 +26,7 @@ shortens this task, but the same issue remains.
 
    We're putting the same blocks of code into most of our HTML files.
 
-We can save ourselves a lot of time, and keep our work DRY, by keeping reusable
+We can save ourselves some time, and keep our work DRY, if we keep reusable
 HTML code in a single file.
 
 A ``base`` Template
@@ -35,37 +35,52 @@ A ``base`` Template
 .. index::
    single: template; base
 
-When we design a website, we often want to use the same menu, navigation bar,
-logos, etc. on the different pages. If we define a **base template**, we can
-use it to store the HTML for the shared content.
+When we design a website, we often want the same menu, navigation bar, logos,
+etc. to appear on several different pages. If we define a **base template**, we
+can use it to store this shared HTML.
 
-Let's build a base template using the boilerplate code above. We will also
-include a page header. Once we finish with this, we'll learn how to import the
-content into a different HTML file.
+Let's build a base template starting with the boilerplate code above. We will
+then add a page header. Once we finish with this, we'll learn how to link the
+template to different HTML files.
 
 .. admonition:: Try It!
 
-   Start with the boiler plate code. Include the link to the style.css page.
+   #. In the ``templates`` folder, create a new file called ``base.html``.
+   #. Paste in the boilerplate code found at the top of this page, or use the
+      ``html:5`` shortcut to do the same thing.
+   #. On line 7, link to the ``style.css`` file:
 
-   Discuss ``{% block content %}`` and ``{% endblock %}``...
+      .. sourcecode:: html
 
-   Demo idea: Header and footer content/image(s) that we want to appear on every
-   page.
+         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+   
+   #. Add a placeholder to the ``title`` element:
 
-Placeholders in the Base
-^^^^^^^^^^^^^^^^^^^^^^^^
+      .. sourcecode:: html
+         :lineno-start: 6
 
-Add a placeholder to the title tag and in the h1 in the header...
+         <title>{{title}}</title>
 
-The process is the same as before. Note that we will need to supply a value for
-these in each of the templates we render using Flask...
+   Since we added a placeholder to the base template, we will need to supply it
+   with a value. We will see how to do this soon.   
+   
+Good. This gets our base template started. Now lets add some code inside
+``<body></body>``.
 
-Add a Common Header
-^^^^^^^^^^^^^^^^^^^
+A Common Header
+^^^^^^^^^^^^^^^
 
 Block out a section for the page title and background image (LCHS)...
 
 Try It! Add a footer...
+
+Pull in Different HTML Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Discuss ``{% block content %}`` and ``{% endblock %}``...
+
+Demo idea: Header and footer content/image(s) that we want to appear on every
+page.
 
 Extending From the Base
 -----------------------
