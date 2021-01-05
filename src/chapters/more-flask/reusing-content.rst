@@ -48,7 +48,8 @@ template to different HTML files.
    #. In the ``templates`` folder, create a new file called ``base.html``.
    #. Paste in the boilerplate code found at the top of this page, or use the
       ``html:5`` shortcut to do the same thing.
-   #. On line 7, link to the ``style.css`` file:
+   #. On line 7, use the ``url_for`` function to link to the ``style.css``
+      file:
 
       .. sourcecode:: html
 
@@ -60,27 +61,23 @@ template to different HTML files.
          :lineno-start: 6
 
          <title>{{title}}</title>
-
-   Since we added a placeholder to the base template, we will need to supply it
-   with a value. We will see how to do this soon.   
    
 Good. This gets our base template started. Now lets add some code inside
 ``<body></body>``.
 
-A Common Header
-^^^^^^^^^^^^^^^
+Block Out Space for Other HTML Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Block out a section for the page title and background image (LCHS)...
+The goal of ``base.html`` is to store the code we want to use across several
+different webpages. Each of these pages will link to ``base``, and the browser
+will render the shared code. However, each page will also have content that is
+separate from the others.
 
-Try It! Add a footer...
-
-Pull in Different HTML Code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Inside ``base.html``, we need to add instructions for where we want to insert
+new HTML code. Think of ``base`` like a document that contains some holes. Each
+webpage that uses ``base`` will put its own content into those holes.
 
 Discuss ``{% block content %}`` and ``{% endblock %}``...
-
-Demo idea: Header and footer content/image(s) that we want to appear on every
-page.
 
 Extending From the Base
 -----------------------
@@ -91,6 +88,41 @@ Discuss ``{% extends "base.html" %}``...
 
 Note that we need to add ``{% block content %}`` and ``{% endblock %}`` around
 the content we want to insert into the base template...
+
+A Common Header
+---------------
+
+Let's jazz up the page title by putting it into a ``header`` element.
+
+#. Inside ``base.html``, add the following code:
+
+   .. sourcecode:: html
+      :lineno-start: 9
+
+      <body>
+         <header class="head-background">
+            <h1>{{page_title}}</h1>
+         </header>
+      </body>
+
+#. The ``<header>`` tag includes the ``class`` attribute. We need to define the
+   ``head-background`` CSS rule next.
+#. Open ``style.css`` and add the following class selector:
+
+   .. sourcecode:: css
+      :linenos:
+
+      .head-background {
+         padding: 10px 0;
+         text-align: center;
+         background-image: radial-gradient(#419f6a 60%, #3c79b8 40%);
+      }
+   
+   ``radial-gradient`` allows us to display different colors in a background.
+
+Block out a section for the page title and background image (LCHS)...
+
+Try It! Add a footer...
 
 Multiple Blocks
 ---------------
