@@ -258,12 +258,13 @@ You added the ``{{tab_title}}`` and ``{{page_title}}`` placeholders to
    Add a ``<footer></footer>`` element to ``base.html``. Design is as you wish,
    but it should appear at the bottom of the webpage.
 
-Optional: Extend ``base`` to a Second Page
-------------------------------------------
+Extend ``base`` to a Second Page
+--------------------------------
 
 Now that ``base.html`` is set up, we can use it as many times as we like.
 
-#. Add another ``.html`` template. ``extend`` it from ``base.html`` as before.
+#. Add another ``.html`` template to the project. ``extend`` it from
+   ``base.html`` as before.
 #. Add a small amount of content to the template. Something simple like:
 
    .. sourcecode:: html
