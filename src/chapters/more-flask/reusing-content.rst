@@ -27,14 +27,18 @@ shortens this task, but the same issue remains.
    We're putting the same blocks of code into most of our HTML files.
 
 We can save ourselves some time, and keep our work DRY, if we keep reusable
-HTML code in a single file. On its own, this file renders a webpage that
-contains one or more gaps in its layout. The idea is to use the file as a
-starting place and fill in the missing details as needed.
+HTML code in a single file. On its own, this **base template** renders a
+webpage that contains one or more gaps in its layout. The idea is to use the
+base as a starting place and fill in the missing details as needed.
 
 The HTML code around the gaps is shared across multiple webpages. However, each
-separate page fills in the empty spaces with its own content.
+separate page fills in the empty space with its own content.
 
-.. todo:: Add image here (base template).
+.. figure:: figures/base-template.png
+   :alt: One HTML file contains reusable content plus a "gap" to be filled in with content from other templates.
+   :width: 80%
+
+   A base template defines a common structure. Different webpages use that structure but also add some of their own content. 
 
 The figure shows a key idea. When a browser renders a webpage, the code is
 often NOT from a single ``.html`` file. Instead, the server sends multiple
@@ -225,7 +229,7 @@ You added the ``{{tab_title}}`` and ``{{page_title}}`` placeholders to
 
 #. Open ``main.py`` in VS Code. Add the ``tab_title`` and ``page_title``
    variables to the ``checkbox_form()`` function.
-#. Assign string values to the variables, then add them to the
+#. Assign string values to the variables, then include them in the
    ``render_template()`` function.
 
    .. sourcecode:: python
@@ -307,7 +311,7 @@ Check Your Understanding
       <ol type="a">
          <li onclick="revealTrueFalse('resultA', false)">The HTML code from the base template is inserted into another template. <span id="resultA"></span></li>
          <li onclick="revealTrueFalse('resultB', true)">The HTML code from another template is inserted into the base template. <span id="resultB"></span></li>
-         <li onclick="revealTrueFalse('resultC', true)">Browsers often use multiple HTML files to render a single webpage. < 6 <span id="resultC"></span></li>
+         <li onclick="revealTrueFalse('resultC', true)">Browsers often use multiple HTML files to render a single webpage. <span id="resultC"></span></li>
          <li onclick="revealTrueFalse('resultD', false)">A base template cannot be rendered by itself in a browser. <span id="resultD"></span></li>
          <li onclick="revealTrueFalse('resultE', true)">Making a base template might seem like more work, but it saves time in the long run. <span id="resultE"></span></li>
       </ol>

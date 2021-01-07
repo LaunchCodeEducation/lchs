@@ -19,6 +19,7 @@ Students will:
 - Use conditionals and loops within Jinja2 templates. (done)
 - Create a multi-page, interactive website using Flask and Jinja2 templates.
 - Create Jinja2 templates that use **base templates** and **content blocks**.
+  (done)
 - Add links to related templates to allow users to easily navigate between
   them.
 - Return a ``redirect`` response.
