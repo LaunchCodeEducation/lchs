@@ -2,7 +2,7 @@ Page Navigation
 ===============
 
 So far, we've used the address bar in the browser to access each webpage we've
-built. Obviously, we need to do better than this. Users shouldn't have to type
+built. However, we need to do better than this. Users shouldn't have to type
 in the address for every page they want to visit!
 
 Adding links that connect to other pages in our website makes navigation much
@@ -13,9 +13,9 @@ nav bar. (You can find several of these options on this page!)
 A List of Links
 ---------------
 
-Let's start with a basic, unordered list. Each item will be a link that leads
-to one of the pages in our website. For now, we will keep the design simple. We
-can make it look nice after we get the navigation working.
+Let's start with a basic, unordered list of links. Each item will lead to one
+of the pages in our website. For now, we will keep the design simple. We can
+make it look nice after we get the navigation working.
 
 Since we want the list to appear on every page, we will add it to the base
 template.
@@ -47,19 +47,19 @@ template.
          <li><a href="">Pizza Topping Form</a></li>
          <li><a href="">Second Page</a></li>
    
-   b. Fill in the ``href`` values with the ``url_for()`` function:
+   b. Fill in the ``href`` values with the path to each page:
 
       .. sourcecode:: html
 
-         <li><a href="{{ url_for('checkbox_form') }}">Pizza Topping Form</a></li>
-         <li><a href="{{ url_for('second_page') }}">Second Page</a></li>
+         <li><a href="/">Pizza Topping Form</a></li>
+         <li><a href="/second">Second Page</a></li>
 
-   Note the arguments used inside ``url_for()``. The strings are the *names of
-   the functions* from ``main.py``. They should NOT be the ``.html`` names you
-   gave to the template files. The values you use inside ``url_for()`` will
-   depend on the names you chose.
+   Note the values assigned to each ``href``. The strings *match the paths*
+   from the ``@app.route()`` handlers in ``main.py``. They should NOT be the
+   ``.html`` names you gave to the template files. The paths you use will
+   depend on your Python code. They might not match this example.
 #. Save your work, then refresh the tab in the browser. Properly done, the
-   navigation link should work something like this:
+   navigation links should work something like this:
 
    .. figure:: figures/basic-nav.gif
       :alt: Clicking either of the two links in the list navigates to the chosen page.
@@ -68,9 +68,8 @@ template.
 
 .. admonition:: Try It!
 
-   When ``url_for()`` executes, it fills in the URL for the selected page. This
-   will include the path used in ``@app.route()``. If you hover the pointer
-   over a link, the URL will appear in the bottom corner of the browser window.
+   If we hover the pointer over one of the links, its URL appears in the bottom
+   corner of the browser window.
 
    .. figure:: figures/link-url.png
       :alt: Hovering over a link displays the target URL in the lower corner of the browser window.
@@ -78,15 +77,89 @@ template.
 Bring in Some Logic
 -------------------
 
-Update code to use a ``for`` loop to populate the list of links. A global
-variable will be required in ``main.py``.
+So far, so good. The list of links works. However, there is a weakness in our
+code. If we add, remove, or rearrange the pages in our website, we need to
+manually adjust the ``li`` elements in ``base.html``. It would be better if the
+size and order of the list automatically updates when we make a change.
 
-Change to a ``select`` Menu
----------------------------
+Fortunately, we make this happen by adding a ``for`` loop to the base template.
+Since each link requires two pieces of data (an ``href`` value and the link
+text), we have a few options for feeding this information from Python to the
+templates. Three possibilities are a list of lists, a dictionary, or an object
+created from a user-defined class. (There are other choices as well).
 
-Lorem ipsum...
+In this case, we will use a dictionary.
 
-This will keep the size of the menu consistent as our website grows!
+Update ``main.py``
+^^^^^^^^^^^^^^^^^^
+
+#. Near the top of the code in ``main.py``, define a dictionary called
+   ``navigation``.
+#. Add one key/value pair for each page in your website. The *key* will be the
+   text for the link. The *value* will be the path to that page.
+
+   .. sourcecode:: Python
+      :lineno-start: 3
+
+      app = Flask(__name__)
+      app.config['DEBUG'] = True
+
+      navigation = {
+         'Pizza Toppings Form': '/',
+         'Second Page': '/second'
+      }
+   
+#. Include the ``navigation`` dictionary as an argument in each
+   ``render_template()`` function.
+
+   .. sourcecode:: Python
+
+      return render_template('template_name', navigation = navigation, ...)
+
+Update ``base.html``
+^^^^^^^^^^^^^^^^^^^^
+
+Jinja2 uses the same syntax as Python to loop through a dictionary
+:ref:`by key/value paris <key-value-iteration>`.
+
+#. Replace the ``li`` items in the list with a loop:
+
+   .. sourcecode:: html
+      :lineno-start: 15
+
+      <nav>
+         <h3>Page Navigation</h3>
+         <ul>
+            {% for (text, path) in navigation.items() %}
+               <li><a href={{path}}>{{text}}</a></li>
+            {% endfor %}
+         </ul>
+      </nav>
+
+#. Each time the loops runs, ``text`` is assigned the next key in the
+   dictionary. ``path`` takes the value of that key.
+#. Save your work, then refresh the tab in the browser. Test to make sure both
+   links still work.
+
+.. admonition:: Try It!
+
+   With the loop in place, changes made to ``navigation`` will appear on all
+   pages that extend ``base.html``. Test this out!
+
+   #. Try rearranging the order of the key/value pairs in ``navigation``.
+   #. Add a third page to the website. Include a key/value pair for the page in
+      the ``navigation`` dictionary.
+
+A Dropdown Menu
+---------------
+
+As a website grows, the navigation menu requires more space on the page. To
+keep the layout of their pages neat and consistent, web developers often use
+features that hide the menu until a user clicks to reveal it.
+
+   [IMAGE HERE...]
+
+While not as fancy, we can do something similar with HTML tags.
 
 Navigation Bar and Other Options
 --------------------------------
