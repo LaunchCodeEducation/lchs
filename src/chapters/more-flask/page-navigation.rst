@@ -154,30 +154,123 @@ A Dropdown Menu
 ---------------
 
 As a website grows, the navigation menu requires more space on the page. To
-keep the layout of their pages neat and consistent, web developers often use
-features that hide the menu until a user clicks to reveal it.
+keep their layout neat and consistent, web developers often use features that
+hide the menu until a user reveals it.
 
-   [IMAGE HERE...]
+.. figure:: figures/dropdown-menu.png
+   :alt: A dropdown menu appears when the cursor hovers over a heading.
+   :width: 80%
 
-While not as fancy, we can do something similar with HTML tags.
+   Different menu items appear when the user hovers over a each heading.
+
+While it won't be as fancy as the image, we can add some CSS rules to make our
+own dropdown menu. It will appear when the user moves their pointer over the
+``Page Navigation`` heading.
+
+#. First, add the following ``class`` attributes to the ``<nav>``, ``<h3>``,
+   and ``<ul>`` tags:
+
+   .. sourcecode:: html
+      :lineno-start: 15
+
+      <nav class="dropdown">
+         <h3 class="droptitle">Page Navigation</h3>
+         <ul class="dropdown-content">
+            {% for (text, path) in navigation.items() %}
+               <li><a href={{path}}>{{text}}</a></li>
+            {% endfor %}
+         </ul>
+      </nav>
+   
+#. Next, add the following class selectors to ``style.css``. The explanation
+   for how the code works follows this section.
+
+   .. sourcecode:: CSS
+      :linenos:
+
+      .dropdown {
+         position: relative;
+      }
+
+      .droptitle {
+         margin-bottom: 0px;
+      }
+
+      .dropdown-content {
+         display: none;  /* Hides content */
+         position: absolute;
+         margin-top: 0px;
+         background-color: white;
+         width: 100%;
+         border: 1px solid lightgray;
+         padding: 10px 15px;
+      }
+
+      .dropdown:hover .dropdown-content {
+         display: block;  /* Displays content */
+      }
+
+#. Save, then use *Shift + Refresh* or *Control + Refresh* to apply the CSS
+   changes in the browser. Move the cursor over the heading to test the code.
+
+   .. figure:: figures/css-dropdown.png
+      :alt: A dropdown menu showing a 3-item unordered list.
+      :width: 50%
+
+      Yay! A working dropdown menu!
+
+CSS Breakdown
+^^^^^^^^^^^^^
+
+Let's take a look at how the CSS rules make a working dropdown.
+
+#. **Line 2**: ``position: relative`` makes the elements inside the
+   ``<nav></nav>`` tags pair up with each other. The ``h3`` comes first, with
+   the ``ul`` right below it.
+#. **Line 11**: When the dropdown items appear, ``position: absolute`` makes
+   them *overlap* other content instead of pushing it further down the page.
+   The revealed menu covers up other text and images. If we set this value to
+   ``relative``, then anything below the menu would shift position when it
+   opens.
+#. **Lines 6 & 12**: For dropdown menus, we need to be careful with margins. If
+   the gap between the label and the choices is too large, then the content
+   will disappear when the user moves their mouse to make a selection! To
+   prevent this, we set the *bottom* margin of ``droptitle`` to zero pixels.
+   Similarly, we set the *top* margin of ``dropdown-content`` to ``0px``.
+#. **Lines 13-16**: These properties control the appearance of the menu.
+   
+   a. Setting a ``background-color`` hides any content that the menu overlaps
+      when it opens.
+   b. ``width: 100%`` makes the menu take up the same horizontal space as
+      its container (``nav``).
+   c. ``border`` and ``padding`` make the menu area and text more obvious.
+
+#. **Line 10**: ``display: none`` hides the element from the screen. The menu
+   items are still on the page, but they do not appear in the view.
+#. **Lines 19-21**: ``.dropdown:hover .dropdown-content`` controls the
+   operation of the menu. In the browser, when the pointer moves over the
+   ``nav`` element, ``dropdown:hover`` becomes ``True``. When this happens,
+   ``display: block`` is applied to the ``dropdown-content`` class. This
+   overrules the ``display: none`` statement in line 10, and the menu appears
+   on the page! When the pointer moves away from the menu, ``dropdown:hover``
+   becomes ``False``, and ``display: none`` is reapplied.
+
+.. admonition:: Tip
+
+   You can explore other dropdown styling options at
+   `W3Schools <https://www.w3schools.com/css/css_dropdowns.asp>`__.
 
 Navigation Bar and Other Options
 --------------------------------
 
-Check Bootstrap (navbar option)... Down the rabbit hole!
-https://getbootstrap.com/docs/5.0/components/navs-tabs/
+There are LOTS of ways to create smooth website navigation. While we won't dive
+any deeper into this topic, here are a few helpful resources you can explore on
+your own.
 
-GIF of Next and Back buttons...
+**Down the Rabbit Hole**:
 
-This is beyond the scope of this course...
-
-Links to useful resources?
-
-https://medium.com/better-programming/building-your-first-website-with-flask-part-2-6324721be2ae
-
-https://flask-menu.readthedocs.io/en/latest/
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...
+#. `CSS Navbar at W3Schools <https://www.w3schools.com/css/css_navbar.asp>`__.
+#. ``Navs & tabs``, ``Navbar``, and ``Pagination`` components at
+   `Bootstrap <https://getbootstrap.com/docs/5.0/components/navs-tabs/>`__.
+#. `Flask-Menu <https://flask-menu.readthedocs.io/en/latest/>`__ is an
+   extension that adds support for generating menus.
