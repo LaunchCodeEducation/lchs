@@ -1,60 +1,49 @@
-Improve the User Experience (UX)
-================================
+The User Experience
+===================
 
 .. index:: ! UI, ! UX
 
 The term **user interface** (UI) refers to the buttons, windows, icons, etc.
-that a human interacts with when they use a device. For the form we've been
-using throughout this chapter, the UI includes the four input fields and the
-*Submit* button.
+that a human interacts with when they use a device.
 
 .. figure:: figures/ui-ux.png
    :alt: Three different user interfaces: a CLI, a GUI, and a smartphone home screen.
+   :width: 80%
 
    Three UI examples: a command line prompt, a clickable file tree, and a touch-sensitive home screen.
 
 **User experience** (UX) refers to the emotions a person feels as they interact
-with an application or device. The better we make the UX, the more likely
-people are to keep using our product.
+with an application or device. Good developers pay close attention to both UI
+and UX. The better the experience, the more likely people are to keep using
+the products.
 
-On this page, we will keep the UI the same (4 fields plus a button). However,
-we can do a few things to improve a user's experience with the form. If they
-submit invalid information, we want the following to happen:
+Often, UI and UX go hand in hand. However, they are NOT the same thing. For
+example, here's a relatively simple user interface:
 
-#. The form page will reload,
-#. A message will appear explaining what went wrong,
-#. Valid entries will remain in the input fields,
-#. The user can re-enter information and submit again.
+   [TP in holder image]
 
-Render the Form Again
----------------------
+(Caption: UI is how the user interacts with the device.)
 
-Currently, when we click *Submit* on our form, the ``action`` attribute sends
-the data to the ``/results`` route:
+Now take that same UI and apply it in two slightly different ways. This is an
+example of user experience:
 
-.. sourcecode:: HTML
-   :lineno-start: 9
+   [TP holder in and out of reach]
 
-   <form action="/results" method="POST">
+(Caption: UX is how the user feels about using the device.)
 
-Display Error Messages
-----------------------
+Citations:
 
-Lorem ipsum...
+https://www.dortechdirect.co.uk/blog/18-building-design-fails/
 
-Keep Valid Data Intact
-----------------------
-
-Lorem ipsum...
-
-Redirect on Success
--------------------
-
-Lorem ipsum...
-
-``render`` vs. ``return redirect``...
+https://www.usertesting.com/blog/ui-vs-ux
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+Which ones are UX and which ones are UI fails?
+
+Pull door...
+
+Train tracks (2)...
+
+TP humor (2)...

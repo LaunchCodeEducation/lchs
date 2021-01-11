@@ -216,8 +216,8 @@ empty.
 Bonus Mission
 -------------
 
-The Caesar Cipher is pretty easy to decode. All we need to do take the coded
-text try different shift values until we see a clear result.
+The Caesar Cipher is pretty easy to decode. All we need to do is take the
+message and apply different shift values until we see a clear result.
 
 To bump up the security of the cipher, we can add a *keyword* to the alphabet
 string. Instead of using ``"abcdef..."``, we move selected letters to the start

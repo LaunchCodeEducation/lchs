@@ -71,6 +71,8 @@ information will be valid or safe. We must *always* check the data to make sure
 it will work with our program. By combining client and server-side validation,
 we decrease the chances that our program will crash when it receives bad data.
 
+.. _server-side-validation:
+
 Server-Side Validation
 ----------------------
 
