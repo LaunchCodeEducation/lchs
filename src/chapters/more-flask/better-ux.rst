@@ -70,56 +70,57 @@ a video to get you started.
 Check Your Understanding
 ------------------------
 
-Each of the following images gives an example of a poor UX. However, the UI
-might be just fine. Study each picture and decide if the UX problem comes from
-a poor user interface, or a faulty implementation of a good interface.
+Each of the following images gives an example of a poor user experience.
+However, the user interface itself might be just fine.
 
 .. list-table::
+   :align: center
 
    * - .. figure:: figures/door-pull.jpg
-          :alt: Door pull
+          :alt: Door pull 
      - .. figure:: figures/stairs-2.jpg
           :alt: Stairs 2
-     - .. figure:: figures/train-tracks-2.jpg
-          :alt: Train tracks 2
-   * - This is an example of:
-
-       #. a poor user interface.
-       #. a bad use of a working UI.
+     - .. figure:: figures/br-ux-1.png
+          :alt: Bathroom 1
+   * - Figure 1
      - Figure 2
      - Figure 3
-   * - .. figure:: figures/br-ux-1.png
-          :alt: Bathroom 1
-     - [IMAGE HERE]
+   * - .. figure:: figures/train-tracks-2.jpg
+          :alt: Train tracks 2
+     - .. todo:: Add image here (MT holder).
      - .. figure:: figures/train-tracks-1.jpg
           :alt: Train tracks 1
    * - Figure 4
      - Figure 5
      - Figure 6
 
-.. list-table::
+.. admonition:: Question
 
-   * - .. figure:: figures/door-pull.jpg
-          :alt: Door pull
-          :width: 80%
-     - This is an example of:
+   Study each picture and decide if the UX problem comes from a poor user
+   interface or a faulty implementation of a working UI.
 
-       #. a poor user interface.
-       #. a bad use of a working UI.
-   * - .. figure:: figures/stairs.jpg
-          :alt: Stairs
-          :width: 80%
-     - Figure 2
-   * - .. figure:: figures/train-tracks-2.jpg
-          :alt: Train tracks 2
-          :width: 80%
-     - Figure 3
-   * - .. figure:: figures/br-ux-1.png
-          :alt: Bathroom 1
-          :width: 80%
-     - Figure 4
-   * - [IMAGE HERE]
-     - Figure 5
-   * - .. figure:: figures/train-tracks-1.jpg
-          :alt: Train tracks 1
-     - Figure 6
+   Once you make your decision, click on the options below to check your
+   thinking.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li onclick="revealAnswer('resultA', 'Poor UI')">Figure 1 <span id="resultA"></span></li>
+         <li onclick="revealAnswer('resultB', 'Working UI, faulty implementation')">Figure 2 <span id="resultB"></span></li>
+         <li onclick="revealAnswer('resultC', 'Poor UI')">Figure 3 <span id="resultC"></span></li>
+         <li onclick="revealAnswer('resultD', 'Poor UI')">Figure 4 <span id="resultD"></span></li>
+         <li onclick="revealAnswer('resultE', 'Working UI, faulty implementation')">Figure 5 <span id="resultE"></span></li>
+         <li onclick="revealAnswer('resultF', 'Working UI, faulty implementation')">Figure 6 <span id="resultF"></span></li>
+      </ol>
+
+.. Answers: Poor UI = a, c, d. Working UI, poor implementation = b, e, f.
+
+.. todo:: Evaluate alternative images for Figure 2.
+
+   .. list-table::
+      :align: center
+
+      * - .. figure:: figures/stairs.jpg
+            :alt: Stairs 1
+        - .. figure:: figures/fire-escape.jpg
+            :alt: Fire escape
