@@ -21,5 +21,5 @@ Students will:
 - Create Jinja2 templates that use **base templates** and **content blocks**.
   (done)
 - Add links to related templates to allow users to easily navigate between
-  them.
+  them. (done)
 - Return a ``redirect`` response.
