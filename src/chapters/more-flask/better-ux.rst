@@ -42,7 +42,7 @@ experience. Can you identify which setup provides the better UX?
 
    UX deals with how the user feels when interacting with the device.
 
-Flask gives us the tools to make a decent UI, like the page navigation menu we
+Flask gives us the tools to make a decent UI, like the navigation menu we
 created on the previous page. However, a solid UI doesn't guarantee a good UX.
 For example, the navigation menu appears below any HTML inserted into the base
 template. Since each page has a different amount of content, the location of
@@ -107,4 +107,40 @@ a video to get you started.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Imagine you and your friend invent a new electronic gadget. The two of you
+   build lots of copies in your garage and start sending them to customers.
+   Then you get into an argument. Your friend wants to ship the devices with
+   empty batteries. However, you insist that they should arrive fully charged.
+
+   Is this argument about UI or UX?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> UX</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> UI</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Both</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer: a
+
+.. admonition:: Question
+
+   Imagine you are building a webpage for your company and need to decide on
+   the color and placement of three buttons.
+
+   Is this a UI or UX decision?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> UX</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> UI</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Both</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer: c
