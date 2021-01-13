@@ -67,10 +67,10 @@ A poor interface often leads directly to a bad user experience.
 On the other hand, a good UI may lead to an excellent, average, or poor UX. For
 example, the `Netflix <https://www.netflix.com/>`__ streaming service includes
 an autoplay feature. When users hover over a title in a list of movies, after a
-moment a trailer starts to play. Some users like this feature, but others find
-it incredibly annoying. Users who *just want to read the description* of the
-movie find the preview distracting, especially if they want to avoid making
-noise in school or at work.
+moment a trailer starts to play. Some people like this feature, but others find
+it incredibly annoying. Users who just want to read the description for a movie
+might find the preview distracting (or too noisy if they're in school or at
+work).
 
 .. admonition:: Try It!
 
@@ -78,20 +78,21 @@ noise in school or at work.
    As you explore, evaluate your own user experience. Consider:
    
    - Does the user interface work? Is it easy to use?
-   - Was the design of the webpage appealing?
+   - Is the design of the webpage appealing?
    - Were you able to complete the task? How long did it take?
    - Would you use the website again, or would you look for a different option?
-   - What features on the website did you like? Did anything annoy you?
+   - What features on the website do you like? Does anything annoy you?
 
    **Links**:
 
    #. `IRS website <https://www.irs.gov/>`__: After buying an electric car,
-      some owners can claim a tax credit. Find the form required to claim this
-      credit (PDF format).
-   #. Recipe (good site and bad site) - Find ingredients and steps required to
-      bake each of these cakes!
-   #. Wikipedia - find the date of the last manned moon landing
-      (https://en.wikipedia.org/wiki/Main_Page)...
+      some owners can receive a break on their taxes. Find the form required to
+      claim this tax credit (PDF format).
+   #. `Chocolate Cake (Cafe Delites) <https://cafedelites.com/chocolate-cake/>`__
+      vs. `One Bowl Chocolate Cake (Allrecipes) <https://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/>`__:
+      Find the list of ingredients and the steps required to bake each cake.
+   #. `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`__: Find the date of
+      the last manned moon landing.
 
 Other Reading
 -------------
