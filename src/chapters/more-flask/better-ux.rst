@@ -40,7 +40,7 @@ experience. Can you identify which setup provides the better UX?
    :alt: Image of a roll of toilet paper in and out of reach.
    :width: 80%
 
-   UX deals with how the user feels about using the device.
+   UX deals with how the user feels when interacting with the device.
 
 Flask gives us the tools to make a decent UI, like the page navigation menu we
 created on the previous page. However, a solid UI doesn't guarantee a good UX.
@@ -54,8 +54,44 @@ the menu changes after we click a link. This provides a poor UX.
    menu? Try out a few ideas, then demo them for your teacher and/or
    classmates.
 
-A poor user interface often leads directly to a bad user experience. However, a
-good UI may lead to an excellent, good, average, or poor UX.
+Explore UX
+----------
+
+A poor interface often leads directly to a bad user experience.
+
+.. figure:: figures/poor-ux.png
+   :alt: Examples of poor UI: No pull handles, stairs into wall, no space for opening door.
+
+   Three examples of a poor user interface.
+
+On the other hand, a good UI may lead to an excellent, average, or poor UX. For
+example, the `Netflix <https://www.netflix.com/>`__ streaming service includes
+an autoplay feature. When users hover over a title in a list of movies, after a
+moment a trailer starts to play. Some users like this feature, but others find
+it incredibly annoying. Users who *just want to read the description* of the
+movie find the preview distracting, especially if they want to avoid making
+noise in school or at work.
+
+.. admonition:: Try It!
+
+   Follow each of the links below, and try to complete the task described.
+   As you explore, evaluate your own user experience. Consider:
+   
+   - Does the user interface work? Is it easy to use?
+   - Was the design of the webpage appealing?
+   - Were you able to complete the task? How long did it take?
+   - Would you use the website again, or would you look for a different option?
+   - What features on the website did you like? Did anything annoy you?
+
+   **Links**:
+
+   #. `IRS website <https://www.irs.gov/>`__: After buying an electric car,
+      some owners can claim a tax credit. Find the form required to claim this
+      credit (PDF format).
+   #. Recipe (good site and bad site) - Find ingredients and steps required to
+      bake each of these cakes!
+   #. Wikipedia - find the date of the last manned moon landing
+      (https://en.wikipedia.org/wiki/Main_Page)...
 
 Other Reading
 -------------
@@ -70,57 +106,4 @@ a video to get you started.
 Check Your Understanding
 ------------------------
 
-Each of the following images gives an example of a poor user experience.
-However, the user interface itself might be just fine.
-
-.. list-table::
-   :align: center
-
-   * - .. figure:: figures/door-pull.jpg
-          :alt: Door pull 
-     - .. figure:: figures/stairs-2.jpg
-          :alt: Stairs 2
-     - .. figure:: figures/br-ux-1.png
-          :alt: Bathroom 1
-   * - Figure 1
-     - Figure 2
-     - Figure 3
-   * - .. figure:: figures/train-tracks-2.jpg
-          :alt: Train tracks 2
-     - .. todo:: Add image here (MT holder).
-     - .. figure:: figures/train-tracks-1.jpg
-          :alt: Train tracks 1
-   * - Figure 4
-     - Figure 5
-     - Figure 6
-
-.. admonition:: Question
-
-   Study each picture and decide if the UX problem comes from a poor user
-   interface or a faulty implementation of a working UI.
-
-   Once you make your decision, click on the options below to check your
-   thinking.
-
-   .. raw:: html
-
-      <ol type="a">
-         <li onclick="revealAnswer('resultA', 'Poor UI')">Figure 1 <span id="resultA"></span></li>
-         <li onclick="revealAnswer('resultB', 'Working UI, faulty implementation')">Figure 2 <span id="resultB"></span></li>
-         <li onclick="revealAnswer('resultC', 'Poor UI')">Figure 3 <span id="resultC"></span></li>
-         <li onclick="revealAnswer('resultD', 'Poor UI')">Figure 4 <span id="resultD"></span></li>
-         <li onclick="revealAnswer('resultE', 'Working UI, faulty implementation')">Figure 5 <span id="resultE"></span></li>
-         <li onclick="revealAnswer('resultF', 'Working UI, faulty implementation')">Figure 6 <span id="resultF"></span></li>
-      </ol>
-
-.. Answers: Poor UI = a, c, d. Working UI, poor implementation = b, e, f.
-
-.. todo:: Evaluate alternative images for Figure 2.
-
-   .. list-table::
-      :align: center
-
-      * - .. figure:: figures/stairs.jpg
-            :alt: Stairs 1
-        - .. figure:: figures/fire-escape.jpg
-            :alt: Fire escape
+Lorem ipsum...
