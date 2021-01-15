@@ -1,34 +1,48 @@
-Exercises: Flask
-================
+Exercises: Logic Templates
+==========================
 
-Possible exercise ideas:
+In this set of exercises, you will add some logic to a Jinja2 template.
 
-#. Create a task list. Students must create code to display the list
-   (single page), add items to it, and remove items.
-#. Add conditionals to a template to display different content based on answers
-   to questions?
+Setup
+-----
 
-   a. Same page, divided into thirds/fourths?
-   b. Choose Your Own Adventure update? Move saved console code to web display?
+#. Open a new window in Visual Studio Code.
+#. Use the *File* menu to open your ``local_practice`` directory.
+#. In your browser, navigate to this GitHub repository [INSERT LINK]. Click
+   the green *Clone* button and copy the URL.
+#. In the terminal, enter the ``git clone repo_address`` command. Be sure to
+   replace ``repo_address`` with the URL you copied in step 2.
 
-      - For loop to display choices?
+[INSERT screenshot of the file tree here.]
 
-#. Update pizza topping website to display running total for selected options?
-   Second page for beverage choices?
-#. Design a form? (Loop to populate it with input boxes. How to bring in
-   conditionals?)
-#. Progressive-content webpage (with form). As user submits the form, display
-   different text?
-#. Follow decision tree: Show graphic (one of several possible) with current
-   location marked. Display form with T/F choices (loop). Update image, text,
-   and form(?) with each submission. Will need to provide working Python code?
-   Tasks = applying Jinja2 logic (loop, if/else, extend).
+Shouldn't need to modify the logic in ``main.py``...
 
-   a. Clone starter code from GitHub.
-   b. Launch main.py.
-   c. Extend base.
-   d. Replace input box HTML with Jinja2 loop.
-   e. Wrap image HTML inside Jinja2 conditional.
-   f. Add a *Reset* and/or *Up One Level* button? Have these in the starter
-      code and ask the students to add a conditional (buttons should NOT
-      appear initially).
+Part A: Extend from ``base.html``
+---------------------------------
+
+Extend base template into ``grid.html``...
+
+Part B: Add a Loop
+------------------
+
+Launch main.py and refresh a few times...
+
+Note that the direction choices in the form are always LRUD. These need to
+change depending on which box is the current location...
+
+Describe the ``choices`` dictionary...
+
+In the grid.html template, add a loop:
+
+#. Iterate by key/value pairs.
+#. Key = label text for the radio button.
+#. Value = index for the destination box.
+
+Change ``GET`` to ``POST``...
+
+Part C: Add a Conditional
+-------------------------
+
+Note how the path record changes after each direction choice is made...
+
+We want to display a different 
