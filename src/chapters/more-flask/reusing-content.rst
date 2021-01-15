@@ -107,6 +107,8 @@ instead of data values.
 
 The base template is now ready to be used.
 
+.. _extend-base:
+
 Extending From the Base
 -----------------------
 

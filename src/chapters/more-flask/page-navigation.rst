@@ -116,6 +116,8 @@ Update ``main.py``
 
       return render_template('template_name', navigation = navigation, ...)
 
+.. _jinja2-dictionary-iteration:
+
 Update ``base.html``
 ^^^^^^^^^^^^^^^^^^^^
 
