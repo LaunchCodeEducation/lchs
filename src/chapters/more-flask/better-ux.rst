@@ -43,15 +43,16 @@ experience. Can you identify which setup provides the better UX?
    UX deals with how the user feels when interacting with the device.
 
 Flask gives us the tools to make a decent UI, like the navigation menu we
-created on the previous page. However, a solid UI doesn't guarantee a good UX.
-For example, the navigation menu appears below any HTML inserted into the base
-template. Since each page has a different amount of content, the location of
-the menu changes after we click a link. This provides a poor UX.
+created on the previous page. However, besides making sure that the links all
+work, we must also think about the placement of the menu on the page. Right
+now, the menu appears below any HTML inserted into the base template. Since
+each page has a different amount of content, the location of the menu changes
+after we click a link. This weakens our UI design, which affects the UX.
 
 .. admonition:: Try It!
 
    What steps can we take to improve the users' experience with the navigation
-   menu? Try out a few ideas, then demo them for your teacher and/or
+   menu? Try out a few ideas, then demo your favorite for your teacher and/or
    classmates.
 
 Explore UX
