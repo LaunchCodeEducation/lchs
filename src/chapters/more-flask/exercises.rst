@@ -14,10 +14,11 @@ Setup
 
 #. Open a new window in Visual Studio Code.
 #. Use the *File* menu to open your ``local_practice`` directory.
-#. In your browser, navigate to this GitHub repository [INSERT LINK]. Click
-   the green *Clone* button and copy the URL.
+#. In your browser, navigate to this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS_flask_logic>`__.
+   Click the green *Code* button and copy the URL shown in the dialog box.
 
-   [INSERT SCREENSHOT HERE]
+   .. figure:: figures/clone-starter-code.png
+      :alt: Clicking the Code button reveals the URL for the repository.
 
 #. In the terminal, enter the command ``git clone repo_address``. Be sure to
    replace ``repo_address`` with the URL you copied in step 3.
@@ -83,15 +84,15 @@ work.
 Part B: Add a Loop
 ------------------
 
-For this web application, users submit directions with the form on the right
-side of the page. With each entry, the box highlighted in the diagram will
-change. Unfortunately, the form does not work yet.
+For this web application, users enter directions with the form on the right
+side of the page. With each entry, the box highlighted in the diagram changes.
+Unfortunately, the form does not work yet.
 
 Click the *Refresh* button a few times in the browser. Notice that the
-highlighted box in the image changes. However, the direction choices in the
-form always remain ``Left``, ``Right``, ``Up``, and ``Down``. Your next task is
-to update ``grid.html`` to make these options change based on which box is
-active. For example, if box ``0`` is highlighted, the form should only show
+highlighted box in the image changes. However, the choices in the form always
+remain ``Left``, ``Right``, ``Up``, and ``Down``. Your next task is to update
+``grid.html`` to make the options change based on the selected box. For
+example, if box ``0`` is highlighted, the form should only show choices for
 ``Right`` and ``Down``. For box ``8``, the options should be ``Left`` and
 ``Up``.
 
@@ -114,12 +115,12 @@ Return to ``grid.html`` in VS Code.
 
       <label><input type="radio" name="choice" value={{value}} required />{{direction}}</label>
 
-#. Remember the format for the ``choices`` dictionary. Each *key* is a
-   direction label for a radio button. The *value* is the number of the target
-   box in the image.
+#. Remember the format for the ``choices`` dictionary. Each *key* is the
+   direction label for a radio button. Each *value* is the number of the box in
+   that direction.
 #. Add a ``for`` loop that :ref:`iterates over the key/value pairs <jinja2-dictionary-iteration>`
-   in the ``choices`` dictionary. The ``label`` element should be the only
-   thing inside the body of the loop.
+   in the ``choices`` dictionary. The ``label/input`` element should be the
+   only thing inside the body of the loop.
 #. Save your work, then reload the page in the browser.
 #. Test your work!
 
@@ -128,14 +129,59 @@ Return to ``grid.html`` in VS Code.
    b. Select an option in the form and submit it. Do this several times. As
       long as you didn't change anything in ``main.py``, this should work. If
       an error occurs, check your code in ``grid.html``.
-   c. Notice that the ``Path`` element below the image updates each time you
-      submit the form.
+   c. Notice that below the image, the ``Path followed`` text updates each time
+      you submit the form.
 
 Before you move on, take a moment to save and commit your work.
 
 Part C: Add a Conditional
 -------------------------
 
-Note how the path record changes after each direction choice is made...
+Each time a user submits the form, a step gets added to the ``Path Followed``
+text. Right now, there is no limit to how long this path can grow. However, by
+adding a conditional to the ``grid.html`` template, you can require users to
+restart after taking a certain number of steps. The instructions below set the
+limit at five steps, but you can choose any number you want.
 
-We want to display a different 
+To keep track of the number of steps, use the string assigned to the the
+``steps`` variable. A five-step sequence will have a format similar to
+``6-3-5-2-5``. There are a number of ways to check if the string shows 5 or
+more steps. We'll leave it to you to decide how to do this.
+
+#. After the user submits the form five times, the webpage should display a
+   different form next to the image:
+
+   .. sourcecode:: html
+
+      <p>You've taken five steps. Time to start over!</p>
+      <form action="/" method="GET">
+         <button class="restart">Restart!</button>
+      </form>
+
+   Clicking the *Restart* button will cause the page to reset.
+#. Add an ``if/else`` block to the template:
+
+   .. sourcecode:: html
+      :lineno-start: 9
+
+      <section class="choice_form">
+         <h2>Heading Text Here</h2>
+         {% if condition %}
+            <!-- Restart form... -->
+         {% else %}
+            <!-- Direction form... -->
+         {% endif %}
+      </section>
+
+   ``condition`` is the boolean expression that checks how many steps the user
+   has taken so far.
+#. The code block for ``<!-- Direction form... -->`` is the HTML you created in
+   Part B.
+#. The code block for ``<!-- Restart form... -->`` is the HTML shows in step 1.
+
+.. admonition:: Note
+
+   The steps above describe ONE way to accomplish the task, not the ONLY way.
+   Feel free to explore different methods to reset the page. For example, you
+   could use a link element (``<a></a>``) to restore the page instead of a
+   ``form``.

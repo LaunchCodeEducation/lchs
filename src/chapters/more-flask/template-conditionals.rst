@@ -122,14 +122,27 @@ submits the form. Make this happen by adding a conditional to the template!
 #. Just above the ``<section>`` tag, add the statement
    ``{% if choices|length > 0 %}``. Just after the ``</section>`` closing tag,
    finish the conditional with ``{% endif %}``.
+
+   .. sourcecode:: html
+      :lineno-start: 21
+
+      {% if choices|length > 0 %}
+         <section>
+            <h2>Your Choices</h2>
+            <ul>
+               {% for choice in choices %}
+                  <li>{{choice}}</li>
+               {% endfor %}
+            </ul>
+         </section>
+      {% endif %}
+
 #. Save, then reload the page. Try submitting the form with one or more boxes
    checked. Also, submit the form with nothing selected. You should see the
    heading and list appear, update, or disappear from the screen.
 #. You can also *nest* conditionals inside each other. Use this to display
    a different message if the user goes overboard with their number of
-   toppings.
-
-   Wrap the unordered list in a second conditional:
+   toppings. Modify your code as follows:
 
    .. sourcecode:: html
       :lineno-start: 20
@@ -141,9 +154,9 @@ submits the form. Make this happen by adding a conditional to the template!
             <p>Sorry, please choose 4 or fewer toppings.</p>
          {% else %}         
             <ul>
-            {% for option in choices %}
-               <li>{{option}}</li>
-            {% endfor %}
+               {% for choice in choices %}
+                  <li>{{choice}}</li>
+               {% endfor %}
             </ul>
          {% endif %}
       </section>
