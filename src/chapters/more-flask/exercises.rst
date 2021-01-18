@@ -1,13 +1,11 @@
 Exercises: Logic In Templates
 =============================
 
-In this set of exercises, you will add some logic to a Jinja2 template. You
-will begin by cloning some starter code from a GitHub repository. This will
-include a ``main.py`` program, but you should not need to modify the Python
-code to complete any of the tasks.
-
-However, after you finish the exercises, feel free to explore ``main.py`` to
-figure out what its doing!
+In this set of exercises, you will add logic to a Jinja2 template. You will
+begin by cloning some starter code from a GitHub repository. This will include
+a ``main.py`` program, but you won't need to modify the Python code to complete
+any of the tasks. However, after you finish the exercises, feel free to explore
+``main.py`` to figure out what its doing!
 
 Setup
 -----
@@ -24,9 +22,9 @@ Setup
    replace ``repo_address`` with the URL you copied in step 3.
 #. Return to the *File* menu and open the ``LCHS_flask_logic`` folder you just
    cloned.
-#. Open the terminal panel and create a new virtual environment for the
-   project, then activate it. You can name your virtual environment whatever
-   you want, but the example below uses ``flask-env``.
+#. In the terminal panel, create a new virtual environment for the project,
+   then activate it. You can name your virtual environment whatever you want,
+   but the example below uses ``flask-env``.
 
    .. sourcecode:: bash
 
@@ -55,13 +53,14 @@ Part A: Extend from ``base.html``
 ---------------------------------
 
 Open the ``main.py`` file in VS Code and examine the ``show_grid()`` function.
-Notice that ``render_template()`` points to the ``grid.html`` template.
+Notice that on line 47, ``render_template()`` points to the ``grid.html``
+template.
 
 Let's run the web application and see what this template looks like:
 
 #. Make sure ``flask-env`` is active, then launch ``main.py``.
-#. Open the web application in the browser. The webpage looks pretty bad right
-   now:
+#. Open the web application in the browser. The home page looks pretty bad
+   right now:
 
    .. figure:: figures/exercises-start.png
       :alt: Disorganized webpage produced by the starter code.
@@ -69,7 +68,7 @@ Let's run the web application and see what this template looks like:
 
 #. Open ``grid.html`` in VS Code. The file is missing some boilerplate code
    and a link to the CSS stylesheet. No wonder the page looks so disorganized!
-#. The missing code is saved in ``base.html``. Add the three required
+#. The missing code is saved in ``base.html``. Add the three required Jinja2
    statements to ``grid.html`` to :ref:`extend the base template <extend-base>`.
 #. Save your work, then refresh the tab in the browser. The page should look
    much better now.
@@ -78,28 +77,46 @@ Let's run the web application and see what this template looks like:
       :alt: Webpage produced after extending the base template.
       :width: 80%
 
+#. Finally, replace ``Heading Text Here`` with something more descriptive.
+
 Before you move on, use ``git status/git add ./git commit -m`` to commit your
 work.
 
 Part B: Add a Loop
 ------------------
 
-For this web application, users enter directions with the form on the right
-side of the page. With each entry, the box highlighted in the diagram changes.
-Unfortunately, the form does not work yet.
+For this web application, users choose directions with the form on the right
+side of the page. After every choice, the box highlighted in the diagram
+changes. Unfortunately, the form does not work yet.
 
 Click the *Refresh* button a few times in the browser. Notice that the
 highlighted box in the image changes. However, the choices in the form always
 remain ``Left``, ``Right``, ``Up``, and ``Down``. Your next task is to update
-``grid.html`` to make the options change based on the selected box. For
-example, if box ``0`` is highlighted, the form should only show choices for
-``Right`` and ``Down``. For box ``8``, the options should be ``Left`` and
-``Up``.
+``grid.html`` to make the options fit the selected box. For example, if box
+``0`` is highlighted, the form should only show choices for ``Right`` and
+``Down``. For box ``8``, the options should be ``Left`` and ``Up``. For box
+``1``, all four directions should appear, etc.
 
 The ``choices`` Dictionary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Describe the ``choices`` dictionary...
+The ``main.py`` file contains a function called ``fill_choices()``. It
+determines the correct direction choices for any box in the grid. Take a
+moment to explore the statements in ``fill_choices()``. You don't need to
+change anything, but note how the code is organized.
+
+#. The ``box_num`` parameter receives an integer value. This will be the number
+   for the highlighted box in the grid.
+#. The ``options`` dictionary stores the direction choices allowed for the box.
+   Each key in the dictionary matches a possible direction (``Left``,
+   ``Right``, ``Up``, or ``Down``). The value for a key is the number of the
+   next box in that direction.
+#. The four ``if`` blocks in lines 12-23 determine which key/value pairs are
+   added to the dictionary.
+
+``fill_choices()`` returns the completed dictionary. This gets assigned to the
+``choices`` variable inside the ``show_grid()`` function. ``choices`` then gets
+passed as an argument inside ``render_template()``.
 
 Update ``grid.html``
 ^^^^^^^^^^^^^^^^^^^^
@@ -108,7 +125,8 @@ Return to ``grid.html`` in VS Code.
 
 #. Remove three of the four ``label`` elements in the form.
 #. In the one that remains, use placeholders for the label text and the
-   ``value`` attribute
+   ``value`` attribute. Also, include the ``required`` attribute to prevent the
+   users from submitting an empty form.
 
    .. sourcecode:: html
       :lineno-start: 13
@@ -119,8 +137,8 @@ Return to ``grid.html`` in VS Code.
    direction label for a radio button. Each *value* is the number of the box in
    that direction.
 #. Add a ``for`` loop that :ref:`iterates over the key/value pairs <jinja2-dictionary-iteration>`
-   in the ``choices`` dictionary. The ``label/input`` element should be the
-   only thing inside the body of the loop.
+   in the ``choices`` dictionary. The ``label/input`` code should be the only
+   thing inside the body of the loop.
 #. Save your work, then reload the page in the browser.
 #. Test your work!
 
@@ -137,16 +155,18 @@ Before you move on, take a moment to save and commit your work.
 Part C: Add a Conditional
 -------------------------
 
-Each time a user submits the form, a step gets added to the ``Path Followed``
+Each time a user submits the form, a step gets added to the ``Path followed``
 text. Right now, there is no limit to how long this path can grow. However, by
 adding a conditional to the ``grid.html`` template, you can require users to
 restart after taking a certain number of steps. The instructions below set the
 limit at five steps, but you can choose any number you want.
 
-To keep track of the number of steps, use the string assigned to the the
-``steps`` variable. A five-step sequence will have a format similar to
-``6-3-5-2-5``. There are a number of ways to check if the string shows 5 or
-more steps. We'll leave it to you to decide how to do this.
+.. admonition:: Note
+
+   The steps below describe ONE way to accomplish the task, not the ONLY way.
+   Feel free to explore different methods to reset the page. For example, you
+   could use a link element (``<a></a>``) to restore the page instead of a
+   ``form``.
 
 #. After the user submits the form five times, the webpage should display a
    different form next to the image:
@@ -173,15 +193,28 @@ more steps. We'll leave it to you to decide how to do this.
          {% endif %}
       </section>
 
-   ``condition`` is the boolean expression that checks how many steps the user
-   has taken so far.
-#. The code block for ``<!-- Direction form... -->`` is the HTML you created in
-   Part B.
-#. The code block for ``<!-- Restart form... -->`` is the HTML shows in step 1.
+   a. ``condition`` is the boolean expression that checks how many steps the
+      user has taken so far.
+   b. The code block for ``<!-- Direction form... -->`` is the HTML you created
+      in Part B.
+   c. The code block for ``<!-- Restart form... -->`` is the HTML shown in step
+      1.
 
-.. admonition:: Note
+   .. admonition:: Tip
 
-   The steps above describe ONE way to accomplish the task, not the ONLY way.
-   Feel free to explore different methods to reset the page. For example, you
-   could use a link element (``<a></a>``) to restore the page instead of a
-   ``form``.
+      To keep track of the number of steps, use the string assigned to the the
+      ``steps`` variable. A five-step sequence will look something like
+      ``6-3-5-2-5``. There are many ways to check if the string shows 5 or more
+      steps. We'll leave it to you to decide how to do this in line 11.
+
+#. Save your work, then refresh the page in your browser. Test your code by
+   submitting the form several times. When you reach the step limit, the
+   content on the screen should change.
+
+   .. figure:: figures/step-limit.png
+      :alt: Display an alternate form after 5 steps.
+      :width: 80%
+   
+      After 5 steps, a different form renders on the page.
+
+When done, remember to save and commit your work.

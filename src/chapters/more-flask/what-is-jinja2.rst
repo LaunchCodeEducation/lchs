@@ -43,9 +43,9 @@ This saves us some work by automating part of the validation process.
 Finally, if we have content that needs to appear on multiple pages on our site,
 Jinja2 lets us build one template off of another. For example, maybe we have a
 menu bar or logo that we want to reuse. To keep our work DRY, it makes sense to
-reference one set of code instead of putting identical statements in separate
+reuse one set of code instead of putting identical statements in separate
 files.
 
-Put common code in a single file, then link that file to others. This lets us
-*extend* a standard layout across different pages. We link this base structure
-to more specific code stored in different files.
+The idea is to keep common code in a single file, then link that file to
+others. This lets us *extend* a standard layout across different pages. We link
+a shared base structure to more specific code stored in different files.

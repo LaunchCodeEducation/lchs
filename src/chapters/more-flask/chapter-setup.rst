@@ -8,11 +8,22 @@ along. Follow the instructions below to get started.
    directory called ``flask_logic``.
 #. From the *File* menu, open ``flask_logic`` in your workspace. Initialize 
    the directory as a new Git repository.
-#. Use ``python3 -m venv flask-env`` or ``py -3 -m venv flask-env`` to set up a
-   new virtual environment for the project.
+#. Use the terminal to set up and activate a new virtual environment for the
+   project. This time, we will name the environment ``flask-env``.
+
+   .. sourcecode:: bash
+
+      Mac:
+      $ python3 -m venv flask-env
+      $ . flask-env/bin/activate
+
+      Windows:
+      $ py -3 -m venv flask-env
+      $ . flask-env/Scripts/activate
+
 #. Install Flask with ``pip install flask``.
-#. Use the buttons in the left panel to create the filetree for the project.
-   For now, leave the Python, HTML, and CSS files empty.
+#. Use the buttons in the left panel to add the files and folders shown in the
+   filetree below. For now, leave the Python, HTML, and CSS files empty.
 
    .. figure:: figures/initial-filetree.png
       :alt: Filetree with the static, templates, and flask-env folders. Also, files style.css, main.py, and checkbox_form.html.
@@ -56,12 +67,13 @@ create a list of items that can be skipped.
       build/
       *.egg-info/
 
-#. Line 1 is the name of directory for the virtual environment. Once we save,
-   ``flask-env`` turns gray in the file tree. The folder will no longer be
-   tracked by Git.
+#. Line 1 is the name of the directory for the virtual environment. Once we
+   save, ``flask-env`` turns gray in the file tree. The folder will no longer
+   be tracked by Git.
 
    .. figure:: figures/gitignore-filetree.png
          :alt: Project filetree indicating that flask-env is no longer being tracked.
 
-#. For different projects, change the name on line 1.
+#. For different projects, change line 1 to match the name used for the virtual
+   environment.
 #. Save and commit your work.

@@ -125,8 +125,8 @@ Now we need to modify ``checkbox_form.html`` to use the base template.
    This tells Flask to send ``base.html`` to the browser *first*. After it
    renders, ``checkbox_form.html`` will get processed.
 #. Note that ``checkbox_form`` contains code that is already in ``base``. Your
-   next step is to remove this HTML from ``checkbox_form``.
-#. Keep anything that appears *inside* the ``body`` element, but get rid of:
+   next step is to remove this HTML from ``checkbox_form``. Keep anything that
+   appears *inside* the ``body`` element, but get rid of:
 
    a. ``<!DOCTYPE html>``.
    b. The entire ``<head>`` element.
@@ -157,9 +157,9 @@ The next step is to tell Flask to *insert* code from ``checkbox_form`` into the
          <!-- Form code here... -->
       </form>
       {% if choices|length > 0 %}
-      <section>
-         <!-- Your Choices code here... -->
-      </section>
+         <section>
+            <!-- Your Choices code here... -->
+         </section>
       {% endif %}
 
       {% endblock %}
@@ -177,7 +177,7 @@ The next step is to tell Flask to *insert* code from ``checkbox_form`` into the
    *it does exactly the same thing as before*! In fact, using a base template
    for a single page IS more work.
    
-   However, if our goal is to make *more than one* webpage, then creating a
+   However, if our goal is to make *more than one* webpage, then creating
    ``base.html`` saves us time and effort. It also makes applying updates
    easier.
 
@@ -294,7 +294,7 @@ the `Jinja2 documentation <https://jinja.palletsprojects.com/en/2.11.x/templates
 Video Summary
 -------------
 
-Embed Chris Bay's video?
+.. todo:: Update extending base video summary.
 
 .. raw:: html
 
