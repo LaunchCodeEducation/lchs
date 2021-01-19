@@ -7,6 +7,8 @@ a ``main.py`` program, but you won't need to modify the Python code to complete
 any of the tasks. However, after you finish the exercises, feel free to explore
 ``main.py`` to figure out what its doing!
 
+.. _more-flask-exercises-setup:
+
 Setup
 -----
 

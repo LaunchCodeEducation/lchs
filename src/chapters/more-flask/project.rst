@@ -1,37 +1,76 @@
 Project: Improve the User Experience
 ====================================
 
-.. index:: ! UI, ! UX
-
-The term **user interface** (UI) refers to the buttons, windows, icons, etc.
-that a human interacts with when they use a device.
-
-.. figure:: figures/ui-ux.png
-   :alt: Three different user interfaces: a CLI, a GUI, and a smartphone home screen.
-   :width: 80%
-
-   Three UI examples: a command line prompt, a clickable file tree, and a touch-sensitive home screen.
-
-**User experience** (UX) refers to the emotions a person feels as they interact
-with an application or device. The better developers make the UX, the more
-likely people are to keep using their products.
-
 Recall the web form we created in :ref:`the last chapter <server-side-validation>`.
-At the time, we noted that if the user enters invalid data, they won't know
-about their mistake until they reach the results page. It would be better if we
-could return the user to the form page and give them a chance to correct their
-entries.
+As designed, if the user enters invalid data, they won't know about their
+mistake until they reach the results page. This flaw in the user interface (UI)
+lowers the quality of the user experience (UX).
 
-On this page, we will use a fake login form to practice some good UX design.
-When a user submits invalid information, we want the following to happen:
+One common practice is to return a user to the original form page when they
+make a mistake. Including a message that explains what went wrong gives the
+user a smooth way to correct their entries.
+
+For this project, you will update a fake login page to improve the UI/UX. When
+a user submits invalid information, the following should happen:
 
 #. The form page will reload,
-#. A message will appear explaining what went wrong,
-#. Valid entries will remain in the input fields,
+#. One or more messages will appear explaining what went wrong,
+#. All valid entries will remain in their input fields,
 #. The user can re-enter information and submit again.
 
-Render the Form Again
----------------------
+When the user successfully fills out the form, they will be sent to a different
+webpage.
+
+Setup
+-----
+
+The starter code for this project is saved in the same
+`GitHub repository <https://github.com/LaunchCodeEducation/LCHS_flask_logic>`__
+you used for the exercises. However, the project code is in a separate branch.
+
+#. Open the ``LCHS_flask_logic`` directory in Visual Studio Code.
+#. In the terminal, switch to the ``project-start`` branch:
+
+   .. sourcecode:: bash
+   
+      $ git checkout project-start
+
+#. Just like you did for :ref:`the chapter exercises <more-flask-exercises-setup>`,
+   create and activate a new virtual environment.
+#. Install Flask.
+#. Save and commit your work.
+
+Run the Application
+^^^^^^^^^^^^^^^^^^^
+
+Launch ``main.py`` and open the application in a new tab in your browser.
+
+The form works... Try entering invalid information though...
+
+Note that the form gets erased and no indication is given about what went
+wrong!
+
+The layout and colors are a bit distracting... Just because you CAN apply lots
+of color, doesn't mean you SHOULD.
+
+Part of the UI includes the appearance of the page and the placement of the
+interactive elements.
+
+Clean Up the View
+-----------------
+
+Fix distracting rainbow background...
+
+Update font-size...
+
+Add placeholder text...
+
+Style and center the form and button...
+
+Data Validation
+---------------
+
+Lorem ipsum...
 
 Currently, when we click *Submit* on our form, the ``action`` attribute sends
 the data to the ``/results`` route:
@@ -41,14 +80,12 @@ the data to the ``/results`` route:
 
    <form action="/results" method="POST">
 
-Display Error Messages
+Keep Valid Data Intact
 ----------------------
 
 Lorem ipsum...
 
-Message flashing: https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern
-
-Keep Valid Data Intact
+Display Error Messages
 ----------------------
 
 Lorem ipsum...
@@ -60,7 +97,17 @@ Lorem ipsum...
 
 ``render`` vs. ``return redirect``...
 
-Check Your Understanding
-------------------------
+What's to stop users from just entering the results page URL in the address
+bar? Nothing!
+
+Add GET/POST check. Redirect on GET (to prevent users from just entering the
+URL in the address bar). We'll learn a more secure way to do this later in the
+course. This is a crude way of adding security, and it is far from perfect. We
+really need a way of checking if the user is logged in *before the page loads*.
+
+Bonus Mission
+-------------
 
 Lorem ipsum...
+
+Message flashing: https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern
