@@ -102,8 +102,8 @@ this! To them, the form simply didn't work.
 To improve their experience, users need to receive some type of feedback
 whenever they submit a form. This will be your focus in the remaining sections.
 
-Part B: Keep Valid Data Intact
-------------------------------
+Part B: Keep Valid Entries
+--------------------------
 
 One good way to improve the UX is to keep any *correct* entries in place and
 remove the incorrect ones. This becomes more and more important as the number
@@ -114,45 +114,99 @@ Open ``main.py`` and take a look inside the ``registration()`` function. The
 one of the input fields. Each value is a list with strings to assign to the
 ``type``, ``name``, and ``placeholder`` attributes.
 
-Inside ``register.html``, note how the ``for`` loop fills in the data from
-the ``inputs`` dictionary.
+Inside ``register.html``, note how the ``for`` loop builds the labels and input
+fields for the form.
 
-.. sourcecode:: html
-   :lineno-start: 7
+.. admonition:: Example
 
-   {% for (label, attributes) in inputs.items() %}
-      <label>{{label}}: <input type="{{attributes[0]}}" name="{{attributes[1]}}" placeholder="{{attributes[2]}}" required /></label>
-   {% endfor %}
+   .. sourcecode:: html
+      :lineno-start: 7
 
-The ``label`` variable is assigned each key from the ``inputs`` dictionary. The
-``attributes`` variable is assigned the list for that key. As written, the
-``for`` loop assigns the ``type``, ``name``, and ``placeholder`` values for
-each input field. Each time the page loads, the fields get cleared.
+      {% for (label, attributes) in inputs.items() %}
+         <label>{{label}}: <input type="{{attributes[0]}}" name="{{attributes[1]}}" placeholder="{{attributes[2]}}" required /></label>
+      {% endfor %}
 
-#. Inside the ``input`` tag, add the ``value="{{attributes[3]}}"`` attribute.
+   #. **Line 7**: The ``label`` variable is assigned a key from the ``inputs``
+      dictionary. The ``attributes`` variable is assigned the list for that key.
+   #. **Line 8**: Each time the loop repeats, the ``{{label}}`` placeholder is
+      filled in by a key from the dictionary. The ``type``, ``name``, and
+      ``placeholder`` values are assigned from the ``attributes`` list.
+
+In order to save valid entries after the user submits the form, you need to
+update both the HTML and the Python code.
+
+Update ``register.html``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The template only needs one modification for this part. Inside the ``input``
+tag, add the ``value="{{attributes[3]}}"``. If the user submits a valid entry,
+that value will be saved in the ``attributes`` list. ``{{attributes[3]}}`` will
+then fill in that value when the page reloads.
+
+If the user submits an invalid entry, ``attributes[3]`` will be assigned the
+empty string. This will clear the input field when the page reloads.
+
+Update ``main.py``
+^^^^^^^^^^^^^^^^^^
+
 #. Return to ``main.py``. For each list in the ``inputs`` dictionary, add the
-   empty string as the fourth element. For example, 
+   empty string as the last element.
 
    .. sourcecode:: Python
-      :lineno-start: 51
+      :linenos:
 
       inputs = {
          # Label: [type, name, placeholder, value]
          'Username': ['text', 'username', '3-8 characters, no spaces', ''],
+         'Password': ['password', 'password', '8 or more characters, no spaces', ''],
+         'Confirm Password': ['password', 'confirm', 'Retype the password', '']
+      }
 
-#. Add MT string and {{attr[3]}} value attribute...
-#. Update ``check_username()`` function. If correct, replace MT string with the
-   user's entry. If incorrect, retain the MT string...
-#. Repeat for ``check_password()`` and ``check_confirm()``...
+   The first time the page loads, all of the input fields will be clear, and
+   the ``placeholder`` text will appear.
+#. Examine the ``check_username()`` function. It defines two parameters,
+   ``name`` and ``inputs`` [CHANGE]. ``name`` is the string the user submitted
+   in the ``Username`` field. ``inputs`` refers to the ``inputs`` dictionary.
+#. The function returns ``True`` or ``False`` depending on whether or not
+   ``name`` is valid (3-8 characters long, with no spaces).
+#. Add a conditional to the function. If ``True``, assign ``name`` to the 
+   ``Username`` list in the dictionary.
 
-Display Error Messages
-----------------------
+   .. sourcecode:: Python
+      :linenos:
+
+      def check_username(name, blah):
+         if 3 <= len(name) <= 8 and ' ' not in name:
+            blah['Username'][3] = name
+         
+         return 3 <= len(name) <= 8 and ' ' not in name
+
+   In line 3, ``blah['Username'][3]`` refers to index 3 of the ``Username``
+   list. When the webpage loads, this entry will be assigned to the ``value``
+   attribute inside the ``<input>`` tag.
+#. Save your work, then reload the webpage. Test the code by entering a valid
+   username and invalid password. Properly done, your correct entry should
+   remain in the input field after the page reloads. Test the code again by
+   entering an invalid username. This time, the name field should clear when
+   the page reloads.
+#. Follow a similar process for the ``check_password()`` and
+   ``check_confirm()`` functions. Be sure to check your work!
+
+Once you've tested every possible combination of valid and invalid entries,
+save and commit your code.
+
+Part C: Display Error Messages
+------------------------------
 
 Add another MT string to the end of the ``inputs`` list...
 
 Walkthrough how to add error message for check_username() function...
 
 Repeat for other validation functions...
+
+Note small tweak for checking password match. Without the update, it is possible
+to save the confirmation of an invalid password, even though the latter field is
+cleared...
 
 Redirect on Success
 -------------------
