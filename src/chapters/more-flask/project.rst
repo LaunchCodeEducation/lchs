@@ -10,7 +10,7 @@ One common practice for web forms is to keep a user on the original page when
 they make a mistake. Also, displaying an error message about what went wrong
 gives the user a smooth way to make corrections.
 
-For this project, you will update a fake account signup to improve the
+For this project, you will update a fake account sign-up page to improve the
 UI/UX. When a user submits invalid information, the following should happen:
 
 #. The form page will reload,
@@ -57,7 +57,7 @@ Part A: Clean Up the View
 -------------------------
 
 The layout and colors on the page are a bit distracting. Since this is the
-signup page for your web application, it is the first thing new users see. If
+sign-up page for your web application, it is the first thing new users see. If
 it gives them a poor UX, then they might decide NOT to join!
 
 Open the ``style.css`` and ``register.html`` files in Visual Studio Code. Make

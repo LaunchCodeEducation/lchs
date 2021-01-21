@@ -11,8 +11,8 @@ Refill the Flask
    logic-in-templates
    template-conditionals
    reusing-content
+   redirect
    page-navigation
    better-ux
-   redirect
    exercises
    project
