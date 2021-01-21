@@ -325,6 +325,24 @@ submit valid data from the form. You need to fix this!
 Bonus Mission
 -------------
 
-Lorem ipsum...
+.. index:: ! message flashing
 
-Message flashing: https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern
+In this project, you added code to display messages to the user if they made a
+mistake filling out the form. The Flask framework contains tools to handle user
+feedback. The process is called **message flashing**, and it gives developers a
+way to streamline their code.
+
+In ``main.py``, you kept track of messages as part of the ``inputs``
+dictionary. With message flashing, Flask does this work automatically. The
+`Flask website <https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern>`__
+provides a short tutorial on how to set up and display flashed messages. Take a
+look at the examples, and then refactor your application to use ``flash``.
+
+.. pull-quote::
+
+   Good applications and user interfaces are all about feedback. If the user
+   does not get enough feedback they will probably end up hating the application.
+   Flask provides a really simple way to give feedback to a user with the
+   flashing system.
+
+   -- Flask documentation
