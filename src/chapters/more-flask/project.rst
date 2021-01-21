@@ -302,21 +302,25 @@ success page?
 
 Your application lets users access any webpage on your site if they know its
 path. However, they should only be able to reach the success page if they
-submit valid data from the form.
+submit valid data from the form. You need to fix this!
 
-#. In the ``return redirect()`` statement, add ``code = 307``.
+#. In the ``return redirect()`` statement, add ``code = 307`` after the
+   template name.
 #. In the ``success()`` function, add a conditional to check for a ``GET/POST``
    request.
    
    a. For a ``GET`` request, ``redirect`` back to the form page.
    b. For a ``POST`` request, ``render`` the ``success.html`` template.
 
-.. admonition:: Note
+   .. admonition:: Note
 
-   ``code = 307`` is a crude way of restricting access to the success page, but
-   it gets you thinking in the right direction.
-   
-   We'll learn a better way to restrict access later in the course.
+      ``code = 307`` is a crude way of restricting access to the success page, but
+      it gets you thinking in the right direction.
+      
+      We'll learn a better way to restrict access later in the course.
+
+#. Demonstrate your finished application to your teacher. Once it checks out,
+   save and commit your code.
 
 Bonus Mission
 -------------
