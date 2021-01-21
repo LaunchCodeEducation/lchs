@@ -109,7 +109,7 @@ One good way to improve the UX is to keep any *correct* entries in place and
 remove the incorrect ones. This becomes more and more important as the number
 of input fields increases.
 
-Open ``main.py`` and take a look inside the ``registration()`` function. The
+Open ``main.py`` and take a look inside the ``sign_up()`` function. The
 ``inputs`` dictionary organizes data for the form. Each key is the label for
 one of the input fields. Each value is a list with strings to assign to the
 ``type``, ``name``, and ``placeholder`` attributes.
@@ -122,15 +122,15 @@ fields for the form.
    .. sourcecode:: html
       :lineno-start: 7
 
-      {% for (label, attributes) in inputs.items() %}
-         <label>{{label}}: <input type="{{attributes[0]}}" name="{{attributes[1]}}" placeholder="{{attributes[2]}}" required /></label>
+      {% for (label, values) in inputs.items() %}
+         <label>{{label}}: <input type="{{values[0]}}" name="{{values[1]}}" placeholder="{{values[2]}}" required /></label>
       {% endfor %}
 
    #. **Line 7**: The ``label`` variable is assigned a key from the ``inputs``
-      dictionary. The ``attributes`` variable is assigned the list for that key.
+      dictionary. The ``values`` variable is assigned the list for that key.
    #. **Line 8**: Each time the loop repeats, the ``{{label}}`` placeholder is
       filled in by a key from the dictionary. The ``type``, ``name``, and
-      ``placeholder`` values are assigned from the ``attributes`` list.
+      ``placeholder`` strings are assigned from the ``values`` list.
 
 In order to save valid entries after the user submits the form, you need to
 update both the HTML and the Python code.
@@ -139,12 +139,12 @@ Update ``register.html``
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The template only needs one modification for this part. Inside the ``input``
-tag, add the ``value="{{attributes[3]}}"``. If the user submits a valid entry,
-that value will be saved in the ``attributes`` list. ``{{attributes[3]}}`` will
-then fill in that value when the page reloads.
+tag, add the ``value="{{values[3]}}"`` attribute. If the user submits a valid
+entry, it will be saved in the ``values`` list. ``{{values[3]}}`` will place
+that value into the input field when the page reloads.
 
-If the user submits an invalid entry, ``attributes[3]`` will be assigned the
-empty string. This will clear the input field when the page reloads.
+If the user submits an invalid entry, ``values[3]`` will be assigned the empty
+string. This clears the input field when the page reloads.
 
 Update ``main.py``
 ^^^^^^^^^^^^^^^^^^
@@ -162,64 +162,161 @@ Update ``main.py``
          'Confirm Password': ['password', 'confirm', 'Retype the password', '']
       }
 
-   The first time the page loads, all of the input fields will be clear, and
+   The first time the page loads, all of the input fields will be empty, and
    the ``placeholder`` text will appear.
 #. Examine the ``check_username()`` function. It defines two parameters,
-   ``name`` and ``inputs`` [CHANGE]. ``name`` is the string the user submitted
-   in the ``Username`` field. ``inputs`` refers to the ``inputs`` dictionary.
-#. The function returns ``True`` or ``False`` depending on whether or not
-   ``name`` is valid (3-8 characters long, with no spaces).
+   ``name`` and ``form_info``. ``name`` is the string the user submitted in the
+   ``Username`` field. ``form_info`` refers to the ``inputs`` dictionary. The
+   function returns ``True`` or ``False`` depending on whether or not ``name``
+   is valid (3-8 characters long, with no spaces).
 #. Add a conditional to the function. If ``True``, assign ``name`` to the 
    ``Username`` list in the dictionary.
 
    .. sourcecode:: Python
       :linenos:
 
-      def check_username(name, blah):
+      def check_username(name, form_info):
          if 3 <= len(name) <= 8 and ' ' not in name:
-            blah['Username'][3] = name
+            form_info['Username'][3] = name
          
          return 3 <= len(name) <= 8 and ' ' not in name
 
-   In line 3, ``blah['Username'][3]`` refers to index 3 of the ``Username``
-   list. When the webpage loads, this entry will be assigned to the ``value``
-   attribute inside the ``<input>`` tag.
+   In line 3, ``form_info['Username'][3]`` refers to index 3 of the
+   ``Username`` list. When the webpage loads, this entry will be assigned to
+   the ``value`` attribute inside the ``<input>`` tag.
 #. Save your work, then reload the webpage. Test the code by entering a valid
    username and invalid password. Properly done, your correct entry should
    remain in the input field after the page reloads. Test the code again by
    entering an invalid username. This time, the name field should clear when
    the page reloads.
 #. Follow a similar process for the ``check_password()`` and
-   ``check_confirm()`` functions. Be sure to check your work!
+   ``check_confirm()`` functions.
+#. Check your work! There are six possible valid/invalid combinations to test
+   with the form. Note that an invalid password should clear the *bottom two*
+   input fields.
 
-Once you've tested every possible combination of valid and invalid entries,
-save and commit your code.
+Once your application passes all of the tests, save and commit your code.
 
 Part C: Display Error Messages
 ------------------------------
 
-Add another MT string to the end of the ``inputs`` list...
+Your next step is to display error messages on the form page. Each message will
+appear below its matching input box. These alerts provide details for fixing
+any mistakes.
 
-Walkthrough how to add error message for check_username() function...
+Once again, you will need to work with the code in both the template and
+``main.py``.
 
-Repeat for other validation functions...
+#. In ``register.html``, add a paragraph element below the input.
+
+   .. sourcecode:: html
+      :lineno-start: 7
+
+      {% for (label, values) in inputs.items() %}
+         <label>{{label}}: <input type="{{values[0]}}" name="{{values[1]}}" placeholder="{{values[2]}}" value="{{values[3]}}" required /></label>
+         <p class="error">{{values[4]}}</p>
+      {% endfor %}
+
+   ``{{values[4]}}`` is a placeholder for an error message. If the entry is
+   valid, this space will remain empty. If the entry is invalid, text will be
+   inserted.
+   
+   Note that the ``class`` attribute applies some styling to the error text.
+#. In ``main.py``, add another empty string to the end of each list in the
+   ``inputs`` dictionary.
+
+   .. sourcecode:: Python
+      :linenos:
+
+      inputs = {
+         # Label: [type, name, placeholder, value, error_msg]
+         'Username': ['text', 'username', '3-8 characters, no spaces', '', ''],
+         'Password': ['password', 'password', '8 or more characters, no spaces', '', ''],
+         'Confirm Password': ['password', 'confirm', 'Retype the password', '', '']
+      }
+   
+   The first time the page loads, no error messages appear.
+#. Return to the ``check_username()`` function. An invalid username is either
+   too long, too short, or contains spaces. Modify the conditional to check for
+   each of these errors:
+
+   .. sourcecode:: Python
+      :linenos:
+
+      def check_username(name, form_info):
+         if ' ' in name: 
+            form_info['Username'][4] = 'Username cannot contain spaces.'
+         elif len(name) < 3 or len(name) > 8:
+            form_info['Username'][4] = 'Username must be 3-8 characters long.'
+         else:
+            form_info['Username'][3] = name
+         return 3 <= len(name) <= 8 and ' ' not in name
+
+   a. **Lines 2 & 3**: Check for spaces in ``name``. If ``True``, replace the
+      last entry in the ``Username`` list with an error message.
+   b. **Lines 4 & 5**: Check if ``name`` is too short or too long. If ``True``,
+      replace the last entry in the ``Username`` list with a different error
+      message.
+   c. **Lines 6 & 7**: If both conditions are ``False``, then ``name`` is
+      valid. Store its value in the ``Username`` list, just like in part B.
+#. Save your work, then reload the webpage. Test by entering usernames that are
+   too long, too short, or contain a space. Make sure you see the proper error
+   message each time. Also, be sure to enter a valid username (no error message
+   should appear).
+#. Follow a similar process for the ``check_password()`` and
+   ``check_confirm()`` functions. Be sure to check your work!
+
+Save and commit your code before moving to Part D.
 
 Note small tweak for checking password match. Without the update, it is possible
 to save the confirmation of an invalid password, even though the latter field is
 cleared...
 
-Redirect on Success
--------------------
+Part D: Redirect on Success
+---------------------------
 
-``render`` vs. ``return redirect``...
+OK, you've got the appearance, validation, and error messages in place. The
+final part of this project deals with what happens *after* a successful form
+submission.
 
-What's to stop users from just entering the results page URL in the address
-bar? Nothing!
+Note that the ``sign_up()`` function *redirects* the user to a success page if
+all of their entries are valid.
 
-Add GET/POST check. Redirect on GET (to prevent users from just entering the
-URL in the address bar). We'll learn a more secure way to do this later in the
-course. This is a crude way of adding security, and it is far from perfect. We
-really need a way of checking if the user is logged in *before the page loads*.
+.. sourcecode:: Python
+   :lineno-start: 62
+
+   if check_inputs(username, password, confirm, inputs):
+      return redirect('/success')
+
+As mentioned :ref:`in the chapter <redirect>`, ``redirect`` sends the program
+flow to a different path and function. In this case, the user sees a cheerful
+success message! However, what happens if a user guesses the path for the
+success page?
+
+.. admonition:: Try It!
+
+   Reload the form page. Instead of filling in the input fields, enter
+   ``http://127.0.0.1:5000/success`` in the address bar.
+
+   Whoa! Success without ANY valid data!
+
+Your application lets users access any webpage on your site if they know its
+path. However, they should only be able to reach the success page if they
+submit valid data from the form.
+
+#. In the ``return redirect()`` statement, add ``code = 307``.
+#. In the ``success()`` function, add a conditional to check for a ``GET/POST``
+   request.
+   
+   a. For a ``GET`` request, ``redirect`` back to the form page.
+   b. For a ``POST`` request, ``render`` the ``success.html`` template.
+
+.. admonition:: Note
+
+   ``code = 307`` is a crude way of restricting access to the success page, but
+   it gets you thinking in the right direction.
+   
+   We'll learn a better way to restrict access later in the course.
 
 Bonus Mission
 -------------

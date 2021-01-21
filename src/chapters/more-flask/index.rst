@@ -13,5 +13,6 @@ Refill the Flask
    reusing-content
    page-navigation
    better-ux
+   redirect
    exercises
    project
