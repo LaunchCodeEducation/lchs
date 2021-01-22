@@ -132,7 +132,7 @@ Redirect with Flask
 Each page in our Flask application has its own template, path, and Python
 function. ``render_template()`` should ONLY be used for the HTML file assigned
 to the path in ``@app.route()``. If we need to render a different template,
-then we must redirect the program flow to a different function.
+then we should redirect the program flow to a different function.
 
 The general syntax for a redirect in Flask is:
 
@@ -148,29 +148,162 @@ Let's update the ``second_page()`` function to use ``redirect()`` instead of
 
 .. admonition:: Try It!
 
-   Lorem ipsum...
+   Return to ``main.py`` in Visual Studio Code.
+
+   #. Add the ``redirect`` function to the top ``import`` statement.
+
+      .. sourcecode:: python
+         :linenos:
+
+         from flask import Flask, render_template, request, redirect
+
+   #. Inside the ``second_page()`` function, replace the ``render_template()``
+      function on line 33 with ``redirect()``.
+
+      .. sourcecode:: python
+         :lineno-start: 30
+
+            if request.method == 'POST':
+               choice = request.form['choice']
+               if choice == 'yes':
+                  return redirect('/third')
+               else:
+                  page_title = "Welcome Back!"
+
+      The string argument inside ``redirect()`` might be different in your
+      code. It needs to match the *path* you used in the ``@app.route()``
+      statement of the target function.
+   #. Save your work, then reload the page in the browser.
+   #. Use the form on the second page to answer ``Yes``. After submitting,
+      check the URL, heading text, and other content on the page.
+
+   Ta da! We're now properly on the third page!
+
+Notice that besides the path, we didn't include any other arguments inside
+``redirect()``. Since it shifts control to a different function, that new
+section of code becomes responsible for rendering its own template.
+
+``redirect()`` does NOT directly send any data to the browser. Instead, it
+moves control between functions within ``main.py``. 
+
+Difference Summary
+------------------
+
+The ``render_template()`` and ``redirect()`` functions Do. Different. Things.
+
+``render_template()``:
+
+#. Deals with displaying a webpage at the current URL.
+#. Indicates which file the Flask server sends to the browser.
+#. Passes data to the selected template file.
+#. The browser renders the file at the path specified in ``@app.route()``.
+
+``redirect()``:
+
+#. Deals with how to move the user from one URL to another.
+#. Takes a path argument instead of a file name.
+#. Shifts control from one Python function to another.
+#. Sends no data directly to the browser.
+
+If ``render_template()`` could talk, it would say something like,
+*Hey! Look at this cool stuff right here*. On the other hand, ``redirect()``
+would say something like, *Hey! Go somewhere else now*.
 
 Redirect Codes
 --------------
 
-Redirect codes (GET vs. POST)...
+In the :ref:`HTTP chapter <http-requests>`, we learned about GET and POST
+requests. In the :ref:`Forms chapter <send-data-to-server>`, we learned how to
+send each type of request using the ``method`` attribute.
 
-By default, a redirect sends a GET request to the new URL...
+The form on the second page sends a ``POST`` request to the path ``/second``.
+However, what happens when the ``redirect()`` statement executes? Does it send
+a ``GET`` or ``POST`` request? Let's find out!
 
-Add GET/POST check. Redirect on GET (to prevent users from just entering the
-URL in the address bar). We'll learn a more secure way to do this later in the
-course. This is a crude way of adding security, and it is far from perfect. We
-really need a way of checking if the user is logged in *before the page loads*.
+.. admonition:: Try It!
 
-Can send limited data with the redirect, just like with render template...
+   In VS Code, open the template for the third webpage.
 
-Wrap-up
--------
+   #. Add a new element and placeholder to the template.
 
-Redirect sends users to a different path...
+      .. sourcecode:: html
+         :linenos:
 
-Idea behind redirect: *Go over there now*. Idea behind render template:
-*You're in the right spot, now look at this*...
+         {% extends "base.html" %}
+
+         {% block content %}
+         <h2>Look! A third page!</h2>
+         <h3>{{method_message}}</h3>
+         {% endblock %}
+
+      We will fill the ``{{method_message}}`` placeholder with different text
+      depending on whether we make a ``GET`` or ``POST`` request to reach the
+      page.
+   #. In ``main.py``, update the function that renders the template for the
+      third page. Note that the names you used for the path, function, and
+      template might be different than the ones shown.
+
+      .. sourcecode:: python
+         :lineno-start: 41
+
+         @app.route('/third', methods=['GET', 'POST'])
+         def third_page():
+            if request.method == 'POST':
+               method_message = 'You reached this page through a POST request.'
+            else:
+               method_message = 'You reached this page through a GET request.'
+
+            tab_title = 'Third Page'
+            page_title = "Third Page"
+            return render_template('third.html', tab_title=tab_title, page_title=page_title,
+               navigation=navigation, method_message=method_message)
+
+   Add GET/POST check to ``third_page()`` function. Display different text on
+   the page depending on the method used.
+
+   Redirect from ``second_page()``, show that the content matches the GET
+   condition. Repeat by typing the URL into the address bar or clicking on the
+   PN link.
+
+If we want to preserve the POST request to the new URL, we need to add an
+argument to the ``redirect()`` function.
+
+Note the 302 code in the POST request above. This has a meaning (link), but we
+don't actually need to worry about it. We just need to know the alternative!
+
+In the Try It code above, replace line X with
+``return redirect('/third', code=307)``. Again, we don't need to know the
+exact meaning behind 307. We just need to know that it preserves the original
+method. If redirect is hit via a POST request, it sends its own POST. If it
+is hit through a GET request, then it sends its own GET.
+
+TRY IT: Modify code, then visit third page via link, address bar, and form.
+Note the difference in the content displayed.
+
+Trace the path of each request sent to the server for the second webpage.
+
+#. Initial load (from PN link or address bar):
+   127.0.0.1 - - [22/Jan/2021 15:44:05] "GET /second HTTP/1.1" 200 -
+#. After "No" answer:
+   127.0.0.1 - - [22/Jan/2021 15:44:25] "POST /second HTTP/1.1" 200 -
+
+   Can see the POST record, and the request for /second.
+#. After "Yes" answer:
+   127.0.0.1 - - [22/Jan/2021 15:44:54] "POST /second HTTP/1.1" 302 -
+
+   127.0.0.1 - - [22/Jan/2021 15:44:54] "GET /third HTTP/1.1" 200 -
+
+   Flow: Yes is submitted, POST request is sent to /second. Redirect executes,
+   and a GET request is sent to /third.
+
+From these console statements, we see that by default, ``redirect()`` sends a
+GET request to the new URL. This happens even it the request to the original
+URL was a POST.
+
+Send Data with ``redirect``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+``request.method`` works to a limited extent...
 
 Check Your Understanding
 ------------------------
