@@ -5,17 +5,17 @@ Redirecting
 
 .. index:: ! redirect
 
-The term **redirect** refers to sending a user from one URL to a different one.
-We can see a simple example of a redirect with an HTML link element:
+The term **redirect** means to send a user from one URL to a different one. We
+can see a simple example of this with an HTML link element:
+
+.. sourcecode:: html
+
+   <a href="target_URL">Link text</a>
 
 .. admonition:: Example
 
-   .. sourcecode:: html
-
-      <a href="target_URL">Link text</a>
-
-   For `this link <https://www.python.org/>`__,
-   ``href="https://www.python.org/"``.
+   The ``target_URL`` for `this link <https://www.python.org/>`__ is
+   ``https://www.python.org/``.
 
 Sometimes, clicking a link opens a new tab in the browser. Other times, the new
 page loads in the current tab. In both cases, users are sent to a different
@@ -32,51 +32,109 @@ We have also set up redirects with the ``action`` attribute in a form.
    .. sourcecode:: html
       :linenos:
 
-      <form action="URL-of-server" method="POST">
+      <form action="URL_of_server" method="POST">
          <!-- Form code -->
       </form>
 
-Once the user clicks the *Submit* button, an HTTP request is sent to the URL
-assigned to ``action``. This address doesn't have to be the same as the form
-page. When the server responds to the request, the browser renders a webpage,
-and the new URL appears in the address bar.
+   When the user clicks the *Submit* button, an HTTP request is sent to the URL
+   assigned to ``action``. This address doesn't have to be the same as the form
+   page.
+   
+   When the server responds to the request, the browser renders a webpage, and
+   the new URL appears in the address bar.
 
 Render Template vs. Redirect
 ----------------------------
 
 Up until now, we've used the ``render_template()`` function to send an HTML
 file from the Flask server to the browser. Once the page renders, the URL in
-the address bar appears as ``http://127.0.0.1:5000/path``. For each page in our
-website, ``path`` is different.
+the address bar looks something like ``http://127.0.0.1:5000/path``. For each
+page in our website, ``path`` is different.
 
 It is important to recognize that the ``render_template()`` function is NOT the
 same thing as a redirect. The best way to see this is with an example.
 
 .. admonition:: Try It!
 
-   Demo render template moving to a different page. Note that the web address
-   stays the same, but the "page" itself is different. (This isn't a good idea).
+   In the practice website we've built for this chapter, we currently have
+   three pages. Let's use the second and third for this example.
 
-   Add a form to the second webpage in chapter examples. Replace "Look! A second
-   page!" with a simple form ("Do you want to move to the third page?").
-   ``action`` will be back to the second page. After validation, send to third
-   page if response is "Yes".
+   #. Open ``second.html`` and add a short form after the ``h2``:
 
-Note that responding "Yes" renders the 3rd page, but look at the address bar!
+      .. sourcecode:: html
+         :lineno-start: 5
 
-Note that "No" returns us to the form page (with extra info because of POST).
-Same URL in the address bar (/second).
+         <section class="centered">
+            <form action="/second" method="POST">
+               <h3>Move to the third page?</h3>
+               <label><input type="radio" name="choice" value="yes"/>Yes</label>
+               <label><input type="radio" name="choice" value="no"/>No</label>
+               <section class="centered">
+                     <button>Submit</button>
+               </section>
+            </form>
+         </section>
+   
+      The new form asks the user if they want to move to the third page. The
+      ``action`` attribute sends the response to the current URL.
+   #. Now open ``main.py`` and update the function that controls the second
+      page:
+
+      .. sourcecode:: python
+         :lineno-start: 25
+
+         @app.route('/second', methods=['GET', 'POST'])
+         def second_page():
+            tab_title = "Second Page"
+            page_title = "Second Page"
+
+            if request.method == 'POST':
+               choice = request.form['choice']
+               if choice == 'yes':
+                  return render_template('third.html', tab_title = tab_title,
+                     page_title = page_title, navigation = navigation)
+               else:
+                  page_title = "Welcome Back!"
+
+            return render_template('second.html', tab_title = tab_title,
+               page_title = page_title, navigation = navigation)
+
+   If the user responds ``No`` in the form, line 36 executes, followed by the
+   ``render_template()`` function on line 38. The second page reloads, but it
+   shows different text in the heading. (TRY IT!)
+   
+   If the user responds ``Yes`` in the form, line 33 executes. It renders the
+   template for the third page. (TRY IT!)
+
+Responding ``No`` in the form keeps us on the second page. Even though some of
+the content changes, we are still rendering the ``second.html`` template.
+
+   [INSERT IMAGE HERE...]
+
+However, notice what happens to the webpage after a ``Yes`` response. The web
+address stays the same (``http://127.0.0.1:5000/second``), but the page itself
+is different. The URL and heading still indicate the second page, but the
+content displayed is for the third.
+
+   [INSERT IMAGE HERE...]
+
+As written, the Python code renders one of two possible templates for the same
+URL. *This is NOT a good result*! To keep our website organized, each Python
+function should always render the same template. ``second_page()`` should only
+deal with ``second.html``.
+
+To properly work with the third page and render ``third.html``, we need to
+shift control from ``second_page()`` to a different Python function.
 
 Redirect with Flask
 -------------------
 
-Each page in our Flask application has its own template and its own function in
-the Python code. ``render_template()`` should ONLY be used for the HTML file
-assigned to the path in ``@app.route()``. If we need to render a different
-template, then we must *redirect* the program flow to a different function.
+Each page in our Flask application has its own template, path, and Python
+function. ``render_template()`` should ONLY be used for the HTML file assigned
+to the path in ``@app.route()``. If we need to render a different template,
+then we must redirect the program flow to a different function.
 
-To shift control from one Python function to another in a Flask application,
-the general syntax is:
+The general syntax for a redirect in Flask is:
 
 .. sourcecode:: python
 
@@ -85,10 +143,12 @@ the general syntax is:
 ``/path_name`` matches the string from one of the other ``@app.route()``
 handlers.
 
+Let's update the ``second_page()`` function to use ``redirect()`` instead of
+``render_template()``.
+
 .. admonition:: Try It!
 
-   Update example to use redirect inside the POST block of the ``second()``
-   function.
+   Lorem ipsum...
 
 Redirect Codes
 --------------

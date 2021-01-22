@@ -153,7 +153,7 @@ Update ``main.py``
    empty string as the last element.
 
    .. sourcecode:: Python
-      :linenos:
+      :lineno-start: 42
 
       inputs = {
          # Label: [type, name, placeholder, value]
@@ -173,7 +173,7 @@ Update ``main.py``
    ``Username`` list in the dictionary.
 
    .. sourcecode:: Python
-      :linenos:
+      :lineno-start: 16
 
       def check_username(name, form_info):
          if 3 <= len(name) <= 8 and ' ' not in name:
@@ -181,7 +181,7 @@ Update ``main.py``
          
          return 3 <= len(name) <= 8 and ' ' not in name
 
-   In line 3, ``form_info['Username'][3]`` refers to index 3 of the
+   In line 18, ``form_info['Username'][3]`` refers to index 3 of the
    ``Username`` list. When the webpage loads, this entry will be assigned to
    the ``value`` attribute inside the ``<input>`` tag.
 #. Save your work, then reload the webpage. Test the code by entering a valid
@@ -217,7 +217,7 @@ Once again, you will need to work with the code in both the template and
          <p class="error">{{values[4]}}</p>
       {% endfor %}
 
-   ``{{values[4]}}`` is a placeholder for an error message. If the entry is
+   ``{{values[4]}}`` is a placeholder for the error message. If the entry is
    valid, this space will remain empty. If the entry is invalid, text will be
    inserted.
    
@@ -226,7 +226,7 @@ Once again, you will need to work with the code in both the template and
    ``inputs`` dictionary.
 
    .. sourcecode:: Python
-      :linenos:
+      :lineno-start: 42
 
       inputs = {
          # Label: [type, name, placeholder, value, error_msg]
@@ -241,7 +241,7 @@ Once again, you will need to work with the code in both the template and
    each of these errors:
 
    .. sourcecode:: Python
-      :linenos:
+      :lineno-start: 16
 
       def check_username(name, form_info):
          if ' ' in name: 
@@ -252,25 +252,21 @@ Once again, you will need to work with the code in both the template and
             form_info['Username'][3] = name
          return 3 <= len(name) <= 8 and ' ' not in name
 
-   a. **Lines 2 & 3**: Check for spaces in ``name``. If ``True``, replace the
+   a. **Lines 17 & 18**: Check for spaces in ``name``. If ``True``, replace the
       last entry in the ``Username`` list with an error message.
-   b. **Lines 4 & 5**: Check if ``name`` is too short or too long. If ``True``,
-      replace the last entry in the ``Username`` list with a different error
-      message.
-   c. **Lines 6 & 7**: If both conditions are ``False``, then ``name`` is
+   b. **Lines 19 & 20**: Check if ``name`` is too short or too long. If
+      ``True``, replace the last entry in the ``Username`` list with a
+      different error message.
+   c. **Lines 21 & 22**: If both conditions are ``False``, then ``name`` is
       valid. Store its value in the ``Username`` list, just like in part B.
 #. Save your work, then reload the webpage. Test by entering usernames that are
-   too long, too short, or contain a space. Make sure you see the proper error
+   too long, too short, or contain spaces. Make sure you see the proper error
    message each time. Also, be sure to enter a valid username (no error message
    should appear).
 #. Follow a similar process for the ``check_password()`` and
-   ``check_confirm()`` functions. Be sure to check your work!
+   ``check_confirm()`` functions. Be sure to test your application!
 
 Save and commit your code before moving to Part D.
-
-Note small tweak for checking password match. Without the update, it is possible
-to save the confirmation of an invalid password, even though the latter field is
-cleared...
 
 Part D: Redirect on Success
 ---------------------------
@@ -283,15 +279,15 @@ Note that the ``sign_up()`` function *redirects* the user to a success page if
 all of their entries are valid.
 
 .. sourcecode:: Python
-   :lineno-start: 62
 
+   # If all of the input fields contain valid data, send the user to the success page.
    if check_inputs(username, password, confirm, inputs):
       return redirect('/success')
 
-As mentioned :ref:`in the chapter <redirect>`, ``redirect`` sends the program
-flow to a different path and function. In this case, the user sees a cheerful
-success message! However, what happens if a user guesses the path for the
-success page?
+As mentioned earlier :ref:`in this chapter <redirect>`, ``redirect`` sends the
+program flow to a different path and function. In this case, the user sees a
+cheerful success message! However, what happens if a user guesses the path for
+the success page?
 
 .. admonition:: Try It!
 
@@ -301,7 +297,7 @@ success page?
    Whoa! Success without ANY valid data!
 
 Your application lets users access any webpage on your site if they know its
-path. However, they should only be able to reach the success page if they
+URL. However, they should only be able to reach the success page if they
 submit valid data from the form. You need to fix this!
 
 #. In the ``return redirect()`` statement, add ``code = 307`` after the
@@ -309,34 +305,41 @@ submit valid data from the form. You need to fix this!
 #. In the ``success()`` function, add a conditional to check for a ``GET/POST``
    request.
    
-   a. For a ``GET`` request, ``redirect`` back to the form page.
+   a. If a ``GET`` request was made, ``redirect`` back to the form page.
    b. For a ``POST`` request, ``render`` the ``success.html`` template.
 
-   .. admonition:: Note
-
-      ``code = 307`` is a crude way of restricting access to the success page, but
-      it gets you thinking in the right direction.
-      
-      We'll learn a better way to restrict access later in the course.
-
+#. Save, then reload the form page. Test your code by entering the URL for the
+   success page in the address bar. You should be redirected back to the form.
+   Also, make sure you wind up at the success page when you submit valid
+   entries in the form!
 #. Demonstrate your finished application to your teacher. Once it checks out,
    save and commit your code.
+
+.. admonition:: Note
+
+   ``code = 307`` is a crude way of restricting access to the success page, but
+   it gets you thinking in the right direction.
+   
+   We'll learn a better way to restrict access in a later chapter.
 
 Bonus Mission
 -------------
 
 .. index:: ! message flashing
 
-In this project, you added code to display messages to the user if they made a
-mistake filling out the form. The Flask framework contains tools to handle user
-feedback. The process is called **message flashing**, and it gives developers a
-way to streamline their code.
+In this project, you built code to display error messages inside a form. The
+goal was to provide feedback to the user so they could correct their mistakes.
+
+The Flask framework contains tools to handle user feedback. The process is
+called **message flashing**, and it gives developers a way to streamline their
+code.
 
 In ``main.py``, you kept track of messages as part of the ``inputs``
 dictionary. With message flashing, Flask does this work automatically. The
 `Flask website <https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern>`__
-provides a short tutorial on how to set up and display flashed messages. Take a
-look at the examples, and then refactor your application to use ``flash``.
+provides a short tutorial on how to set up and display ``flash`` messages. Take
+a look at the examples, and then refactor your application to use the ``flash``
+tools.
 
 .. pull-quote::
 
