@@ -226,8 +226,8 @@ If ``render_template()`` could talk, it would say something like,
 *Hey! Look at this cool stuff right here*. On the other hand, ``redirect()``
 would say something like, *Hey! Go somewhere else now*.
 
-Redirect Codes
---------------
+Redirect Methods
+----------------
 
 In the :ref:`HTTP chapter <http-requests>`, we learned about GET and POST
 requests. In the :ref:`Forms chapter <send-data-to-server>`, we learned how to
@@ -275,51 +275,100 @@ a ``GET`` or ``POST`` request? Let's find out!
             return render_template('third.html', tab_title=tab_title, page_title=page_title,
                navigation=navigation, method_message=method_message)
 
-   Redirect from ``second_page()``, show that the content matches the GET
-   condition. Repeat by typing the URL into the address bar or clicking on the
-   PN link.
+      When the ``third_page()`` function executes, it checks the method type.
+      Depending on the result, ``method_message`` is assigned one of two possible
+      string values.
+   #. Save your work, then reload the tab. Use the address bar to navigate to
+      the third page (``127.0.0.1:5000/third``). Does this action make a
+      ``GET`` or a ``POST`` request?
+   #. Navigate to a different page in the website. Use the Page Navigation
+      links to return to the third page. Does clicking the link make a ``GET``
+      or a ``POST`` request?
+   #. Finally, return to the second page. Use the form to submit a ``Yes``
+      answer to the question. This will trigger the ``redirect()`` statement in
+      the ``second_page()`` function. Does the ``redirect`` make a ``GET`` or a
+      ``POST`` request?
 
-If we want to preserve the POST request to the new URL, we need to add an
-argument to the ``redirect()`` function.
+In the example above, each time we reached ``http://127.0.0.1:5000/third``,
+``method_message`` indicated that a ``GET`` request was made. Even though the
+form sent a ``POST`` request, ``redirect`` changed it into a ``GET``.
 
-Note the 302 code in the POST request above. This has a meaning (link), but we
-don't actually need to worry about it. We just need to know the alternative!
+This shows an important point. By default, ``redirect()`` sends a ``GET``
+request to the new URL. Many times, this is perfectly fine. However, to deal
+with a form submission, then we should preserve the ``POST`` request.
 
-In the Try It code above, replace line X with
-``return redirect('/third', code=307)``. Again, we don't need to know the
-exact meaning behind 307. We just need to know that it preserves the original
-method. If redirect is hit via a POST request, it sends its own POST. If it
-is hit through a GET request, then it sends its own GET.
+Response Codes
+^^^^^^^^^^^^^^
 
-TRY IT: Modify code, then visit third page via link, address bar, and form.
-Note the difference in the content displayed.
+To make ``redirect()`` send a ``POST`` request, we need to add another argument
+after the path.
 
-Trace the path of each request sent to the server for the second webpage.
+.. admonition:: Try It!
 
-#. Initial load (from PN link or address bar):
-   127.0.0.1 - - [22/Jan/2021 15:44:05] "GET /second HTTP/1.1" 200 -
-#. After "No" answer:
-   127.0.0.1 - - [22/Jan/2021 15:44:25] "POST /second HTTP/1.1" 200 -
+   #. In ``main.py``, replace line 33 with:
 
-   Can see the POST record, and the request for /second.
-#. After "Yes" answer:
-   127.0.0.1 - - [22/Jan/2021 15:44:54] "POST /second HTTP/1.1" 302 -
+      .. sourcecode:: python
 
-   127.0.0.1 - - [22/Jan/2021 15:44:54] "GET /third HTTP/1.1" 200 -
+         return redirect('/third', code=307)
 
-   Flow: Yes is submitted, POST request is sent to /second. Redirect executes,
-   and a GET request is sent to /third.
+   #. Save, then navigate to the form on the second page. Submit a ``Yes``
+      answer and examine the message displayed on the page.
 
-From these console statements, we see that by default, ``redirect()`` sends a
-GET request to the new URL. This happens even it the request to the original
-URL was a POST.
+      [IMAGE]
 
-Send Data with ``redirect``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+We learned about response codes in the HTTP chapter, but we aren't going to
+dive into more detail here. Right now, we don't need to know why ``code=307``
+works. We just have to remember that it preserves a ``POST`` method.
 
-``request.method`` works to a limited extent...
+Technical Details (Optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A discussion of code ``307`` (and others) is beyond the scope of this book.
+However, for those interested in digging deeper, the following links give a
+place to start:
+
+#. Link 1...
+#. Link 2...
+#. Link 3?
+
+As you read the discussions, navigate through the pages in your Flask
+application. As you do this, check the console output in VS Code. 
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Which function matches a template to a specific URL?
+
+   #. ``render_template()``
+   #. ``redirect()``
+
+.. Answer = a
+
+.. admonition:: Question
+
+   Clicking a page navigation link will:
+
+   #. render a different HTML file at the current URL
+   #. redirect the user to a new URL
+
+.. Answer = b
+
+.. admonition:: Question
+
+   Which function can change the appearance of the page at the current URL?
+
+   #. ``render_template()``
+   #. ``redirect()``
+
+.. Answer = a
+
+.. admonition:: Question
+
+   It's OK to render different templates at the same URL.
+
+   #. True
+   #. False
+
+.. Answer = b
