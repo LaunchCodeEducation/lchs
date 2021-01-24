@@ -265,8 +265,8 @@ Extend ``base`` to a Second Page
 
 Now that ``base.html`` is set up, we can use it as many times as we like.
 
-#. Add another ``.html`` template to the project. ``extend`` it from
-   ``base.html`` as before.
+#. Add another template to the project called ``second.html``. ``extend`` it
+   from ``base.html`` as before.
 #. Add a small amount of content to the template. Something simple like:
 
    .. sourcecode:: html

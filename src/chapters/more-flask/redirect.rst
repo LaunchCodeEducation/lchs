@@ -12,10 +12,12 @@ can see a simple example of this with an HTML link element:
 
    <a href="target_URL">Link text</a>
 
+``target_URL`` is the address for the new webpage.
+
 .. admonition:: Example
 
-   The ``target_URL`` for `this link <https://www.python.org/>`__ is
-   ``https://www.python.org/``.
+   For `this link <https://www.python.org/>`__,
+   ``href="https://www.python.org/"``.
 
 Sometimes, clicking a link opens a new tab in the browser. Other times, the new
 page loads in the current tab. In both cases, users are sent to a different
@@ -26,8 +28,8 @@ We have also set up redirects with the ``action`` attribute in a form.
 
 .. admonition:: Example
 
-   In the :ref:`Forms chapter <send-data-to-server>`, we sent requests to the
-   Response Parrot server.
+   In the :ref:`Forms chapter <send-data-to-server>`, we sent requests to a
+   server.
 
    .. sourcecode:: html
       :linenos:
@@ -41,7 +43,7 @@ We have also set up redirects with the ``action`` attribute in a form.
    page.
    
    When the server responds to the request, the browser renders a webpage, and
-   the new URL appears in the address bar.
+   a new URL appears in the address bar.
 
 Render Template vs. Redirect
 ----------------------------
@@ -56,21 +58,22 @@ same thing as a redirect. The best way to see this is with an example.
 
 .. admonition:: Try It!
 
-   In the practice website we've built for this chapter, we currently have
-   three pages. Let's use the second and third for this example.
+   The practice website we've built for this chapter, currently has three
+   pages. We'll use ``second.html`` and ``third.html`` for this example.
 
    #. Open ``second.html`` and add a short form after the ``h2``:
 
       .. sourcecode:: html
-         :lineno-start: 5
+         :lineno-start: 4
 
+         <h2>Look! A second page!</h2>
          <section class="centered">
             <form action="/second" method="POST">
                <h3>Move to the third page?</h3>
                <label><input type="radio" name="choice" value="yes"/>Yes</label>
                <label><input type="radio" name="choice" value="no"/>No</label>
                <section class="centered">
-                     <button>Submit</button>
+                  <button>Submit</button>
                </section>
             </form>
          </section>
@@ -107,32 +110,40 @@ same thing as a redirect. The best way to see this is with an example.
    template for the third page. (TRY IT!)
 
 Responding ``No`` in the form keeps us on the second page. Even though some of
-the content changes, we are still rendering the ``second.html`` template.
+the content changes, the browser still renders the ``second.html`` template.
 
-   [INSERT IMAGE HERE...]
+.. figure:: figures/render-vs-redirect-1.png
+   :alt: The "No" answer renders second.html with different content.
+   :width: 60%
+
+   Even though the heading changes, the template and URL remain the same.
 
 However, notice what happens to the webpage after a ``Yes`` response. The web
 address stays the same (``http://127.0.0.1:5000/second``), but the page itself
 is different. The URL and heading still indicate the second page, but the
 content displayed is for the third.
 
-   [INSERT IMAGE HERE...]
+.. figure:: figures/render-vs-redirect-2.png
+   :alt: The "Yes" answer renders third.html at the same URL second.html.
+   :width: 60%
 
-As written, the Python code renders one of two possible templates for the same
-URL. *This is NOT a good result*! To keep our website organized, each Python
-function should always render the same template. ``second_page()`` should only
-deal with ``second.html``.
+   ``third.html`` renders at the same URL as ``second.html``.
 
-To properly work with the third page and render ``third.html``, we need to
-shift control from ``second_page()`` to a different Python function.
+As written, the Flask application renders both templates at the same URL. *This
+is NOT a good result*! To keep our website organized, each Python function
+should always render the same template. ``second_page()`` should only deal with
+``second.html``.
+
+When we want to render ``third.html``, we need to shift control from
+``second_page()`` to a different Python function, and we need to use a new URL.
 
 Redirect with Flask
 -------------------
 
-Each page in our Flask application has its own template, path, and Python
+Each page in our Flask application needs its own template, path, and Python
 function. ``render_template()`` should ONLY be used for the HTML file assigned
-to the path in ``@app.route()``. If we need to render a different template,
-then we should redirect the program flow to a different function.
+to the path in ``@app.route()``. To render a different template, we should
+redirect the program flow to a different function.
 
 The general syntax for a redirect in Flask is:
 
@@ -157,8 +168,8 @@ Let's update the ``second_page()`` function to use ``redirect()`` instead of
 
          from flask import Flask, render_template, request, redirect
 
-   #. Inside the ``second_page()`` function, replace the ``render_template()``
-      function on line 33 with ``redirect()``.
+   #. Inside the ``second_page()`` function, replace ``render_template()`` on
+      line 33 with ``redirect()``.
 
       .. sourcecode:: python
          :lineno-start: 30
@@ -170,18 +181,24 @@ Let's update the ``second_page()`` function to use ``redirect()`` instead of
                else:
                   page_title = "Welcome Back!"
 
-      The string argument inside ``redirect()`` might be different in your
-      code. It needs to match the *path* you used in the ``@app.route()``
-      statement of the target function.
+      The argument inside ``redirect()`` might be different in your code. It
+      needs to match the path you used in the ``@app.route()`` statement above
+      the target function.
    #. Save your work, then reload the page in the browser.
    #. Use the form on the second page to answer ``Yes``. After submitting,
       check the URL, heading text, and other content on the page.
 
    Ta da! We're now properly on the third page!
 
+   .. figure:: figures/render-vs-redirect-3.png
+      :alt: The "Yes" answer renders third.html at a different URL.
+      :width: 60%
+
+      ``third.html`` now renders at its own URL.
+
 Notice that besides the path, we didn't include any other arguments inside
-``redirect()``. Since it shifts control to a different function, that new
-section of code becomes responsible for rendering its own template.
+``redirect()``. Since it shifts control to a different function, that code
+becomes responsible for rendering ``third.html``.
 
 ``redirect()`` does NOT directly send any data to the browser. Instead, it
 moves control between functions within ``main.py``. 
@@ -200,7 +217,7 @@ The ``render_template()`` and ``redirect()`` functions Do. Different. Things.
 
 ``redirect()``:
 
-#. Deals with how to move the user from one URL to another.
+#. Deals with moving the user from one URL to another.
 #. Takes a path argument instead of a file name.
 #. Shifts control from one Python function to another.
 #. Sends no data directly to the browser.
@@ -224,7 +241,7 @@ a ``GET`` or ``POST`` request? Let's find out!
 
    In VS Code, open the template for the third webpage.
 
-   #. Add a new element and placeholder to the template.
+   #. Add a new element and placeholder below the ``h2``.
 
       .. sourcecode:: html
          :linenos:
@@ -239,9 +256,9 @@ a ``GET`` or ``POST`` request? Let's find out!
       We will fill the ``{{method_message}}`` placeholder with different text
       depending on whether we make a ``GET`` or ``POST`` request to reach the
       page.
-   #. In ``main.py``, update the function that renders the template for the
-      third page. Note that the names you used for the path, function, and
-      template might be different than the ones shown.
+   #. In ``main.py``, update the function that controls the third page. Note
+      that the names you used for the path, function, and template might be
+      different than the ones shown below.
 
       .. sourcecode:: python
          :lineno-start: 41
@@ -257,9 +274,6 @@ a ``GET`` or ``POST`` request? Let's find out!
             page_title = "Third Page"
             return render_template('third.html', tab_title=tab_title, page_title=page_title,
                navigation=navigation, method_message=method_message)
-
-   Add GET/POST check to ``third_page()`` function. Display different text on
-   the page depending on the method used.
 
    Redirect from ``second_page()``, show that the content matches the GET
    condition. Repeat by typing the URL into the address bar or clicking on the

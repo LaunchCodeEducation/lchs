@@ -163,7 +163,7 @@ hide the menu until a user reveals it.
    :alt: A dropdown menu appears when the cursor hovers over a heading.
    :width: 80%
 
-   Different menu items appear when the user hovers over a each heading.
+   Menu items appear when the user hovers over a each heading.
 
 While it won't be as fancy as the image, we can add some CSS rules to make our
 own dropdown menu. It will appear when the user moves their pointer over the
