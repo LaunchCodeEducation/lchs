@@ -135,15 +135,16 @@ should always render the same template. ``second_page()`` should only deal with
 ``second.html``.
 
 When we want to render ``third.html``, we need to shift control from
-``second_page()`` to a different Python function, and we need to use a new URL.
+``second_page()`` to a different Python function. We also need to use a new
+URL.
 
 Redirect with Flask
 -------------------
 
 Each page in our Flask application needs its own template, path, and Python
 function. ``render_template()`` should ONLY be used for the HTML file assigned
-to the path in ``@app.route()``. To render a different template, we should
-redirect the program flow to a different function.
+to the path in ``@app.route()``. To render a different template, we redirect
+the program flow to a different function.
 
 The general syntax for a redirect in Flask is:
 
@@ -294,8 +295,8 @@ In the example above, each time we reached ``http://127.0.0.1:5000/third``,
 form sent a ``POST`` request, ``redirect`` changed it into a ``GET``.
 
 This shows an important point. By default, ``redirect()`` sends a ``GET``
-request to the new URL. Many times, this is perfectly fine. However, to deal
-with a form submission, then we should preserve the ``POST`` request.
+request to the new URL. Many times, this is perfectly fine. However, a form
+submission should preserve the ``POST`` request.
 
 Response Codes
 ^^^^^^^^^^^^^^
@@ -314,25 +315,27 @@ after the path.
    #. Save, then navigate to the form on the second page. Submit a ``Yes``
       answer and examine the message displayed on the page.
 
-      [IMAGE]
+      .. figure:: figures/third-post.png
+         :alt: Code 307 preserves the POST request through the redirect.
 
 We learned about response codes in the HTTP chapter, but we aren't going to
-dive into more detail here. Right now, we don't need to know why ``code=307``
-works. We just have to remember that it preserves a ``POST`` method.
+dive into any of those details here. A discussion of why code ``307`` works is
+beyond the scope of this book. We just need to remember that it preserves a
+``POST`` method.
 
 Technical Details (Optional)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A discussion of code ``307`` (and others) is beyond the scope of this book.
-However, for those interested in digging deeper, the following links give a
-place to start:
+For those interested in digging deeper into code ``307`` (and others), start
+with the following links:
 
-#. Link 1...
-#. Link 2...
-#. Link 3?
+#. `How many redirects are there? <https://www.pmg.com/blog/301-302-303-307-many-redirects/>`__
+#. `Redirection messages (MDN Docs) <https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#redirection_messages>`__
 
-As you read the discussions, navigate through the pages in your Flask
-application. As you do this, check the console output in VS Code. 
+.. admonition:: Tip
+
+   As your Flask application runs, keep an eye on the console in VS Code. It
+   displays a log of the HTTP responses as you navigate between pages.
 
 Check Your Understanding
 ------------------------
@@ -341,8 +344,13 @@ Check Your Understanding
 
    Which function matches a template to a specific URL?
 
-   #. ``render_template()``
-   #. ``redirect()``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">render_template()</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">redirect()</code></li>
+      </ol>
+      <p id="Q1"></p>
 
 .. Answer = a
 
@@ -350,8 +358,13 @@ Check Your Understanding
 
    Clicking a page navigation link will:
 
-   #. render a different HTML file at the current URL
-   #. redirect the user to a new URL
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> render a different HTML file at the current URL</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> redirect the user to a new URL</li>
+      </ol>
+      <p id="Q2"></p>
 
 .. Answer = b
 
@@ -359,8 +372,13 @@ Check Your Understanding
 
    Which function can change the appearance of the page at the current URL?
 
-   #. ``render_template()``
-   #. ``redirect()``
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">render_template()</code></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">redirect()</code></li>
+      </ol>
+      <p id="Q3"></p>
 
 .. Answer = a
 
@@ -368,7 +386,12 @@ Check Your Understanding
 
    It's OK to render different templates at the same URL.
 
-   #. True
-   #. False
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q4"></p>
 
 .. Answer = b
