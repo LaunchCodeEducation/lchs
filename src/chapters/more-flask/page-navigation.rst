@@ -1,3 +1,5 @@
+.. _page-navigation:
+
 Page Navigation
 ===============
 
