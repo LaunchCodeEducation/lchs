@@ -272,7 +272,7 @@ Now that ``base.html`` is set up, we can use it as many times as we like.
    .. sourcecode:: html
 
       {% block content %}
-      <p>Look! A second page!</p>
+      <h2>Look! A second page!</h2>
       {% endblock %}
 
 #. In ``main.py``, add a new function to render the template. Be sure to pass
@@ -294,12 +294,14 @@ the `Jinja2 documentation <https://jinja.palletsprojects.com/en/2.11.x/templates
 Video Summary
 -------------
 
-.. todo:: Update extending base video summary.
+Here is a walkthrough for creating a base template and then extending it across
+two different files. Remember that this demo is meant to support the reading,
+not replace it!
 
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/VS-1vD81Pdc" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube.com/embed/C2LGhmPNg10" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 Check Your Understanding
