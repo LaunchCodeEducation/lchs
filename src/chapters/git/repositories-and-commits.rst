@@ -303,7 +303,7 @@ Many developers have ignored version control and regretted it later!
 
 .. admonition:: Tip
 
-   NEVER commit flawed code! If your program isn't working, then don't save it
+   NEVER commit broken code! If your program isn't working, then don't save it
    as part of the version control.
 
    You want your version history to be clean. Saving a bug means that if you
