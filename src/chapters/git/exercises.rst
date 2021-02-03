@@ -10,7 +10,8 @@ Use your terminal powers to move through these Git exercises.
 #. In your ``local_practice`` folder, make a new directory called
    ``Git-Exercises``. Next, go to *File --> Open* and select this new folder.
 #. In the terminal, make sure that you are in the ``Git-Exercises`` directory.
-   Initialize it as a new repository with ``git init``.
+   Initialize it as a new repository with ``git init``. If you wish,
+   :ref:`change the name of the default branch <change-branch-name>` to ``main``.
 #. Add two files to the directory: ``index.html`` and ``style.css``. Use the
    ``status/add/commit`` commands to commit the changes to the repository.
 #. Paste in this boilerplate HTML code into ``index.html``, then commit again.

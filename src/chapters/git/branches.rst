@@ -63,6 +63,8 @@ output was ``On branch main``.
 
          modified:   num_guess.py
 
+.. _change-branch-name:
+
 .. admonition:: Note
 
    When we run ``git init`` to start a new repo, part of the process creates a
