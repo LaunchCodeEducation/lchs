@@ -1,9 +1,9 @@
 Git Tips
 ========
 
-Now that we've got the idea of branching in our toolkit, we should definitely
-use them often. Keeping the core, working code in ``main`` and growing that
-code in branches is a very strong technique.
+Now that we know about branches, we should definitely use them often. Keeping
+the core, working code in ``main`` and growing that code in branches is a very
+strong technique.
 
 This page explores some details that often come up as we work with branches.
 
@@ -93,7 +93,9 @@ error message and keeps the branch intact. Git will also provide a helpful clue
 about how to remove the branch anyway, if we really want to go through with
 that action.
 
-   WARNING: Deleting a local branch cannot be undone!
+.. admonition:: Warning
+
+   Deleting a local branch cannot be undone!
 
 .. admonition:: Example
 

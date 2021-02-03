@@ -2,14 +2,16 @@ Branching Out
 =============
 
 What if we want to experiment with a new feature, and we know that we will need
-to make several commits before its done? Similarly, what if two students want
+to make several commits before it's done? Similarly, what if two students want
 to work on different parts of a project at the same time?
 
 For example, one student could work on some HTML code while their partner
 completes the CSS. They can both work during class to save themselves some
 time. However, their commits won't follow the same path. Each person will have
-their own version of the Git history for the same project. As we saw on the
-previous page, this is not a good idea.
+their own version of the Git history for the same project.
+
+Eventually, they will combine their work. What happens if they need to roll
+back to an earlier commit? With different histories, this becomes complicated.
 
 Unless...
 
@@ -50,7 +52,22 @@ In the :ref:`previous section <check-git-status>`, we used ``git status`` to
 check the state of the ``git_practice`` repository. The first line in the
 output was ``On branch main``.
 
+.. sourcecode:: bash
+   :linenos:
+
+   $ git status
+   On branch main
+   Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+         modified:   num_guess.py
+
 .. admonition:: Note
+
+   When we run ``git init`` to start a new repo, part of the process creates a
+   single, default branch. For all of the examples in this book, we refer to
+   this branch as ``main``.
 
    If your installed version of ``git`` gives the default branch a name other
    than ``main``, you can rename it with the command:
@@ -61,11 +78,9 @@ output was ``On branch main``.
 
    In this case, ``old-branch-name`` becomes ``main``.
 
-When we run ``git init`` to start a new repo, part of the process creates a
-single, default branch called ``main``. Many programmers consider this like
-the trunk of a tree. They use ``main`` to store and track the central, working
-part of their code. They use other branches to experiment with new features and
-split up work between partners.
+Many programmers consider ``main`` like the trunk of a tree. They use it to
+store and track the central, working part of their code. They use other
+branches to experiment with new features and split up work between partners.
 
 .. figure:: figures/git-branches.png
    :alt: Diagram showing two branches coming off of the main one.
@@ -191,10 +206,37 @@ them, we call up different versions of our project.
    #. Return to the ``main`` branch in the ``git_practice`` repository.
    #. Create a new branch off of ``main``.
    #. In the new branch, add some comments to ``num_guess.py``.
-   #. Save and commit the changes.
+   #. Save the changes in VS Code, then use ``git status``, ``git add .``, and
+      ``git commit -m`` to commit the changes to the repository.
    #. Use ``git branch`` to see the list of branches in the repo.
    #. Use ``git checkout`` to switch between the branches. Notice how the file
       tree and code both update.
+
+Uncommitted Work
+^^^^^^^^^^^^^^^^
+
+Usually, switching between branches occurs smoothly. However, Git will block
+the process if the current branch contains uncommitted work. Even if we saved
+our code in the editor, Git will return an error message.
+
+.. admonition:: Example
+
+   Assume we make some changes in ``hello-branch`` and then try moving back
+   to ``main``. We will receive an error message that looks something like:
+
+   .. sourcecode:: bash
+
+      $ git checkout main
+         error: Your local changes to the following files would be overwritten by checkout:
+            
+            greeting.py
+
+         Please, commit your changes or stash them before you can switch branches.
+         Aborting
+
+Without committing before using ``checkout``, we could easily wipe out any
+changes we made in the old branch! Git prevents us from accidentally erasing
+our work by forcing us to make a commit before switching branches.
 
 Check Your Understanding
 ------------------------
@@ -208,7 +250,7 @@ Check Your Understanding
       <ol type="a">
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To split work between team members.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To try out a new feature before adding it to the main program.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To avoid conflicts in the repo history.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To keep the commit history clear and reliable.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> All of the above.</li>
       </ol>
       <p id="Q1"></p>
