@@ -139,7 +139,7 @@ Let's see how this works.
    :ref:`git log example <git-log-example>`, we see that the first entry is
    labeled with ``(HEAD -> main)``. Think of ``HEAD`` like a bookmark in the
    log.
-#. ``--hard`` removes all changes made after the ``HEAD`` commit.
+#. ``--hard`` removes all changes made after the most recent commit.
 
 .. figure:: figures/git-reset.gif
    :alt: The git reset command removes uncommitted changes from the files.
@@ -147,38 +147,9 @@ Let's see how this works.
 Switching Between Commits
 -------------------------
 
-What if we want to move further back in the commit history? This is possible.
-Git allows us to move the ``HEAD`` bookmark to any commit in the log. We can
-then ``reset`` to that state of the code and move forward from there.
+What if we want to move further back in the commit history? It's possible, but
+doing this is actively discouraged in the coding community! Resetting to
+anything before the last commit complicates the history of the repository.
 
-However, this is not the best option. In fact, doing this is actively
-discouraged in the coding community. Consider this example:
-
-.. admonition:: Example
-
-   Imagine that we move ``HEAD`` from the most recent commit back to the very
-   first one we made.
-
-   .. figure:: figures/move-head.png
-      :alt: Move the HEAD bookmark back to the earliest commit in the log.
-      :width: 60%
-
-   What happens to the second and third commits we saved to the repository?
-
-In our local version of the repo, the second and third commits would be wiped
-out if we use ``--hard`` in our reset command. It's the nuclear option.
-
-This might not sound like a problem, but it is if other coders are working on
-our project. Their logs will now be different, since they are still working off
-of the old commits. This causes problems when it comes time to merge everyone's
-work together. By moving ``HEAD`` back to the beginning on our machine, we
-created a separate path for the project:
-
-.. figure:: figures/compromised-path.png
-   :alt: Moving HEAD off of the most recent commit creates conflicting paths.
-
-Resetting to anything but the most recent commit complicates the history for
-the repository.
-
-Fortunately, Git provides a way for us to preserve the work flow history and
-let us experiment with new features and code.
+Fortunately, Git provides a way for us to keep the history clean, experiment
+with new features, and keep our teamwork efficient.
