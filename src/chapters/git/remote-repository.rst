@@ -2,10 +2,10 @@ Remote Repositories
 ===================
 
 In this chapter, we learned how to use the Git version control system to keep
-backups of our code. This version history (the repository) is stored on our
-personal machine.
+snapshots of our projects. This version history (the repository) is stored on
+our personal machine.
 
-One advantage of keeping the local repo is that we can work on our project
+One advantage of keeping this *local* repo is that we can work on our project
 anytime we want. We don't need access to the internet. One issue with a local
 repo, however, is that keeping a copy on our personal device does not always
 fit how we code. For example:
@@ -150,7 +150,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is the command for making a commit to a remote repository?
+   What is the command for sending a commit to a remote repository?
 
    .. raw:: html
 

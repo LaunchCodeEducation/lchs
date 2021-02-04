@@ -50,6 +50,31 @@ series of specific commands.
          $ git init
             Initialized empty Git repository in /Users/username/Desktop/local_practice/git_practice/.git
 
+      Notice ``.git`` at the end of the file path on line 7. This is the name
+      for a *hidden* directory that stores the repository data. The folder won't
+      appear in our file tree, but we can see it if we use the terminal command
+      ``ls -a``.
+
+.. admonition:: Tip
+
+   Sometimes programers accidentally enter the ``git init`` command when they
+   are inside the wrong directory. This initializes a new repository where it
+   doesn't belong.
+   
+   No worries! The solution is quick. Just delete the ``.git`` directory using
+   the terminal and the :ref:`rm command <terminal_rm>`.
+
+   .. sourcecode:: bash
+      :linenos:
+
+      $ pwd
+      /Users/username/wrong_directory
+      $ ls -a
+      .     ..    .git     oops.py
+      $ rm -rf .git
+
+   After that, move to the *correct* directory and use ``git init`` again.
+
 We are now set up to have Git track all changes made inside the
 ``git_practice`` folder. Let's make some changes and see how to track our
 project!
@@ -84,7 +109,7 @@ lines deserve some attention.
 #. Line 4 tells us that we have made ``No commits yet``. A **commit** is an
    update recorded in the repo. If we think of the repository as a container,
    then the commits are smaller containers stacked on top of each other inside
-   the repo. Each commit includes a time stamp and a copy of all the files as
+   the repo. Each commit includes a timestamp and a copy of all the files as
    they existed at that time. The deeper we dig down inside a repository, the
    farther back in time we go.
 #. Line 6 tells us, *Hey, if you want to track your project, you need to put
@@ -125,8 +150,8 @@ Step 1: Make a Change
 
 The ``git status`` command returns information about two types of changes:
 modified *tracked* files and modified *untracked* files. *Tracked* means that
-the file already exists in the Git repository, but it has been recently
-changed. *Untracked* means that the file is new and not currently in the repo.
+the file already exists in the Git repository. *Untracked* means that the file
+is not currently in the repo.
 
 Since we just added ``num_guess.py``, lines 8 - 11 list it as an untracked
 file. Line 13 tells us about changes found in the ``git_practice`` directory,
@@ -158,7 +183,7 @@ to make it part of our first *commit*.
 
          new file:   num_guess.py
 
-The command ``git add .`` takes all of the tracked and untracked files in the
+The command ``git add .`` takes ALL of the tracked and untracked files in the
 current directory and adds them to the commit. We only have one change this
 time, but later on the list will be longer.
 
@@ -241,6 +266,12 @@ As we take a project from start to finish, we will make lots of changes and
 save our files many times over. How often should we add commits to the
 repository?
 
+.. admonition:: Note
+
+   Git does NOT automatically save changes to a project! To update the repo, we
+   must use the ``git status``, ``git add .``, and ``git commit -m`` commands
+   in the terminal.
+
 The general rule of thumb is that any time we make a significant change to the
 project, we should also do a commit. This includes things like:
 
@@ -272,7 +303,7 @@ Many developers have ignored version control and regretted it later!
 
 .. admonition:: Tip
 
-   NEVER commit flawed code! If your program isn't working, then don't save it
+   NEVER commit broken code! If your program isn't working, then don't save it
    as part of the version control.
 
    You want your version history to be clean. Saving a bug means that if you
