@@ -10,9 +10,10 @@ program.
    single: git; merge
 
 We do this by **merging** two separate branches. A merge takes the files and
-code from one branch and joins them to the files and code in another. A commit
-is automatically created and saves the result to the repository. The two
-branches become one, with a combined history and Git log.
+code from one branch and combines them to the files and code in another. As
+long as no problems occur, Git will automatically commit the combined files.
+The two branches become one, with a combined history and Git log. (We'll talk
+about the case when problems *do* occur a bit later).
 
 .. figure:: figures/git-merge.png
    :alt: Merging combines two Git branches into one.
@@ -116,7 +117,7 @@ practice resolving it.
 Conflict Demo
 ^^^^^^^^^^^^^
 
-Let's return to the main branch in our ``git_practice`` repo. Make sure you
+Let's return to the ``main`` branch in our ``git_practice`` repo. Make sure you
 have committed all recent changes before diving into the steps below.
 
 Setup
@@ -183,7 +184,7 @@ Resolving the Conflict
       Automatic merge failed; fix conflicts and then commit the result.
 
 #. The CONFLICT line tells us that Git hit a problem when it tried to merge the
-   changes in the ``conflict_demo`` file. The last line offers us some
+   changes in the ``conflict_demo.txt`` file. The last line offers us some
    encouragement! Although the automatic merge failed, we can still fix things
    and save the result.
 #. Notice that the text in the editor is now highlighted:
@@ -201,7 +202,7 @@ Resolving the Conflict
 
    a. **Accept Current Change** keeps the green highlighted text and ignores
       the the text coming in from the other branch (the blue content). Clicking
-      on this option:
+      on this option causes the result:
 
       .. figure:: figures/merge-conflict4.png
          :alt: Kept the changes made in the main branch.
@@ -209,14 +210,15 @@ Resolving the Conflict
 
    b. **Accept Incoming Change** keeps the blue highlighted text and uses it to
       replace the green content. The work from the incoming branch overrides
-      the current one. Clicking on this option:
+      the current one. Clicking on this option causes the result:
 
       .. figure:: figures/merge-conflict5.png
          :alt: Kept the changes made in the make-conflict branch.
          :width: 60%
 
    c. **Accept Both Changes** combines all of the changes. The incoming content
-      gets inserted just after the existing lines. Clicking on this option:
+      gets inserted just after the existing lines. Clicking on this option
+      causes the result:
    
       .. figure:: figures/merge-conflict6.png
          :alt: Kept the changes made in both branches.
