@@ -46,6 +46,8 @@ Even though the code only contains a single ``h1`` element inside the
 ``<body>`` tags, it is still a fully functional HTML file. Let's see what it
 looks like in a browser!
 
+.. _view-local-html:
+
 Viewing Local Files in a Browser
 --------------------------------
 

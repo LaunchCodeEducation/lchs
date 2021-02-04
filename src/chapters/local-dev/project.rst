@@ -1,3 +1,5 @@
+.. _turtle-races:
+
 Project: Local Turtle Races
 ===========================
 

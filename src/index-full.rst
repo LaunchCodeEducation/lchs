@@ -22,6 +22,7 @@ Chapters
    chapters/css/index
    chapters/terminal/index
    chapters/local-dev/index
+   chapters/git/index
 
 .. toctree::
 
@@ -47,6 +48,7 @@ Projects
    chapters/html/project
    chapters/css/project
    chapters/local-dev/project
+   chapters/git/project
 
 Assignments
 ===========
@@ -59,6 +61,7 @@ Assignments
    assignments/coded-messages
    assignments/console-game
    assignments/html-me-something
+   assignments/communication-log
 
 Appendices
 ==========
