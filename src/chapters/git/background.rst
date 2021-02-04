@@ -36,9 +36,9 @@ file. If we want, we can also restore an older version of the document.
 
 Version control systems for coding work in the same way. They help programmers
 by keeping backups and a history of the changes made to the code. With that
-record, coders can restore a version without a particular bug. For the
-situation described at the top of the page, we could use the history to roll
-back our code to an earlier, working version. Presto! We get a do-over. 
+record, coders can restore a previous version of a project. For the situation
+described at the top of the page, we could use the history to roll back our
+code to an earlier, working copy. Presto! We get a do-over.
 
 A VCS also lets programmers work on different features of the same program.
 Each person works on their own copy of the code, and the version control
@@ -52,10 +52,10 @@ Version Control for This Course
 We will use **Git** as the VCS for this class. Git is not the only version
 control system out there, but it is widely used by programmers and companies.
 
-Git (and other VCS software) creates a **repository** for a particular project.
-Think of a repository as a storage container for all the files that belong to a
-particular program. Repositories also include the different versions of the
-code over time and a log of the changes.
+Git (and other VCS software) stores a project in a **repository**. Think of a
+repository as a container for all the files that belong to a particular
+program. Repositories also include the different versions of the code over time
+and a log of the changes.
 
 When a programmer updates the repository, Git does not overwrite the old
 version. Instead, it saves a new copy of the files. This preserves each older
@@ -89,7 +89,7 @@ Check Your Understanding
          <li><span id = "A1" onclick="highlight('A1', true)">Keeping track of changes made in a project.</span></li>
          <li><span id = "B1" onclick="highlight('B1', true)">Restoring older, working versions of a project.</span></li>
          <li><span id = "C1" onclick="highlight('C1', true)">Allowing different users to work on the same project without interfering with each other.</span></li>
-         <li><span id = "D1" onclick="highlight('D1', false)">Saving yet another abbreviation in our brains.</span></li>
+         <li><span id = "D1" onclick="highlight('D1', false)">Saving yet another abbreviation (VCS) in our brains.</span></li>
       </ol>
 
 .. Answers = a, b, c.
