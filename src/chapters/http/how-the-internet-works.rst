@@ -153,10 +153,9 @@ HTTP
 images. It also provides the rules for how to format the responses. The details
 of the request/response structure come later in this chapter. 
 
-**HTTPS** adds a secure connection to HTTP. This means that any data sent is
-*encrypted* to keep it from being read while in transit. The data is coded at
-one end of the line (by the server or client), and then decoded at the other
-end.
+**HTTPS** adds a secure connection to HTTP. Any data sent is *encrypted* to
+keep it from being read while in transit. The data is coded at one end of the
+line (by the server or client), and then decoded at the other end.
 
 TCP/IP
 ^^^^^^
@@ -172,6 +171,12 @@ file into *packets*, which are easier to manage. Packets are small chunks of
 data of a standard size, and they get sent from one location to the next. When
 they arrive at their final destination, the separate packets get put back
 together.
+
+.. figure:: figures/tcp-ip.png
+   :alt: Sending data across the internet in packets of standard size.
+   :width: 80%
+
+   TCP/IP sends data across the internet as a series of packets.
 
 Check Your Understanding
 ------------------------
