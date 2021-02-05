@@ -289,7 +289,7 @@ Merge the Pull Request
 
       Click to review the details of the pull request.
 
-#. **Base**: THe page that opens shows the history of all the commits made to
+#. **Base**: The page that opens shows the history of all the commits made to
    the ``open-mic`` branch. When ready, click the green *Merge Pull Request*
    button, followed by *Confirm Merge*.
 
