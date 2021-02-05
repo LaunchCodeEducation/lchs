@@ -23,6 +23,7 @@ Chapters
    chapters/terminal/index
    chapters/local-dev/index
    chapters/git/index
+   chapters/http/index
 
 .. toctree::
 
