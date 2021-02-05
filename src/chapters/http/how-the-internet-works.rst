@@ -63,9 +63,10 @@ send the data?
 .. index:: ! IP address
 
 Every device connected directly or indirectly to the internet has its own
-numerical address, called an **IP address**. "IP" stands for *internet
-protocol*. The links we click on a webpage contain IP addresses, which identify
-the server we need to contact. Requests also include the address of our device.
+numerical address, called an **IP address**. "IP" stands for *Internet
+Protocol*. When we click a link on a webpage, our computer identifies the IP
+address for the server we need to contact. Requests also include the address of
+our device, which tells the server where to send the response.
 
 Any time our request passes through a different device on its way to the server,
 that device adds its own IP address to the request. Think of this like a trail
@@ -89,8 +90,8 @@ web, however, these addresses are usually hidden. Instead, we see names like
 .. index:: ! DNS
 
 **DNS** is the address book of the internet. It provides readable and memorable
-names for servers, such as ``launchcode.org``. The are called **domain names**,
-and they stand in for the actual server IP addresses.
+names for servers, such as ``launchcode.org``. These are called
+**domain names**, and they stand in for the actual server IP addresses.
 
 .. admonition:: Example
 

@@ -68,6 +68,12 @@ application on the server needs to handle the request.
 When the port number is missing, a default value is used. For ``http://``, the
 default port is ``80``. When using ``https://``, the default port is ``443``.
 
+Ports ``80`` and ``443`` prompt the server to run programs that handle web
+requests. For example, assume a server receives a request to port ``443``.
+When this happens, a special security program runs to encrypt/decrypt the data.
+If the request comes in at port ``80``, then a different program runs and
+handles the data without the extra security features.
+
 Path
 ----
 
@@ -110,9 +116,18 @@ This query has *two* key-value pairs:
 - ``q`` : ``recent+nasa+images``
 - ``ia`` : ``images``
 
-A search for "NASA" returns its `home page <https://www.nasa.gov/>`__ and
-lots of other information. Adding the query string helps narrow down the
-results. In this case, we want to focus on recent images shared by NASA.
+A search for "NASA" returns its `home page and lots of other information <https://duckduckgo.com/?q=nasa&t=h_&ia=web>`__.
+Adding the query string helps narrow down the results. In this case, we want to
+focus on recent images shared by NASA.
+
+.. admonition:: Try It!
+
+   #. Follow the link https://google.com/?q=python and compare the query string
+      ``q=python`` compares to the text that appears in the search box.
+   #. In the address bar, change ``q=python`` to ``q=python+turtles`` and tap
+      *Enter*. How does the page change?
+   #. Does including the query string in the address bar actually run the
+      Google search?
 
 Video Summary
 -------------
@@ -121,3 +136,55 @@ If you'd like to reinforce your reading with a video explanation for URLs,
 here's a helpful, five minute clip:
 
 - `How Do URLs Work? <https://www.youtube.com/watch?v=OvF_pnJ6zrY>`__
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   For the URL ``https://launchcode.org/lchs``, identify the ``host``.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> lchs</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> https</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> launchcode</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> launchcode.org</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   For the URL ``https://education.launchcode.org/lchs/index.html``, identify
+   the ``path``.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /index.html</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> /lchs/index.html</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /education.launchcode.org/lchs/index.html</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /education.launchcode.org</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   For the query string ``?q=nasa+images&t=h_&iax=videos&ia=videos``, which of
+   the following is NOT a key/value pair?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">q : nasa+images</code></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">t : h_iax</code></li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">ia : videos</code></li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = b
