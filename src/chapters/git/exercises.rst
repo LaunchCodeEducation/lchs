@@ -1,3 +1,5 @@
+.. _git-exercises:
+
 Exercises: Git More Practice
 ============================
 
