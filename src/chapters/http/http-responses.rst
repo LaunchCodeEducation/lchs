@@ -40,7 +40,7 @@ The structure has these components:
    the date and time, the data being sent (text and HTML), the size of the
    response body, and when it was last modified.
 #. **Blank line:** This marks the end of the response headers.
-#. **Response body (Optional):** Below the blank line, the request body takes
+#. **Response body (Optional):** Below the blank line, the response body takes
    up the rest of the HTTP response. This usually includes the HTML and CSS for
    the requested webpage.
 
@@ -71,7 +71,8 @@ fall into one of five categories:
 #. **Success**: (2xx) The request was valid and the server successfully
    responded.
 #. **Redirect**: (3xx) The request is incomplete. The client must take
-   additional action before the server can respond.
+   additional action, such as sending the request to a different server, before
+   a response can be returned.
 #. **Client Error**: (4xx) There was a problem with the client's request.
 #. **Server Error**: (5xx) The request was valid, but the server hit a problem
    when trying to respond to it.

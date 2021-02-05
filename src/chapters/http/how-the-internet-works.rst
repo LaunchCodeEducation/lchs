@@ -63,9 +63,10 @@ send the data?
 .. index:: ! IP address
 
 Every device connected directly or indirectly to the internet has its own
-numerical address, called an **IP address**. "IP" stands for *internet
-protocol*. The links we click on a webpage contain IP addresses, which identify
-the server we need to contact. Requests also include the address of our device.
+numerical address, called an **IP address**. "IP" stands for *Internet
+Protocol*. When we click a link on a webpage, our computer identifies the IP
+address for the server we need to contact. Requests also include the address of
+our device, which tells the server where to send the response.
 
 Any time our request passes through a different device on its way to the server,
 that device adds its own IP address to the request. Think of this like a trail
@@ -89,12 +90,12 @@ web, however, these addresses are usually hidden. Instead, we see names like
 .. index:: ! DNS
 
 **DNS** is the address book of the internet. It provides readable and memorable
-names for servers, such as ``launchcode.org``. The are called **domain names**,
-and they stand in for the actual server IP addresses.
+names for servers, such as ``launchcode.org``. These are called
+**domain names**, and they stand in for the actual server IP addresses.
 
 .. admonition:: Example
 
-   The domain names for ``104.25.127.113`` and ``172.217.5.229`` are
+   The domain names for ``104.25.127.113`` and ``172.217.8.5`` are
    ``launchcode.org`` and ``mail.google.com``, respectively.
 
 .. admonition:: Try It!
@@ -152,10 +153,9 @@ HTTP
 images. It also provides the rules for how to format the responses. The details
 of the request/response structure come later in this chapter. 
 
-**HTTPS** adds a secure connection to HTTP. This means that any data sent is
-*encrypted* to keep it from being read while in transit. The data is coded at
-one end of the line (by the server or client), and then decoded at the other
-end.
+**HTTPS** adds a secure connection to HTTP. Any data sent is *encrypted* to
+keep it from being read while in transit. The data is coded at one end of the
+line (by the server or client), and then decoded at the other end.
 
 TCP/IP
 ^^^^^^
@@ -171,6 +171,12 @@ file into *packets*, which are easier to manage. Packets are small chunks of
 data of a standard size, and they get sent from one location to the next. When
 they arrive at their final destination, the separate packets get put back
 together.
+
+.. figure:: figures/tcp-ip.png
+   :alt: Sending data across the internet in packets of standard size.
+   :width: 80%
+
+   TCP/IP sends data across the internet as a series of packets.
 
 Check Your Understanding
 ------------------------
