@@ -93,6 +93,8 @@ folder.
 If the path is missing in the URL, then the **root path** ``/`` is used. The
 root path usually sends us to the home page for a given site.
 
+.. _query-string:
+
 Query String
 ------------
 

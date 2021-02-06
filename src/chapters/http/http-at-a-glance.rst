@@ -6,6 +6,8 @@ HTTP is a different story. We must understand HTTP much more deeply.
 
 Let's start with a high-level view.
 
+.. _request-response:
+
 Requests and Responses
 ----------------------
 

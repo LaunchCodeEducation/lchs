@@ -25,6 +25,7 @@ Chapters
    chapters/local-dev/index
    chapters/git/index
    chapters/http/index
+   chapters/forms/index
 
 .. toctree::
 
@@ -51,6 +52,7 @@ Projects
    chapters/css/project
    chapters/local-dev/project
    chapters/git/project
+   chapters/forms/project
 
 Assignments
 ===========
