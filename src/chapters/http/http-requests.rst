@@ -1,3 +1,5 @@
+.. _http-requests:
+
 Requests
 ========
 

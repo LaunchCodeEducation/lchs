@@ -79,7 +79,7 @@ The general syntax is:
 
 .. sourcecode:: python
 
-   string_with_braces.format(value_1, value_2, etc)
+   string_with_braces.format(value_1, value_2, etc.)
 
 The values inside ``format()`` can be numbers, strings, variables, or expressions.
 

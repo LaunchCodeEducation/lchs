@@ -36,6 +36,8 @@ inside the ``<form>`` tag:
    #. Type in some characters into the *Password* field, then click *Login*.
    #. Properly done, the URL in the address bar no longer spoils your secrecy!
 
+.. _send-data-to-server:
+
 Send Data to a Server
 ---------------------
 
