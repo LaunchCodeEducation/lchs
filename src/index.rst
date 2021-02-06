@@ -26,6 +26,8 @@ Chapters
    chapters/git/index
    chapters/http/index
    chapters/forms/index
+   chapters/flask-intro/index
+   chapters/more-flask/index
 
 .. toctree::
 
@@ -53,6 +55,8 @@ Projects
    chapters/local-dev/project
    chapters/git/project
    chapters/forms/project
+   chapters/flask-intro/project
+   chapters/more-flask/project
 
 Assignments
 ===========

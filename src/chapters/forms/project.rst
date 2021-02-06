@@ -1,5 +1,7 @@
-Project: Web Coded Messages (Part 1)
-====================================
+.. _web-caesar-part1:
+
+Project: Web Form (Part 1)
+==========================
 
 In this chapter, we coded several forms and used the *Parrot Server* to check
 the data submitted. Of course, the parrot isn't a real server. It stores no
@@ -147,7 +149,6 @@ Now you need to make your form look nice.
 Coming Up Next
 --------------
 
-In Part 2 of this project, you will write some Python code that will collect
-the form data and then update the page to show the coded or translated message.
-
-.. todo:: Insert internal link to the Part 2 project page.
+In :ref:`Part 2 <web-caesar-part2>` of this project, you will write some
+Python code to collect the form data. Your program will then encrypt or
+decrypt the message and display it on the webpage.

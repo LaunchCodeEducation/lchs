@@ -89,6 +89,8 @@ The general syntax for an HTML element is:
    some HTML elements will still display correctly, but not all. To avoid
    unexpected results or errors, always include both tags!
 
+.. _first-html-page:
+
 Try It!
 -------
 

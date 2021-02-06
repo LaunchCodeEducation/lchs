@@ -59,3 +59,19 @@ body.body-bc {
   font-size: 10px;
    padding-left: 4px;
 }
+
+.vid_box {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    height: 0;
+    padding-top: 45%; /* This is 80% of the desired aspect ratio */
+}
+
+.vid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

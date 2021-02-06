@@ -149,6 +149,7 @@ If you don't know how many times the loop needs to run, a ``while`` loop is the
 best fit. Let’s look at one example of this.
 
 .. index:: ! input validation
+   single: validation; input
 
 .. admonition:: Try It!
 

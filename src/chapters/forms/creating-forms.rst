@@ -71,7 +71,7 @@ from now on.
 Input Element
 -------------
 
-.. index:: ! input
+.. index:: input
 
 The ``input`` element adds an *interactive* field, which allows the user to
 enter data. ``input`` elements have two very important attributes: *name* and
