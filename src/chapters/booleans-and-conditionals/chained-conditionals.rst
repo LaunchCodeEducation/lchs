@@ -9,7 +9,7 @@ after the other. If one check in the series evaluates to ``True``, then all of
 the following checks are ignored.
 
 ``elif`` Statements
-----------------------
+-------------------
 
 .. index:: ! elif
 
@@ -71,19 +71,19 @@ first character in a string.
    .. sourcecode:: python
       :linenos:
 
-      text = 'Python ROCKS!'
+      character = 'P'
       lowercase = 'abcdefghijklmnopqrstuvwxyz'
       uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
       digits = '0123456789'
 
-      if text[0] in lowercase:
-         print(text, 'starts with a lowercase character.')
-      elif text[0] in uppercase:
-         print(text, 'starts with an UPPERCASE character.')
-      elif text[0] in digits:
-         print(text, 'starts with a number.')
+      if character in lowercase:
+         print(character, 'is a lowercase letter.')
+      elif character in uppercase:
+         print(character, 'is an UPPERCASE letter.')
+      elif character in digits:
+         print(character, 'is a number.')
       else:
-         print('&**%#!', text, 'starts with punctuation or a space.')
+         print('&**%#!', character, 'is a punctuation mark or a space.')
 
 We can easily add more ``elif`` statements to the conditional if we need to
 perform more checks. This gives us a huge amount of flexibility if we decide
@@ -108,27 +108,27 @@ code blocks will run.
    .. sourcecode:: python
       :linenos:
 
-      x = 10;
-      y = 20;
+      first_num = 10;
+      second_num = 20;
 
-      if x > y:
-         print("x is greater than y")
-      elif x < y:
-         print("x is less than y")
-      elif x % 5 == 0:
-         print("x is divisible by 5")
-      elif x % 2 == 0:
-         print("x is even")
+      if first_num > second_num:
+         print(first_num, "is greater than", second_num)
+      elif first_num < second_num:
+         print(first_num, "is less than", second_num)
+      elif first_num % 5 == 0:
+         print(first_num, "is divisible by 5")
+      elif first_num % 2 == 0:
+         print(first_num, "is even")
 
    **Console Output**
 
    ::
 
-      x is less than y
+      10 is less than 20
 
-Even though both of the conditions ``x % 5 == 0`` and ``x % 2 == 0`` evaluate
-to ``True``, neither line 9 nor 11 run. Since line 6 is satisfied first, the
-rest of the conditional is skipped.
+Even though both of the conditions ``first_num % 5 == 0`` and
+``first_num % 2 == 0`` evaluate to ``True``, neither line 9 nor 11 runs. Since
+line 6 is satisfied first, the rest of the conditional is skipped.
 
 Nested vs. Chained Conditionals
 -------------------------------
