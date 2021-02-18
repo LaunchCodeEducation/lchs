@@ -242,10 +242,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">True</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">False</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">"True"</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">"False"</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">True</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">False</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">"True"</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">"False"</code></li>
       </ol>
       <p id="Q1"></p>
 
@@ -259,10 +259,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 and < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 or < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">num > 0 and num < 5</span></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">num > 0 or num < 5</span></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">num > 0 and < 5</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">num > 0 or < 5</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">num > 0 and num < 5</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">num > 0 or num < 5</code></li>
       </ol>
       <p id="Q2"></p>
 
@@ -276,36 +276,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li onclick="revealTrueFalse('resultA', true)">12 * 2 == 24 <span id="resultA"></span></li>
-         <li onclick="revealTrueFalse('resultB', false)">'dog' == 'cat or 'dog' == 'Dog' <span id="resultB"></span></li>
-         <li onclick="revealTrueFalse('resultC', false)">12%2 == 0 and len('flower') < 6 <span id="resultC"></span></li>
-         <li onclick="revealTrueFalse('resultD', true)">'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10 <span id="resultD"></span></li>
+         <li onclick="revealTrueFalse('resultA', true)"><code class="pre">12 * 2 == 24</code> <span id="resultA"></span></li>
+         <li onclick="revealTrueFalse('resultB', false)"><code class="pre">'dog' == 'cat or 'dog' == 'Dog'</code> <span id="resultB"></span></li>
+         <li onclick="revealTrueFalse('resultC', false)"><code class="pre">12%2 == 0 and len('flower') < 6</code> <span id="resultC"></span></li>
+         <li onclick="revealTrueFalse('resultD', true)"><code class="pre">'a' in 'xyz' and len('flower') >= 6 or 5 + 5 == 10</code> <span id="resultD"></span></li>
       </ol>
 
 .. Answer = True, False, False, True
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function evaluateMC(id, correct) {
-         if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-
-      function revealTrueFalse(id, correct) {
-         if (document.getElementById(id).innerHTML != '') {
-            document.getElementById(id).innerHTML = '';
-         } else if (correct) {
-            document.getElementById(id).innerHTML = 'True';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'False';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

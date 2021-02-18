@@ -108,17 +108,17 @@ code blocks will run.
    .. sourcecode:: python
       :linenos:
 
-      first_num = 10;
-      second_num = 20;
+      num = 10;
+      other_num = 20;
 
-      if first_num > second_num:
-         print(first_num, "is greater than", second_num)
-      elif first_num < second_num:
-         print(first_num, "is less than", second_num)
-      elif first_num % 5 == 0:
-         print(first_num, "is divisible by 5")
-      elif first_num % 2 == 0:
-         print(first_num, "is even")
+      if num > other_num:
+         print(num, "is greater than", other_num)
+      elif num < other_num:
+         print(num, "is less than", other_num)
+      elif num % 5 == 0:
+         print(num, "is divisible by 5")
+      elif num % 2 == 0:
+         print(num, "is even")
 
    **Console Output**
 
@@ -126,9 +126,9 @@ code blocks will run.
 
       10 is less than 20
 
-Even though both of the conditions ``first_num % 5 == 0`` and
-``first_num % 2 == 0`` evaluate to ``True``, neither line 9 nor 11 runs. Since
-line 6 is satisfied first, the rest of the conditional is skipped.
+Even though both of the conditions ``num % 5 == 0`` and ``num % 2 == 0``
+evaluate to ``True``, neither line 9 nor 11 runs. Since line 6 is satisfied
+first, the rest of the conditional is skipped.
 
 Nested vs. Chained Conditionals
 -------------------------------
@@ -228,10 +228,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">Launch</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Code</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Launch<br>Code</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">LaunchCode</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">Launch</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">Code</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">Launch<br>Code</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">LaunchCode</code></li>
       </ol>
       <p id="Q1"></p>
 
