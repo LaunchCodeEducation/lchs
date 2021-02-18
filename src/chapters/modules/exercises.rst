@@ -12,12 +12,11 @@ existing modules to help assemble your project.
 
 .. admonition:: Note
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
-   there.
+   If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`,
+   complete the exercises there.
 
-   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
-   the following links to copy the starter code:
+   If you are NOT enrolled in a Trinket course, use one of the following links
+   to copy the starter code:
 
    #. Open this `Trinket <https://trinket.io/python/a579c40c9f>`__ and *Remix*
       before getting started.
@@ -27,13 +26,15 @@ existing modules to help assemble your project.
 Import Module Code
 ------------------
 
-Lucky you! Some of your teammates have already coded the necessary functions
-in the ``averages.py`` and ``display.py`` files.
+Lucky you! Most of the functions you need are in the ``averages.py`` and
+``display.py`` files.
 
 #. In ``main.py``, add a statement to import all functions from the
    ``averages`` module.
 #. In ``main.py``, add code to import ONLY the ``print_all`` function from
    the ``display`` module.
+#. Use the ``as`` keyword to rename the imported ``print_all`` function to
+   ``display_results``.
 
 Finish Coding A New Module
 --------------------------
@@ -43,20 +44,12 @@ Finish Coding A New Module
 #. Add code to complete the ``random_from_list`` function. It should take a
    list as an argument and then return a
    :ref:`randomly selected element <random-collection-item>` from that list.
-#. Place any loose statements you find in the ``random_select.py`` code into a
-   ``main()`` function.
 #. Import the ``random_select`` module into the ``main.py`` program.
 
-Rename Imported Modules
------------------------
+.. admonition:: Note
 
-``main.py`` contains the program's control code, but some of the module and
-function names used in the ``main.py`` do not match the names that come from
-the modules.
-
-#. Use the ``as`` keyword to rename the ``averages`` module to match the dot
-   notation used in ``main.py``.
-#. Rename the imported ``print_all`` function to ``display_results``.
+   If you add any loose statements in the ``random_select.py`` file, remember
+   to place them into a ``main()`` function.
 
 Finish the Project
 -------------------
@@ -69,13 +62,14 @@ Now complete the project code.
    your work in the previous sections. If you did, do not worry. The comments
    in ``main.py`` will still show you where to add code.
 
-#. Line 18 - Call ``display_results`` to print all of the tests and student
+#. **Line 19**: Call ``display_results`` to print all of the tests and student
    scores. Be sure to pass in the correct arguments.
-#. Line 22 - Using dot notation, call ``average_for_test`` to print the class
-   average for each test. Use ``title_index`` and ``scores`` as arguments.
-#. Line 26 - Call ``average_for_student`` (with the proper arguments) to print
-   each astronaut's average score.
-#. Line 29 - Call ``random_from_list`` to pick the next spacewalker from the
+#. **Line 23**: Using dot notation, call ``average_for_test`` to print the
+   class average for each test. Use ``title_index`` and ``scores`` as
+   arguments.
+#. **Line 27**: Call ``average_for_student`` (with the proper arguments) to
+   print each astronaut's average score.
+#. **Line 30**: Call ``random_from_list`` to pick the next spacewalker from the
    ``astronauts`` list.
 
 Sanity check!
