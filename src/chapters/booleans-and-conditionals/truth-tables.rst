@@ -171,7 +171,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Assume we have 3 boolean expressions---A, B, and C. Which combinations of
+   Assume we have 3 boolean expressions (A, B, and C). Which combinations of
    values (A/B/C) will make the expression ``A or B and C`` evaluate to
    ``True``? Click ALL that apply.
 
@@ -189,30 +189,3 @@ Check Your Understanding
       </ol>
 
 .. Answers = a, b, c, d, g
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function highlight(id, answer) {
-         text = document.getElementById(id).innerHTML
-         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
-            return
-         }
-         if (answer) {
-            document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = text + ' - Correct!';
-         } else {
-            document.getElementById(id).innerHTML = text + ' - Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-      
-      function reveal(id) {
-         state = document.getElementById(id).style.opacity
-         if (state > 0) {
-            document.getElementById(id).style.opacity = 0;
-         } else {
-            document.getElementById(id).style.opacity = 1;
-         }
-      }
-   </script>

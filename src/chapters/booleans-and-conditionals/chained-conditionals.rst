@@ -9,7 +9,7 @@ after the other. If one check in the series evaluates to ``True``, then all of
 the following checks are ignored.
 
 ``elif`` Statements
-----------------------
+-------------------
 
 .. index:: ! elif
 
@@ -71,19 +71,19 @@ first character in a string.
    .. sourcecode:: python
       :linenos:
 
-      text = 'Python ROCKS!'
+      character = 'P'
       lowercase = 'abcdefghijklmnopqrstuvwxyz'
       uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
       digits = '0123456789'
 
-      if text[0] in lowercase:
-         print(text, 'starts with a lowercase character.')
-      elif text[0] in uppercase:
-         print(text, 'starts with an UPPERCASE character.')
-      elif text[0] in digits:
-         print(text, 'starts with a number.')
+      if character in lowercase:
+         print(character, 'is a lowercase letter.')
+      elif character in uppercase:
+         print(character, 'is an UPPERCASE letter.')
+      elif character in digits:
+         print(character, 'is a number.')
       else:
-         print('&**%#!', text, 'starts with punctuation or a space.')
+         print('&**%#!', character, 'is a punctuation mark or a space.')
 
 We can easily add more ``elif`` statements to the conditional if we need to
 perform more checks. This gives us a huge amount of flexibility if we decide
@@ -108,27 +108,27 @@ code blocks will run.
    .. sourcecode:: python
       :linenos:
 
-      x = 10;
-      y = 20;
+      num = 10;
+      other_num = 20;
 
-      if x > y:
-         print("x is greater than y")
-      elif x < y:
-         print("x is less than y")
-      elif x % 5 == 0:
-         print("x is divisible by 5")
-      elif x % 2 == 0:
-         print("x is even")
+      if num > other_num:
+         print(num, "is greater than", other_num)
+      elif num < other_num:
+         print(num, "is less than", other_num)
+      elif num % 5 == 0:
+         print(num, "is divisible by 5")
+      elif num % 2 == 0:
+         print(num, "is even")
 
    **Console Output**
 
    ::
 
-      x is less than y
+      10 is less than 20
 
-Even though both of the conditions ``x % 5 == 0`` and ``x % 2 == 0`` evaluate
-to ``True``, neither line 9 nor 11 run. Since line 6 is satisfied first, the
-rest of the conditional is skipped.
+Even though both of the conditions ``num % 5 == 0`` and ``num % 2 == 0``
+evaluate to ``True``, neither line 9 nor 11 runs. Since line 6 is satisfied
+first, the rest of the conditional is skipped.
 
 Nested vs. Chained Conditionals
 -------------------------------
@@ -228,10 +228,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color: #419f6a; font-weight: bold">Launch</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Code</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">Launch<br>Code</span></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color: #419f6a; font-weight: bold">LaunchCode</span></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">Launch</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">Code</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">Launch<br>Code</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">LaunchCode</code></li>
       </ol>
       <p id="Q1"></p>
 
@@ -293,17 +293,3 @@ Check Your Understanding
       <p id="Q2"></p>
 
 .. Answer = b
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function evaluateMC(id, correct) {
-         if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

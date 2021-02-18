@@ -42,3 +42,12 @@ function revealAnswer(id, answer) {
         document.getElementById(id).style.color = 'blue';
     }
 }
+
+function reveal(id) {
+    state = document.getElementById(id).style.opacity
+    if (state > 0) {
+       document.getElementById(id).style.opacity = 0;
+    } else {
+       document.getElementById(id).style.opacity = 1;
+    }
+}
