@@ -37,6 +37,7 @@ uses the string ``se`` as the delimiter:
       text = "Be yourself. Everyone else is already taken."
       words = text.split('se')
       print(words)
+      print(len(words))
 
    **Console Output**
 
