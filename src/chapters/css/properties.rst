@@ -37,6 +37,16 @@ Good CSS Properties to Know
    * - ``font-size``
      - Changes the size of the font.
      - medium or 20px
+   * - ``margin``
+     - Blocks out space around an element. The property takes 1 - 4 values
+       (``top, right, bottom, left``) with units of ``px`` (pixels).
+
+       See example below.
+     - 0px
+   * - ``padding``
+     - Sets the space between an element's content and its border. The
+       property takes 1 - 4 values (``top, right, bottom, left``).
+     - 0px
    * - ``text-align``
      - Aligns the text within an element.
      - left
@@ -51,6 +61,22 @@ Good CSS Properties to Know
 
 A larger, searchable list of CSS properties can be found at
 `W3Schools <https://www.w3schools.com/cssref/>`__.
+
+.. admonition:: Example
+
+   The ``margin`` property adds space between elements. The ``padding``
+   property defines space inside a single element.
+
+   In the figure below, the element on the left has a margin twice as large as
+   the one on the right (e.g. ``10px`` vs. ``5px``). Similarly, the element on
+   the right has a much larger padding than the one on the left (e.g. ``15px``
+   vs. ``5px``).
+
+   .. figure:: figures/margin-vs-padding.png
+      :alt: Showing the difference between margin and padding.
+      :width: 80%
+   
+      Margin vs. padding.
 
 CSS Example
 -----------
