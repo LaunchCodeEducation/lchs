@@ -211,8 +211,8 @@ selected elements to different lists.
 
    ::
 
-      vowel_start: ['apple', 'Everyone can code']
-      digit_start: ['9 to 5', '4EVR']
+      vowel_start: ['apple', 'everyone can code']
+      digit_start: ['1-to-1', '4EVR']
       other_start: ['banana', '@launchcode', ':-)']
 
 Finding Max and Min

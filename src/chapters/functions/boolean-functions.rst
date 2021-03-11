@@ -111,4 +111,4 @@ Try It!
 
       <iframe src="https://trinket.io/embed/python3/e826e9a6f6?runOption=run" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-   With the given key/value pairs, the program should count 2 correct answers.
+   With the given answer pairs, the program should count 2 correct responses.
