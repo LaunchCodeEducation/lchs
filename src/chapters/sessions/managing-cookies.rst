@@ -1,0 +1,4 @@
+Managing Cookies
+================
+
+Lorem ipsum...

@@ -28,6 +28,7 @@ Chapters
    chapters/forms/index
    chapters/flask-intro/index
    chapters/more-flask/index
+   chapters/sessions/index
 
 .. toctree::
 
@@ -57,6 +58,7 @@ Projects
    chapters/forms/project
    chapters/flask-intro/project
    chapters/more-flask/project
+   chapters/sessions/project
 
 Assignments
 ===========
