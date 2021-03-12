@@ -59,6 +59,8 @@ crashes when we click *Go!*
 
    Unbound local error: ``magic_number`` referenced before assignment.
 
+.. todo:: Update the unbound local error screenshot to show correct function name.
+
 Reading the error message tells us what went wrong. In line 14,
 ``magic_number`` hasn't been assigned a value. If we think about the flow of
 the program, this might seem odd at first.

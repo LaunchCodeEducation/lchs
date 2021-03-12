@@ -11,19 +11,42 @@ Cookie Ingredients
 
 .. index:: ! cookie
 
-A **cookie** is a piece of temporary data stored *in the user’s browser*. By
-design, cookies are very small. Each one consists of a single key/value pair,
-but browsers often store many cookies from the same website.
+A **cookie** is a text file that stores data. Browsers use cookies to help
+navigate a specific website. 
 
-Since the data is stored in the browser, users can control how long it remains
-saved. They can also remove cookies at any time using their browser tools.
+By design, cookies are very small (< 4 kB). Each one consists of a single
+key/value pair. Cookie files are stored on our personal device, usually in the
+same directory as our browser.
 
-.. admonition:: Examples
+Since the file size is so small, the same website often stores many cookies on
+our machine.
 
-   Lorem ipsum...
+.. admonition:: Note
 
-   ``username = PythonNinja`` Every page in website now says,
-   "Hello, PythonNinja!"
+   A deep dive into cookie syntax is beyond the scope of this text. However,
+   if you are curious, here are some good resources to get you started:
+
+   #. `All About Cookies <https://www.allaboutcookies.org/faqs/cookie-file.html>`__
+   #. `How Stuff Works <https://computer.howstuffworks.com/cookie1.htm>`__
+   #. `Cookie playlist from Udacity <https://www.youtube.com/playlist?list=PLs5n5nYB22fLqBWEGW0dBh_yIHdzYlpEz>`__
+
+
+Lorem ipsum...
+
+https://www.kaspersky.com/resource-center/definitions/cookies
+
+https://www.allaboutcookies.org/faqs/cookie-file.html
+
+Cookie data is temporary. However, it usually *persists* longer than the values
+we assign to Python variables. Cookies can survive after we refresh a page or
+exit out of our browser.
+
+.. admonition:: Tip
+
+   We can use the tools in the browser to control how long cookies remain
+   saved on our device. We can also remove cookies at any time.
+
+   .. todo:: Add screenshot of browser cookie tools.
 
 How Cookies Work
 ----------------
