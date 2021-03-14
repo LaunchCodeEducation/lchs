@@ -6,19 +6,23 @@ like, *This website uses cookies*. We hear about cookies all the time, but many
 users don't think about them too deeply. They either choose *Accept* or
 *Decline* when they see the alert, and then they move on to the next task.
 
+To help us make our Flask applications more efficient, we'll start by taking a
+closer look at cookies.
+
 Cookie Ingredients
 ------------------
 
 .. index:: ! cookie
 
-A **cookie** is a text file that stores data. Browsers use cookies to help
-navigate a specific website. 
+A **cookie** is just a text file that stores data. Browsers use cookies to help
+users navigate a specific website. For example, a cookie can store a user's zip
+code, which helps a shopping app find the closest store.
 
 By design, cookies are very small (< 4 kB). Each one consists of a single
-key/value pair. Cookie files are stored on our personal device, usually in the
-same directory as our browser.
+key/value pair, like ``zip_code = 63108``. As we surf the web, the browser
+stores cookies on our device, usually in the same directory as our browser.
 
-Since the file size is so small, the same website often stores many cookies on
+Since the file size is so small, a single website often stores many cookies on
 our machine.
 
 .. admonition:: Note
@@ -29,66 +33,64 @@ our machine.
    #. `All About Cookies <https://www.allaboutcookies.org/faqs/cookie-file.html>`__
    #. `How Stuff Works <https://computer.howstuffworks.com/cookie1.htm>`__
    #. `Cookie playlist from Udacity <https://www.youtube.com/playlist?list=PLs5n5nYB22fLqBWEGW0dBh_yIHdzYlpEz>`__
-
-
-Lorem ipsum...
-
-https://www.kaspersky.com/resource-center/definitions/cookies
-
-https://www.allaboutcookies.org/faqs/cookie-file.html
+   #. `HTTP Cookies <https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies>`__
+      on the MDN website.
 
 Cookie data is temporary. However, it usually *persists* longer than the values
-we assign to Python variables. Cookies can survive after we refresh a page or
+we assign to Python variables. Cookies often survive after we refresh a page or
 exit out of our browser.
 
 .. admonition:: Tip
 
-   We can use the tools in the browser to control how long cookies remain
-   saved on our device. We can also remove cookies at any time.
+   We can use the browser preferences to control how long cookies remain saved
+   on our device. We can also remove cookies at any time.
 
-   .. todo:: Add screenshot of browser cookie tools.
+   For example, in Firefox we can check our cookie settings by selecting the
+   *Privacy & Security* option under *Preferences*. Other browsers provide
+   similar features.
+
+   .. figure:: figures/cookie-settings.png
+      :alt: Browsers let users manage how cookies are stored on their device.
+
+      We can customize how our browser deals with cookies. We can also clear the data right now.
 
 How Cookies Work
 ----------------
 
-Send a GET request to web server. Server sends back data plus a cookie. Every
-time the browser communicates with that server, it sends all of the cookies
-with its HTTP request. However, this only apples to cookies set by the server.
-Cookies created by other servers will NOT be sent (e.g. cookie from
-www.replit.com won't be sent to www.trinket.io).
+One thing we need to remember about cookies is that they are NOT programs. They
+just store a small amount of data that web servers can use when we visit a site.
+Here's a summary of how the cookie process works:
 
-   [INSERT DIAGRAM HERE for cookie creation and sending]
+#. The first time we navigate to a webpage, our browser sends an HTTP request
+   (``GET`` or ``POST``) to the server.
+#. The server sends back an HTTP response, which contains the HTML code for the
+   the page. It also includes a command to store one or more cookies on our
+   machine.
+#. When our browser communicates with that server again, it sends all of the
+   saved cookies with the HTTP request. The server uses this data to help it
+   process the request.
+#. Cookies created by a specific server can only be sent back to that server.
+   Cookies created by other servers will NOT be shared. For example, a cookie
+   set by `Trinket <https://trinket.io/>`__ won't be sent to the
+   `GitHub <https://github.com/>`__ server.
 
-HTTP Response: ``Set-Cookie: name = value``. That's it. One cookie, one
-key/value pair. HTTP responses can contain multiple set-cookie commands.
+.. todo:: Add a diagram here to show cookie creation and exchange.
 
-HTTP Request: ``Cookie: name=value; name=value; etc.``
+Cookies serve several purposes:
 
-Cookies are unique to a particular server. That is, they only work with the
-server that created them. (Confirm this).
-
-Describe the back-and-forth between the user's browser and a web server in
-terms of creating and transferring cookies/data...
-
-Web applications use cookies for two main purposes:
-
-#. To keep the user logged into a site, preserve shopping carts, or to store
-   data that the server needs to remember during a particular visit.
-#. To track and analyze user behavior.
+#. To keep us logged into a site.
+#. To store data that the server needs to remember during our visit. This might
+   include our current score in a game or the contents of our shopping cart.
+   For example, when we select *Checkout* to complete an online order, cookies
+   identify the items we want to buy.
+#. To track and analyze our behavior.
    
-   - Have you received targeted adds while searching the web? Cookie data
-     influences what you see!
-   - If you're curious, here's a `short video clip <https://youtu.be/qMFRRoh6vV8>`__
-     that describes how cookies are used to track your movement on the web.
+   a. Have you received targeted adds while searching the web? Cookie data
+      influences what you see!
+   b. Watch this `short video clip <https://youtu.be/qMFRRoh6vV8>`__ that
+      describes how cookies are used to track your movement on the web.
 
-Viewing Cookies
----------------
+Check Your Understanding
+------------------------
 
-Browser tools. Kinda technical screenshot, so maybe skip this...
-
-For More Information
---------------------
-
-A more detailed discussion of cookies is beyond the scope of this book. For
-more information, read about `HTTP Cookies <https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies>`__
-on the MDN website.
+Lorem ipsum...
