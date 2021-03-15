@@ -63,26 +63,35 @@ Here's a summary of how the cookie process works:
 
 #. The first time we navigate to a webpage, our browser sends an HTTP request
    (``GET`` or ``POST``) to the server.
-#. The server sends back an HTTP response, which contains the HTML code for the
-   the page. It also includes a command to store one or more cookies on our
-   machine.
-#. When our browser communicates with that server again, it sends all of the
-   saved cookies with the HTTP request. The server uses this data to help it
-   process the request.
-#. Cookies created by a specific server can only be sent back to that server.
-   Cookies created by other servers will NOT be shared. For example, a cookie
-   set by `Trinket <https://trinket.io/>`__ won't be sent to the
-   `GitHub <https://github.com/>`__ server.
+#. The server sends back an HTTP response, which contains data to display on
+   the page. The response also includes a command to create one or more
+   cookies.
+#. The browser creates the cookie files and stores them on our machine.
+#. When our browser communicates with the server again, it includes all of the
+   saved cookies with the new HTTP request. The server uses the information to
+   help it process the request.
 
-.. todo:: Add a diagram here to show cookie creation and exchange.
+   Cookies set by a specific server can only be sent back to that server.
+   Cookies set by other servers will NOT be shared. For example, a cookie set
+   by `Trinket <https://trinket.io/>`__ won't be sent to the
+   `GitHub <https://github.com/>`__ server.
+#. When the server responds to the new request, it can update the existing
+   cookies or create new ones.
+
+.. figure:: figures/cookie-flow.png
+   :alt: Servers send commends to set cookies, and browsers save them on a user's device.
+
+   Servers use commands to set cookies. Browsers create and save cookie files on a user's device.
 
 Cookies serve several purposes:
 
 #. To keep us logged into a site.
-#. To store data that the server needs to remember during our visit. This might
-   include our current score in a game or the contents of our shopping cart.
-   For example, when we select *Checkout* to complete an online order, cookies
-   identify the items we want to buy.
+#. To store data that the server needs to remember during our visit.
+   
+   a. This might include our current score in a game or the contents of our
+      shopping cart.
+   b. For example, when we select *Checkout* to complete an online order,
+      cookies identify the items we want to buy.
 #. To track and analyze our behavior.
    
    a. Have you received targeted adds while searching the web? Cookie data
@@ -93,4 +102,32 @@ Cookies serve several purposes:
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   A cookie is a small program that runs in the browser.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = False
+
+.. admonition:: Question
+
+   Where is a cookie file saved?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On a web server</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> In an open browser application</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> On the user's device</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> In the cloud</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
