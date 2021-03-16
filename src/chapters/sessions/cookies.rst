@@ -31,8 +31,8 @@ our machine.
    if you are curious, here are some good resources to get you started:
 
    #. `All About Cookies <https://www.allaboutcookies.org/faqs/cookie-file.html>`__
-   #. `How Stuff Works <https://computer.howstuffworks.com/cookie1.htm>`__
    #. `Cookie playlist from Udacity <https://www.youtube.com/playlist?list=PLs5n5nYB22fLqBWEGW0dBh_yIHdzYlpEz>`__
+   #. `How Stuff Works <https://computer.howstuffworks.com/cookie1.htm>`__
    #. `HTTP Cookies <https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies>`__
       on the MDN website.
 
@@ -71,10 +71,9 @@ Here's a summary of how the cookie process works:
    saved cookies with the new HTTP request. The server uses the information to
    help it process the request.
 
-   Cookies set by a specific server can only be sent back to that server.
-   Cookies set by other servers will NOT be shared. For example, a cookie set
-   by `Trinket <https://trinket.io/>`__ won't be sent to the
-   `GitHub <https://github.com/>`__ server.
+   Cookies set by a specific server can only be sent back to that server. For
+   example, a cookie set by `Trinket <https://trinket.io/>`__ won't be sent to
+   the `GitHub <https://github.com/>`__ server.
 #. When the server responds to the new request, it can update the existing
    cookies or create new ones.
 
@@ -86,12 +85,13 @@ Here's a summary of how the cookie process works:
 Cookies serve several purposes:
 
 #. To keep us logged into a site.
-#. To store data that the server needs to remember during our visit.
+#. To store helpful data for the server during our visit. For example:
    
-   a. This might include our current score in a game or the contents of our
-      shopping cart.
-   b. For example, when we select *Checkout* to complete an online order,
-      cookies identify the items we want to buy.
+   a. Our current score in a game we're playing. If we need to close the tab
+      when our teacher/parent/boss walks by, cookies save our progress until we
+      return.
+   b. The contents of a shopping cart. When we select *Checkout* to complete an
+      online order, cookies identify the items we want to buy.
 #. To track and analyze our behavior.
    
    a. Have you received targeted adds while searching the web? Cookie data
