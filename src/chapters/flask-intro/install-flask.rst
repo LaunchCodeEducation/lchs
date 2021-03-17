@@ -29,6 +29,8 @@ repository.
    ``hello_flask`` directory.
 #. Use ``git init`` to initialize a new repository.
 
+.. _flask-environment:
+
 Create a Virtual environment
 ----------------------------
 
@@ -69,6 +71,8 @@ application work.
 Each Flask application you create will have its own virtual environment
 directory. You can name these environments whatever you want, but a good
 practice is to use something like ``project_name-env``.
+
+.. _install-flask:
 
 Add Flask
 ---------
