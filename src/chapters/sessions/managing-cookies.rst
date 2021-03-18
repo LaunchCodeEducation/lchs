@@ -18,6 +18,12 @@ starter code and the end result in this GitHub repository.
 
 .. todo:: Insert video of setting cookies in Flask. Also, include GitHub repo link.
 
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/V-jAPj6fETg" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
 .. index:: ! make_response, ! set_cookie method
 
 **Video Highlights**:
