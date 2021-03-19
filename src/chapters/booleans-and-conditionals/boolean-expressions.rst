@@ -70,7 +70,7 @@ Use the simple code editor below to explore flipping an assignment statement:
 
 .. raw:: HTML
 
-   <iframe src="https://trinket.io/embed/python3/151042b620" width="100%" height="356" frameborder="1" marginwidth="0" marginheight="0"></iframe>
+   <iframe src="https://trinket.io/embed/python3/5aa76a426e" width="100%" height="356" frameborder="1" marginwidth="0" marginheight="0"></iframe>
 
 Other Comparisons
 -----------------
