@@ -92,26 +92,6 @@ Accessing Cookie Data
 
 Lorem ipsum...
 
-Reference Repository
---------------------
-
-GitHub link...
-
-Set a Cookie (Alternate)
-------------------------
-
-Go ahead and launch ``main.py``, then open the application in a new browser
-tab. The program renders the ``index.html`` template, which displays a short
-message in addition to a random number.
-
-.. figure:: figures/cookie-page.png
-   :alt: Page showing two headings and a random number.
-
-   Refreshing the page will change the number displayed.
-
-The program also sets a cookie, but we won't see that on the screen. Let's walk
-through the code in ``main.py`` to see what's going on.
-
 Resources
 ---------
 
