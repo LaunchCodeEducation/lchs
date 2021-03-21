@@ -368,5 +368,3 @@ Check Your Understanding
       <p id="Q3"></p>
 
 .. Answer = a
-
-

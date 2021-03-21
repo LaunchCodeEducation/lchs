@@ -285,4 +285,3 @@ Check Your Understanding
       <p id="Q2"></p>
 
 .. Answer = c
-

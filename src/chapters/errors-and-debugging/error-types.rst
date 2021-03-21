@@ -271,5 +271,3 @@ Check Your Understanding
       <p id="Q4"></p>
 
 .. Answer = d
-
-
