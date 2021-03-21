@@ -1,9 +1,10 @@
 Flask Cookies
 =============
 
-When a server creates a cookie on our browser, it sets a specific time for that
-data to last. If no time is set, then the cookie gets erased when we quit the
-browser. Putting our device to sleep or closing the tab does NOT clear cookies!
+When a server executes code to create a cookie, part of the command sets a time
+limit for how long to save the data. If no time is given in the code, then the
+cookie gets erased when we quit the browser. Putting our device to sleep or
+closing the tab does NOT clear cookies!
 
 Recall that Flask runs a server on our machine when we launch an application.
 This means we can include some Python code to set and access our own cookies.
@@ -14,7 +15,9 @@ Cookie Video
 ------------
 
 Watch this short clip to learn how to set cookies with Flask. You can find the
-starter code and the end result in this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS_cookie_intro.git>`__.
+starter code in this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS_cookie_intro.git>`__.
+By switching between the ``main`` to ``final-code`` branch, you can view both
+the starting and ending points of the demonstration.
 
 .. raw:: html
 
@@ -39,9 +42,11 @@ starter code and the end result in this `GitHub repository <https://github.com/L
 
    .. sourcecode:: Python
 
-      make_response("Hello, World!")
+      response_name = make_response("Hello, World!")
 
-      make_response(render_template('template_name.html'))
+      # OR
+
+      response_name = make_response(render_template('template_name.html'))
 
 #. To set cookies, we use the (wait for it...) ``.set_cookie()`` method!
    The general syntax for the method is:
@@ -53,46 +58,83 @@ starter code and the end result in this `GitHub repository <https://github.com/L
    ``response_name`` is the variable that holds the result from
    ``make_response()``. ``cookie_name`` and ``cookie_value`` must be strings.
 
-#. The ``set_cookie()`` method can take other arguments in addition to the name
-   and value for the cookie. However, these go beyond the scope of this course.
-   If curious, you can find a more complete description for ``set_cookie()``
-   here.
-
-   .. todo:: Insert set_cookie() URL(s).
+#. The ``set_cookie()`` method can take other arguments as well. However, these
+   go beyond the scope of this course. If curious, you can find a more complete
+   description for ``set_cookie()`` `here <https://pythonise.com/series/learning-flask/flask-cookies#setting-cookies>`__.
 
 Viewing Cookies
 ---------------
 
 As shown in the video, we can use our browser tools to view the cookies saved
 for a particular webpage. The specific commands will vary with each browser,
-but right-clicking on the webpage is a good thing to try first. Select
+but right-clicking on the page is a good thing to try first. Select
 *Inspect Element* from the options that pop up, and then open the *Storage*
 tab.
 
-[Screenshot of cookie panel]
+.. figure:: figures/storage-panel.png
+   :alt: View cookies using the browser developer tools. The 'Storage' panel is selected.
+   :width: 80%
 
-Note that the cookie data was NOT sent to the webpage as a value. Adding a
-{{favorite_cookie}} placeholder to the template results in an unfilled space.
-However, the storage panel shows that the cookie file was saved.
+   View stored cookies by using the browser tools.
 
-Even if we stop the Flask application, the cookie persists in the browser.
+Note that the cookie data is NOT sent to the webpage as a value. Instead, the
+browser saves a file on our machine to keep track of the key/value pair. Even
+if we stop the Flask application, the cookie *persists*.
 
-[Disconnected screenshot]
+.. figure:: figures/persistent-cookie.png
+   :alt: The storage panel shows that the cookie remains on our device.
+   :width: 80%
 
-When we change the name of the cookie in our Python code and restart the
-program, the old cookie file remains. When we load the page again, a new cookie
-file is saved.
+   Even when we stop the Flask application, any cookies set by the program remain on our device.
 
-[Screenshot of updated cookie pane]
+If we change the name of the cookie in our Python code and refresh the page, a
+new cookie file is saved. However, the old cookie file remains.
+
+.. figure:: figures/rename-cookie.png
+   :alt: The storage panel shows both the old and new cookie files.
+   :width: 80%
+
+   Renaming a cookie does not remove the old file.
 
 Accessing Cookie Data
 ---------------------
 
-Lorem ipsum...
+Once Flask saves cookies to our device, every request sent from our browser to
+the server includes the data from ALL of those files. We can access this data
+with the ``request`` keyword.
+
+To collect all of the cookie data, the syntax is:
+
+.. sourcecode:: Python
+
+   all_cookies = request.cookies
+
+When ``request.cookies`` executes, it returns a collection of key/value pairs
+and assigns it to ``all_cookies``. Each pair matches one of the cookie files
+stored on our device. To access the value of a specific cookie, we use bracket
+notation, ``all_cookies['cookie_name']``.
+
+To access just one of the cookie values, we use the syntax:
+
+.. sourcecode:: Python
+
+   cookie_value = request.cookies.get('cookie_name')
+
+When this statement executes, Python scans the cookie data sent with the HTTP
+request. If ``cookie_name`` matches one of the keys, then the value for that
+key is assigned to ``cookie_value``.
 
 Resources
 ---------
 
-https://overiq.com/flask-101/cookies-in-flask/
+This page just scratches the surface on how to use Flask to manage cookies. We
+won't need to go deeper for this course. However, for those who would like to
+explore further, here are a couple of good places to start:
 
-https://pythonise.com/series/learning-flask/flask-cookies
+#. `Flask Cookies <https://pythonise.com/series/learning-flask/flask-cookies>`__
+#. `OverIQ <https://overiq.com/flask-101/cookies-in-flask/>`__
+
+Check Your Understanding
+------------------------
+
+Lorem ipsum...
