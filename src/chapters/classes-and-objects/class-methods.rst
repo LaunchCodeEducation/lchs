@@ -1,5 +1,5 @@
-Adding Methods to a Class!!!
-============================
+Adding Methods to a Class
+=========================
 
 Recall that methods are the specific actions that objects can take. Methods can
 either return a result, update property values, or both.
@@ -220,7 +220,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is printed when this program runs?Testing!!!
+   What is printed with this program runs?
 
    .. sourcecode:: python
       :linenos:
