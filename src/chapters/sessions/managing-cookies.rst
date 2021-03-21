@@ -14,9 +14,7 @@ Cookie Video
 ------------
 
 Watch this short clip to learn how to set cookies with Flask. You can find the
-starter code and the end result in this GitHub repository.
-
-.. todo:: Insert video of setting cookies in Flask. Also, include GitHub repo link.
+starter code and the end result in this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS_cookie_intro.git>`__.
 
 .. raw:: html
 
