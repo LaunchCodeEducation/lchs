@@ -146,18 +146,3 @@ Check Your Understanding
 
 .. Properties = a, d, f; Methods = b, c, e.
 
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function revealBinaryAnswer(id, optionOne) {
-         if (document.getElementById(id).innerHTML != '') {
-            document.getElementById(id).innerHTML = '';
-         } else if (optionOne) {
-            document.getElementById(id).innerHTML = '- Property';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = '- Method';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>
