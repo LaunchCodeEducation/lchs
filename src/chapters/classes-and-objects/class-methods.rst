@@ -1,5 +1,5 @@
-Adding Methods to a Class
-=========================
+Adding Methods to a Class!!!
+============================
 
 Recall that methods are the specific actions that objects can take. Methods can
 either return a result, update property values, or both.
@@ -220,7 +220,7 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   What is printed with this program runs?
+   What is printed when this program runs?Testing!!!
 
    .. sourcecode:: python
       :linenos:
@@ -286,16 +286,3 @@ Check Your Understanding
 
 .. Answer = c
 
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function evaluateMC(id, correct) {
-         if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>
