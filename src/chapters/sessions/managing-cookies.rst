@@ -137,4 +137,47 @@ explore further, here are a couple of good places to start:
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   Where is cookie data stored?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> In a file on our device.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> In the webpage open in our browser.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> As a value assigned to a variable.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On a web server.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   Refreshing a webpage erases cookies.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   Quitting the browser application erases cookies.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Always</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Never</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Sometimes</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = c
