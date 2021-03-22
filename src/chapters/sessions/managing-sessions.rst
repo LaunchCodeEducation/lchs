@@ -8,6 +8,12 @@ Starting a Session
 
 Lorem ipsum...
 
+Simple session...
+
+Note that sessions can store non-string data types!
+
+Try It working example...
+
 Retrieving Session Data
 -----------------------
 
