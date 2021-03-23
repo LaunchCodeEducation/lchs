@@ -99,8 +99,8 @@ string value as the ``secret_key``. The more complicated we make this string,
 the harder it will be for outsiders to decrypt the data.
 
 With these two updates to our code, we are ready to start working with session
-cookies. We'll practice this on the next page. First, however, we
-need to learn how to set a good secret key.
+cookies. We'll practice this on the next page. First, however, let's learn how
+to set a good secret key.
 
 .. admonition:: Warning
 
@@ -108,38 +108,115 @@ need to learn how to set a good secret key.
    NOT secure. The data is still stored on a user's machine, which means they
    have direct access to the file.
 
-   While it is harder to view the key/value pairs, decoding the data from a
-   session is a fairly straightforward process.
+   While it takes more steps to view the key/value pairs, accessing the data
+   from a session is a fairly straightforward process.
 
 Strong Secret Keys
 ------------------
 
-Just like with passwords, we want our ``secret_key`` to be as complicated as
-possible. However, even if we think of a great key to use, typing it directly
-into our code presents problems.
+Just like a password, we want our ``secret_key`` to be hard to guess. However,
+even if we think of a great key, typing it directly into our code presents
+problems.
 
-Imagine we used this for our secret key:
+Imagine we used this for a hard to guess secret key:
 
 .. sourcecode:: python
    :lineno-start: 5
 
    app.secret_key = 'K>~EEAnH_x,Z{q.43;NmyQiNz1^Yr7'
 
-This seems pretty hard to guess! However, we typed it directly into our Python
-code. If we share our program with others, then we've just given away the key.
-Anyone who opens the ``.py`` file will see the string we used.
+This seems pretty good! However, if we share our program code with others, then
+we give away the key. Anyone who opens the ``.py`` file will see the string we
+used.
 
 Also, if we push our program up to GitHub, then we save our code in the cloud.
-*Anyone* who visits the URL for the repository can see the value assigned to
+*Anyone* who visits the URL for our repository can see the value assigned to
 ``secret_key``.
 
-To help keep the value for ``secret_key`` safe, it would be better to avoid
-hard-coding it into our program. A Google search turns up many options, but
-here's one approach that we can use for now.
+To keep the value for ``secret_key`` safe, we should avoid hard-coding it into
+our program. Searching Google turns up several ways to keep ``secret_key``
+hidden. Here's one simple option that we can use for now.
 
-Lorem ipsum...
+.. admonition:: Example
+   
+   The code block below creates a random value for ``secret_key``:
+
+   .. sourcecode:: python
+      :linenos:
+
+      from flask import Flask, request, redirect, render_template, session
+      import os
+      
+      app = Flask(__name__)
+      app.config['DEBUG'] = True
+      app.secret_key = os.urandom(64)
+
+   #. On line 2, we import the Python module called ``os``. Just like the
+      ``turtle``, ``string``, and ``random`` modules, it is a standard Python
+      library. We do NOT need to understand how it works. We just need to know
+      how to access one thing from it.
+   #. In line 6, we call the `os.urandom() <https://www.geeksforgeeks.org/python-os-urandom-method/>`__
+      method and pass it a *size* argument (``64`` in this case). When the
+      statement executes, it returns a random collection of characters. We can
+      make the length of ``secret_key`` larger or smaller by changing the size.
+   #. The benefit of using ``os.urandom()`` is that even we won't know the
+      value for ``secret_key``. A new string is created whenever we launch the
+      program, but it remains consistent while the application runs.
+
+.. admonition:: Tip
+
+   For the local programs you create in this course, assigning a specific
+   string to ``secret_key`` will work fine.
+
+   However, if you ever want to *deploy* one of your Flask programs to the web
+   (where the world can see it), you need to take steps to protect the secret
+   key.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   To store a user's password, which of the following should we use?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A cookie</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A session</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Something else</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   By default, how long to cookies and sessions persist on a user's device?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Until they quit the browser.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they refresh the page.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they close the tab.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they use the browser tools to clear the data.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until midnight.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   Can programmers change how long cookie and session data persists?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Yes</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> No</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = a
