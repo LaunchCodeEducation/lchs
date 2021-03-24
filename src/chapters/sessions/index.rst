@@ -8,6 +8,6 @@ Cookies & Sessions
    cookies
    managing-cookies
    flask-sessions
-   managing-sessions
+   try-it-sessions
    exercises
    project
