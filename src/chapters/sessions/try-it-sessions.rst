@@ -59,12 +59,12 @@ to navigate to the repository, then follow these setup steps:
 Save Session Data
 -----------------
 
-In this section, you'll create a new ``session`` object and store a piece of
-data.
+In this section, you'll create a new ``session`` object and use it to store a
+piece of data.
 
 Right now, all the Flask application does is render the ``index.html`` page.
-Opening ``main.py``, we see nothing inside the ``if/else`` block that affects
-the page.
+Opening ``main.py``, we see very little code inside the central ``if/else``
+block.
 
 .. admonition:: Example
 
@@ -81,8 +81,9 @@ the page.
             pass
          return render_template('index.html')
 
-   The ``pass`` keyword fills the space where Python expects some code. It
-   allows you to run the program and fill in commands later.
+   ``pass`` is another example of a placeholder. The keyword fills the space
+   where Python expects a block of statements. Here, it allows you to run a
+   starter code successfully and fill in different commands later.
 
 Since your program will track a collection of items, start by saving an empty
 list to the session.
@@ -92,7 +93,7 @@ list to the session.
    .. sourcecode:: python
 
       session['key'] = value
-
+   
    Just like a dictionary, ``key`` should be a string data type. However,
    ``value`` can be any Python data type.
 
@@ -111,26 +112,78 @@ list to the session.
    confirm that a session cookie was set.
 
 Congratulations! You just made the browser store a file on your device. It only
-contains an empty list so far, but you'll soon fix that.
+contains an empty list, but you'll soon fix that.
 
 .. admonition:: Note
 
-   Remember, unlike plain cookies, sessions can store non-string data types!
+   Remember, unlike plain cookies, session values can be non-string data types!
 
 Access Session Data
 -------------------
 
-Lorem ipsum...
+OK, you've saved a session to your device. Now you need to be able to access
+that data whenever you need it.
+
+To access session data, the general syntax is:
+
+.. sourcecode:: python
+
+   all_session_data = session
+
+   # OR
+
+   specific_session_value = session['key']
+
+When placed to the right of the ``=`` operator, ``session`` returns all of the
+key/value pairs stored. We can use ``all_session_data`` just like a Python
+dictionary. 
+
+``session['key']`` returns the value assigned to ``key``. Since the ``session``
+object can store multiple key/value paris, this is helpful when we want one
+specific entry.
+
+Now put this to use:
+
+#. Open ``index.html`` in Visual Studio Code.
+#. Just beneath the form code, there is a section to display the contents of
+   the list.
+
+   .. sourcecode:: html
+      :lineno-start: 21
+
+      <section class="centered">
+         <h2>List Items:</h2>
+         <p>(Nothing here yet...)</p>
+      </section>
+
+#. Replace the ``(Nothing here yet...)`` text with a placeholder:
+
+   .. sourcecode:: html
+      :lineno-start: 21
+
+      <section class="centered">
+         <h2>List Items:</h2>
+         <p>{{session['list_name']}}</p>
+      </section>
+
+#. Save, then reload the page. You should see a set of empty list brackets
+   appear on the page.
+
+      [screenshot]
+#. Return to ``main.py``. Instead of assigning the empty list to ``session``,
+   try assigning a list that contains one or more items. Save, then reload the
+   page. You should see the items appear on the page.
+
+      [screenshot]
+
+Notice that we did NOT include any variables in the ``render_template``
+function. Since the session data is stored on your device, it is accessible by
+``main.py`` and ``index.html``.
 
 Change Session Data
 -------------------
 
-Lorem ipsum...
-
-Clear Session Data
-------------------
-
-Lorem ipsum...
+Lead in to next page...
 
 Demo Ideas/Notes
 ----------------

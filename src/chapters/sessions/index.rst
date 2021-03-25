@@ -9,5 +9,6 @@ Cookies & Sessions
    managing-cookies
    flask-sessions
    try-it-sessions
+   try-it-part2
    exercises
    project
