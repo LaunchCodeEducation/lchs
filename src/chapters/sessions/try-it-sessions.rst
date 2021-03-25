@@ -82,8 +82,8 @@ block.
          return render_template('index.html')
 
    ``pass`` is another example of a placeholder. The keyword fills the space
-   where Python expects a block of statements. Here, it allows you to run a
-   starter code successfully and fill in different commands later.
+   where Python expects a block of statements. It allows you to run the starter
+   code successfully and worry about filling in specific commands later.
 
 Since your program will track a collection of items, start by saving an empty
 list to the session.
@@ -94,8 +94,8 @@ list to the session.
 
       session['key'] = value
    
-   Just like a dictionary, ``key`` should be a string data type. However,
-   ``value`` can be any Python data type.
+   Just like a dictionary, ``key`` should be a string. However, ``value`` can
+   be any Python data type.
 
 #. In ``main.py``, replace the ``pass`` keyword on line 12 with the statement:
 
@@ -121,8 +121,8 @@ contains an empty list, but you'll soon fix that.
 Access Session Data
 -------------------
 
-OK, you've saved a session to your device. Now you need to be able to access
-that data whenever you need it.
+OK, you've saved a session file to your device. Next you'll learn how to access
+that data when you need it.
 
 To access session data, the general syntax is:
 
@@ -134,18 +134,18 @@ To access session data, the general syntax is:
 
    specific_session_value = session['key']
 
-When placed to the right of the ``=`` operator, ``session`` returns all of the
-key/value pairs stored. We can use ``all_session_data`` just like a Python
+When placed to the right of the ``=`` operator, ``session`` returns all of its
+key/value pairs. You can use ``all_session_data`` just like a Python
 dictionary. 
 
 ``session['key']`` returns the value assigned to ``key``. Since the ``session``
-object can store multiple key/value paris, this is helpful when we want one
-specific entry.
+object can store multiple key/value paris, this syntax is helpful when you only
+want one specific entry.
 
 Now put this to use:
 
 #. Open ``index.html`` in Visual Studio Code.
-#. Just beneath the form code, there is a section to display the contents of
+#. Just beneath the form code, there is a section that displays the contents of
    the list.
 
    .. sourcecode:: html
@@ -153,10 +153,10 @@ Now put this to use:
 
       <section class="centered">
          <h2>List Items:</h2>
-         <p>(Nothing here yet...)</p>
+         <p>Nothing here yet...</p>
       </section>
 
-#. Replace the ``(Nothing here yet...)`` text with a placeholder:
+#. Replace ``Nothing here yet...`` with a placeholder:
 
    .. sourcecode:: html
       :lineno-start: 21
@@ -167,41 +167,68 @@ Now put this to use:
       </section>
 
 #. Save, then reload the page. You should see a set of empty list brackets
-   appear on the page.
+   under the form.
 
-      [screenshot]
-#. Return to ``main.py``. Instead of assigning the empty list to ``session``,
-   try assigning a list that contains one or more items. Save, then reload the
-   page. You should see the items appear on the page.
+   .. figure:: figures/session-access-1.png
+      :alt: Empty list brackets appear below the List Items heading.
 
-      [screenshot]
+#. Return to ``main.py``. Instead of assigning the empty list to
+   ``session['list_name']``, try assigning a list that contains one or more
+   items. Save, then reload the page. You should see the items appear.
 
-Notice that we did NOT include any variables in the ``render_template``
-function. Since the session data is stored on your device, it is accessible by
+   .. figure:: figures/session-access-2.png
+      :alt: A list with items appears below the Grocery List heading.
+
+Notice that the ``render_template`` function does NOT include any variables.
+Since the session data is stored on your device, it is accessible by
 ``main.py`` and ``index.html``.
+
+.. admonition:: Tip
+
+   At any time, you can delete a session cookie using the browser tools. Open
+   up the storage tab and right click on the item you want to remove.
+
+   .. figure:: figures/delete-session.png
+      :alt: Showing storage panel with menu options to delete a session cookie.
+      :width: 80%
 
 Change Session Data
 -------------------
 
-Lead in to next page...
-
-Demo Ideas/Notes
-----------------
-
-#. Text form to add new items.
-#. Save list to session object. Use Jinja2 conditional and loop to display the
-   list elements on the webpage.
-#. After POST, save new item to var, pass it to template, display in message.
-   "You just added ____ to the list."
-#. Append new item to session list.
-#. Checkbox form to remove items. Feedback message?
-#. Show that list methods (e.g. pop() and sort()) work with
-   session['list_name']?
-#. Bonus task: Run secondary program. This one presents a row of numerical
-   buttons. Clicking these builds a string. Include a delete key to back up one
-   space. This program is just for exploration, not a step-by-step walkthrough.
+After learning how to create and access a session cookie, the next step is to
+learn how to change session data. That will be the goal for the next page.
 
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
+
+   To add a new key/value pair to a ``session`` object, the syntax is:
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">session = {key : value}</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">session['key'] = value</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">value = session['key']</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">session['key' : value]</code></li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = b
+
+.. admonition:: Question
+
+   Which of the following will print ONE value from the ``session`` object?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session('key'))</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session)</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">print(session['key'])</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session[0])</code></li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = c
