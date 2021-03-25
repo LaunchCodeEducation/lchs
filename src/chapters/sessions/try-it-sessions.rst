@@ -12,14 +12,13 @@ etc.). The key is to practice saving and accessing persistent data.
 Clone the Repository
 --------------------
 
-The starter code for this demo is saved on GitHub. Use the link to navigate to
-the repository, then follow these setup steps:
+The starter code for this demo is saved on GitHub. Use `this link <https://github.com/LaunchCodeEducation/LCHS_session_try_it>`__
+to navigate to the repository, then follow these setup steps:
 
-.. todo:: Insert GitHub link (sessions Try It! starter code).
+#. On the repository page, click the green *Code* button and copy the URL.
 
-#. On the repository page, click the green *Clone* button and copy the URL.
-
-   .. todo:: Insert GitHub repo screenshot (sessions Try It).
+   .. figure:: figures/clone-session-repo.png
+      :alt: The clone dialog box with copy button highlighted.
 
 #. Launch Visual Studio Code. From the *File* menu, open your
    ``local_practice`` directory.
@@ -31,11 +30,6 @@ the repository, then follow these setup steps:
    
    Be sure to replace ``repo_URL`` with the web address you copied in step 1.
 #. From the *File* menu, open the ``LCHS_session_try_it`` folder.
-#. Return to the terminal and initialize the project as a Git repository.
-
-   .. sourcecode:: bash
-
-      $ git init
 #. Create a new virtual environment and install Flask.
 
    .. sourcecode:: bash
@@ -43,31 +37,85 @@ the repository, then follow these setup steps:
       Mac:
       $ python3 -m venv session-env
       $ . session-env/bin/activate
-      (session-env)$ pip3 install Flask
+      (session-env) $ pip3 install Flask
 
       PC:
       $ py -3 -m venv session-env
       $ . session-env/Scripts/activate
-      (session-env)$ pip install Flask
+      (session-env) $ pip install Flask
 
 #. Launch the ``main.py`` program and open the webpage in a browser tab.
    Nothing special happens on the page yet. You just need to make sure the
-   program runs.
+   starter code runs.
 
-   .. todo:: Screenshot of working session demo app (initial state).
+   .. figure:: figures/session-try-it-start.png
+      :alt: Form page displayed when the Flask app runs the first time.
+      :width: 50%
+   
+      This is what you will see when the starter code runs.
 
 #. Before moving on, be sure to save and commit your work.
 
 Save Session Data
 -----------------
 
-Lorem ipsum...
+In this section, you'll create a new ``session`` object and store a piece of
+data.
 
-Simple session...
+Right now, all the Flask application does is render the ``index.html`` page.
+Opening ``main.py``, we see nothing inside the ``if/else`` block that affects
+the page.
 
-Note that sessions can store non-string data types!
+.. admonition:: Example
 
-Try It working example...
+   The ``index()`` function in ``main.py``:
+
+   .. sourcecode:: python
+      :lineno-start: 7
+
+      @app.route('/', methods=['GET', 'POST'])
+      def index():
+         if request.method == 'POST':
+            pass
+         else:
+            pass
+         return render_template('index.html')
+
+   The ``pass`` keyword fills the space where Python expects some code. It
+   allows you to run the program and fill in commands later.
+
+Since your program will track a collection of items, start by saving an empty
+list to the session.
+
+#. To set a new session cookie, the general syntax is:
+
+   .. sourcecode:: python
+
+      session['key'] = value
+
+   Just like a dictionary, ``key`` should be a string data type. However,
+   ``value`` can be any Python data type.
+
+#. In ``main.py``, replace the ``pass`` keyword on line 12 with the statement:
+
+   .. sourcecode:: python
+      :lineno-start: 12
+
+      session['list_name'] = []
+
+   Be sure to use something more descriptive than ``list_name``. For example,
+   ``movies``, ``places_to_visit``, ``groceries``, etc.
+
+#. Save your changes. If ``main.py`` is not currently running, start it again.
+#. In its page tab, use the :ref:`browser tools <cookies-vs-sessions>` to
+   confirm that a session cookie was set.
+
+Congratulations! You just made the browser store a file on your device. It only
+contains an empty list so far, but you'll soon fix that.
+
+.. admonition:: Note
+
+   Remember, unlike plain cookies, sessions can store non-string data types!
 
 Access Session Data
 -------------------

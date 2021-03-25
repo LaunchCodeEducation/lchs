@@ -43,6 +43,8 @@ the same key. If the key is missing or incorrect, the data is ignored.
 Without knowing the secret key, it becomes harder (but not impossible) for
 outside users to access or change the saved data.
 
+.. _cookies-vs-sessions:
+
 Cookies vs. Sessions
 ^^^^^^^^^^^^^^^^^^^^
 
