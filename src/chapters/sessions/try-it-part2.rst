@@ -133,6 +133,15 @@ existing data.
 Delete Session Data
 -------------------
 
+So far, the only way we've seen to remove a session cookie is through the
+browser tools. WHile this works well for visitors to our website, it's not an
+option for us as the programmers. Fortunately, there are a number of ways to
+use Python to remove data from a session.
+
+#. **The nuclear option**: Lorem ipsum...
+#. **Remove one key/value pair**: Lorem ipsum...
+#. **Remove one item from a saved list**: Lorem ipsum...
+
 Lorem ipsum...
 
 Final Touches
