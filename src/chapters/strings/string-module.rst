@@ -110,21 +110,19 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following expressions evaluate to ``True``? Select ALL that
-   apply.
+   Which of the following expressions evaluate to ``True``? Click each option
+   to check your prediction.
 
    .. raw:: html
       
       <ol type="a">
-         <li><span id = "a" onclick="revealTrueFalse('resultA', false)">'a' in string.ascii_uppercase</span><span id="resultA"></li>
-         <li><span id = "b" onclick="revealTrueFalse('resultB', true)">'Q' in string.ascii_letters</span><span id="resultB"></li>
-         <li><span id = "c" onclick="revealTrueFalse('resultC', false)">'334' in string.digits</span><span id="resultC"></li>
-         <li><span id = "d" onclick="revealTrueFalse('resultD', false)">' ' in string.punctuation</span><span id="resultD"></li>
-         <li><span id = "e" onclick="revealTrueFalse('resultE', true)">'$' in string.punctuation</span><span id="resultE"></li>
-         <li><span id = "f" onclick="revealTrueFalse('resultF', true)">'abc' in 'abcdefghijklmnopqrstuvwxyz'</span><span id="resultF"></li>
-         <li><span id = "g" onclick="revealTrueFalse('resultG', false)">'eo' in 'aeiou'</span><span id="resultG"></li>
+         <li><span id = "a" onclick="revealTrueFalse('resultA', false)">'a' in string.ascii_uppercase</span> <span id="resultA"></li>
+         <li><span id = "b" onclick="revealTrueFalse('resultB', true)">'Q' in string.ascii_letters</span> <span id="resultB"></li>
+         <li><span id = "c" onclick="revealTrueFalse('resultC', false)">'334' in string.digits</span> <span id="resultC"></li>
+         <li><span id = "d" onclick="revealTrueFalse('resultD', false)">' ' in string.punctuation</span> <span id="resultD"></li>
+         <li><span id = "e" onclick="revealTrueFalse('resultE', true)">'$' in string.punctuation</span> <span id="resultE"></li>
+         <li><span id = "f" onclick="revealTrueFalse('resultF', true)">'abc' in 'abcdefghijklmnopqrstuvwxyz'</span> <span id="resultF"></li>
+         <li><span id = "g" onclick="revealTrueFalse('resultG', false)">'eo' in 'aeiou'</span> <span id="resultG"></li>
       </ol>
 
 .. Answers = b, e, f
-
-

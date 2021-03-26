@@ -145,4 +145,3 @@ Check Your Understanding
       </ol>
 
 .. Properties = a, d, f; Methods = b, c, e.
-

@@ -182,18 +182,15 @@ Check Your Understanding
 .. raw:: html
 
    <script type="text/JavaScript">
-        function evaluateMC(id, correct) {
-           if (correct) {
-              document.getElementById(id).innerHTML = 'Yep!';
-              document.getElementById(id).style.color = 'blue';
-           } else {
-              document.getElementById(id).innerHTML = "Nope! This refers to the object's methods.";
-              document.getElementById(id).style.color = 'red';
-           }
-        }
-     </script>   
+      function evaluateMC(id, correct) {
+         if (correct) {
+            document.getElementById(id).innerHTML = 'Yep!';
+            document.getElementById(id).style.color = 'blue';
+         } else {
+            document.getElementById(id).innerHTML = "Nope! This refers to the object's methods.";
+            document.getElementById(id).style.color = 'red';
+         }
+      }
+   </script>   
   
-
 .. Answer = c
-
-
