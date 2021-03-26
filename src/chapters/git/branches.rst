@@ -277,16 +277,3 @@ Check Your Understanding
 
 .. Answer = a
 
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function evaluateMC(id, correct) {
-         if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

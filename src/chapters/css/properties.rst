@@ -177,16 +177,4 @@ Check Your Understanding
    Find an interesting CSS property that is NOT on the list above. Give its
    definition, syntax, and default value.
 
-.. raw:: html
 
-   <script type="text/JavaScript">
-      function evaluateMC(id, correct) {
-         if (correct) {
-            document.getElementById(id).innerHTML = 'Yep!';
-            document.getElementById(id).style.color = 'blue';
-         } else {
-            document.getElementById(id).innerHTML = 'Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

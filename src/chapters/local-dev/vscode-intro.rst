@@ -173,20 +173,3 @@ Check Your Understanding
 
 .. Answers = a & c.
 
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function highlight(id, answer) {
-         text = document.getElementById(id).innerHTML
-         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
-            return
-         }
-         if (answer) {
-            document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = text + ' - Correct!';
-         } else {
-            document.getElementById(id).innerHTML = text + ' - Nope!';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>

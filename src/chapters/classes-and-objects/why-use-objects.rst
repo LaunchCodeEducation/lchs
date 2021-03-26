@@ -179,8 +179,6 @@ Check Your Understanding
       </ol>
       <p id="Q1"></p>
 
-.. Answer = c
-
 .. raw:: html
 
    <script type="text/JavaScript">
@@ -193,4 +191,6 @@ Check Your Understanding
             document.getElementById(id).style.color = 'red';
          }
       }
-   </script>
+   </script>   
+  
+.. Answer = c
