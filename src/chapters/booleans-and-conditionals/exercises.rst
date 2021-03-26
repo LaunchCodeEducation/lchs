@@ -96,9 +96,9 @@ or `Trinket <https://trinket.io/python/923476a25b>`__.
       vowels = 'aeiou'
 
       if letter in cap_consonants or letter in vowels:
-         print("'{0}' is either a lowercase vowel OR a capital consonant".format(letter))
+         print("'" + letter + "'", "is either a lowercase vowel OR a capital consonant.")
       else:
-         print("Pick a capital consonant or a lowercase vowel")
+         print("Pick a capital consonant or a lowercase vowel.")
 
 #. If ``num = 5``, indicate whether each of following expressions returns
    ``True`` or ``False``.
