@@ -110,37 +110,19 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following expressions evaluate to ``False``? Select ALL that
-   apply.
+   Which of the following expressions evaluate to ``True``? Click each option
+   to check your prediction.
 
    .. raw:: html
       
       <ol type="a">
-         <li><span id = "a" onclick="highlight('a', true)">'a' in string.ascii_uppercase</span></li>
-         <li><span id = "b" onclick="highlight('b', false)">'Q' in string.ascii_letters</span></li>
-         <li><span id = "c" onclick="highlight('c', true)">'334' in string.digits</span></li>
-         <li><span id = "d" onclick="highlight('d', true)">' ' in string.punctuation</span></li>
-         <li><span id = "e" onclick="highlight('e', false)">'$' in string.punctuation</span></li>
-         <li><span id = "f" onclick="highlight('f', false)">'abc' in 'abcdefghijklmnopqrstuvwxyz'</span></li>
-         <li><span id = "g" onclick="highlight('g', true)">'eo' in 'aeiou'</span></li>
+         <li><span id = "a" onclick="revealTrueFalse('resultA', false)">'a' in string.ascii_uppercase</span> <span id="resultA"></li>
+         <li><span id = "b" onclick="revealTrueFalse('resultB', true)">'Q' in string.ascii_letters</span> <span id="resultB"></li>
+         <li><span id = "c" onclick="revealTrueFalse('resultC', false)">'334' in string.digits</span> <span id="resultC"></li>
+         <li><span id = "d" onclick="revealTrueFalse('resultD', false)">' ' in string.punctuation</span> <span id="resultD"></li>
+         <li><span id = "e" onclick="revealTrueFalse('resultE', true)">'$' in string.punctuation</span> <span id="resultE"></li>
+         <li><span id = "f" onclick="revealTrueFalse('resultF', true)">'abc' in 'abcdefghijklmnopqrstuvwxyz'</span> <span id="resultF"></li>
+         <li><span id = "g" onclick="revealTrueFalse('resultG', false)">'eo' in 'aeiou'</span> <span id="resultG"></li>
       </ol>
 
-.. Answers = a, c, d, g
-
-.. raw:: html
-
-   <script type="text/JavaScript">
-      function highlight(id, answer) {
-         text = document.getElementById(id).innerHTML
-         if (text.indexOf('Correct') !== -1 || text.indexOf('Nope') !== -1) {
-            return
-         }
-         if (answer) {
-            document.getElementById(id).style.background = 'lightgreen';
-            document.getElementById(id).innerHTML = text + ' - Correct!';
-         } else {
-            document.getElementById(id).innerHTML = text + ' - Nope! This is True.';
-            document.getElementById(id).style.color = 'red';
-         }
-      }
-   </script>
+.. Answers = b, e, f

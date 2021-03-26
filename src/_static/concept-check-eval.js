@@ -51,3 +51,16 @@ function reveal(id) {
        document.getElementById(id).style.opacity = 1;
     }
 }
+
+function revealBinaryAnswer(id, correct) {
+    if (document.getElementById(id).innerHTML != '') {
+        document.getElementById(id).innerHTML = '';
+    } else if (correct) {
+        document.getElementById(id).innerHTML = '- Property';
+        document.getElementById(id).style.color = 'blue';
+    } else {
+        document.getElementById(id).innerHTML = '- Method';
+        document.getElementById(id).style.color = 'red';
+    }
+}
+  

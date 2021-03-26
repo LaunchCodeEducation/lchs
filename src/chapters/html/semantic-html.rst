@@ -326,13 +326,4 @@ Check Your Understanding
             document.getElementById(id).style.color = 'red';
          }
       }
-
-      function revealAnswer(id, answer) {
-         if (document.getElementById(id).innerHTML != '') {
-            document.getElementById(id).innerHTML = '';
-         } else {
-            document.getElementById(id).innerHTML = '- ' + answer;
-            document.getElementById(id).style.color = 'blue';
-         }
-      }
    </script>
