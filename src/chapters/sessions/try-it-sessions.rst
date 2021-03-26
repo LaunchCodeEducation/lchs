@@ -7,7 +7,7 @@ etc.). The key is to practice saving and accessing persistent data.
 
 .. admonition:: Note
 
-   For our program to work properly, cookies must be enabled in your browser.
+   For the program to work properly, cookies must be enabled in the browser.
 
 Clone the Repository
 --------------------
@@ -44,23 +44,23 @@ to navigate to the repository, then follow these setup steps:
       $ . session-env/Scripts/activate
       (session-env) $ pip install Flask
 
-#. Launch the ``main.py`` program and open the webpage in a browser tab.
-   Nothing special happens on the page yet. You just need to make sure the
-   starter code runs.
+#. Launch the ``main.py`` program and open the webpage in the browser. Nothing
+   special happens on the page yet. You just need to make sure the starter code
+   runs.
 
    .. figure:: figures/session-try-it-start.png
       :alt: Form page displayed when the Flask app runs the first time.
       :width: 50%
    
-      This is what you will see when the starter code runs.
+      The starter code displays a simple form.
 
-#. Before moving on, be sure to save and commit your work.
+#. Before moving on, be sure to :ref:`save and commit <commit-summary>` your
+   work.
 
 Save Session Data
 -----------------
 
-In this section, you'll create a new ``session`` object and use it to store a
-piece of data.
+In this section, you'll use the ``session`` object to store a piece of data.
 
 Right now, all the Flask application does is render the ``index.html`` page.
 Opening ``main.py``, we see very little code inside the central ``if/else``
@@ -94,8 +94,8 @@ list to the session.
 
       session['key'] = value
    
-   Just like a dictionary, ``key`` should be a string. However, ``value`` can
-   be any Python data type.
+   Just like a dictionary, ``key`` should be a string or a string variable.
+   However, ``value`` can be any Python data type.
 
 #. In ``main.py``, replace the ``pass`` keyword on line 12 with the statement:
 
@@ -108,7 +108,7 @@ list to the session.
    ``movies``, ``places_to_visit``, ``groceries``, etc.
 
 #. Save your changes. If ``main.py`` is not currently running, start it again.
-#. In its page tab, use the :ref:`browser tools <cookies-vs-sessions>` to
+#. On the webpage, use the :ref:`browser tools <cookies-vs-sessions>` to
    confirm that a session cookie was set.
 
 Congratulations! You just made the browser store a file on your device. It only
@@ -156,7 +156,7 @@ Now put this to use:
          <p>Nothing here yet...</p>
       </section>
 
-#. Replace ``Nothing here yet...`` with a placeholder:
+#. On line 23, replace ``Nothing here yet...`` with a placeholder:
 
    .. sourcecode:: html
       :lineno-start: 21
@@ -165,6 +165,8 @@ Now put this to use:
          <h2>List Items:</h2>
          <p>{{session['list_name']}}</p>
       </section>
+
+   ``{{session['list_name']}}`` returns the value assigned to ``list_name``.
 
 #. Save, then reload the page. You should see a set of empty list brackets
    under the form.
@@ -180,7 +182,7 @@ Now put this to use:
       :alt: A list with items appears below the Grocery List heading.
 
 Notice that the ``render_template`` function does NOT include any variables.
-Since the session data is stored on your device, it is accessible by
+Since the session data is stored on your device, it is accessible by both
 ``main.py`` and ``index.html``.
 
 .. admonition:: Tip
@@ -192,11 +194,34 @@ Since the session data is stored on your device, it is accessible by
       :alt: Showing storage panel with menu options to delete a session cookie.
       :width: 80%
 
+Update the List Display
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To make the webpage look better, let's update the HTML code to display the
+elements in an unordered list.
+
+.. sourcecode:: html
+   :lineno-start: 21
+
+   <section class="centered">
+      <h2>List Items:</h2>
+      <ul>
+         {% for item in session['list_name'] %}
+            <li>{{item}}</li>
+         {% endfor %}
+      </ul>
+   </section>
+
+The ``style.css`` page contains some CSS rules to align and size the items, but
+you may need to adjust these to suit your screen.
+
 Change Session Data
 -------------------
 
 After learning how to create and access a session cookie, the next step is to
 learn how to change session data. That will be the goal for the next page.
+
+Before moving on, take a moment to save and commit your work.
 
 Check Your Understanding
 ------------------------
