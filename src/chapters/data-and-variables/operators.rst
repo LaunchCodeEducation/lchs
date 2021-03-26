@@ -224,6 +224,8 @@ Check Your Understanding
       </ol>
       <p id="Q1"></p>
 
+.. Answer = a 
+
 .. admonition:: Question
 
    What value is printed when the following statement runs?
@@ -241,6 +243,8 @@ Check Your Understanding
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
       </ol>
       <p id="Q2"></p>
+
+.. Answer = c
 
 .. admonition:: Question
 
@@ -260,4 +264,5 @@ Check Your Understanding
       </ol>
       <p id="Q3"></p>
 
+.. Answer = d
 

@@ -132,6 +132,8 @@ Check Your Understanding
          <li><span id = "1g" onclick="highlight('1g', true)">g</span></li>
       </ol>
 
+.. Answer = b and e and g 
+
 .. admonition:: Question
 
    Which of the following are legal AND recommended Python variable names?
@@ -149,4 +151,5 @@ Check Your Understanding
          <li><span id = "2g" onclick="highlight('2g', false)">g</span></li>
       </ol>
 
+.. Answer = e 
 
