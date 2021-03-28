@@ -87,8 +87,8 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following generate an error message when passed to ``float()``?
-   Feel free to try running each of the options.
+   Which of the following generates an error message when passed to
+   ``float()``? Feel free to try running each of the options.
 
    .. raw:: html
 
@@ -101,5 +101,3 @@ Check Your Understanding
       <p id="Q2"></p>
 
 .. Answer = c
-
-

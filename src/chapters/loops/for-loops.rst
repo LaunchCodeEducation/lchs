@@ -231,12 +231,11 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 2 cookies. I'm going to eat one!</strong></li>
-         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">I have 3 cookies. I'm going to eat one!</strong></li>
-         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 10 cookies. I'm going to eat one!</strong></li>
-         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">I have 12 cookies. I'm going to eat one!</strong></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">I have 2 cookies. I'm going to eat one!</code></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">I have 3 cookies. I'm going to eat one!</code></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">I have 10 cookies. I'm going to eat one!</code></li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">I have 12 cookies. I'm going to eat one!</code></li>
       </ol>
       <p id="Q4"></p>
 
 .. Answer = b.
-
