@@ -52,10 +52,12 @@ Avoid Duplicate Entries
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 As written, the Python code allows users to add the same item to the list
-multiple times. While this behavior isn't wrong, it doesn't fit with the
-``groceries`` example.
+multiple times. While this behavior isn't wrong, it doesn't fit with the idea
+of a grocery list.
 
-#. Add a conditional to the code to check if ``new_item`` is already present in
+Modify your code to prevent repeats from happening.
+
+#. Add a conditional to check if ``new_item`` is already present in
    ``current_list``. If so, don't add it again. If not, append it to the list.
 #. To prevent issues with case (e.g. ``"Apples"`` vs. ``"apples"``), add a
    string method to the form request on line 10. ``.lower()``, ``.upper()``,
@@ -65,11 +67,11 @@ multiple times. While this behavior isn't wrong, it doesn't fit with the
    .. sourcecode:: python
       :lineno-start: 10
 
-      new_item = request.form['new_item'].title()
+      new_item = request.form['new_item'].title()  # Standardize case for form entries.
       current_list = session['groceries']
-      if new_item not in current_list:
+      if new_item not in current_list:          # Check if new_item is actually new.
          current_list.append(new_item)
-      session['groceries'] = current_list
+      session['groceries'] = current_list       # Update the session value.
 #. Save your changes, then test your application.
 
 Fix the Logic Error
@@ -87,83 +89,131 @@ existing data.
 
 .. admonition:: Try It!
 
-   In the program tab, click in the address bar and tap *Enter*. This sends a
-   ``GET`` request from the browser. Notice that any list items displayed on
-   the page disappear!
+   In the application tab, click in the address bar and tap *Enter*. This sends
+   a ``GET`` request to the server. Notice that any list items displayed on the
+   page disappear!
 
 This isn't ideal behavior. If our list already contains data, we want to keep
 those elements after a ``GET`` or ``POST`` request.
 
 Before assigning an empty list to the ``groceries`` key, we need to check to
-see if that key already exists in ``session``. If ``groceries`` is NOT part of
-the session yet, then we should add it and assign the empty list. If
-``groceries`` is currently a key in ``session``, then we keep it as-is.
+see if it already exists in ``session``. If ``groceries`` is NOT part of the
+session yet, then we should add it and assign the empty list. If ``groceries``
+is currently a key in ``session``, then we keep it as-is.
 
-Update the ``else`` clause in the ``index()`` function as follows:
+#. Update the ``else`` clause in the ``index()`` function as follows:
 
-.. sourcecode:: Python
-   :lineno-start: 7
+   .. sourcecode:: Python
+      :lineno-start: 7
 
-   @app.route('/', methods=['GET', 'POST'])
-   def index():
-      if request.method == 'POST':
-         new_item = request.form['new_item']
-         current_list = session['groceries']
-         if new_item not in current_list:
-            current_list.append(new_item)
-         session['groceries'] = current_list
-      else:
-         if 'groceries' not in session:
-            session['groceries'] = []
+      @app.route('/', methods=['GET', 'POST'])
+      def index():
+         if request.method == 'POST':
+            new_item = request.form['new_item'].title()
+            current_list = session['groceries']
+            if new_item not in current_list:
+               current_list.append(new_item)
+            session['groceries'] = current_list
+         else:
+            if 'groceries' not in session:
+               session['groceries'] = []
 
-Lines 16 & 17 take care of the ``groceries`` check. Now when the browser sends
-a ``GET`` request, the conditional makes sure the application preserves any
-existing data.
+#. When the browser sends a ``GET`` request, the ``else`` clause runs.
 
-.. admonition:: Try It!
+   a. Line 16 checks if the ``groceries`` key does NOT exist in the ``session``
+      object. 
+   b. If ``True``, then the program creates the ``groceries`` key and assigns
+      it an empty list.
+   c. If ``False``, the code makes no changes to the existing data.
 
-   Test your program by adding a few items to the list. Then try:
+#. Test your program by adding a few items to the list. Then try:
    
-   #. Loading the page from the address bar.
-   #. Opening the application in a new tab.
-   #. Stopping and restarting ``main.py``.
+   a. Loading the page from the address bar.
+   b. Opening the application in a new tab.
+   c. Stopping and restarting ``main.py``.
 
    In each case, the contents of your list should persist.
 
 Delete Session Data
 -------------------
 
-So far, the only way we've seen to remove a session cookie is through the
-browser tools. WHile this works well for visitors to our website, it's not an
-option for us as the programmers. Fortunately, there are a number of ways to
-use Python to remove data from a session.
+So far, we've used the browser tools to remove a session cookie. While this
+works well for visitors to our website, it's not an option for us as the
+programmers. Since session files are stored on a user's device, they decide how
+to manage them. Well behaved coders cannot and should not try to delete files
+on someone else's computer.
 
-#. **The nuclear option**: Lorem ipsum...
-#. **Remove one key/value pair**: Lorem ipsum...
-#. **Remove one item from a saved list**: Lorem ipsum...
+While we cannot remove a session file, we can clear some or all of the data
+stored in it. There two methods we can use to remove data from a session.
 
-Lorem ipsum...
+#. To remove ALL key/value pairs from a session, the syntax is:
 
-Final Touches
--------------
+   .. sourcecode:: python
 
-Lorem ipsum...
+      session.clear()
+#. To remove a single key/value pair from a session, the syntax is:
+
+   .. sourcecode:: python
+
+      session.pop('key', None)
+
+   This method throws an error if ``key`` does not exist in the session.
+   Including ``None`` inside the parentheses sets it as a default value. If
+   ``key`` is missing, then ``.pop()`` returns ``None`` as its result, and our
+   program keeps running.
+
+Remove a Specific Value
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Since the session in our demo application stores only one key/value pair, using
+``.clear()`` and ``.pop()`` produce the same result.
+
+What if we want to remove only one item from the stored list instead of the
+entire collection? For that, we need to do a little more work.
+
+Right now, your code checks if ``new_item`` is NOT part of the list. If
+``True``, ``new_item`` is added to the collection. If ``False``, nothing
+happens.
+
+#. Add an ``else`` clause to remove an entry from the list. If the user submits
+   an item already exists, erased from the collection.
+
+   .. sourcecode:: python
+      :lineno-start: 12
+
+      if new_item not in current_list:
+         current_list.append(new_item)
+      else:
+         current_list.remove(new_item)
+#. Test your code by adding then removing several items. Be sure to check that
+   the form submissions are case-insensitive.
+
+.. todo:: Insert GIF of final Flask session demo app.
+
+Final Touches (Optional)
+------------------------
+
+Your Flask app now allows you to add and remove items. However, there are a few
+extra features that will improve the user experience and make your project more
+polished.
+
+These tasks don't teach anything new about sessions, but they do provide a good
+review of older skills.
+
+#. Use the ``.sort()`` method to alphabetize your list. Experiment with using
+   ``session['groceries'].sort()`` vs. ``current_list.sort()``. Is there a
+   difference?
+#. After an item is added to the list, display a message for the user.
+   Something like, ``You just added ___``. Include some CSS styling to make the
+   message text stand out.
+#. Checkbox form to remove items...
 
 Demo Ideas/Notes
 ----------------
 
-#. Text form to add new items.
-#. Save list to session object. Use Jinja2 conditional and loop to display the
-   list elements on the webpage.
-#. After POST, save new item to var, pass it to template, display in message.
-   "You just added ____ to the list."
-#. Append new item to session list.
-#. Checkbox form to remove items. Feedback message?
-#. Show that list methods (e.g. pop() and sort()) work with
-   session['list_name']?
-#. Bonus task: Run secondary program. This one presents a row of numerical
-   buttons. Clicking these builds a string. Include a delete key to back up one
-   space. This program is just for exploration, not a step-by-step walkthrough.
+Bonus task: Run secondary program. This one presents a row of numerical
+buttons. Clicking these builds a string. Include a delete key to back up one
+space. This program is just for exploration, not a step-by-step walkthrough.
 
 Check Your Understanding
 ------------------------
