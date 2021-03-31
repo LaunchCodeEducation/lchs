@@ -93,8 +93,8 @@ existing data.
    a ``GET`` request to the server. Notice that any list items displayed on the
    page disappear!
 
-This isn't ideal behavior. If our list already contains data, we want to keep
-those elements after a ``GET`` or ``POST`` request.
+If our list already contains data, we want to keep those elements after a
+``GET`` or ``POST`` request.
 
 Before assigning an empty list to the ``groceries`` key, we need to check to
 see if it already exists in ``session``. If ``groceries`` is NOT part of the
