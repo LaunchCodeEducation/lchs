@@ -7,12 +7,10 @@ information about the objects and race them against each other.
 
 .. admonition:: Note
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, login to your
+   If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your
    account to access the starter code for each exercise.
 
-   If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
-   the following links to copy the starter code.
+   Otherwise, use the links below to copy the starter code and code in your own free account.
 
    #. `Trinket starter code <https://trinket.io/python/b3c2b6e9ff>`__ (*Remix*
       before getting started).

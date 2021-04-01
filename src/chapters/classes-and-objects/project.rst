@@ -9,12 +9,10 @@ Let's create a class to handle new cleaning crew candidates!
 Before You Start
 ----------------
 
-If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, login to your
+If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your
 account to access the starter code for this project.
 
-If you are NOT enrolled in a repl.it classroom or Trinket course, use one of
-the following links to copy the starter code.
+Otherwise, use the links below to copy the starter code and code in your own free account.
 
 #. `Trinket code <https://trinket.io/python/7b69aa933c>`__ (*Remix* before
    getting started).

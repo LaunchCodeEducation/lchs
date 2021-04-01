@@ -173,6 +173,6 @@ in the repl.it or Trinket workspaces.
       # Try changing the color or shape (circle, square, triangle, arrow) for bob.
       # Try changing the size of the circle.
 
-   `Repl.it link <https://repl.it/@launchcode/Embedded-Try-It-Example#main.py>`__
+   `Repl.it link  <https://repl.it/@launchcode/Embedded-Try-It-Example#main.py>`__
    
    `Trinket.io link <https://trinket.io/python/32d45e0cdd>`__
