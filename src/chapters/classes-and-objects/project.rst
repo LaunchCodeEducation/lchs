@@ -12,7 +12,7 @@ Before You Start
 If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your
 account to access the starter code for this project.
 
-Otherwise, use the links below to copy the starter code and code in your own free account.
+Otherwise, use the links below to copy the starter code.
 
 #. `Trinket code <https://trinket.io/python/7b69aa933c>`__ (*Remix* before
    getting started).

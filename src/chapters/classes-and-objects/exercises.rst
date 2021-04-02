@@ -10,7 +10,7 @@ information about the objects and race them against each other.
    If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your
    account to access the starter code for each exercise.
 
-   Otherwise, use the links below to copy the starter code and code in your own free account.
+   Otherwise, use the links below to copy the starter code.
 
    #. `Trinket starter code <https://trinket.io/python/b3c2b6e9ff>`__ (*Remix*
       before getting started).
