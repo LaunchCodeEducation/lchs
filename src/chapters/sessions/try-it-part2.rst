@@ -36,7 +36,7 @@ block of 4 statements:
 
 #. **Line 10**: Requests the entry submitted from the web form and assigns the
    string to ``new_item``.
-#. **Line 11**: Retrieves the ``groceries`` value stored in ``session`` and
+#. **Line 11**: Retrieves the ``groceries`` list stored in ``session`` and
    assigns it to ``current_list``.
 #. **Line 12**: Appends ``new_item`` to the end of ``current_list``.
 #. **Line 13**: Reassigns ``current_list`` to the session.
@@ -140,8 +140,8 @@ Delete Session Data
 So far, we've used the browser tools to remove a session cookie. While this
 works well for visitors to our website, it's not an option for us as the
 programmers. Since session files are stored on a user's device, they decide how
-to manage them. Well behaved coders cannot and should not try to delete files
-on someone else's computer.
+to manage them. Well behaved coders do NOT delete files on someone else's
+computer!
 
 While we cannot remove a session file, we can clear some or all of the data
 stored in it. There two methods we can use to remove data from a session.
@@ -157,10 +157,13 @@ stored in it. There two methods we can use to remove data from a session.
 
       session.pop('key', None)
 
-   This method throws an error if ``key`` does not exist in the session.
-   Including ``None`` inside the parentheses sets it as a default value. If
-   ``key`` is missing, then ``.pop()`` returns ``None`` as its result, and our
-   program keeps running.
+   Without the ``None`` argument, ``.pop()`` throws an error if ``key`` does
+   not exist in the session. We could use anything here in place of ``None``,
+   like ``5`` or ``"Hello, World!"``. However, ``None`` represents an empty
+   value, so it makes sense for a missing key.
+   
+   Including ``None`` sets it as a default value. If ``key`` is missing, then
+   ``.pop()`` returns ``None`` as its result, and our program keeps running.
 
 Remove a Specific Value
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,14 +172,12 @@ Since the session in our demo application stores only one key/value pair, using
 ``.clear()`` and ``.pop()`` produce the same result.
 
 What if we want to remove only one item from the stored list instead of the
-entire collection? For that, we need to do a little more work.
-
-Right now, your code checks if ``new_item`` is NOT part of the list. If
-``True``, ``new_item`` is added to the collection. If ``False``, nothing
-happens.
+entire collection? For that, we need to do a little more work. Right now, the
+code checks if ``new_item`` is NOT part of the list. If ``True``, ``new_item``
+is added to the collection. If ``False``, nothing happens.
 
 #. Add an ``else`` clause to remove an entry from the list. If the user submits
-   an item already exists, erased from the collection.
+   an item that already exists, it is erased from the collection.
 
    .. sourcecode:: python
       :lineno-start: 12
