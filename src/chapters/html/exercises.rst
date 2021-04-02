@@ -1,12 +1,10 @@
 Exercises: HTML
 ===============
 
-If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, login to your account
+If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your account
 to access the starter code for each exercise.
 
-If you are NOT enrolled in a repl.it classroom or Trinket course, use the
-editors below to complete the project.
+Otherwise, use the links below to code in your own free account.
 
 .. admonition:: Note
 

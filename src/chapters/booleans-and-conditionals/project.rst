@@ -7,8 +7,7 @@ natural and frequent part of coding. Making mistakes helps you learn.
 
 .. admonition:: Note
 
-   There is no starter code for this project. However, if your teacher uses a 
-   :ref:`repl.it classroom <replit-classroom-assignments>` or a
+   There is no starter code for this project. However, if your teacher uses a
    :ref:`Trinket course <trinket-course-assignments>`, you will submit your
    work there. 
 

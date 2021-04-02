@@ -48,11 +48,10 @@ Part B - Using Variables
    The remaining exercises require more space than the small embedded code
    editor. You will need to move to a larger workspace.
 
-   If your teacher uses a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, follow the links
+   If your teacher uses a :ref:`Trinket course <trinket-course-assignments>`, follow the links
    for instructions on how to access this assignment.
 
-   If your teacher has NOT set up a repl.it classroom or Trinket course, you
+   If your teacher has NOT set up Trinket course, you
    can access separate starter code at `replit <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-B>`__
    or `Trinket <https://trinket.io/python/d2e5edfed2?showInstructions=true>`__.
    To save and share your code, be sure to login to your account.
@@ -94,7 +93,7 @@ Use the information given below to complete the part B exercises:
 Part C - User Input
 -------------------
 
-If your teacher uses repl.it classroom or a Trinket course, solve part C there.
+If your teacher uses a Trinket course, solve part C there.
 Otherwise, use this `standard repl <https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-C>`__
 or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__.
 
