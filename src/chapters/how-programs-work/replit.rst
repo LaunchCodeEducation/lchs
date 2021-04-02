@@ -26,7 +26,8 @@ much on this screen.
 
 .. figure:: figures/replit-home.png
    :alt: Replit.com home screen.
-Home screen
+
+   Home screen
 
 Click on *new repl (1) or (2)* to begin a new project. Scroll through the options and
 select *Python (3)*. Next, name your project (4) and click *Create Repl (5)*.
