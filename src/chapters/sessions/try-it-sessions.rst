@@ -9,6 +9,8 @@ etc.). The key is to practice saving and accessing persistent data.
 
    For the program to work properly, cookies must be enabled in the browser.
 
+.. _clone-venv-reminder:
+
 Clone the Repository
 --------------------
 
