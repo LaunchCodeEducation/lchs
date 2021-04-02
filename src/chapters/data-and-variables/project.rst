@@ -8,8 +8,7 @@ astronauts, and fuel.
 Before You Start
 ----------------
 
-If your teacher uses a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, follow the links
+If your teacher uses a :ref:`Trinket course <trinket-course-assignments>`, follow the links
 for instructions on how to access this project.
 
 If you are working through this material on your own, use this

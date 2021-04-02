@@ -1,16 +1,15 @@
 Exercises: Booleans and Conditionals
 ====================================
 
-If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
 there.
 
-Otherwise, use the links below to code in your own free account.
+Otherwise, use the links below to code in your own free Replit or Trinket account.
 
 Part A: Basic Selection
 -----------------------
 
-If you are NOT assigned to a repl.it classroom or Trinket course, follow one of
+If you are NOT assigned to a Trinket course, follow one of
 these links for the Part A starter code:
 
 #. `repl.it starter <https://repl.it/@launchcode/Conditional-Exercises-Part-A-1>`__
@@ -72,7 +71,7 @@ Part B: Logical Operators
 -------------------------
 
 Use the logical ``and``, ``or``, and ``not`` operators in the following
-exercises. Once again, if you are not assigned to a repl.it classroom or Trinket course, 
+exercises. Once again, if you are not assigned Trinket course, 
 access the Part B starter code here: `repl.it <https://repl.it/@launchcode/Conditional-Exercises-Part-B-1>`__
 or `Trinket <https://trinket.io/python/923476a25b>`__.
 

@@ -1,12 +1,10 @@
 Exercises: Functions
 ====================
 
-If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
 there.
 
-If you are NOT enrolled in a repl.it classroom or Trinket course, use the
-links given below to complete the exercises.
+Otherwise, use the links below to code in your own free account.
 
 .. admonition:: Note
 
