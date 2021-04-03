@@ -9,12 +9,10 @@ Let's use dictionaries to play Mad-Libs!
    `here <https://en.wikipedia.org/wiki/Mad_Libs#Format>`__, and then play a
    few `short samples <http://www.madlibs.com/>`__ with your friends.
 
-If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-or a :ref:`Trinket course <trinket-course-assignments>`, login to your account
+If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, login to your account
 to access the starter code and complete the project.
 
-If you are NOT enrolled in a repl.it classroom or Trinket course, you can find
-copies of the starter code here:
+Otherwise, use the links below to code in your own free account.
 
 #. `Trinket code <https://trinket.io/python/7bc12cbed1?runOption=run&showInstructions=true>`__
 #. `repl.it code <https://repl.it/@launchcode/LCHS-Dictionary-Project-Mad-Libs>`__

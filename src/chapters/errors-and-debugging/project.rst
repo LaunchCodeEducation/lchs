@@ -21,11 +21,10 @@ Yer directions:
 
 .. admonition:: Note
 
-   If yer teacher added ye to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, do the exercises
+   If yer teacher added ye to a :ref:`Trinket course <trinket-course-assignments>`, do the exercises
    there.
 
-   If ye NOT be in a repl.it classroom or Trinket course, use the links given
+   If ye NOT be in a Trinket course, use the links given
    in the text below.
 
    Yep! This page be in pirate-talk! If ye not like pirates (ye foul blaggart),

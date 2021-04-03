@@ -3,13 +3,11 @@ Exercises: Strings
 
 .. admonition:: Note
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+   If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
    there.
 
-   If your teacher has NOT set up a repl.it classroom or a Trinket course,
-   click on the links in each part to access the starter code.
-
+   Otherwise, use the links below to code in your own free account.
+   
 Part One: Bracket Notation
 --------------------------
 

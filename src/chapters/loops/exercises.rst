@@ -13,13 +13,10 @@ Exercises: Loops
 
 .. admonition:: Note
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
+   If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, complete the exercises
    there.
 
-   If your teacher has NOT set up a repl.it classroom or a Trinket course,
-   click on a link in each problem to access the different sets of starter
-   code.
+   Otherwise, use the links below to code in your own free account.
 
 #. Construct ``for`` loops that accomplish the following tasks:
    (`repl.it code <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-1>`__ or `Trinket code <https://trinket.io/python/71cbf8d913?runOption=run&showInstructions=true>`__)
