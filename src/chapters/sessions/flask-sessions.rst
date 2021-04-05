@@ -58,13 +58,14 @@ website that sets a single key/value pair.
 .. figure:: figures/cookie-vs-session-1.png
    :alt: Showing a cookie and session key/value pair in the browser tools.
 
-   The key/value pair for a normal cookie is clearly visible. The session data is encrypted.
+   The key/value pair for a normal cookie is clearly visible. The session data is not.
 
 The website on the left side of the figure sets a regular cookie. Note that we
 can clearly see both the key and its value. Modifying either of these would be
 a snap. The right hand side comes from a website that uses a session. Notice
 that the key is no longer listed under the ``Name`` column. Also, the ``Value``
-displayed has been encrypted. It does not appear as readable text.
+shows a long list of random characters. The data does not appear as readable
+text.
 
 In the next example, the two websites set multiple key/value pairs.
 
@@ -135,37 +136,7 @@ Also, if we push our program up to GitHub, then we save our code in the cloud.
 *Anyone* who visits the URL for our repository can see the value assigned to
 ``secret_key``.
 
-To keep the value for ``secret_key`` safe, we should avoid hard-coding it into
-our program. Searching Google turns up several ways to keep ``secret_key``
-hidden. Here's one simple option that we can use for now.
-
-.. admonition:: Example
-   
-   The code block below creates a random value for ``secret_key``:
-
-   .. sourcecode:: python
-      :linenos:
-
-      from flask import Flask, request, redirect, render_template, session
-      import os
-      
-      app = Flask(__name__)
-      app.config['DEBUG'] = True
-      app.secret_key = os.urandom(64)
-
-   #. On line 2, we import the Python module called ``os``. Just like the
-      ``turtle``, ``string``, and ``random`` modules, it is a standard Python
-      library. We do NOT need to understand how it works. We just need to know
-      how to access one thing from it.
-   #. In line 6, we call the `os.urandom() <https://www.geeksforgeeks.org/python-os-urandom-method/>`__
-      method and pass it a *size* argument (``64`` in this case). When the
-      statement executes, it returns a random collection of characters. We can
-      make the length of ``secret_key`` larger or smaller by changing the size.
-   #. The benefit of using ``os.urandom()`` is that even we won't know the
-      value for ``secret_key``. A new string is created whenever we launch the
-      program, but it remains consistent while the application runs.
-
-.. admonition:: Tip
+.. admonition:: Warning
 
    For the local programs you create in this course, assigning a specific
    string to ``secret_key`` will work fine.
@@ -173,6 +144,9 @@ hidden. Here's one simple option that we can use for now.
    However, if you ever want to *deploy* one of your Flask programs to the web
    (where the world can see it), you need to take steps to protect the secret
    key.
+
+Searching Google turns up several ways to keep ``secret_key`` hidden. However,
+exploring these methods is beyond the scope of this course.
 
 Check Your Understanding
 ------------------------
