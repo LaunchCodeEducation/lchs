@@ -120,7 +120,10 @@ Your code should:
 
 When done, your app should behave like this:
 
-.. todo:: Insert GIF of basic Flask guessing app (not quite done).
+.. figure:: figures/number-guess.gif
+   :alt: GIF showing the operation of the Flask number guessing app.
+
+   Wow! Three tries (not counting invalid entries).
 
 Take a moment to save and commit your work!
 
@@ -140,7 +143,11 @@ application should not keep taking guesses!
    the page sends a ``GET`` request to the server. This will reset the guessing
    range and assign a new ``magic_number`` value.
 
-   .. todo:: Insert screenshot of second number guessing form.
+   .. figure:: figures/success-screen.png
+      :alt: Form showing a Play Again button above a celebratory message.
+      :width: 80%
+
+      Clicking ``Play Again`` resets the game with a new magic number.
 
 Don't forget to save and commit your work!
 
