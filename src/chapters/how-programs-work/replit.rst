@@ -85,7 +85,7 @@ Forking - Creating your own copy
    :alt: Replit.com how to copy/fork someone elses repl   
 
 **Fork button**: If you are viewing someone elses project, or clicking on a Repl from this workbook you can *fork*
-the content and create a copy of that project on your own account. This
+the content and save a copy of the project to your own account. This
 allows you to edit the files without changing the originals, and it lets
 you use other programmers' work (with permission) to enhance your own.  
 
