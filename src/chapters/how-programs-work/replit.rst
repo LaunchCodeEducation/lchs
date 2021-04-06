@@ -64,19 +64,6 @@ Features to note:
    The workspace shown above uses the "light" theme (dark text on a white background). If you prefer the reverse (light text on a black
    background), click the gear icon and select the "dark" theme.  
 
-.. figure:: figures/replit-forking.png
-   :alt: Replit.com how to copy/fork someone elses repl   
-
-   **Fork button**: If you are viewing someone elses project, you can *fork*
-   the content and store a copy of that project to your own account. This
-   allows you to edit the files without changing the originals, and it lets
-   you use other programmers' work (with permission) to enhance your own.  
-
-.. figure:: figures/replit-edit_in_workspace.png
-   :alt: Replit.com why you don't want to press edit in workspace button  
-
-   You may notice the Edit in workspace button and think thats what you want.  However the following warning will pop up. Again, you want your own copy and to *fork* the repl!
-  
 
 Try It!
 -------
@@ -90,3 +77,24 @@ menu bars next to your username and selecting *My Repls*.
 
 .. figure:: figures/replit-menu-dropdown.png
    :alt: Main menu dropdown options.
+
+   
+Forking - Creating your own copy
+--------------------------------
+.. figure:: figures/replit-forking.png
+   :alt: Replit.com how to copy/fork someone elses repl   
+
+**Fork button**: If you are viewing someone elses project, or clicking on a Repl from this workbook you can *fork*
+the content and save a copy of the project to your own account. This
+allows you to edit the files without changing the originals, and it lets
+you use other programmers' work (with permission) to enhance your own.  
+
+.. admonition:: Note
+
+   If you are not signed into your Replit account, a prompt to sign-in will appear when you try to fork. 
+
+.. figure:: figures/replit-edit_in_workspace.png
+   :alt: Replit.com why you don't want to press edit in workspace button  
+
+You may notice the Edit in workspace button and think thats what you want.  However the following warning will pop up. Again, you want your own copy and to *fork* the repl!
+  
