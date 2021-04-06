@@ -158,9 +158,9 @@ stored in it. There two methods we can use to remove data from a session.
       session.pop('key', None)
 
    Without the ``None`` argument, ``.pop()`` throws an error if ``key`` does
-   not exist in the session. We could use anything here in place of ``None``,
-   like ``5`` or ``"Hello, World!"``. However, ``None`` represents an empty
-   value, so it makes sense for a missing key.
+   not exist in the session. We could use anything in place of ``None``, like
+   ``5`` or ``"Hello, World!"``. However, ``None`` represents an empty value,
+   so it makes sense for a missing key.
    
    Including ``None`` sets it as a default value. If ``key`` is missing, then
    ``.pop()`` returns ``None`` as its result, and our program keeps running.
@@ -172,12 +172,15 @@ Since the session in our demo application stores only one key/value pair, using
 ``.clear()`` and ``.pop()`` produce the same result.
 
 What if we want to remove only one item from the stored list instead of the
-entire collection? For that, we need to do a little more work. Right now, the
-code checks if ``new_item`` is NOT part of the list. If ``True``, ``new_item``
-is added to the collection. If ``False``, nothing happens.
+entire collection? For that, we need to do a little more work. Right now, if
+``new_item`` is NOT part of the list, it gets added to the collection.
+Otherwise, nothing happens.
 
-#. Add an ``else`` clause to remove an entry from the list. If the user submits
-   an item that already exists, it is erased from the collection.
+Let's update the conditional on line 12 to either add a new item to the list or
+delete an existing element.
+
+#. Add an ``else`` clause to delete an entry from the list. If the user submits
+   an item that already exists, it is removed from the collection.
 
    .. sourcecode:: python
       :lineno-start: 12
@@ -189,7 +192,11 @@ is added to the collection. If ``False``, nothing happens.
 #. Test your code by adding then removing several items. Be sure to check that
    the form submissions are case-insensitive.
 
-.. todo:: Insert GIF of final Flask session demo app.
+When done, your application should behave something like this:
+
+.. figure:: figures/grocery-list.gif
+   :alt: GIF showing the addition and deletion of items from a stored list.
+   :width: 40%
 
 Final Touches (Optional)
 ------------------------
@@ -198,16 +205,28 @@ Your Flask app now allows you to add and remove items. However, there are a few
 extra features that will improve the user experience and make your project more
 polished.
 
-These tasks don't teach anything new about sessions, but they do provide a good
-review of older skills.
+These tasks don't teach you anything new about sessions, but they do provide a
+good review of older skills.
 
 #. Use the ``.sort()`` method to alphabetize your list. Experiment with using
    ``session['groceries'].sort()`` vs. ``current_list.sort()``. Is there a
    difference?
+#. Use CSS to make the page look nice.
 #. After an item is added to the list, display a message for the user.
-   Something like, ``You just added ___``. Include some CSS styling to make the
-   message text stand out.
-#. Checkbox form to remove items...
+   Something like, ``You just added ___``.
+#. Instead of an unordered list, use a checkbox form to display the items. When
+   submitted, any items checked in the form will be removed from the list.
+
+   .. figure:: figures/checkbox-remove.png
+      :alt: Checkbox form allowing users to remove multiple items at once.
+      :width: 40%
+
+      This is MUCH easier than having to type in the items you want to remove!
+
+.. admonition:: Tip
+
+   Checkout the ``final-code`` branch of the repository to examine one possible
+   solution for the checkbox form.
 
 Demo Ideas/Notes
 ----------------
@@ -215,8 +234,3 @@ Demo Ideas/Notes
 Bonus task: Run secondary program. This one presents a row of numerical
 buttons. Clicking these builds a string. Include a delete key to back up one
 space. This program is just for exploration, not a step-by-step walkthrough.
-
-Check Your Understanding
-------------------------
-
-Lorem ipsum...
