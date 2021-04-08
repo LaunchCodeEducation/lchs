@@ -16,12 +16,10 @@ Requirements:
 
 .. admonition:: Note
 
-   If your teacher added you to a :ref:`repl.it classroom <replit-classroom-assignments>`
-   or a :ref:`Trinket course <trinket-course-assignments>`, do the exercises
+   If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`, do the exercises
    there.
 
-   If you are NOT in a repl.it classroom or Trinket course, use the links given
-   in the text below.
+   Otherwise, use the links below to code in your own free account.
 
    If you would like to see the project instructions in pirate-speak,
    :ref:`click here for the translation <debugging-project>`.

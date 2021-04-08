@@ -236,8 +236,8 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Which of the following will cause this ``while`` loop end? Select ALL that
-   apply.
+   Which of the following will cause this ``while`` loop to end? Select ALL
+   that apply.
 
    .. sourcecode:: python
       :linenos:
@@ -308,4 +308,3 @@ Check Your Understanding
       <p id="Q5"></p>
 
 .. Answer = b
-

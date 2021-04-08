@@ -169,10 +169,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"><strong style="color:#419f6a"> &lt;class 'str'&gt;</strong></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> &lt;class 'int'&gt;</strong></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> user_age</strong></li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> 25</strong></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"><code class="pre"> &lt;class 'str'&gt;</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> &lt;class 'int'&gt;</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> user_age</code></li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> 25</code></li>
       </ol>
       <p id="Q1"></p>
 
@@ -186,12 +186,10 @@ Check Your Understanding
    .. raw:: html
 
       <ol type="a">
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> input('Enter a decimal value: ')</strong></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><strong style="color:#419f6a"> float(input('Enter a decimal value: '))</strong></li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"><strong style="color:#419f6a"> int(input('Enter a decimal value: '))</strong></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> input('Enter a decimal value: ')</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> float(input('Enter a decimal value: '))</code></li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"><code class="pre"> int(input('Enter a decimal value: '))</code></li>
       </ol>
       <p id="Q2"></p>
 
 .. Answer = c
-
-
