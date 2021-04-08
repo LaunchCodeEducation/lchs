@@ -169,12 +169,10 @@ Check Your Understanding
 
       <ol type="a">
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Print out the value of the variable.</li>
-         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Use ``type()``.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Use <code class="pre">type()</code>.</li>
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use it in a known equation and print the result.</li>
          <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Look at the assignment of the variable in the code.</li>
       </ol>
       <p id="Q2"></p>
 
 .. Answer = b
-
-
