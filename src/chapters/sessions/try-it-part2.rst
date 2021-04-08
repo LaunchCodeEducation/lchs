@@ -228,9 +228,5 @@ good review of older skills.
    Checkout the ``final-code`` branch of the repository to examine one possible
    solution for the checkbox form.
 
-Demo Ideas/Notes
-----------------
-
-Bonus task: Run secondary program. This one presents a row of numerical
-buttons. Clicking these builds a string. Include a delete key to back up one
-space. This program is just for exploration, not a step-by-step walkthrough.
+   Also, the ``buttons`` branch in the repo shows one way to retrieve data from
+   a ``<button>`` element rather than an input box.

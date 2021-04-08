@@ -1,4 +1,4 @@
 Project: Flask Sessions
 =======================
 
-Lorem ipsum... 
+You're ready to start :ref:`Assignment 6 <flask-game>`!

@@ -72,6 +72,7 @@ Assignments
    assignments/console-game
    assignments/html-me-something
    assignments/communication-log
+   assignments/flask-game
 
 Appendices
 ==========
