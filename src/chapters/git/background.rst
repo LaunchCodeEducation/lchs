@@ -100,5 +100,3 @@ Check Your Understanding
 
    #. "None, I don't git the question."
    #. "Lots! Let me git started right now."
-
-

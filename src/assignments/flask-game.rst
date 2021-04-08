@@ -4,7 +4,7 @@ Assignment #6: Flask Game
 =========================
 
 In :ref:`Assignment #3 <console-game>`, you and a partner designed a simple
-game app that ran in the console. This was a great step in creating your own
+game app that ran in the console. This was good practice for creating a
 complete program from start to finish.
 
 Now that you have some Flask experience, your team can move the game out of the
@@ -110,7 +110,25 @@ Make branches! To save time, one partner can focus on the page design
 Part 3: Code the Flask Application
 ----------------------------------
 
-Lorem ipsum...
+Begin coding your game by following the notes you made in Part 1. Here are some
+reminders about building larger projects:
+
+#. Commit early and often.
+#. Start small. For example, what template needs to render when the player
+   first loads the page? What should the page look like?
+#. Test your starter code to make sure it works. Save, commit, and push your
+   changes to GitHub.
+#. Add one small, new thing to the program. IMPORTANT: Keep your code working!
+   If the new feature breaks the program, find and fix the bugs before moving
+   on.
+#. Save, commit, and push!
+#. Repeat this process for all of your planned features.
+
+.. admonition:: Tip
+
+   Remember, you can use Git to :ref:`checkout a new branch <branching-in-git>`
+   before you make a big change to your code. That way, if your work crashes
+   and burns, you can restore a working version of your code.
 
 Part 4: Test Your Game
 ----------------------
@@ -150,8 +168,7 @@ Before you submit your application, be sure that it:
 #. Works.
 #. Provides a good user interface and user experience.
 #. Meets each of the :ref:`project requirements <assignment6-requirements>`.
-#. Survives invalid input. For example, if your program asks the user to enter
-   a number, it should not crash when they enter a letter.
+#. Survives invalid input.
 #. Includes enough comments in the code to describe what each part does.
 #. Is fun to play!
 
