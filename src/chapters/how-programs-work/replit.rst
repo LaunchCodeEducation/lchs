@@ -65,7 +65,6 @@ Features to note:
    The workspace shown above uses the "light" theme (dark text on a white background). If you prefer the reverse (light text on a black
    background), click the gear icon and select the "dark" theme.  
 
-
 Try It!
 -------
 
@@ -82,12 +81,14 @@ menu bars next to your username and selecting *My Repls*.
    
 Forking - Creating Your Own Copy
 --------------------------------
+
 .. index:: ! fork button   
 
-**Fork button**: If you are viewing someone elses project, or clicking on a Repl from this workbook you can *fork*
-the content and save a copy of the project to your own account. This
-allows you to edit the files without changing the originals, and it lets
-you use other programmers' work (with permission) to enhance your own.  
+**Fork button**: If you are viewing someone else's project, or clicking on a
+Repl from this textbook, you can *Fork* the content and save a copy of the
+project to your own account. This allows you to edit the files without changing
+the originals. It also lets you use other programmers' work (with permission)
+to enhance your own.
 
 .. figure:: figures/replit-forking.png
    :alt: Replit.com how to copy/fork someone elses repl   
@@ -100,5 +101,3 @@ You may notice the Edit in workspace button and think thats what you want.  Howe
 
 .. figure:: figures/replit-edit_in_workspace.png
    :alt: Replit.com why you don't want to press edit in workspace button  
-
-
