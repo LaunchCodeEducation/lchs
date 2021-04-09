@@ -21,15 +21,16 @@ Create a new student account with `Replit.com <https://replit.com/signup>`__.
    :alt: The Replit.com sign-up screen.
 
 After you sign in, you will see your *Home* screen, which displays your recent
-work and announcements. Since you are just starting out, you won't need to do
-much on this screen.
+work and announcements. Since you are just starting out, you won’t need to do much on this screen. 
+
+To begin a new project click on *+ new repl (1) or under Create / Python(2)*. 
 
 .. figure:: figures/replit-home.png
    :alt: Replit.com home screen.
 
    Home screen
 
-Click on *new repl (1) or (2)* to begin a new project. Scroll through the options and
+The following screen will pop up. Scroll through the options and
 select *Python (3)*. Next, name your project (4) and click *Create Repl (5)*.
 
 .. figure:: figures/replit-newrepl.png
@@ -79,22 +80,25 @@ menu bars next to your username and selecting *My Repls*.
    :alt: Main menu dropdown options.
 
    
-Forking - Creating your own copy
+Forking - Creating Your Own Copy
 --------------------------------
-.. figure:: figures/replit-forking.png
-   :alt: Replit.com how to copy/fork someone elses repl   
+.. index:: ! fork button   
 
 **Fork button**: If you are viewing someone elses project, or clicking on a Repl from this workbook you can *fork*
 the content and save a copy of the project to your own account. This
 allows you to edit the files without changing the originals, and it lets
 you use other programmers' work (with permission) to enhance your own.  
 
+.. figure:: figures/replit-forking.png
+   :alt: Replit.com how to copy/fork someone elses repl   
+
 .. admonition:: Note
 
    If you are not signed into your Replit account, a prompt to sign-in will appear when you try to fork. 
 
+You may notice the Edit in workspace button and think thats what you want.  However the following warning will pop up. Again, you want your own copy and to *fork* the repl!  
+
 .. figure:: figures/replit-edit_in_workspace.png
    :alt: Replit.com why you don't want to press edit in workspace button  
 
-You may notice the Edit in workspace button and think thats what you want.  However the following warning will pop up. Again, you want your own copy and to *fork* the repl!
-  
+

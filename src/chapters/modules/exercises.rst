@@ -15,8 +15,7 @@ existing modules to help assemble your project.
    If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`,
    complete the exercises there.
 
-   If you are NOT enrolled in a Trinket course, use one of the following links
-   to copy the starter code:
+   Otherwise, use the links below to code in your own free account.
 
    #. Open this `Trinket <https://trinket.io/python/a579c40c9f>`__ and *Remix*
       before getting started.
