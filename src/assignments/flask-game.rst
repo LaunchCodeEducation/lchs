@@ -100,12 +100,20 @@ thinking time.
 Part 2: Create a GitHub Repository
 ----------------------------------
 
-Lorem ipsum...
+Since you will be working in multiple locations, on different devices, and as
+part of a team, keeping track of your code is critical.
 
-You will store your project code in GitHub.
+To help manage this, you will save your project in GitHub. Follow these steps
+to create a new repo, push it up to GitHub, and give your partner permission to
+make edits.
 
-Make branches! To save time, one partner can focus on the page design
-(HTML/CSS), and the other can focus on the game logic.
+#. In VS Code: new directory, init, add main, index, style files/folders.
+#. In GitHub: New repo button, ignore README option, copy/paste push local
+   repo git commands.  VS Code might prompt you for your login credentials.
+#. In GitHub: Grant edit access to collaborator(s). (Reference Communication
+   Log assignment).
+
+.. todo:: Move Assignment 6, Part 2 to it's own page?
 
 Part 3: Code the Flask Application
 ----------------------------------
@@ -129,6 +137,10 @@ reminders about building larger projects:
    Remember, you can use Git to :ref:`checkout a new branch <branching-in-git>`
    before you add a new feature to your game. That way, if your experiment
    crashes and burns, you can restore a working version of your code.
+
+   Also, working with branches saves time! One partner can focus on the webpage
+   design (HTML/CSS), and the other can checkout a different branch to focus on
+   the game logic.
 
 Part 4: Test Your Game
 ----------------------
