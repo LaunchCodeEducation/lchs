@@ -19,7 +19,7 @@ Create a New Local Repository
 -----------------------------
 
 Your first step is to create a *local* project directory. This stores a copy of
-your project code on your personal device.
+your code on your personal device.
 
 #. Launch Visual Studio Code and use the *File* menu to open your
    ``local_practice`` folder.
@@ -33,12 +33,12 @@ your project code on your personal device.
    .. figure:: figures/flask-game-start-tree.png
       :alt: Starting file tree showing static/style.css, templates/index.html, and main.py.
 
-      The file tree contains two folders and three files.
+      The file tree contains two folders (``static`` and ``templates``) plus three code files.
 
    You don't need any code in ``main.py``, ``index.html``, or ``style.css``
    yet.
 
-#. Use the terminal to create a new virtual environment for your project. Also,
+#. Use the terminal to create a new virtual environment for your project, then
    install Flask. If you need a reminder for how to do this, review the
    guidelines in the :ref:`Cookies & Sessions chapter <clone-venv-reminder>`.
 #. Add a ``.gitignore`` file and paste in the :ref:`usual code <create-gitignore>`.
@@ -79,7 +79,7 @@ hold the *remote* copy of your project code.
 
       It's friendly and green. Click the button!
 
-#. This opens up a page where you must make a few choices. First, fill in
+#. This opens a page where you must make a few choices. First, fill in
    ``Repository Name`` with the SAME NAME as your local game directory. Also,
    give a short description of your project.
 
@@ -96,9 +96,9 @@ hold the *remote* copy of your project code.
       :width: 50%
 
 #. The next screen seems very detailed, but it's almost automatic. Copy the
-   commands for *pushing an existing repository* and paste them into the
-   terminal panel in VS Code. This will *push* the local repo you created
-   earlier to your GitHub account.
+   commands to *push an existing repository* and paste them into the
+   terminal panel in VS Code. This will save a copy of the local repo you
+   created earlier to your GitHub account.
 
    You may be asked to enter your GitHub username and/or password to complete
    the action.
@@ -127,4 +127,6 @@ Ready to Go!
 Whew! This process gets easier with practice, and you now have a little more
 experience under your belt.
 
-Ready to build your game? :ref:`Return to Assignment 6 <flask-game>`.
+Now it's time to git back to building your game!
+
+:ref:`Return to Assignment 6 <flask-game>`.
