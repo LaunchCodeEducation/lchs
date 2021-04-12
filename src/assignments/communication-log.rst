@@ -106,12 +106,17 @@ setup action is necessary.
 
    .. figure:: figures/com-log/manage-access.png
       :alt: Click "Settings" and "Manage Access" to let other users modify the repo.
-      :width: 70%
+      :width: 60%
 
       Manage access to your repo.
 
-#. **Base**: Click on the green *Invite a collaborator* button. Enter your
-   partner's GitHub username and click *Add to repository*.
+#. **Base**: Click on the green *Invite teams or people* button. Enter your
+   partner's GitHub username and grant them the proper level of access.
+   ``Admin`` gives them the ability to delete the repo from your account at any
+   time. The ``Write`` and ``Maintain`` roles allow them to edit the repo but
+   not delete it.
+   
+   When ready, click *Add to repository*. 
 
    .. figure:: figures/com-log/add-repo-partners.png
       :alt: Enter a GitHub username, then click the Add button.
@@ -131,6 +136,8 @@ setup action is necessary.
 
 Whew! That was quite the setup experience. Now you're ready to dive into the
 main part of the assignment.
+
+.. _git-push-and-pull:
 
 Part B: First Message Exchange
 ------------------------------

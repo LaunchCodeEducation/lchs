@@ -97,6 +97,8 @@ thinking time.
    Not every function in a Flask app has to render a template. It's perfectly
    fine for a function to serve a supporting role instead.
 
+.. _flask-game-part-2:
+
 Part 2: Create a GitHub Repository
 ----------------------------------
 

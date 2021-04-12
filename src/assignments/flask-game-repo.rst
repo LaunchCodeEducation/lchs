@@ -107,10 +107,28 @@ hold the *remote* copy of your project code.
       :alt: Copy the third set of terminal instructions.
       :width: 80%
 
-Good! Your local game directory is now linked to the remote version. You should
-be able to see the same files and folders online and in VS Code.
+#. When successful, you'll see a lot of text appear in the console. It will end
+   with something like this:
 
-   [Insert GitHub project screenshot]
+   .. sourcecode:: bash
+
+      To https://github.com/username/project_name.git
+      * [new branch]      main -> main
+      Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+   ``username`` and ``project_name`` will match your GitHub username and what
+   you called your repository. The last line confirms the link between your
+   local ``main`` branch and the remote version.
+
+Good! Now click on your project name in GitHub. You should see the same files
+and folders in both GitHub and VS Code. The exception to this is the directory
+for your virtual environment, which won't appear online.
+
+.. figure:: figures/linked-GH-repo.png
+   :alt: GitHub repository page, showing the same files as in VS Code (except game-env).
+   :width: 50%
+
+   Congratulations! Your project code now exists online.
 
 Add Teammate(s) to Project
 --------------------------
@@ -118,8 +136,39 @@ Add Teammate(s) to Project
 Finally, you need to grant your partner(s) permission to make changes to the
 remote repository.
 
-In GitHub: Grant edit access to collaborator(s). (Reference Communication
-Log assignment).
+#. On the GitHub repository page, click the *Settings* button. Select the
+   *Manage Access* option and click the green *Invite teams or people* button.
+
+   .. figure:: figures/com-log/manage-access.png
+      :alt: Click "Settings" and "Manage Access" to let other users modify the repo.
+      :width: 60%
+
+      Give your team access to your repo.
+
+#. Next, enter the GitHub username for your partner. Be sure to grant them the
+   proper level of access. ``Admin`` gives them the ability to delete the repo
+   from your account at any time. The ``Write`` and ``Maintain`` roles allow
+   them to edit the repo but not delete it.
+
+   .. figure:: figures/com-log/add-repo-partners.png
+      :alt: Enter a GitHub username, choose level of access, then click the Add button.
+      :width: 40%
+
+      Decide how much control you want to give your partner.
+
+#. When your partner logs into GitHub and visits the project URL, they will see
+   an invitation to join the repository. 
+#. Repeat steps 1 - 3 for each member of your team.
+
+Partners: Clone the Project
+---------------------------
+
+Each partner on the project should *clone* a copy of the repository to their
+own device.
+
+You and your team can now *push* changes up to GitHub and *pull* updates down
+to your machines. If you need a reminder how to do this, check out the
+:ref:`Communication Log <git-push-and-pull>` assignment.
 
 Ready to Go!
 ------------
@@ -129,4 +178,4 @@ experience under your belt.
 
 Now it's time to git back to building your game!
 
-:ref:`Return to Assignment 6 <flask-game>`.
+:ref:`Return to Assignment 6 <flask-game-part-2>`.
