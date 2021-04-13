@@ -5,6 +5,7 @@ Databases
    :maxdepth: 3
 
    introduction
+   db-tables
    crud
    sqlalchemy
    db-practice
