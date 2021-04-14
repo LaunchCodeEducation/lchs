@@ -15,7 +15,11 @@ over the information.
 
 A **database** stores information and organizes it in a specific way. Unlike
 cookies, which contain a single key/value pair, databases allow us to manage a
-huge amount of content.
+huge amount of content. Think of a database like a large hard drive. However,
+its only job is to store information. It runs no programs.
+
+Using a database instead of sessions lets developers decide what information to
+save, who can access it, and how long to keep it.
 
 Adding a Database
 -----------------
@@ -27,6 +31,8 @@ diagram below shows how a database fits in with the server and a browser.
 
 The figure brings in some new vocabulary, and it splits the task of running a
 website into three large pieces. Let's take a look at the different sections.
+
+.. index:: ! client, ! view, ! model, ! controller
 
 Notice that a browser (the **client**) can only interact with the web server.
 It sends HTTP requests to the server and displays the responses on the screen.
@@ -58,11 +64,13 @@ controller.
 Communicating With a Database
 -----------------------------
 
-Just like the conventions in Python and other languages, the structure for
-databases follows its own set of rules. To interact with this structure,
-programmers use a language called **SQL**.
+.. index:: ! SQL
+   single: SQL; structured query language
 
-SQL definition...
+To maintain consistency across the world, many companies use the same basic
+structure when they set up their databases. To interact with this structure,
+programmers use a tool called **SQL**, which stands for *Structured Query
+Language*.
 
 .. admonition:: Fun Fact
 
@@ -70,12 +78,52 @@ SQL definition...
 
    People pronounce ``SQL`` one of two ways, either like the word "sequel" or
    by sounding out each letter, "ess-que-ell". Both ways are acceptable, but
-   some programmers hold very strong opinions about which one to use. Here's a
-   handy cheat sheet to keep you out of trouble:
+   some programmers hold strong opinions about which one to use. Here's a handy
+   cheat sheet to keep you out of trouble:
 
    #. **Pronounced "SQL"**: Yep! 🙂
    #. **Pronounced "SQL"**: Nope! 😡
 
-Will import that functionality from a Python library/module...
+   Really, it doesn't matter! 😉
 
-Reference to W3Schools SQL tutorial, for those that are interested...
+Learning how to use SQL is a complete course by itself. Fortunately, Python and
+Flask provide us with some shortcuts. We will install the necessary libraries
+and explore how to use them later in this chapter.
+
+For those who are interested in a good SQL tutorial, `W3Schools <https://www.w3schools.com/sql/default.asp>`__
+provides one.
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Visitors to a website can interact with which of the following? Select ALL
+   that apply.
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><span id = "a" onclick="highlight('a', true)">The view</span></li>
+         <li><span id = "b" onclick="highlight('b', true)">The controller</span></li>
+         <li><span id = "c" onclick="highlight('c', false)">The model</span></li>
+         <li><span id = "d" onclick="highlight('d', false)">The database</span></li>
+      </ol>
+
+.. Answers = a, b
+
+.. admonition:: Question
+
+   How long does information remain on a database?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until the user quits their browser.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until the user clears their sessions/cookies.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For 24 hours.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Until the developer decides to delete it.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = d
