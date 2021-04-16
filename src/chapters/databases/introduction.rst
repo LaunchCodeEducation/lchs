@@ -27,39 +27,37 @@ Adding a Database
 Databases remain separate from both the web server and a user's computer. The
 diagram below shows how a database fits in with the server and a browser.
 
-.. todo:: Insert diagram showing the flow between clients, a web server, and a database.
+.. figure:: figures/mvc-lite.png
+   :alt: Showing the interactions between a browser, a server program, a data management program, and a database.
+   :width: 80%
 
-The figure brings in some new vocabulary, and it splits the task of running a
-website into three large pieces. Let's take a look at the different sections.
+The figure splits the task of running a website into three large pieces. Let's
+take a look at the different sections.
 
-.. index:: ! client, ! view, ! model, ! controller
-
-Notice that a browser (the **client**) can only interact with the web server.
-It sends HTTP requests to the server and displays the responses on the screen.
-This is called the **view**.
-
-Similarly, the database only interacts with the **model**. This is a special
-program built to manage data. The model code accesses the database to create
-new entries, retrieve information, update exiting data, or delete content that
-is no longer needed. The model does NOT communicate directly with any clients.
-
-The **control** is a program that receives HTTP requests and sends back the
-responses. It contains code that manages the web server, makes decisions, sends
-data to the view, and interacts with the model. The control provides a useful
-middle step. It intercepts HTTP requests and filters out anything that might
-corrupt the database or access it without permission.
+#. A user launches their browser and navigates to a website. They send HTTP
+   requests to the web server, and their browser displays the responses on the
+   screen. The user can only interact with the server. 
+#. The database only interacts with a special program built to manage data. The
+   code accesses the database and creates new entries, retrieves information,
+   updates exiting data, or deletes content that is no longer needed. The
+   program does NOT communicate directly with visitors to the website.
+#. A *control* program sits in between. It receives HTTP requests and sends
+   back the responses. The code manages the web server, makes decisions, sends
+   data to the browser, and interacts with the data management program. The
+   control provides a useful middle step. It analyzes HTTP requests and filters
+   out anything that might corrupt the database or access it without permission.
 
 In the Flask applications we've built so far, ``main.py`` serves as the
-controller.
+control.
 
 .. admonition:: Warning
 
-   News stories pop up frequently about hackers accessing private information
-   or companies accidentally posting their customers' data online.
+   News stories pop up frequently about hackers stealing information or
+   companies accidentally posting their customers' data online.
    
    When you attach a database to your web application, you MUST take steps to
    protect the information. Visitors to your website should never have direct
-   access to sensitive data.
+   access to where you store sensitive data.
 
 Communicating With a Database
 -----------------------------
@@ -98,15 +96,15 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Visitors to a website can interact with which of the following? Select ALL
-   that apply.
+   Visitors to a website interact with which of the following? Select ALL that
+   apply.
 
    .. raw:: html
 
       <ol type="a">
-         <li><span id = "a" onclick="highlight('a', true)">The view</span></li>
-         <li><span id = "b" onclick="highlight('b', true)">The controller</span></li>
-         <li><span id = "c" onclick="highlight('c', false)">The model</span></li>
+         <li><span id = "a" onclick="highlight('a', true)">The web server</span></li>
+         <li><span id = "b" onclick="highlight('b', true)">The control program</span></li>
+         <li><span id = "c" onclick="highlight('c', false)">The data management program</span></li>
          <li><span id = "d" onclick="highlight('d', false)">The database</span></li>
       </ol>
 
