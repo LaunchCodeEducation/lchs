@@ -3,7 +3,7 @@ Database Structure
 
 Databases store information in **tables**. These are arranged in *columns* and
 *rows*. Each column represents a specific piece of data. Every row represents
-a single entry in the table.
+a single entry in the table, which includes one value from each column.
 
 .. figure:: figures/db-table.png
    :alt: Database tables organize information into rows and columns.
@@ -18,7 +18,8 @@ a single entry in the table.
 #. Each column also has a label that tells us what the data represents. For
    example, one column might have a ``Last Name`` label, while another could be
    called ``Email``.
-#. Each row includes a unique *key*, which helps us manage the data.
+#. Each row includes a *primary key*, which helps us manage the data. No two
+   rows share the same primary key.
 #. When we *add or remove* an entry, we create or delete an entire row.
 #. When we *change* an entry, we modify the value in one or more columns of a
    single row.
@@ -30,48 +31,43 @@ Relationships Between Tables
 ----------------------------
 
 Imagine you visit the website for your local library, which uses a program
-to operate the online catalog. To find a book, you can search for its title,
-the author, a keyword, etc. Given the huge number of books available, the
-library database stores a massive amount of information. How is this organized?
-Let's consider one possibility.
+for the online catalog. To find a book, you can search for its title, the
+author, a keyword, etc. Given the huge number of books available, the library
+database stores a massive amount of information. How is this organized?
 
-Assume that the database uses one table, called ``Books``. Each row corresponds
-to one title, and the columns include things like the author's name, the
-publication date, the number of pages, a short summary, whether the book is
-available or checked out, etc. This seems fine, until we need consider data
-that users might want to know, but that doesn't relate to an actual title.
+Imagine a single table where each row corresponds to one book. The columns
+would include things like the title, the author's name, the author's biography,
+the publication date, the number of pages, a short summary, whether the book is
+available or checked out, etc.
 
-For example, let's day we want to read an author's biography. Where would we
-put that information in the table? We could add a column called ``Author Bio``.
-However, now we've got to repeat that information for every book the author has
-written. We're making extra copies of the same data in our storage space!
+Stuffing all of the data into one place is inefficient! Think about how often
+an author's biography would be repeated. There is no need to record any piece
+of information more than once.
 
-Also, what if we want to see a list of books an author has written? We could
-write some code to loop through the ``Books`` table and find any title written
-by the individual. Since there are thousands of books in the database, the
-search will take time. In fact, even if an author only has one book, we'd still
-need to search through ALL of the table rows to make sure. That is not very
-efficient.
-
-The answer to these issues is to save multiple tables in the same database.
-For our library, this could include tables for ``Authors``,
-``New Arrivals``, ``Science Fiction``, and yes, ``Books``. Each table contains
-data that relates only to one idea. The authors' names and biographies stay in
-one table, and this remains separate from any book details.
-
-A key piece to the idea of using multiple tables is to create links between
-them. We call these links *relationships*.
-
-Instead of duplicating data values, adding relationships between tables lets us
-keep ONE copy of the information. If we need information about an author, the
-program can retrieve it by following a link between the ``Books`` and
-``Authors`` tables.
+A better approach is to store multiple tables in the same database. Each one
+stores information relating to just one topic. For the library, this could
+include tables like ``Authors``, ``History``, ``Science Fiction``, ``eBooks``,
+etc. This avoids duplicate entries. We store an author's name and bio ONE time,
+regardless of how many books they have written.
 
 .. index::
    single: database; relational
 
-**Relational databases** store data in a series of connected tables. Relational
-databases provide flexibility for both expansion of the database and
-modification of the relationships between the tables as things change.
+Once we have multiple tables saved in a database, the next step is to create
+links between them. We call these links *relationships*.
+**Relational databases** store data in a series of connected tables. For
+example, imagine we look up a science fiction title and want information about
+the author. The ``Science Fiction`` table does NOT contain this data. However,
+it does have a *relationship* to the ``Authors`` table. The catalog program can
+follow the link between the two tables and retrieve the desired data. Since
+multiple book titles can link to the same author, we only need to store the
+writer's data one time.
+
+Not only can we identify the author from a title search, we can also use the
+writer's name to retrieve a list of all of their books. By connecting tables
+together in this way, relational databases provide efficiency and flexibility.
+If we update an author's biography, we only need to do that once in the
+``Authors`` table. Anything that links to the table can access the new
+information.
 
 .. todo:: Diagram of a DB table relationship (e.g. author info vs. book info).
