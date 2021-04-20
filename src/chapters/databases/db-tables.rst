@@ -64,7 +64,7 @@ multiple book titles can link to the same author, we only need to store the
 writer's data one time.
 
 Not only can we identify the author from a title search, we can also use the
-writer's name to retrieve a list of all of their books. By connecting tables
+writer's name to return a list of all of their books. By connecting tables
 together in this way, relational databases provide efficiency and flexibility.
 If we update an author's biography, we only need to do that once in the
 ``Authors`` table. Anything that links to the table can access the new

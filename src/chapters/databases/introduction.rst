@@ -38,7 +38,7 @@ take a look at the different sections.
    requests to the web server, and their browser displays the responses on the
    screen. The user can only interact with the server. 
 #. The database only interacts with a special program built to manage data. The
-   code accesses the database and creates new entries, retrieves information,
+   code accesses the database and creates new entries, reads information,
    updates exiting data, or deletes content that is no longer needed. The
    program does NOT communicate directly with visitors to the website.
 #. A *control* program sits in between. It receives HTTP requests and sends
