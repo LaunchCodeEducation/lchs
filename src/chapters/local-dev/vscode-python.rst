@@ -152,7 +152,7 @@ Try It!
    Copy your code from there and paste it into VS Code. Some nice options
    include:
 
-   a. Your *Choose Your Own Adventure* activity.
+   a. Your *Choose Your Own Adventure*(There is no link for this, should we choose another activity) activity.
    b. Your :ref:`Candidate Quiz <candidate-quiz>` assignment.
    c. Anything from the :ref:`Functions chapter project <functions-project>`.
    
