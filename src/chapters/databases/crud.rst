@@ -61,17 +61,17 @@ Does NOT mean adding a data value to every entry currently in the table.
 Instead, the entries will record an empty space, called ``NULL``.
 
 Read
-^^^^
+----
 
 Lorem ipsum...
 
 Update
-^^^^^^
+------
 
 Lorem ipsum...
 
 Delete
-^^^^^^
+------
 
 Lorem ipsum...
 

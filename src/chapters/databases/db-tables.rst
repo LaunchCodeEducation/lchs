@@ -36,19 +36,19 @@ author, a keyword, etc. Given the huge number of books available, the library
 database stores a massive amount of information. How is this organized?
 
 Imagine a single table where each row corresponds to one book. The columns
-would include things like the title, the author's name, the author's biography,
-the publication date, the number of pages, a short summary, whether the book is
-available or checked out, etc.
+would include things like the title, a short summary, the author's name, the
+author's biography, the publication date, the number of pages, whether the book
+is checked out, etc.
 
-Stuffing all of the data into one place is inefficient! Think about how often
-an author's biography would be repeated. There is no need to record any piece
-of information more than once.
+Stuffing all of the data into one place is inefficient. Think about how often
+each author's biography would be repeated! Just like we :ref:`DRY our code <dry-code>`,
+any piece of information in a database should only be recorded once.
 
-A better approach is to store multiple tables in the same database. Each one
-stores information relating to just one topic. For the library, this could
-include tables like ``Authors``, ``History``, ``Science Fiction``, ``eBooks``,
-etc. This avoids duplicate entries. We store an author's name and bio ONE time,
-regardless of how many books they have written.
+A better approach is to create multiple tables in the same database. Each one
+holds information that falls into one category or idea. For the library, the
+tables could include ``Authors``, ``History``, ``Science Fiction``, ``eBooks``,
+etc. Using multiple tables avoids duplicate entries. We store an author's name
+and bio ONE time, regardless of how many books they have written.
 
 .. index::
    single: database; relational
@@ -64,10 +64,14 @@ multiple book titles can link to the same author, we only need to store the
 writer's data one time.
 
 Not only can we identify the author from a title search, we can also use the
-writer's name to return a list of all of their books. By connecting tables
-together in this way, relational databases provide efficiency and flexibility.
-If we update an author's biography, we only need to do that once in the
-``Authors`` table. Anything that links to the table can access the new
+writer's name to return a list of all of their book titles. By connecting
+tables together in this way, relational databases provide efficiency and
+flexibility. If we update an author's biography, we only need to do that once
+in the ``Authors`` table. Anything that links to ``Authors`` can access the new
 information.
 
-.. todo:: Diagram of a DB table relationship (e.g. author info vs. book info).
+.. figure:: figures/relational-tables.png
+   :alt: Showing the relationships between a Book table an an Authors table.
+
+   A column from the ``Book`` table forms a relationship with rows in the
+   ``Authors`` table, and vice versa.
