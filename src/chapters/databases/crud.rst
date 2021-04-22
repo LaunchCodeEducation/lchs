@@ -1,11 +1,6 @@
 Database Operations
 ===================
 
-For this course, we are not going to create or access a large-scale database.
-Instead, we will mimic the behavior of a database by creating a file in our
-project directory. This file will contain all the necessary tables, and we will
-use it to store and access information.
-
 Before we set up our first database, we need to recognize the four main actions
 we will perform with it.
 
@@ -18,9 +13,9 @@ CRUD
    single: SQL; query
    single: SQL; CRUD
 
-When we perform an operation on a database, we write a **query**. Queries can
-be simple or complex, depending on the task. We can fit each query’s purpose
-into one of four categories:
+To interact with a database, we write a **query**. Queries can be simple or
+complex, depending on the task. We can fit each query’s purpose into one of
+four categories:
 
 #. Create
 #. Read

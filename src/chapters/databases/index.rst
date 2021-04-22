@@ -7,7 +7,7 @@ Databases
    introduction
    db-tables
    crud
-   sqlalchemy
+   sqlite
    db-practice
    exercises
    project

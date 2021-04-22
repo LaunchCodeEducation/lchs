@@ -1,4 +1,0 @@
-Install SQLAlchemy
-==================
-
-Lorem ipsum...

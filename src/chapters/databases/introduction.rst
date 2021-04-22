@@ -84,9 +84,9 @@ Language*.
 
    Really, it doesn't matter! 😉
 
-Learning how to use SQL is a complete course by itself. Fortunately, Python and
-Flask provide us with some shortcuts. We will install the necessary libraries
-and explore how to use them later in this chapter.
+Learning how to use SQL is a complete course by itself. Fortunately, Python
+provides us with some shortcuts. We will import the necessary module and
+explore how to use it later in this chapter.
 
 For those who are interested in a good SQL tutorial, `W3Schools <https://www.w3schools.com/sql/default.asp>`__
 provides one.
