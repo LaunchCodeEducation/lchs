@@ -175,7 +175,7 @@ Let's use ``.execute()`` to create a table called ``students`` in
       VS Code can't render a clean view of the database (yet).
 
 #. While this doesn't seem useful at first, it DOES prove that the ``.execute``
-   statement did something to the ``practice.db`` file.
+   statement changed the ``practice.db`` file.
 
 On the next page, we will install an extension in VS Code that lets us view the
 contents of a database.
@@ -226,15 +226,12 @@ Fortunately, we can modify the ``sql_query`` string to deal with this.
       ``False`` the command is ignored.
    #. Run ``main.py`` again. You should not see an error message.
 
-Be sure to save and commit your work before moving on!
-
 On the next page, we will add some rows to the ``students`` table and then
 practice retrieving that data.
 
-Video Summary
--------------
+Be sure to save and commit your work before moving on!
 
-SQLite3 in 5 minutes: https://youtu.be/girsuXz0yA8
-
-Good up to minute 2:20, then it gets more technical than appropriate for the
+.. Video Summary = SQLite3 in 5 minutes <https://youtu.be/girsuXz0yA8>
+the first 2:20 demo how to import sqlite3, connect to a DB, and add a new
+table. After that, the vid gets more technical than is appropriate for the
 content thus far.
