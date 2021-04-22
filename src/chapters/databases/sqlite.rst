@@ -9,10 +9,10 @@ use it to store and access information.
 .. index:: ! SQLite
    single: SQL; SQLite
 
-The queries we use to execute database commands must be written in SQL. There
-are different versions of SQL used across the coding community, but we will
-focus on one called **SQLite** (pronounced *sequel light*). It provides a
-smaller, less complicated introduction to working with databases.
+The queries we use with the database must be written in SQL. There are
+different versions of SQL used across the coding community, but we will focus
+on one called **SQLite** (pronounced *sequel light*). It provides a smaller,
+less complicated introduction to working with databases.
 
 Python comes with a module specifically designed around SQLite. Let's begin by
 importing it and connecting to a practice database!
@@ -35,8 +35,8 @@ Setup
 
       import sqlite3
 
-``sqlite3`` contains all the methods and tools we need to create and maintain a
-local database. 
+   ``sqlite3`` contains all the methods and tools we need to create and
+   maintain a local database. 
 
 That's it! We are now ready to dive into our first database!
 
@@ -53,7 +53,7 @@ To interact with a database, we must do three things inside our Python code:
 #. Define a **connection object** that links our program to the database.
 #. Define a **cursor object** that will execute our SQL commands.
 
-In ``main.py``, add the following commands:
+In ``main.py``, add the following statements:
 
 .. sourcecode:: Python
    :linenos:
@@ -63,14 +63,14 @@ In ``main.py``, add the following commands:
    database = sqlite3.connect('practice.db')
    cursor = database.cursor()
 
-Line 2 creates the ``database`` object and assigns it the properties and
+Line 3 creates the ``database`` object and assigns it the properties and
 methods we need to interact with our database.
 
-The ``connect`` method links our program to the database called
-``practice.db``. If this file does not exist in our project directory, Python
+The ``.connect()`` method links our program to a database called
+``practice.db``. If this file does not exist in our project folder, Python
 creates it for us.  (Thanks, Python!)
 
-Line 3 defines the ``cursor`` object. We will use this object to run SQL
+Line 4 defines the ``cursor`` object. We will use this object to run SQL
 commands and perform CRUD operations.
 
 .. admonition:: Note
@@ -100,22 +100,24 @@ ready to receive some information.
 Add a New Table
 ---------------
 
-The next step is to add a new table to our database. We will do this with the
-``cursor`` object. ``cursor`` uses a special method to run SQL commands. The
-general syntax is:
+The next step is to add a table to our database. We will do this with the
+``cursor`` object.
+
+``cursor`` uses a special method to run SQL commands. The general syntax is:
 
 .. sourcecode:: Python
 
    cursor.execute(sql_query)
 
 ``sql_query`` must be a string or a string variable. What we put in that string
-depends on the action we want to perform. When ``.execute()`` runs, it converts
-the string into the SQL language and implements the command.
+depends on the action we want to perform. When we call the ``.execute()``
+method, it converts the string into the SQL language and runs the command.
 
 Let's use ``.execute()`` to create a table called ``students`` in
 ``practice.db``. The table will hold student names and their graduation year.
 
-#. In ``main.py`` define a variable to hold the SQL command.
+#. In ``main.py`` define a variable to hold the SQL command. Be sure to type
+   the string *exactly* as shown below.
 
    .. sourcecode:: Python
       :linenos:
@@ -127,9 +129,14 @@ Let's use ``.execute()`` to create a table called ``students`` in
 
       sql_query = "CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)"
 
-   Python and the SQL language use different names for some of the same data
-   types. Notice that ``last_name`` and ``first_name`` are both set as ``TEXT``
-   instead of ``str``.
+   Reading the string in line 6 describes what we want the query to do. It
+   should create a table called ``students``, which has three columns. These
+   will store a student's last name, first name, and graduation year.
+   
+   Python and the SQL language sometimes use different names for the same data
+   type. Notice that ``last_name`` and ``first_name`` are both set as ``TEXT``
+   instead of ``str``, but they mean the same thing. ``grad_year`` is set as an
+   integer.
    
    A deep dive into all the SQL data types is beyond the scope of this course.
    We focus on only a few, and we will pick them up as needed.
@@ -150,7 +157,7 @@ Let's use ``.execute()`` to create a table called ``students`` in
    .. figure:: figures/new-table.png
       :alt: File tree highlighting changes in main.py and practice.db after adding a table.
 
-      The ``M`` indicates the files that were changed.
+      The ``M`` stands for "Modified", and it indicates which files were changed.
 
 #. Open ``practice.db`` in the workspace. You might see a message telling you
    that VS Code cannot display the contents of the file.
@@ -159,7 +166,7 @@ Let's use ``.execute()`` to create a table called ``students`` in
       :alt: Message asking if we really want to open the .db file.
       :width: 80%
 
-   Clicking *open it anyway* shows mostly unreadable text.
+   Click *open it anyway* to show mostly unreadable text.
 
    .. figure:: figures/view-db-2.png
       :alt: Showing unreadable content that exists in the practice.db file.
@@ -168,10 +175,10 @@ Let's use ``.execute()`` to create a table called ``students`` in
       VS Code can't render a clean view of the database (yet).
 
 #. While this doesn't seem useful at first, it DOES prove that the ``.execute``
-   statement altered the ``practice.db`` file.
+   statement did something to the ``practice.db`` file.
 
-On the next page, we will install an extension in VS Code that will let us
-view the contents of a database.
+On the next page, we will install an extension in VS Code that lets us view the
+contents of a database.
 
 Table Creation Error
 --------------------
@@ -193,8 +200,8 @@ protect the database against accidental deletions. However, we also want to
 rerun our code.
 
 When we run our program, we want to create the ``students`` table if it isn't
-in the database, but ignore the command if it is already present. Fortunately,
-we can modify our ``sql_query`` string to deal with this.
+in the database, but ignore the command if the table is already present.
+Fortunately, we can modify the ``sql_query`` string to deal with this.
 
 .. admonition:: Try It!
 
@@ -206,22 +213,28 @@ we can modify our ``sql_query`` string to deal with this.
          sql_query = "CREATE TABLE IF NOT EXISTS students (last_name TEXT, first_name TEXT, grad_year INT)"
 
    
-   #. The ``IF NOT EXISTS`` syntax operates in a similar way to the ``not in``
-      keywords in Python.
+   #. The ``IF NOT EXISTS`` syntax works like the ``not in`` keywords in
+      Python.
 
       .. sourcecode:: Python
 
          'a' not in 'Rutabagas'  # Returns False, because 'a' is in 'Rutabagas'
          42 not in [10, 8, 5]    # Returns True, because the list is missing 42
 
-   #. ``IF NOT EXISTS students`` checks to see if the database does NOT contain
-      a table called ``students``. If ``True``, the table is added. If
+   #. ``IF NOT EXISTS students`` checks to see if the a table called
+      ``students`` is NOT in the database. If ``True``, the table is added. If
       ``False`` the command is ignored.
    #. Run ``main.py`` again. You should not see an error message.
 
 Be sure to save and commit your work before moving on!
 
-Video Link
-----------
+On the next page, we will add some rows to the ``students`` table and then
+practice retrieving that data.
+
+Video Summary
+-------------
 
 SQLite3 in 5 minutes: https://youtu.be/girsuXz0yA8
+
+Good up to minute 2:20, then it gets more technical than appropriate for the
+content thus far.
