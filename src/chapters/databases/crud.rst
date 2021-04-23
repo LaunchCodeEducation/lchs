@@ -51,6 +51,8 @@ Notice that a column name and its data type come as a pair
 (``column_name_1 data_type``) and are NOT separated by commas. However, commas
 ARE used to separate different name/type pairs inside the parentheses ``()``.
 
+.. _sql-insert-syntax:
+
 Adding a Row
 ^^^^^^^^^^^^
 

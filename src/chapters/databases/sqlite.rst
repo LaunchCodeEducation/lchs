@@ -232,6 +232,6 @@ practice retrieving that data.
 Be sure to save and commit your work before moving on!
 
 .. Video Summary = SQLite3 in 5 minutes <https://youtu.be/girsuXz0yA8>
-the first 2:20 demo how to import sqlite3, connect to a DB, and add a new
-table. After that, the vid gets more technical than is appropriate for the
-content thus far.
+   the first 2:20 demo how to import sqlite3, connect to a DB, and add a new
+   table. After that, the vid gets more technical than is appropriate for the
+   content thus far.
