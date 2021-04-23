@@ -9,5 +9,7 @@ Databases
    crud
    sqlite
    db-practice
+   more-db-practice
+   link-tables
    exercises
    project

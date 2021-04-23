@@ -87,11 +87,6 @@ Lorem ipsum...
 
 Lorem ipsum...
 
-Final Point
------------
-
-ADD DB FILE TO GITIGNORE!
-
 Check Your Understanding
 ------------------------
 
