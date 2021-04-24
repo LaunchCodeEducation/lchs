@@ -116,69 +116,69 @@ method, it converts the string into the SQL language and runs the command.
 Let's use ``.execute()`` to create a table called ``students`` in
 ``practice.db``. The table will hold student names and their graduation year.
 
-#. In ``main.py`` define a variable to hold the SQL command. Be sure to type
-   the string *exactly* as shown below.
+.. admonition:: Try It!
 
-   .. sourcecode:: Python
-      :linenos:
+   #. In ``main.py`` define a variable to hold the SQL command. Be sure to type
+      the string *exactly* as shown below.
 
-      import sqlite3
+      .. sourcecode:: Python
+         :linenos:
 
-      database = sqlite3.connect('practice.db')
-      cursor = database.cursor()
+         import sqlite3
 
-      sql_query = "CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)"
+         database = sqlite3.connect('practice.db')
+         cursor = database.cursor()
 
-   Reading the string in line 6 describes what we want the query to do. It
-   should create a table called ``students``, which has three columns. These
-   will store a student's last name, first name, and graduation year.
-   
-   Python and the SQL language sometimes use different names for the same data
-   type. Notice that ``last_name`` and ``first_name`` are both set as ``TEXT``
-   instead of ``str``, but they mean the same thing. ``grad_year`` is set as an
-   integer.
-   
-   A deep dive into all the SQL data types is beyond the scope of this course.
-   We focus on only a few, and we will pick them up as needed.
-#. Once you assign the ``sql_query`` string, the next step is to make it
-   happen! Add one more statement to ``main.py``, then save.
+         sql_query = "CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)"
 
-   .. sourcecode:: Python
-      :lineno-start: 6
+      Reading the string in line 6 describes what we want the query to do. It
+      should create a table called ``students``, which has three columns. These
+      will store a student's last name, first name, and graduation year.
+      
+      Python and the SQL language sometimes use different names for the same data
+      type. Notice that ``last_name`` and ``first_name`` are both set as ``TEXT``
+      instead of ``str``, but they mean the same thing. ``grad_year`` is set as an
+      integer.
+      
+      A deep dive into all the SQL data types is beyond the scope of this course.
+      We focus on only a few, and we will pick them up as needed.
+   #. Once you assign the ``sql_query`` string, the next step is to make it
+      happen! Add one more statement to ``main.py``, then save.
 
-      sql_query = "CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)"
+      .. sourcecode:: Python
+         :lineno-start: 6
 
-      cursor.execute(sql_query)
+         sql_query = "CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)"
 
-#. Run ``main.py``, aaannnnnddd... nothing seems to happen! However, as long as
-   no error message appears, your code ran just fine. Checking the file tree
-   shows that changes did take place in both ``main.py`` and ``practice.db``.
+         cursor.execute(sql_query)
 
-   .. figure:: figures/new-table.png
-      :alt: File tree highlighting changes in main.py and practice.db after adding a table.
+   #. Run ``main.py``, aaannnnnddd... nothing seems to happen! However, as long as
+      no error message appears, your code ran just fine. Checking the file tree
+      shows that changes did take place in both ``main.py`` and ``practice.db``.
 
-      The ``M`` stands for "Modified", and it indicates which files were changed.
+      .. figure:: figures/new-table.png
+         :alt: File tree highlighting changes in main.py and practice.db after adding a table.
 
-#. Open ``practice.db`` in the workspace. You might see a message telling you
-   that VS Code cannot display the contents of the file.
+         The ``M`` stands for "Modified", and it indicates which files were changed.
 
-   .. figure:: figures/view-db-1.png
-      :alt: Message asking if we really want to open the .db file.
-      :width: 80%
+Open ``practice.db`` in the workspace. You might see a message telling you
+that VS Code cannot display the contents of the file.
 
-   Click *open it anyway* to show mostly unreadable text.
+.. figure:: figures/view-db-1.png
+   :alt: Message asking if we really want to open the .db file.
+   :width: 80%
 
-   .. figure:: figures/view-db-2.png
-      :alt: Showing unreadable content that exists in the practice.db file.
-      :width: 80%
+Click *open it anyway* to show mostly unreadable text.
 
-      VS Code can't render a clean view of the database (yet).
+.. figure:: figures/view-db-2.png
+   :alt: Showing unreadable content that exists in the practice.db file.
+   :width: 80%
 
-#. While this doesn't seem useful at first, it DOES prove that the ``.execute``
-   statement changed the ``practice.db`` file.
+   VS Code can't render a clean view of the database (yet).
 
-On the next page, we will install an extension in VS Code that lets us view the
-contents of a database.
+While this doesn't seem useful at first, it DOES prove that the ``.execute``
+statement changed the ``practice.db`` file. On the next page, we will install
+an extension in VS Code that lets us view the contents of a database.
 
 Table Creation Error
 --------------------
