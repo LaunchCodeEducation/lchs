@@ -3,9 +3,46 @@ More Database Practice
 
 Lorem ipsum...
 
-Page Content Ideas
-------------------
+Update Table Data
+-----------------
 
-Update table data...
+By using the :ref:`UPDATE <sql-update-syntax>` query, we can change one or more
+entries in a table. Code along with the following video to practice this
+technique.
 
-Delete table data...
+.. todo:: Insert video showing how to write and execute an UPDATE query.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/n8oA_2aavAQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+**Key points**:
+
+#. The ``UPDATE`` query should include a ``WHERE`` condition to identify which
+   rows in the table to change. If we leave out the condition, then *every* row
+   in the table will be modified.
+#. After running the query, use the ``.commit()`` method to confirm the
+   changes.
+#. THERE IS NO UNDO!
+
+Delete Data
+-----------
+
+.. todo:: Insert video showing how to write and execute an DELETE query.
+
+Code along with the following video to practice removing rows from a table, or
+deleting an entire table from the database.
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/n8oA_2aavAQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+**Key points**:
+
+#. By using the :ref:`DELETE FROM <sql-delete-syntax>` query, we remove selected
+   rows from a table.
+#. THERE IS NO UNDO.

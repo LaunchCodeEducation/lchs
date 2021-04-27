@@ -119,6 +119,8 @@ The general syntax looks like this:
    FROM table_name
    WHERE condition
 
+.. _sql-update-syntax:
+
 Update
 ------
 
@@ -149,6 +151,8 @@ don't, then EVERY value in that column will be changed to ``new_value``.
 
    We must be very careful when we updating a table. There is no *Undo* command
    if we make a mistake!
+
+.. _sql-delete-syntax:
 
 Delete
 ------

@@ -21,6 +21,8 @@ Code along with this video as we add new rows to the ``students`` table.
 #. Notice the ``(?, ?, ?)`` at the end of the query string. The question marks
    serve as placeholders for the values we want to save in the new row.
 #. We indicate those values with arguments inside the ``.execute()`` method.
+#. Note that we do not need to include a *primary key* value when we add a row.
+   This process is automatic with SQLite.
 #. Use the ``.commit()`` method to finish the process.
 
 **Final code from the video**:
@@ -88,7 +90,11 @@ Retrieve Data From Table
 Code along with this video as we access the information in the database and
 display it in the console.
 
-.. todo:: Insert video showing how to write and execute a SELECT query.
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/CPHPjP-CRnA" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 **Key points**:
 
