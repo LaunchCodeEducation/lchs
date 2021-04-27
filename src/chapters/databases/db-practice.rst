@@ -50,8 +50,8 @@ Code along with this video as we add new rows to the ``students`` table.
    cursor.execute(sql_query, (last_name, first_name, grad_year))
    database.commit()
 
-Viewing a Table
-^^^^^^^^^^^^^^^
+Viewing a Table in VS Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To view the data stored in ``practice.db``, we need to add an extension to
 Visual Studio Code. Follow along with this video to make the update:
@@ -73,7 +73,7 @@ Visual Studio Code. Follow along with this video to make the update:
 
       It only takes about 3 clicks to install the SQLite extension.
 
-#. Return the the file tree. Right-click on ``practice.db`` and select
+#. Return to the file tree. Right-click on ``practice.db`` and select
    *Open Database*. At the bottom-left of the VS Code workspace, open the
    *SQLITE EXPLORER* tab. Expand ``practice.db``, then click on the *Play*
    button next to the ``students`` table.

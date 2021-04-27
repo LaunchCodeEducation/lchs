@@ -166,20 +166,21 @@ table.
 To delete a row from a table, the query must include:
 
 #. The table name,
-#. The *primary key* for the row.
+#. A condition to evaluate as ``True`` or ``False``.
 
 The general syntax looks like this:
 
 .. sourcecode:: mysql
 
-   DELETE FROM table_name WHERE primary_key = value
+   DELETE FROM table_name WHERE condition
+
+When the query runs, each row in the table is checked for the ``condition``. If
+``True``, then the row is removed from the table.
 
 .. admonition:: Warning
 
    Deleting a row permanently removes it from the table, and there is no
    *Undo* option!
-
-.. todo:: Determine if ``DELETE`` removes a row based on any condition, or just the primary key.
 
 Check Your Understanding
 ------------------------

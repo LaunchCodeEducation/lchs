@@ -1,12 +1,13 @@
 More Database Practice
 ======================
 
-Lorem ipsum...
+In the previous pages, we created a database, added a table to it, and saved
+several entries in that table. Now we will learn how to modify the stored data.
 
 Update Table Data
 -----------------
 
-By using the :ref:`UPDATE <sql-update-syntax>` query, we can change one or more
+By using an :ref:`UPDATE <sql-update-syntax>` query, we can change one or more
 entries in a table. Code along with the following video to practice this
 technique.
 
@@ -18,12 +19,19 @@ technique.
 
 **Key points**:
 
-#. The ``UPDATE`` query should include a ``WHERE`` condition to identify which
-   rows in the table to change. If we leave out the condition, then *every* row
-   in the table will be modified.
+#. The ``UPDATE`` query uses the ``SET`` keyword to identify one or more columns
+   to change.
+#. To identify which rows to change, the ``UPDATE`` query should also include a
+   ``WHERE`` condition. If we leave out the condition, then *every* row in the
+   table will be modified.
+#. Combining ``SET`` and ``WHERE`` identifies which cell(s) in the table to
+   change.
+
+   .. todo:: Insert diagram showing row/column intersection.
+
 #. After running the query, use the ``.commit()`` method to confirm the
    changes.
-#. THERE IS NO UNDO!
+#. *There is no Undo option* after we commit an ``UPDATE`` query.
 
 Delete Data
 -----------
