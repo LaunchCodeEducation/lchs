@@ -99,6 +99,8 @@ values. Existing rows in the table will add the new slot but keep it empty.
    is literally an empty space, and it indicates that a data value does not
    exist for that spot in the table.
 
+.. _sql-select-syntax:
+
 Read
 ----
 
