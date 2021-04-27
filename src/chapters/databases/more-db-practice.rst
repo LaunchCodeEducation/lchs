@@ -10,12 +10,10 @@ By using the :ref:`UPDATE <sql-update-syntax>` query, we can change one or more
 entries in a table. Code along with the following video to practice this
 technique.
 
-.. todo:: Insert video showing how to write and execute an UPDATE query.
-
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/n8oA_2aavAQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube.com/embed/cn-tbfyQpbY" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 **Key points**:
@@ -30,15 +28,13 @@ technique.
 Delete Data
 -----------
 
-.. todo:: Insert video showing how to write and execute an DELETE query.
-
 Code along with the following video to practice removing rows from a table, or
 deleting an entire table from the database.
 
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/n8oA_2aavAQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube.com/embed/CDVGJWiDQI8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 **Key points**:
