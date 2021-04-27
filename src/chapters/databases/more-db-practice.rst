@@ -36,8 +36,8 @@ technique.
 Delete Data
 -----------
 
-Code along with the following video to practice removing rows from a table, or
-deleting an entire table from the database.
+Code along with the following video to practice removing rows from a table.
+Also learn how to delete an entire table from the database.
 
 .. raw:: html
 
@@ -47,6 +47,15 @@ deleting an entire table from the database.
 
 **Key points**:
 
-#. By using the :ref:`DELETE FROM <sql-delete-syntax>` query, we remove selected
-   rows from a table.
-#. THERE IS NO UNDO.
+#. The :ref:`DELETE FROM <sql-delete-syntax>` query removes selected rows from
+   a table.
+#. Add a ``WHERE`` clause to identify which rows should be deleted.
+#. The ``DROP TABLE`` query removes an entire table from the database. ALL the
+   row and column information will be deleted.
+#. *There is NO undo option* for a ``DELETE`` or ``DROP`` query.
+
+Check Your Understanding
+------------------------
+
+Lorem ipsum...
+
