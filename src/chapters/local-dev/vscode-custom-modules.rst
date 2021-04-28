@@ -252,12 +252,12 @@ subdirectory. In this case, we include the module name in our dot-notation.
 Importing From a Parent Directory
 ---------------------------------
 
-While it is possible to force Python so search upwards through your filesystem, 
+While it is possible to force Python so search upwards through your file system,
 this isn't recommended. To do so requires a work-around, and that process can
 go wrong in lots of ways.
 
 If the Python developers thought it would be useful to search upwards in the
-filesystem, then they would have made it easy. They didn't, so it isn't.
+file system, then they would have made it easy. They didn't, so it isn't.
 
 This just reinforces a GREAT idea for making local programs and projects: Keep
 related content together. This keeps our work organized, and it also helps any other
