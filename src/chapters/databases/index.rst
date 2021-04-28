@@ -10,6 +10,6 @@ Databases
    sqlite
    db-practice
    more-db-practice
-   link-tables
+   db-tips
    exercises
    project
