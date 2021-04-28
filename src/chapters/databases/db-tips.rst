@@ -79,9 +79,21 @@ Adding a Primary Key
 
 Lorem ipsum...
 
-Linking Tables
---------------
+``authors`` table with ``auth_id`` primary auto-increment...
 
-Maybe this is too much for the course?
+Use loop to add rows to table. Data comes from list/dictionary...
 
-Link to LC101 Java/C# book?
+Try It! box...
+
+Link Tables Together
+--------------------
+
+- Maybe this is too much for the course?
+- Advanced Topics page?
+- Link to LC101 Java/C# book?
+
+``books`` table with ``auth_id`` column foreign key...
+
+Use code to find ``auth_id`` given name of the person...
+
+Try It! box...
