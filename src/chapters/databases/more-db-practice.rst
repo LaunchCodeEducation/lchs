@@ -95,5 +95,56 @@ Also learn how to delete an entire table from the database.
 Check Your Understanding
 ------------------------
 
-Lorem ipsum...
+.. admonition:: Question
 
+   Assume we have a table called ``books`` stored in our database. The table
+   includes columns for ``title``, ``publish_date``, and ``category``.
+   Which SQL query returns the titles for all non-fiction books published
+   after 2019?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT title, category FROM books WHERE publish_date > 2019</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT publish_date > 2019 FROM books WHERE category = 'non-fiction'</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT books, title WHERE publish_date > 2019 AND category = 'non-fiction'</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> SELECT title FROM books WHERE publish_date > 2019 AND category = 'non-fiction'</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = d
+
+.. admonition:: Question
+
+   What should you do if you accidentally ``DROP`` a table from your database
+   or ``DELETE`` the wrong row from a table?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Accept that the data is gone and learn from your mistake.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Cry.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Blame someone else.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use <em>Control-z</em> to undo the mistake.</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   To ``UPDATE`` an entry in a table, the SQL query should specify a row and a
+   column. Which keyword identifies the rows to change, and which keyword
+   identifies the columns?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> SET identifies the rows. WHERE identifies the columns.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> SET identifies the columns. WHERE identifies the rows.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the rows. SET identifies the columns.</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the columns. WHERE identifies the rows.</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = b
