@@ -14,7 +14,7 @@ technique.
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/cn-tbfyQpbY" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube.com/embed/piXiY9j64I4" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 **Key points**:
@@ -27,11 +27,30 @@ technique.
 #. Combining ``SET`` and ``WHERE`` identifies which cell(s) in the table to
    change.
 
-   .. todo:: Insert diagram showing row/column intersection.
+   .. figure:: figures/table-update.png
+      :alt: Showing how SET and WHERE cross in a table to identify the cell(s) to change.
+      :width: 80%
+
+      Each cell in the table has a (column, row) position.
 
 #. After running the query, use the ``.commit()`` method to confirm the
    changes.
-#. *There is no Undo option* after we commit an ``UPDATE`` query.
+#. After we commit an ``UPDATE`` query, there is no quick *Undo* option!
+
+**Sample code**:
+
+.. sourcecode:: Python
+   :linenos:
+
+   import sqlite3
+
+   database = sqlite3.connect('practice.db')
+   cursor = database.cursor()
+
+   # Update selected cells from the 'students' table:
+   sql_query = "UPDATE students SET recent_grad = 'No' WHERE grad_year < 2017"
+   cursor.execute(sql_query)
+   database.commit()
 
 Delete Data
 -----------
@@ -53,6 +72,25 @@ Also learn how to delete an entire table from the database.
 #. The ``DROP TABLE`` query removes an entire table from the database. ALL the
    row and column information will be deleted.
 #. *There is NO undo option* for a ``DELETE`` or ``DROP`` query.
+
+**Sample code**:
+
+.. sourcecode:: Python
+   :linenos:
+
+   import sqlite3
+
+   database = sqlite3.connect('practice.db')
+   cursor = database.cursor()
+
+   # Delete selected rows from the 'students' table:
+   sql_query = "DELETE FROM students WHERE recent_grad == 'No'"
+   cursor.execute(sql_query)
+   database.commit()
+   
+   # Drop the 'remove_me' table from the database:
+   sql_query = "DROP TABLE remove_me"
+   cursor.execute(sql_query)
 
 Check Your Understanding
 ------------------------
