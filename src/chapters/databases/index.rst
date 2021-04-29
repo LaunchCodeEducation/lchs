@@ -11,5 +11,6 @@ Databases
    db-practice
    more-db-practice
    db-tips
+   db-advanced
    exercises
    project
