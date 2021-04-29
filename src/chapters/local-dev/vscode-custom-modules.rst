@@ -231,7 +231,6 @@ names.
 
       from subdir1.subdir2 import gradebook
 
-
 We can also import a specific function (or class) from a module stored in a
 subdirectory. In this case, we include the module name in our dot-notation.
 
@@ -311,5 +310,3 @@ Use the file tree shown below to answer the questions.
       <p id="Q2"></p>
 
 .. Answer = a.
-
-
