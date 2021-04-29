@@ -7,25 +7,25 @@ ready for some of the finer points.
 Close the Connection
 --------------------
 
-In each of the examples in this chapter, we started our Python programs by
-opening a connection to the database.
+In each of the examples in this chapter, we start by opening a connection to
+the database.
 
 .. sourcecode:: Python
 
    database = sqlite3.connect('practice.db')
 
-Once connected, we performed several CRUD operations, and then our programs
-stopped. When a program ends, the connection to the database automatically
+Once connected, we perform several CRUD operations, and then our programs stop.
+Each time our programs end, the connection to the database automatically
 closes.
 
-However, we could easily build a program that uses a loop to keep itself
-running. Our Flask applications are good examples of this. They wait for user
-input before executing tasks, but they are still running! If we connect to a
+However, we can easily build a program that uses a loop to keep itself running.
+Our Flask applications are good examples of this. They wait for user input
+before executing tasks, but they are always running! If we connect to a
 database in one of these programs, that connection stays active. This opens up
-some possible security issues.
+some potential security issues.
 
-To help prevent unauthorized access to the database, one excellent habit is to
-*close the connection* immediately after we finish a CRUD operation.
+To help limit access to the database, one excellent habit is to
+*close the connection* immediately after we finish a set of CRUD operations.
 
 The syntax for closing a connection is quite simple:
 
@@ -47,18 +47,22 @@ SQL queries, and then close the connection. While it might seem inefficient to
 continually open and close the database connection, this is the safer option.
 Access to the data is only available when we need to perform CRUD operations.
 
+This structure also fits well with splitting jobs across different Python
+functions.
+
 Don't Track the Database with Version Control
 ---------------------------------------------
 
-Recall that the Git version control system lets us track the changes we make
-to our projects. Unless we are careful, *this includes the database file*.
+Recall that the :ref:`Git version control system <git-chapter>` lets us track
+the changes we make to our projects. Unless we are careful,
+*this includes the database file*.
 
 While including the database in a Git repository might seem like a good idea,
 we must absolutely avoid doing so! Here are two important reasons why:
 
-#. As we add more information to it, the database eventually becomes very
-   large. This increases the size of the repository, which makes it more
-   complicated and time consuming to backup.
+#. Over time, the size of the database can become very large. This increases
+   the size of the repository, which makes it more complicated and time
+   consuming to backup.
 #. If the database is part of the repository, it will be visible to *anyone*
    who has access to the repo. If we push the repo to GitHub (where saved
    projects are visible to anyone with a web browser), then we make the
@@ -97,7 +101,6 @@ the ``.gitignore`` file *before* we make a commit. (Recall that we used
          import sqlite3
 
          database = sqlite3.connect('no_gitting_this.db')
-         cursor = database.cursor()
 
    #. Run ``main.py``. Notice that when the new database appears in the file
       tree, its name remains gray.
@@ -125,7 +128,7 @@ Add a Primary Key
 
 To help mange the data stored in a table, one helpful tool is the
 **primary key**. This is an integer assigned to each row in the table, and no
-two rows in the table can have the same primary key.
+two rows can have the same primary key.
 
 By adding primary keys, every row in the table will be different from every
 other row. For example, if we have two students with the same name, their table
@@ -141,23 +144,36 @@ rows will ever be identical.
 
    [INSERT IMAGE]
 
-Assigning primary keys to a table can be done automatically. However, we must
-include some special syntax when we first create the table.
+When we use the ``sqlite3`` module, assigning primary keys to a table can be
+done automatically. However, we must include some special syntax when we first
+create the table.
 
 .. sourcecode:: SQL
 
-   CREATE TABLE table_name (key_name INTEGER PRIMARY KEY, column_2, ...)
+   CREATE TABLE table_name (key_name INTEGER PRIMARY KEY, other_columns...)
 
-Syntax description...
+#. By adding ``PRIMARY KEY`` after the column name, the program automatically
+   assigns an integer value to ``key_name`` each time a new row is added to the
+   table. We do NOT need to assign a value to ``key_name`` ourselves.
+#. Python keeps track of the largest primary key in the table. When a new row
+   is added, its primary key is assigned the next higher value.
+#. Notice that we use ``INTEGER`` instead of ``INT`` before ``PRIMARY KEY``.
+   This is required.
+#. We can assign our own value to ``key_name`` when we ``INSERT`` a row.
+   However, the action will throw an error if the value we choose matches a
+   primary key already in the table.
 
-By default, automatically increments the integer value and prevents duplicate
-key values...
+.. admonition:: Try It!
 
-Finds largest primary key value (even if gaps exist) and assigns the next higher
-value to the next entry.
+   Lorem ipsum...
 
-``authors`` table with ``auth_id`` primary auto-increment...
+   ``authors`` table with ``auth_id`` as the primary key...
 
-Use loop to add rows to table. Data comes from list/dictionary...
+   Use a loop to add rows to table. Data comes from list/dictionary...
 
-Try It! box...
+   Delete one row. Notice that the primary keys now have a gap...
+
+   Add new row with specific PK. Note that next automatic row has a PK that
+   picks up from the largest existing PK.
+
+   Try inserting a row with a duplicate PK.
