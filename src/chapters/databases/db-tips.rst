@@ -142,30 +142,34 @@ rows will ever be identical.
    including a primary key prevents duplicate entries. The table on the right
    implies that we have two different Bobs in our class.
 
-   [INSERT IMAGE]
+   .. figure:: figures/primary-key.png
+      :alt: Showing two database tables. One with a primary key column and the other without.
+      :width: 80%
 
-When we use the ``sqlite3`` module, assigning primary keys to a table can be
-done automatically. However, we must include some special syntax when we first
-create the table.
+      The table on the right includes an ``id`` column that stores the primary key for each row.
+
+When we use the ``sqlite3`` module, assigning primary keys can be done
+automatically. However, we must include some special syntax when we first create
+the table.
 
 .. sourcecode:: SQL
 
    CREATE TABLE table_name (key_name INTEGER PRIMARY KEY, other_columns...)
 
-#. By adding ``PRIMARY KEY`` after the column name, the program automatically
-   assigns an integer value to ``key_name`` each time a new row is added to the
-   table. We do NOT need to assign a value to ``key_name`` ourselves.
+#. ``key_name`` is the column in the table that will store the primary keys.
+   Each key value must be an integer data type.
+#. Notice that we must type out ``INTEGER`` instead of ``INT`` for the data
+   type. This is required. Using ``INT`` causes errors.
+#. ``PRIMARY KEY`` sets up the process to automatically assign an integer to
+   ``key_name``. This happens each time a new row is added to the table. We do
+   NOT need to assign a value to ``key_name`` ourselves.
 #. Python keeps track of the largest primary key in the table. When a new row
    is added, its primary key is assigned the next higher value.
-#. Notice that we use ``INTEGER`` instead of ``INT`` before ``PRIMARY KEY``.
-   This is required.
 #. We can assign our own value to ``key_name`` when we ``INSERT`` a row.
    However, the action will throw an error if the value we choose matches a
    primary key already in the table.
 
 .. admonition:: Try It!
-
-   Lorem ipsum...
 
    ``authors`` table with ``auth_id`` as the primary key...
 
@@ -177,3 +181,59 @@ create the table.
    picks up from the largest existing PK.
 
    Try inserting a row with a duplicate PK.
+
+#. Return to your ``database_practice`` directory in Visual Studio Code. Open
+   ``main.py`` in the editor.
+#. Create a new table in ``practice.db`` called ``authors``. The table should
+   include 4 columns: ``author_id, last_name, first_name, website``.
+
+   .. sourcecode:: Python
+      :linenos:
+
+      import sqlite3
+
+      database = sqlite3.connect('practice.db')
+      cursor = database.cursor()
+
+      sql_query = """
+         CREATE TABLE IF NOT EXISTS authors 
+         (author_id INTEGER PRIMARY KEY, last_name TEXT, first_name TEXT, website TEXT)
+         """
+      cursor.execute(sql_query)
+
+#. Rather than writing a separate SQL query for each author, we will use a loop
+   to do the work for us. Paste this code into the editor:
+
+   .. sourcecode:: Python
+      :lineno-start: 13
+
+      # Each list in 'authors' contains the last name, first name, and website values.
+      authors = [
+         ['Jemisin', 'N.K.', 'https://nkjemisin.com/'],
+         ['Willems', 'Mo', 'https://pigeonpresents.com/'],
+         ['Alvarez', 'Julia', 'https://www.juliaalvarez.com/']
+      ]
+
+      # Assign the SQL query string, including placeholders.
+      sql_query = "INSERT INTO authors (last_name, first_name, website) VALUES (?, ?, ?)"
+      
+      # Loop through the 'authors' list.
+      for author in authors:
+         last = author[0]
+         first = author[1]
+         url = author[2]
+
+         # Insert a new row into the 'authors' table.
+         cursor.execute(sql_query, (last, first, url))
+
+      database.commit()
+      database.close()
+
+#. Run ``main.py``, then use your SQLite extension powers to view the
+   ``authors`` table in VS Code. Even though we did NOT include values for
+   ``author_id`` in the SQL query, each row still displays a value for that
+   column.
+#. Delete a row from the middle of the table... View again.
+#. Insert a new row, but this time include a value for ``author_id``. View table.
+#. Try inserting a row with an ``author_id`` value that already appears in the
+   table.
