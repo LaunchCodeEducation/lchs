@@ -128,19 +128,18 @@ Add a Primary Key
 
 To help mange the data stored in a table, one helpful tool is the
 **primary key**. This is an integer assigned to each row in the table, and no
-two rows can have the same primary key.
+two rows have the same primary key.
 
 By adding primary keys, every row in the table will be different from every
 other row. For example, if we have two students with the same name, their table
-entries can easily be confused. However, by adding a unique primary key, no two
-rows will ever be identical.
+entries can easily be confused. However, by adding a unique primary key, the two
+rows no longer look the same.
 
 .. admonition:: Example
 
-   Compare the rows from two ``students`` tables. Do the entries on the left
-   show the same student entered twice? We cannot say for sure. However,
-   including a primary key prevents duplicate entries. The table on the right
-   implies that we have two different Bobs in our class.
+   Without primary keys, we cannot tell the difference between two rows that
+   contain identical values. Primary keys guarantee that every row has at least
+   one unique piece of data.
 
    .. figure:: figures/primary-key.png
       :alt: Showing two database tables. One with a primary key column and the other without.
@@ -148,9 +147,8 @@ rows will ever be identical.
 
       The table on the right includes an ``id`` column that stores the primary key for each row.
 
-When we use the ``sqlite3`` module, assigning primary keys can be done
-automatically. However, we must include some special syntax when we first create
-the table.
+When we use the ``sqlite3`` module, we can assign primary keys automatically.
+However, we must include some special syntax when we first create the table.
 
 .. sourcecode:: SQL
 
@@ -158,8 +156,8 @@ the table.
 
 #. ``key_name`` is the column in the table that will store the primary keys.
    Each key value must be an integer data type.
-#. Notice that we must type out ``INTEGER`` instead of ``INT`` for the data
-   type. This is required. Using ``INT`` causes errors.
+#. We must type out ``INTEGER`` instead of ``INT`` for the data type. This is
+   required! Using ``INT`` causes errors.
 #. ``PRIMARY KEY`` sets up the process to automatically assign an integer to
    ``key_name``. This happens each time a new row is added to the table. We do
    NOT need to assign a value to ``key_name`` ourselves.
@@ -169,23 +167,15 @@ the table.
    However, the action will throw an error if the value we choose matches a
    primary key already in the table.
 
-.. admonition:: Try It!
+Try It! (Primary Keys)
+^^^^^^^^^^^^^^^^^^^^^^
 
-   ``authors`` table with ``auth_id`` as the primary key...
-
-   Use a loop to add rows to table. Data comes from list/dictionary...
-
-   Delete one row. Notice that the primary keys now have a gap...
-
-   Add new row with specific PK. Note that next automatic row has a PK that
-   picks up from the largest existing PK.
-
-   Try inserting a row with a duplicate PK.
+Let's create a new table in ``practice.db`` that uses primary keys.
 
 #. Return to your ``database_practice`` directory in Visual Studio Code. Open
    ``main.py`` in the editor.
-#. Create a new table in ``practice.db`` called ``authors``. The table should
-   include 4 columns: ``author_id, last_name, first_name, website``.
+#. Create a new table called ``authors``. The table should include 4 columns:
+   ``author_id, last_name, first_name, website``.
 
    .. sourcecode:: Python
       :linenos:
@@ -205,13 +195,15 @@ the table.
    to do the work for us. Paste this code into the editor:
 
    .. sourcecode:: Python
-      :lineno-start: 13
+      :lineno-start: 12
 
       # Each list in 'authors' contains the last name, first name, and website values.
       authors = [
          ['Jemisin', 'N.K.', 'https://nkjemisin.com/'],
          ['Willems', 'Mo', 'https://pigeonpresents.com/'],
-         ['Alvarez', 'Julia', 'https://www.juliaalvarez.com/']
+         ['Alvarez', 'Julia', 'https://www.juliaalvarez.com/'],
+         ['Sanderson', 'Brandon', 'https://www.brandonsanderson.com/'],
+         ['Cowell', 'Cressida', 'https://www.cressidacowell.co.uk/']
       ]
 
       # Assign the SQL query string, including placeholders.
@@ -219,21 +211,62 @@ the table.
       
       # Loop through the 'authors' list.
       for author in authors:
-         last = author[0]
-         first = author[1]
-         url = author[2]
+         last, first, website = author[0], author[1], author[2]
 
          # Insert a new row into the 'authors' table.
-         cursor.execute(sql_query, (last, first, url))
+         cursor.execute(sql_query, (last, first, website))
 
       database.commit()
       database.close()
 
 #. Run ``main.py``, then use your SQLite extension powers to view the
-   ``authors`` table in VS Code. Even though we did NOT include values for
-   ``author_id`` in the SQL query, each row still displays a value for that
-   column.
-#. Delete a row from the middle of the table... View again.
-#. Insert a new row, but this time include a value for ``author_id``. View table.
-#. Try inserting a row with an ``author_id`` value that already appears in the
-   table.
+   ``authors`` table. Even though we did NOT include values for ``author_id``
+   in the SQL query, each row still displays a value for that column.
+
+   .. figure:: figures/authors-table.png
+      :alt: Authors table with 5 rows, each with a primary key in the author_id column.
+
+      Each row contains a unique integer in the ``author_id`` column.
+
+Try More!
+^^^^^^^^^
+
+.. admonition:: Tip
+
+   If you make a mistake and need to start fresh, you can easily ``DROP`` the
+   ``authors`` table and re-create it. Add one line of code right before the
+   ``CREATE TABLE`` statement. Comment out the line (or activate it) as needed.
+
+   .. sourcecode:: Python
+      :lineno-start: 6
+
+      cursor.execute("DROP TABLE authors")
+      sql_query = "CREATE TABLE authors..."
+
+#. After the loop, write another SQL query that removes one rom from the middle
+   of the ``authors`` table. View the table again. Notice that there is now a
+   gap in the primary key values.
+
+   Does adding a new row fill in this gap or continue with the next higher
+   number? Try it to find out!
+#. Insert another new row, but this time assign an integer to ``author_id``
+   yourself. Make the difference obvious by selecting a value over ``100``.
+   View the table again.
+   
+   a. Does the bottom row always have the highest primary key? Add a row with
+      a smaller primary key to test this!
+   b. Insert another new row, but let the program automatically assign
+      ``author_id``. View the table again. What do you notice about the value
+      assigned to the primary key?
+#. Try inserting a row with an ``author_id`` value that already exists in the
+   table. What happens?
+
+Check Your Understanding
+------------------------
+
+.. admonition:: Question
+
+   Does the bottom row of a table always have the highest primary key?
+
+   #. Yes
+   #. No
