@@ -243,7 +243,7 @@ Try More!
       cursor.execute("DROP TABLE authors")
       sql_query = "CREATE TABLE authors..."
 
-#. After the loop, write another SQL query that removes one rom from the middle
+#. After the loop, write another SQL query that removes one row from the middle
    of the ``authors`` table. View the table again. Notice that there is now a
    gap in the primary key values.
 
@@ -266,7 +266,60 @@ Check Your Understanding
 
 .. admonition:: Question
 
-   Does the bottom row of a table always have the highest primary key?
+   When should we close the connection to the database?
 
-   #. Yes
-   #. No
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> As the last step in our program.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> After 24 hours.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> After we complete a SQL query.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> We don't need to close the connection.</li>
+      </ol>
+      <p id="Q1"></p>
+
+.. Answer = c
+
+.. admonition:: Question
+
+   Why should we NOT track a database with version control?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Oh, I know why! Please let me explain! I'll even give quotes from the text on this page.</li>
+         <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Wait, what? Why wouldn't I want to make sensitive data visible to everyone?</li>
+      </ol>
+      <p id="Q2"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   When using ``sqlite3``, does the bottom row of a table always have the
+   highest primary key?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Yes</li>
+         <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> No</li>
+      </ol>
+      <p id="Q3"></p>
+
+.. Answer = a
+
+.. admonition:: Question
+
+   If there is a gap in the primary key values, does adding a new row fill in
+   the gap or continue with the next higher number?
+
+   .. raw:: html
+
+      <ol type="a">
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> The gap is filled in.</li>
+         <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> The next higher number is assigned, which leaves the gap open.</li>
+      </ol>
+      <p id="Q4"></p>
+   
+.. Answer = b
