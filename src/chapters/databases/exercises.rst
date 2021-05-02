@@ -4,143 +4,125 @@ Exercises: Databases
 In these exercises, you will perform several CRUD operations with a new
 database file.
 
-Part A: Database Setup
-----------------------
+Part A: Set Up a New Database
+-----------------------------
 
-Return to ``database_practice`` directory...
+#. Launch Visual Studio Code and use the *File* menu to open your
+   ``database_practice`` directory.
+#. Double-click the ``.gitignore`` file to open it in the editor.
+#. Choose a name for a new database file (like ``exercises.db``) and enter it
+   on its own line in ``.gitignore``.
+#. Create an ``exercises.py`` file. Start by importing the ``sqlite3`` module,
+   then :ref:`open a connection <connect-to-db>` to your new database.
+#. Don't forget to define a ``cursor`` object.
+#. Run the program. Your new database should appear in the file tree.
 
-Add DB name to gitignore...
+The setup is done. You are ready to go!
 
-Import sqlite3...
-
-Open connection...
-
-In the file tree, right-click on the database name and select *Open database*.
-
-Ready to go!
-
-Part B: Table Setup
+Part B: Add a Table
 -------------------
 
 Imagine that you want to apply your new database skills to bring some order to
-your garden. For these exercises, you will use a ``seeds`` table to store some
-information. The table will need 4 columns:
+your game closet. To do this, you will use a ``games`` table to store some
+information. The table needs at least 5 columns:
 
-- ``seed_id``: This is the primary key assigned to each row in the ``seeds``
-   table.
-- ``crop``: Identifies what the seeds grow (e.g. yellow bell peppers).
-- ``benefit``: Describes the advantages of planting the crop (e.g. nitrogen
-   fixation, attracts bees, etc.)
-- ``use_by``: The year the seeds expire.
+- ``game_id``: This is the primary key assigned to each row in the ``games``
+  table.
+- ``title``: This is the name of the game.
+- ``num_players``: Gives a range for the number of people required to play the
+  game.
+- ``min_age``: Identifies the youngest recommended player age for the game.
+- ``ranking``: Assigns a value of 1 - 5 to the game. The higher the number,
+  the more you like the game.
 
-The ``crop`` and ``benefit`` columns will hold ``TEXT`` data types.
-``seed_id`` and ``use_by`` will be integers.
+The ``title`` and ``num_players`` columns will hold ``TEXT`` data types.
+``game_id`` and ``min_age`` will be integers. ``ranking`` will be a float data
+type.
 
 #. Define a ``sql_query`` variable, and assign it a string to create the
-   ``seeds`` table. Be sure to include the ``PRIMARY KEY`` syntax for the
-   ``seed_id`` column.
+   ``games`` table. Be sure to include the ``PRIMARY KEY`` syntax for the
+   ``game_id`` column.
 #. Use ``cursor.execute()`` to run the SQL query and create the new table.
 #. Verify that the table was created by expanding the database name in the
    *SQLITE EXPLORER* tab.
 
    [INSERT SCREENSHOT]
 
-Create
-------
+Part C: Add Rows
+----------------
 
-For this section, you will be able to reuse the same ``INSERT`` string for each
-of the SQL queries.
+#. Assign a new string to your ``sql_query`` variable. It should use the
+   ``INSERT INTO`` keywords to add an entry to the ``games`` table. Remember to
+   use placeholders after the ``VALUES`` keyword.
+#. For the first new row, set the ``title`` as "Qwirkle", the ``num_players``
+   as "2 - 4", the ``min_age`` as 6, and the ranking as 4.5.
 
-#. Assign a new string value to your ``sql_query`` variable. It should use the
-   ``INSERT INTO`` keywords to add a new entry to the ``seeds`` table. For this
-   row, the ``crop`` should be "Agastache", the ``benefit`` is "Attracts bees
-   & hummingbirds", and the ``use_by`` year is 2022.
+   Notice that you do NOT need to include a value for ``game_id``, since the
+   ``sqlite3`` module automatically assigns primary key values.
+#. Reuse the ``sql_query`` string to add another entry to the ``games`` table.
+   This time, choose your own values for the columns.
+#. It is possible to fill in only SOME of the columns for a given row. To skip
+   one or more columns, leave their names and values out of the SQL command.
 
-   Notice that you do NOT need to include a value for ``seed_id``, since the
-   ``sqlite3`` module will automatically assign primary key values.
-#. Re-use the same ``sql_query`` string to add another new entry to the
-   ``seeds`` table. This time, choose your own values for the columns.
-#. To add values to only *some* of the columns of the table, simply leave out
-   those column names and values from the SQL command.
-
-   Add 3 - 5 more rows to the ``seeds`` table. Make sure that some of these
-   entries include values for all of the columns, while the rest do not.
+   Add 3 - 5 more rows to the ``games`` table. At least one of these should
+   NOT fill in all of the columns.
 #. Finish off your code with a ``.commit()`` statement, then ``.close()`` the
    connection to the database.
 #. Run your program, then use the *Play* button in the *SQLITE EXPLORER* tab
-   to view the ``seeds`` table.
+   to view the ``games`` table.
 
 .. admonition:: Note
 
    Notice that ``NULL`` gets stored in a cell whenever a value for that column
    is not supplied.
 
-Read
-----
+Part R: Access Game Data
+------------------------
 
 For this section, you will need to use several different query strings to
 complete the steps.
 
 #. Use ``SELECT ... FROM ...`` to return results from all of the columns in the
-   ``seeds`` table.
+   ``games`` table.
 
    Use ``list()`` to convert the returned results, then print the data to the
    console in a clear fashion. *Tip*: Define a function to accomplish this.
-#. Repeat step 1, but return and print a single entry based on its ``seed_id``
+#. Repeat step 1, but return and print a single entry based on its ``game_id``
    value. You will need to include a ``WHERE`` in your SQL query.
-#. Repeat step 1, but print list ONLY the ``crop`` data from the table.
-#. Select the ``crop`` and ``use_by`` data, but print the results in
-   *DECREASING* order by year.
+#. Repeat step 1, but print ONLY the ``title`` data from the table.
+#. Select the ``title`` and ``min_age`` data, but print the results in
+   *DECREASING* order by age.
 
-Update
-------
+Part U: Modify Game Data
+------------------------
 
-Open up a new query tab for the SQL commands you code in this section.
+Remember to include a ``WHERE`` clause in your ``UPDATE`` queries! If you leave
+it out, then *ALL* rows in the table will be updated!
 
-.. admonition:: Warning
+#. Update a single record based on its ``game_id``.
 
-   The general syntax for a SQL update is:
-
-   .. sourcecode:: bash
-
-      UPDATE table_name
-      SET column1 = newValue1, column2 = newValue2, ...
-      WHERE condition;
-
-   If you leave out the ``WHERE`` clause, then *ALL* records in the table will
-   be updated!
-
-#. Update a single record based on its ``seed_id``.
-
-   a. The first entry we added in the Create section has ``seed_id`` = 1. Use
-      ``UPDATE ... SET ... WHERE`` to change the ``use_by`` date for this entry
-      to 2024.
+   a. The first entry we added in Part C section has a ``game_id`` of ``1``.
+      Use ``UPDATE ... SET ... WHERE`` to change the ``ranking`` for this entry
+      to a different value.
    b. Use a single ``UPDATE`` statement to change two columns for the entry
-      with ``seed_id`` = 4.
+      with ``game_id`` = 4.
 
-#. Use ``ALTER TABLE`` to add a new column, called ``expired``, to the table.
-   Set the data type to ``boolean``.
-#. With a single ``UPDATE`` command, set the ``expired`` value to ``true`` for
-   all entries that have a ``use_by`` of this year or earlier.
+#. Use :ref:`ALTER TABLE <add-table-column>` to add a new column, called
+   ``will_donate``, to the table. Set the data type to ``BOOLEAN``.
+#. With a single ``UPDATE`` command, set the ``will_donate`` value to ``True``
+   for all entries that have a ``ranking`` lower than 3.0.
 
-Be sure to list the ``seeds`` table to confirm your changes.
+Don't forget to view the ``games`` table to confirm your changes!
 
-Delete
-------
+Part D: Remove Games
+--------------------
 
-Open up a new query tab for the SQL commands you code in this section.
+Remember, there is no undo option after running ``DELETE``!
 
-.. admonition:: Warning
-
-   If you leave out the ``WHERE`` clause in the ``DELETE FROM`` command, then
-   *ALL* records in the table will be lost!
-
-   There is no undo option after running ``DELETE``.
-
-#. Delete a single record from the table. Be sure to use its ``seed_id`` rather
-   than any other column value in the ``WHERE`` clause.
-#. Use a single ``DELETE`` command to remove any seeds from the table that have
-   expired.
+#. Delete a single row from the table based on its ``game_id`` value.
+#. Write a single ``DELETE`` command to remove any games from the table that
+   you don't consider fun. You can use either the ``ranking`` or ``will_donate``
+   value to decide which rows to remove.
 
 Bonus Exercises
 ---------------
@@ -151,12 +133,7 @@ Take a quick break and, if you wish, try these additional tasks that go above
 and beyond the basic SQL commands.
 
 #. Use logical operators (``AND``, ``OR``, ``NOT``) in ``WHERE`` statements.
-#. List the complete records for the seeds, but only if the ``encourages``
-   column ``IS NOT null``.
-#. Do you have several entries with the same ``crop`` value? If so, you can
-   display a list that avoids repeats by using the `SELECT DISTINCT <https://www.w3schools.com/sql/sql_distinct.asp>`__
+#. Print the complete records for the games, but only if the ``min_age`` column
+   ``IS NOT null``.
+#. Experiment with the `ORDER BY <https://www.w3schools.com/sql/sql_orderby.asp>`__
    keywords.
-#. Experiment with `changing the data type <https://www.w3schools.com/sql/sql_alter.asp>`__
-   of a column.
-#. Research the difference between ``DROP DATABASE table_name`` vs.
-   ``DELETE FROM table_name``.

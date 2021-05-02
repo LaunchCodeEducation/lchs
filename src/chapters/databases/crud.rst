@@ -71,6 +71,8 @@ The general syntax to add a new row looks like this:
 When we insert a new row, we do NOT have to include a value for every column in
 the table. When we leave out values, those spots in the table remain empty.
 
+.. _add-table-column:
+
 Adding a Column
 ^^^^^^^^^^^^^^^
 

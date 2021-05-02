@@ -40,6 +40,8 @@ Setup
 
 That's it! We are now ready to dive into our first database!
 
+.. _connect-to-db:
+
 Create a Database
 -----------------
 
