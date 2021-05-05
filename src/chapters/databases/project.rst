@@ -43,30 +43,39 @@ Let's get started.
 Project Setup
 -------------
 
-Lorem ipsum...
+Clone the starter code from this `GitHub repository <https://github.com/LaunchCodeEducation/LCHS_movie_sql_project>`__.
 
-New project directory (``movie_sql_project``)...
+Starter code contains: main.py, six templates, and a style.css file.
 
-Install venv and Flask. Add starter main.py, index.html, results.html, and
-style.css pages...
+Open directory (``LCHS_movie_sql_project``) in VS Code. Install venv and Flask.
 
 Add functions to ``main.py`` to render each template. Run the application to
 check that everything is OK so far.
 
-Design the Form
+The Home Page
+-------------
+
+Lorem ipsum...
+
+The DELETE Form
 ---------------
 
 Lorem ipsum...
 
-Basic layout...
+The UPDATE Form
+---------------
 
-Radio buttons for INSERT, SELECT, UPDATE, DELETE...
-Already provided? Users select and submit, then redirect to a form for the
-chosen option.
+Lorem ipsum...
 
-Dropdown for table names...
+The INSERT Form
+---------------
 
-Dropdown/checkboxes for column names...
+Lorem ipsum...
+
+The SELECT Form
+---------------
+
+Lorem ipsum...
 
 Check ``sql_query`` Strings
 ---------------------------
