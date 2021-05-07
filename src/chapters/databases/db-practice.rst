@@ -50,6 +50,8 @@ Code along with this video as we add new rows to the ``students`` table.
    cursor.execute(sql_query, (last_name, first_name, grad_year))
    database.commit()
 
+.. _sqlite-explorer:
+
 Viewing a Table in VS Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
