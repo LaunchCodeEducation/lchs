@@ -14,3 +14,4 @@ Databases
    db-advanced
    exercises
    project
+   project-part2

@@ -72,7 +72,7 @@ page:
    :alt: The index.html page, showing a form to select the type of SQL query.
    :width: 60%
 
-   The form lets users select the type of SQL query and a table from the database.
+   The form lets users select the SQL query type and a table from the database.
 
 .. index:: ! gateway page
 
@@ -101,7 +101,7 @@ than the one that came before.
 The DELETE Form
 ---------------
 
-From the home page, select ``DELETE`` and the ``Movies`` table. This will
+From the home page, select ``DELETE`` and the ``movies`` table. This will
 redirect you to a specific form.
 
 .. figure:: figures/delete-form.png
@@ -122,7 +122,7 @@ You need to add code to the function that will:
      :alt: The DELETE query form, with an input box where users can enter a WHERE condition.
      :width: 80%
 
-     The ``delete_query()`` function in ``main.py`` should build a properly formatted SQL query.
+     The ``delete_query()`` function in ``main.py`` builds a SQL query string.
 
 #. Open ``main.py`` and add this code inside the ``delete_query()`` function.
 
@@ -150,7 +150,8 @@ You need to add code to the function that will:
             pass
    
    On line 46, ``['condition']`` matches to the name attribute given to the
-   input element in ``delete.html``.
+   input element in ``delete.html``. Line 47 retrieves the value assigned to
+   ``session['table']``. This value was set inside the ``index()`` function.
 #. Use the ``table`` and ``condition`` variables to build the string for the
    SQL query. Also, assign the empty string to ``sql_query`` in the ``else``
    clause.
@@ -191,13 +192,13 @@ string. Be sure to save, commit, and push your work.
 
 .. admonition:: Note
 
-   Right now, users can type whatever they want in the input box. Don't worry
-   about validating the entry yet.
+   Right now, users can type whatever they want into the input box. Don't worry
+   about checking the accuracy of the SQL query yet.
 
 The UPDATE Form
 ---------------
 
-From the home page, select ``UPDATE`` and the ``Directors`` table. When the new
+From the home page, select ``UPDATE`` and the ``directors`` table. When the new
 page loads, notice that the form contains two input fields.
 
 .. figure:: figures/update-form.png
@@ -206,9 +207,9 @@ page loads, notice that the form contains two input fields.
 
    With the ``UPDATE`` form, users submit text for both ``SET`` and ``WHERE``.
 
-This page should behave in a similar way to ``delete.html``. Users will submit
-TWO text fields, and the ``update_query()`` function will send back a completed
-query string.
+This page behaves in a similar way to ``delete.html``. Users submit TWO text
+fields, and the ``update_query()`` function sends back a completed query
+string.
 
 #. Open ``update.html`` and identify the name for each input element.
 
@@ -277,156 +278,11 @@ Follow the same process as above to finish the ``insert_query()`` and
 
    The ``insert_query()`` and ``select_query()`` functions also return SQL strings.
 
-Code the ``execute_query`` Function
------------------------------------
+Next Steps
+----------
 
-Now that each of the CRUD functions creates a ``sql_query`` string, the next
-step is to perform those actions! Instead of adding more code to each of the
-functions, you will write a new one that can handle any of the query strings.
+Your Flask application now builds SQL query strings from different web forms.
+Now you need to execute those queries, update the database, and display
+feedback to the user.
 
-#. BEFORE the ``index()`` function, paste in this starter code for the
-   ``execute_query()`` function:
-
-   .. sourcecode:: Python
-      :lineno-start: 8
-
-      def execute_query(query_string):
-         db = sqlite3.connect('project.db')
-         cursor = db.cursor()
-         if "select" in query_string.lower():
-            pass
-         else:
-            pass
-         db.close()
-         return
-
-      @app.route('/', methods=['GET', 'POST'])
-         def index():
-
-   a. Lines 9 and 10 open a connection to the database and initialize the
-      ``db`` and ``cursor`` objects.
-   b. Line 15 closes the connection to the database after each SQL query.
-   c. Lines 11 - 14 will contain the code to run the SQL queries.
-#. Note the condition in line 11. If the SQL query calls for a SELECT
-   operation, the function should return a list of results from the database.
-   Update the code to assign those results to a variable, then return them.
-
-   .. sourcecode:: Python
-      :lineno-start: 8
-
-      def execute_query(query_string):
-         db = sqlite3.connect('project.db')
-         cursor = db.cursor()
-         if "select" in query_string.lower():
-            results = list(cursor.execute(query_string)) # Read data from project.db.
-         else:
-            pass
-         db.close()
-         return results    # Return the results of the SQL query.
-#. For INSERT, UPDATE, and DELETE queries, the pattern of execution is the
-   same. Add the following code to the ``else`` clause:
-
-   .. sourcecode:: Python
-      :lineno-start: 8
-
-      def execute_query(query_string):
-         db = sqlite3.connect('project.db')
-         cursor = db.cursor()
-         if 'select' in query_string.lower():
-            results = list(cursor.execute(query_string))
-         else:
-            cursor.execute(query_string)  # Execute the query.
-            db.commit()                   # Commit the changes to the database.
-            results = 'success'           # Assign a value to 'results'.
-         db.close()
-         return results
-
-There are still some big holes in the ``execute_query()`` code, but this will
-get you started. The next step is to run some test queries.
-
-Perfect Syntax
-^^^^^^^^^^^^^^
-
-Lorem ipsum...
-
-Catch SQL Syntax Errors
-^^^^^^^^^^^^^^^^^^^^^^^
-
-As shown above, if a user enters some invalid syntax in the form, the
-application crashes. While it is possible to check a SQL string before calling
-``.execute()``, this requires a rather large amount of code. Fortunately, there
-is a nifty shortcut we can use instead.
-
-Update the ``execute_query()`` function as follows:
-
-.. sourcecode:: Python
-   :lineno-start: 11
-
-   if "select" in query_string.lower():
-      try:
-         results = list(cursor.execute(query_string))
-      except:
-         results = 'error'
-
-.. index:: ! try/except
-
-This demonstrates how to use a **try/except** block. Python *tries* to run the
-code on line 13. If ``query_string`` contains no mistakes, ``.execute`` runs
-fine, and ``results`` is assigned data from the table.
-
-If ``query_string`` is incorrect, ``.execute`` throws an error. However,
-instead of crashing, Python moves to the ``except`` clause and runs the code
-there! The ``try/except`` block *prevents the program from crashing* by
-providing an safe, alternative set of code. In this case, it assigns the
-``'error'`` string to ``results``.
-
-Cool! ``try/except`` saves you some time, since you don't need to do a detailed
-check of the SQL string.
-
-Apply this to the else block as well:
-
-.. sourcecode:: Python
-   :lineno-start: 8
-
-   def execute_query(query_string):
-      db = sqlite3.connect('project.db')
-      cursor = db.cursor()
-      if "select" in query_string.lower():
-         try:
-               results = list(cursor.execute(query_string))
-         except:
-               results = 'error'
-      else:
-         try:
-               cursor.execute(query_string)
-               db.commit()
-               results = "success"
-         except:
-               results = 'error'
-      db.close()
-      return results
-
-Bonus
------
-
-Add CSS styling to make the form(s) look nice.
-
-Case insensitivity for column names...
-
-Old Notes
----------
-
-The next chapter is an extended walkthrough. You will first add a database to a
-Flask application. Then you will replace the hard-coded ``sql_query`` strings
-in your Python program with ones built from your web form. You will also use
-your Jinja2 template skills to display the results from ``SELECT`` queries.
-
-Each page in the next chapter will add one piece to the Flask application. By
-the end, you will have a user interface that runs in the browser. This provides
-a more convenient way to add information to a selected table, perform searches,
-update existing data, or delete entries.
-
-Yes, the expectations are high. HOWEVER, it's also the end of the course. You
-are TOTALLY ready for this challenge!
-
-Let's get started.
+Continue on to :ref:`Part 2 <movie-sql-part-2>` of this project.
