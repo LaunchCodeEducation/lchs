@@ -100,9 +100,9 @@ Any error in the SQL query causes the application to crash. This occurs no
 matter how tiny the mistake. Even forgetting to put quotes around a string
 value is enough to throw an error.
 
-You should expect users to make mistakes in any form, so your program must be
-able to survive these errors. You should also provide users feedback about what
-went wrong.
+You should expect users to make mistakes in any of the forms, so your program
+must be able to survive these errors. You should also provide users feedback
+about what went wrong.
 
 Catch SQL Syntax Errors
 -----------------------
@@ -186,24 +186,33 @@ names do NOT appear in the output.
 
    It would be nice if the output displayed the column names!
 
-To make the results more clear, it would be nice to add the column names to the
-output. ``base.html`` already has the ability to do this, but it's missing some
-data.
+To make the results more clear, it would be helpful to add the column names to
+the output. ``base.html`` already contains code to do this, but it's missing
+some data.
 
-.. sourcecode:: html
-   :lineno-start: 23
+.. admonition:: Example
 
-   <table>
-      <tr> <!-- 'tr' indicates a table row. 'th' is a heading cell. -->
+   Take a look near the bottom of ``base.html``. The Jinja2 loop
 
-         <!-- The 'selected_columns' key points to a list of column names. -->
-         {% for column in session['selected_columns'] %}
-            <th class="centered">{{column.strip()}}</th>
-         {% endfor %}
-      </tr>
+   ``for column in session['selected_columns']``
+   
+   creates a heading with each column name assigned to the ``selected_columns``
+   key.
+
+   .. sourcecode:: html
+      :lineno-start: 23
+
+      <table>
+         <tr> <!-- 'tr' indicates a table row. 'th' is a heading cell. -->
+
+            <!-- The 'selected_columns' key points to a list of column names. -->
+            {% for column in session['selected_columns'] %}
+               <th class="centered">{{column.strip()}}</th>
+            {% endfor %}
+         </tr>
 
 To display the column names, you need to assign a list to the
-``selected_columns`` key in the session cookie.
+``selected_columns`` key in the session.
 
 #. Open ``main.py`` and find the ``select_query()`` function.
 #. Add a conditional just before calling ``execute_query()``:
@@ -228,10 +237,13 @@ To display the column names, you need to assign a list to the
 
             results = execute_query(sql_query)
 
+Line 68 requests the string of column names from the SELECT form and assigns it
+to the ``columns`` variable.
+
 If ``columns == '*'`` returns ``True``, then line 76 runs. The
 ``selected_columns`` key is assigned the full list of column names. If
-``False``, then the string of column names collected from the form (line 68) is
-split into a list. This list is assigned to the session key.
+``False``, then the string assigned to ``columns`` is split into a list. This
+list is assigned to the session key.
 
 Make the updates, then submit the SELECT form a few more times to test the new
 feature.
