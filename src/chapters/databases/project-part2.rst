@@ -69,8 +69,8 @@ Define the ``execute_query`` Function
          db.close()
          return results
 
-There are still some holes in the ``execute_query()`` code, but this will get
-you started. For the next step, you will run some test queries.
+The ``execute_query()`` code works, but it contains a rather large hole. You
+will find this when you run the test queries in the next section.
 
 .. admonition:: Note
 
@@ -84,77 +84,68 @@ Don't Expect Perfect Syntax
 Launch ``main.py``, then run these two test cases:
 
 #. From the home page, choose ``SELECT`` and ``movies``. Enter ``*`` in the
-   first box and leave the WHERE box empty.
-
-   If your ``execute_query()`` function works, you will see a table of data
-   appear below the form.
+   first box and leave the WHERE box empty. If your ``execute_query()``
+   function works, you will see a table of data appear below the form.
 #. Submit the form again, but this time use a column name that does NOT appear
    in the ``movies`` table. How does your program respond?
 
 Yikes! Hopefully, you saw your program crash.
 
-   [SCREENSHOT HERE]
+.. figure:: figures/sql-error.png
+   :alt: Showing an Operational Error message. The submitted column name isn't in the movies table.
+
+   Entering an incorrect column name throws an error and crashes the application.
 
 Any error in the SQL query causes the application to crash. This occurs no
 matter how tiny the mistake. Even forgetting to put quotes around a string
 value is enough to throw an error.
 
-You should expect users to make mistakes in any form. Your program must be able
-to survive these errors AND provide feedback to the user about what they did
-wrong.
+You should expect users to make mistakes in any form, so your program must be
+able to survive these errors. You should also provide users feedback about what
+went wrong.
 
 Catch SQL Syntax Errors
 -----------------------
 
-As shown above, if a user enters some invalid syntax in the form, the
-application crashes. While it is possible to check a SQL string before calling
-``.execute()``, this requires a rather large amount of code. Fortunately, there
-is a nifty shortcut we can use instead.
+As shown above, if a user submits invalid information, the application crashes.
+While it is possible to check a SQL string before calling ``.execute()``, this
+requires a rather large amount of code. Fortunately, there is a nifty shortcut
+we can use instead.
 
-Update the ``execute_query()`` function as follows:
+#. Update the ``execute_query()`` function as follows:
 
-.. sourcecode:: Python
-   :lineno-start: 11
+   .. sourcecode:: Python
+      :lineno-start: 11
 
-   if "select" in query_string.lower():
-      try:
-         results = list(cursor.execute(query_string))
-      except:
-         results = 'error'
-
-.. index:: ! try/except
-
-This demonstrates how to use a **try/except** block. Python *tries* to run the
-code on line 13. If ``query_string`` contains no mistakes, ``.execute()`` runs
-fine, and ``results`` is assigned data from the table.
-
-If ``query_string`` is incorrect, ``.execute()`` throws an error. However,
-instead of crashing, Python moves to the ``except`` clause and runs the code
-there! The ``try/except`` block *prevents the program from crashing* by
-providing an safe, alternative set of code. In this case, it assigns the
-``'error'`` string to ``results``.
-
-Cool! ``try/except`` saves you some time, since you don't need to do a detailed
-check of the SQL string.
-
-Apply this to the else block as well:
-
-.. sourcecode:: Python
-   :lineno-start: 8
-
-   def execute_query(query_string):
-      db = sqlite3.connect('project.db')
-      cursor = db.cursor()
       if "select" in query_string.lower():
          try:
-               results = list(cursor.execute(query_string))
+            results = list(cursor.execute(query_string))
          except:
-               results = 'error'
+            results = 'error'
+
+   .. index:: ! try/except
+
+#. This demonstrates how to use a **try/except** block. Python *tries* to run
+   the code on line 13. If ``query_string`` contains no mistakes,
+   ``.execute()`` runs fine, and ``results`` is assigned data from the table.
+
+   If ``query_string`` is incorrect, ``.execute()`` throws an error. However,
+   instead of crashing, Python moves to the ``except`` clause and runs the code
+   there! The ``try/except`` block *prevents the program from crashing* by
+   providing an safe, alternative set of code. In this case, it assigns the
+   ``'error'`` string to ``results``.
+#. Cool! ``try/except`` saves you some time, since you don't need to do a
+   detailed check of the SQL string.
+#. Add a ``try/except`` block to the ``else`` clause as well:
+
+   .. sourcecode:: Python
+      :lineno-start: 16
+
       else:
          try:
-               cursor.execute(query_string)
-               db.commit()
-               results = "success"
+            cursor.execute(query_string)
+            db.commit()
+            results = "success"
          except:
                results = 'error'
       db.close()
@@ -184,16 +175,82 @@ entries in each form.
 
 Continue testing your application until you are comfortable with how it works.
 
-Update ``select_query`` Function
---------------------------------
+Display Column Names
+--------------------
 
-Want to display column headings...
+Use the ``SELECT`` form to run a few successful queries. Notice how the column
+names do NOT appear in the output.
 
-Deal with '*' entry...
+.. figure:: figures/no-col-headings.png
+   :alt: The results from a SELECT query displayed in a table. No column headings appear.
+
+   It would be nice if the output displayed the column names!
+
+To make the results more clear, it would be nice to add the column names to the
+output. ``base.html`` already has the ability to do this, but it's missing some
+data.
+
+.. sourcecode:: html
+   :lineno-start: 23
+
+   <table>
+      <tr> <!-- 'tr' indicates a table row. 'th' is a heading cell. -->
+
+         <!-- The 'selected_columns' key points to a list of column names. -->
+         {% for column in session['selected_columns'] %}
+            <th class="centered">{{column.strip()}}</th>
+         {% endfor %}
+      </tr>
+
+To display the column names, you need to assign a list to the
+``selected_columns`` key in the session cookie.
+
+#. Open ``main.py`` and find the ``select_query()`` function.
+#. Add a conditional just before calling ``execute_query()``:
+
+   .. sourcecode:: Python
+      :lineno-start: 65
+
+      def select_query():
+         if request.method == 'POST':
+            table = session['table']
+            columns = request.form['columns']
+            condition = request.form['condition']
+            sql_query = f"SELECT {columns} FROM {table}"
+            if condition != '':
+               sql_query += f" WHERE {condition}"
+
+            # Here's the 4 lines of new code!
+            if columns == '*':
+               session['selected_columns'] = session['columns'].copy()
+            else:
+               session['selected_columns'] = columns.split(',')
+
+            results = execute_query(sql_query)
+
+If ``columns == '*'`` returns ``True``, then line 76 runs. The
+``selected_columns`` key is assigned the full list of column names. If
+``False``, then the string of column names collected from the form (line 68) is
+split into a list. This list is assigned to the session key.
+
+Make the updates, then submit the SELECT form a few more times to test the new
+feature.
+
+Gloat
+-----
+
+Whew! This was a long project, so take a moment to show off your work.
 
 Bonus
 -----
 
-Add CSS styling to make the form(s) look nice.
+Your SQL application now works, but there are ways to fine tune the project
+to make it your own!
 
-Case insensitivity for column names...
+Feel free to update your program by doing any or all of the following:
+
+#. Add CSS styling to make the forms look nicer.
+#. Make the data collected from the forms entries case-insensitive.
+#. To confirm changes made to a table, automatically run a ``SELECT`` query
+   after ``UPDATE``, ``INSERT``, or ``DELETE``.
+#. Add more specific error messages based on what's wrong with a SQL query.
