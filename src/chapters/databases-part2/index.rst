@@ -5,6 +5,9 @@ Build a Blog
    :maxdepth: 3
 
    introduction
-   project-part1
-   project-part2
-   project-part3
+   db-setup
+   add-entries
+   display-data
+   update-entries
+   extras
+   wrap-up
