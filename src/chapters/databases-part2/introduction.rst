@@ -3,13 +3,14 @@ Introduction
 
 Lorem ipsum...
 
-Outline idea for project, but encourage students to use whatever idea they
-want!
+Outline idea for project.
 
-The key is to create 2 linked tables and pull related entries from each one.
+The key is to create 2 tables and perform CRUD operations on each one via the
+context of a game app.
 
-Ideas:
+Note that we will build a bare-bones Minesweeper game. Example of a
+*minimum viable product*. Consider it a prototype that can be broken if not
+handled gently. Beta testing comes later, and that will ID corrections to the
+code that need to be made.
 
-#. Blog posts, labeled by user.
-#. Playlist data (albums, artists)
-#. Other...
+Video of finished project, which will include a description of how to play.

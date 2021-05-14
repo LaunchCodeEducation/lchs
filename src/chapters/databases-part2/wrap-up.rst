@@ -1,4 +1,0 @@
-Wrap-Up
--------
-
-Lorem ipsum...

@@ -1,13 +1,15 @@
-Build a Blog
-============
+Build a Minesweeper Game
+========================
 
 .. toctree::
    :maxdepth: 3
 
    introduction
    db-setup
-   add-entries
-   display-data
-   update-entries
+   home-page
+   game-page
+   home-logic
+   game-logic
+   db-logic
+   game-functions
    extras
-   wrap-up
