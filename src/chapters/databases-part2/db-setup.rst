@@ -1,6 +1,9 @@
 Database Setup
 ==============
 
+The key is to create 2 tables and perform CRUD operations on each one via the
+context of a game app.
+
 Starts with pen and paper! Think about the data the game needs in order to
 work.
 
