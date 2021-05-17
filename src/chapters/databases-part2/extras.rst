@@ -11,3 +11,7 @@ Possible next steps for the game...
 #. Add a timer. Preserve names and fastest times.
 #. Different game board sizes.
 #. Other...
+
+For example, we
+might want to save a user's name and progress, just in case they need to leave
+the game and come back later.

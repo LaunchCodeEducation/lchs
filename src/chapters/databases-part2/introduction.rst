@@ -1,5 +1,5 @@
 Introduction
-------------
+============
 
 Welcome to the end of LaunchCode's LCHS course! In this chapter, we will use
 our Python, web development, and database skills to build a game application.
@@ -21,10 +21,17 @@ The video clip below demonstrates what the finished project will look like. It
 also provides game instructions for those who might not be familiar with how to
 play Minesweeper.
 
-.. todo:: Insert video of finished Minesweeper project, which includes a description of how to play.
-
 .. raw:: html
 
    <section class="vid_box">
       <iframe class="vid" src="https://www.youtube.com/embed/n2tXf33yAQk" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
+
+Project Setup
+-------------
+
+New directory in local_practice folder...
+
+Clone starter code repo...
+
+Venv and install Flask...
