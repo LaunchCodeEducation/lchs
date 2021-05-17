@@ -15,5 +15,7 @@ Add code to main.py to render the template.
 #. Main menu will be simple for now. Can add more features and instructions
    later. Key coding tip: Get the bare-bones game working first, then worry
    about the bells and whistles.
+#. Note style.css. Won't make specific changes in the notes or videos, but
+   students can update the CSS rules anytime they want!
 
 Video tutorial...

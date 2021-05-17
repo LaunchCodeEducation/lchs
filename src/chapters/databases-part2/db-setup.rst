@@ -39,9 +39,11 @@ tables.
 
 Follow along with the video to build this program.
 
-.. todo:: Insert video tutorial for the Minesweeper database setup.
+.. raw:: html
 
-Create ``mines`` and ``board`` tables...
+    <section class="vid_box">
+       <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 
 .. admonition:: Note
 
@@ -51,18 +53,43 @@ Create ``mines`` and ``board`` tables...
 Video Summary
 -------------
 
-Lorem ipsum...
+.. admonition:: Tip
 
-#. Adding the ``DROP TABLE`` commands at the top of the file lets us reset the
-   database in case we need a fresh start.
-#. Primary key data type must be ``INTEGER`` and not ``INT``. For some reason,
-   the latter syntax doesn't work to automatically increment the primary key
-   values.
-#. ``NOT NULL`` prevents a row from being inserted if the SQL command leaves
-   out a value for that column.
-#. Use nested loops to create and assign the coordinates for each cell on the
-   board.
-#. Note the unused X/Y and 0/11 row/column labels. There's reason for this, but
-   we won't go into that now. (Link to game logic section).
+   Don't try to code ``db_setup.py`` using only the summary! The clip contains
+   information and specific code instructions that you really shouldn't skip.
+
+   The text by itself doesn't provide enough detail on its own. It's a
+   *SUMMARY* and not a *GMESD* (Give-Me-Every-Single-Detail).
+
+#. After creating the ``game.db`` database file, add two new tables: ``mines``
+   and ``board``. The first table stores an ID number and location for each
+   mine created in the game. The second table stores information about each
+   cell on the game board.
+#. Adding ``DROP TABLE`` commands at the top of the file lets us quickly remove
+   and recreate the two tables. This is useful if we need to make a fresh
+   start.
+#. The ``mines`` table includes two columns: ``mine_id`` and ``coordinates``.
+   ``mine_id`` is the primary key, and its data type must be ``INTEGER`` instead
+   of ``INT``. (For some reason, using the ``INT`` syntax doesn't automatically
+   increment the primary key values).
+
+   ``coordinates`` is of type ``TEXT`` and will store values like ``C9`` or
+   ``E2``.
+#. The ``board`` table includes columns for ``cell_id`` (the primary key),
+   ``coordinates``, ``surr_mines`` (surrounding mines), ``guessed`` and
+   ``mine_id``.
+
+   ``cell_id``, ``surr_mines``, and ``mine_id`` are integers. ``coordinates``
+   is a text data type, and ``guessed`` is a boolean.
+#. No rows need to be added to the ``mines`` table at this time. However, the
+   ``board`` table *does* require some information.
+#. A pair of nested loops create a string value for the coordinates of each cell
+   on the board.
+#. The loops also execute a SQL query to insert new rows into the ``board``
+   table. Each new row includes a string for ``coordinates`` and the value
+   ``False`` for the ``guessed`` column.
+#. Note the unused row and column labels (``X, Y, 0``, and ``11``). There is a
+   reason for these extra labels, but we won't explore that until later in the
+   chapter. (Link to game logic section).
 
 .. todo:: Insert link to game logic section here (why include X/Y and 0/11 labels).
