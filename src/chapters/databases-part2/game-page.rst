@@ -13,4 +13,8 @@ Add code to main.py to render the template.
 Discuss different format for the form. Each *button* serves as an input, rather
 than creating the usual ``input`` elements/fields.
 
-Video tutorial...
+.. raw:: html
+
+    <section class="vid_box">
+       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/Q-4gN3tx6h8"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>

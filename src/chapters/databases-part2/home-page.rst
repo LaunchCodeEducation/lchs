@@ -62,9 +62,14 @@ a menu for choosing the number of mines, and a space for instructions.
 Remember that our goal is to get the game working, so we will keep this page
 simple for now. We can always make improvements and add other features later!
 
-Follow along with the video as we build the HTML template:
+Open the Minesweeper project and code along with the video as we build the HTML
+template:
 
-.. todo:: Add video tutorial for creating the home page for the Minesweeper game.
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/iKkYGMHWWco"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Video Summary
 -------------
