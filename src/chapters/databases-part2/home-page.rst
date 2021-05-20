@@ -62,8 +62,8 @@ a menu for choosing the number of mines, and a space for instructions.
 Remember that our goal is to get the game working, so we will keep this page
 simple for now. We can always make improvements and add other features later!
 
-Open the Minesweeper project and code along with the video as we build the HTML
-template:
+Open your Minesweeper project and code along with the video as we build the
+HTML template:
 
 .. raw:: html
 
@@ -74,10 +74,34 @@ template:
 Video Summary
 -------------
 
-#. Creating the table with Jinja3 loops.
-#. Note make_columns() and make_rows() functions in the game_logic.py file.
-   (We will use these to fill in r/c headings as well as the text inside the
-   game board buttons).
-#. Add code to main.py to render the template.
-#. On the home-logic page, we will add statements to deal with placing mines,
-   collecting user input, etc.
+#. Our job right now is to build the view for the home page. We won't worry
+   about adding any code to deal with placing mines or collecting data from
+   the form.
+#. The home page includes a title, one small form (``Main Menu``), an inactive
+   copy of the game board, and a reserved space for game instructions.
+#. The form contains a single ``input`` field of type ``number``. Other
+   attributes include ``min`` and ``max`` values to encourage the user to
+   select a reasonable number of mines. Adding some ``placeholder`` text
+   inside the input box helps with the UI/UX.
+#. Use a ``table`` element to build the rows and columns in the game board.
+
+   a. Use one ``<tr></tr>`` element for each row in the table.
+   b. Inside each row element, use ``<th>`` or ``<td>`` tags for the individual
+      cells. The number of cells in each row matches the number of columns we
+      want in the table.
+   c. Use one Jinja3 loop to display the column headings (1 - 10) at the top
+      of the table.
+   d. Use a nested pair of loops to display the row label or button in each
+      individual cell.
+
+#. The text that appears on the board is stored in a session cookie. Column
+   headings can be accessed from a list assigned to the ``session['columns']``
+   key. Row data can be accessed from ``session['rows']``.
+
+.. admonition:: Note
+
+   Remember, you don't have to keep the default styling! Feel free to
+   modify your project's CSS file to change the appearance of the page.
+
+   If you wish, you can also link to the `Bootstrap CSS library <https://getbootstrap.com/docs/5.0/getting-started/introduction/>`__
+   and use :ref:`their classes <bootstrap-classes>` to style your page.

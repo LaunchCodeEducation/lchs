@@ -30,8 +30,12 @@ play Minesweeper.
 Project Setup
 -------------
 
-New directory in local_practice folder...
+#. Launch Visual Studio Code and open your ``local_practice`` directory.
+#. Clone the Minesweeper starter code from GitHub. The project folder is
+   called ``LCHS_Minesweeper_Game``.
+#. Follow the usual process to install a new virtual environment. Name the
+   new environment ``game-env``. (If you want to use a different name, 
+   that's fine. Just remember to update the ``.gitignore`` file).
+#. Activate the virtual environment and install Flask.
 
-Clone starter code repo...
-
-Venv and install Flask...
+.. todo:: Add link to the Minesweeper GitHub repository.
