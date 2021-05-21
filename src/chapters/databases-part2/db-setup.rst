@@ -42,7 +42,7 @@ Follow along with the video to build this program.
 .. raw:: html
 
     <section class="vid_box">
-       <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
 .. admonition:: Note

@@ -9,5 +9,7 @@ from GitHub when they cloned the repo.
 #. Discuss the make_rows() and make_columns() functions.
 #. Discuss the place_mines() function.
 #. Discuss the check_guess() function.
+#. Discuss the check_surroundings() function. Note the *nested* loops for the
+   systematic row and column checks.
 
 Video walkthrough...

@@ -30,19 +30,44 @@ store it in the database.
 Open the ``crud.py`` file in Visual Studio Code, then code along with the
 video:
 
-.. todo:: Insert video tutorial for adding the Minesweeper CRUD logic.
+.. raw:: html
 
-Note counter in record_mines. This works for now, since the list of mine coords
-is sorted, and the rows are added to the mine table in order. However, if we
-wanted to link these two tables, or if the mines were added to existing
-content, we would need to add extra steps to match the mine_id values in the
-separate tables.
+    <section class="vid_box">
+       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/IUJaBfx7Jlk" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
 
 Video Summary
 -------------
 
-#. Import required modules.
-#. Review the execute_query() function.
-#. Code record_mines() and count_mines() functions.
-#. Code the check_surroundings() function. Note the *nested* loops for the
-   systematic row and column checks.
+#. The Python code for our Minesweeper application is split across three files:
+   ``main.py``, ``game_logic.py``, and ``crud.py``. This provides several
+   advantages:
+
+   a. We keep related functions together, which helps organize our work.
+   b. We keep the individual files small.
+   c. Smaller files are easier to debug.
+   d. Any of the separate files can be used as modules in other projects.
+
+#. The database functions are all located inside the ``curd.py`` file.
+#. The ``execute_query()`` function has one job - to run SQL queries and return
+   the results. It is identical to the function we used in part 2 of the
+   :ref:`Movie SQLs project <movie-sql-part-2>`.
+#. The ``record_mines()`` function adds rows to the ``mines`` table. The
+   function also updates the ``board`` table. Each action requires its own
+   SQL query string, which will be formatted and executed as part of a loop.
+
+   .. admonition:: Note
+
+      Using the ``counter`` variable works because the ``mines`` and ``board``
+      table are reset before each new game.
+
+      If we wanted to add new data to *existing* content, we would need to use
+      a different approach. We would have to write extra SQL queries, then use
+      the results to match the ``mine_id`` values in the two tables.
+   
+#. The ``count_mines()`` function runs one ``SELECT`` query on the ``board``
+   table. This collects the coordinates for each cell in the game board (like
+   ``B7``). Once that is done, the ``count_mines()`` uses a loop to repeatedly
+   call the ``check_surroundings()`` function.
+#. A detailed review of the ``check_surroundings()`` function will be done
+   later in this chapter.

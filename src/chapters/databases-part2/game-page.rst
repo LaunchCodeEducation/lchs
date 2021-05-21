@@ -35,7 +35,7 @@ page:
 .. raw:: html
 
     <section class="vid_box">
-       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/Q-4gN3tx6h8"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/Q-4gN3tx6h8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
 Video Summary

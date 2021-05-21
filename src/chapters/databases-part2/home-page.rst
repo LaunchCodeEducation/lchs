@@ -68,7 +68,7 @@ HTML template:
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/iKkYGMHWWco"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/iKkYGMHWWco" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 Video Summary
