@@ -18,7 +18,11 @@ The home page for our application is controlled by the ``index()`` function in
 To complete your ``index()`` function, open your Minesweeper project and code
 along with the video:
 
-.. todo:: Insert video tutorial for adding the Minesweeper home page logic.
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/OZ1-PDXDZwI"" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Video Summary
 -------------

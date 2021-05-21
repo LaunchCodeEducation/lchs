@@ -3,11 +3,11 @@ Database Functions
 
 When a player clicks a cell on the game board, several things might happen:
 
-#. If the cell contains a mine, the player blows up. All of the hidden mines
-   are revealed, and the game ends.
+#. If the cell contains a mine, the game ends. The player blows up, all of the
+   hidden mines are revealed, and any remaining buttons are deactivated.
 #. If the cell does NOT contain a mine, the button is replaced by a number.
    This number tells the player how many mines are located in the spaces
-   surrounding the clicked cell.
+   surrounding the cell.
 #. If the *Flag Mine* checkbox is selected, the cell changes color when
    clicked. The button remains active.
 
