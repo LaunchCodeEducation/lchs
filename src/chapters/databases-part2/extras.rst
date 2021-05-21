@@ -10,6 +10,9 @@ Possible next steps for the game...
    this type of game!
 #. Add a timer. Preserve names and fastest times.
 #. Different game board sizes.
+#. Clicking the *Back* button causes problems.
+#. Adding more server-side validation for the Main Menu form. Currently, there
+   is no check for numbers outside of the 5 - 25 mine range.
 #. Other...
 
 For example, we

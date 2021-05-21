@@ -9,7 +9,7 @@ Build a Minesweeper Game
    home-page
    game-page
    home-logic
-   game-logic
    db-logic
+   game-logic
    game-functions
    extras
