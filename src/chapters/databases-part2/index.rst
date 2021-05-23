@@ -11,5 +11,5 @@ Build a Minesweeper Game
    home-logic
    db-logic
    game-logic
-   game-functions
    extras
+   game-functions

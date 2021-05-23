@@ -27,14 +27,26 @@ around a clicked cell. This data needs to be known *before* the player makes
 their the first move. Let's figure out how to gather the mine information and
 store it in the database.
 
-Open the ``crud.py`` file in Visual Studio Code, then code along with the
-video:
+Open the ``crud.py`` file in Visual Studio Code, then code along with each of
+the following videos.
+
+The ``record_mines()`` Function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
-    <section class="vid_box">
-       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/IUJaBfx7Jlk" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/QcxEuR6ALns" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+The ``count_mines()`` Function
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/q2EcgavIgAE" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Video Summary
 -------------
@@ -48,9 +60,9 @@ Video Summary
    c. Smaller files are easier to debug.
    d. Any of the separate files can be used as modules in other projects.
 
-#. The database functions are all located inside the ``curd.py`` file.
+#. The database functions are all located inside the ``crud.py`` file.
 #. The ``execute_query()`` function has one job - to run SQL queries and return
-   the results. It is identical to the function we used in part 2 of the
+   the results. It is identical to the function we used in Part 2 of the
    :ref:`Movie SQLs project <movie-sql-part-2>`.
 #. The ``record_mines()`` function adds rows to the ``mines`` table. The
    function also updates the ``board`` table. Each action requires its own
@@ -67,7 +79,14 @@ Video Summary
    
 #. The ``count_mines()`` function runs one ``SELECT`` query on the ``board``
    table. This collects the coordinates for each cell in the game board (like
-   ``B7``). Once that is done, the ``count_mines()`` uses a loop to repeatedly
-   call the ``check_surroundings()`` function.
+   ``B7``). Once that is done, ``count_mines()`` uses a loop to repeatedly call
+   the ``check_surroundings()`` function.
+
+   a. The ``execute_query()`` function returns a list of results when it
+      runs a ``SELECT`` query. However, the elements in the list are NOT simple
+      string values.
+   b. To extract the cell coordinates from the query results, we need to
+      access each element in the list and include an index value.
+   
 #. A detailed review of the ``check_surroundings()`` function will be done
    later in this chapter.
