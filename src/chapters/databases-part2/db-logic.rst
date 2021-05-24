@@ -78,15 +78,15 @@ Video Summary
       the results to match the ``mine_id`` values in the two tables.
    
 #. The ``count_mines()`` function runs one ``SELECT`` query on the ``board``
-   table. This collects the coordinates for each cell in the game board (like
-   ``B7``). Once that is done, ``count_mines()`` uses a loop to repeatedly call
+   table. This collects the coordinates (like ``B7``) for each cell in the game
+   board. Once that is done, ``count_mines()`` uses a loop to repeatedly call
    the ``check_surroundings()`` function.
 
    a. The ``execute_query()`` function returns a list of results when it
       runs a ``SELECT`` query. However, the elements in the list are NOT simple
       string values.
-   b. To extract the cell coordinates from the query results, we need to
-      access each element in the list and include an index value.
+   b. To extract the cell coordinates from the list, we must access each
+      element and include an ``[index]`` value to retrieve the string.
    
 #. A detailed review of the ``check_surroundings()`` function will be done
    later in this chapter.
