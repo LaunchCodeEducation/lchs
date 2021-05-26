@@ -42,6 +42,12 @@ The ``check_guess()`` Function
 
 Lorem ipsum...
 
+The ``check_guess()`` function returns ``True`` each time the user clicks on a
+safe cell on the game board. This happens when the cell does NOT contain a
+mine, or if the user selects the *Flag Mine* option before clicking on the
+cell. ``check_guess()`` returns ``False`` when the player chooses a cell that
+contains a mine.
+
 The ``crud.py`` Module
 ----------------------
 

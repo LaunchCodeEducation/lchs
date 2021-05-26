@@ -39,11 +39,19 @@ tables.
 
 Follow along with the video to build this program.
 
+.. admonition:: Tip
+
+   The video player automatically sets the resolution. However, this choice
+   might not be good enough to clearly see all of the text.
+
+   If the code looks blurry on your screen, click the gear icon in the video
+   controls and increase the resolution to the maximum value.
+   
 .. raw:: html
 
-    <section class="vid_box">
-       <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 .. admonition:: Note
 

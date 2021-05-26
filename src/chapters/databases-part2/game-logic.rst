@@ -36,13 +36,8 @@ Collect Checkbox Data and Call ``check_guess()``
 Update ``mines.html``
 ---------------------
 
-The ``check_guess()`` function returns ``True`` each time the user clicks on a
-safe cell on the game board. This happens when the cell does NOT contain a
-mine, or if the user selects the *Flag Mine* option before clicking on the
-cell. ``check_guess()`` returns ``False`` when the player chooses a cell that
-contains a mine.
-
-There are 4 possibilities for the cells in the table. Each one is either:
+As the user plays the game, the appearance of the board changes. There are 4
+possibilities for the cells in the table. Each one is either:
 
 #. **Unselected**: These appear with a gray background and have an active, blue
    button.
@@ -54,14 +49,34 @@ There are 4 possibilities for the cells in the table. Each one is either:
    Clicking a mined cell ends the game and reveals the locations of all
    remaining mines on the board.
 
-The ``play()`` and ``check_guess()`` functions determine the appearance for
-each cell on the game board. However, we need to update the code in
-``mines.html`` to properly display the results.
+The ``play()`` function calls ``check_guess()`` each time the user clicks a
+button on the board. The results determine the how that cell should change
+after it is selected.
 
-Open the ``game_logic.py`` and ``mines.html`` files in Visual Studio Code, then
-code along with the following video.
+To finish our Minesweeper game, we need to update the code in ``mines.html``.
+Our goal is to properly display the board after each turn. Also, we'll provide
+different feedback messages to indicate victory or defeat.
 
-.. todo:: Insert third video for finishing the Minesweeper game.
+Open the ``mines.html`` template in Visual Studio Code, then code along with
+the following videos.
+
+Change Cells After Click
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/an8sh-Xp5PQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+Add Feedback Messages
+^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/aIJZhKCjX1E" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 Video Summary
 -------------
