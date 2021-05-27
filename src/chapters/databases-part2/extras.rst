@@ -18,3 +18,5 @@ Possible next steps for the game...
 For example, we
 might want to save a user's name and progress, just in case they need to leave
 the game and come back later.
+
+if 'num_mines' not in session or session['num_mines'] <= 0:
