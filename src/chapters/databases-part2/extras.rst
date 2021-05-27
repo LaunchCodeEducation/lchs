@@ -5,6 +5,18 @@ Besides squashing bugs, feel free to make changes and experiment with new
 features. This page describes several options, but these are only a few of the
 directions you can go.
 
+.. admonition:: Tip
+
+   Before you start making changes to the game, be sure to create a new Git
+   branch!
+
+   .. sourcecode:: bash
+
+      git checkout -b new-branch-name
+
+   This way, you preserve a working copy of your project. If your new idea ends
+   in disaster, you can always make a fresh start from the working application.
+
 Appearance Options
 ------------------
 
@@ -12,7 +24,8 @@ Appearance Options
    of the website by updating the rules inside the ``style.css`` file.
    Alternatively, import the `Bootstrap <https://getbootstrap.com/docs/5.0/getting-started/introduction/>`__
    library and play around with different ``class`` values.
-#. Display instructions for how to play Minesweeper.
+#. Currently, the application doesn't tell the user how to play Minesweeper.
+   Include some instructions to fix this.
 #. Automatically resize the table to fit different screens. Scrolling is
    distracting for this type of game! To test resizing behavior, click and drag
    the bottom corer of your browser window. You want the content to grow and
@@ -28,7 +41,11 @@ Appearance Options
 Gameplay Options
 ----------------
 
-#. Add a timer.
+#. Currently, the game board is set as a 10x10 grid. Try refactoring your code
+   to work with different sized layouts.
+#. How can you tell if your Minesweeper performance improved? By adding a
+   timer, of course. Research different Python modules and functions to track
+   how long it takes to win a game.
 #. Different game board sizes.
 #. Adding more server-side validation for the Main Menu form. Currently, there
    is no check for numbers outside of the 5 - 25 mine range.
