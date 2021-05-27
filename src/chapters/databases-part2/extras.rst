@@ -15,8 +15,8 @@ Appearance Options
 #. Display instructions for how to play Minesweeper.
 #. Automatically resize the table to fit different screens. Scrolling is
    distracting for this type of game! To test resizing behavior, click and drag
-   the bottom corer of your browser window. You want the table to grow and
-   shrink to keep all the rows and columns in view.
+   the bottom corer of your browser window. You want the content to grow and
+   shrink to keep all the rows, columns, and text in view.
       
    .. figure:: figures/responsive-board.gif
       :alt: The game table resizes to fit the window.
