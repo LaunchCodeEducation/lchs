@@ -17,8 +17,13 @@ Appearance Options
    distracting for this type of game! To test resizing behavior, click and drag
    the bottom corer of your browser window. You want the table to grow and
    shrink to keep all the rows and columns in view.
-
-   [screenshot]
+      
+   .. figure:: figures/responsive-board.gif
+      :alt: The game table resizes to fit the window.
+      :width: 70%
+   
+      Having to scroll to play Minesweeper provides a poor UX. The table should
+      resize to fit in the available space.
 
 Gameplay Options
 ----------------
