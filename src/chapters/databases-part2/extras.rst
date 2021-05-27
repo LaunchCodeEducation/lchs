@@ -2,8 +2,8 @@ Next Steps
 ==========
 
 Besides squashing bugs, feel free to make changes and experiment with new
-features. This page describes several options, but these are only a few of the
-directions you can go.
+features. You can browse the options below for ideas, but there are plenty of
+other directions you can follow.
 
 .. admonition:: Tip
 
@@ -42,25 +42,34 @@ Gameplay Options
 ----------------
 
 #. Currently, the game board is set as a 10x10 grid. Try refactoring your code
-   to work with different sized layouts.
+   to work with different table layouts. Can you give the player a choice for
+   the board they want to use?
 #. How can you tell if your Minesweeper performance improved? By adding a
-   timer, of course. Research different Python modules and functions to track
-   how long it takes to win a game.
-#. Different game board sizes.
-#. Adding more server-side validation for the Main Menu form. Currently, there
-   is no check for numbers outside of the 5 - 25 mine range.
-#. Clicking the *Back* button causes problems.
+   timer, of course! Research different Python modules and/or functions to
+   track how long it takes to win a game.
+#. Add more server-side validation for the *Main Menu* input. Currently, there
+   is no check for mine numbers that fall outside of the 5 - 25 range.
 #. Entering the URL for the game board *before* visiting the home page throws
    an error. Smooth over this rough patch by checking if ``num_mines`` is in
    the session.
+#. When a game is in progress, clicking the *Back* button in the browser causes
+   problems. Explore what goes wrong, then try to code a solution.
 
 Database Options
 ----------------
 
-#. Save Game feature. We have all of that session data, which can be loaded
-   into a different table in the database. For example, we might want to save a
-   user's name and progress, just in case they need to leave the game and come
-   back later.
-#. Save win/loss data. Preserve initials and fastest times.
+#. How about adding a *Save Game* feature? A player might want to leave their
+   current game and come back later.
+   
+   a. Try storing all of the session data to a new table in the database, then
+      practice retrieving it.
+   b. Include a *Save* button on the game page, and add a *Resume* button to
+      the main menu.
 
-   [Screenshot of 80's arcade high score list.]
+#. Save a player's name (or initials) plus their win/loss data. Maybe you can
+   display some type of *High Scores* list.
+
+   .. figure:: figures/high-scores.png
+      :alt: An high scores list from an arcade game.
+
+      This is from an arcade game, not Minesweeper, but you get the idea.
