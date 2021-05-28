@@ -66,7 +66,7 @@ Here's a breakdown of the code:
    the first column contains row letters instead of active spaces, no heading
    is necessary.
 #. **Line 22**: This sets up a basic ``for`` loop. Each time it repeats,
-   ``label`` is assigned a new integer (0, 1, 2, ..., 9).
+   ``label`` is assigned a new integer (0, 1, 2, ... 9).
 #. **Line 23**: This appends the value ``label + 1`` to the end of the
    ``headings`` list.
 #. **Line 24**: This returns an independent copy of the column headings, which
@@ -81,9 +81,9 @@ Here's a breakdown of the code:
 
       headings = ['', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
    
-   Well, if we add a parameter to ``make_columns()`` we can adapt the ``for``
-   loop to generate a different number of headings for the game board. This
-   opens up the possibility for different board layouts.
+   Using a loop keeps our code flexible. If we add a parameter to
+   ``make_columns()``, we can adapt the ``for`` loop to generate a different
+   number of headings. This opens up the possibility for other board layouts.
 
    .. sourcecode:: Python
 
@@ -99,13 +99,14 @@ to build a list with all the string values needed for the row labels and button
 text.
 
 There are 10 rows on the game board (A - J), and each one contains 11 columns.
-To fit this structure, ``make_rows()`` returns two-dimensional *list of lists*.
+To fit this structure, ``make_rows()`` returns a two-dimensional
+*list of lists*.
 
 .. sourcecode:: bash
 
-   rows = [ [row_A_entries], [row_B_entries], ..., [row_J_entries] ]
+   rows = [ [row_A_entries], [row_B_entries], ... [row_J_entries] ]
 
-Each entry in ``rows`` is a list with 11 elements. Each element is a string
+Each entry in ``rows`` is a list with 11 elements. Each element is the string
 value for a row label (``A - J``) or button text (like ``B7``).
 
 To generate the 2-dimensional list, ``make_rows()`` uses a pair of nested
@@ -136,41 +137,135 @@ Here's a breakdown of the code:
    assigns an empty list to the accumulator variable ``cells``.
 #. **Lines 31 - 35**: Line 31 begins the *inner loop*. Each time it repeats,
    ``column`` is assigned an integer in the range 0 - 10. When ``column == 0``,
-   we are dealing with the first cell in the row. Line 33 appends the single
-   letter to ``cells``.
+   we are dealing with the first cell in the row. Line 33 appends ``letter`` to
+   ``cells``.
 
    When ``column`` is not ``0``, the space on the board will contain a button.
    Line 35 appends a letter/number combination to ``cells``. This string will
    be used as the text inside the button.
 
    After the inner loop finishes, the ``cells`` list contains 11 entries. 
-#. **Line 36**: This appends the completed ``cells`` list to ``rows``.
+#. **Line 36**: This statement is part of the outer loop. It appends the
+   completed ``cells`` list to ``rows``.
 #. **Line 37**: This returns the completed ``rows`` list, which is assigned to
    ``session['rows']``.
 
 The ``place_mines()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+``place_mines()`` is called from the ``index()`` function in ``main.py``. Its
+job is to randomly assign mines to locations on the game board. It accepts a
+single parameter, which is the number of mines to hide.
+
+.. sourcecode:: Python
+   :lineno-start: 39
+
+   def place_mines(amount):
+      mines = []
+      while len(mines) < amount:
+         row = random.choice(string.ascii_uppercase[0:10])
+         column = random.randint(1, 10)
+         location = row + str(column)
+         if location not in mines:
+            mines.append(location)
+      mines.sort()
+      record_mines(mines)
+      count_mines()
+      return mines.copy()
+
+Here's a breakdown of the code:
+
+#. **Line 40**: Assigns an empty list to the ``mines`` variable. This begins
+   yet another example of the accumulator pattern!
+#. **Line 41**: The condition ``len(mines) < amount`` keeps the ``while`` loop
+   running until the number of entries in ``mines`` matches the number assigned
+   to ``amount``.
+#. **Line 42**: ``string.ascii_uppercase[0:10]`` returns a slice from the
+   string of uppercase letters. In this case, the index values ``[0:10]``
+   return the letters from index 0 (``A``) to index 9 (``J``).
+
+   ``random.choice`` then selects one character from the slice.
+#. **Line 43**: This selects a random integer from 1 - 10, including both end
+   points.
+#. **Line 44**: This combines the row letter with the column number, and then
+   assigns the string to ``location``.
+#. **Lines 45 & 46**: The conditional prevents duplicate choices for the mine
+   locations. If the newly chosen cell is NOT currently in the ``mines`` list,
+   it is added. Otherwise, the choice is ignored.
+#. **Lines 47 - 50**: These statements alphabetize the ``mines`` list, call two
+   of the ``crud.py`` functions, and return an independent copy of the list.
+
+.. admonition:: Note
+
+   We coded the ``record_mines()`` and ``count_mines()`` functions on the
+   :ref:`Database Functions page <crud-tutorials>`.
 
 The ``check_guess()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+``check_guess()`` is called from the ``play()`` function in ``main.py``. It
+returns ``True`` each time the player chooses a safe cell on the game board.
+This happens when the cell does NOT contain a mine, or if the user selects the
+*Flag Mine* option before clicking on the space. ``check_guess()`` returns
+``False`` when the player hits a mine.
 
-The ``check_guess()`` function returns ``True`` each time the user clicks on a
-safe cell on the game board. This happens when the cell does NOT contain a
-mine, or if the user selects the *Flag Mine* option before clicking on the
-cell. ``check_guess()`` returns ``False`` when the player chooses a cell that
-contains a mine.
+.. sourcecode:: Python
+   :lineno-start: 52
+
+   def check_guess(guess, flag):
+      safe_guess = True
+      if flag:
+         session['flags'].append(guess)
+         session['num_mines'] -= 1
+         if guess in session['mines']:
+            session['mines'].remove(guess)
+      else:
+         sql_query = f"SELECT * FROM board WHERE coordinates = '{guess}' AND mine_id IS NULL"
+         no_mine = execute_query(sql_query)
+         if no_mine:
+            if guess in session['flags']:
+               session['flags'].remove(guess)
+               session['num_mines'] += 1
+            session['guesses'].append(guess)
+         else:
+            safe_guess = False        
+      session.modified = True
+      sql_query = f"UPDATE board SET guessed = True WHERE coordinates = '{guess}'"
+      execute_query(sql_query)
+      return safe_guess
+
+Given the size of the function, it's easier to review it with a video!
+
+.. todo:: Insert ``check_guess()`` video discussion.
 
 The ``crud.py`` Module
 ----------------------
 
-Lorem ipsum...
+This file manages the nitty-gritty details of interacting with the game's
+database. We reviewed all but one of the functions earlier.
 
 The ``check_surroundings()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Discuss the check_surroundings() function. Note the *nested* loops for the
-systematic row and column checks.
+Video ideas:
+
+#. Discuss the check_surroundings() function. Note the *nested* loops for the
+   systematic row and column checks.
+#. Note the past viewings of the ``board`` table in the database. It contains
+   rows for cells that don't exist in the game! Why?
+#. Figure showing the search pattern/algorithm. Note that it works fine for
+   central cells, but not so well for cells on the edges or corners of the
+   board. Rather than code separate checking algorithms for the 9 different
+   cases (center, r/l/t/b edges, 4 corners), we code ONE algorithm and make
+   every cell fit it.
+#. Note the trick! This is a common type of search. By adding an empty layer
+   around the board (top layer, bottom layer, r & l columns), we make sure that
+   EVERY selection the player makes is actually a "center" cell.
+#. This might seem wasteful, but the cost of adding 44 extra spaces is minimal
+   compared to the effort saved by reducing the complexity of the checking
+   algorithm.
+#. Click on a cell on the game board. Discuss the difference between the
+   checking algorithm for a central cell vs. and edge cell vs. a corner cell.
+   Note that it would take 4 separate sets of code for the edges (one for each
+   side), plus another 4 for the corners. PLUS conditionals to check column and
+   row numbers to figure out which function to call.

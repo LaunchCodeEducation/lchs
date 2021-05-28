@@ -19,6 +19,8 @@ When a player clicks a cell on the game board, several things might happen:
 Our goal over the next two pages will be to get all of these behaviors working.
 We'll start with the required database operations.
 
+.. _crud-tutorials:
+
 Add Code To ``crud.py``
 -----------------------
 
