@@ -94,7 +94,59 @@ Here's a breakdown of the code:
 The ``make_rows()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Lorem ipsum...
+``make_rows()`` is also called from the ``reset_board()`` function. Its job is
+to build a list with all the string values needed for the row labels and button
+text.
+
+There are 10 rows on the game board (A - J), and each one contains 11 columns.
+To fit this structure, ``make_rows()`` returns two-dimensional *list of lists*.
+
+.. sourcecode:: bash
+
+   rows = [ [row_A_entries], [row_B_entries], ..., [row_J_entries] ]
+
+Each entry in ``rows`` is a list with 11 elements. Each element is a string
+value for a row label (``A - J``) or button text (like ``B7``).
+
+To generate the 2-dimensional list, ``make_rows()`` uses a pair of nested
+loops.
+
+.. sourcecode:: Python
+   :lineno-start: 26
+
+   def make_rows():
+      rows = []
+      for row in range(10):
+         letter = string.ascii_uppercase[row]
+         cells = []
+         for column in range(11):
+            if column == 0:
+               cells.append(letter)
+            else:
+               cells.append(letter + str(column))
+         rows.append(cells)
+      return rows.copy()
+
+Here's a breakdown of the code:
+
+#. **Line 27**: Assigns an empty list to ``rows``.
+#. **Lines 28 - 30**: Line 28 starts the *outer loop*. Each time it repeats,
+   ``row`` is assigned a new value in the range 0 - 9. Line 29 uses this
+   integer to assign an uppercase character (``A - J``) to ``letter``. Line 30
+   assigns an empty list to the accumulator variable ``cells``.
+#. **Lines 31 - 35**: Line 31 begins the *inner loop*. Each time it repeats,
+   ``column`` is assigned an integer in the range 0 - 10. When ``column == 0``,
+   we are dealing with the first cell in the row. Line 33 appends the single
+   letter to ``cells``.
+
+   When ``column`` is not ``0``, the space on the board will contain a button.
+   Line 35 appends a letter/number combination to ``cells``. This string will
+   be used as the text inside the button.
+
+   After the inner loop finishes, the ``cells`` list contains 11 entries. 
+#. **Line 36**: This appends the completed ``cells`` list to ``rows``.
+#. **Line 37**: This returns the completed ``rows`` list, which is assigned to
+   ``session['rows']``.
 
 The ``place_mines()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
