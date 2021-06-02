@@ -21,7 +21,7 @@ the conditions for each new game, initializes session variables, populates
 lists, hides mines, formats SQL query strings, and checks if the player makes a
 safe choice on the board.
 
-The module begins by importing *other* Python modules:
+The module begins by importing three *other* Python modules:
 
 .. sourcecode:: Python
    :linenos:
@@ -90,6 +90,8 @@ Here's a breakdown of the code:
       def make_columns(num_headings = 10):
          headings = ['']
          for label in range(num_headings):
+            headings.append(label+1)
+         return headings.copy()
 
 The ``make_rows()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -126,7 +128,7 @@ loops.
             else:
                cells.append(letter + str(column))
          rows.append(cells)
-      return rows.copy()
+      return rows
 
 Here's a breakdown of the code:
 
@@ -182,13 +184,13 @@ Here's a breakdown of the code:
    to ``amount``.
 #. **Line 42**: ``string.ascii_uppercase[0:10]`` returns a slice from the
    string of uppercase letters. In this case, the index values ``[0:10]``
-   return the letters from index 0 (``A``) to index 9 (``J``).
+   return the letters ``'ABCDEFGHIJ'``.
 
-   ``random.choice`` then selects one character from the slice.
+   ``random.choice`` then selects one letter from the slice.
 #. **Line 43**: This selects a random integer from 1 - 10, including both end
    points.
-#. **Line 44**: This combines the row letter with the column number, and then
-   assigns the string to ``location``.
+#. **Line 44**: This combines the row letter with the column number and assigns
+   the string to ``location``.
 #. **Lines 45 & 46**: The conditional prevents duplicate choices for the mine
    locations. If the newly chosen cell is NOT currently in the ``mines`` list,
    it is added. Otherwise, the choice is ignored.
@@ -223,10 +225,10 @@ This happens when the cell does NOT contain a mine, or if the user selects the
          sql_query = f"SELECT * FROM board WHERE coordinates = '{guess}' AND mine_id IS NULL"
          no_mine = execute_query(sql_query)
          if no_mine:
+            session['guesses'].append(guess)
             if guess in session['flags']:
                session['flags'].remove(guess)
                session['num_mines'] += 1
-            session['guesses'].append(guess)
          else:
             safe_guess = False        
       session.modified = True
@@ -236,7 +238,11 @@ This happens when the cell does NOT contain a mine, or if the user selects the
 
 Given the size of the function, it's easier to review it with a video!
 
-.. todo:: Insert ``check_guess()`` video discussion.
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/MlSs38HWk2I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
 
 The ``crud.py`` Module
 ----------------------
