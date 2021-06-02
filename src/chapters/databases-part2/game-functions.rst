@@ -244,6 +244,8 @@ Given the size of the function, it's easier to review it with a video!
       <iframe class="vid" src="https://www.youtube-nocookie.com/embed/MlSs38HWk2I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
+.. _check-surroundings-walkthrough:
+
 The ``crud.py`` Module
 ----------------------
 
@@ -269,12 +271,15 @@ session cookie and the database.
 
 The code for ``check_surroundings()`` is probably the most involved. To help
 break up the discussion, we've split the explanation into two parts. The first
-describes how to perform a *2-dimensional search*. That is, how do we check the
-8 cells above, below, and to each side of the selected location.
+describes how to perform a *2-dimensional search*, which checks the 8 cells
+above, below, and to each side of the selected location. The second video
+examines the Python code used to perform that search.
 
-   [IMAGE: 1-d vs. 2-d searches.]
+.. figure:: figures/2d-search.png
+   :alt: Showing the difference between a 1-dimensional and 2-dimensional search.
+   :width: 70%
 
-The second video examines the Python code used to perform the search.
+   A 2-dimensional search involves changing the row AND column values.
 
 How to Check Surrounding Cells
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

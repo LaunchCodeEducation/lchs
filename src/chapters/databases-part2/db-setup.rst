@@ -97,7 +97,5 @@ Video Summary
    table. Each new row includes a string for ``coordinates`` and the value
    ``False`` for the ``guessed`` column.
 #. Note the unused row and column labels (``X, Y, 0``, and ``11``). There is a
-   reason for these extra labels, but we won't explore that until later in the
-   chapter. (Link to game logic section).
-
-.. todo:: Insert link to game logic section here (why include X/Y and 0/11 labels).
+   reason for these extra labels, but we won't explore that until the
+   :ref:`end of the chapter <check-surroundings-walkthrough>`.
