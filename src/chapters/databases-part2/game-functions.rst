@@ -248,30 +248,62 @@ The ``crud.py`` Module
 ----------------------
 
 This file manages the nitty-gritty details of interacting with the game's
-database. We reviewed all but one of the functions earlier.
+database. We reviewed or coded all but one of these functions earlier in this
+chapter. Now it's time to complete that work.
 
 The ``check_surroundings()`` Function
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Video ideas:
+``check_surroundings()`` is called at the start of each new round of
+Minesweeper. When the player submits a number of mines to hide:
 
-#. Discuss the check_surroundings() function. Note the *nested* loops for the
-   systematic row and column checks.
-#. Note the past viewings of the ``board`` table in the database. It contains
-   rows for cells that don't exist in the game! Why?
-#. Figure showing the search pattern/algorithm. Note that it works fine for
-   central cells, but not so well for cells on the edges or corners of the
-   board. Rather than code separate checking algorithms for the 9 different
-   cases (center, r/l/t/b edges, 4 corners), we code ONE algorithm and make
-   every cell fit it.
-#. Note the trick! This is a common type of search. By adding an empty layer
-   around the board (top layer, bottom layer, r & l columns), we make sure that
-   EVERY selection the player makes is actually a "center" cell.
-#. This might seem wasteful, but the cost of adding 44 extra spaces is minimal
-   compared to the effort saved by reducing the complexity of the checking
-   algorithm.
-#. Click on a cell on the game board. Discuss the difference between the
-   checking algorithm for a central cell vs. and edge cell vs. a corner cell.
-   Note that it would take 4 separate sets of code for the edges (one for each
-   side), plus another 4 for the corners. PLUS conditionals to check column and
-   row numbers to figure out which function to call.
+#. The ``index()`` function calls ``place_mines()``.
+#. The ``place_mines()`` function picks random locations on the board to hide
+   the new set of mines. Then it calls the ``count_mines()`` function.
+#. ``count_mines()`` iterates through all of the cells in the ``board`` table,
+   and it passes each location to ``check_surroundings()``.
+
+For a given cell on the table, ``check_surroundings()`` counts the number of
+mines hidden in the surrounding spaces. This total is stored in both the
+session cookie and the database.
+
+The code for ``check_surroundings()`` is probably the most involved. To help
+break up the discussion, we've split the explanation into two parts. The first
+describes how to perform a *2-dimensional search*. That is, how do we check the
+8 cells above, below, and to each side of the selected location.
+
+   [IMAGE: 1-d vs. 2-d searches.]
+
+The second video examines the Python code used to perform the search.
+
+How to Check Surrounding Cells
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/4_EU4nwMdRs" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+The ``check_surroundings()`` Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. raw:: html
+
+   <section class="vid_box">
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/t10yxhZNar8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+
+Video Summary
+^^^^^^^^^^^^^
+
+#. To check all of the spaces surrounding a given cell, we can use a pair of
+   :ref:`nested for loops <nested-loops>`. The *outer loop* sets a new row
+   value. The *inner loop* iterates over the possible columns in each row.
+#. To simplify our search algorithm, add extra cells to the board!
+   
+   a. Place the cells along the outer edge of the game board.
+   b. The cells remain hidden from the player, and they will never contain a
+      mine.
+   c. The cost of storing data for the hidden cells is well worth it. We gain
+      *a lot more* by decreasing the complexity of the search.
