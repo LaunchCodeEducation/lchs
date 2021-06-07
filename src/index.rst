@@ -71,6 +71,7 @@ Small Activities
    :name: activitiestoc
 
    activities/user-input
+   activities/cyoa
 
 Large Assignments
 =================
