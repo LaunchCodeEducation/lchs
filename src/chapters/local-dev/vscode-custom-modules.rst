@@ -202,7 +202,7 @@ Other Import Details
 ^^^^^^^^^^^^^^^^^^^^
 
 As long as the modules we need are stored in directories below ``main.py``, we
-can go several layers deep with our ``import`` statement. To move down multiple
+can extend the chain of directory names as far as necessary with our ``import`` statement. To move down multiple
 levels from ``main.py``, we use dot-notation to include the different directory
 names.
 
@@ -231,9 +231,6 @@ names.
 
       from subdir1.subdir2 import gradebook
 
-As long as the module we want is stored below ``main.py`` in the file tree, we
-can extend the chain of directory names as far as necessary.
-
 We can also import a specific function (or class) from a module stored in a
 subdirectory. In this case, we include the module name in our dot-notation.
 
@@ -252,7 +249,7 @@ subdirectory. In this case, we include the module name in our dot-notation.
 Importing From a Parent Directory
 ---------------------------------
 
-While it is possible to force Python so search upwards through your filesystem, 
+While it is possible to force Python to search upwards through your filesystem, 
 this isn't recommended. To do so requires a work-around, and that process can
 go wrong in lots of ways.
 
@@ -313,5 +310,3 @@ Use the file tree shown below to answer the questions.
       <p id="Q2"></p>
 
 .. Answer = a.
-
-

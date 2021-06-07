@@ -51,7 +51,7 @@ The workspace in Visual Studio Code consists of three main panels:
 #. **Terminal Panel**: VS Code allows us to run our terminal application inside
    the workspace. All of the actions we practiced in the
    :ref:`Terminal chapter <terminal-chapter>` will work here.
-#. **Toolbar and File Tree**: This panel lets us navigate the file system,
+#. **Activity Bar and File Tree**: This panel lets us navigate the file system,
    perform searches, install extensions, update the software, etc.
 #. **Editor Panel**: Our code goes here! VS Code recognizes most major
    programming languages.
@@ -94,10 +94,10 @@ Desktop.
 When we write our first local Python program, we will use the terminal to run
 that code.
 
-Toolbar and File Tree
----------------------
+Activity Bar and File Tree
+--------------------------
 
-The toolbar on the left side of the workspace contains nine buttons, but we
+The Activity Bar on the left side of the workspace contains several buttons, but we
 will only look at three of them right now.
 
 #. **File Explorer**: Clicking on the top icon hides/reveals the file tree for
