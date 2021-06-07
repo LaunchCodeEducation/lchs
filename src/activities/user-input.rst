@@ -1,5 +1,5 @@
-User Input Activity
-===================
+Activity #1: User Input
+=======================
 
 In this activity, you will practice collecting user input from the console and
 storing the data in different variables.
