@@ -72,6 +72,7 @@ Small Activities
 
    activities/user-input
    activities/cyoa
+   activities/making-diamonds
 
 Large Assignments
 =================
