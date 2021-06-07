@@ -94,12 +94,13 @@ Check Your Understanding
       <ol type="a">
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the user enters a password.</li>
          <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the user needs to provide required data.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the data in a input field needs to follow a specific format.</li>
-         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Anytime we build a form.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the data in an input field needs to follow a specific format.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime we build a form.</li>
+         <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> All of the above.</li>
       </ol>
       <p id="Q1"></p>
 
-.. Answer = d
+.. Answer = e
 
 .. admonition:: Question
 
