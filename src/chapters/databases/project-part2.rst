@@ -132,7 +132,7 @@ we can use instead.
    If ``query_string`` is incorrect, ``.execute()`` throws an error. However,
    instead of crashing, Python moves to the ``except`` clause and runs the code
    there! The ``try/except`` block *prevents the program from crashing* by
-   providing an safe, alternative set of code. In this case, it assigns the
+   providing a safe, alternative set of code. In this case, it assigns the
    ``'error'`` string to ``results``.
 #. Cool! ``try/except`` saves you some time, since you don't need to do a
    detailed check of the SQL string.

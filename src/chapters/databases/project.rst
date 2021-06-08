@@ -281,8 +281,8 @@ Follow the same process as above to finish the ``insert_query()`` and
 Next Steps
 ----------
 
-Your Flask application now builds SQL query strings from different web forms.
-Now you need to execute those queries, update the database, and display
-feedback to the user.
+Congratulations! Your Flask application builds SQL query strings from different
+web forms. Now you need to execute those queries, update the database, and
+display feedback to the user.
 
 Continue on to :ref:`Part 2 <movie-sql-part-2>` of this project.
