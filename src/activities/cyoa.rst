@@ -1,6 +1,11 @@
 Activity #2: Adventure Time!
 ============================
 
+.. admonition:: Tip
+
+   For best results, complete the :ref:`Conditionals chapter <conditionals>`
+   before starting this activity.
+
 While playing a game or reading a story, you may have needed to make a choice.
 Your decision affects how the rest of the story unfolds. What should you do?
 This is an example of the *Choose Your Own Adventure* (CYOA) idea.

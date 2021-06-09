@@ -1,6 +1,11 @@
 Activity #3: Making Diamonds
 ============================
 
+.. admonition:: Tip
+
+   For best results, complete the :ref:`Functions chapter <functions-toc>`
+   before starting this activity.
+
 One good way to solve large problems is to split them into smaller tasks. With
 code, these smaller pieces are solved by writing *functions*. Combining the
 results from each function allows us to complete the bigger task.

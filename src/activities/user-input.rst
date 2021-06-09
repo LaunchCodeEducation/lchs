@@ -7,6 +7,11 @@ storing the data in different variables.
 Python uses the ``input`` keyword to prompt the user for information. This
 allows you to build some simple interactivity into your programs.
 
+.. admonition:: Tip
+
+   For best results, complete the :ref:`Data and Variables chapter <data-and-variables>`
+   before starting this activity.
+
 Setup
 -----
 
