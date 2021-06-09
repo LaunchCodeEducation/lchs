@@ -88,6 +88,7 @@ Appendices
    appendices/turtles/index
    appendices/terminal-commands/index
    appendices/extras/index
+   appendices/exercise-solutions/index
 
 .. toctree::
    :hidden:

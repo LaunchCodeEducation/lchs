@@ -1,3 +1,5 @@
+.. _data-and-variables-exercises:
+
 Exercises: Data & Variables
 ===========================
 
