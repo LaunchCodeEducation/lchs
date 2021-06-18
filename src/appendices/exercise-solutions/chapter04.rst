@@ -4,7 +4,7 @@ Chapter 4: Data and Variables
 The answers on this page show ONE way to solve the :ref:`exercises <data-and-variables-exercises>`.
 However, there are usually OTHER ways to accomplish the same thing. This is OK!
 
-	A suggested solution is ONE way to solve the problem, not the ONLY way.
+   A suggested solution is ONE way to solve the problem, not the ONLY way.
 
 Chapter Sandbox
 ---------------
