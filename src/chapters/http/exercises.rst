@@ -18,9 +18,9 @@ for the page is in the editor below.
    A simple webpage for HTTP viewing.
 
 For these examples, you will need to open a couple of new tabs. Click the
-*Open in repl.it* button to enter the full workspace. Next, click on the
-*Open in a new tab* button that appears in the upper right corner of the output
-panel.
+*Open in replit* button to enter the Replit workspace. Next, *Fork* a copy of
+the code to your own account. Finally, in the upper right corder of the output
+panel, click the *Open in a new tab* icon.
 
 .. raw:: HTML
 
