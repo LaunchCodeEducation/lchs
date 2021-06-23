@@ -192,12 +192,11 @@ some data.
 
 .. admonition:: Example
 
-   Take a look near the bottom of ``base.html``. The Jinja2 loop
+   Take a look near the middle of ``base.html``. The Jinja3 loop
 
-   ``for column in session['selected_columns']``
+   ``{% for column in session['selected_columns'] %}``
    
-   creates a heading with each column name assigned to the ``selected_columns``
-   key.
+   creates a heading for each column name assigned to ``selected_columns``.
 
    .. sourcecode:: html
       :lineno-start: 23
@@ -218,7 +217,7 @@ To display the column names, you need to assign a list to the
 #. Add a conditional just before calling ``execute_query()``:
 
    .. sourcecode:: Python
-      :lineno-start: 65
+      :lineno-start: 55
 
       def select_query():
          if request.method == 'POST':
@@ -237,10 +236,10 @@ To display the column names, you need to assign a list to the
 
             results = execute_query(sql_query)
 
-Line 68 requests the string of column names from the SELECT form and assigns it
+Line 58 requests the string of column names from the SELECT form and assigns it
 to the ``columns`` variable.
 
-If ``columns == '*'`` returns ``True``, then line 76 runs. The
+If ``columns == '*'`` returns ``True``, then line 66 runs. The
 ``selected_columns`` key is assigned the full list of column names. If
 ``False``, then the string assigned to ``columns`` is split into a list. This
 list is assigned to the session key.
