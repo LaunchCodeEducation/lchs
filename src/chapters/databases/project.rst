@@ -149,8 +149,8 @@ You need to add code to the function that will:
          else:
             pass
    
-   On line 46, ``['condition']`` matches to the name attribute given to the
-   input element in ``delete.html``. Line 47 retrieves the value assigned to
+   On line 50, ``['condition']`` matches to the name attribute given to the
+   input element in ``delete.html``. Line 51 retrieves the value assigned to
    ``session['table']``. This value was set inside the ``index()`` function.
 #. Use the ``table`` and ``condition`` variables to build the string for the
    SQL query. Also, assign the empty string to ``sql_query`` in the ``else``
