@@ -216,7 +216,7 @@ look at three possible cases:
 
 .. admonition:: Example
 
-   If we pull a stylesheet from a website (like `Boostrap <https://getbootstrap.com/docs/4.5/getting-started/introduction/>`__),
+   If we pull a stylesheet from a website (like `Bootstrap <https://getbootstrap.com/docs/4.5/getting-started/introduction/>`__),
    use the web address for the ``href`` attribute.
 
    .. sourcecode:: html
