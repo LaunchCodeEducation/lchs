@@ -29,10 +29,10 @@ paste it into the sandbox.
 
 .. admonition:: Tip
 
-   Indentation matters! Python isn't picky about whether you indent by 3 or 4
-   spaces, but you MUST be consistent within a code block. One difficulty with
-   copy/pasting code is that the *editor* might indent lines by a different
-   amount compared to the *text*. After a paste, be sure to check the
+   Indentation matters! Python isn't picky about whether you indent by 2 or 3
+   or 4 spaces, but you MUST be consistent within a code block. One difficulty
+   with copy/pasting code is that the *editor* might indent lines by a
+   different amount compared to the *text*. After a paste, be sure to check the
    indentation. This is especially true if you type some of your own lines into
    the editor.
 
