@@ -1,4 +1,4 @@
-Jinja2 Templates
+Jinja3 Templates
 ================
 
 In the :ref:`last chapter <flask-templates>`, we learned how to render a
@@ -6,14 +6,14 @@ In the :ref:`last chapter <flask-templates>`, we learned how to render a
 to the template and filling them with data sent from a Python function. At the
 time, we didn't give these templates an official name.
 
-.. index:: ! Jinja2
+.. index:: ! Jinja3
 
-The Flask framework uses the `Jinja2 template language <https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e>`__.
+The Flask framework uses the `Jinja3 template language <https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e>`__.
 Jinja2 lets us include both variables and a little programming logic inside of
 an HTML document. When the file is rendered by a browser, these placeholders
 get replaced with actual values.
 
-Most of a Jinja2 template consists of normal HTML. Sprinkled throughout the
+Most of a Jinja3 template consists of normal HTML. Sprinkled throughout the
 code, however, we will find the following:
 
 #. **Double curly braces**: ``{{ }}`` These surround a variable or an
