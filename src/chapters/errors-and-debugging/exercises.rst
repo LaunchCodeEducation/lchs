@@ -96,24 +96,26 @@ Solve Logic Errors
 #. The last code sample checks if a username is valid, but it's not working yet.
    Add ``print`` statements as directed to find and fix the logic errors.
 
-   Username rules:
+   **Username rules**:
 
    a. Must be 5 - 10 characters long.
    b. Must only contain letters and numbers.
    c. Must contain at least 1 digit.
 
-   Test names:
+   **Test names**:
 
-   a. ``"Me2"`` should be invalid (too short).
+   a. ``"R2D2"`` should be invalid (too short).
    b. ``"CoderGirl"`` should be invalid (no number).
    c. ``"rut*baga8"`` should be invalid (illegal symbol).
    d. ``"This1IsTooLong"`` should be invalid (too long).
+   e. ``"High5"`` and ``"pyth0n"`` are both valid (that's a zero in place of
+      the "o").
 
 .. admonition:: Example
 
    #. On line 10, add ``print(is_valid)`` to check if the conditional on line
       8 correctly assigns ``True`` and ``False`` based on the length of the
-      username. Be sure to run the program with all four test names. ``Me2``
+      username. Be sure to run the program with all four test names. ``R2D2``
       and ``This1IsTooLong`` should return ``False``, while ``CoderGirl`` and
       ``rut*baga8`` should return ``True``.
 
@@ -125,7 +127,7 @@ Solve Logic Errors
       ::
 
          False
-         'Me2' is a valid username.
+         'R2D2' is a valid username.
 
       In this case, ``is_valid`` is ``False`` at line 10, but the username
       still gets labeled as valid. This tells you that a logic error follows
