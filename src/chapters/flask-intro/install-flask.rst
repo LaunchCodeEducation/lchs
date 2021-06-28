@@ -22,6 +22,7 @@ Every application we develop should have its own directory on our machine. This
 allows us to keep our work organized and track each project with its own Git
 repository.
 
+
 #. On your device, create a new directory called ``flask_projects``. Inside
    this folder, create a sub-directory called ``hello_flask``.
 #. Launch Visual Studio Code and open the ``hello_flask`` folder.

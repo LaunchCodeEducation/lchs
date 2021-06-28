@@ -82,6 +82,6 @@ to use the framework.
    in going further, here are some useful resources to help you take the next
    steps:
 
-   #. `Flask documentation <https://flask.palletsprojects.com/en/1.1.x/>`__
+   #. `Flask documentation <https://flask.palletsprojects.com/en/2.0.x/>`__
    #. `The Flask Mega-Tutorial <https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world>`__
    #. `What is Flask (from pythonbasics.org) <https://pythonbasics.org/what-is-flask-python/>`__
