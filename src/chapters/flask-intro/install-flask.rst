@@ -103,9 +103,9 @@ Add Flask
    ::
 
       (hello-env) $ flask --version
-      Python 3.8.5
-      Flask 1.1.2
-      Werkzeug 1.0.1
+      Python 3.9.5
+      Flask 2.0.1
+      Werkzeug 2.0.1
 
 #. To exit an environment, just enter the command ``deactivate`` in the
    terminal.
