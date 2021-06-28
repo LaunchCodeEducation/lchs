@@ -107,6 +107,12 @@ Add Flask
       Flask 2.0.1
       Werkzeug 2.0.1
 
+   .. admonition:: Note
+   
+      Software updates occur frequently, so the version numbers you see might be
+      slightly different. As long as you have a Python version at or above 3.6, you
+      should be fine.
+
 #. To exit an environment, just enter the command ``deactivate`` in the
    terminal.
 
