@@ -320,7 +320,8 @@ submit valid data from the form. You need to fix this!
    ``code = 307`` is a crude way of restricting access to the success page, but
    it gets you thinking in the right direction.
    
-   We'll learn a better way to restrict access in a later chapter.
+   Unfortunately, exploring better ways to restrict access is beyond the scope of
+   this text.
 
 Bonus Mission
 -------------

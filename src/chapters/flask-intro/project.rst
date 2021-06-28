@@ -43,7 +43,7 @@ The starter code is located in a different branch in the repository.
    structure looks like this:
 
    .. figure:: figures/caesar-filetree.png
-      :alt: Filetree showing 2 folders and 4 files.
+      :alt: Filetree showing 2 folders and 5 files.
 
       The ``static`` and ``templates`` directories are ready for your HTML and CSS files.
 
@@ -224,7 +224,7 @@ string. Instead of using ``"abcdef..."``, we move selected letters to the start
 of the string. This makes it harder to decode a captured message because the
 letter order isn't as predictable.
 
-.. figure:: figures/keyword-cipher.png
+.. figure:: figures/keyword-cipher-2.png
    :alt: Rearrange letters to form a keyword at the start of the alphabet string.
    :width: 80%
 
