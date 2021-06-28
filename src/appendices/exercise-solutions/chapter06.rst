@@ -14,3 +14,23 @@ Solutions
 ---------
 
 Lorem ipsum...
+
+``for`` Practice
+^^^^^^^^^^^^^^^^
+
+Lorem ipsum...
+
+``while`` Practice
+^^^^^^^^^^^^^^^^^^
+
+Lorem ipsum...
+
+The Accumulator Pattern
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Lorem ipsum...
+
+Challenge
+^^^^^^^^^
+
+Lorem ipsum...
