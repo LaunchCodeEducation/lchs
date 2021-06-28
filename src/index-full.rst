@@ -27,6 +27,7 @@ Chapters
    chapters/forms/index
    chapters/flask-intro/index
    chapters/more-flask/index
+   chapters/sessions/index
 
 .. toctree::
 
@@ -56,6 +57,7 @@ Projects
    chapters/forms/project
    chapters/flask-intro/project
    chapters/more-flask/project
+   chapters/sessions/project
 
 Assignments
 ===========
@@ -69,6 +71,7 @@ Assignments
    assignments/console-game
    assignments/html-me-something
    assignments/communication-log
+   assignments/flask-game
 
 Appendices
 ==========
@@ -92,3 +95,4 @@ Appendices
    :hidden:
 
    todos
+   assignments/flask-game-repo
