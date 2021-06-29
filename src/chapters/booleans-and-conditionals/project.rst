@@ -46,9 +46,9 @@ Part A: PREDICT
    .. sourcecode:: python
       :linenos:
 
-      if (engine_indicator_light == "green"):
+      if engine_indicator_light == "green":
          print("Engines started")
-      elif (engine_indicator_light == "green blinking"):
+      elif engine_indicator_light == "green blinking":
          print("Engines preparing to start")
       else:
          print("Engines off")
@@ -59,13 +59,13 @@ Part A: PREDICT
       :linenos:
 
       # Code block 1
-      if (crew_status and computer_status_code == 200 and space_suits_on):
+      if crew_status and computer_status_code == 200 and space_suits_on:
          print("All systems go!")
       else:
          print("WARNING! Not ready.")
 
       # Code block 2
-      if (not crew_status or computer_status_code != 200 or not space_suits_on):
+      if not crew_status or computer_status_code != 200 or not space_suits_on:
          print("WARNING. Not ready")
       else:
          print("All systems go!")
