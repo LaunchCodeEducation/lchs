@@ -117,6 +117,19 @@ Part B: Cabin Safety Checks
 Part C: Fuel Safety Checks
 --------------------------
 
+Define two new variables:
+
+.. list-table::
+   :widths: auto
+   :header-rows: 1
+
+   * - Variable
+     - Value
+   * - ``fuel_level``
+     - ``10000``
+   * - ``engine_temperature``
+     - ``2000``
+
 #. Use ``if/elif/else`` statements to monitor the spacecraft's fuel status.
    Order is important when working with conditionals, and the checks below are
    NOT written in the correct sequence.
@@ -131,7 +144,7 @@ Part C: Fuel Safety Checks
    c. If ``fuel_level`` is above 5000 AND ``engine_temperature`` is at or below
       2500, print ``"Fuel level above 25%. Engines good."``
    d. If ``fuel_level`` is at or below 5000 OR ``engine_temperature`` is above
-      2500, print ``"Check fuel level. Engines running hot."``
+      2500, print ``"ALERT: Check fuel level and engine temperature."``
    e. If ``fuel_level`` is below 1000 OR ``engine_temperature`` is above 3500
       OR ``engine_indicator_light`` is red blinking, print ``"ENGINE FAILURE
       IMMINENT!"``
@@ -167,15 +180,15 @@ as the expected output.
    * - 5000
      - 1200
      - NOT ``red blinking``
-     - ``Check fuel level. Engines running hot.``
+     - ``ALERT: Check fuel level and engine temperature.``
    * - 12000
      - 2600
      - NOT ``red blinking``
-     - ``Check fuel level. Engines running hot.``
-   * - 18000
+     - ``ALERT: Check fuel level and engine temperature.``
+   * - 10000
      - 2500
      - NOT ``red blinking``
-     - ``Fuel level above 50%. Engines good.``
+     - ``Fuel level above 25%. Engines good.``
 
 A Final Bit of Fun!
 -------------------
@@ -196,7 +209,7 @@ and send the ship into space anyway!
 #. Code the following ``if/else`` check:
 
    If ``fuel_level`` is above 20000 AND ``engine_indicator_light`` is NOT
-   red blinking OR ``command_override`` is true print ``"Cleared to
+   red blinking OR ``command_override`` is ``True``, print ``"Cleared to
    launch!"``
 
    Else print ``"Launch scrubbed!"``
