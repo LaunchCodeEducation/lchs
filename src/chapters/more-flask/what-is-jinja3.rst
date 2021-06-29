@@ -9,6 +9,12 @@ time, we didn't give these templates an official name.
 .. index:: ! Jinja3
 
 The Flask framework uses the `Jinja3 template language <https://codeburst.io/jinja-2-explained-in-5-minutes-88548486834e>`__.
+.. admonition:: Note
+
+   Jinja3 was released early 2021 and currently there is not much in the way of tutorials.  The above link is to Jinja2 but will still give you a good overview.
+
+
+
 Jinja3 lets us include both variables and a little programming logic inside of
 an HTML document. When the file is rendered by a browser, these placeholders
 get replaced with actual values.
