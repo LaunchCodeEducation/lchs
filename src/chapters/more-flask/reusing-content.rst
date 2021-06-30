@@ -289,7 +289,7 @@ insert different HTML code. It is possible to build a base template with more
 of these spaces. However, that discussion is beyond the scope of this course.
 
 If you would like to research this topic on your own, a good place to start is
-the `Jinja3 documentation <https://jinja.palletsprojects.com/en/2.11.x/templates/#template-inheritance>`__.
+the `Jinja3 documentation <https://jinja.palletsprojects.com/en/3.0.x/templates/#template-inheritance>`__.
 
 Video Summary
 -------------
