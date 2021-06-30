@@ -55,7 +55,7 @@ console, we use a simple ``for`` loop.
    for dog in dogs:
       print(dog)
 
-Jinja2 allows us to do something similar inside a webpage. The general syntax
+Jinja3 allows us to do something similar inside a webpage. The general syntax
 for a loop is:
 
 ::
@@ -82,13 +82,13 @@ For the pet name template, the ``for`` loop would look like this. Note how line
       {% endfor %}
    </ol>
 
-Set up this way, the Jinja2 engine creates one ``<li></li>`` element for each
+Set up this way, the Jinja3 engine creates one ``<li></li>`` element for each
 entry in ``dogs``. If we use our Python function to add or remove names, the
 template responds by resizing the list in the browser.
 
 .. admonition:: Note
 
-   The purpose of loops in Jinja2 is *for display only*. They are NOT used to
+   The purpose of loops in Jinja3 is *for display only*. They are NOT used to
    perform calculations or process data. That type of logic belongs in our
    Python code. 
 
@@ -107,7 +107,7 @@ for Python is:
 
    for index in range(len(collection)):
 
-For Jinja2, the syntax replaces the ``len`` function with ``|length``.
+For Jinja3, the syntax replaces the ``len`` function with ``|length``.
 
 .. sourcecode:: html
 
@@ -130,7 +130,7 @@ In both cases, ``index`` takes the values ``0, 1, 2...``
       </ol>
 
    Even if the lists for ``dogs``, ``cats``, and ``birds`` are not the same
-   length, Jinja2 won't throw an *index out of range* error. Instead, the
+   length, Jinja3 won't throw an *index out of range* error. Instead, the
    placeholders for the missing values show up as empty spots on the page.
 
    .. figure:: figures/animal-name-list.png
