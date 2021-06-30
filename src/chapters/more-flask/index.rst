@@ -5,7 +5,7 @@ Refill the Flask
    :maxdepth: 3
 
    html-escaping
-   what-is-jinja2
+   what-is-jinja3
    chapter-setup
    logic-in-templates
    template-conditionals

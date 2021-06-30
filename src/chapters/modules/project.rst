@@ -51,7 +51,7 @@ If you are NOT enrolled in a Trinket course, use one of the following links to
 copy the starter code:
 
 #. `Trinket project starter code <https://trinket.io/python/c99c3612a9>`__
-#. `repl.it project starter code <https://repl.it/@launchcode/LCHS-Collaborative-Turtles-starter-code>`__
+#. `repl.it project starter code <https://replit.com/@launchcode/LCHS-Modules-Project>`__
 
 *Each group needs their own copy of the code*.
 

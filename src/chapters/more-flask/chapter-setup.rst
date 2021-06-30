@@ -28,6 +28,8 @@ along. Follow the instructions below to get started.
    .. figure:: figures/initial-filetree.png
       :alt: Filetree with the static, templates, and flask-env folders. Also, files style.css, main.py, and checkbox_form.html.
 
+.. _create-gitignore:
+
 Pro Tip!
 --------
 
