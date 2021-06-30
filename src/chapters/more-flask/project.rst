@@ -336,7 +336,7 @@ code.
 
 In ``main.py``, you kept track of messages as part of the ``inputs``
 dictionary. With message flashing, Flask does this work automatically. The
-`Flask website <https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern>`__
+`Flask website <https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/>`__
 provides a short tutorial on how to set up and display ``flash`` messages. Take
 a look at the examples, and then refactor your application to use the ``flash``
 tools.
