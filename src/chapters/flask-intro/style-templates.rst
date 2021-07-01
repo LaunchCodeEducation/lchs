@@ -105,7 +105,7 @@ Pro Tip
 When we save a change to our HTML code, clicking the *Refresh* button in the
 browser displays the new layout. However, this doesn't always work for changes
 made to the CSS. Browsers often save the stylesheet in memory to speed up
-reloading. If the browser continues to use the old code, we we won't be able to
+reloading. If the browser continues to use the old code, we won't be able to
 see our new styles.
 
 To fix this, we need to force a clean reload of the page. For most browsers
