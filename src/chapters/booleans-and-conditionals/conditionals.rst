@@ -97,7 +97,7 @@ In the editor below, try the following:
 
 .. raw:: html
 
-   <iframe src="https://trinket.io/embed/python3/13c5ed88ed" width="100%" height="200" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+   <iframe src="https://trinket.io/embed/python3/d71026f5c0" width="100%" height="200" frameborder="1" marginwidth="0" marginheight="0"></iframe>
 
 ``else`` Clause
 ---------------
