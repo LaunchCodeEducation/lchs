@@ -6,8 +6,6 @@ our Python, web development, and database skills to build a game application.
 Each of the following pages includes a video tutorial, sample code, and a text
 summary for one piece of the project.
 
-.. index:: ! minimum viable product
-
 The goal is to build a bare-bones Minesweeper game. Consider this a prototype
 for a more refined program. By the end of the chapter, we will have a working
 game, but it will contain a few gaps and rough edges. Repeated playing of the

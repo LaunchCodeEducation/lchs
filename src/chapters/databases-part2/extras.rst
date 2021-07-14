@@ -1,3 +1,5 @@
+.. _game-refinements:
+
 Next Steps
 ==========
 
