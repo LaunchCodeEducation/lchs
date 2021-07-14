@@ -82,7 +82,7 @@ tab. (For the Chrome browser, the tab is called *Application*).
    :alt: View cookies using the browser developer tools. The 'Storage' panel is selected.
    :width: 80%
 
-   View stored cookies by using the browser tools.
+   View stored cookies by using the browser tools. You might need to look carefully to find the tab you want!
 
 .. admonition:: Tip
 
