@@ -1,7 +1,7 @@
 Conditionals in Templates
 =========================
 
-In addition to loops, we can also include conditionals inside our Jinja2
+In addition to loops, we can also include conditionals inside our Jinja3
 templates. These evaluate :ref:`boolean expressions <boolean-expression>` and
 then add or remove HTML elements to the webpage.
 
@@ -11,7 +11,7 @@ specific content.
 ``if/elif/else`` Syntax
 -----------------------
 
-The general syntax for a Jinja2 conditional is:
+The general syntax for a Jinja3 conditional is:
 
 .. sourcecode:: HTML
    :linenos:

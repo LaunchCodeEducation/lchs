@@ -29,6 +29,8 @@ lets us split the development into different paths.
 .. index::
    single: git; branch
 
+.. _branching-in-git:
+
 Branching in Git
 ----------------
 
@@ -276,4 +278,3 @@ Check Your Understanding
       <p id="Q2"></p>
 
 .. Answer = a
-

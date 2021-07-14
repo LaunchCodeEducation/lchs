@@ -127,7 +127,7 @@ You need to add code to the function that will:
 #. Open ``main.py`` and add this code inside the ``delete_query()`` function.
 
    .. sourcecode:: Python
-      :lineno-start: 44
+      :lineno-start: 48
 
       def delete_query():
          if request.method == 'POST':
@@ -140,7 +140,7 @@ You need to add code to the function that will:
    collect the table name from the session cookie.
 
    .. sourcecode:: Python
-      :lineno-start: 44
+      :lineno-start: 48
 
       def delete_query():
          if request.method == 'POST':
@@ -149,15 +149,15 @@ You need to add code to the function that will:
          else:
             pass
    
-   On line 46, ``['condition']`` matches to the name attribute given to the
-   input element in ``delete.html``. Line 47 retrieves the value assigned to
+   On line 50, ``['condition']`` matches to the name attribute given to the
+   input element in ``delete.html``. Line 51 retrieves the value assigned to
    ``session['table']``. This value was set inside the ``index()`` function.
 #. Use the ``table`` and ``condition`` variables to build the string for the
    SQL query. Also, assign the empty string to ``sql_query`` in the ``else``
    clause.
 
    .. sourcecode:: Python
-      :lineno-start: 44
+      :lineno-start: 48
 
       def delete_query():
          if request.method == 'POST':
@@ -171,7 +171,7 @@ You need to add code to the function that will:
    ``delete.html`` template.
 
    .. sourcecode:: Python
-      :lineno-start: 44
+      :lineno-start: 48
 
       def delete_query():
          if request.method == 'POST':
@@ -214,7 +214,7 @@ string.
 #. Open ``update.html`` and identify the name for each input element.
 
    .. sourcecode:: HTML
-      :lineno-start: 21
+      :lineno-start: 16
 
       <h3>Enter your SQL query here:</h3>
       <p>UPDATE <span class="table-col-names">{{session['table']}}</span></p>
@@ -224,7 +224,7 @@ string.
    ``if/else`` conditional.
 
    .. sourcecode:: Python
-      :lineno-start: 40
+      :lineno-start: 44
 
       def update_query():
          if request.method == 'POST':
@@ -281,8 +281,8 @@ Follow the same process as above to finish the ``insert_query()`` and
 Next Steps
 ----------
 
-Your Flask application now builds SQL query strings from different web forms.
-Now you need to execute those queries, update the database, and display
-feedback to the user.
+Congratulations! Your Flask application builds SQL query strings from different
+web forms. Now you need to execute those queries, update the database, and
+display feedback to the user.
 
 Continue on to :ref:`Part 2 <movie-sql-part-2>` of this project.

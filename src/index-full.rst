@@ -98,3 +98,4 @@ Appendices
    :hidden:
 
    todos
+   assignments/flask-game-repo
