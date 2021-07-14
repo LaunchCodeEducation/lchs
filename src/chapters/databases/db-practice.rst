@@ -90,7 +90,12 @@ Retrieve Data From Table
 ------------------------
 
 Code along with this video as we access the information in the database and
-display it in the console.
+display it in the console. We will reuse the ``main.py`` and ``practice.db``
+files. However, we no longer need to CREATE the table or INSERT more rows. To
+avoid some runtime and logic errors, be sure to comment out the statements
+in lines 6 - 15.
+
+We will add new code below those commands.
 
 .. raw:: html
 

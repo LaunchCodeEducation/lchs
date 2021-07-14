@@ -11,6 +11,26 @@ By using an :ref:`UPDATE <sql-update-syntax>` query, we can change one or more
 entries in a table. Code along with the following video to practice this
 technique.
 
+.. admonition:: Note
+
+   The video shows a new column in the ``students`` table. Here's how to add
+   that column and fill it with ``'Yes'`` strings:
+
+   .. sourcecode:: Python
+      :lineno-start: 6
+
+      # Add the recent_grad column to the students table.
+      sql_query = "ALTER TABLE students ADD COLUMN recent_grad TEXT"
+      cursor.execute(sql_query)
+
+      # Fill each cell in the column with a 'Yes' string.
+      sql_query = "UPDATE students SET recent_grad = 'Yes'"
+      cursor.execute(sql_query)
+      database.commit()
+
+   After running this code, your ``students`` table should match the one shown
+   at the beginning of the video.
+
 .. raw:: html
 
    <section class="vid_box">
@@ -19,8 +39,8 @@ technique.
 
 **Key points**:
 
-#. The ``UPDATE`` query uses the ``SET`` keyword to identify one or more columns
-   to change.
+#. The ``UPDATE`` query uses the ``SET`` keyword to identify one or more
+   columns to change.
 #. To identify which rows to change, the ``UPDATE`` query should also include a
    ``WHERE`` condition. If we leave out the condition, then *every* row in the
    table will be modified.
