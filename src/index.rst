@@ -99,3 +99,4 @@ Appendices
 
    todos
    index-full
+   assignments/flask-game-repo

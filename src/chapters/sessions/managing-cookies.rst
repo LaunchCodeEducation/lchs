@@ -19,6 +19,13 @@ starter code in this `GitHub repository <https://github.com/LaunchCodeEducation/
 By switching between the ``main`` to ``final-code`` branch, you can view both
 the starting and ending points of the demonstration.
 
+.. admonition:: Note
+
+   To run the app, you will need to create a new virtual environment, activate
+   it, and install Flask. The repository includes a README file that guides you
+   through this process. You can also review the steps
+   :ref:`here <flask-environment>`.
+
 .. raw:: html
 
    <section class="vid_box">
@@ -69,13 +76,22 @@ As shown in the video, we can use our browser tools to view the cookies saved
 for a particular webpage. The specific commands will vary with each browser,
 but right-clicking on the page is a good thing to try first. Select
 *Inspect Element* from the options that pop up, and then open the *Storage*
-tab.
+tab. (For the Chrome browser, the tab is called *Application*).
 
 .. figure:: figures/storage-panel.png
    :alt: View cookies using the browser developer tools. The 'Storage' panel is selected.
    :width: 80%
 
-   View stored cookies by using the browser tools.
+   View stored cookies by using the browser tools. You might need to look carefully to find the tab you want!
+
+.. admonition:: Tip
+
+   **Safari Users**: If right-clicking on the page doesn't show the *Inspect
+   Element* option, you need to activate the Developer Tools.
+
+   Under the *Safari* menu, select *Preferences*. Click the *Advanced* tab,
+   then select the *Show Develop menu in menu bar* option. Right-clicking
+   should now work as expected!
 
 Note that the cookie data is NOT sent to the webpage as a value. Instead, the
 browser saves a file on our machine to keep track of the key/value pair. Even
@@ -121,8 +137,8 @@ To access just one of the cookie values, we use the syntax:
    cookie_value = request.cookies.get('cookie_name')
 
 When this statement executes, Python scans the cookie data sent with the HTTP
-request. If ``cookie_name`` matches one of the keys, then the value for that
-key is assigned to ``cookie_value``.
+request. If ``cookie_name`` matches one of the keys (like ``fav_cookie``), then
+the value for that key is assigned to ``cookie_value``.
 
 Resources
 ---------

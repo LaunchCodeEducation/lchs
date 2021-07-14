@@ -118,12 +118,12 @@ Update ``main.py``
 
       return render_template('template_name', navigation = navigation, ...)
 
-.. _jinja2-dictionary-iteration:
+.. _jinja3-dictionary-iteration:
 
 Update ``base.html``
 ^^^^^^^^^^^^^^^^^^^^
 
-Jinja2 uses the same syntax as Python to loop through a dictionary
+Jinja3 uses the same syntax as Python to loop through a dictionary
 :ref:`by key/value paris <key-value-iteration>`.
 
 #. Replace the ``li`` items in the list with a loop:
