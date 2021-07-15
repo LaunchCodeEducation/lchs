@@ -10,10 +10,14 @@ from start to finish.
 Now that you have some Flask experience, your team can move the game out of the
 console and into a browser!
 
+.. figure:: 
+   :alt: On left console version of rock paper scissors, on the right the flask version.
+   :height: 300px
+
 .. admonition:: Example
 
    On the left is the same console Rock-Paper-Scissors example from Assignment
-   3. The right hand side shows what it could look like in a browser.
+   1. The right hand side shows what it could look like in a browser.
 
    Insert screenshots, GIFS, or Trinket editor showing the differences between
    a console rock-paper-scissors game and a web-based one...
@@ -41,7 +45,7 @@ Your Flask application must include each of the following:
    reloads.
 #. CSS styling, either from a local ``style.css`` file or from
    :ref:`Bootstrap <bootstrap-classes>`.
-#. At least one Jinja2 loop or conditional within the template(s).
+#. At least one Jinja3 loop or conditional within the template(s).
 #. Both :ref:`client-side and server-side validation <client-server-validation>`.
 #. Python code that:
 
