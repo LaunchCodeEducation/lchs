@@ -21,7 +21,7 @@ along with the video:
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/OZ1-PDXDZwI" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/GcBSzNl670I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 Video Summary
@@ -45,6 +45,8 @@ specific Python code and hear the logic behind it, you need to watch the movie.
       (e.g. submitting and empty field, or letters, or symbols, etc.).
    b. For invalid form submissions, set the number of mines to some default
       value, like ``10``.
+   c. For now, don't worry about checking if the number of mines is within
+      5 - 25. You can return to this idea :ref:`later <game-refinements>`.
 
 #. Save the number of mines to the session cookie. Make sure the value is the
    ``int`` data type.

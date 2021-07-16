@@ -45,7 +45,8 @@ take a look at the different sections.
    back the responses. The code manages the web server, makes decisions, sends
    data to the browser, and interacts with the data management program. The
    control provides a useful middle step. It analyzes HTTP requests and filters
-   out anything that might corrupt the database or access it without permission.
+   out anything that might corrupt the database or access it without
+   permission.
 
 In the Flask applications we've built so far, ``main.py`` serves as the
 control.
@@ -58,6 +59,10 @@ control.
    When you attach a database to your web application, you MUST take steps to
    protect the information. Visitors to your website should never have direct
    access to where you store sensitive data.
+
+An exploration of database security is beyond the scope of this course.
+Fortunately, you have access to the web. Feel free to study this topic on your
+own!
 
 Communicating With a Database
 -----------------------------

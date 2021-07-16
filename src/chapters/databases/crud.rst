@@ -4,6 +4,8 @@ Database Operations
 Before we set up our first database, we need to recognize the four main actions
 we will perform with it.
 
+.. _crud-operations:
+
 CRUD
 ----
 

@@ -42,8 +42,8 @@ Note the following:
    the settings. However, you absolutely CAN adjust the properties and values
    as you see fit! Don't like the gray background on the board? Fix it!
 #. On line 13, the placeholder for the page title needs to be filled. Don't
-   forget to pass a value to ``page_title`` from each ``render_template()``
-   function.
+   forget to :ref:`pass a value <template-placeholders>` to ``page_title`` from
+   each ``render_template()`` function.
 #. Feel free to add extra elements to ``base.html``. Remember that this
    content will appear on any template that extends from the base.
 
@@ -74,9 +74,8 @@ HTML template:
 Video Summary
 -------------
 
-#. Our job right now is to build the view for the home page. We won't worry
-   about adding any code to deal with placing mines or collecting data from
-   the form.
+#. Our focus is to set up the structure for the home page. We won't worry about
+   placing the mines or collecting data from the form.
 #. The home page includes a title, one small form (``Main Menu``), an inactive
    copy of the game board, and a reserved space for game instructions.
 #. The form contains a single ``input`` field of type ``number``. Other

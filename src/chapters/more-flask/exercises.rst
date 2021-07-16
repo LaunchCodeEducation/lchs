@@ -1,7 +1,7 @@
 Exercises: Logic In Templates
 =============================
 
-In this set of exercises, you will add logic to a Jinja2 template. You will
+In this set of exercises, you will add logic to a Jinja3 template. You will
 begin by cloning some starter code from a GitHub repository. This will include
 a ``main.py`` program, but you won't need to modify the Python code to complete
 any of the tasks. However, after you finish the exercises, feel free to explore
@@ -70,7 +70,7 @@ Let's run the web application and see what this template looks like:
 
 #. Open ``grid.html`` in VS Code. The file is missing some boilerplate code
    and a link to the CSS stylesheet. No wonder the page looks so disorganized!
-#. The missing code is saved in ``base.html``. Add the three required Jinja2
+#. The missing code is saved in ``base.html``. Add the three required Jinja3
    statements to ``grid.html`` to :ref:`extend the base template <extend-base>`.
 #. Save your work, then refresh the tab in the browser. The page should look
    much better now.
@@ -138,7 +138,7 @@ Return to ``grid.html`` in VS Code.
 #. Remember the format for the ``choices`` dictionary. Each *key* is the
    direction label for a radio button. Each *value* is the number of the box in
    that direction.
-#. Add a ``for`` loop that :ref:`iterates over the key/value pairs <jinja2-dictionary-iteration>`
+#. Add a ``for`` loop that :ref:`iterates over the key/value pairs <jinja3-dictionary-iteration>`
    in the ``choices`` dictionary. The ``label/input`` code should be the only
    thing inside the body of the loop.
 #. Save your work, then reload the page in the browser.

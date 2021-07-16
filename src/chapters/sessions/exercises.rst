@@ -136,7 +136,7 @@ application should not keep taking guesses!
 #. In ``main.py`` create a session variable called ``still_guessing``.
 #. Initially, ``still_guessing`` should be ``True``. However, when the user
    guesses correctly, the value should flip to ``False``.
-#. Add some Jinja2 logic to the ``index.html`` template. If ``still_guessing``
+#. Add some Jinja3 logic to the ``index.html`` template. If ``still_guessing``
    is ``True``, display the original form. When ``False``, display a different
    form.
 #. The second form should contain a single ``Play Again`` button. When clicked,

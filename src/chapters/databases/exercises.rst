@@ -3,8 +3,8 @@
 Exercises: Databases
 ====================
 
-In these exercises, you will perform several CRUD operations with a new
-database file.
+In these exercises, you will perform several :ref:`CRUD operations <crud-operations>`
+with a new database file.
 
 Part A: Set Up a New Database
 -----------------------------
@@ -55,8 +55,8 @@ Part C: Add Rows
 ----------------
 
 #. Assign a new string to your ``sql_query`` variable. It should use the
-   ``INSERT INTO`` keywords to add an entry to the ``games`` table. Remember to
-   use placeholders after the ``VALUES`` keyword.
+   :ref:`INSERT INTO <sql-insert-syntax>` keywords to add an entry to the ``games``
+   table. Remember to use placeholders after the ``VALUES`` keyword.
 #. For the first new row, set the ``title`` as "Qwirkle", the ``num_players``
    as "2 - 4", the ``min_age`` as 6, and the ranking as 4.5.
 
@@ -85,8 +85,8 @@ Part R: Access Game Data
 For this section, you will need to use several different query strings to
 complete the steps.
 
-#. Use ``SELECT ... FROM ...`` to return results from all of the columns in the
-   ``games`` table.
+#. Use :ref:`SELECT ... FROM ... <sql-select-syntax>` to return results from
+   all of the columns in the ``games`` table.
 
 #. Use ``list()`` to convert the returned results, then print the data to the
    console in a clear fashion. *Tip*: Define a function to accomplish this.
@@ -100,8 +100,8 @@ complete the steps.
 Part U: Modify Game Data
 ------------------------
 
-Remember to include a ``WHERE`` clause in your ``UPDATE`` queries! If you leave
-it out, then *ALL* rows in the table will be changed.
+Remember to include a ``WHERE`` clause in your :ref:`UPDATE <sql-update-syntax>`
+queries! If you leave it out, then *ALL* rows in the table will be changed.
 
 Don't forget to view the ``games`` table after each step to confirm your work.
 
@@ -126,7 +126,7 @@ Don't forget to view the ``games`` table after each step to confirm your work.
 Part D: Remove Games
 --------------------
 
-Remember, there is no undo option after running ``DELETE``!
+Remember, there is no undo option after running :ref:`DELETE <sql-delete-syntax>`!
 
 #. Delete a single row from the table based on its ``game_id`` value.
 #. Write a single ``DELETE`` command to remove any games from the table that

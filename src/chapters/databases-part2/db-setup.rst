@@ -26,8 +26,8 @@ For starters, our database should save:
    key, the cell's location, the number of mines in surrounding cells, whether
    the user has clicked the cell, and whether the cell contains a mine.
 
-This outline suggests at 2 tables in the database - one for a list of mines,
-and another for the cells on the game board.
+This outline suggests 2 tables for the database - one for a list of mines, and
+another for the cells on the game board.
 
 ``db_setup.py``
 ---------------
@@ -50,7 +50,7 @@ Follow along with the video to build this program.
 .. raw:: html
 
    <section class="vid_box">
-      <iframe class="vid" src="https://www.youtube.com/embed/arIdYX7dBDU" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe class="vid" src="https://www.youtube-nocookie.com/embed/WGB6Pj1mTvw" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
    </section>
 
 .. admonition:: Note
