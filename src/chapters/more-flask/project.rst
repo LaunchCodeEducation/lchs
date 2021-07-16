@@ -320,7 +320,8 @@ submit valid data from the form. You need to fix this!
    ``code = 307`` is a crude way of restricting access to the success page, but
    it gets you thinking in the right direction.
    
-   We'll learn a better way to restrict access in a later chapter.
+   Unfortunately, exploring better ways to restrict access is beyond the scope of
+   this text.
 
 Bonus Mission
 -------------
@@ -336,7 +337,7 @@ code.
 
 In ``main.py``, you kept track of messages as part of the ``inputs``
 dictionary. With message flashing, Flask does this work automatically. The
-`Flask website <https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/#message-flashing-pattern>`__
+`Flask website <https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/>`__
 provides a short tutorial on how to set up and display ``flash`` messages. Take
 a look at the examples, and then refactor your application to use the ``flash``
 tools.

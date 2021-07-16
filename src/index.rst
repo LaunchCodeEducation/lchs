@@ -28,17 +28,20 @@ Chapters
    chapters/forms/index
    chapters/flask-intro/index
    chapters/more-flask/index
+   chapters/sessions/index
+   chapters/databases/index
+   chapters/databases-part2/index
 
 .. toctree::
 
    genindex
 
-Projects
-========
+Chapter Projects
+================
 
 .. toctree::
    :maxdepth: 1
-   :name: studiostoc
+   :name: projectstoc
 
    chapters/data-and-variables/project
    chapters/booleans-and-conditionals/project
@@ -57,9 +60,22 @@ Projects
    chapters/forms/project
    chapters/flask-intro/project
    chapters/more-flask/project
+   chapters/sessions/project
+   chapters/databases/project
 
-Assignments
-===========
+Small Activities
+================
+
+.. toctree::
+   :maxdepth: 1
+   :name: activitiestoc
+
+   activities/user-input
+   activities/cyoa
+   activities/making-diamonds
+
+Large Assignments
+=================
 
 .. toctree::
    :maxdepth: 1
@@ -70,6 +86,7 @@ Assignments
    assignments/console-game
    assignments/html-me-something
    assignments/communication-log
+   assignments/flask-game
 
 Appendices
 ==========
@@ -94,3 +111,4 @@ Appendices
 
    todos
    index-full
+   assignments/flask-game-repo

@@ -22,12 +22,15 @@ Every application we develop should have its own directory on our machine. This
 allows us to keep our work organized and track each project with its own Git
 repository.
 
+
 #. On your device, create a new directory called ``flask_projects``. Inside
    this folder, create a sub-directory called ``hello_flask``.
 #. Launch Visual Studio Code and open the ``hello_flask`` folder.
 #. In the terminal pane, use the ``pwd`` command to verify that you are in the
    ``hello_flask`` directory.
 #. Use ``git init`` to initialize a new repository.
+
+.. _flask-environment:
 
 Create a Virtual environment
 ----------------------------
@@ -70,6 +73,8 @@ Each Flask application you create will have its own virtual environment
 directory. You can name these environments whatever you want, but a good
 practice is to use something like ``project_name-env``.
 
+.. _install-flask:
+
 Add Flask
 ---------
 
@@ -102,9 +107,15 @@ Add Flask
    ::
 
       (hello-env) $ flask --version
-      Python 3.8.5
-      Flask 1.1.2
-      Werkzeug 1.0.1
+      Python 3.9.5
+      Flask 2.0.1
+      Werkzeug 2.0.1
+
+   .. admonition:: Note
+   
+      Software updates occur frequently, so the version numbers you see might be
+      slightly different. As long as you have a Python version at or above 3.6, you
+      should be fine.
 
 #. To exit an environment, just enter the command ``deactivate`` in the
    terminal.

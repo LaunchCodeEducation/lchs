@@ -11,6 +11,8 @@ Our applications should respond by rejecting forms that contain invalid
 information. We should also include code that tells the user what they did
 wrong.
 
+.. _client-server-validation:
+
 Validation
 ----------
 
