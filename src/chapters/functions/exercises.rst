@@ -84,6 +84,8 @@ Part A: More Turtles
          :alt: Image showing a sprite with 7 legs and the turtle shape at the center.
          :scale: 80%
 
+.. _make-line:
+
 Part B: Return Values
 ---------------------
 
