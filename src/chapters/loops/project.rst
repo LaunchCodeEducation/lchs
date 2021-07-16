@@ -82,6 +82,8 @@ looks a little bit like a clock face:
    .. figure:: figures/sprite-turtle-clock.png
       :alt: Image showing a clock face with dashes and turtle stamps.
 
+.. _nested-loops:
+
 Part C - Nested Loops
 ---------------------
 
