@@ -36,12 +36,12 @@ Chapters
 
    genindex
 
-Projects
-========
+Chapter Projects
+================
 
 .. toctree::
    :maxdepth: 1
-   :name: studiostoc
+   :name: projectstoc
 
    chapters/data-and-variables/project
    chapters/booleans-and-conditionals/project
@@ -63,8 +63,19 @@ Projects
    chapters/sessions/project
    chapters/databases/project
 
-Assignments
-===========
+Small Activities
+================
+
+.. toctree::
+   :maxdepth: 1
+   :name: activitiestoc
+
+   activities/user-input
+   activities/cyoa
+   activities/making-diamonds
+
+Large Assignments
+=================
 
 .. toctree::
    :maxdepth: 1

@@ -1,3 +1,5 @@
+.. _functions-toc:
+
 What's Your Function
 ====================
 
