@@ -30,6 +30,7 @@ Chapters
    chapters/more-flask/index
    chapters/sessions/index
    chapters/databases/index
+   chapters/databases-part2/index
 
 .. toctree::
 
