@@ -235,15 +235,15 @@ paste this into your code above:
    for word in eng_words:
       punctuation = '' # Start 'punctuation' as the empty string.
       
-      # Check if 'word' ends with a period, comma or !
-      if word[-1] == '.' or word[-1] == ',' or word[-1] == '!':
+      # Check if 'word' ends with a period, comma, or !
+      if word[-1] in '.,!':     # Add extra symbols as needed!
          punctuation = word[-1] # Save the punctuation mark.
          word = word[:-1]       # Reassign 'word' WITHOUT the mark. 
       
       if word[0].isupper() and word.lower() in eng_to_pirate:
          new_word = eng_to_pirate[word.lower()] # Translate 'word'.
          
-         # Append 'new_word' combined with any saved punctuation mark.
+         # Append capitalized 'new_word' combined with any saved punctuation mark.
          new_words.append(new_word.capitalize() + punctuation)
       elif word in eng_to_pirate:
          # Append translated word plus any saved punctuation mark.
