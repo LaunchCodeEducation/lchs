@@ -116,8 +116,8 @@ or `Trinket <https://trinket.io/python/b010aba314?showInstructions=true>`__.
 Part Four: Multi-dimensional Lists
 ----------------------------------
 
-*Part 4 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-4#main.py>`__
-or `Trinket <https://trinket.io/python/f7573d922f?showInstructions=true>`__.
+*Part 4 starter code*: `repl.it <https://replit.com/@launchcode/LCHS-List-Exercises-Part-4-1#main.py>`__
+or `Trinket <https://trinket.io/python/93c5ca4e97?showInstructions=true>`__.
 
 #. Lists can hold different data types, even other lists! A
    *multi-dimensional list* is one with entries that are also lists.
@@ -168,5 +168,3 @@ or `Trinket <https://trinket.io/python/f7573d922f?showInstructions=true>`__.
 
    #. **Experiment!** Print out one entry from each level in the ``cabinet``
       list.
-
-.. todo:: Revise Replit and Trinket starter code when ready to merge these updates!
