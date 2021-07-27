@@ -77,6 +77,11 @@ Step 2: Create a Remote Repository
    ``Branch 'main' set up to track remote branch 'main' from 'origin'`` lets
    you know that the process worked.
 
+   .. admonition:: Note
+
+      You may be asked to enter your GitHub username and personal access token
+      after ``git push`` and ``git pull`` commands. Do so whenever necessary.
+
 #. GitHub should now have the same files and code as your local project. Click
    on the project name link at the top of the page. This takes you to a
    dashboard that shows you what's stored in the repo. You can see your code by
