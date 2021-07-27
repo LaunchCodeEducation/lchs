@@ -201,5 +201,3 @@ carefully follow steps 1 - 9 for
    and PAT. It will then remember your credentials for a certain amount of
    time. In the example above, ``timeout=3600`` saves your information for 1
    hour (3600 seconds). You can adjust the amount of time up or down as needed.
-#. **Mac Users**: At the bottom of the PAT documentation page, you can find
-   some OPTIONAL instructions for saving your PAT in the MacOS *Keychain* app.
