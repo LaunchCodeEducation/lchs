@@ -10,7 +10,7 @@ from start to finish.
 Now that you have some Flask experience, your team can move the game out of the
 console and into a browser!
 
-.. figure:: 
+.. figure:: figures/RPS.png
    :alt: On left console version of rock paper scissors, on the right the flask version.
    :height: 300px
 
