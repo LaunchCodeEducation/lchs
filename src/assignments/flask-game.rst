@@ -12,16 +12,14 @@ console and into a browser!
 
 .. figure:: figures/RPS.png
    :alt: On left console version of rock paper scissors, on the right the flask version.
-   :height: 300px
+   :height: 500px
 
 .. admonition:: Example
 
    On the left is the same console Rock-Paper-Scissors example from Assignment
    1. The right hand side shows what it could look like in a browser.
 
-   Insert screenshots, GIFS, or Trinket editor showing the differences between
-   a console rock-paper-scissors game and a web-based one...
-
+   
 If your teacher didn't ask you to complete the :ref:`Console Game <console-game>`
 assignment, you should review that page to get some ideas about how the game
 needed to operate.
