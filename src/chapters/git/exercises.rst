@@ -3,8 +3,8 @@
 Exercises: Git More Practice
 ============================
 
-Working with a Local Repository
--------------------------------
+Part A: Working with a Local Repository
+---------------------------------------
 
 Use your terminal powers to move through these Git exercises.
 
@@ -121,11 +121,11 @@ As you resolve the conflicts, consider the following:
 
 Don't forget to commit again!
 
-Set up a Github Account
------------------------
+Part B: Set Up a Github Account
+-------------------------------
 
-The chapter project and :ref:`Assignment #5 <communication-log>` both involve
-using `GitHub <https://github.com/>`__.
+The :ref:`chapter project <git-project>` and :ref:`Assignment #5 <communication-log>`
+both involve using `GitHub <https://github.com/>`__.
 
 Before you attempt these two tasks, check with your teacher for permission to
 create a free account. Depending on your school and your course, you might use
@@ -134,6 +134,70 @@ a different service to create and share remote repositories.
 If you will be using GitHub, create your account by following these steps:
 
 #. Navigate to GitHub's site using the link above.
-#. Sign up for an account on the homepage either by filling out the form or
-   clicking the *Sign Up* button.
-#. Once you have an account, you are ready to store your remote work!
+#. Click the *Sign Up* button and follow the on-screen directions.
+#. Create a *Personal Access Token* (see below).
+#. Once you have an account and a personal access token, you are ready to store
+   your remote work!
+
+Create a Personal Access Token (PAT)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. index:: personal access token
+
+To push and pull from GitHub, users must create a **personal access token**. A
+PAT takes the place of a password, and the token process is considered more
+secure than a username/password verification.
+
+After you create your PAT, you will use it anytime you interact with GitHub
+from the terminal.
+
+.. admonition:: Example
+
+   In the terminal, interactions between your computer and GitHub might look
+   something like this:
+
+   .. sourcecode:: bash
+
+      $ git push origin main
+      Username: your_username
+      Password: your_token
+
+   The bottom two lines will prompt you to enter your GitHub username and
+   personal access token.
+
+Some users question the need for a PAT, since it looks like another password
+they have to remember. Rather than diving into a long debate and explanation,
+we'll focus on the main point: *GitHub requires a PAT or similar token*. The
+service is incredibly helpful, and we want to use it, so we'll follow the
+developers' advice.
+
+Creating a PAT for your account is fairly straightforward. GitHub provides
+detailed instructions, so we will use their words. Login to your account, then
+carefully follow steps 1 - 9 for
+`Creating a Token <https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token>`__.
+
+**Tips**:
+
+#. The checkboxes in step 7 select what you're allowed to do from the terminal.
+   For now, just choose the *repo* option.
+
+   There's no harm in selecting more options, but you won't need any of them
+   for this course.
+#. After you generate your PAT in step 8, *copy and save it somewhere safe*!
+   Your new PAT will NOT be an easy-to-remember sequence of characters (that's
+   the whole point). Record it somewhere.
+
+   If you use a password manager, that's a perfect place to keep your PAT.
+   If you use an unsecured spreadsheet or a folded piece of paper, you want to
+   break that habit now.
+#. If you expect to frequently push and pull from a repository during class,
+   you can save your PAT in memory for a short time. Run the command:
+
+   .. sourcecode:: bash
+
+      $ git config credential.helper 'cache --timeout=3600'
+
+   The next time you access your remote repo, Git will ask for your username
+   and PAT. It will then remember your credentials for a certain amount of
+   time. In the example above, ``timeout=3600`` saves your information for 1
+   hour (3600 seconds). You can adjust the amount of time up or down as needed.

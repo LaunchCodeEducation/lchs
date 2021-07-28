@@ -116,8 +116,8 @@ or `Trinket <https://trinket.io/python/b010aba314?showInstructions=true>`__.
 Part Four: Multi-dimensional Lists
 ----------------------------------
 
-*Part 4 starter code*: `repl.it <https://repl.it/@launchcode/LCHS-List-Exercises-Part-4#main.py>`__
-or `Trinket <https://trinket.io/python/f7573d922f?showInstructions=true>`__.
+*Part 4 starter code*: `repl.it <https://replit.com/@launchcode/LCHS-List-Exercises-Part-4-1#main.py>`__
+or `Trinket <https://trinket.io/python/93c5ca4e97?showInstructions=true>`__.
 
 #. Lists can hold different data types, even other lists! A
    *multi-dimensional list* is one with entries that are also lists.
@@ -135,9 +135,36 @@ or `Trinket <https://trinket.io/python/f7573d922f?showInstructions=true>`__.
       ``table[1]`` and ``table[1][1]``. Don't just nod your head! I want to
       HEAR you describe this difference. Go ahead, talk to your screen.
    #. Using bracket notation and the ``table`` list, print the mass from
-      ``element_1``, the name from ``element_2`` and the symbol from
+      ``element_1``, the name from ``element_2``, and the symbol from
       ``element_26``.
-   #. ``table`` is an example of a *2-dimensional list*. The first "level"
-      contains the element lists, and the second level holds the
-      name/symbol/mass values. **Experiment!** Create a 3-dimensional list and
-      print out one entry from each level in the list.
+      
+#. **OPTIONAL**: ``table`` is an example of a *2-dimensional list*. The first
+   "level" contains the element lists, and the second level holds the
+   name/symbol/mass values.
+   
+   Now create a 3-dimensional list. A good mental model is to think of a filing
+   cabinet.
+
+   #. Define at least four, 1-dimensional lists. Call each one a *folder*. For
+      example:
+
+      .. sourcecode:: python
+
+         folder_1 = ['page_1', 'page_2', 'page_3', ...]
+
+   #. Now define at least two, 2-dimensional lists. Call these lists *drawers*.
+      Each element in a drawer is one of the folders. For example:
+
+      .. sourcecode:: python
+
+         drawer_1 = [folder_1, folder_2]
+
+   #. Now define one 3-dimensional ``cabinet`` list. Each element is one of the
+      2-D drawer lists.
+
+      .. sourcecode:: python
+
+         cabinet = [drawer_1, drawer_2, ...]
+
+   #. **Experiment!** Print out one entry from each level in the ``cabinet``
+      list.
