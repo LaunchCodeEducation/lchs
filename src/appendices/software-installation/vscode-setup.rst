@@ -68,10 +68,10 @@ other Windows terminal programs like PowerShell:
 
 #. A new pane opens at the bottom of the application window. This is a terminal
    window. From the small dropdown found in this pane, choose *Select Default
-   Shell*.
+   Profile*.
    
    .. figure:: figures/default-shell.png
-      :alt: Choose 'Select Default Shell' from the terminal panel drop down menu.
+      :alt: Choose 'Select Default Profile' from the terminal panel drop down menu.
 
       Find the dropdown menu in the toolbar of the terminal panel.
 
@@ -213,7 +213,7 @@ Adding Extensions
 Now that Visual Studio Code is up and running, you need to install some
 **extensions**. These are small programs that support your work by highlighting
 keywords, flagging syntax errors, providing suggestions, etc. You used these
-features in the repl.it and Trinket online editors. Extensions let you include
+features in the Replit and Trinket online editors. Extensions let you include
 the same ones in your VS Code workspace.
 
 #. Open VS Code and select the *Extensions* icon on the left side of the
