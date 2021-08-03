@@ -10,14 +10,14 @@ from start to finish.
 Now that you have some Flask experience, your team can move the game out of the
 console and into a browser!
 
-.. figure:: figures/RPS.png
+.. figure:: figures/RPSLS.gif
    :alt: On left console version of rock paper scissors, on the right the flask version.
    :height: 500px
 
 .. admonition:: Example
 
-   On the left is the same console Rock-Paper-Scissors example from Assignment
-   1. The right hand side shows what it could look like in a browser.
+   On the left is the same console Rock-Paper-Scissors example from Assignment 3.
+   The right hand side shows what it could look like in a browser as a Flask app.
 
    
 If your teacher didn't ask you to complete the :ref:`Console Game <console-game>`
