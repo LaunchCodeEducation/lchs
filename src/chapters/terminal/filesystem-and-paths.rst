@@ -63,7 +63,7 @@ to get from point A to point B.
 
          /Users/mjordan/lchs/projects
 
-Filesystems use two different types of paths: *absolute* and *relative*.
+File systems use two different types of paths: *absolute* and *relative*.
 The **absolute path** starts at the root directory and ends with the file name.
 The **relative path** starts at the current directory and ends with the file
 name.
