@@ -151,7 +151,7 @@ or `Trinket <https://trinket.io/python/5b243176c2?showInstructions=true>`__.
          print('WARNING: Insufficient fuel!')
          launch_ready = False
 
-   a. Comment out lines 14 - 25 in the code editor.
+   a. Comment out lines 13 - 25 in the code editor.
    b. Add ``print("launch_ready =", launch_ready)`` after the first block,
       then run the program.
    c. Given the ``fuel_level`` value, should ``launch_ready`` be ``True`` or
