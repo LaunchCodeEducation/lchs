@@ -1,3 +1,5 @@
+.. _dictionaries-exercises:
+
 Exercises: Dictionaries
 =======================
 

@@ -1,3 +1,5 @@
+.. _strings-exercises:
+
 Exercises: Strings
 ==================
 

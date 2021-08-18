@@ -1,5 +1,5 @@
-Chapter 5 Exercises
-===================
+Chapter 5: Making Decisions With Conditionals
+=============================================
 
 The answers on this page show ONE way to solve the :ref:`exercises <booleans-and-conditionals-exercises>`.
 However, there are usually OTHER ways to accomplish the same thing. This is OK!
@@ -46,7 +46,7 @@ Part A: Basic Selection
       else:
          print('Number too small.')
 
-4. Prompt the user to enter a letter. If the letter is a vowel, print
+3. Prompt the user to enter a letter. If the letter is a vowel, print
    ``"___ is a vowel."`` Else, print, ``"___ is NOT a vowel."``
 
    .. sourcecode:: Python

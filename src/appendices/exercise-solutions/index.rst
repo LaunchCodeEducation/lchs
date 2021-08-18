@@ -10,3 +10,10 @@ Solutions To Chapter Exercises
    chapter04
    chapter05
    chapter06
+   chapter07
+   chapter08
+   chapter09
+   chapter10
+   chapter11
+   chapter12
+   chapter13

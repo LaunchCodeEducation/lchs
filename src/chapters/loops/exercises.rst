@@ -1,3 +1,5 @@
+.. _loops-exercises:
+
 Exercises: Loops
 ================
 
