@@ -86,18 +86,46 @@ Part One: Bracket Notation
 Part Two: String Methods and Operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. The ``len()`` function returns the number of characters in a string.
+1. The ``len()`` function returns the number of characters in a string. However,
+the function will NOT give us the length of an integer. If ``num = 1001``,
+then ``len(num)`` throws an error instead of returning ``4``.
 
    a. Use ``str()`` to change ``num`` from an ``int`` to a string data type.
    b. Print the length (number of digits) in ``num``.
+
+    .. sourcecode:: Python
+        :linenos:
+
+        num = 1001
+
+        # Exercise 1a and 1b
+        print(len(str(num)))
+
    c. Modify your code to print the number of digits in a ``float`` value (e.g.
       ``num = 123.45`` has 5 digits but a length of 6). The digit count should
       NOT include the decimal point.
+
+    .. sourcecode:: Python
+        :linenos:
+
+        num = 123.45
+        new_num = str(num).replace(".","")
+        print(len(new_num))
+
    d. What if ``num`` could be EITHER an integer or a decimal? Add an ``if/else``
       statement so your code can handle both cases.  (Hint: Consider using the
       ``find()`` method or the ``in`` operator to check if ``num`` contains a
-      decimal point).
+      decimal point). 
 
+    .. sourcecode:: Python
+        :linenos:
+
+        # Experiment! There are many ways to do this. 
+        if  type(num) is float or type(num) is int:
+            print(len(str(num)) - str(num).count("."))
+        else:
+            print(len(num))
+    
 
 2. Given ``word = 'bag'``:
 
@@ -106,20 +134,17 @@ Part Two: String Methods and Operations
    b. Inside the loop, create a new string from ``word``, but with a different
       vowel. Use the ``replace()`` string method.
    c. Print the new string.
-   d. Properly done, your output should look something like this:
+    
+    .. sourcecode:: Python
+        :linenos:
 
-      ::
+        word = 'bag'
 
-         bag
-         beg
-         big
-         bog
-         bug
-   
-   e. Try other words besides ``'bag'``!
-
-      `Code it at repl.it <https://repl.it/@launchcode/LCHS-Strings-Exercises-Part-2-2>`__, or
-      `Code it at Trinket <https://trinket.io/python/3d9aa1cac1?showInstructions=true>`__.
+        vowels = "aeiou"
+        for vowel in vowels:
+            new_word = word.replace("a", vowel)
+            print(new_word)
+  
 
 3. Consider a string that represents a strand of DNA:
    ``dna = " TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT    "``. There
@@ -127,21 +152,43 @@ Part Two: String Methods and Operations
 
    a. Use the ``strip()`` method to remove the leading and trailing whitespace,
       and then print the result.
-   b. Change all of the letters in the DNA string to UPPERCASE and print the
-      result.
+   
+    .. sourcecode:: Python
+        :linenos:
+
+        print(dna.strip())
+
    c. Note that you need to *reassign* the changes back to the ``dna`` variable in order to see them printed. 
       Apply these fixes to your code so that ``print(dna)`` prints the DNA strand in UPPERCASE
       with no whitespace.
 
+    .. sourcecode:: Python
+      :linenos:
+
+      dna = dna.strip().upper()
+      print(dna) 
+
 4. Let's use string methods to do more work on the same DNA strand:
 
-   a. Use ``replace()`` to remove the sequence ``'GCT'``, and then print the altered
-      strand. Don't forget about the extra hyphen!
    b. Look for the sequence ``'CAT'`` with ``find()``. If found print, ``'CAT
       found'``, otherwise print, ``'CAT NOT found'``.
+
+    .. sourcecode:: Python
+        :linenos:
+
+        if dna.find("CAT") > -1:
+            print("CAT gene found")
+        else:
+            print("Cat gene NOT found")
+
    c. Use ``count()`` to find the number of hyphens (``-``) in the string, then
       print the number of *genes* (in this case, a gene is a set of 3 letters) in the DNA strand. Note
       that the number of genes will be 1 more than the number of hyphens. 
+
+    .. sourcecode:: Python
+        :linenos:
+        
+        print(dna.count("-")+1)
 
 :ref:`Back to the exercises <strings-exercises>`.
 
@@ -155,20 +202,28 @@ Part Three: String Formatting
    a. Use ``format()`` and index values to print the string,
       ``"Here is my number: ___, and here is my word: ___, and here is my
       number again: ___."``
-   b. Print the string, ``"Here is my word 3 times: ___/___/___, and here is my
-      number squared: ___."``
 
-      
-2. For part 2, exercise 4, use an f-string to print the output
-   ``"The DNA string is ___ characters long and contains ___ genes."`` Fill in
-   the blanks with the length of the string and the number of genes.
+    .. sourcecode:: Python
+        :linenos:
 
-3. The following code sample works, but it can be improved.
+        my_num = 42
+        my_word = 'feckless'
+        
+        output = "Here is my number: {0}, and here is my word: {1}, and here is my number again: {0}."
+        print(output.format(my_num, my_word))
+
+2. The following code sample works, but it can be improved.
 
    a. Assuming that ``advice`` remains a string, when will the code produce the
-      wrong output?
-   b. Why will the code do this?
-   c. What should the programmer do to fix the code?
+      wrong output? When we change advice to something else.
+   b. Why will the code do this? Because the print statement is hard coded with 'Don't Panic' instead of the variable name advice.
+   c. What should the programmer do to fix the code? 
+
+   .. sourcecode:: Python
+        :linenos:
+
+        #One way to code the above answer:
+        print(output.format(advice, len(advice)))
 
 :ref:`Back to the exercises <strings-exercises>`.
 
