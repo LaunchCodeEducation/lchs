@@ -4,7 +4,7 @@ Solutions To Chapter Exercises
 ==============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    intro
    chapter04
