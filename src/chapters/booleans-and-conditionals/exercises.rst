@@ -1,3 +1,5 @@
+.. _booleans-and-conditionals-exercises:
+
 Exercises: Booleans and Conditionals
 ====================================
 
@@ -67,6 +69,8 @@ The ``in`` keyword can be used as another comparison operator.
    Refactor your code for problem 3 so that it works for both capital and
    lowercase vowels!
 
+:ref:`Check your solutions <chp5partA>`.
+
 Part B: Logical Operators
 -------------------------
 
@@ -112,6 +116,8 @@ or `Trinket <https://trinket.io/python/923476a25b>`__.
       not num < 0 and num%3 != 0
       not (num%3 == 0 or num*4 >= 20)
 
+:ref:`Check your solutions <chp5partB>`.
+
 Part C: Chained Conditionals
 ----------------------------
 
@@ -153,6 +159,8 @@ or `Trinket <https://trinket.io/python/014054b0a7?showInstructions=true>`__.
    get under a blanket and read. If it is cold and dry, it should tell you to
    hang out with a friend.
 
+:ref:`Check your solutions <chp5partC>`.
+
 Part D: Nested Conditionals
 ---------------------------
 
@@ -169,3 +177,5 @@ Part D: Nested Conditionals
    a. Inside the nested statements before the cheese/dressing questions.
    b. Inside the nested statements after the cheese/dressing question.
    c. As a separate conditional outside of the nested statements.
+
+:ref:`Check your solutions <chp5partD>`.

@@ -1,3 +1,5 @@
+.. _functions-exercises:
+
 Exercises: Functions
 ====================
 

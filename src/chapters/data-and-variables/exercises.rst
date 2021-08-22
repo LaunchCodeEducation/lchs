@@ -1,3 +1,5 @@
+.. _data-and-variables-exercises:
+
 Exercises: Data & Variables
 ===========================
 
@@ -39,6 +41,8 @@ Use the code editor at the end of this part to complete the following tasks:
 .. raw:: html
 
    <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-A?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
+
+:ref:`Check your solutions <chp4partA>`.
 
 Part B - Using Variables
 ------------------------
@@ -90,6 +94,8 @@ Use the information given below to complete the part B exercises:
    Moon. Print a sentence that says, ``"_____ will take ___ days to reach the
    Moon."``.
 
+:ref:`Check your solutions <chp4partB>`.
+
 Part C - User Input
 -------------------
 
@@ -118,7 +124,7 @@ or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__
 
 #. Prompt the user to enter a word, then use the ``len()`` function to find the
    number of characters in the word. Print the message, ``The word '___'
-   contains __ characters.`` Fill in the blanks with the user's word and the
+   contains ___ characters.`` Fill in the blanks with the user's word and the
    number of characters. The output MUST include quotes around the word. For
    example:
 
@@ -146,3 +152,5 @@ or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__
       How many miles did you drive? 280
       How many gallons did you use? 10
       Your car got 28 miles per gallon.
+
+:ref:`Check your solutions <chp4partC>`.

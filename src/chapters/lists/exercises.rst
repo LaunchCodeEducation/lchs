@@ -1,3 +1,5 @@
+.. _lists-exercises:
+
 Exercises: Lists
 ================
 

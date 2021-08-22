@@ -1,3 +1,5 @@
+.. _loops-exercises:
+
 Exercises: Loops
 ================
 
@@ -51,6 +53,8 @@ Exercises: Loops
    `repl.it file <https://repl.it/@launchcode/LCHS-For-Loop-Exercises-3>`__ or
    `Trinket file <https://trinket.io/python/04ee784ec9?showInstructions=true>`__
 
+:ref:`Check your solutions <chp6for>`.
+
 Bonus
 ^^^^^
 
@@ -103,6 +107,8 @@ or `Trinket <https://trinket.io/python/21d6e91b92?showInstructions=true>`__.
    Enter the number of astronauts (1 - 7):  3
    The spacecraft gained an altitude of 3650 km and has 100 kg of fuel left. Orbit achieved! 
 
+:ref:`Check your solutions <chp6while>`.
+
 The Accumulator Pattern
 -----------------------
 
@@ -123,6 +129,7 @@ Use two ``input`` statements to prompt the user for a ``start_value`` and an
    string, but without any vowels.  For this task, y does NOT count as a vowel.
    Print the new string.
 
+:ref:`Check your solutions <chp6accumulator>`.
 Challenge
 ---------
 
@@ -146,3 +153,5 @@ strings the same length.
       ``"AnBoCtDyEeFt"``.
    #. If ``ka = "LoOt"`` and ``blam = "oku!"``, then the output will be
       ``"LookOut!"``.
+
+:ref:`Check your solutions <chp6challenge>`.

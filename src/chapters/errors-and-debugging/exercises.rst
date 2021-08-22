@@ -1,3 +1,5 @@
+.. _errors-and-debugging-exercises:
+
 Exercises: Errors and Debugging
 ===============================
 
