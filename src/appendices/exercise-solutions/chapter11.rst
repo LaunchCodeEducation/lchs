@@ -126,14 +126,14 @@ perfectly as seen below. *This is OK!*
 When we learn how to display output in a window *other* than the console,
 we will worry about making columns look nice.
 
-   ::
+::
 
-      Would you like to display all scores? Y/N: Y
-      Name    Math    Fitness Coding  Nav Communication
-      Fox 95  86  83  81  76
-      Turtle  79  71  79  87  72
-      Cat 94  87  87  83  82
-      Hippo   99  77  91  79  80
-      Dog 96  95  99  82  70
+   Would you like to display all scores? Y/N: Y
+   Name    Math    Fitness Coding  Nav Communication
+   Fox 95  86  83  81  76
+   Turtle  79  71  79  87  72
+   Cat 94  87  87  83  82
+   Hippo   99  77  91  79  80
+   Dog 96  95  99  82  70
 
    
