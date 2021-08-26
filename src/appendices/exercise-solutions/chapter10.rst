@@ -60,14 +60,14 @@ Part A: More Turtles
    *Hint*: You drew polygons as part of the 
    :ref:`Turtle Project <draw-polygon>` in the Loops chapter.
 
-   .. sourcecode:: Python
-    :linenos:
+    .. sourcecode:: Python
+        :linenos:
 
-    def draw_polygon(turtle_name, num_sides, side_length):
-        turn_angle = 360.0/num_sides
-        for side in range(num_sides):
-            turtle_name.forward(side_length)
-            turtle_name.left(turn_angle)
+        def draw_polygon(turtle_name, num_sides, side_length):
+            turn_angle = 360.0/num_sides
+            for side in range(num_sides):
+                turtle_name.forward(side_length)
+                turtle_name.left(turn_angle)
 
 
    After you finish coding the function, replace the ``draw_square`` function
@@ -76,26 +76,26 @@ Part A: More Turtles
 3. Write a function called ``draw_sprite`` that draws a figure. The function needs 
    parameters for the turtle, the number of legs, and the length of the legs.
 
-   .. sourcecode:: Python
-    :linenos:
+    .. sourcecode:: Python
+        :linenos:
 
-    def draw_sprite(turtle_name, num_legs, leg_length):
-        turn_angle = 360.0/num_legs
-        for side in range(num_legs):
-            turtle_name.forward(leg_length)
-            turtle_name.backward(leg_length)
-            turtle_name.left(turn_angle)
+        def draw_sprite(turtle_name, num_legs, leg_length):
+            turn_angle = 360.0/num_legs
+            for side in range(num_legs):
+                turtle_name.forward(leg_length)
+                turtle_name.backward(leg_length)
+                turtle_name.left(turn_angle)
 
 
    Call the function to create a sprite with 10 legs of length 115.
 
-   .. sourcecode:: Python
-    :linenos:
+    .. sourcecode:: Python
+        :linenos:
 
-    bob.shape('circle')
-    legs = 10      # Set the number of legs for the sprite.
-    length = 115   # Set the length for each leg.
-    draw_sprite(bob, legs, length)  # Draw the sprite.
+        bob.shape('circle')
+        legs = 10      # Set the number of legs for the sprite.
+        length = 115   # Set the length for each leg.
+        draw_sprite(bob, legs, length)  # Draw the sprite.
 
 Try It!
 ^^^^^^^
@@ -162,14 +162,14 @@ Part B: Return Values
    If the function call does not provide an argument for ``symbol``, use the
    default character ``'#'``.
 
-   .. sourcecode:: Python
-    :linenos:
+    .. sourcecode:: Python
+        :linenos:
 
-    def make_line(num_chars, symbol = '#'):
-        return symbol*num_chars
+        def make_line(num_chars, symbol = '#'):
+            return symbol*num_chars
 
-    print(make_line(5, 'T'))
-    print(make_line(8))
+        print(make_line(5, 'T'))
+        print(make_line(8))
 
    
 7. Add a function called ``make_rectangle`` that returns a rectangle string with
