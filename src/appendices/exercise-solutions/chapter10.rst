@@ -99,6 +99,7 @@ Part A: More Turtles
 
 Try It!
 ^^^^^^^
+
 Add a parameter to draw_polygon called fancy_corners. If True, then the function should call 
 draw_sprite at each corner of the shape. Make the sprite legs half the length of each side.
 
@@ -118,7 +119,8 @@ draw_sprite at each corner of the shape. Make the sprite legs half the length of
         bob.shape('turtle')
         sides = 6      # Set the number of legs for the polygon.
         length = 100   # Set the length for each side.
-        draw_fancy_polygon(bob, sides, length, True)  # Draw a polygon with sprites at each vertex.
+        # Draw a polygon with sprites at each vertex.
+        draw_fancy_polygon(bob, sides, length, True)
 
 :ref:`Back to the exercises <functions-turtle-exercises>`.
 
@@ -206,7 +208,7 @@ Bonus Exercises
    either of the following shapes. *Hint*: The function needs a turtle, an
    angle, a starting line length and the number of lines to draw.
 
-   .. sourcecode:: Python
+    .. sourcecode:: Python
         :linenos:
 
         import turtle
