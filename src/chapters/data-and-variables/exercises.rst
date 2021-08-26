@@ -42,7 +42,7 @@ Use the code editor at the end of this part to complete the following tasks:
 
    <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Chp-4-Exercises-Part-A?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe>
 
-:ref:`Check your answers for Part A <chp4partA>`.
+:ref:`Check your solutions <chp4partA>`.
 
 Part B - Using Variables
 ------------------------
@@ -94,7 +94,7 @@ Use the information given below to complete the part B exercises:
    Moon. Print a sentence that says, ``"_____ will take ___ days to reach the
    Moon."``.
 
-:ref:`Check your answers for Part B <chp4partB>`.
+:ref:`Check your solutions <chp4partB>`.
 
 Part C - User Input
 -------------------
@@ -153,4 +153,4 @@ or `free Trinket <https://trinket.io/python/26ff1e28c8?showInstructions=true>`__
       How many gallons did you use? 10
       Your car got 28 miles per gallon.
 
-:ref:`Check your answers for Part C <chp4partC>`.
+:ref:`Check your solutions <chp4partC>`.
