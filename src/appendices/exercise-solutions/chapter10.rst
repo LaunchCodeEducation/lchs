@@ -49,9 +49,7 @@ Part A: More Turtles
             bob.penup()                 # Lift the pen.
             bob.forward(2*length)       # Move to the next position.
             bob.pendown()               # Drop the pen.
-
-
-  
+ 
 2. Define a new function called ``draw_polygon`` that
    takes 3 parameters---a turtle object, a number of sides, and the length of
    each side. Place the new function in the lines before
@@ -69,9 +67,8 @@ Part A: More Turtles
                 turtle_name.forward(side_length)
                 turtle_name.left(turn_angle)
 
-
-   After you finish coding the function, replace the ``draw_square`` function
-   call in the loop with ``draw_polygon`` to produce a row of shapes.
+After you finish coding the function, replace the ``draw_square`` function
+call in the loop with ``draw_polygon`` to produce a row of shapes.
 
 3. Write a function called ``draw_sprite`` that draws a figure. The function needs 
    parameters for the turtle, the number of legs, and the length of the legs.
@@ -86,7 +83,6 @@ Part A: More Turtles
                 turtle_name.backward(leg_length)
                 turtle_name.left(turn_angle)
 
-
    Call the function to create a sprite with 10 legs of length 115.
 
     .. sourcecode:: Python
@@ -97,11 +93,10 @@ Part A: More Turtles
         length = 115   # Set the length for each leg.
         draw_sprite(bob, legs, length)  # Draw the sprite.
 
-Try It!
-^^^^^^^
+   Try It!
 
-Add a parameter to draw_polygon called fancy_corners. If True, then the function should call 
-draw_sprite at each corner of the shape. Make the sprite legs half the length of each side.
+   Add a parameter to draw_polygon called fancy_corners. If True, then the function should call 
+   draw_sprite at each corner of the shape. Make the sprite legs half the length of each side.
 
     .. sourcecode:: Python
         :linenos:
@@ -129,7 +124,7 @@ draw_sprite at each corner of the shape. Make the sprite legs half the length of
 Part B: Return Values
 ^^^^^^^^^^^^^^^^^^^^^
 
-4. Write a ``shift_case`` function that takes a single string parameter and
+1. Write a ``shift_case`` function that takes a single string parameter and
    returns a different string. The function should loop through the string and
    change uppercase characters to lowercase, and lowercase to uppercase.
 
@@ -156,7 +151,7 @@ Part B: Return Values
         # def shift_case(a_string):
         #     return a_string.swapcase()
    
-6. Write a function ``make_line(num_chars, symbol)`` that returns a line with
+2. Write a function ``make_line(num_chars, symbol)`` that returns a line with
    exactly ``num_chars`` symbols. ``num_chars`` will be an integer, and
    ``symbol`` will be a character. Note that the function must *RETURN* a
    string, not print it!
@@ -174,7 +169,7 @@ Part B: Return Values
         print(make_line(8))
 
    
-7. Add a function called ``make_rectangle`` that returns a rectangle string with
+3. Add a function called ``make_rectangle`` that returns a rectangle string with
    a given width, height, and symbol. The function should NOT print each row of
    the rectangle. Instead, it must return a single string that contains the
    entire rectangle shape.
