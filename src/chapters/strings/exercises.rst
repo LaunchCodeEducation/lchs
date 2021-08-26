@@ -42,6 +42,8 @@ Part One: Bracket Notation
       prints ``tomatootamot``. (If you want to be fancy, include the ``|``
       character to make the output look almost like a mirrored image: ``tomato | otamot``). 
 
+:ref:`Check your solutions<chp7part1>`.
+
 .. admonition:: Note
 
    Code part 1, steps 2 and 3 at
@@ -112,6 +114,8 @@ Part Two: String Methods and Operations
       print the number of *genes* (in this case, a gene is a set of 3 letters) in the DNA strand. Note
       that the number of genes will be 1 more than the number of hyphens. 
 
+:ref:`Check your solutions<chp7part2>`.
+
 .. admonition:: Note
 
    Code part 2, steps 3 & 4 at `repl.it <https://repl.it/@launchcode/LCHS-Strings-Exercises-Part-2-3-and-4>`__
@@ -156,3 +160,5 @@ Part Three: String Formatting
    ::
 
       The text, 'Don't Panic' contains 11 characters.
+
+:ref:`Check your solutions<chp7part3>`.
