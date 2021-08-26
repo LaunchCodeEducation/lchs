@@ -52,6 +52,8 @@ or `Trinket <https://trinket.io/python/73e566dac1?showInstructions=true>`__.
    #. Use ``format()`` to print the final contents of the list and its length.
       ``"The list ___ contains ___ items."``
 
+:ref:`Check your solutions <chp8part1>`.
+      
 Part Two: Slices & Methods
 --------------------------
 
@@ -91,6 +93,8 @@ or `Trinket <https://trinket.io/python/0c8b175f1c?showInstructions=true>`__.
       lists. What is the difference between the two methods?
    #. Do ``reverse`` or ``sort`` alter the original lists?
 
+:ref:`Check your solutions <chp8part2>`.
+
 Part Three: Split, List, and Join
 ---------------------------------
 
@@ -114,6 +118,8 @@ or `Trinket <https://trinket.io/python/b010aba314?showInstructions=true>`__.
       alphabetize the list with ``sort``, then combine the elements into a new
       string. Use a hyphen to join the elements together in the string.
    #. Do ``split``, ``list``, or ``join`` change the original string/list?
+
+:ref:`Check your solutions <chp8part3>`.
 
 Part Four: Multi-dimensional Lists
 ----------------------------------
@@ -170,3 +176,5 @@ or `Trinket <https://trinket.io/python/93c5ca4e97?showInstructions=true>`__.
 
    #. **Experiment!** Print out one entry from each level in the ``cabinet``
       list.
+
+:ref:`Check your solutions <chp8part4>`.
