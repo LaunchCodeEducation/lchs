@@ -98,7 +98,6 @@ in ``main.py`` will still show you where to add code.
 
       display_results(astronauts, test_titles, scores)
 
-
 2. **Line 23**: Using dot notation, call ``average_for_test`` to print the
    class average for each test. Use ``title_index`` and ``scores`` as
    arguments.
