@@ -86,6 +86,8 @@ Part A: More Turtles
          :alt: Image showing a sprite with 7 legs and the turtle shape at the center.
          :scale: 80%
 
+:ref:`Check your solutions <chp10partA>`.
+
 .. _make-line:
 
 Part B: Return Values
@@ -195,6 +197,10 @@ Part B: Return Values
       RutabagaRutabagaRutabaga
       RutabagaRutabagaRutabaga
 
+:ref:`Check your solutions <chp10partB>`.
+
+.. _functions-bonus-exercises:
+
 Bonus Exercises
 ---------------
 
@@ -225,3 +231,5 @@ Bonus Exercises
       ###
       ##
       #
+
+:ref:`Check your solutions <chp10partBonus>`.

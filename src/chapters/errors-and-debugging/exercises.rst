@@ -19,6 +19,7 @@ a helpful strategy.
 
    Otherwise, use the links below to code in your own free account.
 
+
 Find and Fix Syntax Errors
 --------------------------
 
@@ -42,6 +43,8 @@ The following code sample contains 3 syntax errors.
 
       <iframe height="750px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+:ref:`Check your solutions<chp9part1>`.
+
 Find and Fix Runtime Errors
 ---------------------------
 
@@ -57,6 +60,8 @@ The following code sample contains 3 runtime errors.
    .. raw:: html
 
       <iframe height="750px" width="100%" src="https://repl.it/@launchcode/LCHS-Debugging-Exercise-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
+:ref:`Check your solutions<chp9part2>`
 
 Solve Logic Errors
 ------------------
@@ -160,3 +165,5 @@ Solve Logic Errors
 
    *Bonus fix*: The loop runs after the length check passes *or* fails. How can
    we make it so that the loop runs only *if* the length test passes?
+
+:ref:`Check your solutions<chp9part3>`
