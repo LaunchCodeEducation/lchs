@@ -12,6 +12,8 @@ b. Calls functions based on the user's responses.
 Rather than coding all of the functions from scratch, you are going to use
 existing modules to help assemble your project.
 
+.. _chp11StarterCode:
+
 .. admonition:: Note
 
    If your teacher added you to a :ref:`Trinket course <trinket-course-assignments>`,
@@ -23,6 +25,8 @@ existing modules to help assemble your project.
       before getting started.
    #. Open this `repl <https://repl.it/@launchcode/LCHS-Modules-Chapter-Exercises>`__
       and *Fork* before getting started.
+
+.. _chp11partIMC:
 
 Import Module Code
 ------------------
@@ -36,6 +40,10 @@ Lucky you! Most of the functions you need are in the ``averages.py`` and
    the ``display`` module.
 #. Use the ``as`` keyword to rename the imported ``print_all`` function to
    ``display_results``.
+
+:ref:`Check your solutions <chp11part1>`.
+
+.. _chp11partFCANM:
 
 Finish Coding A New Module
 --------------------------
@@ -51,6 +59,10 @@ Finish Coding A New Module
 
    If you add any loose statements in the ``random_select.py`` file, remember
    to place them into a ``main()`` function.
+
+:ref:`Check your solutions <chp11part2>`.
+
+.. _chp11partFTP:
 
 Finish the Project
 -------------------
@@ -72,6 +84,8 @@ Now complete the project code.
    print each astronaut's average score.
 #. **Line 30**: Call ``random_from_list`` to pick the next spacewalker from the
    ``astronauts`` list.
+
+:ref:`Check your solutions <chp11part3>`.
 
 Sanity check!
 --------------
