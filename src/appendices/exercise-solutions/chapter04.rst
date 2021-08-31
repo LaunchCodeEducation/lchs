@@ -64,31 +64,31 @@ Part A
 Part B
 ^^^^^^
 
-.. sourcecode:: Python
-   :linenos:
+   .. sourcecode:: Python
+      :linenos:
 
-   # 1. Declare and assign four variables:
-   ship_name = 'Determination'
-   speed_mph = 17500
-   km_to_mars = 225000000
-   mi_per_km = 0.621
+      # 1. Declare and assign four variables:
+      ship_name = 'Determination'
+      speed_mph = 17500
+      km_to_mars = 225000000
+      mi_per_km = 0.621
 
-   # 2. Define and assign a miles to Mars variable:
-   miles_to_mars = km_to_mars * mi_per_km
+      # 2. Define and assign a miles to Mars variable:
+      miles_to_mars = km_to_mars * mi_per_km
 
-   # 3 & 4. Calculate and store the hours and days it takes to get to Mars:
-   hours_to_mars = miles_to_mars/speed_mph
-   days_to_mars = hours_to_mars/24
+      # 3 & 4. Calculate and store the hours and days it takes to get to Mars:
+      hours_to_mars = miles_to_mars/speed_mph
+      days_to_mars = hours_to_mars/24
 
-   # 5. Print the sentence, "___ will take ___ days to reach Mars."
-   print(ship_name, 'will take', days_to_mars, 'days to reach Mars.')
+      # 5. Print the sentence, "___ will take ___ days to reach Mars."
+      print(ship_name, 'will take', days_to_mars, 'days to reach Mars.')
 
-   # 6. Bonus mission:
-   km_to_moon = 384400                     # Assign distance value (in km).
-   mi_to_moon = km_to_moon * 0.621         # Convert km to miles.
-   hours_to_moon = mi_to_moon/speed_mph    # Calculate hours to moon.
-   days_to_moon = hours_to_moon/24         # Calculate days to moon.
-   print(ship_name, 'will take', days_to_moon, 'days to reach the Moon.')
+      # 6. Bonus mission:
+      km_to_moon = 384400                     # Assign distance value (in km).
+      mi_to_moon = km_to_moon * 0.621         # Convert km to miles.
+      hours_to_moon = mi_to_moon/speed_mph    # Calculate hours to moon.
+      days_to_moon = hours_to_moon/24         # Calculate days to moon.
+      print(ship_name, 'will take', days_to_moon, 'days to reach the Moon.')
 
 :ref:`Back to the exercises <data-and-variables-exercises>`.
 
