@@ -46,6 +46,10 @@ flavors with their cost per scoop. Your job is to do the following:
 
    <iframe src="https://trinket.io/embed/python3/e377c26043" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+:ref:`Check your solutions <chp12partA>`.
+
+.. _Chp12Keys:
+
 Part B: Keys from a Collection
 ------------------------------
 
@@ -81,6 +85,10 @@ should look something like:
 
    <iframe src="https://trinket.io/embed/python/494766d553" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
+:ref:`Check your solutions <chp12partB>`.
+
+.. _Chp12MV:
+
 Part C: Modify Values
 ---------------------
 
@@ -108,6 +116,10 @@ calling the ``fix_tickets`` function.
 
    Before: {'Caleb': 168, 'Naomi': 205, 'Owen': 193, 'Ava': 161, 'Aaron': 246, 'Lydia': 330}
    After: {'Caleb': 668, 'Naomi': 205, 'Owen': 693, 'Ava': 661, 'Aaron': 246, 'Lydia': 330}
+
+:ref:`Check your solutions <chp12partC>`.
+
+.. _Chp12CC:
 
 Part D: Counting Characters
 ---------------------------
@@ -144,6 +156,10 @@ Be sure to print the returned dictionary to check your code.
 .. raw:: html
 
    <iframe src="https://trinket.io/embed/python/86e403e1a1" width="100%" height="550" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+:ref:`Check your solutions <chp12partD>`.
+
+.. _Chp12UseList:
 
 Part E: Use a List to Sort Key/Value Output
 -------------------------------------------
@@ -189,3 +205,6 @@ The final output for ``"B-A-L-L-O-O-N-S!"`` should be:
    n: 1
    o: 2
    s: 1
+
+:ref:`Check your solutions <chp12partE>`.
+
