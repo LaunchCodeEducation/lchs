@@ -19,6 +19,8 @@ information about the objects and race them against each other.
    #. `Repl.it starter code <https://repl.it/@launchcode/LCHS-Classes-Exercises>`__
       (*Fork* before getting started).
 
+.. _chp13partNewClass:
+
 Part 1: Create a New Class
 --------------------------
 
@@ -84,6 +86,10 @@ Add Methods to ``Robot``
    b. Use a loop to call the ``move()`` method several times. Inside the loop,
       ``print`` the steps taken and the updated ``robot_name.distance`` value. 
 
+:ref:`Check your solutions <chp13part1>`.
+
+.. _chp13partCreateObjects:
+
 Part 2: Create Objects
 ----------------------
 
@@ -105,6 +111,10 @@ Update Distances
 
 Use a loop to iterate through the ``robots`` list. For each object, assign a
 random value to the ``distance`` property, from ``1000`` to ``3000`` steps.
+
+:ref:`Check your solutions <chp13part2>`.
+
+.. _chp13partFindOldest:
 
 Part 3: Find Oldest Robot
 -------------------------
@@ -139,6 +149,10 @@ Print out a message describing the result:
 Fill in the blanks with the name of the robot, the year it was made, and its
 current number of steps.
 
+:ref:`Check your solutions <chp13part3>`.
+
+.. _chp13partRobotRaces:
+
 Part 4: Robot Races
 -------------------
 
@@ -166,3 +180,5 @@ Within the function:
 *HINT*: There are a lot of different ways to approach this problem. One way
 that works well is to count how many times ``move()`` gets called in order to
 reach 30 steps.
+
+:ref:`Check your solutions <chp13part4>`.
