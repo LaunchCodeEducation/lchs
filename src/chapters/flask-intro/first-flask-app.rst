@@ -56,6 +56,20 @@ Here is the breakdown for the code:
    main program instead of a module. If the condition is ``True``, then
    ``app.run()`` executes and starts our Flask application.
 
+.. admonition:: Note
+
+   If you are using Replit create a new python repl and change lines 11 -12 to:
+
+   .. sourcecode:: Python
+      :lineno-start: 11
+
+      if __name__ == '__main__':
+         app.run(
+            host = '0.0.0.0',
+            port = 8080
+         )
+
+
 Launch the App
 --------------
 
@@ -111,6 +125,16 @@ To start a Flask application, we follow three basic steps:
          :alt: Webpage showing the text, "Hello, Flask!"
 
          Navigate to the IP address shown in the terminal to see the message from your Python code.
+
+   .. admonition:: Note
+
+      If you are using Replit.com remember to run from the shell tab.
+
+      .. figure:: figures/repl_flask.png
+         :alt: Showing what running a Flask app in Replit looks like.
+
+         
+
 
 Change the Python Code
 ^^^^^^^^^^^^^^^^^^^^^^

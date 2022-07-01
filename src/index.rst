@@ -110,6 +110,5 @@ Appendices
 .. toctree::
    :hidden:
 
-   todos
    index-full
    assignments/flask-game-repo

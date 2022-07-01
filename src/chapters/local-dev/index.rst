@@ -7,6 +7,7 @@ Local Development
    :maxdepth: 3
 
    before-starting
+   wait-using-replit
    vscode-intro
    vscode-python
    vscode-turtles

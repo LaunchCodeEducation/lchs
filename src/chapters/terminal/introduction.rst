@@ -129,3 +129,23 @@ Chromebook Users
       :alt: Find the terminal app inside the Linux subfolder.
 
 #. Click on the icon to launch the program.
+
+Replit Users
+^^^^^^^^^^^^
+
+.. admonition:: Note
+
+   If you use Replit for this class, login to your account. 
+
+#. Create a new python repl.
+#. Click on the shell tab.
+
+   .. figure:: figures/shell_tab.png
+      :alt: Find the shell tab in replit workspace.
+
+#. To run a file, at the prompt type python filename
+
+   .. figure:: figures/run_shell.png
+      :alt: Run a file from the shell tab in replit workspace.
+
+
