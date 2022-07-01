@@ -3,6 +3,10 @@
 Install Flask
 =============
 
+.. admonition:: Note
+
+   If you are using Replit you do not need to install Flask or create a virtual environment.
+
 Starting a new Flask project begins with the same basic steps. These are the
 housekeeping tasks we must complete before diving into our actual code.
 

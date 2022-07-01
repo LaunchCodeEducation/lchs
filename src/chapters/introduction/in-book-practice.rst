@@ -119,12 +119,12 @@ left of the frame, with the output to the right. Also, clicking on the
 
    <iframe src="https://trinket.io/embed/python/32d45e0cdd?runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
-.. index:: ! repl.it, ! trinket.io
+.. index:: ! Replit, ! trinket.io
 
 Longer Examples and End of Chapter Exercises
 --------------------------------------------
 
-Longer examples and practice problems have links to **Repl.it** or
+Longer examples and practice problems have links to **Replit** or
 **Trinket.io**. These websites allow you to write, run, and save your code.
 Repl.it and Trinket accounts are free, so we encourage you to sign up for one.
 
@@ -133,7 +133,7 @@ Repl.it and Trinket accounts are free, so we encourage you to sign up for one.
    Depending on your school's privacy policy, student access to either site may
    be restricted. Check with your teacher before creating an account!
 
-   #. `Repl.it signup <https://repl.it/signup>`__.
+   #. `Replit signup <https://replit.com/signup?from=landing>`__.
    #. `Trinket.io signup <https://trinket.io/signup>`__.
 
 As you explore the examples in this book, feel free to make changes to

@@ -75,6 +75,16 @@ on your own, you may need to perform some installations before continuing.
 Instructions for :ref:`installing Git <git-install>` can be found in the
 :ref:`Setting up Software <software-installations>` appendix.
 
+Replit Users
+^^^^^^^^^^^^
+
+.. admonition:: Note
+
+   You do not need to install git.  Replit has it's own method of 
+   version control. While it is possible to connect to your github account and 
+   repositories it is still in beta testing and at times doesn't work as expected.
+   Follow your teachers instuctions and modifications for this chapter.
+
 Check Your Understanding
 ------------------------
 

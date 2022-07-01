@@ -26,3 +26,10 @@ Chromebook Users
 If you are using a school-owned device, you should have access to a *virtual
 desktop* that holds all of the necessary software. Follow your teacher's
 instructions for logging in to this service.
+
+Replit Users
+------------
+
+Instead of terminal, Replit has a shell tab. You will be able to add files, 
+folders and navagate within your current repl. Follow your teacher's 
+instructions and modifications for this chapter.
