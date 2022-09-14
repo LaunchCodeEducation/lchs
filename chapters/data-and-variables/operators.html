@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.6. Operators &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.7. Order of Operations" href="order-of-operations.html" />
+    <link rel="prev" title="4.5. Statements and Expressions" href="expressions-and-statements.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.6. </span>Operators</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="operators">
+<span id="index-0"></span><h1><span class="section-number">4.6. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h1>
+<p>Now that we know how to store data in variables, let’s learn how to create new
+values from existing data. Run the following code. It stores values in two
+variables, <code class="docutils literal notranslate"><span class="pre">number_of_days</span></code> and <code class="docutils literal notranslate"><span class="pre">hours_per_day</span></code>, then prints the result of several expressions.</p>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Math-Operators?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe><p>Try changing one or more of the <em>operators</em> in lines 4 - 9 (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>,
+<code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>) to display a different output.</p>
+<p>An <strong>operator</strong> tells Python to perform an action on two values. Operators may
+be a single character (like <code class="docutils literal notranslate"><span class="pre">+</span></code>), double characters (like <code class="docutils literal notranslate"><span class="pre">**</span></code>), or
+keywords.</p>
+<p>The values an operator works on are called <strong>operands</strong>. Operands may be simple
+numbers or strings, or they be variables.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/operands.png"><img alt="Operands are the values on either side of the operator." src="../../_images/operands.png" style="width: 416.8px; height: 220.8px;" /></a>
+</div>
+<p>When Python finds an operator, it evaluates the expression and <em>returns</em> a new
+value. When a variable is used in an expression (like <code class="docutils literal notranslate"><span class="pre">number_of_days</span> <span class="pre">-</span> <span class="pre">5</span></code>),
+the variable’s stored value is evaluated in the expression.</p>
+<div class="section" id="math-operators">
+<h2><span class="section-number">4.6.1. </span>Math Operators<a class="headerlink" href="#math-operators" title="Permalink to this headline">¶</a></h2>
+<p>Some of the most common operators perform simple math calculations. These operators behave
+just like their similar symbols in the world of math. Many of the symbols are probably
+familiar to you. However, there are two operators that are commonly used in programming
+but not much in math class.</p>
+<span id="index-1"></span><table border="1" class="colwidths-auto docutils align-default" id="id2">
+<caption><span class="caption-text">Basic Math Operators</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">+</span></code></td>
+<td>Adds two values (operands)</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">5</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">-</span></code></td>
+<td>Subtracts the first operand by the second</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">-</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">-1</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">*</span></code></td>
+<td>Multiplies two operands</td>
+<td><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">6</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">/</span></code></td>
+<td>Divides the first operand by the second</td>
+<td><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">/</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">1.5</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">**</span></code></td>
+<td><p class="first">Takes the first operand and raises it to the power of the second.</p>
+<p class="last">(first value)<sup>second value</sup></p>
+</td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">**</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">9</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">**</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">125</span></code></p>
+</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">//</span></code></td>
+<td>Divides the first operand by the second and rounds <em>down</em> to a whole number.
+This is called <strong>floor division</strong> and is discussed <a class="reference internal" href="#floor-division"><span class="std std-ref">immediately below</span></a>.</td>
+<td><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">//</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">1</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">%</span></code></td>
+<td>This is called the <strong>modulus</strong> operator. It returns the remainder after dividing the first operand by the second.
+It is discussed <a class="reference internal" href="#modulo"><span class="std std-ref">below</span></a>.</td>
+<td><p class="first"><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="the-operator">
+<span id="floor-division"></span><h3><span class="section-number">4.6.1.1. </span>The <code class="docutils literal notranslate"><span class="pre">//</span></code> Operator<a class="headerlink" href="#the-operator" title="Permalink to this headline">¶</a></h3>
+<p>Whenever Python performs division with <code class="docutils literal notranslate"><span class="pre">/</span></code>, the value returned is a <code class="docutils literal notranslate"><span class="pre">float</span></code>
+data type.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>1.5
+1.0
+1.3333333333333333
+</pre></div>
+</div>
+</div>
+<p>As we see above, even for results that are whole numbers, like <code class="docutils literal notranslate"><span class="pre">10/10</span></code>, the data type
+returned is a <code class="docutils literal notranslate"><span class="pre">float</span></code>, it contains a decimal.</p>
+<p>If we want the result of a division to be an integer, we can convert it
+using the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function as we saw in the
+<a class="reference internal" href="type-conversion.html#type-conversion"><span class="std std-ref">type conversion section</span></a>. In line 2 above, the syntax
+would be <code class="docutils literal notranslate"><span class="pre">print(int(10</span> <span class="pre">/</span> <span class="pre">10))</span></code>, giving an output of <code class="docutils literal notranslate"><span class="pre">1</span></code> instead of <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p>
+<p id="index-2">This situation, called <strong>floor division</strong>, is common enough that Python gives
+us a shortcut with the <code class="docutils literal notranslate"><span class="pre">//</span></code> operator. It divides two values and rounds the
+result DOWN to the next smallest integer, regardless of any decimal values.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="o">//</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">99</span> <span class="o">/</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">99</span> <span class="o">/</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>1.3333333333333333    1
+9.9    9
+-1.5   -2
+-9.9   -10
+</pre></div>
+</div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We need to be careful when we consider negative numbers. <em>Rounding down</em>
+means making a larger negative value. While <code class="docutils literal notranslate"><span class="pre">9.9</span></code> rounds down to <code class="docutils literal notranslate"><span class="pre">9</span></code>,
+<code class="docutils literal notranslate"><span class="pre">-9.9</span></code> rounds down to <code class="docutils literal notranslate"><span class="pre">-10</span></code>.</p>
+<p class="last">Also, remember that the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function removes the decimals without
+rounding. <code class="docutils literal notranslate"><span class="pre">int(-99</span> <span class="pre">/</span> <span class="pre">10)</span></code> returns <code class="docutils literal notranslate"><span class="pre">-9</span></code>, but <code class="docutils literal notranslate"><span class="pre">-99</span> <span class="pre">//</span> <span class="pre">10</span></code> returns
+<code class="docutils literal notranslate"><span class="pre">-10</span></code>.</p>
+</div>
+</div>
+<div class="section" id="modulo">
+<span id="id1"></span><h3><span class="section-number">4.6.1.2. </span>The <code class="docutils literal notranslate"><span class="pre">%</span></code> Operator<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h3>
+<p id="index-3">The <strong>modulus</strong> operator (<code class="docutils literal notranslate"><span class="pre">%</span></code>) takes two integers, divides them, and returns
+the <em>remainder</em>. Consider these examples, which might bring up fond memories
+of doing long division:</p>
+<div class="figure align-default">
+<img alt="The modulus returns the remainder of a division." src="../../_images/modulus.png" />
+</div>
+<p>In the first calculation, 2 does not go into 15 evenly. 2 * 7 = 14, which is
+too small, but 2 * 8 = 16, which is too large. 2 goes into 15 seven times, but
+this leaves a <em>remainder</em> of <code class="docutils literal notranslate"><span class="pre">1</span></code>. Similarly, 3 goes into 5 one time, leaving
+a remainder of 2. Finally, 5 goes into 10 exactly 2 times, with no remainder
+left over.</p>
+<p>The modulus operator divides the first operand by the second and returns the
+value of the remainder. So <code class="docutils literal notranslate"><span class="pre">15</span> <span class="pre">%</span> <span class="pre">2</span></code> returns <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">%</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">2</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">5</span></code> returns <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Run the following code to see how <code class="docutils literal notranslate"><span class="pre">%</span></code> works.</p>
+<iframe height="550px" width="100%" src="https://repl.it/@launchcode/LCHS-Modulus?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe><p class="last">Try changing the numbers on either side of the <code class="docutils literal notranslate"><span class="pre">%</span></code> operator and check the
+results.</p>
+</div>
+<p>You may be currently wondering:</p>
+<blockquote>
+<div>Why would I EVER want to use a modulus?</div></blockquote>
+<p>Well, you will. However, we probably won’t convince you right now, at least
+with words.</p>
+<p>Experience is the best teacher. As you continue with this course, you will
+find yourself using <code class="docutils literal notranslate"><span class="pre">%</span></code> more than you expect.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>An integer, <code class="docutils literal notranslate"><span class="pre">num</span></code>, is even when <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, and it is odd
+when <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">%</span> <span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<p class="last">The value returned by <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> will be from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code> (not including
+<code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
+</div>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">The operation that the <em>modulus</em> symbol performs is called <strong>modulo</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.6.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What value is printed when the following statement runs?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">18</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 4.5</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What value is printed when the following statement runs?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">18</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 4.5</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 4</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 2</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What value is printed when the following statement runs?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">18</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 4.5</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 5</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> 2</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="expressions-and-statements.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.5. </span>Statements and Expressions</a></li>
+        
+        
+        <li class="next"><a href="order-of-operations.html"><span class="section-number">4.7. </span>Order of Operations <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/operators.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

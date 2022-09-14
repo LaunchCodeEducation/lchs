@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.2. Web Addresses &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.3. HTTP At a Glance" href="http-at-a-glance.html" />
+    <link rel="prev" title="19.1. What’s Connected to the Wire?" href="how-the-internet-works.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">19. </span>HTTP and the Internet</a></li>
+    <li class="active"><span class="section-number">19.2. </span>Web Addresses</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="web-addresses">
+<span id="id1"></span><h1><span class="section-number">19.2. </span>Web Addresses<a class="headerlink" href="#web-addresses" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">When a client makes a request to a server, it does so using a
+<strong>uniform resource locator (URL)</strong>. URLs are also called <strong>web addresses</strong>.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>As regular users of the web, we are already familiar with URLs like these:</p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">https://education.launchcode.org/lchs/</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">https://en.wikipedia.org/wiki/Client–server_model</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">https://repl.it</span></code></li>
+</ul>
+</div>
+<p>A URL contains a lot of information about the request, including <em>what</em> is
+being requested and <em>where</em> it should be sent. URLs contain several parts, and
+the general structure looks like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>scheme://host:port/path?query_string
+</pre></div>
+</div>
+<p>The five parts of this URL are:</p>
+<ol class="arabic simple">
+<li>Scheme</li>
+<li>Host</li>
+<li>Port (optional)</li>
+<li>Path (optional)</li>
+<li>Query String (optional)</li>
+</ol>
+<p>Only the <code class="docutils literal notranslate"><span class="pre">scheme</span></code> and <code class="docutils literal notranslate"><span class="pre">host</span></code> are required, and the parts must be in the
+<em>exact</em> order shown. Let’s look at each of these in detail.</p>
+<div class="section" id="scheme">
+<h2><span class="section-number">19.2.1. </span>Scheme<a class="headerlink" href="#scheme" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">The first portion of every URL specifies the <strong>scheme</strong>. Common schemes include
+<code class="docutils literal notranslate"><span class="pre">http</span></code>, <code class="docutils literal notranslate"><span class="pre">https</span></code>, and <code class="docutils literal notranslate"><span class="pre">file</span></code>. The scheme usually identifies the <em>protocol</em>
+for the request. For us, this will always be <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https</span></code>. If left
+off, a web browser will insert the scheme http/s for you.</p>
+<p>The scheme is <em>always</em> followed by <code class="docutils literal notranslate"><span class="pre">://</span></code>.</p>
+</div>
+<div class="section" id="host">
+<h2><span class="section-number">19.2.2. </span>Host<a class="headerlink" href="#host" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">The <strong>host</strong> portion of a URL specifies where the request should be sent. The
+host can be either an IP address, like <code class="docutils literal notranslate"><span class="pre">104.25.128.113</span></code>, or a domain name,
+like <code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code>.</p>
+</div>
+<div class="section" id="port">
+<h2><span class="section-number">19.2.3. </span>Port<a class="headerlink" href="#port" title="Permalink to this headline">¶</a></h2>
+<p id="index-3">Following the host is an optional <strong>port</strong> number. The port determines which
+application on the server needs to handle the request.</p>
+<p>When the port number is missing, a default value is used. For <code class="docutils literal notranslate"><span class="pre">http://</span></code>, the
+default port is <code class="docutils literal notranslate"><span class="pre">80</span></code>. When using <code class="docutils literal notranslate"><span class="pre">https://</span></code>, the default port is <code class="docutils literal notranslate"><span class="pre">443</span></code>.</p>
+<p>Ports <code class="docutils literal notranslate"><span class="pre">80</span></code> and <code class="docutils literal notranslate"><span class="pre">443</span></code> prompt the server to run programs that handle web
+requests. For example, assume a server receives a request to port <code class="docutils literal notranslate"><span class="pre">443</span></code>.
+When this happens, a special security program runs to encrypt/decrypt the data.
+If the request comes in at port <code class="docutils literal notranslate"><span class="pre">80</span></code>, then a different program runs and
+handles the data without the extra security features.</p>
+</div>
+<div class="section" id="path">
+<h2><span class="section-number">19.2.4. </span>Path<a class="headerlink" href="#path" title="Permalink to this headline">¶</a></h2>
+<p id="index-4">The <strong>path</strong> of a URL consists of a series of names separated by <code class="docutils literal notranslate"><span class="pre">/</span></code>. It
+looks similar to the result returned when we enter the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in the
+terminal.</p>
+<p>The path tells the server <em>what</em> is being requested. It includes a series of
+names that end with a specific directory or file. For example,
+<code class="docutils literal notranslate"><span class="pre">/blog/entries/2018/</span></code> requests the contents of the <code class="docutils literal notranslate"><span class="pre">2018</span></code> directory, while
+<code class="docutils literal notranslate"><span class="pre">/blog/index.html</span></code> requests only the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file from the <code class="docutils literal notranslate"><span class="pre">blog</span></code>
+folder.</p>
+<p>If the path is missing in the URL, then the <strong>root path</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code> is used. The
+root path usually sends us to the home page for a given site.</p>
+</div>
+<div class="section" id="query-string">
+<span id="id2"></span><h2><span class="section-number">19.2.5. </span>Query String<a class="headerlink" href="#query-string" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">After the path comes the <strong>query string</strong>, which begins with <code class="docutils literal notranslate"><span class="pre">?</span></code>. The <em>query</em>
+itself contains a set of key-value pairs. Each pair is joined by <code class="docutils literal notranslate"><span class="pre">=</span></code> and is
+separated from the other pairs by <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
+<p>While the path specifies <em>what</em> the request is asking for, the query string
+provides additional information needed to fulfill the request. For example, a
+query string from a search using DuckDuckGo might look like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>?q=recent+nasa+images&amp;ia=images
+</pre></div>
+</div>
+<p>This query has <em>two</em> key-value pairs:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">q</span></code> : <code class="docutils literal notranslate"><span class="pre">recent+nasa+images</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ia</span></code> : <code class="docutils literal notranslate"><span class="pre">images</span></code></li>
+</ul>
+<p>A search for “NASA” returns its <a class="reference external" href="https://duckduckgo.com/?q=nasa&amp;t=h_&amp;ia=web" target="_blank">home page and lots of other information<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Adding the query string helps narrow down the results. In this case, we want to
+focus on recent images shared by NASA.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic simple">
+<li>Follow the link <a class="reference external" href="https://google.com/?q=python" target="_blank">https://google.com/?q=python<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and compare the query string
+<code class="docutils literal notranslate"><span class="pre">q=python</span></code> compares to the text that appears in the search box.</li>
+<li>In the address bar, change <code class="docutils literal notranslate"><span class="pre">q=python</span></code> to <code class="docutils literal notranslate"><span class="pre">q=python+turtles</span></code> and tap
+<em>Enter</em>. How does the page change?</li>
+<li>Does including the query string in the address bar actually run the
+Google search?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">19.2.6. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<p>If you’d like to reinforce your reading with a video explanation for URLs,
+here’s a helpful, five minute clip:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.youtube.com/watch?v=OvF_pnJ6zrY" target="_blank">How Do URLs Work?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ul>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.2.7. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the URL <code class="docutils literal notranslate"><span class="pre">https://launchcode.org/lchs</span></code>, identify the <code class="docutils literal notranslate"><span class="pre">host</span></code>.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> lchs</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> https</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> launchcode</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> launchcode.org</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the URL <code class="docutils literal notranslate"><span class="pre">https://education.launchcode.org/lchs/index.html</span></code>, identify
+the <code class="docutils literal notranslate"><span class="pre">path</span></code>.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /index.html</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> /lchs/index.html</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /education.launchcode.org/lchs/index.html</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> /education.launchcode.org</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the query string <code class="docutils literal notranslate"><span class="pre">?q=nasa+images&amp;t=h_&amp;iax=videos&amp;ia=videos</span></code>, which of
+the following is NOT a key/value pair?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">q : nasa+images</code></li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">t : h_iax</code></li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">ia : videos</code></li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="how-the-internet-works.html"><span aria-hidden="true">&larr;</span> <span class="section-number">19.1. </span>What’s Connected to the Wire?</a></li>
+        
+        
+        <li class="next"><a href="http-at-a-glance.html"><span class="section-number">19.3. </span>HTTP At a Glance <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/http/web-addresses.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

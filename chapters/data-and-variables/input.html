@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.9. User Input &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.10. Exercises: Data &amp; Variables" href="exercises.html" />
+    <link rel="prev" title="4.8. Other Operators" href="other-operations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.9. </span>User Input</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="user-input">
+<h1><span class="section-number">4.9. </span>User Input<a class="headerlink" href="#user-input" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> works fine to display messages on the screen that never change. If we
+want to display different messages, we could try adding a variable:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Run the code below, then change the value of <code class="docutils literal notranslate"><span class="pre">name</span></code> to make the program
+greet you by name!</p>
+<div class="last"><iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Input-Practice-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe></div></div>
+<p>To print a greeting for a specific user, <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">Dave!&quot;)</span></code> only works if
+Dave is the actual user. To greet someone else, we could change the string
+inside the <code class="docutils literal notranslate"><span class="pre">()</span></code> to be <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">Sarah!'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Hello</span> <span class="pre">Elastigirl!'</span></code> or any
+other name we need.</p>
+<p>Similarly, to make the statement <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">&quot;</span> <span class="pre">+</span> <span class="pre">name</span> <span class="pre">+</span> <span class="pre">&quot;!&quot;)</span></code> work for
+different users, we need to go into the code and change the string we assign to
+<code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>However, what if we do not know the name of the user beforehand?</p>
+<p>It would be great if we could ask the user of our program to enter a name, save that string,
+and then print a personalized greeting.</p>
+<p>Of course, Python gives us a way to do this!</p>
+<div class="section" id="requesting-data">
+<h2><span class="section-number">4.9.1. </span>Requesting Data<a class="headerlink" href="#requesting-data" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">To personalize the greeting, we need <strong>input</strong> from the user. This
+involves displaying a <strong>prompt</strong> on the screen (e.g. <code class="docutils literal notranslate"><span class="pre">Please</span> <span class="pre">enter</span> <span class="pre">a</span> <span class="pre">number:</span></code>), and then
+saving the response from the user. Whatever information the user
+enters can be stored in a variable.</p>
+<p>Python has a built-in function to collect information from a user. As you might
+expect, it is called <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+<div class="section" id="syntax">
+<h3><span class="section-number">4.9.1.1. </span>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;User prompt...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">input</span></code> tells Python to display the prompt in the console. It
+then waits for the user to type in some information. Once the user taps <em>Enter</em>
+or <em>Return</em>, the data is collected and stored in the variable.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>There is a lot going on here behind the scenes, but for now you should
+follow this bit of wisdom:</p>
+<blockquote>
+<div>I turn the key, and it goes.</div></blockquote>
+<p class="last">Most of us do not need to know exactly how cars, phones, or microwave ovens
+work. We just know enough to use them in our day to day lives. Similarly, we
+do not need to understand <em>how</em> <code class="docutils literal notranslate"><span class="pre">input</span></code> collects data from the console. We
+just need to know that it <em>does</em> if we use the correct syntax.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h3><span class="section-number">4.9.1.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<p>In the editor above:</p>
+<ol class="arabic simple">
+<li>Replace line 2 with <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">input('Please</span> <span class="pre">enter</span> <span class="pre">your</span> <span class="pre">name:</span> <span class="pre">')</span></code>.</li>
+<li>Run the program again. You should see the text <code class="docutils literal notranslate"><span class="pre">Please</span> <span class="pre">enter</span> <span class="pre">your</span> <span class="pre">name:</span></code>
+appear in the black output box (the <em>console</em>).</li>
+<li>In the console, type in a name, tap <em>Enter</em>, and examine the result.</li>
+<li>Run the program several more times and enter different names.</li>
+</ol>
+<p>Try adding another <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">name</span></code> term inside the <code class="docutils literal notranslate"><span class="pre">print</span></code> statement and see
+what happens. Next, add code to prompt the user for a second name. Store the
+response in <code class="docutils literal notranslate"><span class="pre">other_name</span></code>, then print both names using <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+</div>
+</div>
+<div class="section" id="using-the-collected-data">
+<h2><span class="section-number">4.9.2. </span>Using the Collected Data<a class="headerlink" href="#using-the-collected-data" title="Permalink to this headline">¶</a></h2>
+<p>After collecting a name, the program does not actually DO anything with the
+information. If we want to use the data, we need to tell Python what to do with
+the <code class="docutils literal notranslate"><span class="pre">name</span></code> variable.</p>
+<p>By storing the user’s name inside the variable called <code class="docutils literal notranslate"><span class="pre">name</span></code>, we gain the ability to hold onto
+the data and use it when we want.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<p>Write a program that requests a user’s first and last name, then prints an
+output that looks like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>First name: Elite
+Last name: Coder
+Last, First: Coder, Elite
+</pre></div>
+</div>
+<div class="last"><iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Input-Practice-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe></div></div>
+</div>
+<div class="section" id="critical-input-detail">
+<h2><span class="section-number">4.9.3. </span>Critical <code class="docutils literal notranslate"><span class="pre">input</span></code> Detail<a class="headerlink" href="#critical-input-detail" title="Permalink to this headline">¶</a></h2>
+<p>There is one <em>very important</em> quirk about the <code class="docutils literal notranslate"><span class="pre">input</span></code> function that we need to
+remember. Given <code class="docutils literal notranslate"><span class="pre">print(7</span> <span class="pre">+</span> <span class="pre">2)</span></code>, the output would be <code class="docutils literal notranslate"><span class="pre">9</span></code>.</p>
+<p>Now explore the following code, which prompts the user for two numbers and then
+prints their sum:</p>
+<iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Input-Practice-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe><p>Do you see the output you expected?</p>
+<p>If we enter <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>, we may expect an output of <code class="docutils literal notranslate"><span class="pre">9</span></code>. The result printed is <code class="docutils literal notranslate"><span class="pre">72</span></code>. What gives?!?!?</p>
+<p id="index-1">The quirk with the <code class="docutils literal notranslate"><span class="pre">input</span></code> function is that it <em>treats all entries as
+strings</em>, so numbers get <strong>concatenated</strong> rather than added. Concatenation
+means that the second string gets attached to the end of the first.</p>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">&quot;ABC&quot;</span> <span class="pre">+</span> <span class="pre">&quot;def&quot;</span></code> outputs as <code class="docutils literal notranslate"><span class="pre">ABCdef</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code> + <code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> outputs
+as the string <code class="docutils literal notranslate"><span class="pre">72</span></code>.</p>
+<blockquote>
+<div>Python treats input data as strings!</div></blockquote>
+<p>If we want our program to perform math operations on the entered numbers, we must
+<a class="reference internal" href="type-conversion.html#type-conversion"><span class="std std-ref">use type conversion</span></a> to change the string values into
+numbers.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="last arabic">
+<li><p class="first">In the print statement, use <code class="docutils literal notranslate"><span class="pre">int()</span></code> to convert <code class="docutils literal notranslate"><span class="pre">num_1</span></code> and <code class="docutils literal notranslate"><span class="pre">num_2</span></code>
+from strings to integers. Run the program and examine the result.</p>
+</li>
+<li><p class="first">Instead of collecting <code class="docutils literal notranslate"><span class="pre">num_1</span></code> as a string and then converting it later,
+we can do this in a single step. In line 1, place
+<code class="docutils literal notranslate"><span class="pre">input(&quot;Enter</span> <span class="pre">a</span> <span class="pre">number:</span> <span class="pre">&quot;)</span></code> inside the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">int(input(&quot;Enter</span> <span class="pre">a</span> <span class="pre">number:</span> <span class="pre">&quot;))</span></code>.</p>
+</li>
+<li><p class="first">Repeat step 2 for <code class="docutils literal notranslate"><span class="pre">num_2</span></code>.</p>
+</li>
+<li><p class="first">Remove the <code class="docutils literal notranslate"><span class="pre">int</span></code> functions from the print statement. Run the program
+and examine the result.</p>
+</li>
+<li><p class="first">What happens if you enter <code class="docutils literal notranslate"><span class="pre">Hi</span></code> or <code class="docutils literal notranslate"><span class="pre">4.33</span></code> instead of a whole number?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.9.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed when the following program runs?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">user_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter your age: &quot;</span><span class="p">)</span>
+<span class="c1"># The user enters 25.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">user_age</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"><code class="pre"> &lt;class 'str'&gt;</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> &lt;class 'int'&gt;</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> user_age</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> 25</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume you want the user to enter a decimal value, like <code class="docutils literal notranslate"><span class="pre">4.33</span></code>. Which of
+the following statements would throw an error after the user taps <em>Return</em>?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> input('Enter a decimal value: ')</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"><code class="pre"> float(input('Enter a decimal value: '))</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"><code class="pre"> int(input('Enter a decimal value: '))</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="other-operations.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.8. </span>Other Operators</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">4.10. </span>Exercises: Data &amp; Variables <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/input.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

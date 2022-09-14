@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.5. Local Turtles &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.6. Importing Our Own Modules" href="vscode-custom-modules.html" />
+    <link rel="prev" title="17.4. Python in VS Code" href="vscode-python.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.5. </span>Local Turtles</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="local-turtles">
+<h1><span class="section-number">17.5. </span>Local Turtles<a class="headerlink" href="#local-turtles" title="Permalink to this headline">¶</a></h1>
+<p>In the earlier chapters, whenever we used Python turtles, we simply opened up a
+repl.it or Trinket editor and happily started to code.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Click <em>Run</em> to watch a turtle do a random walk!</p>
+<div class="last"><iframe src="https://trinket.io/embed/python/e497db234d?runOption=run" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<p>Each of the online editors performs some tasks behind the scenes to display the
+turtle graphics. To do the same thing locally, we need to include a couple of
+extra steps.</p>
+<div class="section" id="screen-control">
+<h2><span class="section-number">17.5.1. </span>Screen Control<a class="headerlink" href="#screen-control" title="Permalink to this headline">¶</a></h2>
+<p>In VS Code, create a new file inside the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory. Call the
+file <code class="docutils literal notranslate"><span class="pre">turtle_fun.py</span></code>.</p>
+<p>Copy and paste the following code into <code class="docutils literal notranslate"><span class="pre">turtle_fun</span></code>. It makes our turtle
+object, <code class="docutils literal notranslate"><span class="pre">bob</span></code>, draw a circle with a radius of 50 pixels.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Run the program and notice that a separate window opens to show the drawing.
+What happens when <code class="docutils literal notranslate"><span class="pre">bob</span></code> finishes the circle?</p>
+<p>Both repl.it and Trinket control the drawing space automatically. This lets
+users focus on moving the turtles around. However, when we run turtle programs
+locally, we need to control the drawing space ourselves.</p>
+<div class="section" id="keeping-it-open">
+<h3><span class="section-number">17.5.1.1. </span>Keeping It Open<a class="headerlink" href="#keeping-it-open" title="Permalink to this headline">¶</a></h3>
+<p>The first step is to figure out how to keep the drawing space open after the
+turtle object finishes drawing.</p>
+<p>Add the following statement on line 2 of the code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This statement does not <em>open</em> the drawing space. Instead, it creates a
+<code class="docutils literal notranslate"><span class="pre">Screen</span></code> object called <code class="docutils literal notranslate"><span class="pre">window</span></code>. We can then use the object to control the
+space. The <code class="docutils literal notranslate"><span class="pre">Screen</span></code> class defines methods to set things like background
+color, size, and how and when to close the drawing space.</p>
+<p>At the bottom of the code, add this statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The method <code class="docutils literal notranslate"><span class="pre">exitonclick()</span></code> tells Python to wait for the user to click inside
+the window. Once this happens, the program closes the drawing space.</p>
+<p>Run the turtle program again with the two new statements. Properly done, the
+drawing space remains open until we click inside of it.</p>
+</div>
+<div class="section" id="other-screen-methods">
+<h3><span class="section-number">17.5.1.2. </span>Other Screen Methods<a class="headerlink" href="#other-screen-methods" title="Permalink to this headline">¶</a></h3>
+<p>Once we define a <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object, we can use it to control several properties
+of the drawing space. For example, we can add a title to our drawing space with
+the statement <code class="docutils literal notranslate"><span class="pre">window.title(&quot;Turtle</span> <span class="pre">Circle&quot;)</span></code>. <em>TRY IT!</em></p>
+<p>Two other <code class="docutils literal notranslate"><span class="pre">Screen</span></code> methods are outlined in the <a class="reference internal" href="../../appendices/turtles/index.html#turtle-guide"><span class="std std-ref">Python Turtles</span></a>
+appendix:</p>
+<ol class="arabic simple">
+<li>Setting the <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-setup"><span class="std std-ref">window size</span></a>.</li>
+<li>Setting a <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-background-color"><span class="std std-ref">background color</span></a>.</li>
+</ol>
+<p>In addition, the <a class="reference external" href="https://docs.python.org/3/library/turtle.html#methods-of-turtlescreen-screen" target="_blank">Python website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+provides a complete list and explanation of <code class="docutils literal notranslate"><span class="pre">Screen</span></code> methods.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">17.5.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Replace the code in <code class="docutils literal notranslate"><span class="pre">turtle_fun.py</span></code> with the following:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="c1"># Create a Turtle object &amp; assign properties:</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;#419f6a&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Draw a filled circle:</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+
+<span class="c1"># Draw and fill some half-circles:</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;#3c79b8&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">180</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple">
+<li>Run the code as-is to see how the program behaves.</li>
+<li>Create a <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object and use it to keep the drawing space open until
+you click in the window.</li>
+<li>Add a title to the drawing window.</li>
+<li>Change the width of the drawing space. For your device, how wide can you
+make the screen?</li>
+<li>Change the height of the drawing space. For your device, how tall can you
+make the screen?</li>
+<li>Resize of the window to be 400 pixels wide and 500 pixels tall.</li>
+<li>Change the background color of the window.</li>
+<li>Change the movement commands to make <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw something else. Can
+<code class="docutils literal notranslate"><span class="pre">bob</span></code> run off the edge of the screen?</li>
+<li><em>Bonus</em>: Explore how to use the <a class="reference external" href="https://docs.python.org/3/library/turtle.html#turtle-methods" target="_blank">xcor() and ycor()<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+methods. Add a conditional to turn <code class="docutils literal notranslate"><span class="pre">bob</span></code> around when the object gets too
+close to one edge of the screen. Can you make the turtle bounce back and
+forth several times between the edges of the screen?</li>
+</ol>
+<table border="1" class="docutils align-default" id="id1">
+<caption><span class="caption-text">Bouncing Turtle Object</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 1</th>
+<th class="head"><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 10</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last figure align-default">
+<img alt="Turtle object moving back and forth across the drawing space." src="../../_images/turtle-bounce.gif" />
+</div>
+</td>
+<td><div class="first last figure align-default">
+<a class="reference internal image-reference" href="../../_images/bob-advanced-bounce.png"><img alt="Turtle object bounces off all four screen edges." src="../../_images/bob-advanced-bounce.png" style="width: 80%;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="vscode-python.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.4. </span>Python in VS Code</a></li>
+        
+        
+        <li class="next"><a href="vscode-custom-modules.html"><span class="section-number">17.6. </span>Importing Our Own Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/vscode-turtles.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

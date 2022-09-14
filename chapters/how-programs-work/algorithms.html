@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2.1. Algorithms &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.2. Programming Languages" href="programming-languages.html" />
+    <link rel="prev" title="2. How Programs Work" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">2. </span>How Programs Work</a></li>
+    <li class="active"><span class="section-number">2.1. </span>Algorithms</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="algorithms">
+<h1><span class="section-number">2.1. </span>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h1>
+<p>Have you ever alphabetized a stack of papers or a list of words? Did you sing
+the alphabet song while you were performing the task? Did you sort the words
+into groups based on the first letter? Did you “fan” the papers so you could
+look at all of the names as you organized the stack? Did you get help from a
+partner and split the task in half?</p>
+<p>Regardless of how you completed the task, you probably followed a <em>pattern</em> to
+make the process easier. If you had to repeat the task with a new set of words,
+you could jump right in and follow the same pattern.</p>
+<p id="index-0">The word <strong>algorithm</strong> is just a fancy name for a pattern or set of steps that
+solve a specific problem.</p>
+<div class="section" id="algorithms-are-easy-to-find">
+<h2><span class="section-number">2.1.1. </span>Algorithms Are Easy to Find<a class="headerlink" href="#algorithms-are-easy-to-find" title="Permalink to this headline">¶</a></h2>
+<p>Imagine a recipe for baking cookies. After the list of ingredients comes a
+series of step-by-step instructions for making the treats. If you want to cook
+something else, like a cake or a roast, you follow a different set of steps
+using a different set of ingredients.</p>
+<p>An <em>algorithm</em> is like a recipe. It is a careful series of steps that, when
+followed, produce a specific result. Programmers create algorithms to
+accomplish small tasks. By combining many separate, small tasks, programmers
+build larger applications.</p>
+<div class="section" id="for-example">
+<h3><span class="section-number">2.1.1.1. </span>For Example<a class="headerlink" href="#for-example" title="Permalink to this headline">¶</a></h3>
+<p>Let’s take a look at alphabetizing a list of words:</p>
+<p><code class="docutils literal notranslate"><span class="pre">apple,</span> <span class="pre">pear,</span> <span class="pre">zebra,</span> <span class="pre">box,</span> <span class="pre">rutabaga,</span> <span class="pre">fox,</span> <span class="pre">banana,</span> <span class="pre">socks,</span> <span class="pre">foot</span></code></p>
+<p>Here is one way to complete the task:</p>
+<ol class="arabic">
+<li><p class="first">Arrange the words from a - z based only on the first letter:</p>
+<p><code class="docutils literal notranslate"><span class="pre">apple,</span> <span class="pre">box,</span> <span class="pre">banana,</span> <span class="pre">fox,</span> <span class="pre">foot,</span> <span class="pre">pear,</span> <span class="pre">rutabaga,</span> <span class="pre">socks,</span> <span class="pre">zebra</span></code></p>
+</li>
+<li><p class="first">If more than one word starts with ‘a’, rearrange those words based on the
+second letter. Repeat for the words that start with ‘b’, then ‘c’, etc.:</p>
+<p><code class="docutils literal notranslate"><span class="pre">apple,</span> <span class="pre">banana,</span> <span class="pre">box,</span> <span class="pre">fox,</span> <span class="pre">foot,</span> <span class="pre">pear,</span> <span class="pre">rutabaga,</span> <span class="pre">socks,</span> <span class="pre">zebra</span></code></p>
+</li>
+<li><p class="first">If multiple words start with ‘a’ and have the same second letter, rearrange
+those words based on the third letter. Repeat for the ‘b’ words, then the
+‘c’ words, etc.:</p>
+<p><code class="docutils literal notranslate"><span class="pre">apple,</span> <span class="pre">banana,</span> <span class="pre">box,</span> <span class="pre">foot,</span> <span class="pre">fox,</span> <span class="pre">pear,</span> <span class="pre">rutabaga,</span> <span class="pre">socks,</span> <span class="pre">zebra</span></code></p>
+</li>
+<li><p class="first">If other repeats exist, continue sorting the list by comparing the 4th, 5th,
+6th letters (etc.) until all the words are properly arranged.</p>
+</li>
+</ol>
+<p>This is not the ONLY way to solve the task, but it provides a series of steps
+that can be used in many different situations to organize different lists of
+words.</p>
+<p>Alphabetizing is a process we can teach a computer to do, and the algorithm
+will complete the process much more rapidly than a human.</p>
+</div>
+</div>
+<div class="section" id="algorithms-do-many-things">
+<h2><span class="section-number">2.1.2. </span>Algorithms Do Many Things<a class="headerlink" href="#algorithms-do-many-things" title="Permalink to this headline">¶</a></h2>
+<p>Cookbooks contain pages and pages of algorithms. Following 2 or 3 of these
+produces a nice dinner plus dessert. Programmers use this same idea, only they
+work with devices instead of food.</p>
+<p>Every algorithm is designed to do one small job. Combining different algorithms
+together allows programmers to solve much more complicated problems.</p>
+<ol class="arabic">
+<li><p class="first">Have you ever used the “You may also like…” option when looking at movies
+or books online? Algorithms take your past choices and use them to recommend
+new titles.</p>
+</li>
+<li><p class="first">In 2019, astronomers took X-ray data collected by NASA and used algorithms
+to create the first image ever taken of a black hole.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/blackhole.png"><img alt="nasa.gov. Image of a black hole taken by the Chandra telescope." src="../../_images/blackhole.png" style="width: 80%;" /></a>
+</div>
+<p><a class="reference external" href="https://www.nasa.gov/mission_pages/chandra/news/black-hole-image-makes-history" target="_blank">https://www.nasa.gov/mission_pages/chandra/news/black-hole-image-makes-history<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</li>
+<li><p class="first">The apps on a phone are just combinations of algorithms working together to
+do a job. Applying a filter to a photo, playing a game with users across
+the world, or just calling mom all result from carefully designed sets of
+instructions.</p>
+</li>
+</ol>
+<p>Programmers can do so many things with computers, but the devices are useless
+unless we give them algorithms to follow.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">2.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>An algorithm is:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A solution to a problem that can be solved by a computer.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A step by step list of instructions that if followed exactly will solve a problem.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A single command run by a programming language.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Select ALL of the following that can be solved by using an algorithm:</p>
+<div class="last"><ol type="a">
+   <li><span id = "a" onclick="highlight('a', true)">Answering a math problem.</span></li>
+   <li><span id = "b" onclick="highlight('b', true)">Sorting numbers in decreasing order.</span></li>
+   <li><span id = "c" onclick="highlight('c', true)">Making a peanut butter and jelly sandwich.</span></li>
+   <li><span id = "d" onclick="highlight('d', true)">Assigning guests to tables at a wedding reception.</span></li>
+   <li><span id = "e" onclick="highlight('e', true)">Creating a grocery list.</span></li>
+   <li><span id = "f" onclick="highlight('f', true)">Suggesting new music for a playlist.</span></li>
+   <li><span id = "g" onclick="highlight('g', true)">Making cars self-driving.</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">2. </span>How Programs Work</a></li>
+        
+        
+        <li class="next"><a href="programming-languages.html"><span class="section-number">2.2. </span>Programming Languages <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/how-programs-work/algorithms.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

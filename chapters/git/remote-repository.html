@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.7. Remote Repositories &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.8. Exercises: Git More Practice" href="exercises.html" />
+    <link rel="prev" title="18.6. Git Tips" href="git-tips.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.7. </span>Remote Repositories</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="remote-repositories">
+<h1><span class="section-number">18.7. </span>Remote Repositories<a class="headerlink" href="#remote-repositories" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we learned how to use the Git version control system to keep
+snapshots of our projects. This version history (the repository) is stored on
+our personal machine.</p>
+<p>One advantage of keeping this <em>local</em> repo is that we can work on our project
+anytime we want. We don’t need access to the internet. One issue with a local
+repo, however, is that keeping a copy on our personal device does not always
+fit how we code. For example:</p>
+<ol class="arabic simple">
+<li>Students often use different devices in class and at home.</li>
+<li>In a school, the same computer gets used by multiple students.</li>
+<li>Coding projects are often done in teams. Each partner needs their own,
+current copy of the repository.</li>
+</ol>
+<p>Also, accidents happen. If our device takes an unexpected trip to the floor, or
+falls in the toilet, or gets juice spilled on it, or gets stolen, or the hard
+drive crashes, then our project is gone.</p>
+<p>Fortunately, the whole point of a VCS is to keep a backup of our work. This
+includes support for shared machines and recovering from accidents!</p>
+<div class="section" id="local-remote-github-oh-my">
+<h2><span class="section-number">18.7.1. </span>Local, Remote, GitHub, Oh My!<a class="headerlink" href="#local-remote-github-oh-my" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">How can we work on our saved code when we need to use a different device? This
+is where <strong>remote repositories</strong> come in. Unlike a <em>local</em> repo (stored on our
+machine), a remote repository is stored online.</p>
+<p>If you’ve ever used the Dropbox service, or created a Google doc (or
+spreadsheet, presentation, etc.), then you have used a remote repository. For
+example, you can login to your Google account from a computer at school and
+start working on a slide presentation. Google stores your work and lets you
+access it from any other computer that can connect to the web. You just login
+to Google again and continue working on the same file right where you left off.
+You can also share your work with one or more partners. Changes made by one
+person update the slides for everyone else. That way, the entire team sees the
+most current version.</p>
+<p>Instead of keeping a Git repository only on our local machine, we can use an
+online service to store the repo instead. Then we pull down copies of that repo
+to work on the code from different devices.</p>
+<p id="index-1">To get started with remote repositories, create an account on
+<a class="reference external" href="https://www.github.com/" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. This is a very popular service that
+manages repositories and much, much more. Not only can we store our own work
+on the site, users allow each other to view, clone, and contribute to their
+code!</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Check with your teacher before signing up for a GitHub account. Depending on
+your school’s technology policy, there might be some restrictions.</p>
+</div>
+</div>
+<div class="section" id="team-projects">
+<h2><span class="section-number">18.7.2. </span>Team Projects<a class="headerlink" href="#team-projects" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say we join a team that already has a project going. To start helping, we
+need to get a copy of the repository. Fortunately, the team uses GitHub!</p>
+<p>Even without an account, we can <em>clone</em> our team’s work and save it on our own
+machine. Once we have an account (and permission from our team), we can push
+the commits we make from our machine up to GitHub. Neat!</p>
+<p id="clone-remote-repo">To clone a remote repository, the terminal command is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone repo-url
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">repo-url</span></code> part of the command is where we fill in the web address of the
+repository we want to clone.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Since you already initialized the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> directory as a Git
+repository, it’s important to move out of that folder before cloning a new
+repo!</p>
+<ol class="arabic">
+<li><p class="first">In VS Code, use the terminal to return to the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code>
+directory. Confirm your location with the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pwd
+/Users/username/Desktop/local_practice
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now clone an existing project from GitHub. Copy and paste this command
+into the terminal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/LaunchCodeEducation/LCHS-git-clone-example.git
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use the file tree or the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command so see that a new folder has been
+saved in the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory. Navigate into that folder and
+look around.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd LCHS-git-clone-example
+$ ls
+main.py
+$ python main.py
+</pre></div>
+</div>
+<p><em>Mac users</em>: Remember to use <code class="docutils literal notranslate"><span class="pre">python3</span></code> instead of <code class="docutils literal notranslate"><span class="pre">python</span></code> in the
+terminal.</p>
+</li>
+</ol>
+<p class="last">You can view the code you cloned by opening <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in VS Code. Any
+branches, changes, and commits you make will be saved to your local version
+of the repository. The remote version remains unchanged by the actions you
+take on your device.</p>
+</div>
+</div>
+<div class="section" id="saving-to-a-remote-repository">
+<h2><span class="section-number">18.7.3. </span>Saving to a Remote Repository<a class="headerlink" href="#saving-to-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>Once we clone a repository to our machine, any changes we make to the project
+stay on our personal device. To update the remote repo, we need to <em>push</em> our
+changes up to GitHub.</p>
+<p>In this chapter’s <a class="reference internal" href="project.html#git-project"><span class="std std-ref">Project</span></a>, we will go through a detailed
+process to practice pushing and pulling changes from a GitHub repository. Your
+teacher may also have you work through <a class="reference internal" href="../../assignments/communication-log.html#communication-log"><span class="std std-ref">Assignment 5</span></a>,
+which adds some partners to your GitHub experience.</p>
+<p>For now, we will just look at a summary of the Git commands needed to update a
+remote repository. The process only adds one new step:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Message...&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">branch-name</span></code></li>
+</ol>
+<p>Step 4 uses the new command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> to move our local commits up to
+GitHub. The command changes the online repository. <code class="docutils literal notranslate"><span class="pre">origin</span></code> makes sure that
+any new files and code do indeed go to the remote (the <em>origin</em> of the
+project). <code class="docutils literal notranslate"><span class="pre">branch-name</span></code> identifies the branch that the new commits go to.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">18.7.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the command for sending a commit to a remote repository?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git push</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git pull</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git clone</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git commit</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git add</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git status</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git outta here</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="git-tips.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.6. </span>Git Tips</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">18.8. </span>Exercises: Git More Practice <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/remote-repository.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

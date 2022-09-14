@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.6. Exercises: HTTP In The Browser &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20. User Input with Forms" href="../forms/index.html" />
+    <link rel="prev" title="19.5. Responses" href="http-responses.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">19. </span>HTTP and the Internet</a></li>
+    <li class="active"><span class="section-number">19.6. </span>Exercises: HTTP In The Browser</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercises-http-in-the-browser">
+<h1><span class="section-number">19.6. </span>Exercises: HTTP In The Browser<a class="headerlink" href="#exercises-http-in-the-browser" title="Permalink to this headline">¶</a></h1>
+<p>While we looked at the HTTP concepts we need to know, we haven’t actually
+<em>seen</em> what they look like in real time. Requests and responses take place
+behind the scenes. To to view them, we need to open up a new browser tool.</p>
+<div class="section" id="viewing-requests-and-responses">
+<h2><span class="section-number">19.6.1. </span>Viewing Requests and Responses<a class="headerlink" href="#viewing-requests-and-responses" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start with a simple webpage similar to one of the CSS examples. The code
+for the page is in the editor below.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/hello-http.png"><img alt="A simple webpage with external CSS and a single image." src="../../_images/hello-http.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">A simple webpage for HTTP viewing.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For these examples, you will need to open a couple of new tabs. Click the
+<em>Open in replit</em> button to enter the Replit workspace. Next, <em>Fork</em> a copy of
+the code to your own account. Finally, in the upper right corder of the output
+panel, click the <em>Open in a new tab</em> icon.</p>
+<iframe height="400px" width="100%" src="https://repl.it/@launchcode/HTTP-sample-page?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>In the new tab (titled <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">browser</span></code>), you should see the sample
+webpage. Now let’s take a look at the requests and responses that occur when
+the browser displays the page.</p>
+<div class="section" id="try-it">
+<h3><span class="section-number">19.6.1.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The images below were taken from Firefox. Other browsers will show similar
+results, but slight differences should be expected.</p>
+</div>
+<p>Make sure you are in the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">browser</span></code> tab, then do the following:</p>
+<ol class="arabic">
+<li><p class="first">Open your browser’s developer tools and select the <em>Network</em> tab.</p>
+<ol class="loweralpha">
+<li><p class="first"><em>Method 1</em>: Firefox has a <em>Tools</em> menu. Select <em>Web Developer</em> and
+<em>Network</em> from the options.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/open-dev-tools.png"><img alt="Use the menu to open Firefox's developer tools (Network option)." src="../../_images/open-dev-tools.png" style="height: 300px;" /></a>
+</div>
+</li>
+<li><p class="first"><em>Method 2</em>: Right click inside the page and select <em>Inspect Element</em>. In
+the panel that opens, click the <em>Network</em> tab.</p>
+<div class="figure align-default">
+<img alt="Right click on a page to open the developer tools (Inspect option)." src="../../_images/open-dev-alt.png" />
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">The <em>Network</em> pane displays all the HTTP requests and responses that occur
+when loading a page. However, it only works if it is open during the
+request. To see some data appear in this panel, refresh the page.</p>
+</li>
+<li><p class="first">Now you’ll see something like this:</p>
+<div class="figure align-default" id="id2">
+<img alt="Firefox's developer tools, with several requests in the Network pane." src="../../_images/network-tab.png" />
+<p class="caption"><span class="caption-text">The Network panel, showing four requests/responses.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Each entry gives information about a single HTTP request. The entries appear
+in the order in which the requests are made as the page loads.</p>
+</li>
+<li><p class="first">Note the response codes that appear on the left side of each entry. Hover
+over one of these to see some status information about the request.</p>
+</li>
+<li><p class="first">Click on one of the <code class="docutils literal notranslate"><span class="pre">200</span></code> entries. This opens up more details about the
+request and the response.</p>
+<div class="figure align-default">
+<img alt="The details of an HTTP request, viewed in the Network pane." src="../../_images/network-tab-details.png" />
+</div>
+<p>On the right, we can find the response headers and (scrolling down) the
+request headers. We can even view the response body by clicking on the
+<em>Response</em> label.</p>
+</li>
+<li><p class="first">In the HTML code, change the <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> element in line 7 to:</p>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;rutabaga.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Reload the page. What happens to the styling? Check the <em>Network</em> panel
+again. Notice that a new <code class="docutils literal notranslate"><span class="pre">404</span></code> error appears in the list. The browser
+requested the <code class="docutils literal notranslate"><span class="pre">rutabaga.css</span></code> file from the server, but no matching title
+is stored there. With no external CSS found, the HTML page keeps the default
+style properties.</p>
+</li>
+<li><p class="first">Fix the name mismatch for the style sheet, then create a new mismatch with
+the image name. What happens to the appearance of the webpage and the
+results shown in the <em>Network</em> panel?</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="browser-flow">
+<h2><span class="section-number">19.6.2. </span>Browser Flow<a class="headerlink" href="#browser-flow" title="Permalink to this headline">¶</a></h2>
+<p>Looking in the <em>Network</em> pane, we see that loading this simple web page
+involves more than one HTTP request. Each resource within the page (like the
+image and CSS file) requires a separate request.</p>
+<p>Let’s examine the flow of loading this page, which used a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p>
+<ol class="arabic simple">
+<li>The browser requests the page from the server.</li>
+<li>The browser receives a response containing the HTML page.</li>
+<li>The browser issues a <em>new</em> HTTP request for the external CSS file.</li>
+<li>Similarly, a separate HTTP request is made for the <code class="docutils literal notranslate"><span class="pre">hello-http.png</span></code> image.</li>
+<li>As each new response is received, the browser processes the data or media
+and updates the page. In this case, it executes the HTML code before
+requesting and applying the CSS. Finally, it requests and then displays the
+image.</li>
+</ol>
+<p>This flow explains why we sometimes load a webpage and see the content update
+over a few seconds (or longer). In these cases, the HTTP requests for larger
+data files (like high-resolution images) take more time to complete. This
+produces a noticeable lag in the time it takes the browser to display the
+complete page.</p>
+<p>Imagine we slowed the loading process way down for the sample webpage. We would
+first see the text from the plain HTML elements. Next, we would see
+when the CSS rules finish loading, because we would notice the text and
+background styles change. Finally, we would see the image fill into the middle
+of the <code class="docutils literal notranslate"><span class="pre">figure</span></code> element.</p>
+</div>
+<div class="section" id="try-other-webpages">
+<h2><span class="section-number">19.6.3. </span>Try Other Webpages<a class="headerlink" href="#try-other-webpages" title="Permalink to this headline">¶</a></h2>
+<p>The sample webpage only needed four HTTP requests. Now open a new tab in your
+browser and navigate to a page that includes more content. This can include
+images, videos, buttons, links, areas that respond to your actions, etc.</p>
+<p>Open the <em>Network</em> tab and see just how many requests/responses are necessary
+to make your chosen webpage work.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Stuck choosing a good website? Try one of these options:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://www.launchcode.org/" target="_blank">LaunchCode home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.nasa.gov/specials/artemis/" target="_blank">NASA’s Artemis page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, or its <a class="reference external" href="https://www.nasa.gov/" target="_blank">home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://education.launchcode.org/lchs/chapters/functions/function-output.html" target="_blank">LCHS Function Output page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+<ol class="arabic simple">
+<li>How many requests were required to load the page?</li>
+<li>Try finding a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, then check what’s in the request body and
+the response body.</li>
+<li>Try finding a <code class="docutils literal notranslate"><span class="pre">401</span></code> or <code class="docutils literal notranslate"><span class="pre">403</span></code> error. What does the code mean?</li>
+<li>Do you see any request types <em>besides</em> <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>? (These are
+possible, but you might not see them for all pages).</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.6.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Return to the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">browser</span></code> tab. Open the <em>Network</em> panel and find
+the request for the image. Use the information there to answer the following
+questions.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the approximate size of the image?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 98 kB</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 200 kB</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 404 kB</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Unknown</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Check the <em>Request</em> and <em>Response</em> tabs. What are the dimensions for the
+image?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 200 x 200</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 800 x 600</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 1248 x 266</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1440 x 900</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="http-responses.html"><span aria-hidden="true">&larr;</span> <span class="section-number">19.5. </span>Responses</a></li>
+        
+        
+        <li class="next"><a href="../forms/index.html"><span class="section-number">20. </span>User Input with Forms <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/http/exercises.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

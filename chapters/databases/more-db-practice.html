@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.6. More Database Practice &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.7. Database Tips" href="db-tips.html" />
+    <link rel="prev" title="24.5. Database Practice" href="db-practice.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">24. </span>Databases</a></li>
+    <li class="active"><span class="section-number">24.6. </span>More Database Practice</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="more-database-practice">
+<h1><span class="section-number">24.6. </span>More Database Practice<a class="headerlink" href="#more-database-practice" title="Permalink to this headline">¶</a></h1>
+<p>In the previous pages, we created a database, added a table to it, and saved
+several entries in that table. Now we will learn how to modify the stored data.</p>
+<div class="section" id="update-table-data">
+<h2><span class="section-number">24.6.1. </span>Update Table Data<a class="headerlink" href="#update-table-data" title="Permalink to this headline">¶</a></h2>
+<p>By using an <a class="reference internal" href="crud.html#sql-update-syntax"><span class="std std-ref">UPDATE</span></a> query, we can change one or more
+entries in a table. Code along with the following video to practice this
+technique.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The video shows a new column in the <code class="docutils literal notranslate"><span class="pre">students</span></code> table. Here’s how to add
+that column and fill it with <code class="docutils literal notranslate"><span class="pre">'Yes'</span></code> strings:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Add the recent_grad column to the students table.</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;ALTER TABLE students ADD COLUMN recent_grad TEXT&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+
+<span class="c1"># Fill each cell in the column with a &#39;Yes&#39; string.</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;UPDATE students SET recent_grad = &#39;Yes&#39;&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+<span class="n">database</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">After running this code, your <code class="docutils literal notranslate"><span class="pre">students</span></code> table should match the one shown
+at the beginning of the video.</p>
+</div>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/piXiY9j64I4" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section><p><strong>Key points</strong>:</p>
+<ol class="arabic">
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query uses the <code class="docutils literal notranslate"><span class="pre">SET</span></code> keyword to identify one or more
+columns to change.</p>
+</li>
+<li><p class="first">To identify which rows to change, the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query should also include a
+<code class="docutils literal notranslate"><span class="pre">WHERE</span></code> condition. If we leave out the condition, then <em>every</em> row in the
+table will be modified.</p>
+</li>
+<li><p class="first">Combining <code class="docutils literal notranslate"><span class="pre">SET</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> identifies which cell(s) in the table to
+change.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/table-update.png"><img alt="Showing how SET and WHERE cross in a table to identify the cell(s) to change." src="../../_images/table-update.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Each cell in the table has a (column, row) position.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">After running the query, use the <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> method to confirm the
+changes.</p>
+</li>
+<li><p class="first">After we commit an <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query, there is no quick <em>Undo</em> option!</p>
+</li>
+</ol>
+<p><strong>Sample code</strong>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">database</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;practice.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Update selected cells from the &#39;students&#39; table:</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;UPDATE students SET recent_grad = &#39;No&#39; WHERE grad_year &lt; 2017&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+<span class="n">database</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="delete-data">
+<h2><span class="section-number">24.6.2. </span>Delete Data<a class="headerlink" href="#delete-data" title="Permalink to this headline">¶</a></h2>
+<p>Code along with the following video to practice removing rows from a table.
+Also learn how to delete an entire table from the database.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/CDVGJWiDQI8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section><p><strong>Key points</strong>:</p>
+<ol class="arabic simple">
+<li>The <a class="reference internal" href="crud.html#sql-delete-syntax"><span class="std std-ref">DELETE FROM</span></a> query removes selected rows from
+a table.</li>
+<li>Add a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause to identify which rows should be deleted.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> query removes an entire table from the database. ALL the
+row and column information will be deleted.</li>
+<li><em>There is NO undo option</em> for a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> or <code class="docutils literal notranslate"><span class="pre">DROP</span></code> query.</li>
+</ol>
+<p><strong>Sample code</strong>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">database</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;practice.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1"># Delete selected rows from the &#39;students&#39; table:</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;DELETE FROM students WHERE recent_grad == &#39;No&#39;&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+<span class="n">database</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+<span class="c1"># Drop the &#39;remove_me&#39; table from the database:</span>
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;DROP TABLE remove_me&quot;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">24.6.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume we have a table called <code class="docutils literal notranslate"><span class="pre">books</span></code> stored in our database. The table
+includes columns for <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">publish_date</span></code>, and <code class="docutils literal notranslate"><span class="pre">category</span></code>.
+Which SQL query returns the titles for all non-fiction books published
+after 2019?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT title, category FROM books WHERE publish_date > 2019</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT publish_date > 2019 FROM books WHERE category = 'non-fiction'</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT books, title WHERE publish_date > 2019 AND category = 'non-fiction'</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> SELECT title FROM books WHERE publish_date > 2019 AND category = 'non-fiction'</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What should you do if you accidentally <code class="docutils literal notranslate"><span class="pre">DROP</span></code> a table from your database
+or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> the wrong row from a table?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Accept that the data is gone and learn from your mistake.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Cry.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Blame someone else.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use <em>Control-z</em> to undo the mistake.</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>To <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> an entry in a table, the SQL query should specify a row and a
+column. Which keyword identifies the rows to change, and which keyword
+identifies the columns?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> SET identifies the rows. WHERE identifies the columns.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> SET identifies the columns. WHERE identifies the rows.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the rows. SET identifies the columns.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the columns. WHERE identifies the rows.</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="db-practice.html"><span aria-hidden="true">&larr;</span> <span class="section-number">24.5. </span>Database Practice</a></li>
+        
+        
+        <li class="next"><a href="db-tips.html"><span class="section-number">24.7. </span>Database Tips <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/more-db-practice.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

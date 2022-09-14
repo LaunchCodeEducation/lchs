@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copying Objects &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Solutions To Chapter Exercises" href="../exercise-solutions/index.html" />
+    <link rel="prev" title="Inheritance (Part 2)" href="inheritance-cont.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Optional Course Content</a></li>
+    <li class="active">Copying Objects</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="copying-objects">
+<span id="deep-copy"></span><h1>Copying Objects<a class="headerlink" href="#copying-objects" title="Permalink to this headline">¶</a></h1>
+<p>With both <a class="reference internal" href="../../chapters/lists/cloning-lists.html#cloning-lists"><span class="std std-ref">lists</span></a> and <a class="reference internal" href="../dictionary-methods/dictionary-copy-example.html#dictionary-copy-example"><span class="std std-ref">dictionaries</span></a>,
+using an assignment statement like <code class="docutils literal notranslate"><span class="pre">list_b</span> <span class="pre">=</span> <span class="pre">list_a</span></code> does NOT make a separate
+copy of the data. Instead, the statement just creates a new label (<code class="docutils literal notranslate"><span class="pre">list_b</span></code>)
+that points to the same memory location.</p>
+<p>To make an independent clone of a list or dictionary, we use the <code class="docutils literal notranslate"><span class="pre">.copy()</span></code>
+method. Lists and dictionaries are both object types, and the class for each
+one contains a set of code for making the copy.</p>
+<p>What if an object does not have a <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> method? We can still make an
+independent clone, but the process is a little more involved.</p>
+<div class="section" id="shallow-copy">
+<h2>Shallow Copy<a class="headerlink" href="#shallow-copy" title="Permalink to this headline">¶</a></h2>
+<p>Let’s begin by reviewing how a simple assignment statement operates on an
+object.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Line 11 creates a new object of type <code class="docutils literal notranslate"><span class="pre">Student</span></code>, and line 12 creates a new
+<em>label</em> for the same object. <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code> point to the
+same memory location.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span>
+
+   <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">student_1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">,</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">93</span><span class="p">])</span>
+   <span class="n">student_2</span> <span class="o">=</span> <span class="n">student_1</span>
+
+   <span class="n">student_2</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">7890</span>  <span class="c1"># Reassign the id value using student_2.</span>
+
+   <span class="c1"># Print out the property values for student_1 and student_2.</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student_1 =&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="p">(</span><span class="n">student_1</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student_2 =&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="p">(</span><span class="n">student_2</span><span class="p">))</span>
+
+   <span class="n">student_3</span> <span class="o">=</span> <span class="n">student_1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>student_1 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 7890, &#39;scores&#39;: [88, 95, 93]}
+student_2 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 7890, &#39;scores&#39;: [88, 95, 93]}
+
+File &quot;main.py&quot;, line 20, in main
+   student_3 = student_1.copy()
+AttributeError: &#39;Student&#39; object has no attribute &#39;copy&#39;
+</pre></div>
+</div>
+<p>The change we make to the <code class="docutils literal notranslate"><span class="pre">id</span></code> property on line 14 shows up when print
+both <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code>. They are the same object, so changes
+made with one label show up when we use the other.</p>
+<p class="last">Note that line 20 throws an error. While list and dictionary objects both
+have defined <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> methods, our <code class="docutils literal notranslate"><span class="pre">Student</span></code> object type does not.</p>
+</div>
+<p>Fortunately, we do not need to add a method to our <code class="docutils literal notranslate"><span class="pre">Student</span></code> class to copy
+the objects. Python comes with a module, called <code class="docutils literal notranslate"><span class="pre">copy</span></code>, that contains the
+functions we need.</p>
+<div class="admonition-try-it admonition" id="copy-deepcopy-try-it">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In the editor below, note that we import one function from the <code class="docutils literal notranslate"><span class="pre">copy</span></code>
+module. Not surprisingly, it’s called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.</p>
+<p>The general syntax is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+<span class="n">new_object</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">old_object</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Run the program as-is first to verify that <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">student_2</span></code> are the same object. Note the output from the three
+<code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</p>
+</li>
+<li><p class="first">Replace line 14 with the statement <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">copy(student_1)</span></code>.</p>
+</li>
+<li><p class="first">Rerun the program and note the change in the output. With the updated
+code, <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code> now represent different objects.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">student_1</span> <span class="pre">is</span> <span class="pre">student_2</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> even when all
+of their property values match.</p>
+</li>
+</ol>
+<div class="last"><iframe src="https://trinket.io/embed/python3/d235980037" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<p>While convenient, the <code class="docutils literal notranslate"><span class="pre">copy()</span></code> function is not the full story. It produces
+what programmers call a <em>shallow copy</em> of an object. We will see what this
+means in the next section.</p>
+</div>
+<div class="section" id="id1">
+<h2>Deep Copy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">A <strong>shallow copy</strong> of an object creates a new, independent object. However,
+some of the data in the new and old objects might still be linked. We can see
+this in the following example.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Once again, we create the <code class="docutils literal notranslate"><span class="pre">student_1</span></code> object from the <code class="docutils literal notranslate"><span class="pre">Student</span></code> class
+and clone it with <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">copy(student_1)</span></code>.</p>
+<p>Let’s see what happens when we try changing one value in the list assigned
+to the <code class="docutils literal notranslate"><span class="pre">scores</span></code> property.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">student_1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">1234</span><span class="p">,</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">93</span><span class="p">])</span>
+   <span class="n">student_2</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">student_1</span><span class="p">)</span>    <span class="c1"># Make a shallow copy of student_1.</span>
+
+   <span class="c1"># Reassign the id value in student_2:</span>
+   <span class="n">student_2</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">7890</span>
+
+   <span class="c1"># Reassign the first value in the student_2 scores list:</span>
+   <span class="n">student_2</span><span class="o">.</span><span class="n">scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student_1 =&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="p">(</span><span class="n">student_1</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;student_2 =&quot;</span><span class="p">,</span> <span class="nb">vars</span><span class="p">(</span><span class="n">student_2</span><span class="p">))</span>
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>student_1 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 1234, &#39;scores&#39;: [100, 75, 93]}
+student_2 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 7890, &#39;scores&#39;: [100, 75, 93]}
+</pre></div>
+</div>
+</div>
+<p>Hmmm. The output shows us that changing the <code class="docutils literal notranslate"><span class="pre">id</span></code> value for <code class="docutils literal notranslate"><span class="pre">student_2</span></code> does
+NOT change the <code class="docutils literal notranslate"><span class="pre">id</span></code> for <code class="docutils literal notranslate"><span class="pre">student_1</span></code>. However, changing the first value in the
+<code class="docutils literal notranslate"><span class="pre">scores</span></code> list for <code class="docutils literal notranslate"><span class="pre">student_2</span></code> affects BOTH objects. Even though
+<code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code> are different objects, they are not quite
+independent of each other yet.</p>
+<p>The reason for this involves how the <code class="docutils literal notranslate"><span class="pre">scores</span></code> property relates to the list.
+When line 12 calls the class and <code class="docutils literal notranslate"><span class="pre">__init__</span></code> runs, the value assigned to
+<code class="docutils literal notranslate"><span class="pre">scores</span></code> isn’t <code class="docutils literal notranslate"><span class="pre">[88,</span> <span class="pre">75,</span> <span class="pre">93]</span></code>. Instead <code class="docutils literal notranslate"><span class="pre">scores</span></code> is assigned a <em>reference
+to a memory location</em>. The actual list is stored at that memory location. The
+value assigned to <code class="docutils literal notranslate"><span class="pre">scores</span></code> just points to it.</p>
+<p>When we make the shallow copy in line 13, <code class="docutils literal notranslate"><span class="pre">student_2</span></code> assigns the same
+memory reference to <code class="docutils literal notranslate"><span class="pre">scores</span></code>. Even though the two objects are different, both
+<code class="docutils literal notranslate"><span class="pre">scores</span></code> properties point to the same data in memory. This is why changing
+<code class="docutils literal notranslate"><span class="pre">[88,</span> <span class="pre">75,</span> <span class="pre">93]</span></code> to <code class="docutils literal notranslate"><span class="pre">[100,</span> <span class="pre">75,</span> <span class="pre">93]</span></code> for <code class="docutils literal notranslate"><span class="pre">student_2</span></code> also affects
+<code class="docutils literal notranslate"><span class="pre">student_1</span></code>.</p>
+<p>Think of each <code class="docutils literal notranslate"><span class="pre">Student</span></code> object as having two layers inside of it. The first
+layer includes references to memory locations. The second layer is the actual
+data stored. A shallow copy only goes one layer deep. It duplicates the memory
+references, but it does not create new sets of the original data.</p>
+<p id="index-1">To make a full, independent clone of an object, we must make a <strong>deep copy</strong>.
+A deep copy takes the original data and creates clones of that data in new
+memory locations. The cloned object uses these new locations as its property
+values.</p>
+<p>The syntax for making a deep copy is very similar to using <code class="docutils literal notranslate"><span class="pre">copy()</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="n">new_object</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">old_object</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In the <a class="reference internal" href="#copy-deepcopy-try-it"><span class="std std-ref">editor above</span></a>:</p>
+<ol class="last arabic simple">
+<li>Replace line 1 with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">copy</span> <span class="pre">import</span> <span class="pre">copy,</span> <span class="pre">deepcopy</span></code>.</li>
+<li>Replace line 14 with <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">deepcopy(student_1)</span></code>.</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">student_2.scores[0]</span> <span class="pre">=</span> <span class="pre">100</span></code> before the final <code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</li>
+<li>Rerun the program to verify that changing the <code class="docutils literal notranslate"><span class="pre">scores</span></code> values for
+<code class="docutils literal notranslate"><span class="pre">student_2</span></code> no longer affects <code class="docutils literal notranslate"><span class="pre">scores</span></code> for <code class="docutils literal notranslate"><span class="pre">student_1</span></code>.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="inheritance-cont.html"><span aria-hidden="true">&larr;</span> Inheritance (Part 2)</a></li>
+        
+        
+        <li class="next"><a href="../exercise-solutions/index.html">Solutions To Chapter Exercises <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/extras/deep-copy.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

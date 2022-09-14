@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.7. Form Validation with Flask &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.8. Styling Flask Templates" href="style-templates.html" />
+    <link rel="prev" title="21.6. Data Collection" href="data-exchange.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.7. </span>Form Validation with Flask</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="form-validation-with-flask">
+<h1><span class="section-number">21.7. </span>Form Validation with Flask<a class="headerlink" href="#form-validation-with-flask" title="Permalink to this headline">¶</a></h1>
+<p>Whenever we ask users for input, it is critical that we <em>validate</em> the
+information they submit. Users will often submit something that doesn’t fit our
+requirements or doesn’t make sense in some way. Most of the time, this happens
+by accident. Sometimes, however, users will try to mess with our application by
+sending bad data.</p>
+<p>Our applications should respond by rejecting forms that contain invalid
+information. We should also include code that tells the user what they did
+wrong.</p>
+<div class="section" id="validation">
+<span id="client-server-validation"></span><h2><span class="section-number">21.7.1. </span>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h2>
+<p id="index-0"><strong>Validation</strong> checks to make sure that data submitted by a user meets the
+requirements for our program. For example, if we want the user to schedule an
+appointment, then we need to make sure they enter a date and time within a
+certain range.</p>
+<p>Invalid data might just produce incorrect, harmless results. However, it might
+cause our program to crash, or allow outside users to access our code. Either
+way, we want to make sure our applications catch any errors and deal with them
+in a smooth way.</p>
+<p><strong>Client-side validation</strong> takes place inside the browser window, and it
+prevents a form from being submitted. In this case, the invalid data never
+leaves the user’s screen. In the <a class="reference internal" href="../forms/text-inputs.html#client-side-validation"><span class="std std-ref">Forms chapter</span></a>,
+we added client-side validation by including the <code class="docutils literal notranslate"><span class="pre">type</span></code> and/or <code class="docutils literal notranslate"><span class="pre">required</span></code>
+attributes inside an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag.</p>
+<p><strong>Server-side validation</strong> occurs after the user clicks <em>Submit</em> and sends an
+HTTP request over the internet. In this case, the server receives the request
+and runs some code to check the data. If a problem is found, the server sends a
+response back to the user’s browser with information about what went wrong.
+Although the faulty data reaches the server, it doesn’t make it very far. The
+program catches and responds to a mistake before it can cause any harm.</p>
+<p>Whenever we build a web application that requires user input, we should include
+both types of validation.</p>
+<div class="section" id="why-do-both">
+<h3><span class="section-number">21.7.1.1. </span>Why Do Both?<a class="headerlink" href="#why-do-both" title="Permalink to this headline">¶</a></h3>
+<p>Each type of validation has its strengths and weaknesses, so using both helps
+us cover the bases. Here’s a summery of what each type brings to our
+application:</p>
+<p>Client-side:</p>
+<ol class="arabic simple">
+<li><strong>Pro</strong>: Checks data in real-time, and prevents bad data from being sent to
+the server.</li>
+<li><strong>Pro</strong>: HTML attributes make it simple to put in place.</li>
+<li><strong>Con</strong>: Can be easily fooled, turned off, or bypassed completely by the
+user.</li>
+</ol>
+<p>Server-side:</p>
+<ol class="arabic simple">
+<li><strong>Pro</strong>: Cannot be bypassed by the user.</li>
+<li><strong>Pro</strong>: Allows programmers to write much more specific checks for the data.</li>
+<li><strong>Con</strong>: Requires more work to put in place, and it only operates after
+a request reaches the server.</li>
+</ol>
+<p>Whenever our applications collect user input, we should <em>never</em> assume that the
+information will be valid or safe. We must <em>always</em> check the data to make sure
+it will work with our program. By combining client and server-side validation,
+we decrease the chances that our program will crash when it receives bad data.</p>
+</div>
+</div>
+<div class="section" id="server-side-validation">
+<span id="id1"></span><h2><span class="section-number">21.7.2. </span>Server-Side Validation<a class="headerlink" href="#server-side-validation" title="Permalink to this headline">¶</a></h2>
+<p>In our <code class="docutils literal notranslate"><span class="pre">favorite_form</span></code> template, we can add client-side validation to the
+<code class="docutils literal notranslate"><span class="pre">Favorite</span> <span class="pre">Pixar</span> <span class="pre">Movie</span></code> field by including the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute.
+However, this just checks to make sure the user types something into the field.
+They could easily submit something other than a <a class="reference external" href="https://www.pixar.com/" target="_blank">Pixar<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+film title.</p>
+<p>Let’s add some server-side validation to make sure the user chooses an actual
+Pixar movie. Submitting the form sends data to the <code class="docutils literal notranslate"><span class="pre">/results</span></code> route, so
+that’s where we need to add some new Python code.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">results()</span></code> function. Your code should
+include a <code class="docutils literal notranslate"><span class="pre">request.form</span></code> statement for each of the four input fields.
+However, in this exercise we’re only going to pay attention to the movie
+title.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/results&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">best_pix</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;best_pix&#39;</span><span class="p">]</span>
+   <span class="c1"># Other request.form statements...</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">best_pix</span> <span class="o">=</span> <span class="n">best_pix</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">To help with the validation, it’s useful to cast text entries into all
+lowercase or uppercase. We should also remove any leading or trailing
+whitespace. Modify line 25 as follows:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/results&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">best_pix</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;best_pix&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+   <span class="c1"># Other request.form statements...</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">best_pix</span> <span class="o">=</span> <span class="n">best_pix</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">As of December, 2020, Pixar had released 23 full-length movies.
+Copy/paste the list of the titles into your code.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/results&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">best_pix</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;best_pix&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+   <span class="c1"># Other request.form statements...</span>
+   <span class="n">films</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;toy story&quot;</span><span class="p">,</span><span class="s2">&quot;a bug&#39;s life&quot;</span><span class="p">,</span><span class="s2">&quot;toy story 2&quot;</span><span class="p">,</span><span class="s2">&quot;monsters, inc.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;finding nemo&quot;</span><span class="p">,</span> <span class="s2">&quot;the incredibles&quot;</span><span class="p">,</span><span class="s2">&quot;cars&quot;</span><span class="p">,</span><span class="s2">&quot;ratatouille&quot;</span><span class="p">,</span><span class="s2">&quot;wall-e&quot;</span><span class="p">,</span><span class="s2">&quot;up&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toy story 3&quot;</span><span class="p">,</span><span class="s2">&quot;cars 2&quot;</span><span class="p">,</span> <span class="s2">&quot;brave&quot;</span><span class="p">,</span><span class="s2">&quot;monsters university&quot;</span><span class="p">,</span><span class="s2">&quot;inside out&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;the good dinosaur&quot;</span><span class="p">,</span><span class="s2">&quot;finding dory&quot;</span><span class="p">,</span> <span class="s2">&quot;cars 3&quot;</span><span class="p">,</span><span class="s2">&quot;coco&quot;</span><span class="p">,</span><span class="s2">&quot;incredibles 2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toy story 4&quot;</span><span class="p">,</span><span class="s2">&quot;onward&quot;</span><span class="p">,</span><span class="s2">&quot;soul&quot;</span><span class="p">]</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">best_pix</span> <span class="o">=</span> <span class="n">best_pix</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note that all of the titles in the list are lowercase. This matches the
+format of the string assigned to <code class="docutils literal notranslate"><span class="pre">best_pix</span></code>.</p>
+</li>
+<li><p class="first">Add a conditional to check if the title entered by the user is NOT part
+of the <code class="docutils literal notranslate"><span class="pre">films</span></code> list:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/results&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">best_pix</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;best_pix&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+   <span class="c1"># Other request.form statements...</span>
+   <span class="n">films</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;toy story&quot;</span><span class="p">,</span><span class="s2">&quot;a bug&#39;s life&quot;</span><span class="p">,</span><span class="s2">&quot;toy story 2&quot;</span><span class="p">,</span><span class="s2">&quot;monsters, inc.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;finding nemo&quot;</span><span class="p">,</span> <span class="s2">&quot;the incredibles&quot;</span><span class="p">,</span><span class="s2">&quot;cars&quot;</span><span class="p">,</span><span class="s2">&quot;ratatouille&quot;</span><span class="p">,</span><span class="s2">&quot;wall-e&quot;</span><span class="p">,</span><span class="s2">&quot;up&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toy story 3&quot;</span><span class="p">,</span><span class="s2">&quot;cars 2&quot;</span><span class="p">,</span> <span class="s2">&quot;brave&quot;</span><span class="p">,</span><span class="s2">&quot;monsters university&quot;</span><span class="p">,</span><span class="s2">&quot;inside out&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;the good dinosaur&quot;</span><span class="p">,</span><span class="s2">&quot;finding dory&quot;</span><span class="p">,</span> <span class="s2">&quot;cars 3&quot;</span><span class="p">,</span><span class="s2">&quot;coco&quot;</span><span class="p">,</span><span class="s2">&quot;incredibles 2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;toy story 4&quot;</span><span class="p">,</span><span class="s2">&quot;onward&quot;</span><span class="p">,</span><span class="s2">&quot;soul&quot;</span><span class="p">]</span>
+
+   <span class="k">if</span> <span class="n">best_pix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">films</span><span class="p">:</span>
+      <span class="n">best_pix</span> <span class="o">=</span> <span class="s2">&quot;Sorry, &#39;</span><span class="si">{0}</span><span class="s2">&#39; isn&#39;t a Pixar film.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_pix</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">best_pix</span> <span class="o">=</span> <span class="n">best_pix</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">best_pix</span> <span class="o">=</span> <span class="n">best_pix</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>If the boolean expression in line 33 returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, then we assign an
+error message to the <code class="docutils literal notranslate"><span class="pre">best_pix</span></code> variable. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, line 36 casts
+the user’s entry into Title Case.</p>
+</li>
+<li><p class="first">Save your code, then launch the application and navigate to
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code>. Test out the validation code by entering
+different options in the <code class="docutils literal notranslate"><span class="pre">Favorite</span> <span class="pre">Pixar</span> <span class="pre">Movie</span></code> field. Be sure to test
+cASe differences, leading/trailing whitespace, non-Pixar movies, and (of
+course) your favorite Pixar film.</p>
+<div class="figure align-default" id="id2">
+<img alt="Before and after pages showing the form and the results page (with an error message)." src="../../_images/valid-movie.png" />
+<p class="caption"><span class="caption-text">The user sees an error message on the results page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<p>Following the example above, add validation for the <code class="docutils literal notranslate"><span class="pre">color</span></code> input. Limit the
+user to only 1 of 3 choices: <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, or <code class="docutils literal notranslate"><span class="pre">blue</span></code>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>You could replace the <code class="docutils literal notranslate"><span class="pre">color</span></code> input with either radio buttons or a select
+menu. This would fit well with client-side validation.</p>
+<p class="last">However, you need to practice server-side validation! For now, keep the
+input as <code class="docutils literal notranslate"><span class="pre">type=&quot;text&quot;</span></code>.</p>
+</div>
+</div>
+<div class="section" id="a-better-user-experience">
+<h2><span class="section-number">21.7.3. </span>A Better User Experience<a class="headerlink" href="#a-better-user-experience" title="Permalink to this headline">¶</a></h2>
+<p>With server-side validation, the user only finds out if they did something
+wrong AFTER they submit the form. Also, they will be on the results page, which
+means they need to navigate back to the form in order to fix their mistakes.
+Many users will find this annoying, or won’t know how to go back a step.</p>
+<p>We want to give our users a smoother experience if they make a mistake. One
+thing we can do is to return them to the original form instead of rendering the
+results page. We will handle this in the next chapter.</p>
+</div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">21.7.4. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<p><em>Always</em> validate data collected from a user.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/K7dio-owR70" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">21.7.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which type of validation prevents form submission?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Client-side</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Server-side</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Both</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Neither</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which type of validation can be used to display error messages on a webpage?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Client-side</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Server-side</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Both</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Neither</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which type of validation provides more detailed control over checking user
+input?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Client-side</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Server-side</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="data-exchange.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.6. </span>Data Collection</a></li>
+        
+        
+        <li class="next"><a href="style-templates.html"><span class="section-number">21.8. </span>Styling Flask Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/validation.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

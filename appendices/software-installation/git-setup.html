@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing Git &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Common Python Dictionary Methods" href="../dictionary-methods/index.html" />
+    <link rel="prev" title="Installing Python" href="python-setup.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Installing Software for LCHS</a></li>
+    <li class="active">Installing Git</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="installing-git">
+<span id="git-install"></span><h1>Installing Git<a class="headerlink" href="#installing-git" title="Permalink to this headline">¶</a></h1>
+<p>One of the most important habits for a programmer deals with proper version
+control. The <a class="reference internal" href="../../chapters/git/index.html#git-chapter"><span class="std std-ref">Git Some Control</span></a> chapter deals with this
+critical process.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Before starting the Git installation, make sure you finished setting up
+<a class="reference internal" href="terminal-setup.html#terminal-setup"><span class="std std-ref">terminal</span></a>, <a class="reference internal" href="vscode-setup.html#vsc-install"><span class="std std-ref">VS Code</span></a>, and
+<a class="reference internal" href="python-setup.html#python-install"><span class="std std-ref">Python</span></a> on your machine.</p>
+</div>
+<p>Follow the instructions below to install the latest version of Python:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="#git-win-install"><span class="std std-ref">Windows</span></a></li>
+<li><a class="reference internal" href="#git-mac-install"><span class="std std-ref">Mac</span></a></li>
+<li><a class="reference internal" href="#git-chrome-install"><span class="std std-ref">Chromebook</span></a></li>
+</ol>
+<div class="section" id="windows-users">
+<span id="git-win-install"></span><h2>Windows Users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h2>
+<p>Since you already installed Git Bash when you set up your terminal, you are
+good to go!</p>
+</div>
+<div class="section" id="mac-users">
+<span id="git-mac-install"></span><h2>Mac Users<a class="headerlink" href="#mac-users" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Launch the <em>Terminal</em> application, or open a new terminal panel in VS Code.</p>
+</li>
+<li><p class="first">Type the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> in the terminal.</p>
+</li>
+<li><p class="first">If the output includes a version number, like the sample below, then you are
+ready to go! The actual version isn’t that important, as long as you see
+<code class="docutils literal notranslate"><span class="pre">2.x</span></code> or higher.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git --version
+git version 2.20.1
+</pre></div>
+</div>
+</li>
+<li><p class="first">If the output does not include a version number, then a popup will open and
+ask to install some tools on your computer. Accept the invitation!</p>
+</li>
+<li><p class="first">After the installation is done, double check that it worked by typing
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> again.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="chromebook-users">
+<span id="git-chrome-install"></span><h2>Chromebook Users<a class="headerlink" href="#chromebook-users" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Launch the <em>Terminal</em> application, or open a new terminal panel in VS Code.</p>
+</li>
+<li><p class="first">Type the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> in the terminal.</p>
+</li>
+<li><p class="first">If the output includes a version number, like the sample below, then you are
+ready to go! The actual version isn’t that important, as long as you see
+<code class="docutils literal notranslate"><span class="pre">2.x</span></code> or higher.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git --version
+git version 2.20.1
+</pre></div>
+</div>
+</li>
+<li><p class="first">If the output does not include a version number, then you will need to
+install the software from the terminal. Enter the command
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code>. You will see lots of text appear as the
+installation runs. If you are prompted to give permission, enter <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</li>
+<li><p class="first">After the installation is done, double check that it worked by typing
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> again.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="python-setup.html"><span aria-hidden="true">&larr;</span> Installing Python</a></li>
+        
+        
+        <li class="next"><a href="../dictionary-methods/index.html">Common Python Dictionary Methods <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/software-installation/git-setup.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

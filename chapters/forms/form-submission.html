@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.2. Submitting Forms &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.3. POST Form Submission" href="form-post.html" />
+    <link rel="prev" title="20.1. Web Forms" href="creating-forms.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.2. </span>Submitting Forms</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="submitting-forms">
+<h1><span class="section-number">20.2. </span>Submitting Forms<a class="headerlink" href="#submitting-forms" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Forms collect data from the user. Our first basic web form included two simple
+text inputs, one for a <code class="docutils literal notranslate"><span class="pre">Username</span></code> and one for a <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">Name</span></code>. We can type
+whatever we want into the two fields, but that’s it. The form doesn’t actually
+<em>send</em> the information anywhere.</p>
+<p>As we learned in the <a class="reference internal" href="../http/http-at-a-glance.html#request-response"><span class="std std-ref">HTTP chapter</span></a>, actions on the web
+involve a series of <em>requests</em> and <em>responses</em>. When we click on a link or
+enter a URL in the browser’s address bar, we request a specific page stored on
+a server somewhere. Data moves from the server to our browser (the client). A
+<strong>form submission</strong>, on the other hand, is an HTTP request that contains values
+collected from a form. In this case, data moves from the client to the server.</p>
+<p>To collect the data entered by a user and send it on its way, we need to
+<em>trigger</em> the form submission.</p>
+<div class="section" id="submit-a-form">
+<h2><span class="section-number">20.2.1. </span>Submit a Form<a class="headerlink" href="#submit-a-form" title="Permalink to this headline">¶</a></h2>
+<p>Form submission is triggered by clicking a button. This often has a label like
+<em>Submit</em>, <em>OK</em>, or <em>Login</em>. Regardless of the label, we call this a <code class="docutils literal notranslate"><span class="pre">submit</span></code>
+button. We add it to our forms one of two ways:</p>
+<ol class="arabic simple">
+<li>Using a separate <code class="docutils literal notranslate"><span class="pre">input</span></code> element with the <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code> attribute.</li>
+<li>Using a <code class="docutils literal notranslate"><span class="pre">button</span></code> element.</li>
+</ol>
+<p>Each of these methods is shown in the box below.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Here is our basic form again, but this time we added two buttons inside the
+element.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- clicking either of these will cause a form submission --&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-default" id="id1">
+<img alt="Form with two text inputs and two buttons (&quot;Submit Query&quot; and &quot;Login&quot;)" src="../../_images/two-form-buttons.png" />
+<p class="caption"><span class="caption-text">Adding two buttons to our basic form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">&lt;input</span> <span class="pre">type=&quot;submit&quot;/&gt;</span></code> syntax automatically adds the words
+<code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Query</span></code> inside the button. To change the text, we add the
+<code class="docutils literal notranslate"><span class="pre">value=&quot;button-text&quot;</span></code> attribute inside the tag and replace <code class="docutils literal notranslate"><span class="pre">button-text</span></code>
+with the label we want.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element has no default value. The text we put between the
+tags appears inside. If we leave this out, an empty button appears with
+the form.</p>
+<p class="last">We only need one button in our form, but we used both here just to see the
+HTML code for each option. Note that without the <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> element on line
+18, the two buttons would appear side by side.</p>
+</div>
+<div class="section" id="try-it">
+<h3><span class="section-number">20.2.1.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>In Visual Studio Code, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file that contains your form.</li>
+<li>Select one of the button options and add the new element to your HTML code.
+Make the text inside the button say something other than <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Query</span></code> or
+<code class="docutils literal notranslate"><span class="pre">Login</span></code>.</li>
+<li>Save your work.</li>
+<li>Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in your browser.</li>
+<li>Type something into each input field, then click the button. Pay attention
+to what happens inside the address bar of your browser.</li>
+</ol>
+<p>Did you catch the change? Try it again, but this time enter <code class="docutils literal notranslate"><span class="pre">Bob</span></code> for the
+username and <code class="docutils literal notranslate"><span class="pre">Python</span></code> for the team.</p>
+<p>When you first loaded your form, the URL probably looked something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file:///username/Desktop/local_practice/forms_chapter/index.html
+</pre></div>
+</div>
+<p>After filling in the input boxes and submitting the form, the address changes
+to something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file:///username/Desktop/local_practice/forms_chapter/index.html?username=Bob&amp;team=Python
+</pre></div>
+</div>
+<p>Let’s explore why this happens.</p>
+</div>
+</div>
+<div class="section" id="taking-action">
+<h2><span class="section-number">20.2.2. </span>Taking <code class="docutils literal notranslate"><span class="pre">action</span></code><a class="headerlink" href="#taking-action" title="Permalink to this headline">¶</a></h2>
+<p>When a form is submitted, an HTTP request is sent to a server. However, we need
+to identify <em>where</em> to send the data. To do this, we must include an attribute
+inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag, and this attribute is called <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
+<p>We will learn more about using <code class="docutils literal notranslate"><span class="pre">action</span></code> later. For now, recognize that when
+the attribute is missing or empty, the form submits all of the collected data
+to the current URL. This is why we saw a change in the address bar after we
+clicked <em>Submit</em>.</p>
+<p id="index-1">The start of the new address matches the old one. However, it also contains
+some extra information. The URL now includes a <a class="reference internal" href="../http/web-addresses.html#query-string"><span class="std std-ref">query string</span></a>
+after the <code class="docutils literal notranslate"><span class="pre">?</span></code> in the address. The query string is made up of separate
+<strong>query parameters</strong>, which contain the data collected from each input in the
+form.</p>
+<p>For example, the query string <code class="docutils literal notranslate"><span class="pre">?username=Bob&amp;team=Python</span></code> contains two
+parameters. The first indicates that <code class="docutils literal notranslate"><span class="pre">Bob</span></code> was collected from the
+<code class="docutils literal notranslate"><span class="pre">username</span></code> input. The second shows us that <code class="docutils literal notranslate"><span class="pre">Python</span></code> was entered in the
+<code class="docutils literal notranslate"><span class="pre">team</span></code> field.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Since spaces are not allowed in URLs, the browser replaces them with <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<p class="last">Try it! Submit the form again, but type several words into one of the input
+boxes.</p>
+</div>
+<div class="section" id="key-value-pairs">
+<h3><span class="section-number">20.2.2.1. </span>Key/Value Pairs<a class="headerlink" href="#key-value-pairs" title="Permalink to this headline">¶</a></h3>
+<p>When a form is submitted, a key/value pair is created for each input field. The
+<em>keys</em> match the <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes used in the <code class="docutils literal notranslate"><span class="pre">input</span></code> tags. The <em>values</em>
+match the data entered into each box of the form.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s take a close look at the HTML code for our form as well as the query
+string from the URL.</p>
+<p><strong>HTML Code:</strong></p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>URL After Submit:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>file:///username/Desktop/local_practice/forms_chapter/index.html?username=Bob&amp;team=Python
+</pre></div>
+</div>
+<p>Line 14 in the HTML gives us the first <em>key</em> in the query string,
+<code class="docutils literal notranslate"><span class="pre">username</span></code>. The <em>value</em> assigned to that key is whatever we typed into
+that input box (<code class="docutils literal notranslate"><span class="pre">Bob</span></code>, in this case).</p>
+<p class="last">The second key, <code class="docutils literal notranslate"><span class="pre">team</span></code>, comes from the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute in line 15. The
+second value is <code class="docutils literal notranslate"><span class="pre">Python</span></code>, or whatever else we typed into the field before
+submitting the form.</p>
+</div>
+<p>When we submit a form, the HTTP request always contains a set of key/value
+pairs. This data gets transmitted to the server, which does something with the
+information.</p>
+</div>
+</div>
+<div class="section" id="submitting-passwords">
+<h2><span class="section-number">20.2.3. </span>Submitting Passwords<a class="headerlink" href="#submitting-passwords" title="Permalink to this headline">¶</a></h2>
+<p>What about entering a password into an input box? Obviously, we don’t want our
+super-secret code to appear on the webpage for anyone to see.</p>
+<div class="figure align-default" id="id2">
+<img alt="Two input boxes, one with clear text, the other showing dots instead of text." src="../../_images/hide-the-pw.png" />
+<p class="caption"><span class="caption-text">It’s hard enough thinking up a good password. Don’t just give yours away!</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Fortunately, the most recent versions of HTML include a special input type to
+deal with this exact situation.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Return to your form in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Save and commit your work before
+moving on.</p>
+</li>
+<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">form</span></code> element to include only one input field and a single
+button:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;pass-code&quot;</span><span class="p">&gt;</span>Password: <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;pass-code&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;login&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Login<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save your work, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser.</p>
+</li>
+<li><p class="first">Note that anything you type into the input appears as plain text. This is
+NEVER a good idea when dealing with passwords. To fix this, change the
+<code class="docutils literal notranslate"><span class="pre">type=&quot;text&quot;</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code>.</p>
+</li>
+<li><p class="first">Save the change, then refresh the page in your browser. Now what do you
+see as you type in the input box?</p>
+<form>
+   <label for="pass-code">Password: </label>
+   <input id="pass-code" name="login" type="password"/>
+</form></li>
+<li><p class="first">By changing the <code class="docutils literal notranslate"><span class="pre">type</span></code> in the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag, we hide what the user
+enters in the field!</p>
+</li>
+</ol>
+</div>
+<p><em>HOWEVER</em>…</p>
+<p>Enter a simple string of characters into your form and click <em>Login</em>. Now check
+the updated URL.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/pw-in-url.png"><img alt="A URL in the browser address bar, showing a submitted password." src="../../_images/pw-in-url.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Yikes! There’s a password in the address bar.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Even though your password was hidden inside the form, it appears as plain text
+in the URL after submitting. We need to fix this. Even if nobody is looking
+over your shoulder to see the URL, it is possible to intercept an HTTP request
+on its way to the server. If that happens, someone could capture your password.</p>
+<p>The reason the password appears in the address bar is due to another default
+setting. When we submit a form, it automatically creates a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request,
+which adds the query string to the URL.</p>
+<p>In the next section, we will learn how to submit a form with a <code class="docutils literal notranslate"><span class="pre">POST</span></code>
+request. Unlike <code class="docutils literal notranslate"><span class="pre">GET</span></code>, <code class="docutils literal notranslate"><span class="pre">POST</span></code> hides form data.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">20.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What must be added to a <code class="docutils literal notranslate"><span class="pre">form</span></code> element in order to submit the collected
+data?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A <code class="pre">name</code> attribute.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A button.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> An <code class="pre">action</code> attribute.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A POST request.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>By default, are HTTP forms submitted as <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">GET</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">POST</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="creating-forms.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.1. </span>Web Forms</a></li>
+        
+        
+        <li class="next"><a href="form-post.html"><span class="section-number">20.3. </span><code class="docutils literal notranslate"><span class="pre">POST</span></code> Form Submission <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/form-submission.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

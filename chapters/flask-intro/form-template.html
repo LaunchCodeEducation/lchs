@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.5. HTML Templates &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.6. Data Collection" href="data-exchange.html" />
+    <link rel="prev" title="21.4. Routes" href="routes.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.5. </span>HTML Templates</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="html-templates">
+<span id="flask-templates"></span><h1><span class="section-number">21.5. </span>HTML Templates<a class="headerlink" href="#html-templates" title="Permalink to this headline">¶</a></h1>
+<p>In our first Flask app, we simply returned a string to display on a webpage.
+By including HTML tags, we provided some structure for the content. However,
+this is inefficient. Even for simple webpages, properly formatting the strings
+becomes tedious, and avoiding errors is difficult. Since every page needs its
+own string, adding these to our Python functions clutters up our code and makes
+our program harder to debug. A better approach is to put all of the HTML in a
+separate file.</p>
+<p>This idea lets us separate the <em>logic</em> of our application (the Python code)
+from the <em>view</em> (what the user sees in their browser).</p>
+<p>Why reinvent the wheel? We already learned how to create nice webpages using
+HTML and CSS, so we can build those files and include them in our project.
+Instead of returning a string, we have each Python function point to a specific
+<code class="docutils literal notranslate"><span class="pre">.html</span></code> file. Flask sends that file to the browser, which <em>renders</em> the
+webpage we want.</p>
+<div class="section" id="what-are-templates">
+<h2><span class="section-number">21.5.1. </span>What are Templates?<a class="headerlink" href="#what-are-templates" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">A <strong>template</strong> is an outline that can be used multiple times to produce similar
+results. For example, think of a simple thank-you note:</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/form-letter.png"><img alt="A thank-you note with blanks for filling in names, etc." src="../../_images/form-letter.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Warning: Form letters don’t work so well with close relatives.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>With this <em>template</em>, we can send out dozens of messages very quickly. Most of
+the text stays the same. We just need to fill in the blanks (or write some code
+to do it for us). The template itself stays the same, but each message looks
+slightly different.</p>
+<p>For our web applications, we can use a <code class="docutils literal notranslate"><span class="pre">.html</span></code> template to fill in most of
+the content for a page. Then we call a Python function to fill in the blanks.</p>
+</div>
+<div class="section" id="templates-with-flask">
+<h2><span class="section-number">21.5.2. </span>Templates with Flask<a class="headerlink" href="#templates-with-flask" title="Permalink to this headline">¶</a></h2>
+<p>To use a template in Flask, we need to organize our project files in a very
+specific way. We’ll start by creating a <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory.</p>
+<ol class="arabic">
+<li><p class="first">Save and commit your work, then checkout a new branch called
+<code class="docutils literal notranslate"><span class="pre">template-practice</span></code>.</p>
+</li>
+<li><p class="first">In the File Explorer, use the buttons to create a new directory called
+<code class="docutils literal notranslate"><span class="pre">templates</span></code>.</p>
+<div class="figure align-default">
+<img alt="File tree showing the 'templates' directory inside 'hello_flask'." src="../../_images/templates-in-filetree.png" />
+</div>
+</li>
+<li><p class="first">Any file we want to use as a template MUST go inside this directory. If we
+don’t put it there, then Flask won’t be able to find the file when we need
+it.</p>
+</li>
+</ol>
+<div class="section" id="add-a-template">
+<h3><span class="section-number">21.5.2.1. </span>Add a Template<a class="headerlink" href="#add-a-template" title="Permalink to this headline">¶</a></h3>
+<p>Inside the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder, create a new file called
+<code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code>. Paste in this HTML code:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Flask Template<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>A Few Of My Favorite Things<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Color: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Lucky Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;luck_num&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Class: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav_class&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Pixar Movie: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;best_pix&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the <a class="reference internal" href="../local-dev/vscode-html-css.html#view-local-html"><span class="std std-ref">Local HTML/CSS section</span></a> we learned how to open
+HTML files in the browser. Now, however, we are going to have Flask do that job
+for us.</p>
+</div>
+<div class="section" id="the-render-template-function">
+<h3><span class="section-number">21.5.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> Function<a class="headerlink" href="#the-render-template-function" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" id="index-1">
+<li><p class="first">Return to the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program. In order to use the template we just
+created, we need to update the first <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> function contains the code we need to find a file
+and send it to the browser. We do NOT need to know how the function actually
+works. All we need to remember is the syntax for calling it:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;name_of_template&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">name_of_template</span></code> MUST include the extension for the file, like
+<code class="docutils literal notranslate"><span class="pre">.html</span></code>.</p>
+</li>
+<li><p class="first">Next, add this new function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/form&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">form</span><span class="p">():</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;favorite_form.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Save the code, then run the program. Open a browser and navigate to
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code>. Ta da! There’s our form.</p>
+<div class="figure align-default" id="id2">
+<img alt="An HTML form with four input fields plus a Submit button." src="../../_images/favorite-form.png" />
+<p class="caption"><span class="caption-text">Flask sent the <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code> file to the browser.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">render_template(&quot;favorite_form.html&quot;)</span></code> locates the HTML file in our project.
+<code class="docutils literal notranslate"><span class="pre">return</span></code> sends this information to Flask, which passes the file to the
+browser. Note that the URL in the address bar is NOT the location of the file
+on our computer. The template is <em>on the server</em>, so its web address reflects
+this.</p>
+<p>Our form doesn’t actually do anything yet, but we’ll deal with that on the next
+page.</p>
+</div>
+</div>
+<div class="section" id="sending-data-to-a-template">
+<span id="template-placeholders"></span><h2><span class="section-number">21.5.3. </span>Sending Data to a Template<a class="headerlink" href="#sending-data-to-a-template" title="Permalink to this headline">¶</a></h2>
+<p>One of the benefits of using a template is that we can pass data to the file
+and change its appearance in the browser. To practice this, let’s add another
+HTML file to the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory. It will be a copy of the thank you
+note shown at the top of this page.</p>
+<ol class="arabic">
+<li><p class="first">Create a new file called <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code> in the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder.</p>
+</li>
+<li><p class="first">Paste in this code:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Thank You Note<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">section</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;font-size: 18pt;&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Dear {{name}},<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+               Thank you <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>so much<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> for the {{gift}}.
+               I&#39;m having lots of fun {{verb}} with it.
+               It&#39;s already made me a better {{noun}}!
+            <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{closing_word}},<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{author}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Note that instead of blanks, the text includes <em>placeholders</em> where we want
+to insert data. Each placeholder contains a variable inside a set of double
+curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code>.</p>
+</li>
+<li><p class="first">Now add this function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/thanks&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">thanks</span><span class="p">():</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;tynote.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Save the code, then run the program. Open a browser and navigate to
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/thanks</span></code>.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/thank-you-blanks.png"><img alt="Thank-you text with blank spaces." src="../../_images/thank-you-blanks.png" style="width: 80%;" /></a>
+</div>
+</li>
+</ol>
+<p>Notice that the text appears on the screen, but NOT any of the placeholders
+like <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code>. To fill in the blank spaces, we need to send some data to
+the template.</p>
+<div class="section" id="arguments-with-render-template">
+<h3><span class="section-number">21.5.3.1. </span>Arguments with <code class="docutils literal notranslate"><span class="pre">render_template</span></code><a class="headerlink" href="#arguments-with-render-template" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start by filling in the <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code> placeholder. We do this by adding
+another argument to <code class="docutils literal notranslate"><span class="pre">render_template</span></code> function call. The general syntax is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;name_of_template&quot;</span><span class="p">,</span> <span class="n">placeholder_name</span> <span class="o">=</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">placeholder_name</span></code> is the variable used in the template. <code class="docutils literal notranslate"><span class="pre">value</span></code> is what we
+want to display on the page. For our thank-you message, this looks something
+like:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;tynote.html&quot;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Updating the Python code and refreshing the page gives us:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/ty-note-name.png"><img alt="Template text with the name space filled in with 'Bob'." src="../../_images/ty-note-name.png" style="width: 80%;" /></a>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Instead of hard-coding values inside <code class="docutils literal notranslate"><span class="pre">render_template</span></code>, we can use
+variables instead.</p>
+<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/thanks&#39;</span><span class="p">)</span>
+   <span class="k">def</span> <span class="nf">thanks</span><span class="p">():</span>
+      <span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
+      <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;dancing&quot;</span>
+      <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;tynote.html&quot;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="p">,</span> <span class="n">verb</span> <span class="o">=</span> <span class="n">action</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Add arguments to <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> to complete the thank you note.</p>
+<div class="figure align-default" id="id3">
+<img alt="Template text with all placeholders filled." src="../../_images/ty-note-done.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code> template will all placeholders filled.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Move the <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">person</span></code> argument to the end of the list in
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code>. Does this change where the <code class="docutils literal notranslate"><span class="pre">name</span></code> value appears
+on the webpage?</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="expressions-in-placeholders">
+<h2><span class="section-number">21.5.4. </span>Expressions in Placeholders<a class="headerlink" href="#expressions-in-placeholders" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">render_template</span></code> sends data to a selected file. When Flask sees a
+placeholder like <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code> in that template, it replaces it with the
+matching value from the data.</p>
+<p>Besides variables, Flask can also evaluate simple expressions.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code>, replace the <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code> placeholder with
+<code class="docutils literal notranslate"><span class="pre">{{name*3}}</span></code>. What happens?</li>
+<li>Replace <code class="docutils literal notranslate"><span class="pre">{{verb}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{verb.capitalize()}}</span></code>. What happens?</li>
+<li>Replace <code class="docutils literal notranslate"><span class="pre">{{gift}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{gift=='wand'}}</span></code>. What happens?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="video-summaries">
+<h2><span class="section-number">21.5.5. </span>Video Summaries<a class="headerlink" href="#video-summaries" title="Permalink to this headline">¶</a></h2>
+<p>Here is a walkthrough for creating an HTML template, then rendering it from a
+Flask application.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/zNM31X-l58I" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section><p>The next clip shows how to send data to a webpage from a Python program.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/ZNvH2IbJck0" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">21.5.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>, the name of the template must come first in the
+list of arguments. But what about the other entries?</p>
+<p>Does changing the order of the arguments change where their values appear on
+the webpage?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Yes</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> No</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="routes.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.4. </span>Routes</a></li>
+        
+        
+        <li class="next"><a href="data-exchange.html"><span class="section-number">21.6. </span>Data Collection <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/form-template.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

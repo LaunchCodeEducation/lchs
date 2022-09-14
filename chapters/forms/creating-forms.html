@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.1. Web Forms &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.2. Submitting Forms" href="form-submission.html" />
+    <link rel="prev" title="20. User Input with Forms" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.1. </span>Web Forms</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="web-forms">
+<h1><span class="section-number">20.1. </span>Web Forms<a class="headerlink" href="#web-forms" title="Permalink to this headline">¶</a></h1>
+<p>Up until now, we have looked at webpages that simply <em>display</em> data. We either
+used HTML to create our own page, or we opened up our browser and sent a
+<code class="docutils literal notranslate"><span class="pre">GET</span></code> request to pull up a page we wanted.</p>
+<p>Of course, there are plenty of webpages that require us to <em>supply</em> data. We
+see this anytime we need to fill out a survey, login to one of our accounts, or
+sign up online for a new service.</p>
+<p id="index-0">In this chapter we are going to learn more about how web pages handle data
+collected from HTML forms. A web <strong>form</strong> is used to accept input from a user
+and send that data to a server.</p>
+<div class="section" id="create-a-form">
+<h2><span class="section-number">20.1.1. </span>Create a Form<a class="headerlink" href="#create-a-form" title="Permalink to this headline">¶</a></h2>
+<p>To declare a form in HTML, we use the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tags. Inside this element, we
+must include some type of <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in order to capture information
+from the user.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<ol class="last arabic">
+<li><p class="first">Examine the HTML code and webpage in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">h1</span></code>
+and <code class="docutils literal notranslate"><span class="pre">p</span></code> elements appear on the page, but the form itself seems to be
+missing.</p>
+</li>
+<li><p class="first">An empty <code class="docutils literal notranslate"><span class="pre">form</span></code> element will not appear on a web page until we add one
+or more <code class="docutils literal notranslate"><span class="pre">input</span></code> elements inside of it.</p>
+<iframe src="https://trinket.io/embed/html/3ad7389dd4" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
+<li><p class="first">Add a basic <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag to the HTML and see how the webpage changes.
+Replace line 13 with the code:</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Once the new page renders, notice that a box appears. Clicking inside
+this box allows us to type something!</p>
+</li>
+</ol>
+</div>
+<div class="section" id="local-html-forms">
+<h3><span class="section-number">20.1.1.1. </span>Local HTML Forms<a class="headerlink" href="#local-html-forms" title="Permalink to this headline">¶</a></h3>
+<p>We used an embedded Trinket editor above just to provide a quick start. Let’s
+move this into Visual Studio Code, since we will do most of our work locally
+from now on.</p>
+<ol class="arabic simple">
+<li>Launch VS Code. Open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder and create a new
+directory called <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code>.</li>
+<li>Navigate into <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> and initialize it as a new repository with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</li>
+<li>Create an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file inside the folder.</li>
+<li>Paste your code from the Trinket editor above into the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file.</li>
+<li><a class="reference internal" href="../git/repositories-and-commits.html#commit-summary"><span class="std std-ref">Save and commit</span></a> your work.</li>
+<li>Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in a new tab of your browser to confirm that your setup
+works.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to check the name of your default branch. If necessary,
+use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">old-branch-name</span> <span class="pre">main</span></code> to change its name to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="input-element">
+<span id="input-tag"></span><h2><span class="section-number">20.1.2. </span>Input Element<a class="headerlink" href="#input-element" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">The <code class="docutils literal notranslate"><span class="pre">input</span></code> element adds an <em>interactive</em> field, which allows the user to
+enter data. <code class="docutils literal notranslate"><span class="pre">input</span></code> elements have two very important attributes: <em>name</em> and
+<em>type</em>.</p>
+<ol class="arabic simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute identifies the input’s value when the form is
+submitted.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute defines the value expected from the input box. These
+value types include text, numbers, dates, email addresses, etc.</li>
+</ol>
+<p>The syntax for an input tag is:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p>For the example, in the HTML code above, we could use this for the <code class="docutils literal notranslate"><span class="pre">input</span></code>
+element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+<p id="index-2">Notice that <code class="docutils literal notranslate"><span class="pre">input</span></code> tags are <strong>self-closing</strong>. This means that the element
+only requires a <em>single</em> tag, which ends with <code class="docutils literal notranslate"><span class="pre">/&gt;</span></code>.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Values are NOT submitted for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it includes a <code class="docutils literal notranslate"><span class="pre">name</span></code>
+attribute.</p>
+</div>
+</div>
+<div class="section" id="labels">
+<h2><span class="section-number">20.1.3. </span>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
+<p id="index-3">Right now, our HTML form contains a single input box (also called a <strong>field</strong>).
+However, we don’t actually tell the user what they need to type into that box.
+Not good!</p>
+<p>To make the user’s experience better, we need to provide them with a clear idea
+of what goes into each field. This is especially true if our form contains more
+than one input!</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags attach specific text to an input field. This tells the user
+the purpose of that field. The simplest way to use the <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags is to
+<em>wrap</em> them around <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s add a second input box and some labels to our basic form:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Username <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Team Name <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;team&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now our form is more user-friendly:</p>
+<div class="last figure align-default">
+<img alt="HTML that includes a form tag with two input elements. Each element is inside of a label element." src="../../_images/label-example.png" />
+</div>
+</div>
+<p>A second way to attach a <code class="docutils literal notranslate"><span class="pre">label</span></code> to an <code class="docutils literal notranslate"><span class="pre">input</span></code> is to use the <code class="docutils literal notranslate"><span class="pre">id</span></code> and
+<code class="docutils literal notranslate"><span class="pre">for</span></code> attributes. <code class="docutils literal notranslate"><span class="pre">id</span></code> goes inside the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag, and <code class="docutils literal notranslate"><span class="pre">for</span></code> goes
+inside <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code>.</p>
+<p>This works by assigning the SAME string to each attribute. When <code class="docutils literal notranslate"><span class="pre">for</span></code> is
+used, the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element does NOT have to be inside <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;&lt;/label&gt;</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Replace the first wrapped <code class="docutils literal notranslate"><span class="pre">label/input</span></code> pair with this:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;user&quot;</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;user&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">Note that the appearance of the page doesn’t change, since the two formats
+do the exact same thing.</p>
+</div>
+<div class="section" id="field-focus">
+<h3><span class="section-number">20.1.3.1. </span>Field Focus<a class="headerlink" href="#field-focus" title="Permalink to this headline">¶</a></h3>
+<p>Try clicking on the <code class="docutils literal notranslate"><span class="pre">Username</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">Name</span></code> labels below. What happens?</p>
+<form>
+   <label>Username <input type="text" name="username"/></label>
+   <label>Team Name <input type="text" name="team"/></label>
+</form><p>Now try clicking on the labels in your own basic form page. (Cool!)</p>
+<p id="index-4">For <em>text</em> inputs, when the label is clicked, the input gains <strong>focus</strong>. This
+means that the browser selects the element. That field is now ready to receive
+input.</p>
+<p>Different input types will show different behaviors when their labels are
+clicked. For <em>non-text</em> inputs, when the label is clicked, a value is selected.
+This behavior can be seen with <code class="docutils literal notranslate"><span class="pre">radio</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> elements, which we
+will learn about soon.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>Click on the label next to each input element.</p>
+<form>
+   <label>Text: <input name="demo" type="text"/></label><br>
+   <label>Checkbox: <input type="checkbox" name="newsletter"/></label>
+</form><div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Text: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;demo&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Checkbox: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;newsletter&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+</div>
+<div class="section" id="value-attribute">
+<h2><span class="section-number">20.1.4. </span>Value Attribute<a class="headerlink" href="#value-attribute" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag sets a default value for the
+field. When we use the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute, the browser pre-fills that data
+into the input box. The user can change the value by typing something else in
+the field.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Here is an input element with a default value of <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
+<form>
+   <label>Which coding language ROCKS?
+      <input name="language" type="text" value="Python"/>
+   </label>
+</form><div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Which language ROCKS?
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;language&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Python&quot;</span><span class="p">/&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Add default values to the <code class="docutils literal notranslate"><span class="pre">Username</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">Name</span></code> fields in your
+basic form.</p>
+<p class="last">When the input box contains a default value, what happens when you click the
+label?</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">20.1.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is the purpose of the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute for <code class="docutils literal notranslate"><span class="pre">input</span></code> elements?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It adds a text label to the input box.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It identifies the type of data the user should put in the input field.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> It references the input value when the form is submitted.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It applies <em>focus</em> to the input element.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which <code class="docutils literal notranslate"><span class="pre">input</span></code> attribute sets a default value?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">value</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">name</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">type</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">id</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20. </span>User Input with Forms</a></li>
+        
+        
+        <li class="next"><a href="form-submission.html"><span class="section-number">20.2. </span>Submitting Forms <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/creating-forms.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

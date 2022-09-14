@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 7: Stringing Characters Together &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 8: Lists Keep Things In Order" href="chapter08.html" />
+    <link rel="prev" title="Chapter 6: Repeating Things With Loops" href="chapter06.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 7: Stringing Characters Together</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-7-stringing-characters-together">
+<h1>Chapter 7: Stringing Characters Together<a class="headerlink" href="#chapter-7-stringing-characters-together" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/strings/exercises.html#strings-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/fa4912a3e8" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-one-bracket-notation">
+<span id="chp7part1"></span><h3>Part One: Bracket Notation<a class="headerlink" href="#part-one-bracket-notation" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Identify the result for each of the following statements:</p>
+<ol class="loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">'Characters'[8]</span></code> = r</li>
+</ol>
+<ol class="loweralpha simple" start="4">
+<li><code class="docutils literal notranslate"><span class="pre">len(&quot;Do</span> <span class="pre">spaces</span> <span class="pre">count?&quot;)</span></code> = 16</li>
+</ol>
+<p><em>There’s no starter code for this one, just try it on your own with
+old-fashioned pencil and paper!</em></p>
+</li>
+<li><p class="first">Use bracket notation to:</p>
+<ol class="loweralpha simple">
+<li>Print a slice of the first 12 characters from
+<code class="docutils literal notranslate"><span class="pre">&quot;Strings_are_sequences_of_characters.&quot;</span></code></li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Strings_are_sequences_of_characters.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Print a slice of the middle 12 characters from the same string.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#simple solution that solves for just text = &#39;Strings_are_sequences_of_characters.&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">24</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Use index values to loop <em>backwards</em> through a string:</p>
+<ol class="loweralpha simple">
+<li>First, print one letter per line.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">max_index</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_index</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li>Next, instead of one letter per line, use the accumulator pattern to build
+up and print the reversed string. For example, if given the string
+<code class="docutils literal notranslate"><span class="pre">'good'</span></code>, your program prints <code class="docutils literal notranslate"><span class="pre">doog</span></code>.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;tomato&quot;</span>
+<span class="n">new_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_index</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">new_word</span> <span class="o">+=</span> <span class="n">word</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">new_word</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Finally, use concatenation to print the combination of the original and
+reversed string. For example, given the string <code class="docutils literal notranslate"><span class="pre">'tomato'</span></code>, your program
+prints <code class="docutils literal notranslate"><span class="pre">tomatootamot</span></code>. (If you want to be fancy, include the <code class="docutils literal notranslate"><span class="pre">|</span></code>
+character to make the output look almost like a mirrored image: <code class="docutils literal notranslate"><span class="pre">tomato</span> <span class="pre">|</span> <span class="pre">otamot</span></code>).</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="n">new_word</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/strings/exercises.html#strings-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-two-string-methods-and-operations">
+<span id="chp7part2"></span><h3>Part Two: String Methods and Operations<a class="headerlink" href="#part-two-string-methods-and-operations" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of characters in a string. However,
+the function will NOT give us the length of an integer. If <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">1001</span></code>,
+then <code class="docutils literal notranslate"><span class="pre">len(num)</span></code> throws an error instead of returning <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<ol class="loweralpha simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">str()</span></code> to change <code class="docutils literal notranslate"><span class="pre">num</span></code> from an <code class="docutils literal notranslate"><span class="pre">int</span></code> to a string data type.</li>
+<li>Print the length (number of digits) in <code class="docutils literal notranslate"><span class="pre">num</span></code>.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1001</span>
+
+<span class="c1"># Exercise 1a and 1b</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Modify your code to print the number of digits in a <code class="docutils literal notranslate"><span class="pre">float</span></code> value (e.g.
+<code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">=</span> <span class="pre">123.45</span></code> has 5 digits but a length of 6). The digit count should
+NOT include the decimal point.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mf">123.45</span>
+<span class="n">new_num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_num</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="4">
+<li>What if <code class="docutils literal notranslate"><span class="pre">num</span></code> could be EITHER an integer or a decimal? Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code>
+statement so your code can handle both cases.  (Hint: Consider using the
+<code class="docutils literal notranslate"><span class="pre">find()</span></code> method or the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check if <code class="docutils literal notranslate"><span class="pre">num</span></code> contains a
+decimal point).</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Experiment! There are many ways to do this.</span>
+<span class="k">if</span>  <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">float</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">))</span> <span class="o">-</span> <span class="nb">str</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Given <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">=</span> <span class="pre">'bag'</span></code>:</p>
+<ol class="loweralpha simple">
+<li>Set up a loop to iterate through the string of lowercase vowels,
+<code class="docutils literal notranslate"><span class="pre">'aeiou'</span></code>.</li>
+<li>Inside the loop, create a new string from <code class="docutils literal notranslate"><span class="pre">word</span></code>, but with a different
+vowel. Use the <code class="docutils literal notranslate"><span class="pre">replace()</span></code> string method.</li>
+<li>Print the new string.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;bag&#39;</span>
+
+<span class="n">vowels</span> <span class="o">=</span> <span class="s2">&quot;aeiou&quot;</span>
+<span class="k">for</span> <span class="n">vowel</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+    <span class="n">new_word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">vowel</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">new_word</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Consider a string that represents a strand of DNA:
+<code class="docutils literal notranslate"><span class="pre">dna</span> <span class="pre">=</span> <span class="pre">&quot;</span> <span class="pre">TCG-TAC-gaC-TAC-CGT-CAG-ACT-TAa-CcA-GTC-cAt-AGA-GCT</span>&#160;&#160;&#160; <span class="pre">&quot;</span></code>. There
+are some typos in the string that you need to fix:</p>
+<ol class="loweralpha simple">
+<li>Use the <code class="docutils literal notranslate"><span class="pre">strip()</span></code> method to remove the leading and trailing whitespace,
+and then print the result.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Note that you need to <em>reassign</em> the changes back to the <code class="docutils literal notranslate"><span class="pre">dna</span></code> variable in order to see them printed.
+Apply these fixes to your code so that <code class="docutils literal notranslate"><span class="pre">print(dna)</span></code> prints the DNA strand in UPPERCASE
+with no whitespace.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="n">dna</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Let’s use string methods to do more work on the same DNA strand:</p>
+<ol class="loweralpha simple" start="2">
+<li>Look for the sequence <code class="docutils literal notranslate"><span class="pre">'CAT'</span></code> with <code class="docutils literal notranslate"><span class="pre">find()</span></code>. If found print, <code class="docutils literal notranslate"><span class="pre">'CAT</span>
+<span class="pre">found'</span></code>, otherwise print, <code class="docutils literal notranslate"><span class="pre">'CAT</span> <span class="pre">NOT</span> <span class="pre">found'</span></code>.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">dna</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;CAT&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CAT gene found&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cat gene NOT found&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Use <code class="docutils literal notranslate"><span class="pre">count()</span></code> to find the number of hyphens (<code class="docutils literal notranslate"><span class="pre">-</span></code>) in the string, then
+print the number of <em>genes</em> (in this case, a gene is a set of 3 letters) in the DNA strand. Note
+that the number of genes will be 1 more than the number of hyphens.</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/strings/exercises.html#strings-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-three-string-formatting">
+<span id="chp7part3"></span><h3>Part Three: String Formatting<a class="headerlink" href="#part-three-string-formatting" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Assign your favorite, school-appropriate number and word to two variables.</p>
+<ol class="loweralpha simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">format()</span></code> and index values to print the string,
+<code class="docutils literal notranslate"><span class="pre">&quot;Here</span> <span class="pre">is</span> <span class="pre">my</span> <span class="pre">number:</span> <span class="pre">___,</span> <span class="pre">and</span> <span class="pre">here</span> <span class="pre">is</span> <span class="pre">my</span> <span class="pre">word:</span> <span class="pre">___,</span> <span class="pre">and</span> <span class="pre">here</span> <span class="pre">is</span> <span class="pre">my</span>
+<span class="pre">number</span> <span class="pre">again:</span> <span class="pre">___.&quot;</span></code></li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">my_num</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">my_word</span> <span class="o">=</span> <span class="s1">&#39;feckless&#39;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;Here is my number: </span><span class="si">{0}</span><span class="s2">, and here is my word: </span><span class="si">{1}</span><span class="s2">, and here is my number again: </span><span class="si">{0}</span><span class="s2">.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_num</span><span class="p">,</span> <span class="n">my_word</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">The following code sample works, but it can be improved.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">advice</span> <span class="o">=</span> <span class="s2">&quot;Don&#39;t Panic&quot;</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;The text, &#39;</span><span class="si">{0}</span><span class="s2">&#39; contains </span><span class="si">{1}</span><span class="s2"> characters.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Don&#39;t Panic&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="loweralpha simple">
+<li>Assuming that <code class="docutils literal notranslate"><span class="pre">advice</span></code> remains a string, when will the code produce the
+wrong output?</li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>When we change advice to something else.
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li>Why will the code do this?</li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Because the print statement is hard coded with &#39;Don&#39;t Panic&#39; instead of the variable name advice.
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>What should the programmer do to fix the code?</li>
+</ol>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#One way to code the above answer:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">advice</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">advice</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/strings/exercises.html#strings-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter06.html"><span aria-hidden="true">&larr;</span> Chapter 6: Repeating Things With Loops</a></li>
+        
+        
+        <li class="next"><a href="chapter08.html">Chapter 8: Lists Keep Things In Order <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter07.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

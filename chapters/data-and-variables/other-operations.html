@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.8. Other Operators &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.9. User Input" href="input.html" />
+    <link rel="prev" title="4.7. Order of Operations" href="order-of-operations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.8. </span>Other Operators</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="other-operators">
+<h1><span class="section-number">4.8. </span>Other Operators<a class="headerlink" href="#other-operators" title="Permalink to this headline">¶</a></h1>
+<p>Earlier, you learned how to assign, and then <em>reassign</em> a variable:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Thursday&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+<span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Friday&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Thursday
+Friday
+</pre></div>
+</div>
+<p>One of the most common forms of this involves making the new value of the
+variable depend on the old value.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_number</span><span class="p">)</span>
+<span class="n">my_number</span> <span class="o">=</span> <span class="n">my_number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_number</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>10
+12
+</pre></div>
+</div>
+<p class="last">On line 3, the new value of <code class="docutils literal notranslate"><span class="pre">my_number</span></code> becomes its old value plus 2.</p>
+</div>
+<div class="section" id="updating-variables">
+<h2><span class="section-number">4.8.1. </span>Updating Variables<a class="headerlink" href="#updating-variables" title="Permalink to this headline">¶</a></h2>
+<p>The statement <code class="docutils literal notranslate"><span class="pre">my_number</span> <span class="pre">=</span> <span class="pre">my_number</span> <span class="pre">+</span> <span class="pre">2</span></code> takes the current value of
+<code class="docutils literal notranslate"><span class="pre">my_number</span></code>, increases it by <code class="docutils literal notranslate"><span class="pre">2</span></code>, then reassigns the result back to
+<code class="docutils literal notranslate"><span class="pre">my_number</span></code>.</p>
+<p>Think of the statement as a series of steps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">=</span> <span class="n">my_number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">my_number</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">2</span>         <span class="c1"># Insert the old value of my_number</span>
+<span class="n">my_number</span> <span class="o">=</span> <span class="mi">12</span>             <span class="c1"># Do the math and assign the result to my_number</span>
+</pre></div>
+</div>
+<p>This type of update is so common in Python (and programming in general) that we
+have an operator to use as a shortcut. Another way to write <code class="docutils literal notranslate"><span class="pre">my_number</span> <span class="pre">=</span> <span class="pre">my_number</span> <span class="pre">+</span> <span class="pre">2</span></code>
+is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_number</span> <span class="o">+=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>The operator <code class="docutils literal notranslate"><span class="pre">+=</span></code> increases the value of <code class="docutils literal notranslate"><span class="pre">my_number</span></code> by 2.</p>
+<p><code class="docutils literal notranslate"><span class="pre">+=</span></code> always increases the value of a first operand by the amount of the
+second.</p>
+<p id="index-0"><code class="docutils literal notranslate"><span class="pre">+=</span></code> is an example of a <strong>compound assignment operator</strong>, or an operator that
+performs two actions in the same statement. These actions are a calculation and
+a variable assignment. The table below summarizes four examples of compound assignment
+operators.</p>
+<table border="1" class="colwidths-auto docutils align-default" id="id1">
+<caption><span class="caption-text">Compound Assignment Operators</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Operator</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+=</span> <span class="pre">b</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">-=</span> <span class="pre">b</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*=</span> <span class="pre">b</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">/=</span> <span class="pre">b</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="string-operators">
+<h2><span class="section-number">4.8.2. </span>String Operators<a class="headerlink" href="#string-operators" title="Permalink to this headline">¶</a></h2>
+<p>So far, we have studied operators that work on numbers, but there are operators
+that work on other data types as well. In particular, the <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>
+operators can be used with strings.</p>
+<div class="section" id="try-it">
+<h3><span class="section-number">4.8.2.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<p>Let’s compare using <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> with numbers vs. strings.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>Run the following code and examine the output.</p>
+<blockquote>
+<div><iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-String-Concatenation?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe></div></blockquote>
+<p class="last">Try changing the <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code> values to see what happens!</p>
+</div>
+<p id="string-concatenation">These examples show that the <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> operators <em>behave differently
+based on the data type of the operands.</em></p>
+<ol class="arabic">
+<li><p class="first">For <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> data types, <code class="docutils literal notranslate"><span class="pre">+</span></code> adds two numbers together and
+returns the result.</p>
+<p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+</li>
+<li><p class="first">For the <code class="docutils literal notranslate"><span class="pre">str</span></code> data type, <code class="docutils literal notranslate"><span class="pre">+</span></code> attaches the second string to the end of
+the first and returns the new, longer string.</p>
+<p><code class="docutils literal notranslate"><span class="pre">'Launch'</span> <span class="pre">+</span> <span class="pre">'Code'</span></code> returns <code class="docutils literal notranslate"><span class="pre">'LaunchCode'</span></code>.</p>
+</li>
+<li><p class="first">For <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> data types, <code class="docutils literal notranslate"><span class="pre">*</span></code> multiplies two numbers together
+and returns the result.</p>
+<p><code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">*</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">36</span></code>.</p>
+</li>
+<li><p class="first">Between the <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code> data types, <code class="docutils literal notranslate"><span class="pre">*</span></code> performs a repetition.
+<code class="docutils literal notranslate"><span class="pre">'Fun'</span> <span class="pre">*</span> <span class="pre">3</span></code> returns <code class="docutils literal notranslate"><span class="pre">'FunFunFun'</span></code>.</p>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">*</span></code> operator acts like multiple <code class="docutils literal notranslate"><span class="pre">+</span></code> operators.</li>
+<li><code class="docutils literal notranslate"><span class="pre">'Fun'</span> <span class="pre">*</span> <span class="pre">3</span></code> does the same thing as <code class="docutils literal notranslate"><span class="pre">'Fun'</span> <span class="pre">+</span> <span class="pre">'Fun'</span> <span class="pre">+</span> <span class="pre">'Fun'</span></code>.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition-note admonition" id="index-1">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Combining strings together to form a new, longer string is called
+<strong>string concatenation</strong>.</p>
+</div>
+<p>What would this statement print? Paste it into the editor to see!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Python&#39;</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.8.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed by the following statement?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">first_word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">second_word</span> <span class="o">=</span> <span class="s2">&quot;ROCKS&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first_word</span> <span class="o">+</span> <span class="n">second_word</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Python ROCKS</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> PythonROCKS</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Python+ROCKS</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> ROCKSPython</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What is printed by the following statement?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">excl</span> <span class="o">=</span> <span class="s2">&quot;!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="n">excl</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Python!!!</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> PythonPythonPython!</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Python!Python!Python!</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> PythonPythonPython!!!</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which TWO of the following will print <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">ROCKS!</span></code>?</p>
+<div class="last"><ol type="a">
+   <li><span id = "a" onclick="highlight('a', false)">print("Python" + "ROCKS" + "!")</span></li>
+   <li><span id = "b" onclick="highlight('b', false)">print("Python", "ROCKS", "!")</span></li>
+   <li><span id = "c" onclick="highlight('c', true)">print("Python", "ROCKS" + "!")</span></li>
+   <li><span id = "d" onclick="highlight('d', false)">print("Python" + "ROCKS", "!")</span></li>
+   <li><span id = "e" onclick="highlight('e', true)">print("Python " + "ROCKS" + "!")</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="order-of-operations.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.7. </span>Order of Operations</a></li>
+        
+        
+        <li class="next"><a href="input.html"><span class="section-number">4.9. </span>User Input <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/other-operations.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

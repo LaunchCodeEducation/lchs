@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24. Databases &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.1. What are Databases?" href="introduction.html" />
+    <link rel="prev" title="23.8. Project: Flask Sessions" href="../sessions/project.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">24. </span>Databases</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="databases">
+<h1><span class="section-number">24. </span>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">24.1. What are Databases?</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#adding-a-database">24.1.1. Adding a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#communicating-with-a-database">24.1.2. Communicating With a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#check-your-understanding">24.1.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db-tables.html">24.2. Database Structure</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="db-tables.html#relationships-between-tables">24.2.1. Relationships Between Tables</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="crud.html">24.3. Database Operations</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#crud">24.3.1. CRUD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#create">24.3.2. Create</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="crud.html#adding-a-table">24.3.2.1. Adding a Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crud.html#adding-a-row">24.3.2.2. Adding a Row</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crud.html#adding-a-column">24.3.2.3. Adding a Column</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#read">24.3.3. Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#update">24.3.4. Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#delete">24.3.5. Delete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crud.html#check-your-understanding">24.3.6. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">24.4. SQLite</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html#setup">24.4.1. Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html#create-a-database">24.4.2. Create a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html#add-a-new-table">24.4.3. Add a New Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html#table-creation-error">24.4.4. Table Creation Error</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db-practice.html">24.5. Database Practice</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="db-practice.html#add-new-entries">24.5.1. Add New Entries</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="db-practice.html#viewing-a-table-in-vs-code">24.5.1.1. Viewing a Table in VS Code</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="db-practice.html#retrieve-data-from-table">24.5.2. Retrieve Data From Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-practice.html#check-your-understanding">24.5.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="more-db-practice.html">24.6. More Database Practice</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="more-db-practice.html#update-table-data">24.6.1. Update Table Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more-db-practice.html#delete-data">24.6.2. Delete Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="more-db-practice.html#check-your-understanding">24.6.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db-tips.html">24.7. Database Tips</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="db-tips.html#close-the-connection">24.7.1. Close the Connection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-tips.html#don-t-track-the-database-with-version-control">24.7.2. Don’t Track the Database with Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-tips.html#add-a-primary-key">24.7.3. Add a Primary Key</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="db-tips.html#try-it-primary-keys">24.7.3.1. Try It! (Primary Keys)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-tips.html#try-more">24.7.3.2. Try More!</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="db-tips.html#check-your-understanding">24.7.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db-advanced.html">24.8. Linking Database Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">24.9. Exercises: Databases</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-a-set-up-a-new-database">24.9.1. Part A: Set Up a New Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-b-add-a-table">24.9.2. Part B: Add a Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-c-add-rows">24.9.3. Part C: Add Rows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-r-access-game-data">24.9.4. Part R: Access Game Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-u-modify-game-data">24.9.5. Part U: Modify Game Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-d-remove-games">24.9.6. Part D: Remove Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#bonus-exercises">24.9.7. Bonus Exercises</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">24.10. Project: Movie SQLs</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="project.html#project-setup">24.10.1. Project Setup</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#create-the-database">24.10.1.1. Create the Database</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#the-home-page-index-html">24.10.2. The Home Page (<code class="docutils literal notranslate"><span class="pre">index.html</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#the-delete-form">24.10.3. The DELETE Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#the-update-form">24.10.4. The UPDATE Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#the-insert-and-select-forms">24.10.5. The INSERT and SELECT Forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#next-steps">24.10.6. Next Steps</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project-part2.html">24.11. Project: Movie SQLs (Part 2)</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="project-part2.html#define-the-execute-query-function">24.11.1. Define the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> Function</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project-part2.html#don-t-expect-perfect-syntax">24.11.1.1. Don’t Expect Perfect Syntax</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project-part2.html#catch-sql-syntax-errors">24.11.2. Catch SQL Syntax Errors</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project-part2.html#run-test-cases">24.11.2.1. Run Test Cases</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project-part2.html#display-column-names">24.11.3. Display Column Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-part2.html#gloat">24.11.4. Gloat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project-part2.html#bonus">24.11.5. Bonus</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../sessions/project.html"><span aria-hidden="true">&larr;</span> <span class="section-number">23.8. </span>Project: Flask Sessions</a></li>
+        
+        
+        <li class="next"><a href="introduction.html"><span class="section-number">24.1. </span>What are Databases? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

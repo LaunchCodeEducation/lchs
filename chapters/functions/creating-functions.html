@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.3. Defining Our Own Functions &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.4. Function Input" href="function-input.html" />
+    <link rel="prev" title="10.2. Calling Functions" href="calling-functions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>What’s Your Function</a></li>
+    <li class="active"><span class="section-number">10.3. </span>Defining Our Own Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="defining-our-own-functions">
+<h1><span class="section-number">10.3. </span>Defining Our Own Functions<a class="headerlink" href="#defining-our-own-functions" title="Permalink to this headline">¶</a></h1>
+<p>Built-in functions in Python give us a lot of capabilities. Indeed, we gain even more coding potential by
+writing our own functions.</p>
+<p id="index-0">We’ll start by looking at the general syntax.</p>
+<div class="section" id="function-syntax">
+<span id="id1"></span><h2><span class="section-number">10.3.1. </span>Function Syntax<a class="headerlink" href="#function-syntax" title="Permalink to this headline">¶</a></h2>
+<p>To create a function, use the following syntax:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span> <span class="n">parameters</span> <span class="p">):</span>
+   <span class="c1"># Code statements...</span>
+</pre></div>
+</td></tr></table></div>
+<p id="index-1"><code class="docutils literal notranslate"><span class="pre">def</span></code> is a keyword that instructs Python to create a new function.</p>
+<p id="index-2">Following <code class="docutils literal notranslate"><span class="pre">def</span></code> is the <strong>function name</strong>, which is the label that Python
+attaches to the code. When writing our own functions, the programmer chooses the function name. Like any
+other variable, a function name should describe the purpose of the function. The stronger we make the name,
+the less confusion we add to our code. A list of good naming practices appears
+in the next section.</p>
+<span class="target" id="index-3"></span><p id="index-4">Following the function name, we define <strong>parameters</strong> within the parentheses.
+Parameters are variables that can only be used within the function itself. We
+can define a function with one parameter, multiple parameters, or no parameters
+at all.</p>
+<p>The number and names of the parameters depends on what we want the function to
+do. Parameters specify what information, if any, the function needs in order to
+do its job.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> statement ends with a colon.</p>
+<div class="section" id="naming-functions">
+<span id="function-naming-rules"></span><h3><span class="section-number">10.3.1.1. </span>Naming Functions<a class="headerlink" href="#naming-functions" title="Permalink to this headline">¶</a></h3>
+<p>Python function names should follow these rules:</p>
+<ol class="arabic">
+<li><p class="first">Names CANNOT match any Python keyword like <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Most code editors use syntax highlighting to indicate keywords. Paying
+attention to the highlighting helps avoid this naming mistake.</p>
+</div>
+</li>
+<li><p class="first">Names use only lowercase letters.</p>
+</li>
+<li><p class="first">The name should describe exactly what the function does.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">You should prefer <em>long, descriptive names</em> over <em>short, abbreviated names</em>.
+If someone unfamiliar with your code can read the function name and tell
+you what it does, then you chose a good name.</p>
+</div>
+</li>
+<li><p class="first">For names with multiple words, separate the words with underscores (e.g.
+<code class="docutils literal notranslate"><span class="pre">convert_score_to_percentage</span></code>).</p>
+</li>
+</ol>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p><strong>Good</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">convert_feet_to_meters</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">is_valid_number_entry</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">draw_square</span></code></li>
+</ul>
+<p><strong>Not Good</strong></p>
+<ul class="last simple">
+<li><code class="docutils literal notranslate"><span class="pre">convert</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">is_valid</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">draw</span></code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="function-code">
+<h2><span class="section-number">10.3.2. </span>Function Code<a class="headerlink" href="#function-code" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">After the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement comes the <strong>function body</strong>. This is where we code
+the action that the function carries out. The function body can contain any
+amount of code (statements, loops, conditionals, etc.), but the lines must be
+indented when compared to the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. Python recognizes the end of the
+function body once it finds the first <em>unindented</em> line after the <code class="docutils literal notranslate"><span class="pre">def</span></code>
+keyword.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_list_numbers</span><span class="p">(</span><span class="n">list_name</span><span class="p">):</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">list_name</span><span class="p">:</span>
+      <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+
+   <span class="k">return</span> <span class="n">total</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">Line 1 defines the function name and parameter. Lines 2 - 6 are part of the
+function body. Line 8 is even with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, so it is NOT part of
+the <code class="docutils literal notranslate"><span class="pre">add_list_numbers</span></code> function.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">10.3.3. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see function syntax in action. We first consider a loop that prints a
+list of names.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lena&quot;</span><span class="p">,</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Julio&quot;</span><span class="p">]</span>
+<span class="n">other_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Devon&quot;</span><span class="p">,</span> <span class="s2">&quot;Colin&quot;</span><span class="p">,</span> <span class="s2">&quot;Nalini Nadkarni&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>As written, this loop only prints out the names from the first list. Let’s
+create a function that prints out the items from <em>any</em> list of names.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Follow these steps to code your first function:</p>
+<ol class="arabic">
+<li><p class="first">On line 2, use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword to set the name of the function and
+the name of the parameter. Don’t forget to end the line with a colon.</p>
+<p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">print_names(names_list):</span></code></p>
+</li>
+<li><p class="first">On lines 3 and 4, use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print each name from
+<code class="docutils literal notranslate"><span class="pre">names_list</span></code>. Don’t forget to indent the lines compared to the <code class="docutils literal notranslate"><span class="pre">def</span></code>
+statement!</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names_list</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Click <em>Run</em> to make sure your code contains no syntax errors. If it
+does, debug the code before moving on.</p>
+</li>
+<li><p class="first">The program will not actually print anything to the console yet, but we
+will fix that in a moment!</p>
+</li>
+</ol>
+<div class="last"><iframe height="500px" width="100%" src="https://repl.it/@launchcode/Print-Names-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<p>We can now use <code class="docutils literal notranslate"><span class="pre">print_names</span></code> just like the built-in Python functions. To
+<em>call</em> our function, we need to type its name and include a list as the
+argument.</p>
+<p>In the editor above, call our new function twice by adding these
+lines below the function body:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">print_names</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">)</span>
+<span class="n">print_names</span><span class="p">(</span><span class="n">other_names</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the code and examine the output. By calling the function with different
+arguments (<code class="docutils literal notranslate"><span class="pre">names</span></code> and <code class="docutils literal notranslate"><span class="pre">other_names</span></code>), we use the same loop to print the
+elements of each list to the console.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>There is nothing about our function that forces <code class="docutils literal notranslate"><span class="pre">names_list</span></code> to actually
+contain names, or even strings. The function will work the same for ANY
+list it is given. (TRY IT!)</p>
+<p class="last">Therefore, a better name for this function would be <code class="docutils literal notranslate"><span class="pre">print_list_items</span></code>!</p>
+</div>
+</div>
+<div class="section" id="defining-vs-calling">
+<h2><span class="section-number">10.3.4. </span>Defining vs. Calling<a class="headerlink" href="#defining-vs-calling" title="Permalink to this headline">¶</a></h2>
+<p>When we <em>define</em> a function, we make it available for later use. However, a
+function does NOT run when it is defined. It must be <em>called</em> in order to
+execute.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">This is not only a common point of confusion for new programmers, but it can
+also cause logic errors!</p>
+</div>
+<p>Let’s look at another example to see how this works.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>What happens if we define a function without calling it?</p>
+<p>Run the following code as-is (the code contains no bugs). What gets printed?</p>
+<iframe height="400px" width="100%" src="https://repl.it/@launchcode/Say-Hello-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="last arabic simple">
+<li>In order for a function to run, it must be <em>called</em> by using its name.
+Add the code <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> in line 5 and run the program again.</li>
+<li>Does it matter if the <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> statement is indented relative to
+the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement?  Try changing the indentation to check!</li>
+<li>Does it matter if we include parentheses in line 5? Try using
+<code class="docutils literal notranslate"><span class="pre">say_hello</span></code> instead of <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">10.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What are the <em>parameters</em> of the following function? Click <em>ALL</em> that apply.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="n">turtle_name</span><span class="p">,</span> <span class="n">side_length</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+      <span class="n">turtle_name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+      <span class="n">turtle_name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">draw_square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><span id = "A1" onclick="highlight('A1', false)">bob</span></li>
+   <li><span id = "B1" onclick="highlight('B1', true)">turtle_name</span></li>
+   <li><span id = "C1" onclick="highlight('C1', true)">side_length</span></li>
+   <li><span id = "D1" onclick="highlight('D1', false)">side</span></li>
+   <li><span id = "E1" onclick="highlight('E1', false)">100</span></li>
+</ol></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the same code sample, what are the <em>arguments</em> sent by the function call?
+Click <em>ALL</em> that apply.</p>
+<div class="last"><ol type="a">
+   <li><span id = "A2" onclick="highlight('A2', true)">bob</span></li>
+   <li><span id = "B2" onclick="highlight('B2', false)">turtle_name</span></li>
+   <li><span id = "C2" onclick="highlight('C2', false)">side_length</span></li>
+   <li><span id = "D2" onclick="highlight('D2', false)">side</span></li>
+   <li><span id = "E2" onclick="highlight('E2', true)">100</span></li>
+</ol></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>True or False: A function can be run several times by placing the function
+call inside a loop.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
+</ol>
+<p id="Q3"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which is the BEST name for the following function?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">radius</span><span class="p">):</span>
+  <span class="n">area</span> <span class="o">=</span> <span class="mf">3.14159</span> <span class="o">*</span> <span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+  <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">area</span></li>
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">calculate_area_of_circle</span></li>
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">circle</span></li>
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">shape</span></li>
+</ol>
+<p id="Q4"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="calling-functions.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.2. </span>Calling Functions</a></li>
+        
+        
+        <li class="next"><a href="function-input.html"><span class="section-number">10.4. </span>Function Input <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/functions/creating-functions.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

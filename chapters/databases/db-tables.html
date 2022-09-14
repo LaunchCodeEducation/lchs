@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.2. Database Structure &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.3. Database Operations" href="crud.html" />
+    <link rel="prev" title="24.1. What are Databases?" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">24. </span>Databases</a></li>
+    <li class="active"><span class="section-number">24.2. </span>Database Structure</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="database-structure">
+<h1><span class="section-number">24.2. </span>Database Structure<a class="headerlink" href="#database-structure" title="Permalink to this headline">¶</a></h1>
+<p>Databases store information in <strong>tables</strong>. These are arranged in <em>columns</em> and
+<em>rows</em>. Each column represents a specific piece of data. Every row represents
+a single entry in the table, which includes one value from each column.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/db-table.png"><img alt="Database tables organize information into rows and columns." src="../../_images/db-table.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Each row is one entry. Every entry consists of multiple data values, arranged in columns.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>Points to note</strong>:</p>
+<ol class="arabic simple">
+<li>Each column holds a particular data type, like integers, strings, lists,
+etc. All values in a column must be the same data type.</li>
+<li>Each column also has a label that tells us what the data represents. For
+example, one column might have a <code class="docutils literal notranslate"><span class="pre">Last</span> <span class="pre">Name</span></code> label, while another could be
+called <code class="docutils literal notranslate"><span class="pre">Email</span></code>.</li>
+<li>Each row includes a <em>primary key</em>, which helps us manage the data. No two
+rows share the same primary key.</li>
+<li>When we <em>add or remove</em> an entry, we create or delete an entire row.</li>
+<li>When we <em>change</em> an entry, we modify the value in one or more columns of a
+single row.</li>
+</ol>
+<p>The number of entries in a table is equal to the number of rows. The number of
+data values for each entry matches the number of columns.</p>
+<div class="section" id="relationships-between-tables">
+<h2><span class="section-number">24.2.1. </span>Relationships Between Tables<a class="headerlink" href="#relationships-between-tables" title="Permalink to this headline">¶</a></h2>
+<p>Imagine you visit the website for your local library, which uses a program
+for the online catalog. To find a book, you can search for its title, the
+author, a keyword, etc. Given the huge number of books available, the library
+database stores a massive amount of information. How is this organized?</p>
+<p>Imagine a single table where each row corresponds to one book. The columns
+would include things like the title, a short summary, the author’s name, the
+author’s biography, the publication date, the number of pages, whether the book
+is checked out, etc.</p>
+<p>Stuffing all of the data into one place is inefficient. Think about how often
+each author’s biography would be repeated! Just like we <a class="reference internal" href="../loops/iteration.html#dry-code"><span class="std std-ref">DRY our code</span></a>,
+any piece of information in a database should only be recorded once.</p>
+<p>A better approach is to create multiple tables in the same database. Each one
+holds information that falls into one category or idea. For the library, the
+tables could include <code class="docutils literal notranslate"><span class="pre">Authors</span></code>, <code class="docutils literal notranslate"><span class="pre">History</span></code>, <code class="docutils literal notranslate"><span class="pre">Science</span> <span class="pre">Fiction</span></code>, <code class="docutils literal notranslate"><span class="pre">eBooks</span></code>,
+etc. Using multiple tables avoids duplicate entries. We store an author’s name
+and bio ONE time, regardless of how many books they have written.</p>
+<p id="index-0">Once we have multiple tables saved in a database, the next step is to create
+links between them. We call these links <em>relationships</em>.
+<strong>Relational databases</strong> store data in a series of connected tables. For
+example, imagine we look up a science fiction title and want information about
+the author. The <code class="docutils literal notranslate"><span class="pre">Science</span> <span class="pre">Fiction</span></code> table does NOT contain this data. However,
+it does have a <em>relationship</em> to the <code class="docutils literal notranslate"><span class="pre">Authors</span></code> table. The catalog program can
+follow the link between the two tables and retrieve the desired data. Since
+multiple book titles can link to the same author, we only need to store the
+writer’s data one time.</p>
+<p>Not only can we identify the author from a title search, we can also use the
+writer’s name to return a list of all of their book titles. By connecting
+tables together in this way, relational databases provide efficiency and
+flexibility. If we update an author’s biography, we only need to do that once
+in the <code class="docutils literal notranslate"><span class="pre">Authors</span></code> table. Anything that links to <code class="docutils literal notranslate"><span class="pre">Authors</span></code> can access the new
+information.</p>
+<div class="figure align-default" id="id2">
+<img alt="Showing the relationships between a Book table an an Authors table." src="../../_images/relational-tables.png" />
+<p class="caption"><span class="caption-text">A column from the <code class="docutils literal notranslate"><span class="pre">Book</span></code> table forms a relationship with rows in the
+<code class="docutils literal notranslate"><span class="pre">Authors</span></code> table, and vice versa.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> <span class="section-number">24.1. </span>What are Databases?</a></li>
+        
+        
+        <li class="next"><a href="crud.html"><span class="section-number">24.3. </span>Database Operations <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/db-tables.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

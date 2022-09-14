@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.9. Project: Local Turtle Races &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18. Git Some Control" href="../git/index.html" />
+    <link rel="prev" title="17.8. Exercises: Local Development" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.9. </span>Project: Local Turtle Races</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-local-turtle-races">
+<span id="turtle-races"></span><h1><span class="section-number">17.9. </span>Project: Local Turtle Races<a class="headerlink" href="#project-local-turtle-races" title="Permalink to this headline">¶</a></h1>
+<p>Hopefully, by the end of this project you will have a program that you just
+can’t resist running over and over again.</p>
+<div class="figure align-default" id="id1">
+<img alt="GIF showing four Python turtles racing across the screen. (The blue one wins)." src="../../_images/four-turtle-race.gif" />
+<p class="caption"><span class="caption-text">On your mark, get set, go!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You are going to make turtles race across a straight track that is 400 pixels
+long. The first one to the finish line wins!</p>
+<div class="section" id="part-a-drawing-space-setup">
+<h2><span class="section-number">17.9.1. </span>Part A: Drawing Space Setup<a class="headerlink" href="#part-a-drawing-space-setup" title="Permalink to this headline">¶</a></h2>
+<p>Open Visual Studio Code and create a new project directory and a
+<code class="docutils literal notranslate"><span class="pre">turtle_race.py</span></code> file.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">turtle_race.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> and <code class="docutils literal notranslate"><span class="pre">random</span></code> modules.</li>
+<li>Define a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function and create a new <code class="docutils literal notranslate"><span class="pre">Screen()</span></code> object.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">.title()</span></code> and <code class="docutils literal notranslate"><span class="pre">.setup()</span></code> methods on the object to give the
+drawing window a title and a size of 600 x 600 pixels.</li>
+<li>The last statement in <code class="docutils literal notranslate"><span class="pre">main()</span></code> should call the <code class="docutils literal notranslate"><span class="pre">.exitonclick()</span></code> method
+on the object.</li>
+</ol>
+<p>Run your program to test your window features.</p>
+</div>
+<div class="section" id="part-b-create-turtles">
+<h2><span class="section-number">17.9.2. </span>Part B: Create Turtles<a class="headerlink" href="#part-b-create-turtles" title="Permalink to this headline">¶</a></h2>
+<p>Define a function called <code class="docutils literal notranslate"><span class="pre">create_racing_turtle()</span></code> that:</p>
+<ol class="arabic simple">
+<li>Takes two parameters, one for color and one for shape. Assign the default
+values <code class="docutils literal notranslate"><span class="pre">'black'</span></code> and <code class="docutils literal notranslate"><span class="pre">'turtle'</span></code> for these variables.</li>
+<li>Creates a new turtle object and assigns it the color and shape values.</li>
+<li>Assigns every turtle the same <code class="docutils literal notranslate"><span class="pre">pensize</span></code> and <code class="docutils literal notranslate"><span class="pre">speed</span></code> (<code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">8</span></code> are
+good choices).</li>
+<li>Returns the new turtle object.</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call the <code class="docutils literal notranslate"><span class="pre">create_racing_turtle</span></code> function and assign the
+returned object to a variable. Verify that the function works by drawing a
+single line with <code class="docutils literal notranslate"><span class="pre">variable_name.forward(100)</span></code>.</p>
+<p>Once the function works, use it to create at least 4 turtle objects. Put each
+of these into a list called <code class="docutils literal notranslate"><span class="pre">racers</span></code>.</p>
+</div>
+<div class="section" id="part-c-start-finish-lines">
+<h2><span class="section-number">17.9.3. </span>Part C: Start &amp; Finish Lines<a class="headerlink" href="#part-c-start-finish-lines" title="Permalink to this headline">¶</a></h2>
+<p>Now that you’ve created some racing turtles, you need to draw the finish line
+and put the objects in their starting positions.</p>
+<div class="section" id="draw-the-finish-line">
+<h3><span class="section-number">17.9.3.1. </span>Draw the Finish Line<a class="headerlink" href="#draw-the-finish-line" title="Permalink to this headline">¶</a></h3>
+<p>To mark the finish line, you will use an <em>invisible</em> turtle to draw it.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Some of the methods on this page may be unfamiliar to you. That’s OK. We
+provide directions for how to use each one, and you can always check the
+<a class="reference external" href="https://docs.python.org/3/library/turtle.html" target="_blank">Python documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> for
+more details.</p>
+</div>
+<p>Define a function called <code class="docutils literal notranslate"><span class="pre">draw_finish()</span></code> that:</p>
+<ol class="arabic">
+<li><p class="first">Takes the length of the <code class="docutils literal notranslate"><span class="pre">racers</span></code> list as the parameter.</p>
+</li>
+<li><p class="first">Creates a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object and assigns it to a variable.</p>
+</li>
+<li><p class="first">Calls the <code class="docutils literal notranslate"><span class="pre">.hideturtle()</span></code> method on the object. Lines will still show up
+in the drawing space, but the turtle shape will remain invisible. The method
+requires no arguments inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+</li>
+<li><p class="first">Sets the <code class="docutils literal notranslate"><span class="pre">pensize</span></code>, the <code class="docutils literal notranslate"><span class="pre">speed</span></code>, and <code class="docutils literal notranslate"><span class="pre">color</span></code> for the turtle. Feel free
+to choose any values for these properties you want.</p>
+</li>
+<li><p class="first">Uses the <code class="docutils literal notranslate"><span class="pre">penup</span></code>, <code class="docutils literal notranslate"><span class="pre">pendown</span></code> and movement methods to move the turtle
+forward 200 pixels and then draw a vertical line up towards the top of the
+screen. The length of the line should depend on how many turtles are in the
+<code class="docutils literal notranslate"><span class="pre">racers</span></code> list.</p>
+<table border="1" class="colwidths-auto docutils align-default" id="id2">
+<caption><span class="caption-text">Finish Line Length</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Number of Turtle Racers</th>
+<th class="head">Length in Pixels</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>50</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>150</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">draw_finish</span></code> does not return any value.</p>
+</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">draw_finish</span></code> several times, using different integers for
+the argument.</p>
+</div>
+<div class="section" id="place-turtles-at-start">
+<h3><span class="section-number">17.9.3.2. </span>Place Turtles at Start<a class="headerlink" href="#place-turtles-at-start" title="Permalink to this headline">¶</a></h3>
+<p>With four racing turtles, you need to make a starting lineup that looks
+something like the figure below. Turtle shapes and colors may vary. The numbers
+show the object positions compared to the center of the screen.</p>
+<div class="figure align-default" id="id3">
+<img alt="Four turtles arranged vertically at the starting line. The finish line is 400 pixels to the right." src="../../_images/starting-blocks.png" />
+<p class="caption"><span class="caption-text">Turtles start 200 pixels to the right of the center of the screen. The finish line is 200 pixels to the left.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>By default, all new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> objects start in the center of the drawing
+space, which has the coordinates <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code>. This means each new turtle gets
+stacked on top of all the others. We need to spread them out before they can
+race!</p>
+<p>Define a function called <code class="docutils literal notranslate"><span class="pre">start_positions()</span></code> that:</p>
+<ol class="arabic">
+<li><p class="first">Takes the <code class="docutils literal notranslate"><span class="pre">racers</span></code> list as a parameter.</p>
+</li>
+<li><p class="first">Includes a loop to iterate through the list. For each turtle object, use the
+<code class="docutils literal notranslate"><span class="pre">.goto(x_value,</span> <span class="pre">y_value)</span></code> method to move the turtle to its starting
+point. <code class="docutils literal notranslate"><span class="pre">goto()</span></code> places the turtle at a specific spot on the screen.
+<code class="docutils literal notranslate"><span class="pre">x_value</span></code> represents the left-right position, and each turtle will use
+<code class="docutils literal notranslate"><span class="pre">-200</span></code> for this.</p>
+<p><code class="docutils literal notranslate"><span class="pre">y_value</span></code> represents the up-down position. The first turtle in the list
+will have a <code class="docutils literal notranslate"><span class="pre">y_value</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code>. The second will be <code class="docutils literal notranslate"><span class="pre">50</span></code>. The third
+<code class="docutils literal notranslate"><span class="pre">100</span></code>, etc.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Use variables to calculate <code class="docutils literal notranslate"><span class="pre">y_value</span></code> instead of typing in specific
+numbers! <em>Hint</em>: Maybe you can relate <code class="docutils literal notranslate"><span class="pre">y_value</span></code> to an <code class="docutils literal notranslate"><span class="pre">index</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">racers</span></code> list…</p>
+</div>
+</li>
+<li><p class="first">Returns no value.</p>
+</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">start_positions</span></code> several times, placing two or more
+turtles in the <code class="docutils literal notranslate"><span class="pre">racers</span></code> list. No matter how many objects are in <code class="docutils literal notranslate"><span class="pre">racers</span></code>,
+the start and finish lines should always match in length.</p>
+</div>
+</div>
+<div class="section" id="part-d-run-the-race">
+<h2><span class="section-number">17.9.4. </span>Part D: Run the Race<a class="headerlink" href="#part-d-run-the-race" title="Permalink to this headline">¶</a></h2>
+<p>The statements to control the turtle race go inside the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.
+After setting up the drawing window, your code should:</p>
+<ol class="arabic">
+<li><p class="first">Create the turtles and put the objects in the <code class="docutils literal notranslate"><span class="pre">racers</span></code> list.</p>
+</li>
+<li><p class="first">Call the <code class="docutils literal notranslate"><span class="pre">draw_finish</span></code>  and <code class="docutils literal notranslate"><span class="pre">start_position</span></code> functions.</p>
+</li>
+<li><p class="first">Use nested loops to move the turtles:</p>
+<ol class="loweralpha">
+<li><p class="first">Every turn, each turtle moves forward a random distance. Values in the
+range of 5 - 20 pixels are a good place to start, but you can adjust the
+end points as you wish.</p>
+</li>
+<li><p class="first">Include a conditional to check each turtle after it moves. The objects
+all start at <code class="docutils literal notranslate"><span class="pre">-200</span></code> and move toward <code class="docutils literal notranslate"><span class="pre">200</span></code>. How can you determine if
+the turtle crossed the finish line? (There are multiple correct ways to
+do this).</p>
+</li>
+<li><p class="first">When a turtle crosses the finish line, use the <code class="docutils literal notranslate"><span class="pre">.write()</span></code> method to
+display a victory message on the screen!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;I win!</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Ties are possible! When a turtle crosses the finish line, the racing loops
+should stop. However, they should end AFTER all of the turtles in the list
+get a chance to move. This means multiple turtles can cross the finish line
+on the same turn.</p>
+<p>Without this condition, the turtle at index 0 gets a big advantage in the
+race, since it moves first.</p>
+</li>
+</ol>
+<div class="figure align-default" id="id4">
+<img alt="A 3-way tie for first place!" src="../../_images/turtle-tie.png" />
+<p class="caption"><span class="caption-text">Turtles that reach or move past the finish line in the same turn tie.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Run your program several times to make sure that the same turtle doesn’t always
+win the race! The results are supposed to be random.</p>
+</div>
+<div class="section" id="part-e-bonus-missions">
+<h2><span class="section-number">17.9.5. </span>Part E: Bonus Missions<a class="headerlink" href="#part-e-bonus-missions" title="Permalink to this headline">¶</a></h2>
+<p>Once you get your four turtles racing, try adding one of these enhanced
+features:</p>
+<ol class="arabic simple">
+<li>Assign a random color or shape to each turtle.</li>
+<li>Randomly select the number of turtles to race. Use a loop to create the
+objects and append them into <code class="docutils literal notranslate"><span class="pre">racers</span></code>.</li>
+<li>Add a <em>Replay</em> option to your code to ask the user if they want to run
+another race.</li>
+</ol>
+<table border="1" class="docutils align-default" id="id5">
+<caption><span class="caption-text">Enhanced Turtle Racing</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last figure align-default">
+<img alt="A two-turtle race  gif." src="../../_images/two-turtle-race.gif" />
+</div>
+</td>
+<td><div class="first last figure align-default">
+<img alt="A three-turtle race  gif." src="../../_images/three-turtle-race.gif" />
+</div>
+</td>
+<td><div class="first last figure align-default">
+<img alt="A five-turtle race  gif." src="../../_images/five-turtle-race.gif" />
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.8. </span>Exercises: Local Development</a></li>
+        
+        
+        <li class="next"><a href="../git/index.html"><span class="section-number">18. </span>Git Some Control <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.2. What is HTML? &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.3. HTML Structure" href="structure.html" />
+    <link rel="prev" title="14.1. Background" href="background.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">14. </span>We Built The Internet on HTML</a></li>
+    <li class="active"><span class="section-number">14.2. </span>What is HTML?</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="what-is-html">
+<h1><span class="section-number">14.2. </span>What is HTML?<a class="headerlink" href="#what-is-html" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The web is a collection of documents, which are stored in servers. Many of
+these documents are written in a language called <strong>HTML</strong>, which stands for
+<em>Hypertext Markup Language</em>.</p>
+<p>The term <strong>hypertext</strong> refers to text that includes links (also called
+<em>hyperlinks</em>) to other text.</p>
+<p>HTML documents are made up of:</p>
+<ol class="arabic simple">
+<li><em>Text</em> - The words we see on a page.</li>
+<li><em>Links</em> to other pages.</li>
+<li><strong>Markup</strong> - Determines what the text looks like and how that text and other
+content is arranged on the page.</li>
+<li><em>References</em> to other documents - Videos, images, code editors, etc.</li>
+</ol>
+<p>HTML code does not execute logic or perform calculations like Python. There are
+no <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements, or functions. Instead, HTML is an
+example of a <strong>markup language</strong>. Markup languages provide instructions for
+what text should look like on the screen. They format the text of a document
+(like the size of a section heading) and define the structure of the page (like
+the number of sections or placement of images).</p>
+<p>HTML uses two main components, <em>elements</em> and <em>tags</em>, to define the structure
+of a web page.</p>
+<div class="section" id="html-elements">
+<h2><span class="section-number">14.2.1. </span>HTML Elements<a class="headerlink" href="#html-elements" title="Permalink to this headline">¶</a></h2>
+<p>With HTML, a programmer can add a lot of different types of content to a page.
+In this chapter, we focus on headings, paragraphs, images, and more.</p>
+<p>When a programmer creates a web page, they break the content down by type:</p>
+<ol class="arabic simple">
+<li>What text needs to be on the page, and how will it be organized?</li>
+<li>Are there any images/figures/videos?</li>
+<li>How many links?</li>
+<li>Will there be a form to fill out?</li>
+<li>Will there be a menu or a navigation bar?</li>
+<li>etc.</li>
+</ol>
+<p>The next step for many developers is to sketch the layout for the page on paper
+or in a drawing app. They highlight what each item is, where it belongs on the
+page, and ideas about what it might look like.</p>
+<p id="index-1">An <strong>element</strong> is one portion of an HTML page. By combining and arranging
+different elements, a developer builds the structure for the page.</p>
+<p>Elements are often broken down by content type—text, links, images, titles,
+etc. Elements can also be <em>nested</em> inside other elements. This makes it easy,
+for example, to align a figure caption with the image it describes.</p>
+<div class="figure align-default" id="id1">
+<img alt="Arranging elements determines the layout of a web page." src="../../_images/html-elements.png" />
+<p class="caption"><span class="caption-text">The seven elements on the left are arranged to create the layout for the HTML page.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="html-tags">
+<h2><span class="section-number">14.2.2. </span>HTML tags<a class="headerlink" href="#html-tags" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">An HTML <strong>tag</strong> tells the computer the type and content of an HTML element.
+Most elements include a <em>start tag</em> and an <em>end tag</em>, with content in between.</p>
+<p>Every tag has the following structure:</p>
+<ol class="arabic simple">
+<li>Begin with the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> symbol and end with the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol.</li>
+<li>The tag name goes inside the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, and it indicates the element type.</li>
+<li>Start tags and end tags share the same structure. However, end tags (also
+called <em>closing tags</em>) include the <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol after the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> bracket.</li>
+<li>Start tags may include extra content that affects the element’s appearance.</li>
+</ol>
+<p>The general syntax for an HTML element is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;element type&gt;content&lt;/element type&gt;
+</pre></div>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Tags surround the content within the element. If you forget the ending tag,
+some HTML elements will still display correctly, but not all. To avoid
+unexpected results or errors, always include both tags!</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<span id="first-html-page"></span><h2><span class="section-number">14.2.3. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>The editor below provides a practice HTML document (note the <code class="docutils literal notranslate"><span class="pre">.html</span></code> at the
+end of the filename).</p>
+<ol class="arabic">
+<li><p class="first">Notice that the plain text <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> in the editor shows up as plain
+text on the “webpage” to the right. No quotes are needed around the words.
+Try adding some to see what happens.</p>
+</li>
+<li><p class="first">On line 2, add the statement <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;Hello!&lt;/h1&gt;</span></code>. How does this affect the
+appearance of the text in the right panel?</p>
+<p><code class="docutils literal notranslate"><span class="pre">h1</span></code> the name for a <em>heading</em> element, and the number indicates the size
+of the text.</p>
+</li>
+<li><p class="first">Try changing the number after <code class="docutils literal notranslate"><span class="pre">h</span></code>! Allowed values range from 1 - 6.</p>
+</li>
+<li><p class="first">Try making the mistakes <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;Hello!&lt;/h4&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;Hello!&lt;/h2&gt;</span></code>. How
+does each one affect the text? Hover over red <em>X</em> in the editor to read the
+error messages.</p>
+<iframe src="https://trinket.io/embed/html/18c0e4c318?runMode=autorun" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;&lt;/strong&gt;</span></code> tags around the <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> text. What
+does <code class="docutils literal notranslate"><span class="pre">strong</span></code> do?</p>
+</li>
+<li><p class="first">Replace each <code class="docutils literal notranslate"><span class="pre">strong</span></code> with <code class="docutils literal notranslate"><span class="pre">em</span></code>. What happens?</p>
+</li>
+<li><p class="first">Here is one example of nested elements:
+<code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;Nested</span> <span class="pre">element</span> <span class="pre">&lt;em&gt;here&lt;/em&gt;&lt;/h3&gt;</span></code>. Paste the statement into the
+editor to see what it does.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="whitespace">
+<h2><span class="section-number">14.2.4. </span>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h2>
+<p>When a browser displays an HTML document, it treats all whitespace (spaces,
+tabs, new lines, etc.) within a set of text in a very specific way. Let’s take
+a moment to explore this.</p>
+<p>In the editor above, type these lines at the top of the file.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Text with one space between words.
+Text     with     two      tabs.
+Text
+over
+multiple
+lines.
+</pre></div>
+</td></tr></table></div>
+<p>When the new page renders on the screen, the output may be surprising!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Text with one space between words. Text with two tabs. Text over multiple lines.
+</pre></div>
+</div>
+<p>The first sentence appears just as we typed it. However, the tabs and new lines
+in the other two sentences were replaced with single spaces. Also, all three
+sentences appear one after the other on the screen.</p>
+<p>This is the standard result when HTML renders text on the screen. Any
+whitespace between words appears as a single space. The same effect occurs with
+text inside an element. <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;Text</span>&#160;&#160;&#160;&#160; <span class="pre">with</span>&#160;&#160;&#160;&#160; <span class="pre">two</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">tabs.&lt;/h2&gt;</span></code> appears
+as a heading, but with only one space between each of the words.</p>
+<p>The advantage of this is that we can break long strings of text over multiple
+lines in the editor without affecting how the words look on the web page. This
+makes our code more readable.</p>
+<p>Later in this chapter, we will learn how to make different sections of text
+appear on separate lines of a web page.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">14.2.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does HTML stand for?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Happy Tickles Make Laughter</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Hypertext Markup Language</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hypertext Mockup Language</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hyperlink Markup Layout</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In HTML, ending tags are optional.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following is an example of an HTML element?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> h1</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> &lt;/em&gt;</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Hello!</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> &lt;h2&gt;Hello!&lt;/h2&gt;</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="background.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.1. </span>Background</a></li>
+        
+        
+        <li class="next"><a href="structure.html"><span class="section-number">14.3. </span>HTML Structure <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/html/html-intro.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

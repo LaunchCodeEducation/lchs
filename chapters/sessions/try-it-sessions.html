@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.5. Try It! Flask Sessions &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23.6. Try It! Flask Sessions (Part 2)" href="try-it-part2.html" />
+    <link rel="prev" title="23.4. Flask Sessions" href="flask-sessions.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">23. </span>Cookies &amp; Sessions</a></li>
+    <li class="active"><span class="section-number">23.5. </span>Try It! Flask Sessions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="try-it-flask-sessions">
+<h1><span class="section-number">23.5. </span>Try It! Flask Sessions<a class="headerlink" href="#try-it-flask-sessions" title="Permalink to this headline">¶</a></h1>
+<p>Let’s build a simple Flask application that uses sessions to track a list of
+items. It doesn’t matter what the list is (movies, groceries, places to visit,
+etc.). The key is to practice saving and accessing persistent data.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">For the program to work properly, cookies must be enabled in the browser.</p>
+</div>
+<div class="section" id="clone-the-repository">
+<span id="clone-venv-reminder"></span><h2><span class="section-number">23.5.1. </span>Clone the Repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">¶</a></h2>
+<p>The starter code for this demo is saved on GitHub. Use <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_session_try_it" target="_blank">this link<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+to navigate to the repository, then follow these setup steps:</p>
+<ol class="arabic">
+<li><p class="first">On the repository page, click the green <em>Code</em> button and copy the URL.</p>
+<div class="figure align-default">
+<img alt="The clone dialog box with copy button highlighted." src="../../_images/clone-session-repo.png" />
+</div>
+</li>
+<li><p class="first">Launch Visual Studio Code. From the <em>File</em> menu, open your
+<code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p>
+</li>
+<li><p class="first">In the terminal pane, enter the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone repo_URL
+</pre></div>
+</div>
+<p>Be sure to replace <code class="docutils literal notranslate"><span class="pre">repo_URL</span></code> with the web address you copied in step 1.</p>
+</li>
+<li><p class="first">From the <em>File</em> menu, open the <code class="docutils literal notranslate"><span class="pre">LCHS_session_try_it</span></code> folder.</p>
+</li>
+<li><p class="first">Create a new virtual environment and install Flask.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Mac:
+$ python3 -m venv session-env
+$ . session-env/bin/activate
+<span class="o">(</span>session-env<span class="o">)</span> $ pip3 install Flask
+
+PC:
+$ py -3 -m venv session-env
+$ . session-env/Scripts/activate
+<span class="o">(</span>session-env<span class="o">)</span> $ pip install Flask
+</pre></div>
+</div>
+</li>
+<li><p class="first">Launch the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> program and open the webpage in the browser. Nothing
+special happens on the page yet. You just need to make sure the starter code
+runs.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/session-try-it-start.png"><img alt="Form page displayed when the Flask app runs the first time." src="../../_images/session-try-it-start.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">The starter code displays a simple form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Before moving on, be sure to <a class="reference internal" href="../git/repositories-and-commits.html#commit-summary"><span class="std std-ref">save and commit</span></a> your
+work.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="save-session-data">
+<h2><span class="section-number">23.5.2. </span>Save Session Data<a class="headerlink" href="#save-session-data" title="Permalink to this headline">¶</a></h2>
+<p>In this section, you’ll use the <code class="docutils literal notranslate"><span class="pre">session</span></code> object to store a piece of data.</p>
+<p>Right now, all the Flask application does is render the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> page.
+Opening <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we see very little code inside the central <code class="docutils literal notranslate"><span class="pre">if/else</span></code>
+block.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">index()</span></code> function in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">pass</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">pass</span></code> is another example of a placeholder. The keyword fills the space
+where Python expects a block of statements. It allows you to run the starter
+code successfully and worry about filling in specific commands later.</p>
+</div>
+<p>Since your program will track a collection of items, start by saving an empty
+list to the session.</p>
+<ol class="arabic">
+<li><p class="first">To set a new session cookie, the general syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>Just like a dictionary, <code class="docutils literal notranslate"><span class="pre">key</span></code> should be a string or a string variable.
+However, <code class="docutils literal notranslate"><span class="pre">value</span></code> can be any Python data type.</p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, replace the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword on line 12 with the statement:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;list_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</td></tr></table></div>
+<p>Be sure to use something more descriptive than <code class="docutils literal notranslate"><span class="pre">list_name</span></code>. For example,
+<code class="docutils literal notranslate"><span class="pre">movies</span></code>, <code class="docutils literal notranslate"><span class="pre">places_to_visit</span></code>, <code class="docutils literal notranslate"><span class="pre">groceries</span></code>, etc.</p>
+</li>
+<li><p class="first">Save your changes. If <code class="docutils literal notranslate"><span class="pre">main.py</span></code> is not currently running, start it again.</p>
+</li>
+<li><p class="first">On the webpage, use the <a class="reference internal" href="flask-sessions.html#cookies-vs-sessions"><span class="std std-ref">browser tools</span></a> to
+confirm that a session cookie was set.</p>
+</li>
+</ol>
+<p>Congratulations! You just made the browser store a file on your device. It only
+contains an empty list, but you’ll soon fix that.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Remember, unlike plain cookies, session values can be non-string data types!</p>
+</div>
+</div>
+<div class="section" id="access-session-data">
+<h2><span class="section-number">23.5.3. </span>Access Session Data<a class="headerlink" href="#access-session-data" title="Permalink to this headline">¶</a></h2>
+<p>OK, you’ve saved a session file to your device. Next you’ll learn how to access
+that data when you need it.</p>
+<p>To access session data, the general syntax is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">all_session_data</span> <span class="o">=</span> <span class="n">session</span>
+
+<span class="c1"># OR</span>
+
+<span class="n">specific_session_value</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>When placed to the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator, <code class="docutils literal notranslate"><span class="pre">session</span></code> returns all of its
+key/value pairs. You can use <code class="docutils literal notranslate"><span class="pre">all_session_data</span></code> just like a Python
+dictionary.</p>
+<p><code class="docutils literal notranslate"><span class="pre">session['key']</span></code> returns the value assigned to <code class="docutils literal notranslate"><span class="pre">key</span></code>. Since the <code class="docutils literal notranslate"><span class="pre">session</span></code>
+object can store multiple key/value paris, this syntax is helpful when you only
+want one specific entry.</p>
+<p>Now put this to use:</p>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in Visual Studio Code.</p>
+</li>
+<li><p class="first">Just beneath the form code, there is a section that displays the contents of
+the list.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;centered&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>List Items:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Nothing here yet...<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">On line 23, replace <code class="docutils literal notranslate"><span class="pre">Nothing</span> <span class="pre">here</span> <span class="pre">yet...</span></code> with a placeholder:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;centered&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>List Items:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>{{session[&#39;list_name&#39;]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">{{session['list_name']}}</span></code> returns the value assigned to <code class="docutils literal notranslate"><span class="pre">list_name</span></code>.</p>
+</li>
+<li><p class="first">Save, then reload the page. You should see a set of empty list brackets
+under the form.</p>
+<div class="figure align-default">
+<img alt="Empty list brackets appear below the List Items heading." src="../../_images/session-access-1.png" />
+</div>
+</li>
+<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Instead of assigning the empty list to
+<code class="docutils literal notranslate"><span class="pre">session['list_name']</span></code>, try assigning a list that contains one or more
+items. Save, then reload the page. You should see the items appear.</p>
+<div class="figure align-default">
+<img alt="A list with items appears below the Grocery List heading." src="../../_images/session-access-2.png" />
+</div>
+</li>
+</ol>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">render_template</span></code> function does NOT include any variables.
+Since the session data is stored on your device, it is accessible by both
+<code class="docutils literal notranslate"><span class="pre">main.py</span></code> and <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>At any time, you can delete a session cookie using the browser tools. Open
+up the storage tab and right click on the item you want to remove.</p>
+<div class="last figure align-default">
+<a class="reference internal image-reference" href="../../_images/delete-session.png"><img alt="Showing storage panel with menu options to delete a session cookie." src="../../_images/delete-session.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="section" id="update-the-list-display">
+<h3><span class="section-number">23.5.3.1. </span>Update the List Display<a class="headerlink" href="#update-the-list-display" title="Permalink to this headline">¶</a></h3>
+<p>To make the webpage look better, let’s update the HTML code to display the
+elements in an unordered list.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;centered&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>List Items:<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      {% for item in session[&#39;list_name&#39;] %}
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      {% endfor %}
+   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">style.css</span></code> page contains some CSS rules to align and size the items, but
+you may need to adjust these to suit your screen.</p>
+</div>
+</div>
+<div class="section" id="change-session-data">
+<h2><span class="section-number">23.5.4. </span>Change Session Data<a class="headerlink" href="#change-session-data" title="Permalink to this headline">¶</a></h2>
+<p>After learning how to create and access a session cookie, the next step is to
+learn how to change session data. That will be the goal for the next page.</p>
+<p>Before moving on, take a moment to save and commit your work.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">23.5.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>To add a new key/value pair to a <code class="docutils literal notranslate"><span class="pre">session</span></code> object, the syntax is:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">session = {key : value}</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">session['key'] = value</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">value = session['key']</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">session['key' : value]</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following will print ONE value from the <code class="docutils literal notranslate"><span class="pre">session</span></code> object?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session('key'))</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session)</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">print(session['key'])</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">print(session[0])</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="flask-sessions.html"><span aria-hidden="true">&larr;</span> <span class="section-number">23.4. </span>Flask Sessions</a></li>
+        
+        
+        <li class="next"><a href="try-it-part2.html"><span class="section-number">23.6. </span>Try It! Flask Sessions (Part 2) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/sessions/try-it-sessions.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

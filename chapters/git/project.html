@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.9. Project: Git a Remote Repository &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19. HTTP and the Internet" href="../http/index.html" />
+    <link rel="prev" title="18.8. Exercises: Git More Practice" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.9. </span>Project: Git a Remote Repository</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-git-a-remote-repository">
+<span id="git-project"></span><h1><span class="section-number">18.9. </span>Project: Git a Remote Repository<a class="headerlink" href="#project-git-a-remote-repository" title="Permalink to this headline">¶</a></h1>
+<p>In this activity, you are going to create a remote repository and practice
+pushing changes to it from your local machine.</p>
+<div class="section" id="step-1-create-a-new-local-repository">
+<h2><span class="section-number">18.9.1. </span>Step 1: Create a New Local Repository<a class="headerlink" href="#step-1-create-a-new-local-repository" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Launch Visual Studio Code and open the terminal panel.</li>
+<li>Navigate into the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory and create a new folder. You
+can name it whatever you want, but you will be reusing code from your
+<a class="reference internal" href="../local-dev/project.html#turtle-races"><span class="std std-ref">Turtle Races</span></a> project.</li>
+<li>Use the <em>File</em> menu to open the new folder in VS Code. In the terminal, use
+<code class="docutils literal notranslate"><span class="pre">pwd</span></code> to confirm that you are in the correct directory.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize your project as a Git repository.</li>
+<li>Move your <code class="docutils literal notranslate"><span class="pre">turtle_race.py</span></code> file into the directory. You an do this with
+<a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-mv"><span class="std std-ref">terminal commands</span></a>, or you can drag-and-drop the
+existing file into the folder.</li>
+<li>Run <code class="docutils literal notranslate"><span class="pre">turtle_race.py</span></code> to confirm that it still works. If not, debug your
+program to get it running again.</li>
+<li>Save and commit the changes.</li>
+<li>Check the name of your default branch with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> command. If
+necessary, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span></code> to change the name of the branch to
+<code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you did not complete the Turtle Races project, no worries. Just add a
+new Python file to the repository. Code a simple <code class="docutils literal notranslate"><span class="pre">print</span></code> statement
+inside a loop and run with that.</p>
+</div>
+</div>
+<div class="section" id="step-2-create-a-remote-repository">
+<h2><span class="section-number">18.9.2. </span>Step 2: Create a Remote Repository<a class="headerlink" href="#step-2-create-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Login to your <a class="reference external" href="https://github.com/" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> account in a web browser.
+Click on the “+” button to add a new repository.</p>
+<div class="figure align-default" id="id1">
+<img alt="The New Repository link in the dropdown menu at top right on GitHub." src="../../_images/new-repo-button.png" />
+<p class="caption"><span class="caption-text">The <em>New Repository</em> link is in the dropdown menu at top right on GitHub.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">To create a new repository:</p>
+<ol class="loweralpha simple">
+<li>Fill in the name and description.</li>
+<li>Uncheck <em>Initialize this repository with a README</em> and click
+<em>Create Repository</em>.</li>
+</ol>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/create-repo.png"><img alt="Creating a new repository in GitHub by filling out the form." src="../../_images/create-repo.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Create a new repository in GitHub</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">On the next screen, click on the <em>HTTPS</em> button at the top of the page.
+Next, click the <em>Copy</em> button in the <em>push an existing repository</em> section.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/new-repo-push.png"><img alt="The page you see after creating an empty repository, with several options." src="../../_images/new-repo-push.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Connecting to a repository in GitHub</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Go back to your terminal and paste the commands copied from GitHub. These
+should be very similar to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote add origin https://github.com/username/turtle-races.git
+$ git branch -M main
+$ git push -u origin main
+</pre></div>
+</div>
+<p>The final command produces quite a bit of output. The final line,
+<code class="docutils literal notranslate"><span class="pre">Branch</span> <span class="pre">'main'</span> <span class="pre">set</span> <span class="pre">up</span> <span class="pre">to</span> <span class="pre">track</span> <span class="pre">remote</span> <span class="pre">branch</span> <span class="pre">'main'</span> <span class="pre">from</span> <span class="pre">'origin'</span></code> lets
+you know that the process worked.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You may be asked to enter your GitHub username and personal access token
+after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> commands. Do so whenever necessary.</p>
+</div>
+</li>
+<li><p class="first">GitHub should now have the same files and code as your local project. Click
+on the project name link at the top of the page. This takes you to a
+dashboard that shows you what’s stored in the repo. You can see your code by
+clicking on different file names.</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/repo-first-commit.png"><img alt="A repository with one commit in GitHub." src="../../_images/repo-first-commit.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">A GitHub repository with one commit.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Your local and remote repositories are now linked. In the terminal, use the
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> command to check for the URL of the remote repo.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git remote -v
+origin  https://github.com/username/turtle-races.git (fetch)
+origin  https://github.com/username/turtle-races.git (push)
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="step-3-push-to-the-remote-repository">
+<h2><span class="section-number">18.9.3. </span>Step 3: Push to the Remote Repository<a class="headerlink" href="#step-3-push-to-the-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>Right now, your local and remote repositories match. As you continue working on
+your device, the two repos become different. From time to time, you need to
+<em>push</em> your local commits up to GitHub to keep the local and remote versions
+the same.</p>
+<ol class="arabic">
+<li><p class="first">In VS Code, add a new text file called <code class="docutils literal notranslate"><span class="pre">README.txt</span></code>. Inside the file,
+add a short description of your Turtle Races project.</p>
+</li>
+<li><p class="first">Save and commit your changes to the local repo.</p>
+</li>
+<li><p class="first">To update the version stored on GitHub, enter the command
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">main</span></code> in the terminal. The output includes information
+about what’s happening on GitHub. The final lines indicate if the push was
+successful, and they will look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>To https://github.com/username/turtle-races.git
+   51dbfe6..2e6f4fa  main -&gt; main
+</pre></div>
+</div>
+</li>
+<li><p class="first">After making the push, you should see <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> added to the GitHub
+repository. The contents of that file also appear below the list of file
+names.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/repo-readme-push.png"><img alt="The turtle-races GitHub repo with README.txt added." src="../../_images/repo-readme-push.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> added our local commits to the remote repository.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<div class="section" id="push-a-new-branch">
+<h3><span class="section-number">18.9.3.1. </span>Push a New Branch<a class="headerlink" href="#push-a-new-branch" title="Permalink to this headline">¶</a></h3>
+<p>Whenever you push changes up to GitHub, the action only affects the current
+branch. In the steps above, you updated <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">Back in VS Code, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> in the terminal to create a new
+branch called <code class="docutils literal notranslate"><span class="pre">readme</span></code>.</p>
+</li>
+<li><p class="first">In the new branch, make some changes to the <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> file. Save and
+commit those changes.</p>
+</li>
+<li><p class="first">Your local repository contains two branches now, but GitHub only knows about
+one. To add the new branch to the remote, just use its name instead of
+<code class="docutils literal notranslate"><span class="pre">main</span></code> in the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin readme
+
+To https://github.com/username/turtle-races.git
+   * [new branch]      readme -&gt; readme
+</pre></div>
+</div>
+</li>
+<li><p class="first">After this push, your GitHub project shows a list of branches in a dropdown
+menu.</p>
+<div class="figure align-default" id="id6">
+<img alt="The dropdown menu lists the branches in the repository." src="../../_images/branch-dropdown.png" />
+<p class="caption"><span class="caption-text">Select different branches from the dropdown menu.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Click on <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> to see its contents. Use the dropdown menu to switch
+between the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">readme</span></code> branches. Notice how the text changes
+inside the file.</p>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">In <a class="reference internal" href="../../assignments/communication-log.html#communication-log"><span class="std std-ref">Assignment #5</span></a>, you will learn how to perform a
+merge in GitHub. For now, we will leave the branches separate.</p>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-pull-down-changes-from-the-remote">
+<h2><span class="section-number">18.9.4. </span>Step 4: Pull Down Changes From the Remote<a class="headerlink" href="#step-4-pull-down-changes-from-the-remote" title="Permalink to this headline">¶</a></h2>
+<p>If you are working with a team on a project, it is very likely that one of your
+partners will push up changes to GitHub. When this happens, you need to <em>pull</em>
+those changes down to your own device.</p>
+<p>To practice this, make a change in GitHub and then move those changes to your
+local repo.</p>
+<ol class="arabic">
+<li><p class="first">In your GitHub project page, select the <code class="docutils literal notranslate"><span class="pre">readme</span></code> branch from the dropdown
+menu.</p>
+</li>
+<li><p class="first">Click on the <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> file name, then select pencil icon to edit the
+file.</p>
+<div class="figure align-default">
+<img alt="The pencil icon opens the GitHub file editor." src="../../_images/pencil-edit-button.png" />
+</div>
+</li>
+<li><p class="first">Add some more text to the file, or change the words already there. When
+done, click the <em>Commit changes</em> button at the bottom of the page.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/GitHub-commit.png"><img alt="The GitHub 'Commit changes' button." src="../../_images/GitHub-commit.png" style="width: 40%;" /></a>
+</div>
+</li>
+<li><p class="first">Return to VS Code, and make sure you are in the <code class="docutils literal notranslate"><span class="pre">readme</span></code> branch.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+* main
+  readme
+$ git checkout readme
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>. Just like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>, the output tells you
+what’s happening to your local files. The final lines indicate if the pull
+was successful, and they will look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull
+Lots of output...
+
+Updating b407366..03f9f4c
+README.txt | 5 ++++-
+1 file changed, 4 insertions(+), 1 deletion(-)
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code> symbols indicate additions or deletions from the listed
+files.</p>
+</li>
+</ol>
+<p>After the pull, you will see the updated text appear in VS Code.</p>
+</div>
+<div class="section" id="success">
+<h2><span class="section-number">18.9.5. </span>Success<a class="headerlink" href="#success" title="Permalink to this headline">¶</a></h2>
+<p>Nice work! You now have experience with:</p>
+<ol class="arabic simple">
+<li>Creating a new local repository.</li>
+<li>Creating a remote repository on GitHub.</li>
+<li>Linking your local and remote repos.</li>
+<li>Pushing and pulling changes between your local and remote versions.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.8. </span>Exercises: Git More Practice</a></li>
+        
+        
+        <li class="next"><a href="../http/index.html"><span class="section-number">19. </span>HTTP and the Internet <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

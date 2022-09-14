@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.8. Exercises: Local Development &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.9. Project: Local Turtle Races" href="project.html" />
+    <link rel="prev" title="17.7. Local HTML/CSS Files" href="vscode-html-css.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.8. </span>Exercises: Local Development</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercises-local-development">
+<h1><span class="section-number">17.8. </span>Exercises: Local Development<a class="headerlink" href="#exercises-local-development" title="Permalink to this headline">¶</a></h1>
+<p>Take a moment to think about how many logins you use each day. Do you have
+different passwords for each one? How many characters do they contain? Do you
+mix letters, digits, and special characters? Do you use the same password
+multiple times, even though that’s a bad idea?</p>
+<p>There are lots of <strong>password manager</strong> applications on the market these days.
+One feature of these apps lets users quickly create new, strong passwords.</p>
+<p>The logic behind a password generator is fairly straightforward. In these
+exercises, you will use your Python skills to make one!</p>
+<div class="section" id="setup">
+<h2><span class="section-number">17.8.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open Visual Studio Code and create a new directory. Also, create an empty
+<code class="docutils literal notranslate"><span class="pre">.py</span></code> file for your program. Be sure to follow the proper Python naming
+conventions.</p>
+</li>
+<li><p class="first">In your new file, start by adding <code class="docutils literal notranslate"><span class="pre">import</span></code> statements for the <a class="reference internal" href="../modules/random-module.html#random-module"><span class="std std-ref">random</span></a>
+and <a class="reference internal" href="../strings/string-module.html#string-module"><span class="std std-ref">string</span></a> modules.</p>
+</li>
+<li><p class="first">This program might be used as a module later, so you need to set up your
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> function as described in the <a class="reference internal" href="../modules/more-on-main.html#more-about-main"><span class="std std-ref">More About main()</span></a>
+section.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Welcome to the password generator!&#39;</span><span class="p">)</span>
+   <span class="c1"># Your code here...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="part-a-choose-a-length">
+<h2><span class="section-number">17.8.2. </span>Part A: Choose a Length<a class="headerlink" href="#part-a-choose-a-length" title="Permalink to this headline">¶</a></h2>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> that does the following:</p>
+<ol class="arabic simple">
+<li>Prompts the user to choose a length for their new password. Acceptable
+values range from 8 - 30 characters.</li>
+<li>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to validate the user’s entry. If an entry is invalid,
+the loop should print an error message and reprompt the user for the length.</li>
+<li>Returns an integer for the password length.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Be sure to test your function! In <code class="docutils literal notranslate"><span class="pre">main()</span></code> call <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> and print
+the value returned by the function.</p>
+<p class="last">Try entering invalid options like <code class="docutils literal notranslate"><span class="pre">abc</span></code>, <code class="docutils literal notranslate"><span class="pre">33</span></code>, <code class="docutils literal notranslate"><span class="pre">-2</span></code>, and <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>.
+Also, check to make sure the edge values <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">30</span></code> both work.</p>
+</div>
+<p><strong>Sample Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the password generator!
+Choose a password length (8 - 30 characters): 2
+Please enter a whole number from 8 - 30.
+Choose a password length (8 - 30 characters): Hello
+Please enter a whole number from 8 - 30.
+Choose a password length (8 - 30 characters): 10
+Returned value = 10
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-b-include-special-characters">
+<h2><span class="section-number">17.8.3. </span>Part B: Include Special Characters?<a class="headerlink" href="#part-b-include-special-characters" title="Permalink to this headline">¶</a></h2>
+<p>Write a boolean function called <code class="docutils literal notranslate"><span class="pre">includes_special()</span></code> that does the following:</p>
+<ol class="arabic simple">
+<li>Asks if the user wants to include special characters in the new password.
+Special characters include symbols like <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, etc.</li>
+<li>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to accept only <code class="docutils literal notranslate"><span class="pre">yes/no</span></code> or <code class="docutils literal notranslate"><span class="pre">Y/N</span></code> answers. These
+options should be case-insensitive.</li>
+<li>Returns the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on the user’s choice.</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code> call and test <code class="docutils literal notranslate"><span class="pre">includes_special()</span></code>.</p>
+<p><strong>Sample Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the password generator!
+Include special characters (Y/N)? no
+Please enter &#39;Y&#39; or &#39;N&#39;.
+Include special characters (Y/N)? 0
+Please enter &#39;Y&#39; or &#39;N&#39;.
+Include special characters (Y/N)? y
+Returned value = True
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-c-generate-new-password">
+<h2><span class="section-number">17.8.4. </span>Part C: Generate New Password<a class="headerlink" href="#part-c-generate-new-password" title="Permalink to this headline">¶</a></h2>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">make_password()</span></code> that does the following:</p>
+<ol class="arabic simple">
+<li>Calls the <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> and <code class="docutils literal notranslate"><span class="pre">includes_special</span></code> functions.</li>
+<li>Defines a <code class="docutils literal notranslate"><span class="pre">characters</span></code> variable that:<ol class="loweralpha">
+<li>Combines <code class="docutils literal notranslate"><span class="pre">string.ascii_letters</span></code> and <code class="docutils literal notranslate"><span class="pre">string.digits</span></code> (to get all upper
+and lowercase letters, plus the digits <code class="docutils literal notranslate"><span class="pre">0-9</span></code>).</li>
+<li>Includes <code class="docutils literal notranslate"><span class="pre">string.punctuation</span></code> if the user wants special characters.</li>
+</ol>
+</li>
+<li>Builds a new password by randomly choosing from the <code class="docutils literal notranslate"><span class="pre">characters</span></code> string.</li>
+<li>Returns the new password.</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code> remove (or comment out) any function calls and <code class="docutils literal notranslate"><span class="pre">print</span></code>
+statements you used to test Parts A and B.</p>
+<p>Call <code class="docutils literal notranslate"><span class="pre">make_password()</span></code> and assign the returned value to a variable. Print out
+the password to check your work. Repeat your test several times, both with and
+without special characters.</p>
+<p><strong>Sample Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the password generator!
+Choose a password length (8 - 30 characters): 15
+Include special characters (Y/N)? y
+Your new password is: Sd&quot;A%OO0nSzU?52
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-d-add-a-login-class">
+<h2><span class="section-number">17.8.5. </span>Part D: Add a <code class="docutils literal notranslate"><span class="pre">Login</span></code> Class<a class="headerlink" href="#part-d-add-a-login-class" title="Permalink to this headline">¶</a></h2>
+<p>Below the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements, define a <code class="docutils literal notranslate"><span class="pre">Login</span></code> class.</p>
+<ol class="arabic simple">
+<li>Use the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method to initialize properties for a site name, a
+username, and a password.</li>
+<li>Define a method called <code class="docutils literal notranslate"><span class="pre">change_password</span></code> that calls the <code class="docutils literal notranslate"><span class="pre">make_password</span></code>
+function and updates the password property.</li>
+<li>Define a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that displays the login information in a clean
+way.</li>
+</ol>
+<p>Test your class by creating a new <code class="docutils literal notranslate"><span class="pre">Login</span></code> object (you will need to prompt for
+the site and username).</p>
+<p>Be sure to print the object to the console before and after calling the
+<code class="docutils literal notranslate"><span class="pre">change_password</span></code> method.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">It NOT a good idea to print passwords to the screen or save them without
+encrypting them! You are just doing it here to test your code.</p>
+</div>
+<p><strong>Sample Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome to the password generator!
+Please enter the site name: WOPR
+Please create a username: imsai8080
+Choose a password length (8 - 30 characters): 8
+Include special characters (Y/N)? n
+
+Login for: WOPR
+Username: imsai8080
+Password: 0cFqu5hc
+
+Would you like to change your password (Y/N)? y
+Choose a password length (8 - 30 characters): 30
+Include special characters (Y/N)? y
+imsai8080, your new WOPR password is: &amp;,|]ws@Rlb[)Rj&amp;^5BOg)(]m&amp;|Aj__
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-e-final-touch-optional">
+<h2><span class="section-number">17.8.6. </span>Part E: Final Touch (Optional)<a class="headerlink" href="#part-e-final-touch-optional" title="Permalink to this headline">¶</a></h2>
+<p>If a user doesn’t like the password generated, they must rerun the program and
+enter their choices for the length and special characters again. Some people
+will find this annoying.</p>
+<p>Modify your <code class="docutils literal notranslate"><span class="pre">make_password</span></code> function to give the user a preview of their new
+password. If they don’t like it, have the function generate new ones until the
+user accepts. These follow-up options should not require the user to enter a
+length or special character choice.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="vscode-html-css.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.7. </span>Local HTML/CSS Files</a></li>
+        
+        
+        <li class="next"><a href="project.html"><span class="section-number">17.9. </span>Project: Local Turtle Races <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/exercises.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

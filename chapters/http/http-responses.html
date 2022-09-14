@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.5. Responses &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.6. Exercises: HTTP In The Browser" href="exercises.html" />
+    <link rel="prev" title="19.4. Requests" href="http-requests.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">19. </span>HTTP and the Internet</a></li>
+    <li class="active"><span class="section-number">19.5. </span>Responses</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="responses">
+<h1><span class="section-number">19.5. </span>Responses<a class="headerlink" href="#responses" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Every time a web server receives an HTTP request, it sends an HTTP response
+back to the client.</p>
+<p>A generic HTTP response looks like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>HTTP/2.0 200 OK
+Date: Wed, 22 May 2020 17:36:50 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 8050
+Last-Modified: Wed, 22 May 2020 17:33:45 GMT
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;!--Rest of HTML page --&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>The structure has these components:</p>
+<ol class="arabic simple" id="index-1">
+<li><strong>Response line:</strong> The first line of the response contains status
+information like the <strong>response code</strong>. In this example, the response code
+is <code class="docutils literal notranslate"><span class="pre">200</span></code>, which indicates the request was successfully fulfilled.</li>
+<li><strong>Response headers:</strong> Below the response line are the <strong>response headers</strong>.
+Similar to request headers, these are key-value pairs that contain data
+about the response. In the example above, these include information about
+the date and time, the data being sent (text and HTML), the size of the
+response body, and when it was last modified.</li>
+<li><strong>Blank line:</strong> This marks the end of the response headers.</li>
+<li><strong>Response body (Optional):</strong> Below the blank line, the response body takes
+up the rest of the HTTP response. This usually includes the HTML and CSS for
+the requested webpage.</li>
+</ol>
+<div class="section" id="response-codes">
+<h2><span class="section-number">19.5.1. </span>Response Codes<a class="headerlink" href="#response-codes" title="Permalink to this headline">¶</a></h2>
+<p>We’ve all gotten a <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">File</span> <span class="pre">Not</span> <span class="pre">Found</span></code> error code at some point when we’ve
+surfed the web.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/404.png"><img alt="A 404 message from GitHub displayed in a browser." src="../../_images/404.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Did we make a mistake when typing the URL?</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>While <code class="docutils literal notranslate"><span class="pre">404</span></code> is the most common error we see when clicking links or
+typing in URLs, other codes exist as well.</p>
+<p id="index-2">Servers use HTTP <strong>response codes</strong> to report the result when they try to
+answer a client’s request. The codes are always three-digit numbers, and they
+fall into one of five categories:</p>
+<ol class="arabic simple">
+<li><strong>Information</strong>: (1xx) The request was received, but the server is still
+working on the response.</li>
+<li><strong>Success</strong>: (2xx) The request was valid and the server successfully
+responded.</li>
+<li><strong>Redirect</strong>: (3xx) The request is incomplete. The client must take
+additional action, such as sending the request to a different server, before
+a response can be returned.</li>
+<li><strong>Client Error</strong>: (4xx) There was a problem with the client’s request.</li>
+<li><strong>Server Error</strong>: (5xx) The request was valid, but the server hit a problem
+when trying to respond to it.</li>
+</ol>
+<p>Specific codes will have all 3 digits specified, such as <code class="docutils literal notranslate"><span class="pre">201</span></code> (request
+fulfilled), <code class="docutils literal notranslate"><span class="pre">303</span></code> (see other URL), or <code class="docutils literal notranslate"><span class="pre">403</span></code> (forbidden). Each code has a
+specific meaning. For example, a <code class="docutils literal notranslate"><span class="pre">404</span></code> response code means that the requested
+data does not exist on the server. This can occur if we make a mistake when
+typing a URL into the address bar. Going back to the post office model, imagine
+sending Aunt Linda’s invitation to the wrong address. The letter would be
+delivered to a house where she doesn’t live. The <em>request</em> arrives, but a
+response from her is impossible.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>We don’t need to memorize all of the response codes, because we can always
+look them up when necessary!</p>
+<p class="last"><a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">List of HTTP Status Codes.<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+</div>
+</div>
+<div class="section" id="response-headers">
+<h2><span class="section-number">19.5.2. </span>Response Headers<a class="headerlink" href="#response-headers" title="Permalink to this headline">¶</a></h2>
+<p>There are <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields" target="_blank">lots of response headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+but only a few will be useful to us.</p>
+<table border="1" class="docutils align-default" id="id2">
+<caption><span class="caption-text">Common HTTP Response Headers</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Purpose</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></td>
+<td>The type of data included in the response body.</td>
+<td><code class="docutils literal notranslate"><span class="pre">text/html</span></code>, <code class="docutils literal notranslate"><span class="pre">text/css</span></code>, <code class="docutils literal notranslate"><span class="pre">image/jpg</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Content-Length</span></code></td>
+<td>The size of the response body in bytes.</td>
+<td><code class="docutils literal notranslate"><span class="pre">348</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Location</span></code></td>
+<td>The URL that the client should visit to find a relocated resource.</td>
+<td><code class="docutils literal notranslate"><span class="pre">https://www.launchcode.org/new-blog/</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="response-body">
+<h2><span class="section-number">19.5.3. </span>Response Body<a class="headerlink" href="#response-body" title="Permalink to this headline">¶</a></h2>
+<p>While requests often don’t have a body, responses almost <em>always</em> have one. The
+response body contains the data that the client requested. It can contain HTML,
+CSS, JavaScript, or image data.</p>
+<p>When a browser receives a response from a server, it loads the body into its
+memory. For HTML files, the browser executes the code and renders it into a
+webpage. For CSS files, the style rules and applied to the given HTML page.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.5.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">404</span></code> response indicates that:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The server is offline.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The user needs to log in first.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The requested data does not exist on the server.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The server crashed.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following response codes might indicate that the server is down
+for maintenance?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 102</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 204</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 303</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 403</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 503</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="http-requests.html"><span aria-hidden="true">&larr;</span> <span class="section-number">19.4. </span>Requests</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">19.6. </span>Exercises: HTTP In The Browser <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/http/http-responses.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

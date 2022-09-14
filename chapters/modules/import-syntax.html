@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.2. Importing Modules &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.3. The random Module" href="random-module.html" />
+    <link rel="prev" title="11.1. What are Modules?" href="modules-intro.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Python Modules</a></li>
+    <li class="active"><span class="section-number">11.2. </span>Importing Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="importing-modules">
+<h1><span class="section-number">11.2. </span>Importing Modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">¶</a></h1>
+<p>One of the most important things to realize about modules is that they are
+data <em>objects</em>. Just like a <em>string</em> is a collection of individual characters,
+and a <em>list</em> is a collection of individual elements, <em>module objects</em> are
+collections of data values and Python code blocks.</p>
+<div class="section" id="the-import-keyword">
+<h2><span class="section-number">11.2.1. </span>The <code class="docutils literal notranslate"><span class="pre">import</span></code> Keyword<a class="headerlink" href="#the-import-keyword" title="Permalink to this headline">¶</a></h2>
+<p>Before we can use any of the items stored in a module, we must import it. The
+syntax for this is:</p>
+<span class="target" id="index-0"></span><div class="highlight-Python notranslate" id="index-1"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module_name</span>
+</pre></div>
+</div>
+<p>The <strong>import</strong> keyword tells Python to find the file called <code class="docutils literal notranslate"><span class="pre">module_name</span></code> and
+make it available for use in the program. For example, the statement
+<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> creates a new name, <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, which points to the module
+where all of the turtle data and functions are stored.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Put all <code class="docutils literal notranslate"><span class="pre">import</span></code> statements in the very first lines of a program! This
+avoids runtime errors by importing all module items well before your code
+calls for them.</p>
+</div>
+<p>To use something stored in a module, we use <strong>dot notation</strong>, which joins the
+name of the module with a variable or function name:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">module_name</span><span class="o">.</span><span class="n">variable_name</span>              <span class="c1"># Access the data assigned to variable_name</span>
+<span class="n">module_name</span><span class="o">.</span><span class="n">function_name</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>   <span class="c1"># Call function_name</span>
+</pre></div>
+</div>
+<p>For example, we have used the <code class="docutils literal notranslate"><span class="pre">string</span></code> module to access a list of all the
+lowercase letters, and we have used the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to draw a circle on
+the screen:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span>    <span class="c1"># Prints abcdefghijklmnopqrstuvwxyz</span>
+<span class="n">turtle</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>                <span class="c1"># Draws a circle with a 50 pixel radius</span>
+</pre></div>
+</td></tr></table></div>
+<p>We can read these two examples of dot notation like this:</p>
+<ol class="arabic simple">
+<li><strong>Line 4</strong> - In the <code class="docutils literal notranslate"><span class="pre">string</span></code> module, access the value for the variable
+<code class="docutils literal notranslate"><span class="pre">ascii_lowercase</span></code>.</li>
+<li><strong>Line 5</strong> - In the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module, call the function called <code class="docutils literal notranslate"><span class="pre">circle</span></code>,
+and send it the argument <code class="docutils literal notranslate"><span class="pre">50</span></code>.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">In order to call a function stored in a module, we MUST know the name of
+that function. To access a data value stored in a module, we MUST know the
+variable name for that value.</p>
+</div>
+<div class="section" id="find-the-names-of-module-items">
+<h3><span class="section-number">11.2.1.1. </span>Find the Names of Module Items<a class="headerlink" href="#find-the-names-of-module-items" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="dir-function"></span><p id="index-2">To figure out the names of all the items stored in a module, we could look them
+up with a Google search. However, Python has a useful directory function,
+<code class="docutils literal notranslate"><span class="pre">dir()</span></code>, that returns a list of names for everything stored in a module.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Formatter&#39;, &#39;Template&#39;, &#39;_ChainMap&#39;, &#39;_TemplateMetaclass&#39;, &#39;__all__&#39;, &#39;__builtins__&#39;,
+&#39;__cached__&#39;, &#39;__doc__&#39;, &#39;__file__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;,
+&#39;__package__&#39;, &#39;__spec__&#39;, &#39;_re&#39;, &#39;_sentinel_dict&#39;, &#39;_string&#39;,
+&#39;ascii_letters&#39;, &#39;ascii_lowercase&#39;, &#39;ascii_uppercase&#39;, &#39;capwords&#39;, &#39;digits&#39;,
+&#39;hexdigits&#39;, &#39;octdigits&#39;, &#39;printable&#39;, &#39;punctuation&#39;, &#39;whitespace&#39;]
+</pre></div>
+</div>
+<p>To make this output easier to read, we can use a loop to print the list
+one element per line.</p>
+<div class="last"><iframe height="450px" width="100%" src="https://repl.it/@launchcode/Print-Module-Contents?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">From the list of names, skip those that begin with underscores <code class="docutils literal notranslate"><span class="pre">__</span></code>. Using
+these is a more advanced skill, and we will focus on the other options for
+now.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-from-keyword">
+<h2><span class="section-number">11.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">from</span></code> Keyword<a class="headerlink" href="#the-from-keyword" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-3"></span><p id="index-4">The <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword makes every data value and function in a module
+available for use. However, if we only need a few of the items from a module,
+we can use the <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword to import only those items.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">item_name</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">item_name</span></code> refers to the specific function or variable that we want from the
+module. If we want to import more than one item, we separate the names by
+commas.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Compare the syntax and results from the following imports:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+</pre></div>
+</div>
+<p>Adding the <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">punctuation</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ascii_letters</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>!&quot;#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~
+Traceback (most recent call last):
+File &quot;main.py&quot;, line 4, in &lt;module&gt;
+   print(ascii_letters)
+NameError: name &#39;ascii_letters&#39; is not defined
+</pre></div>
+</div>
+<p class="last">Note that when we combine <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span></code>, we do NOT need to use dot
+notation. We can call the variable or function directly by its name. Also note
+that <code class="docutils literal notranslate"><span class="pre">ascii_letters</span></code> results in a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, because that data was not
+imported from the <code class="docutils literal notranslate"><span class="pre">string</span></code> module in line 1.</p>
+</div>
+</div>
+<div class="section" id="the-as-keyword">
+<h2><span class="section-number">11.2.3. </span>The <code class="docutils literal notranslate"><span class="pre">as</span></code> Keyword<a class="headerlink" href="#the-as-keyword" title="Permalink to this headline">¶</a></h2>
+<p id="index-5">Python gives us a way to rename the items we import by including the <code class="docutils literal notranslate"><span class="pre">as</span></code>
+keyword as part of the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">module_name</span> <span class="k">as</span> <span class="nn">new_name</span>
+<span class="kn">from</span> <span class="nn">module_name</span> <span class="kn">import</span> <span class="n">item_name</span> <span class="k">as</span> <span class="n">new_name</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">11.2.4. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Using the clues in the code below, import the modules required to make
+the program work:</p>
+<iframe height="550px" width="100%" src="https://repl.it/@launchcode/Import-Modules?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p><em>Challenge</em>: Modify the code to replace one <code class="docutils literal notranslate"><span class="pre">import</span></code> statement with
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">function_name</span></code>.</p>
+</li>
+<li><p class="first">Using the clues in the code below, rename the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to make
+the code work:</p>
+<iframe height="600px" width="100%" src="https://repl.it/@launchcode/Rename-Turtle-Module?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="modules-intro.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.1. </span>What are Modules?</a></li>
+        
+        
+        <li class="next"><a href="random-module.html"><span class="section-number">11.3. </span>The <code class="docutils literal notranslate"><span class="pre">random</span></code> Module <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/modules/import-syntax.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

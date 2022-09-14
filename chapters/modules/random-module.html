@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.3. The random Module &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.4. The math Module" href="math-module.html" />
+    <link rel="prev" title="11.2. Importing Modules" href="import-syntax.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Python Modules</a></li>
+    <li class="active"><span class="section-number">11.3. </span>The <code class="docutils literal notranslate"><span class="pre">random</span></code> Module</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="the-random-module">
+<span id="random-module"></span><h1><span class="section-number">11.3. </span>The <code class="docutils literal notranslate"><span class="pre">random</span></code> Module<a class="headerlink" href="#the-random-module" title="Permalink to this headline">¶</a></h1>
+<p>We often want to use random numbers in programs. Here are a few typical uses:</p>
+<ol class="arabic simple">
+<li>To play a game where the computer needs to throw some dice, pick a number,
+or flip a coin.</li>
+<li>To select a random item from a list.</li>
+<li>To randomly choose an event to apply to a virtual city.</li>
+<li>To encrypt your banking session on the Internet.</li>
+</ol>
+<p>Python provides a module called <code class="docutils literal notranslate"><span class="pre">random</span></code> that helps with tasks like this.</p>
+<div class="section" id="generate-a-random-number">
+<span id="pick-random-number"></span><h2><span class="section-number">11.3.1. </span>Generate a Random Number<a class="headerlink" href="#generate-a-random-number" title="Permalink to this headline">¶</a></h2>
+<p>Press the <em>Run</em> button a number of times for the program below. Note that the
+printed values change each time. These are random numbers.</p>
+<iframe src="https://trinket.io/embed/python/a38187485a" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p id="index-0">The <strong>random()</strong> function returns a float value in the range 0.0 - 1.0
+(including 0.0 but not 1.0). If we need a larger float result,
+say from 0.0 to 10.0, we simply multiply the result from <code class="docutils literal notranslate"><span class="pre">random()</span></code> by the
+top value we want.</p>
+<p>In the case shown below, we’ve converted the result from <code class="docutils literal notranslate"><span class="pre">random()</span></code> to a
+number in the range 0.00 - 4.99. Press the <em>Run</em> button several times to
+confirm the results, then try changing line 4 to produce a different range.</p>
+<ol class="arabic simple">
+<li>What happens if we change the multiplier?</li>
+<li>What happens if we add a number to <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> instead of
+multiplying?</li>
+<li>What if we multiply <code class="docutils literal notranslate"><span class="pre">random.random()</span></code> by a value and then add a number to
+the result?</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/4a4752da5c" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>The <strong>randint()</strong> function is a useful modification of <code class="docutils literal notranslate"><span class="pre">random()</span></code>. It
+generates an integer between the two arguments. In this case, however, the
+results include both end points.</p>
+<p>Run this program several times to check the behavior of the <code class="docutils literal notranslate"><span class="pre">randint()</span></code>
+function.</p>
+<iframe src="https://trinket.io/embed/python/17a01e0a3e" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>Try changing the arguments inside the <code class="docutils literal notranslate"><span class="pre">()</span></code> to see how that affects the
+numbers produced.</p>
+<div class="section" id="not-really-random">
+<h3><span class="section-number">11.3.1.1. </span>Not <em>Really</em> Random<a class="headerlink" href="#not-really-random" title="Permalink to this headline">¶</a></h3>
+<p>It is important to note that random number generators are based on
+<em>algorithms</em>. This means that the results are predictable and not truly random.</p>
+<p id="index-1">Each algorithm starts with a <strong>seed value</strong>, which the code uses to create a
+result. Every time we ask for another random number, we get one based on the
+current seed, and the value of the seed gets updated. If we figure out how the
+seed values are generated, then we can predict what the next “random” result
+will be.</p>
+<p>The good news is that each time we run the program, the seed value is likely
+to be different (for example, the number of seconds since midnight). This means
+that even though the random numbers come from following an algorithm, we will
+likely get random behavior each time we run our program.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Theoretically, if you could figure out the algorithm and seed values for a
+lottery game, then you could always pick the winning numbers!</p>
+<p class="last">Doing this would be really, really hard, however.</p>
+</div>
+</div>
+</div>
+<div class="section" id="select-an-item-from-a-collection">
+<span id="random-collection-item"></span><h2><span class="section-number">11.3.2. </span>Select an Item from a Collection<a class="headerlink" href="#select-an-item-from-a-collection" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">Another useful function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module is the <strong>choice()</strong>
+function. It selects a random item from a string, list, or other collection.</p>
+<p>Run the following program several times to see how this works:</p>
+<iframe src="https://trinket.io/embed/python/09f0f7531e" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>We could do the same thing with <code class="docutils literal notranslate"><span class="pre">randint()</span></code> and bracket notation, but the
+<code class="docutils literal notranslate"><span class="pre">choice()</span></code> function wraps this up into a simple shortcut.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;indigo&#39;</span><span class="p">,</span> <span class="s1">&#39;violet&#39;</span><span class="p">]</span>
+
+<span class="c1"># Select a random integer from 0 - 6:</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Save the random element from the list:</span>
+<span class="n">color_choice</span> <span class="o">=</span> <span class="n">colors</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Randomly change the color of the turtle before it draws each side of the
+polygon!</p>
+<p>Add the statement <code class="docutils literal notranslate"><span class="pre">bob.color(random.choice(colors))</span></code> to the code below.</p>
+<div class="last"><iframe height="700px" width="100%" src="https://repl.it/@launchcode/Random-Turtle-Color?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+</div>
+<div class="section" id="random-turtle-walk">
+<h2><span class="section-number">11.3.3. </span>Random Turtle Walk<a class="headerlink" href="#random-turtle-walk" title="Permalink to this headline">¶</a></h2>
+<p>Let’s have a little more turtle fun!</p>
+<p>Up until now, we have always given a specific direction (<code class="docutils literal notranslate"><span class="pre">left</span></code> or <code class="docutils literal notranslate"><span class="pre">right</span></code>)
+and angle whenever we turn a turtle. Lets throw in some random values to make
+the path our turtle follows less predictable.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Currently, the turtle takes 10 steps, and it always turns right by 90
+degrees. Run the program first to see this behavior.</p>
+<iframe height="700px" width="100%" src="https://repl.it/@launchcode/Random-Turtle-Walk?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>Now make the following changes:</p>
+<ol class="last arabic">
+<li><p class="first">At the start of the loop, define a <code class="docutils literal notranslate"><span class="pre">coin_toss</span></code> variable and assign it
+the result of <code class="docutils literal notranslate"><span class="pre">random.randint(0,1)</span></code>. As the name of the variable tells
+us, we can treat this like a coin toss, with <code class="docutils literal notranslate"><span class="pre">0</span></code> standing for heads,
+and <code class="docutils literal notranslate"><span class="pre">1</span></code> standing for tails.</p>
+<p>If you don’t like working with 0 and 1, you can use
+<code class="docutils literal notranslate"><span class="pre">random.choice('heads',</span> <span class="pre">'tails')</span></code> instead. However, numbers are easier
+to work with, and you are less likely to mistype 0 and 1.</p>
+</li>
+<li><p class="first">Place the turn command inside a conditional as follows:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">coin_toss</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+   <span class="n">bob</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">bob</span></code> turns left or right depending on the random choice of <code class="docutils literal notranslate"><span class="pre">0</span></code> or
+<code class="docutils literal notranslate"><span class="pre">1</span></code>. Run the program several times and compare the paths.</p>
+</li>
+<li><p class="first">Next, let’s make <code class="docutils literal notranslate"><span class="pre">bob</span></code> rotate by a random number of degrees. Replace the
+argument <code class="docutils literal notranslate"><span class="pre">90</span></code> with <code class="docutils literal notranslate"><span class="pre">random.randint(0,</span> <span class="pre">180)</span></code>. Run the program several
+times to see the result.</p>
+</li>
+<li><p class="first">Finally, randomly assign the number of steps <code class="docutils literal notranslate"><span class="pre">bob</span></code> takes to a value
+between 5 and 25. Run the program several times to check your work.</p>
+</li>
+</ol>
+</div>
+<p>Here are some bonus tasks for you to try as well:</p>
+<ol class="arabic simple">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">colors</span></code> list and randomly assign a color to the turtle before each
+line is drawn.</li>
+<li>Randomly select the length of each line drawn.</li>
+<li>Randomly change the speed before or during the turtle’s walk.</li>
+<li>Move the walking code into a <code class="docutils literal notranslate"><span class="pre">random_walk</span></code> function that takes a turtle
+and the number of steps as parameters. Call <code class="docutils literal notranslate"><span class="pre">random_walk</span></code> to make <code class="docutils literal notranslate"><span class="pre">bob</span></code>
+move.</li>
+<li>Add a second turtle and have it take a stroll as well.</li>
+</ol>
+<div class="figure align-default" id="id1">
+<img alt="Image with two panels. The left panel shows a single, multi-color random turtle path. The right panel shows two multi-color, random turtle paths." src="../../_images/turtle-random-walk.png" />
+<p class="caption"><span class="caption-text">A single, multi-color turtle path. Two multi-color paths drawn by different turtles.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.3.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following shows the correct code to return the result of
+rolling a 6-sided dice?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(0, 7)</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(1, 7)</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">random.randint(0, 6)</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">random.randint(1, 6)</span></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>One reason that lotteries don’t use computers to pick the winning numbers
+is:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> There is no computer on the stage for the drawing.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Computers don’t really generate random numbers.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Computers would generate the same numbers for each drawing.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The computer can’t tell what values were already selected, so it might repeat the same number several times.</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="import-syntax.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.2. </span>Importing Modules</a></li>
+        
+        
+        <li class="next"><a href="math-module.html"><span class="section-number">11.4. </span>The <code class="docutils literal notranslate"><span class="pre">math</span></code> Module <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/modules/random-module.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

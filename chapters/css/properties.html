@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15.4. CSS Properties &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.5. Bootstrap" href="bootstrap.html" />
+    <link rel="prev" title="15.3. Linking CSS to HTML" href="css-locations.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">15. </span>Styling the Web With CSS</a></li>
+    <li class="active"><span class="section-number">15.4. </span>CSS Properties</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="css-properties">
+<h1><span class="section-number">15.4. </span>CSS Properties<a class="headerlink" href="#css-properties" title="Permalink to this headline">¶</a></h1>
+<p>Below are some examples of common CSS properties and what they do. This is by
+no means a complete list, but it is a good place to start.</p>
+<div class="section" id="good-css-properties-to-know">
+<h2><span class="section-number">15.4.1. </span>Good CSS Properties to Know<a class="headerlink" href="#good-css-properties-to-know" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-auto docutils align-default">
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">CSS Property</th>
+<th class="head">Definition</th>
+<th class="head">Default Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">background-color</span></code></td>
+<td>Sets the color of the background for an element.</td>
+<td>transparent</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">border</span></code></td>
+<td><p class="first">Takes 3 values for the border (width, style, color).</p>
+<ul class="last simple">
+<li>Only the <code class="docutils literal notranslate"><span class="pre">style</span></code> value is required.</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code> sets the thickness of the border around an element.</li>
+<li><code class="docutils literal notranslate"><span class="pre">style</span></code> values include solid, wavy, dotted, dashed, and double.</li>
+</ul>
+</td>
+<td>medium (3px), none, text color</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">border-radius</span></code></td>
+<td>Rounds the 4 corners of an element.</td>
+<td>0px</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">color</span></code></td>
+<td>Changes the text color.</td>
+<td>black</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">font-family</span></code></td>
+<td>Changes the font types.</td>
+<td>Depends on the browser</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">font-size</span></code></td>
+<td>Changes the size of the font.</td>
+<td>medium or 20px</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">margin</span></code></td>
+<td><p class="first">Blocks out space around an element. The property takes 1 - 4 values
+(<code class="docutils literal notranslate"><span class="pre">top,</span> <span class="pre">right,</span> <span class="pre">bottom,</span> <span class="pre">left</span></code>) with units of <code class="docutils literal notranslate"><span class="pre">px</span></code> (pixels).</p>
+<p class="last">See example below.</p>
+</td>
+<td>0px</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">padding</span></code></td>
+<td>Sets the space between an element’s content and its border. The
+property takes 1 - 4 values (<code class="docutils literal notranslate"><span class="pre">top,</span> <span class="pre">right,</span> <span class="pre">bottom,</span> <span class="pre">left</span></code>).</td>
+<td>0px</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">text-align</span></code></td>
+<td>Aligns the text within an element.</td>
+<td>left</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">text-decoration</span></code></td>
+<td><p class="first">Applies decorations to text and takes 3 values (line, color, and style).</p>
+<ul class="last simple">
+<li>Only the <code class="docutils literal notranslate"><span class="pre">line</span></code> value is required.</li>
+<li><code class="docutils literal notranslate"><span class="pre">line</span></code> values include underline, overline, and line-through.</li>
+<li><code class="docutils literal notranslate"><span class="pre">style</span></code> values include solid, wavy, dotted, dashed, and double.</li>
+</ul>
+</td>
+<td>no line, text color, solid</td>
+</tr>
+</tbody>
+</table>
+<p>A larger, searchable list of CSS properties can be found at
+<a class="reference external" href="https://www.w3schools.com/cssref/" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">margin</span></code> property adds space between elements. The <code class="docutils literal notranslate"><span class="pre">padding</span></code>
+property defines space inside a single element.</p>
+<p>In the figure below, the element on the left has a margin twice as large as
+the one on the right (e.g. <code class="docutils literal notranslate"><span class="pre">10px</span></code> vs. <code class="docutils literal notranslate"><span class="pre">5px</span></code>). Similarly, the element on
+the right has a much larger padding than the one on the left (e.g. <code class="docutils literal notranslate"><span class="pre">15px</span></code>
+vs. <code class="docutils literal notranslate"><span class="pre">5px</span></code>).</p>
+<div class="last figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/margin-vs-padding.png"><img alt="Showing the difference between margin and padding." src="../../_images/margin-vs-padding.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Margin vs. padding.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="css-example">
+<h2><span class="section-number">15.4.2. </span>CSS Example<a class="headerlink" href="#css-example" title="Permalink to this headline">¶</a></h2>
+<p>In the <a class="reference internal" href="../html/tags.html#attributes-example"><span class="std std-ref">HTML chapter</span></a>, we used attributes to style a
+simple webpage about space plants. Let’s revisit that example, but this time we
+will use <em>internal</em> CSS instead of inline CSS to style the webpage. We will
+also include some of the properties listed above to create a different look.</p>
+<p>Note how the selectors and declaration blocks between the <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> tags
+control the appearance of the page.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Plant-Loving Astronauts<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+         <span class="nt">body</span> <span class="p">{</span>
+            <span class="k">background-color</span><span class="p">:</span> <span class="kc">cornflowerblue</span><span class="p">;</span>
+            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">h1</span> <span class="p">{</span>
+            <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">underline</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">p</span> <span class="p">{</span>
+            <span class="k">font-size</span><span class="p">:</span> <span class="mi">18</span><span class="kt">px</span><span class="p">;</span>
+            <span class="k">font-family</span><span class="p">:</span> <span class="n">courier</span> <span class="n">new</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">img</span> <span class="p">{</span>
+            <span class="k">border-radius</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nt">hr</span> <span class="p">{</span>
+            <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">dashed</span> <span class="kc">white</span><span class="p">;</span>
+         <span class="p">}</span>
+      <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Space Plants Are Cool<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+         NASA discovers that plants can live in <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>outer space<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>.<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+         More innovations from this discovery to follow.
+      <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src </span><span class="o">=</span> <span class="s">&quot;space-flower.jpg&quot;</span> <span class="na">alt </span><span class="o">=</span> <span class="s">&quot;Flower floating in space.&quot;</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- This image was taken by NASA and is in the Public Domain --&gt;</span>
+      <span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-default">
+<img alt="For the website in the previous chapter about space plants, made the page background color blue, center-aligned content, the heading green, the paragraph text Courier New font at 18 pt. size, and the image has rounded corners." src="../../_images/plant-loving-astronauts-css.png" />
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">15.4.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Play around with the <a class="reference external" href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_border" target="_blank">order of the values<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+for the border property.</p>
+<p><code class="docutils literal notranslate"><span class="pre">border:</span> <span class="pre">5px</span> <span class="pre">solid</span> <span class="pre">red;</span></code></p>
+<p>Does the order matter for the thickness, style, and color values?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> No, the order does not matter.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Yes, the order matters.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following is NOT a <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code> style?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> dotted</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> double</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> wavy</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> strike-through</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="last">Find an interesting CSS property that is NOT on the list above. Give its
+definition, syntax, and default value.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="css-locations.html"><span aria-hidden="true">&larr;</span> <span class="section-number">15.3. </span>Linking CSS to HTML</a></li>
+        
+        
+        <li class="next"><a href="bootstrap.html"><span class="section-number">15.5. </span>Bootstrap <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/css/properties.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

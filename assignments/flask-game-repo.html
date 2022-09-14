@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment #6: Remote Repository Setup &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Chapters" href="../index-full.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li><a href="../index-full.html">Chapters</a></li>
+    <li class="active">Assignment #6: Remote Repository Setup</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="assignment-6-remote-repository-setup">
+<span id="flask-game-repo"></span><h1>Assignment #6: Remote Repository Setup<a class="headerlink" href="#assignment-6-remote-repository-setup" title="Permalink to this headline">¶</a></h1>
+<p>In your earlier work, you cloned repositories from GitHub, pushed and pulled
+content from the site, and collaborated with a partner on a
+<a class="reference internal" href="communication-log.html#communication-log"><span class="std std-ref">shared repo</span></a>. However, you often performed each these
+actions separately from the others.</p>
+<p>For this assignment, you will start a project from scratch. Besides making a
+cool web application, you will also refine all of your version control skills!</p>
+<p>The sections below walk you through the setup for your project. After your
+local and remote repositories are linked and ready to go,
+<a class="reference internal" href="flask-game.html#flask-game"><span class="std std-ref">return to the main Assignment 6 page</span></a>.</p>
+<div class="section" id="create-a-new-local-repository">
+<h2>Create a New Local Repository<a class="headerlink" href="#create-a-new-local-repository" title="Permalink to this headline">¶</a></h2>
+<p>Your first step is to create a <em>local</em> project directory. This stores a copy of
+your code on your personal device.</p>
+<ol class="arabic">
+<li><p class="first">Launch Visual Studio Code and use the <em>File</em> menu to open your
+<code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder.</p>
+</li>
+<li><p class="first">In the file tree, create a new directory for your game project. Be sure to
+give the folder a descriptive name! Also, make sure the new folder is NOT
+buried inside of a different project.</p>
+</li>
+<li><p class="first">From the <em>File</em> menu, open your game folder. In the terminal, run
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize the directory for version control.</p>
+</li>
+<li><p class="first">Use the tools in VS Code to create a file tree that looks like this:</p>
+<div class="figure align-default" id="id1">
+<img alt="Starting file tree showing static/style.css, templates/index.html, and main.py." src="../_images/flask-game-start-tree.png" />
+<p class="caption"><span class="caption-text">The file tree contains two folders (<code class="docutils literal notranslate"><span class="pre">static</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code>) plus three code files.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You don’t need any code in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, or <code class="docutils literal notranslate"><span class="pre">style.css</span></code>
+yet.</p>
+</li>
+<li><p class="first">Use the terminal to create a new virtual environment for your project, then
+install Flask. If you need a reminder for how to do this, review the
+guidelines in the <a class="reference internal" href="../chapters/sessions/try-it-sessions.html#clone-venv-reminder"><span class="std std-ref">Cookies &amp; Sessions chapter</span></a>.</p>
+</li>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file and paste in the <a class="reference internal" href="../chapters/more-flask/chapter-setup.html#create-gitignore"><span class="std std-ref">usual code</span></a>.
+Be sure to put the name of your project’s virtual environment in line 1.</p>
+</li>
+<li><p class="first">Properly done, your file tree should now look something like this:</p>
+<div class="figure align-default" id="id2">
+<img alt="Project file tree after installing Flask." src="../_images/flask-game-setup-done.png" />
+<p class="caption"><span class="caption-text">Your local file tree after installing Flask and adding <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Run through the usual <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status/add/commit</span></code> process to save your
+progress.</p>
+</li>
+<li><p class="first">Finally, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to check the name of your default branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch
+* main
+</pre></div>
+</div>
+<p>If the default branch is NOT called <code class="docutils literal notranslate"><span class="pre">main</span></code>, change it with the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -m old_branch_name main
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="link-to-a-remote-repository">
+<h2>Link to a Remote Repository<a class="headerlink" href="#link-to-a-remote-repository" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to open an empty repository on GitHub. This will eventually
+hold the <em>remote</em> copy of your project code.</p>
+<ol class="arabic">
+<li><p class="first">Open your web browser and login to your <a class="reference external" href="https://github.com" target="_blank">GitHub account<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">On your home screen, click the <em>New Repository</em> button.</p>
+<div class="figure align-default" id="id3">
+<img alt="Showing the New repository button on the GitHub home screen." src="../_images/new-GH-repo.png" />
+<p class="caption"><span class="caption-text">It’s friendly and green. Click the button!</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">This opens a page where you must make a few choices. First, fill in
+<code class="docutils literal notranslate"><span class="pre">Repository</span> <span class="pre">Name</span></code> with the SAME NAME as your local game directory. Also,
+give a short description of your project.</p>
+<div class="figure align-default" id="id4">
+<img alt="Filling in the name and description for the new repository." src="../_images/name-GH-repo.png" />
+<p class="caption"><span class="caption-text">If your repo name is already taken, you’ll have to think of another!</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Next, select the <em>Public</em> option for your repo, and leave the three
+checkboxes empty. Click <em>Create repository</em>.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/GH-repo-options.png"><img alt="Select the public repo option." src="../_images/GH-repo-options.png" style="width: 50%;" /></a>
+</div>
+</li>
+<li><p class="first">The next screen seems very detailed, but it’s almost automatic. Copy the
+commands to <em>push an existing repository</em> and paste them into the
+terminal panel in VS Code. This will save a copy of the local repo you
+created earlier to your GitHub account.</p>
+<p>You may be asked to enter your GitHub username and/or password to complete
+the action.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/push-local-repo.png"><img alt="Copy the third set of terminal instructions." src="../_images/push-local-repo.png" style="width: 80%;" /></a>
+</div>
+</li>
+<li><p class="first">When successful, you’ll see a lot of text appear in the console. It will end
+with something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>To https://github.com/username/project_name.git
+* <span class="o">[</span>new branch<span class="o">]</span>      main -&gt; main
+Branch <span class="s1">&#39;main&#39;</span> <span class="nb">set</span> up to track remote branch <span class="s1">&#39;main&#39;</span> from <span class="s1">&#39;origin&#39;</span>.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">project_name</span></code> will match your GitHub username and what
+you called your repository. The last line confirms the link between your
+local <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and the remote version.</p>
+</li>
+</ol>
+<p>Good! Now click on your project name in GitHub. You should see the same files
+and folders in both GitHub and VS Code. The exception to this is the directory
+for your virtual environment, which won’t appear online.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/linked-GH-repo.png"><img alt="GitHub repository page, showing the same files as in VS Code (except game-env)." src="../_images/linked-GH-repo.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Congratulations! Your project code now exists online.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="add-teammate-s-to-project">
+<h2>Add Teammate(s) to Project<a class="headerlink" href="#add-teammate-s-to-project" title="Permalink to this headline">¶</a></h2>
+<p>Finally, you need to grant your partner(s) permission to make changes to the
+remote repository.</p>
+<ol class="arabic">
+<li><p class="first">On the GitHub repository page, click the <em>Settings</em> button. Select the
+<em>Manage Access</em> option and click the green <em>Invite teams or people</em> button.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/manage-access.png"><img alt="Click &quot;Settings&quot; and &quot;Manage Access&quot; to let other users modify the repo." src="../_images/manage-access.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">Give your team access to your repo.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Next, enter the GitHub username for your partner. Be sure to grant them the
+proper level of access. <code class="docutils literal notranslate"><span class="pre">Admin</span></code> gives them the ability to delete the repo
+from your account at any time. The <code class="docutils literal notranslate"><span class="pre">Write</span></code> and <code class="docutils literal notranslate"><span class="pre">Maintain</span></code> roles allow
+them to edit the repo but not delete it.</p>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/add-repo-partners.png"><img alt="Enter a GitHub username, choose level of access, then click the Add button." src="../_images/add-repo-partners.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">Decide how much control you want to give your partner.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">When your partner logs into GitHub and visits the project URL, they will see
+an invitation to join the repository.</p>
+</li>
+<li><p class="first">Repeat steps 1 - 3 for each member of your team.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="partners-clone-the-project">
+<h2>Partners: Clone the Project<a class="headerlink" href="#partners-clone-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Each partner on the project should <em>clone</em> a copy of the repository to their
+own device.</p>
+<p>You and your team can now <em>push</em> changes up to GitHub and <em>pull</em> updates down
+to your machines. If you need a reminder how to do this, check out the
+<a class="reference internal" href="communication-log.html#git-push-and-pull"><span class="std std-ref">Communication Log</span></a> assignment.</p>
+</div>
+<div class="section" id="ready-to-go">
+<h2>Ready to Go!<a class="headerlink" href="#ready-to-go" title="Permalink to this headline">¶</a></h2>
+<p>Whew! This process gets easier with practice, and you now have a little more
+experience under your belt.</p>
+<p>Now it’s time to git back to building your game!</p>
+<p><a class="reference internal" href="flask-game.html#flask-game-part-2"><span class="std std-ref">Return to Assignment 6</span></a>.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../index-full.html"><span aria-hidden="true">&larr;</span> Chapters</a></li>
+        
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/assignments/flask-game-repo.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.6. Data Collection &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.7. Form Validation with Flask" href="validation.html" />
+    <link rel="prev" title="21.5. HTML Templates" href="form-template.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.6. </span>Data Collection</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="data-collection">
+<h1><span class="section-number">21.6. </span>Data Collection<a class="headerlink" href="#data-collection" title="Permalink to this headline">¶</a></h1>
+<p>On the previous page, we saw how to use the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function to
+send data from Python to an HTML file. Our next step is to figure out how to
+move data in the opposite direction.</p>
+<p>For example, when a user clicks <em>Submit</em> after filling out a form, they send
+data to the web server. The HTTP request contains values for each of the input
+fields. As programmers, we need to be able to access this data and work with it
+in our Python code.</p>
+<p>To collect data from a webpage, we need to add another item to the <code class="docutils literal notranslate"><span class="pre">import</span></code>
+statement in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">request</span></code> is an object, not a function. We will use <em>dot notation</em> to call
+its methods and access its properties:</p>
+<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">.</span><span class="n">property_name</span>
+<span class="n">request</span><span class="o">.</span><span class="n">method_name</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collect-color">
+<h2><span class="section-number">21.6.1. </span>Collect Color<a class="headerlink" href="#collect-color" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by collecting one piece of data from our <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code>
+template. When the user fills in the input fields and clicks <em>Submit</em>, we will
+send them to a different page that displays their choice.</p>
+<div class="figure align-default" id="id1">
+<img alt="GIF showing the collection of a color value from the form." src="../../_images/color-submit.gif" />
+<p class="caption"><span class="caption-text">Collecting the color choice from the form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="update-favorite-form-html">
+<h3><span class="section-number">21.6.1.1. </span>Update <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code><a class="headerlink" href="#update-favorite-form-html" title="Permalink to this headline">¶</a></h3>
+<p>The only change we need to make to our form template is to add the <code class="docutils literal notranslate"><span class="pre">action</span></code>
+and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/results&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>  <span class="c">&lt;!-- Change this line --&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>A Few Of My Favorite Things<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Color: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Lucky Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;luck_num&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Class: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav_class&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Pixar Movie: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;best_pix&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">action</span></code> sends the form data to the URL for a server. In this
+case, it’s the Flask server. The address <code class="docutils literal notranslate"><span class="pre">/results</span></code> identifies the route we
+will use in our Python code.</p>
+</div>
+<div class="section" id="add-a-new-route">
+<h3><span class="section-number">21.6.1.2. </span>Add a New Route<a class="headerlink" href="#add-a-new-route" title="Permalink to this headline">¶</a></h3>
+<p>When we click the <em>Submit</em> button, we send an HTTP request to the server. In
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, we need to add a function to deal with this request.</p>
+<p>Add this function to the Python code:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+24
+25
+26
+27</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/results&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">color_choice</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color_choice</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Code breakdown:</p>
+<ol class="arabic simple">
+<li><strong>Line 23</strong>: The <code class="docutils literal notranslate"><span class="pre">/results</span></code> in the decorator matches the value assigned to
+<code class="docutils literal notranslate"><span class="pre">action</span></code> in the form. <code class="docutils literal notranslate"><span class="pre">methods</span></code> tells the program what types of HTTP
+requests to expect. In this case, only <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests will be accepted.</li>
+<li><strong>Line 25</strong>: Recall that we included a <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute for each of the
+input fields in our form. <code class="docutils literal notranslate"><span class="pre">request.form['color']</span></code> pulls the value from the
+field named <code class="docutils literal notranslate"><span class="pre">color</span></code> and assigns it to the <code class="docutils literal notranslate"><span class="pre">color_choice</span></code> variable.</li>
+<li><strong>Line 27</strong>: Renders the template called <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> and passes it
+the value for <code class="docutils literal notranslate"><span class="pre">color_choice</span></code>.</li>
+</ol>
+<p>If we save the changes and navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code>,
+submitting the form produces an error. This is because the <code class="docutils literal notranslate"><span class="pre">results()</span></code>
+function calls for a template that we haven’t created yet!</p>
+</div>
+<div class="section" id="add-the-form-results-template">
+<h3><span class="section-number">21.6.1.3. </span>Add the <code class="docutils literal notranslate"><span class="pre">form_results</span></code> Template<a class="headerlink" href="#add-the-form-results-template" title="Permalink to this headline">¶</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory, create a new file called <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code>.
+Paste in this code:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Favorite Results<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Favorite Results<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Favorite Color:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{color}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Notice that the code includes a <code class="docutils literal notranslate"><span class="pre">{{color}}</span></code> placeholder. This variable name
+matches the argument from the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function above.</p>
+<p>After saving the code, our web application can now handle the form submission.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/color-submission.png"><img alt="Showing the submitted color on the results page." src="../../_images/color-submission.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The value <code class="docutils literal notranslate"><span class="pre">purple</span></code> fills in for the <code class="docutils literal notranslate"><span class="pre">{{color}}</span></code> placeholder.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">21.6.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Update <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> to display the value from the <code class="docutils literal notranslate"><span class="pre">Lucky</span> <span class="pre">Number</span></code> field.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Favorite Color:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{color}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Lucky Number:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{lucky_number}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">results()</span></code> function to collect the value from the
+<code class="docutils literal notranslate"><span class="pre">Lucky</span> <span class="pre">Number</span></code> input field. Also, update the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to send
+the lucky number to the template.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">color_choice</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+   <span class="n">fav_num</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;luck_num&#39;</span><span class="p">]</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color_choice</span><span class="p">,</span> <span class="n">lucky_number</span> <span class="o">=</span> <span class="n">fav_num</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save your code and check to make sure the form submission works.</p>
+</li>
+<li><p class="first">Repeat steps 1 - 3 for the rest of the fields in the form.</p>
+</li>
+</ol>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/final-favorite.png"><img alt="Showing the 'results' page with all 4 labels and submitted values" src="../../_images/final-favorite.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> page showing four values collected from the form.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="template-variable-names">
+<h2><span class="section-number">21.6.3. </span>Template Variable Names<a class="headerlink" href="#template-variable-names" title="Permalink to this headline">¶</a></h2>
+<p>Notice that with the <code class="docutils literal notranslate"><span class="pre">Lucky</span> <span class="pre">Number</span></code> field, we wound up using 3 different
+variable names to refer to the same value. The input field had
+<code class="docutils literal notranslate"><span class="pre">name=&quot;luck_num&quot;</span></code>, the Python code used <code class="docutils literal notranslate"><span class="pre">fav_num</span></code>, and the placeholder in
+the results template used <code class="docutils literal notranslate"><span class="pre">lucky_number</span></code>.</p>
+<p>To avoid confusion, many developers prefer to use the SAME variable names between
+their Python code and the templates. With this in mind, we can <em>refactor</em> <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>
+and <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> to match the names used in <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code>:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Color: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Lucky Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;luck_num&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">color</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+   <span class="n">luck_num</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;luck_num&#39;</span><span class="p">]</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;form_results.html&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">,</span> <span class="n">luck_num</span> <span class="o">=</span> <span class="n">luck_num</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">form_results.html</span></code>:</p>
+<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Favorite Color:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{color}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Lucky Number:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{luck_num}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">21.6.4. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<p>There are a LOT of details on this page. The video below is a little longer
+than the others in this chapter.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/y9foALqPE6U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">21.6.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Indicate whether each of the following is a <em>class</em>, <em>function</em>, <em>method</em>, or
+<em>object</em>. (Click on each option to display the answer).</p>
+<div class="last"><ol type="a">
+   <li onclick="revealAnswer('A', 'class')"><code class="pre">Flask</code> <span id="A"></span></li>
+   <li onclick="revealAnswer('B', 'object')"><code class="pre">request</code> <span id="B"></span></li>
+   <li onclick="revealAnswer('C', 'function')"><code class="pre">render_template</code> <span id="C"></span></li>
+</ol></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What goes inside the brackets for <code class="docutils literal notranslate"><span class="pre">request.form['___']</span></code>?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> The <code class="pre">name</code> of the input field from the form.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">id</code> of the input field from the form.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">type</code> of the input field from the form.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">value</code> of the input field from the form.</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="form-template.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.5. </span>HTML Templates</a></li>
+        
+        
+        <li class="next"><a href="validation.html"><span class="section-number">21.7. </span>Form Validation with Flask <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/data-exchange.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

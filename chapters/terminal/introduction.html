@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.2. What is a Terminal? &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16.3. Filesystem and Paths" href="filesystem-and-paths.html" />
+    <link rel="prev" title="16.1. Before You Begin" href="before-starting.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">16. </span>Terminal</a></li>
+    <li class="active"><span class="section-number">16.2. </span>What is a Terminal?</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="what-is-a-terminal">
+<h1><span class="section-number">16.2. </span>What is a Terminal?<a class="headerlink" href="#what-is-a-terminal" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="guis-and-clis">
+<h2><span class="section-number">16.2.1. </span>GUIs and CLIs<a class="headerlink" href="#guis-and-clis" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Most of the time when we use our computers and smartphones, we do so through a
+<strong>graphical user interface</strong>, or <strong>GUI</strong> for short. A GUI is a system designed
+to use icons and visual tools to manage tasks. Creating a new folder, running
+programs, and moving or deleting files are all done by selecting menu items or
+clicking icons on the screen.</p>
+<div class="figure align-default" id="id1">
+<img alt="Three examples of graphical user interfaces (file tree, desktop, smartphone)." src="../../_images/GUI-example.png" />
+<p class="caption"><span class="caption-text">Three examples of graphical user interfaces: a folder navigation box, a desktop, and a smartphone home screen.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p id="index-1">Programmers often use another kind of interface, called the <strong>command line</strong>. A
+<strong>CLI</strong>, or command line interface, uses text to give the computer instructions
+instead of dragging and dropping icons.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/CLI-example.png"><img alt="Sample command line interface." src="../../_images/CLI-example.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">A CLI showing commands for navigating a file tree.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p id="index-2">The application responsible for running a CLI is called a <strong>terminal</strong>. The
+program that interprets the commands is called the <strong>shell</strong>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The terms <em>command line</em>, <em>terminal</em>, and <em>shell</em> are often used
+interchangeably.</p>
+</div>
+</div>
+<div class="section" id="why-use-the-terminal">
+<h2><span class="section-number">16.2.2. </span>Why Use the Terminal?<a class="headerlink" href="#why-use-the-terminal" title="Permalink to this headline">¶</a></h2>
+<p>Both GUIs and CLIs allow us to access and modify files on our device. Most of
+us are familiar with GUIs, and they are very user-friendly. However, using a
+CLI makes some tasks easier or more efficient. We need to be familiar with both
+types of interfaces.</p>
+<p>In the terminal, we will be able to:</p>
+<ul class="simple">
+<li>Quickly move through our computer’s file structure.</li>
+<li>Make new files and folders.</li>
+<li>Move or delete files and folders.</li>
+<li>Install software.</li>
+<li>Open applications.</li>
+<li>Run the programs we code.</li>
+</ul>
+</div>
+<div class="section" id="launch-the-terminal">
+<span id="launch-terminal"></span><h2><span class="section-number">16.2.3. </span>Launch the Terminal<a class="headerlink" href="#launch-the-terminal" title="Permalink to this headline">¶</a></h2>
+<p>As you read the next few sections, it helps to have the terminal open. That way,
+you can work through the examples and get used to the CLI. Follow the
+instructions below to launch the application.</p>
+<p>While we cannot predict the setup on your personal device, these guides should
+point you in the right direction.</p>
+<div class="section" id="mac-users">
+<h3><span class="section-number">16.2.3.1. </span>Mac Users<a class="headerlink" href="#mac-users" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">In the Finder, navigate to the <em>Applications</em> folder. Find the icon by
+opening the window for your hard drive. The folder icon may also appear in
+the dock.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/applications-folder.png"><img alt="The application folder can be found in the dock or by double-clicking the hard drive icon." src="../../_images/applications-folder.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Double-click the hard drive icon to find the Applications folder, or check the dock.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Inside the <em>Applications</em> folder, find the <em>Utilities</em> folder.</p>
+</li>
+<li><p class="first">Open the <em>Utilities</em> folder to find the Terminal application!</p>
+</li>
+<li><p class="first">Another way to locate the application is to run a search in the Finder for
+“Terminal”.</p>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Once you locate the Terminal application, you can add it to the dock! Just
+drag and drop the icon into the dock. This lets you quickly launch the
+program the next time you need it.</p>
+</div>
+</div>
+<div class="section" id="windows-users">
+<h3><span class="section-number">16.2.3.2. </span>Windows Users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h3>
+<p id="index-3">The terminal application we will use in this course is called <strong>Git Bash</strong>.</p>
+<ol class="arabic simple">
+<li>Open the <em>Start</em> menu by clicking on the Windows icon found in the lower
+left corner of the screen.</li>
+<li>From the list of items that pops up, select <em>Git Bash</em> to open the CLI.</li>
+<li>If the list is long, try typing “Git Bash” into the Start menu search bar.
+This narrows down the options displayed.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">To put an icon for the CLI on your desktop, right-click on the <em>Git Bash</em>
+name in the start menu. Select the <em>Add Shortcut To Desktop</em> option. Another
+option pins GitBash to the taskbar.</p>
+</div>
+</div>
+<div class="section" id="chromebook-users">
+<h3><span class="section-number">16.2.3.3. </span>Chromebook Users<a class="headerlink" href="#chromebook-users" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you use a virtual desktop for this class, login to that service. Follow
+the instructions for Mac or Windows, depending on the OS used for the
+desktop.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Expand the dock at the bottom of your Chromebook desktop.</p>
+</li>
+<li><p class="first">Find <em>Terminal</em> in the list of icons that appears. The application is
+probably inside the <em>Linux apps</em> subfolder. It’s icon shows the <code class="docutils literal notranslate"><span class="pre">&gt;_</span></code>
+symbols.</p>
+<div class="figure align-default">
+<img alt="Find the terminal app inside the Linux subfolder." src="../../_images/linux-apps-subfolder.png" />
+</div>
+</li>
+<li><p class="first">Click on the icon to launch the program.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="replit-users">
+<h3><span class="section-number">16.2.3.4. </span>Replit Users<a class="headerlink" href="#replit-users" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you use Replit for this class, login to your account.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Create a new python repl.</p>
+</li>
+<li><p class="first">Click on the shell tab.</p>
+<div class="figure align-default">
+<img alt="Find the shell tab in replit workspace." src="../../_images/shell_tab.png" />
+</div>
+</li>
+<li><p class="first">To run a file, at the prompt type python filename</p>
+<div class="figure align-default">
+<img alt="Run a file from the shell tab in replit workspace." src="../../_images/run_shell1.png" />
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="before-starting.html"><span aria-hidden="true">&larr;</span> <span class="section-number">16.1. </span>Before You Begin</a></li>
+        
+        
+        <li class="next"><a href="filesystem-and-paths.html"><span class="section-number">16.3. </span>Filesystem and Paths <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/terminal/introduction.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

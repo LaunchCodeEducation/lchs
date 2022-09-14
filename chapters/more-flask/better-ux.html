@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.9. The User Experience &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.10. Exercises: Logic In Templates" href="exercises.html" />
+    <link rel="prev" title="22.8. Redirecting" href="redirect.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.9. </span>The User Experience</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="the-user-experience">
+<h1><span class="section-number">22.9. </span>The User Experience<a class="headerlink" href="#the-user-experience" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The term <strong>user interface</strong> (UI) refers to the buttons, windows, icons, etc.
+that a human interacts with when they use a device.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/ui-ux.png"><img alt="Three different user interfaces: a CLI, a GUI, and a smartphone home screen." src="../../_images/ui-ux.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Three UI examples: a command line prompt, a clickable file tree, and a touch-sensitive home screen.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>User experience</strong> (UX) refers to the emotions a person feels as they interact
+with an application or device. The better the experience, the more likely they
+are to keep using it.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/inconvenience-store.jpg"><img alt="A Far Side cartoon showing an &quot;inconvenience store&quot;." src="../../_images/inconvenience-store.jpg" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text"><a class="reference external" href="https://www.thefarside.com/" target="_blank">https://www.thefarside.com/<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Good developers pay close attention to both UI and UX. Often, the two ideas go
+hand in hand. However, they are NOT the same thing. For example, here’s a
+relatively simple user interface:</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/simple-ui.jpg"><img alt="Image of a roll of toilet paper on a holder." src="../../_images/simple-ui.jpg" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">The UI controls how the user interacts with the device.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>This design is efficient, easy to understand, and effective. Now, take that
+same UI and apply it in two slightly different ways. This gets us to the user
+experience. Can you identify which setup provides the better UX?</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/compare-ux.png"><img alt="Image of a roll of toilet paper in and out of reach." src="../../_images/compare-ux.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">UX deals with how the user feels when interacting with the device.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Flask gives us the tools to make a decent UI, like the navigation menu we
+created on a <a class="reference internal" href="page-navigation.html#page-navigation"><span class="std std-ref">previous page</span></a>. However, besides making
+sure that the links all work, we must also think about the placement of the
+menu on the page. Right now, the menu appears below any HTML inserted into the
+base template. Since each page has a different amount of content, the location
+of the menu changes after we click a link. This weakens our UI design, which
+affects the UX.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">What steps can we take to improve the users’ experience with the navigation
+menu? Try out a few ideas, then demo your favorite for your teacher and/or
+classmates.</p>
+</div>
+<div class="section" id="explore-ux">
+<h2><span class="section-number">22.9.1. </span>Explore UX<a class="headerlink" href="#explore-ux" title="Permalink to this headline">¶</a></h2>
+<p>A poor interface often leads directly to a bad user experience.</p>
+<div class="figure align-default" id="id5">
+<img alt="Examples of poor UI: No pull handles, stairs into wall, no space for opening door." src="../../_images/poor-ux.png" />
+<p class="caption"><span class="caption-text">Three examples of a poor user interface.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>On the other hand, a good UI may lead to an excellent, average, or poor UX. For
+example, the <a class="reference external" href="https://www.netflix.com/" target="_blank">Netflix<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> streaming service includes
+an autoplay feature. When users hover over a title in a list of movies, after a
+moment a trailer starts to play. Some people like this feature, but others find
+it incredibly annoying. Users who just want to read the description for a movie
+might find the preview distracting (or too noisy if they’re in school or at
+work).</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Follow each of the links below, and try to complete the task described.
+As you explore, evaluate your own user experience. Consider:</p>
+<ul class="simple">
+<li>Does the user interface work? Is it easy to use?</li>
+<li>Is the design of the webpage appealing?</li>
+<li>Were you able to complete the task? How long did it take?</li>
+<li>Would you use the website again, or would you look for a different option?</li>
+<li>What features on the website do you like? Does anything annoy you?</li>
+</ul>
+<p><strong>Links</strong>:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://www.irs.gov/" target="_blank">IRS website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>: After buying an electric car,
+some owners can receive a break on their taxes. Find the form required to
+claim this tax credit (PDF format).</li>
+<li><a class="reference external" href="https://cafedelites.com/chocolate-cake/" target="_blank">Chocolate Cake (Cafe Delites)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+vs. <a class="reference external" href="https://www.allrecipes.com/recipe/17981/one-bowl-chocolate-cake-iii/" target="_blank">One Bowl Chocolate Cake (Allrecipes)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>:
+Find the list of ingredients and the steps required to bake each cake.</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page" target="_blank">Wikipedia<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>: Find the date of
+the last manned moon landing.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="other-reading">
+<h2><span class="section-number">22.9.2. </span>Other Reading<a class="headerlink" href="#other-reading" title="Permalink to this headline">¶</a></h2>
+<p>For those interested in a deeper look at UI and UX, here are two articles and
+a video to get you started.</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://xd.adobe.com/ideas/process/ui-design/ui-vs-ux-design-understanding-similarities-and-differences/" target="_blank">What are the Similarities &amp; Differences Between UI Design &amp; UX Design?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.fastcompany.com/3032719/ui-ux-who-does-what-a-designers-guide-to-the-tech-industry" target="_blank">UI, UX: Who Does What? A Designer’s Guide To The Tech Industry<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=BRWh7Nc0lbk&amp;feature=emb_logo" target="_blank">How Much Code Should A UX Designer Write?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">22.9.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Imagine you and your friend invent a new electronic gadget. The two of you
+build lots of copies in your garage and start sending them to customers.
+Then you get into an argument. Your friend wants to ship the devices with
+empty batteries. However, you insist that they should arrive fully charged.</p>
+<p>Is this argument about UI or UX?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> UX</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> UI</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Both</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Imagine you are building a webpage for your company and need to decide on
+the color and placement of three buttons.</p>
+<p>Is this a UI or UX decision?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> UX</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> UI</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Both</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="redirect.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.8. </span>Redirecting</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">22.10. </span>Exercises: Logic In Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/better-ux.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.1. HTML Escaping &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.2. Jinja3 Templates" href="what-is-jinja3.html" />
+    <link rel="prev" title="22. Refill the Flask" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.1. </span>HTML Escaping</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="html-escaping">
+<span id="id1"></span><h1><span class="section-number">22.1. </span>HTML Escaping<a class="headerlink" href="#html-escaping" title="Permalink to this headline">¶</a></h1>
+<p>Collecting data from a text input allows visitors to interact with our webpage.
+However, it also exposes our program to damage if we don’t carefully validate
+the user’s submission.</p>
+<p>The following example demonstrates one possible problem.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>The editor below builds a simple form that sends data to the Parrot Server.</p>
+<iframe src="https://trinket.io/embed/html/7a12452a92" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><ol class="last arabic">
+<li><p class="first">Enter your favorite color, then click <em>Submit</em>. Examine the results page,
+then click the <em>Run</em> button to return to the form.</p>
+</li>
+<li><p class="first">Repeat step 1, but this time put <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> tags around your choice. For
+example, <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;vermilion&lt;/h1&gt;</span></code>. Click <em>Submit</em> and notice how the
+results page looks different.</p>
+</li>
+<li><p class="first">Return to the form one more time. Copy lines 10 - 16 from the HTML code and
+paste the statements into the input box. Click <em>Submit</em>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/html-hijack.png"><img alt="Request parrot page with an active form submitted by the user." src="../../_images/html-hijack.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Text inputs allow ANYTHING to be submitted.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<p>By submitting HTML code in the text box, users can actually hijack the
+structure of our webpage. While this might look amusing and harmless, it
+exposes our program to attack. Besides HTML, users can also submit JavaScript
+code.</p>
+<p>Since the JavaScript programming language runs in a browser, the hackers can
+use the text box to insert their own programs onto our page. These programs
+might redirect visitors to malicious sites, give the hackers access to
+sensitive data on the server, or allow them to launch attacks on other networks
+from your IP address.</p>
+<p>Fortunately, we can prevent this type of attack by adding some specific
+validation to our Python code.</p>
+<div class="section" id="escaping-text-entries">
+<h2><span class="section-number">22.1.1. </span>Escaping Text Entries<a class="headerlink" href="#escaping-text-entries" title="Permalink to this headline">¶</a></h2>
+<p id="index-0"><strong>HTML escaping</strong> is essential for developing safe web applications. It helps
+block code submitted through a form input. HTML escaping occurs as part of
+sever-side validation.</p>
+<p>The code below is open to attack. It shows the <code class="docutils literal notranslate"><span class="pre">results</span></code> function, which
+collects and displays a single input from the user (the function for rendering
+the form is not shown).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">color</span></code> variable on line 8 accepts input from the form. If the user
+submits HTML tags, these will be sent to the browser when the <code class="docutils literal notranslate"><span class="pre">return</span></code>
+statement executes. This code will render in the browser, and it will produce
+similar results to the live example above.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/results&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">color</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+   <span class="k">return</span> <span class="s1">&#39;Favorite color: &#39;</span> <span class="o">+</span> <span class="n">color</span>
+
+<span class="c1"># Form code here...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>To prevent users from hijacking the page, we need to catch any HTML characters
+(like the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols) and disarm them. Fortunately, Python comes
+with a module that streamlines the task.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module contains methods that convert code statements into simple
+string values.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">import</span> <span class="nn">cgi</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/results&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">results</span><span class="p">():</span>
+   <span class="n">color</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span>
+   <span class="k">return</span> <span class="s1">&#39;Favorite color: &#39;</span> <span class="o">+</span> <span class="n">cgi</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic">
+<li><p class="first"><strong>Line 2</strong>: Import the <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module.</p>
+</li>
+<li><p class="first"><strong>Line 10</strong>: <code class="docutils literal notranslate"><span class="pre">cgi.escape(color)</span></code> converts HTML code markers into string
+data. An entry like <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;vermilion&lt;/h1&gt;</span></code> will now appear on the page as
+normal text surrounded by the <code class="docutils literal notranslate"><span class="pre">h1</span></code> tags.</p>
+<div class="figure align-default" id="id3">
+<img alt="Request parrot page with escaped HTML code." src="../../_images/html-escaped-text.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">cgi.escape()</span></code> to the rescue!</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="always-escape">
+<h2><span class="section-number">22.1.2. </span>Always Escape<a class="headerlink" href="#always-escape" title="Permalink to this headline">¶</a></h2>
+<p>We need to be careful with information collected from a user. Since we have no
+control over what they type in, we must <em>always</em> take steps to keep our
+application safe. This is especially true if we want to display some of that
+data in the browser.</p>
+<p>While we can’t predict all possible user actions, we can protect our work by
+checking the collected data Every. Single. Time.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22. </span>Refill the Flask</a></li>
+        
+        
+        <li class="next"><a href="what-is-jinja3.html"><span class="section-number">22.2. </span>Jinja3 Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/html-escaping.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

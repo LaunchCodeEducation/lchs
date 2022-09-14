@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Turtle Properties &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Useful Turtle Links" href="turtle-links.html" />
+    <link rel="prev" title="Moving Turtles" href="moving-turtles.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Python Turtles</a></li>
+    <li class="active">Turtle Properties</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="turtle-properties">
+<h1>Turtle Properties<a class="headerlink" href="#turtle-properties" title="Permalink to this headline">¶</a></h1>
+<p>Once again, let’s create a test turtle called <code class="docutils literal notranslate"><span class="pre">bob</span></code> and then explore how to
+change its appearance.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-default" id="id4">
+<img alt="Image showing the default Python turtle shape." src="../../_images/not-a-turtle.png" />
+<p class="caption"><span class="caption-text">Default turtle shape.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module contains methods that change the properties of either the
+turtle object or the screen object. The table below lists some common methods
+for changing the look of what gets drawn. Clicking on any of the keywords leads
+to a more detailed description.</p>
+<table border="1" class="docutils align-default" id="id5">
+<caption><span class="caption-text">Common Turtle Methods</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Drawing</th>
+<th class="head">Pen Control</th>
+<th class="head">Screen Control</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="#turtle-color"><span class="std std-ref">color()</span></a></td>
+<td><a class="reference internal" href="#pen-size"><span class="std std-ref">pensize()</span></a></td>
+<td><a class="reference internal" href="#screen-setup"><span class="std std-ref">setup()</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#turtle-shape"><span class="std std-ref">shape()</span></a></td>
+<td><a class="reference internal" href="#pen-up-down"><span class="std std-ref">penup()</span></a></td>
+<td><a class="reference internal" href="#screen-background-color"><span class="std std-ref">bgcolor()</span></a></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#turtle-speed"><span class="std std-ref">speed()</span></a></td>
+<td><a class="reference internal" href="#pen-up-down"><span class="std std-ref">pendown()</span></a></td>
+<td><a class="reference internal" href="#screen-exit"><span class="std std-ref">exitonclick()</span></a></td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#turtle-fill"><span class="std std-ref">fillcolor()</span></a></td>
+<td><a class="reference internal" href="#pen-clear-reset"><span class="std std-ref">clear()</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#turtle-fill-shape"><span class="std std-ref">begin_fill() end_fill()</span></a></td>
+<td><a class="reference internal" href="#pen-clear-reset"><span class="std std-ref">reset()</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#turtle-stamp"><span class="std std-ref">stamp()</span></a></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Feel free to experiment with the methods in the three editors below:
+<a class="reference internal" href="#draw-try"><span class="std std-ref">drawing</span></a>, <a class="reference internal" href="#pen-try"><span class="std std-ref">pen control</span></a>,
+<a class="reference internal" href="#screen-try"><span class="std std-ref">screen control</span></a>.</p>
+<p>You can find links to a full list of turtle methods in <a class="reference internal" href="turtle-links.html#turtle-links"><span class="std std-ref">the last section of this
+appendix</span></a>.</p>
+<div class="section" id="drawing-methods">
+<h2>Drawing Methods<a class="headerlink" href="#drawing-methods" title="Permalink to this headline">¶</a></h2>
+<p>Besides movement commands like <code class="docutils literal notranslate"><span class="pre">forward</span></code> and <code class="docutils literal notranslate"><span class="pre">left</span></code>, we can also change the
+characteristics of the turtle object.</p>
+<div class="section" id="turtle-color">
+<span id="id1"></span><h3>Turtle Color<a class="headerlink" href="#turtle-color" title="Permalink to this headline">¶</a></h3>
+<p>To change the color of the lines, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;color_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Python recognizes a large number of color names, which include standards like
+<em>red, green, blue, cyan</em>, as well as options like <em>lightgreen, turquoise,
+skyblue</em>, etc. The best way to tell if Python recognizes a color is to try!</p>
+<p id="index-0">Python also accepts a <strong>hex code</strong> instead of a color name. A hex code is a
+6-character code that describes how to mix different amounts of red, green, and
+blue to produce a specific color. The code must follow a <code class="docutils literal notranslate"><span class="pre">#</span></code> character.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The following figure shows the result of giving <code class="docutils literal notranslate"><span class="pre">bob</span></code> different colors:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># Set the line thickness to 3 pixels.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;light salmon&#39;</span><span class="p">)</span>     <span class="c1"># Yeah, this is a color.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;#3c79b8&#39;</span><span class="p">)</span>          <span class="c1"># Hex code for smokey blue.</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last figure align-default">
+<img alt="Image showing red, purple, light salmon, and smokey blue." src="../../_images/4-turtle-colors.png" />
+</div>
+</div>
+<p>To see a list of color names that Python recognizes, check out the
+<a class="reference external" href="https://trinket.io/docs/colors" target="_blank">Trinket documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, which provides an
+easy grid structure. If none of the colors shown appeal to you, remember that
+hex codes let you tinker with the color until you find the exact shade you
+want.</p>
+<div class="section" id="fill-color">
+<span id="turtle-fill"></span><h4>Fill Color<a class="headerlink" href="#fill-color" title="Permalink to this headline">¶</a></h4>
+<p>Turtles can also fill the shapes they draw with a particular color. By default,
+the fill color and line color are the same, so <code class="docutils literal notranslate"><span class="pre">bob.color('blue')</span></code> draws blue
+lines and fills shapes with that color.</p>
+<p>To change the fill color, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;color_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Just like with the <code class="docutils literal notranslate"><span class="pre">color</span></code> method, <code class="docutils literal notranslate"><span class="pre">fillcolor</span></code> recognizes specific color
+names, and it also accepts hex codes. Note that the line and fill colors are
+both represented by the turtle image on the screen.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>The following figure shows the result of giving <code class="docutils literal notranslate"><span class="pre">bob</span></code> different fill
+colors. In each case, the line color is black.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># Set the line thickness to 3 pixels.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;violet&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;white smoke&#39;</span><span class="p">)</span>  <span class="c1"># Yeah, this is a color.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">fillcolor</span><span class="p">(</span><span class="s1">&#39;#419f6a&#39;</span><span class="p">)</span>      <span class="c1"># Hex code for summer green.</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last figure align-default">
+<img alt="Image showing violet, yellow, white smoke, and summer green fill colors." src="../../_images/4-fill-colors.png" />
+</div>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">color</span></code> method to set BOTH the line and fill color by
+using two parameters instead of one.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                      <span class="c1"># Set the line thickness to 3 pixels.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;pink&#39;</span><span class="p">)</span>          <span class="c1"># Set black line color and pink fill color.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;tomato&#39;</span><span class="p">,</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;#3c79b8&#39;</span><span class="p">,</span> <span class="s1">&#39;#419f6a&#39;</span><span class="p">)</span>     <span class="c1"># Hex codes for smokey blue and summer green.</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last figure align-default">
+<img alt="Image showing 4 examples of setting line and fill colors." src="../../_images/4-line-fill-colors.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="turtle-shape">
+<span id="id2"></span><h3>Turtle Shape<a class="headerlink" href="#turtle-shape" title="Permalink to this headline">¶</a></h3>
+<p>The Python library offers six choices for a turtle’s shape—<em>‘arrow’, ‘circle’,
+‘classic’, ‘square’, ‘triangle’,</em> and <em>‘turtle’</em>. By default, turtles begin
+with the <em>‘classic’</em> shape.</p>
+<div class="figure align-default" id="id6">
+<img alt="Image showing the six shape options for Python turtles." src="../../_images/turtle-shapes.png" />
+<p class="caption"><span class="caption-text">Arrow, circle, classic, square, triangle, turtle.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>To set the shape for a turtle object, we use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;shape_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">shape_name</span></code> must be one of the six options, and it must be in quotes. For
+example, <code class="docutils literal notranslate"><span class="pre">bob.shape('circle')</span></code> changes <code class="docutils literal notranslate"><span class="pre">bob</span></code> from its default shape to a
+circle.</p>
+<div class="figure align-default" id="id7">
+<img alt="Image comparing the default turtle shape vs. a circle shape." src="../../_images/circle-turtle-line.png" />
+<p class="caption"><span class="caption-text">Classic turtle shape + line vs. circle shape + line.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="turtle-speed">
+<span id="id3"></span><h3>Turtle Speed<a class="headerlink" href="#turtle-speed" title="Permalink to this headline">¶</a></h3>
+<p>To set how quickly a turtle draws, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="n">speed_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">speed_value</span></code> can be set to any integer from 1 (slowest) - 10 (fastest).
+Setting <code class="docutils literal notranslate"><span class="pre">speed_value</span></code> to 0 skips the drawing animation and instantly shows
+the finished shape on the screen.</p>
+</div>
+<div class="section" id="fill-a-drawing">
+<span id="turtle-fill-shape"></span><h3>Fill a Drawing<a class="headerlink" href="#fill-a-drawing" title="Permalink to this headline">¶</a></h3>
+<p>To fill the design drawn by a turtle, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="c1"># Drawing code</span>
+<span class="n">turtle_name</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once the drawing code between <code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> and <code class="docutils literal notranslate"><span class="pre">end_fill()</span></code> completes,
+Python shades the design with the turtle’s current fill color.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Note how the placement of drawing commands between <code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">end_fill()</span></code> affects the coloring.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>    <span class="c1"># Draw a half circle.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>    <span class="c1"># Draw another half circle.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">begin_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>    <span class="c1"># Draw a half circle.</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">end_fill</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>    <span class="c1"># Draw another half circle.</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last figure align-default">
+<img alt="Image showing completely filled vs. half-filled circles." src="../../_images/fill-shapes.png" />
+</div>
+</div>
+</div>
+<div class="section" id="making-a-stamp">
+<span id="turtle-stamp"></span><h3>Making a Stamp<a class="headerlink" href="#making-a-stamp" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">stamp()</span></code> method leaves a print of the turtle’s shape on the page.
+Compare the results of the two code samples below. Each turtle draws a line
+that is 200 pixels long.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">mae</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+<span class="n">mae</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">mae</span><span class="o">.</span><span class="n">stamp</span><span class="p">()</span>
+<span class="n">mae</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="figure align-default">
+<img alt="Image showing a stamped turtle line." src="../../_images/stamped-lines.png" />
+</div>
+<p>Notice how the second line shows where the turtle <code class="docutils literal notranslate"><span class="pre">mae</span></code> left an imprint (a
+stamp) on the drawing before moving to the next position.</p>
+</div>
+<div class="section" id="try-it-drawing">
+<span id="draw-try"></span><h3>Try It! (Drawing)<a class="headerlink" href="#try-it-drawing" title="Permalink to this headline">¶</a></h3>
+<p>In the editor below, use the color, shape, speed, stamp, and filling methods to
+do the following:</p>
+<ol class="arabic simple">
+<li>Change the turtle shape, line color, and fill color.</li>
+<li>Try several different speed values from 0 - 10.</li>
+<li>Move the <code class="docutils literal notranslate"><span class="pre">begin_fill()</span></code> and <code class="docutils literal notranslate"><span class="pre">end_fill()</span></code> statements around to see how
+their location in the code affects the drawing. Also, feel free to add or
+remove <code class="docutils literal notranslate"><span class="pre">begin_fill/end_fill</span></code> pairs.</li>
+<li>Leave stamps at different points on the drawing.</li>
+</ol>
+<iframe height="800px" width="80%" src="https://repl.it/@launchcode/Turtle-appendix-editor-1?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe></div>
+</div>
+<div class="section" id="pen-control">
+<h2>Pen Control<a class="headerlink" href="#pen-control" title="Permalink to this headline">¶</a></h2>
+<p>Other methods determine how a turtle draws lines or leaves other marks on the
+screen.</p>
+<div class="section" id="line-thickness-pen-size">
+<span id="pen-size"></span><h3>Line Thickness (Pen Size)<a class="headerlink" href="#line-thickness-pen-size" title="Permalink to this headline">¶</a></h3>
+<p>To change the thickness of the lines drawn, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">value</span></code> sets the number of pixels, and it can be any positive number. The
+larger the value, the thicker the lines. By default, turtles start with a
+pensize of 1.</p>
+</div>
+<div class="section" id="penup-and-pendown">
+<span id="pen-up-down"></span><h3>Penup and Pendown<a class="headerlink" href="#penup-and-pendown" title="Permalink to this headline">¶</a></h3>
+<p>Two methods control whether or not a turtle draws a line behind itself when it
+moves:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>
+<span class="n">turtle_name</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">penup()</span></code> method tells a turtle to lift up its tail. Any movement
+commands that follow will reposition the turtle but NOT draw any lines.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pendown()</span></code> method does the opposite, drawing lines behind the turtle as
+it moves. The <code class="docutils literal notranslate"><span class="pre">pendown</span></code> state is the default whenever a new turtle is
+created.</p>
+</div>
+<div class="section" id="clear-and-reset">
+<span id="pen-clear-reset"></span><h3>Clear and Reset<a class="headerlink" href="#clear-and-reset" title="Permalink to this headline">¶</a></h3>
+<p>To erase a turtle’s drawings from the screen, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="c1"># OR</span>
+<span class="n">turtle_name</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Both methods remove only the drawings made by the selected turtle. <code class="docutils literal notranslate"><span class="pre">clear()</span></code>
+keeps settings like color, line thickness, and position the same. <code class="docutils literal notranslate"><span class="pre">reset()</span></code>
+re-centers the turtle on the page and returns most of its properties to their
+default values.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Watch below as <code class="docutils literal notranslate"><span class="pre">clear</span></code> and <code class="docutils literal notranslate"><span class="pre">reset</span></code> are applied to two of the turtles.</p>
+<div class="figure align-default">
+<img alt="GIF comparing the clear() and reset() turtle methods." src="../../_images/clear-vs-reset.gif" />
+</div>
+<p class="last">Which turtle uses <code class="docutils literal notranslate"><span class="pre">clear()</span></code>, and which one uses <code class="docutils literal notranslate"><span class="pre">reset()</span></code>?</p>
+</div>
+</div>
+<div class="section" id="try-it-pen">
+<span id="pen-try"></span><h3>Try It! (Pen)<a class="headerlink" href="#try-it-pen" title="Permalink to this headline">¶</a></h3>
+<p>In the editor below, use the pen control methods to do the following:</p>
+<ol class="arabic">
+<li><p class="first">Draw a row of turtle stamps.</p>
+<div class="figure align-default">
+<img alt="Image showing a row of turtle stamps without connecting lines." src="../../_images/row-of-stamps.png" />
+</div>
+</li>
+<li><p class="first">Draw a dashed line.</p>
+<div class="figure align-default">
+<img alt="Image showing a dashed line." src="../../_images/dashed-line.png" />
+</div>
+</li>
+<li><p class="first">Make the dashes different thicknesses (e.g. steady increase, steady decrease,
+or no pattern).</p>
+<div class="figure align-default">
+<img alt="Image showing changing thicknesses for a dashed line." src="../../_images/changing-line-thickness.png" />
+</div>
+</li>
+</ol>
+<iframe height="500px" width="80%" src="https://repl.it/@launchcode/Tutrle-appendix-editor-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe><ol class="arabic" start="4">
+<li><p class="first"><em>Challenge</em>: Bring in the <a class="reference internal" href="#turtle-fill-shape"><span class="std std-ref">fill methods</span></a> to try to make
+something that looks like this:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/pen-challenge.png"><img alt="Image showing a hexagon filled with 3 different colors." src="../../_images/pen-challenge.png" style="width: 217.60000000000002px; height: 186.4px;" /></a>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="screen-control">
+<h2>Screen Control<a class="headerlink" href="#screen-control" title="Permalink to this headline">¶</a></h2>
+<p>Several methods adjust the drawing space. To use these methods, we must first
+define a screen variable.</p>
+<p>Just like we defined <code class="docutils literal notranslate"><span class="pre">bob</span></code> as a turtle object, we can define the <code class="docutils literal notranslate"><span class="pre">screen</span></code>
+variable to control the drawing space.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="set-up">
+<span id="screen-setup"></span><h3>Set Up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h3>
+<p>To set the width and height of the drawing space, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">screen_name</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Both <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> must be integers, and they each represent a
+number of pixels.</p>
+<p>Sometimes <code class="docutils literal notranslate"><span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code> will be larger than what a device can
+display. In this case, the drawing window will include scroll bars to allow the
+user to view the entire area.</p>
+</div>
+<div class="section" id="background-color">
+<span id="screen-background-color"></span><h3>Background Color<a class="headerlink" href="#background-color" title="Permalink to this headline">¶</a></h3>
+<p>To change the background color of the drawing space, use the syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">screen_name</span><span class="o">.</span><span class="n">bgcolor</span><span class="p">(</span><span class="s1">&#39;color_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Just like the <a class="reference internal" href="#turtle-color"><span class="std std-ref">color</span></a> and <a class="reference internal" href="#turtle-fill"><span class="std std-ref">fillcolor</span></a>
+methods, Python accepts color names and hex codes for <code class="docutils literal notranslate"><span class="pre">color_name</span></code>.</p>
+</div>
+<div class="section" id="exit-on-click">
+<span id="screen-exit"></span><h3>Exit On Click<a class="headerlink" href="#exit-on-click" title="Permalink to this headline">¶</a></h3>
+<p>By default, Python closes the turtle window immediately after the program ends,
+which means any cool graphics get lost before we can fully appreciate them. To
+prevent this, add a statement at the end of the program that tells Python to
+pause before closing the window.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">screen_name</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">exitonclick()</span></code> causes the turtle window to stay open until the user clicks
+somewhere inside that space.</p>
+</div>
+<div class="section" id="try-it-screen">
+<span id="screen-try"></span><h3>Try It! (Screen)<a class="headerlink" href="#try-it-screen" title="Permalink to this headline">¶</a></h3>
+<p>In the editor below, run the program as-is first, then use the screen control
+methods to do the following:</p>
+<ol class="arabic simple">
+<li>Change the background color of the drawing space.</li>
+<li>Change the width of the drawing space. For your device, how large can you
+make the width before a scroll bar appears?</li>
+<li>Change the height of the drawing space. For your device, how large can you
+make the width before a scroll bar appears?</li>
+<li>Note the default starting position for <code class="docutils literal notranslate"><span class="pre">bob</span></code> with each new screen size.</li>
+<li>Note what happens when you click inside and outside of the drawing space.</li>
+</ol>
+<iframe height="600px" width="80%" src="https://repl.it/@launchcode/Turtle-appendix-editor-3?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="moving-turtles.html"><span aria-hidden="true">&larr;</span> Moving Turtles</a></li>
+        
+        
+        <li class="next"><a href="turtle-links.html">Useful Turtle Links <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/turtles/turtle-properties.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

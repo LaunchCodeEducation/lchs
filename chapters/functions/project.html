@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.12. Project: Functions &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11. Python Modules" href="../modules/index.html" />
+    <link rel="prev" title="10.11. Exercises: Functions" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>What’s Your Function</a></li>
+    <li class="active"><span class="section-number">10.12. </span>Project: Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-functions">
+<span id="functions-project"></span><h1><span class="section-number">10.12. </span>Project: Functions<a class="headerlink" href="#project-functions" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> method flips the order of the elements within a list.
+However, <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> does not affect the digits or characters within those
+elements.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">]</span>
+
+<span class="n">my_list</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;orange&#39;, 123, &#39;world&#39;, &#39;hello&#39;]
+</pre></div>
+</div>
+</div>
+<p>What if we wanted the reversed list to be
+<code class="docutils literal notranslate"><span class="pre">['egnaro',</span> <span class="pre">321,</span> <span class="pre">'dlrow',</span> <span class="pre">'olleh']</span></code>?</p>
+<p>Let’s have some fun by creating a process that reverses BOTH the order of the
+entries in a list AND the order of characters within the individual elements.</p>
+<p>Remember that a function should perform only one task. To follow this best
+practice, we will solve the list reversal by defining two functions—one that
+reverses the characters in a string (or the digits in a number) and one that
+flips the order of entries in the list.</p>
+<div class="section" id="before-you-start">
+<h2><span class="section-number">10.12.1. </span>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline">¶</a></h2>
+<p>If your teacher added you to a <a class="reference internal" href="../../appendices/classrooms/trinket-classroom.html#trinket-course-assignments"><span class="std std-ref">Trinket course</span></a>, login to your account
+to access the starter code.</p>
+<p>Otherwise, use the links below to code in your own free account.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The code editors embedded in the exercises all include a <em>Remix</em> button in
+the upper right corner which will save the code to your account. For the
+matching repl.it code, click these links:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/Functions-Project-Parts-A-C" target="_blank">Parts A - C<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://repl.it/&#64;launchcode/Functions-Project-Bonus" target="_blank">Bonus Missions<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="part-a-reverse-characters">
+<h2><span class="section-number">10.12.2. </span>Part A: Reverse Characters<a class="headerlink" href="#part-a-reverse-characters" title="Permalink to this headline">¶</a></h2>
+<p>On a previous page, we examined a function that
+<a class="reference internal" href="composing-functions.html#reverse-func"><span class="std std-ref">reverses the characters in a string</span></a> using <code class="docutils literal notranslate"><span class="pre">list()</span></code>
+and <code class="docutils literal notranslate"><span class="pre">join</span></code>. Let’s rebuild that function now.</p>
+<ol class="loweralpha simple">
+<li>Define the function as <code class="docutils literal notranslate"><span class="pre">reverse_characters</span></code>. Give it one parameter, which will
+be the string to reverse.</li>
+<li>Within the function, use <code class="docutils literal notranslate"><span class="pre">list()</span></code> to create a list of characters from the
+string, then reverse the list.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">join</span></code> to create the reversed string and <em>return</em> that string from the
+function.</li>
+<li>Below the function, define a variable and assign it a string value to test the function.</li>
+<li>Call the <code class="docutils literal notranslate"><span class="pre">reverse_characters</span></code> function and use the variable as the argument.
+Check that your function correctly reverses the characters in the string.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these sample strings for testing:</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">'apple'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'Capitalized</span> <span class="pre">Letters'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'I</span> <span class="pre">love</span> <span class="pre">the</span> <span class="pre">smell</span> <span class="pre">of</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">morning.'</span></code></li>
+</ol>
+</div>
+<iframe src="https://trinket.io/embed/python/78987c281a" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="part-b-reverse-digits">
+<h2><span class="section-number">10.12.3. </span>Part B: Reverse Digits<a class="headerlink" href="#part-b-reverse-digits" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">reverse_characters</span></code> function works great on strings, but what if the
+argument passed to the function is a number? Using <code class="docutils literal notranslate"><span class="pre">reverse_characters(1234)</span></code>
+results in an error, since <code class="docutils literal notranslate"><span class="pre">list()</span></code> does not work on numbers (TRY IT). When
+passed an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code> value, we want the function to return a number
+with all the digits reversed (e.g. 1234 converts to 4321 and NOT the string
+<code class="docutils literal notranslate"><span class="pre">&quot;4321&quot;</span></code>).</p>
+<ol class="loweralpha simple">
+<li>Add an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to <code class="docutils literal notranslate"><span class="pre">reverse_characters</span></code> to check the <code class="docutils literal notranslate"><span class="pre">type()</span></code> of
+the parameter.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">type()</span></code> is <code class="docutils literal notranslate"><span class="pre">str</span></code>, return the reversed string as before.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">type()</span></code> is <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">float</span></code>, convert the parameter to a string,
+reverse the characters, then convert it back into a number.</li>
+<li>Return the reversed number.</li>
+<li>Be sure to print the result returned by the function to see if your code
+works for <em>both strings and numbers</em>. Do this before moving on to the
+next part.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these samples for testing:</p>
+<ol class="last loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">1234</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'LC101'</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">8675.309</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">'radar'</span></code></li>
+</ol>
+</div>
+</div>
+<div class="section" id="part-c-complete-reversal">
+<h2><span class="section-number">10.12.4. </span>Part C: Complete Reversal<a class="headerlink" href="#part-c-complete-reversal" title="Permalink to this headline">¶</a></h2>
+<p>Now we are ready to finish our complete reversal process. Create a new
+function with one parameter, which is the list we want to change. The
+function should:</p>
+<ol class="loweralpha simple">
+<li>Define a new, empty list.</li>
+<li>Loop through the old list.</li>
+<li>For each element in the old list, call <code class="docutils literal notranslate"><span class="pre">reverse_characters</span></code> to flip the
+characters or digits.</li>
+<li>Add the reversed string (or number) to the list created in part ‘a’.</li>
+<li>Return the final, completely reversed list.</li>
+<li><em>Be sure to print the results from each test case in order to check your
+code</em>.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use this sample data for testing.</p>
+<table border="1" class="last docutils align-default">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Input</th>
+<th class="head">Output</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">['apple',</span> <span class="pre">'potato',</span> <span class="pre">'Capitalized</span> <span class="pre">Words']</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">['sdroW</span> <span class="pre">dezilatipaC',</span> <span class="pre">'otatop',</span> <span class="pre">'elppa']</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">[123,</span> <span class="pre">8897,</span> <span class="pre">4.2,</span> <span class="pre">1138,</span> <span class="pre">8675309]</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">[9035768,</span> <span class="pre">8311,</span> <span class="pre">2.4,</span> <span class="pre">7988,</span> <span class="pre">321]</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">['hello',</span> <span class="pre">'world',</span> <span class="pre">12.3,</span> <span class="pre">'orange',</span> <span class="pre">987]</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">[789,</span> <span class="pre">'egnaro',</span> <span class="pre">3.21,</span> <span class="pre">'dlrow',</span> <span class="pre">'olleh']</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="bonus-missions">
+<h2><span class="section-number">10.12.5. </span>Bonus Missions<a class="headerlink" href="#bonus-missions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Define a function with one parameter, which will be a string. The function
+must do the following:</p>
+<ol class="loweralpha simple">
+<li>Have a clear, descriptive name like <code class="docutils literal notranslate"><span class="pre">fun_phrase</span></code>.</li>
+<li>Take only the <em>last</em> character from strings with lengths of 3 or less.</li>
+<li>Take only the <em>first 3</em> characters from strings with lengths larger
+than 3.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">.format()</span></code> to return the phrase <code class="docutils literal notranslate"><span class="pre">We</span> <span class="pre">put</span> <span class="pre">the</span> <span class="pre">'___'</span> <span class="pre">in</span> <span class="pre">'___'.</span></code>
+Fill the first blank with the modified string, and fill the second blank
+with the original string.</li>
+</ol>
+</li>
+<li><p class="first">Now test your function:</p>
+<ol class="loweralpha simple" start="6">
+<li>Outside of the function, define a variable and assign it a string value
+(e.g. <code class="docutils literal notranslate"><span class="pre">'Functions</span> <span class="pre">rock!'</span></code>).</li>
+<li>Call your function and print the returned phrase.</li>
+</ol>
+</li>
+<li><p class="first">The area of a rectangle is equal to its <em>length x width</em>.</p>
+<ol class="loweralpha simple">
+<li>Define a function with the required parameters to calculate the area of a
+rectangle.</li>
+<li>The function should <em>return</em> the area, NOT print it.</li>
+<li>Call your area function by passing in two arguments—the length and
+width.</li>
+<li>If only one argument is passed to the function, then the shape is a
+square. Modify your code to deal with this case.</li>
+<li>Use the returned value to print, <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">area</span> <span class="pre">is</span> <span class="pre">____</span> <span class="pre">cm^2.</span></code></li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Use these test cases.</p>
+<ol class="last loweralpha simple">
+<li>length = 2, width = 4 (area = 8)</li>
+<li>length = 14.2, width = 7.6 (area = 107.92)</li>
+<li>length = 20 (area = 400)</li>
+</ol>
+</div>
+<iframe src="https://trinket.io/embed/python/25bb2d1445" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.11. </span>Exercises: Functions</a></li>
+        
+        
+        <li class="next"><a href="../modules/index.html"><span class="section-number">11. </span>Python Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/functions/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

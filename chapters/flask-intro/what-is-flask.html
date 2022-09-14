@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.1. What is Flask &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.2. Install Flask" href="install-flask.html" />
+    <link rel="prev" title="21. Hello, Flask!" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.1. </span>What is Flask</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="what-is-flask">
+<h1><span class="section-number">21.1. </span>What is Flask<a class="headerlink" href="#what-is-flask" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">Over the past few chapters, we used HTML and CSS to design <strong>static</strong> web
+pages. The content we put on a static page remains the same regardless of what
+visitors do. The only way to change the content or appearance of the page is to
+open up the code files and edit the HTML or CSS.</p>
+<p><strong>Dynamic</strong> web pages respond to user actions and update their appearance based
+on those actions. For example, think of a page that shows the menu for a local
+restaurant. A <em>static</em> version lets users scroll through the food choices and
+read the descriptions and prices. A <em>dynamic</em> version might let users click on
+items to order, choose how many servings of each, and display a running total
+for the cost of the order.</p>
+<p>Static pages provide information for users to read. Dynamic pages allow users
+to interact with the content.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Adding a link to an HTML page does NOT make it dynamic. The content on the
+page itself remains fixed. The link just sends out a new HTTP request to
+retrieve a different HTML page.</p>
+</div>
+<div class="section" id="web-applications">
+<h2><span class="section-number">21.1.1. </span>Web Applications<a class="headerlink" href="#web-applications" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">A <strong>web application</strong> is a program that users run in their browsers. These
+applications can be simple or complex, but they usually combine code that runs
+on the client (HTML/CSS) with code that runs at a server (Python, Java, etc.).
+The <em>front-end</em> part of the application controls what users see in their
+browsers. The <em>back-end</em> part controls how data gets processed and transmitted.</p>
+<p>Examples of web applications include online shopping spaces, email programs,
+video conferencing, and anything that includes a login page or a <em>Submit</em>
+button. All of these applications require code that works across multiple
+browsers AND controls how the server deals with HTTP requests/responses.</p>
+<p>Fortunately, a lot of the nuts-and-bolts details behind building a web
+application have been automated. In our case, modules exist for Python that
+allow us to quickly set up a new web-based program.</p>
+</div>
+<div class="section" id="a-web-framework">
+<h2><span class="section-number">21.1.2. </span>A Web Framework<a class="headerlink" href="#a-web-framework" title="Permalink to this headline">¶</a></h2>
+<p id="index-2"><strong>Flask</strong> is an example of a <strong>web framework</strong>. It is a collection of
+libraries, tools, and resources that take care of the low-level tasks required
+to make a web application work. This lets us focus on building our project
+instead of worrying about how the client and server actually talk to each
+other.</p>
+<p>Flask also lets us test our applications in a browser. It sets up a web server
+on our personal device. We can then use that local server to try out our
+dynamic webpages. For example, instead of sending form data to the parrot
+server, we can use Flask to collect the data, perform actions with it, and then
+display new information on the page.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>When the user submits this form, the webpage displays the original and
+modified text.</p>
+<div class="last figure align-default" id="id1">
+<img alt="An interactive form that adds text to the screen when the user submits an entry." src="../../_images/demo-flask-app.gif" />
+<p class="caption"><span class="caption-text">Flask helps us develop interactive webpages.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p>In this chapter, we create some simple Flask applications to get a feel for how
+to use the framework.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>In this course, we go over the basics of using Flask. If you are interested
+in going further, here are some useful resources to help you take the next
+steps:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target="_blank">The Flask Mega-Tutorial<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://pythonbasics.org/what-is-flask-python/" target="_blank">What is Flask (from pythonbasics.org)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21. </span>Hello, Flask!</a></li>
+        
+        
+        <li class="next"><a href="install-flask.html"><span class="section-number">21.2. </span>Install Flask <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/what-is-flask.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.2. Install Flask &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.3. Your First Flask App" href="first-flask-app.html" />
+    <link rel="prev" title="21.1. What is Flask" href="what-is-flask.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.2. </span>Install Flask</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="install-flask">
+<span id="venv-flask"></span><h1><span class="section-number">21.2. </span>Install Flask<a class="headerlink" href="#install-flask" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you are using Replit you do not need to install Flask or create a virtual environment.</p>
+</div>
+<p>Starting a new Flask project begins with the same basic steps. These are the
+housekeeping tasks we must complete before diving into our actual code.</p>
+<p>In the sections below, you will complete the setup for your first Flask
+application.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Several of the pages in this chapter include video summaries at the bottom
+of the page. The clips are intended to offer support. They do NOT serve as a
+replacement for the reading.</p>
+</div>
+<div class="section" id="create-a-project-directory">
+<h2><span class="section-number">21.2.1. </span>Create a Project Directory<a class="headerlink" href="#create-a-project-directory" title="Permalink to this headline">¶</a></h2>
+<p>Every application we develop should have its own directory on our machine. This
+allows us to keep our work organized and track each project with its own Git
+repository.</p>
+<ol class="arabic simple">
+<li>On your device, create a new directory called <code class="docutils literal notranslate"><span class="pre">flask_projects</span></code>. Inside
+this folder, create a sub-directory called <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code>.</li>
+<li>Launch Visual Studio Code and open the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code> folder.</li>
+<li>In the terminal pane, use the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command to verify that you are in the
+<code class="docutils literal notranslate"><span class="pre">hello_flask</span></code> directory.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize a new repository.</li>
+</ol>
+</div>
+<div class="section" id="create-a-virtual-environment">
+<span id="flask-environment"></span><h2><span class="section-number">21.2.2. </span>Create a Virtual environment<a class="headerlink" href="#create-a-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">To run a Flask application, we must create a <strong>virtual environment</strong> inside the
+project directory. Think of this like a collection of tools needed to make the
+application work.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We won’t go into detail about <em>why</em> we need a virtual environment. For now,
+we just need to know <em>how</em> to set one up.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In the terminal, type the following command.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mac Users:
+$ python3 -m venv hello-env
+
+Windows Users:
+$ py -3 -m venv hello-env
+</pre></div>
+</div>
+</li>
+<li><p class="first">Be patient! The command takes some time to finish its work, and you won’t
+see much happen in the terminal while its running. The process is done when
+the terminal prompt (<code class="docutils literal notranslate"><span class="pre">$</span></code>) reappears. Also, the folder <code class="docutils literal notranslate"><span class="pre">hello-env</span></code> shows
+up inside the project directory.</p>
+<div class="figure align-default" id="id2">
+<img alt="The file tree now shows the hello-env directory." src="../../_images/hello-env.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">hello-env</span></code> directory contains the tools needed to make our web application run in our browser.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">venv</span></code> keyword creates a new Virtual ENVironment. In this case, the
+environment is called <code class="docutils literal notranslate"><span class="pre">hello-env</span></code>.</p>
+</li>
+</ol>
+<p>Each Flask application you create will have its own virtual environment
+directory. You can name these environments whatever you want, but a good
+practice is to use something like <code class="docutils literal notranslate"><span class="pre">project_name-env</span></code>.</p>
+</div>
+<div class="section" id="add-flask">
+<span id="id1"></span><h2><span class="section-number">21.2.3. </span>Add Flask<a class="headerlink" href="#add-flask" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">The next step is to <em>activate</em> the virtual environment. In the terminal,
+make sure you are in the <code class="docutils literal notranslate"><span class="pre">hello-flask</span></code> directory, then enter the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mac Users:
+$ . hello-env/bin/activate
+(hello-env) $
+
+Windows Users:
+$ . hello-env/Scripts/activate
+(hello-env) $
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">(hello-env)</span></code> now appears to the left of the terminal prompt. This
+indicates which virtual environment is currently active.</p>
+</li>
+<li><p class="first">Now install Flask with the command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(hello-env) $ pip install Flask
+</pre></div>
+</div>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">venv</span></code>, this command produces LOTS of text in the terminal panel.</p>
+</li>
+<li><p class="first">Once the installation is done, check for success by using the command
+<code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">--version</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(hello-env) $ flask --version
+Python 3.9.5
+Flask 2.0.1
+Werkzeug 2.0.1
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Software updates occur frequently, so the version numbers you see might be
+slightly different. As long as you have a Python version at or above 3.6, you
+should be fine.</p>
+</div>
+</li>
+<li><p class="first">To exit an environment, just enter the command <code class="docutils literal notranslate"><span class="pre">deactivate</span></code> in the
+terminal.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(hello-env) $ deactivate
+$
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="ready-to-go">
+<h2><span class="section-number">21.2.4. </span>Ready to Go!<a class="headerlink" href="#ready-to-go" title="Permalink to this headline">¶</a></h2>
+<p>OK, the virtual environment is set up, and Flask is installed. We can now add
+some Python code and link it to a webpage.</p>
+</div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">21.2.5. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<p>The clip below provides a walkthrough for installing Flask on a Macintosh
+computer. However, the process is very similar for other operating systems.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/wQruDeV9cE8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-is-flask.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.1. </span>What is Flask</a></li>
+        
+        
+        <li class="next"><a href="first-flask-app.html"><span class="section-number">21.3. </span>Your First Flask App <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/install-flask.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

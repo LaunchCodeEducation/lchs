@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.6. Importing Our Own Modules &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.7. Local HTML/CSS Files" href="vscode-html-css.html" />
+    <link rel="prev" title="17.5. Local Turtles" href="vscode-turtles.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.6. </span>Importing Our Own Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="importing-our-own-modules">
+<h1><span class="section-number">17.6. </span>Importing Our Own Modules<a class="headerlink" href="#importing-our-own-modules" title="Permalink to this headline">¶</a></h1>
+<p>On the previous page, we imported the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module into our
+<code class="docutils literal notranslate"><span class="pre">turtle_fun.py</span></code> program. We can do something similar with any of the
+ready-made Python modules.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</td></tr></table></div>
+<p>We just need to know the names of the modules we want. We do not need to tell
+VS Code where the files are stored. Since they are installed with Python, the
+application knows where to find them.</p>
+<p>If we code our own modules, like we did in the <a class="reference internal" href="../modules/creating-modules.html#module-location"><span class="std std-ref">Creating Modules</span></a>
+section, then we must be a little more careful with the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax.</p>
+<div class="section" id="setup">
+<h2><span class="section-number">17.6.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>In VS Code, do the following:</p>
+<ol class="arabic simple">
+<li>Create a new directory called <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</li>
+<li>Inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a new file called <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</li>
+<li>Also in <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a file called <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code>.</li>
+</ol>
+<p>Our file tree should look something like this:</p>
+<div class="figure align-default" id="id1">
+<img alt="File tree of the local_practice directory showing the contents of the module_practice subdirectory." src="../../_images/module-file-tree.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory tree.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Now paste this code into <code class="docutils literal notranslate"><span class="pre">main.py</span></code>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Keep line 1 empty for now.</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">entries</span> <span class="o">=</span> <span class="mi">10</span>
+   <span class="n">range_start</span> <span class="o">=</span> <span class="mi">15</span>
+   <span class="n">range_end</span> <span class="o">=</span> <span class="mi">75</span>
+
+   <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+      <span class="n">numbers</span> <span class="o">=</span> <span class="n">list_filler</span><span class="o">.</span><span class="n">unique_num_list</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">range_start</span><span class="p">,</span> <span class="n">range_end</span><span class="p">)</span>
+      <span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">turn</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">) Numbers list = </span><span class="si">{</span><span class="n">numbers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 9 calls the function <code class="docutils literal notranslate"><span class="pre">unique_num_list</span></code>, but it’s not defined in the
+<code class="docutils literal notranslate"><span class="pre">main.py</span></code> code. We’ll fix this in a moment.</p>
+<p>Paste the following statements into <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Generate a list of random numbers in the range start-end.</span>
+<span class="c1"># Repeats of the same number are possible.</span>
+<span class="k">def</span> <span class="nf">make_num_list</span><span class="p">(</span><span class="n">num_entries</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+   <span class="n">num_list</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_entries</span><span class="p">):</span>
+      <span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+
+   <span class="k">return</span> <span class="n">num_list</span>
+
+<span class="c1"># Generate a list of random numbers in the range start-end.</span>
+<span class="c1"># No repeated numbers occur in the list.</span>
+<span class="k">def</span> <span class="nf">unique_num_list</span><span class="p">(</span><span class="n">num_entries</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+   <span class="n">num_list</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="k">if</span> <span class="n">num_entries</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">num_entries</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span>
+   <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_entries</span><span class="p">:</span>
+      <span class="n">new_num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">new_num</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">num_list</span><span class="p">:</span>
+         <span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_num</span><span class="p">)</span>
+
+   <span class="k">return</span> <span class="n">num_list</span>
+</pre></div>
+</td></tr></table></div>
+<p>Now we are getting somewhere! The <code class="docutils literal notranslate"><span class="pre">unique_num_list</span></code> function is defined in
+lines 14 - 23. The next step is to import <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> into <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+</div>
+<div class="section" id="import-from-the-same-directory">
+<h2><span class="section-number">17.6.2. </span>Import From the Same Directory<a class="headerlink" href="#import-from-the-same-directory" title="Permalink to this headline">¶</a></h2>
+<p>When we create a module, we save the code into its own <code class="docutils literal notranslate"><span class="pre">.py</span></code> file. The most
+convenient way to import our new module is to put that file in the same
+directory as our main program. Fortunately, this is exactly what we did in the
+<em>Setup</em> section.</p>
+<div class="figure align-default" id="id2">
+<img alt="File tree of the local_practice directory showing the contents of the module_practice subdirectory." src="../../_images/module-file-tree.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory tree.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>When we follow this structure, the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax is the same as before.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">On line 1 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">list_filler</span></code>.</p>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> to see the results.</p>
+<p><strong>Sample Output:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python main.py
+1) Numbers list = [22, 27, 33, 36, 40, 42, 45, 56, 66, 71]
+2) Numbers list = [16, 23, 39, 43, 47, 49, 51, 53, 64, 68]
+3) Numbers list = [18, 20, 26, 43, 45, 49, 52, 59, 60, 61]
+4) Numbers list = [15, 31, 36, 37, 43, 46, 52, 56, 57, 59]
+5) Numbers list = [21, 23, 28, 30, 51, 56, 58, 60, 62, 72]
+</pre></div>
+</div>
+</li>
+<li><p class="first">Note the use of <em>dot-notation</em> in line 9 of <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. The syntax
+<code class="docutils literal notranslate"><span class="pre">list_filler.unique_num_list</span></code> calls the <code class="docutils literal notranslate"><span class="pre">unique_num_list</span></code> function
+from the <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> module.</p>
+</li>
+<li><p class="first">Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to generate another five lists of random numbers. This
+time, however, use the <code class="docutils literal notranslate"><span class="pre">make_num_list</span></code> function, and only send in one
+argument.</p>
+</li>
+</ol>
+</div>
+<p>Think of any program as a set of smaller tasks joined together. Instead of
+writing one large <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file with hundreds or thousands of lines of code,
+we can split our program into smaller modules. Each one has a specific focus
+and purpose. The job of <code class="docutils literal notranslate"><span class="pre">main.py</span></code> is to pull them together and manage how
+their classes and functions get used.</p>
+<p>By splitting our projects into smaller pieces, we make updating and debugging
+our code much easier.</p>
+<p>With this picture in mind, it makes a lot of sense to keep the modules we need
+in the same directory with the main program.</p>
+</div>
+<div class="section" id="import-from-a-different-directory">
+<h2><span class="section-number">17.6.3. </span>Import From a Different Directory<a class="headerlink" href="#import-from-a-different-directory" title="Permalink to this headline">¶</a></h2>
+<p>If we create a large number of modules, we might want to add some subfolders to
+help keep the files organized. Let’s explore this with a simple example.</p>
+<div class="figure align-default" id="id3">
+<img alt="File tree of the local_practice/module_practice/helpers file tree." src="../../_images/module-subdirectory.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">helpers</span></code> is a subdirectory of <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">main.py</span></code> still sits in the <code class="docutils literal notranslate"><span class="pre">module_practice</span></code> directory.
+However, we moved <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> into the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> subfolder.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic simple">
+<li>In VS Code, use the <em>New Folder</em> button in the File Explorer to create
+the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</li>
+<li>Drag-and-drop the <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> file into the new folder.</li>
+<li>Run the program again and examine the error message.</li>
+</ol>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+File &quot;main.py&quot;, line 1, in &lt;module&gt;
+   import list_filler
+ModuleNotFoundError: No module named &#39;list_filler&#39;
+</pre></div>
+</div>
+</div>
+<p>When the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">list_filler</span></code> statement runs, Python follows a specific set
+of steps to find the file. We won’t detail the entire process here. However,
+the short version is:</p>
+<ol class="arabic simple">
+<li>Check if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> is one of the standard Python modules. If so,
+import it (the locations of these modules are known).</li>
+<li>Check the current directory for <code class="docutils literal notranslate"><span class="pre">list_filler</span></code>. If found, import it.</li>
+<li>Throw an error if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> can’t be found.</li>
+</ol>
+<p>By moving <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> into the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory, Python can no
+longer find the file to import it! This causes the <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>.</p>
+<p>Fortunately, we can fix the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax and provide a path to where we
+stored our module. The key is to include the <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword. The general
+syntax is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">directory_name</span> <span class="kn">import</span> <span class="n">module_name</span>
+</pre></div>
+</div>
+<p>IMPORTANT: <code class="docutils literal notranslate"><span class="pre">directory_name</span></code> must be in the same folder as the main program.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, change line 1 to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">helpers</span> <span class="pre">import</span> <span class="pre">list_filler</span></code>.</li>
+<li>Run the program again.</li>
+<li>Ta da!</li>
+</ol>
+</div>
+<div class="section" id="other-import-details">
+<h3><span class="section-number">17.6.3.1. </span>Other Import Details<a class="headerlink" href="#other-import-details" title="Permalink to this headline">¶</a></h3>
+<p>As long as the modules we need are stored in directories below <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we
+can extend the chain of directory names as far as necessary with our <code class="docutils literal notranslate"><span class="pre">import</span></code> statement. To move down multiple
+levels from <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we use dot-notation to include the different directory
+names.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s take a look at a three level file tree:</p>
+<div class="figure align-default" id="id4">
+<img alt="A three level file tree." src="../../_images/layers-deep.png" />
+<p class="caption"><span class="caption-text">The module <code class="docutils literal notranslate"><span class="pre">gradebook.py</span></code> is two levels below <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The indentation in the file tree gives us clues about how things are
+organized.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">main.py</span></code> is in the folder <code class="docutils literal notranslate"><span class="pre">my_project</span></code> along with the <code class="docutils literal notranslate"><span class="pre">subdir1</span></code>
+directory.</li>
+<li><code class="docutils literal notranslate"><span class="pre">subdir1</span></code> contains the <code class="docutils literal notranslate"><span class="pre">grade_stats.py</span></code> file and the next subfolder,
+<code class="docutils literal notranslate"><span class="pre">subdir2</span></code>.</li>
+<li>Finally, we see that the <code class="docutils literal notranslate"><span class="pre">gradebook.py</span></code> file is buried deepest in this
+tree.</li>
+</ol>
+<p>To import the <code class="docutils literal notranslate"><span class="pre">gradebook</span></code> module, line 1 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> would be:</p>
+<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subdir1.subdir2</span> <span class="kn">import</span> <span class="n">gradebook</span>
+</pre></div>
+</div>
+</div>
+<p>We can also import a specific function (or class) from a module stored in a
+subdirectory. In this case, we include the module name in our dot-notation.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Assume we only need the <code class="docutils literal notranslate"><span class="pre">average_grades</span></code> function from the <code class="docutils literal notranslate"><span class="pre">grade_stats</span></code>
+module. The syntax would be:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subdir1.grade_stats</span> <span class="kn">import</span> <span class="n">average_grades</span>
+</pre></div>
+</div>
+<p class="last">This statement tells Python, <em>Look in the subdir1 directory and find the
+grade_stats file, then import the average_grades function</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="importing-from-a-parent-directory">
+<h2><span class="section-number">17.6.4. </span>Importing From a Parent Directory<a class="headerlink" href="#importing-from-a-parent-directory" title="Permalink to this headline">¶</a></h2>
+<p>While it is possible to force Python to search upwards through your file system,
+this isn’t recommended. To do so requires a work-around, and that process can
+go wrong in lots of ways.</p>
+<p>If the Python developers thought it would be useful to search upwards in the
+file system, then they would have made it easy. They didn’t, so it isn’t.</p>
+<p>This just reinforces a GREAT idea for making local programs and projects: Keep
+related content together. This keeps our work organized, and it also helps any other
+programmer who might inherit our work.</p>
+<p>Whenever you create a module to support your program, follow these guidelines
+on where to store the file:</p>
+<ol class="arabic simple">
+<li><em>Put it in the same directory as the main program</em>!</li>
+<li>Put it in a subdirectory below the main program.</li>
+<li>See point 1.</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">17.6.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Use the file tree shown below to answer the questions.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/local-import-cc.png"><img alt="File tree showing /MyLaptop/Project/Helpers/Data." src="../../_images/local-import-cc.png" style="width: 40%;" /></a>
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which statement should we add to <code class="docutils literal notranslate"><span class="pre">seating.py</span></code> to import the <code class="docutils literal notranslate"><span class="pre">rosters.py</span></code>
+module?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">import rosters</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from seating import rosters</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from Mods import rosters</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from Mods.Data import rosters</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">from Data import rosters</span></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What should we do if we want to import <code class="docutils literal notranslate"><span class="pre">grade_calcs.py</span></code> into
+<code class="docutils literal notranslate"><span class="pre">rosters.py</span></code>?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Move both files into the same directory.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Play around with the <span style="color:#419f6a; font-weight: bold">from ... import ...</span> syntax until we get the import to work.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use Google to find out how to import from a parent directory.</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Cry.</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="vscode-turtles.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.5. </span>Local Turtles</a></li>
+        
+        
+        <li class="next"><a href="vscode-html-css.html"><span class="section-number">17.7. </span>Local HTML/CSS Files <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/vscode-custom-modules.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

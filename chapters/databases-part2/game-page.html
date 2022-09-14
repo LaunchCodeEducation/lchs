@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.4. Create the Game Page &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25.5. Home Page Logic" href="home-logic.html" />
+    <link rel="prev" title="25.3. Create the Home Page" href="home-page.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+    <li class="active"><span class="section-number">25.4. </span>Create the Game Page</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="create-the-game-page">
+<h1><span class="section-number">25.4. </span>Create the Game Page<a class="headerlink" href="#create-the-game-page" title="Permalink to this headline">¶</a></h1>
+<p>To play Minesweeper, the home page links to a different HTML template. The
+game screen contains a title, a mine counter, a <em>New Game</em> button, and the
+the active board.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/game-page-start.png"><img alt="Showing the start of a new Minesweeper game." src="../../_images/game-page-start.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">The game board is one big HTML form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="build-mines-html">
+<h2><span class="section-number">25.4.1. </span>Build <code class="docutils literal notranslate"><span class="pre">mines.html</span></code><a class="headerlink" href="#build-mines-html" title="Permalink to this headline">¶</a></h2>
+<p>The structure of the game board is very similar to the one we built in
+<code class="docutils literal notranslate"><span class="pre">index.html</span></code>. However, this time the buttons will be active, and the entire
+table will be part of a large <code class="docutils literal notranslate"><span class="pre">form</span></code> element.</p>
+<p>Unlike the home page, the HTML we use for the board will change once we start
+adding Python code to run the game. We’ll start simple, and then update the
+elements and/or attributes in later steps.</p>
+<p>The form on the game page behaves differently than most of the ones we’ve
+created before. Instead of filling in an <code class="docutils literal notranslate"><span class="pre">input</span></code> field, users submit their
+cell choices by clicking the different buttons. In this case, <em>each button</em>
+serves as a separate input. To make the form work this way, we must assign a
+different value to each button. One of these will be submitted when the user
+clicks on the board.</p>
+<p>Open your Minesweeper project and code along with the video to build the game
+page:</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/Q-4gN3tx6h8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">25.4.2. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The game board looks just like the one on the home page. However, this one
+has active buttons, and it is included inside a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;&lt;/form&gt;</span></code> element.</li>
+<li>Paste in the same table code from <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Change the attributes in
+the <code class="docutils literal notranslate"><span class="pre">button</span></code> elements to:<ol class="loweralpha">
+<li>Make them active,</li>
+<li>Give each one the same <code class="docutils literal notranslate"><span class="pre">name</span></code>,</li>
+<li>Set <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code>,</li>
+<li>Use a placeholder to assign a <code class="docutils literal notranslate"><span class="pre">value</span></code> that matches the cell coordinates
+(A10, B4, C7, etc.).</li>
+</ol>
+</li>
+<li>Inside the same form, add a <em>Flag Mine</em> checkbox above the game board, and
+center it.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;&lt;/header&gt;</span></code> element, add the <em>New Game</em> button.<ol class="loweralpha">
+<li>Style the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> with the <code class="docutils literal notranslate"><span class="pre">menu</span></code> class.</li>
+<li>Give it the same <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> as the buttons in the table.</li>
+<li>Set the <code class="docutils literal notranslate"><span class="pre">value</span></code> to be the empty string.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">form</span></code> attribute to match the button to the
+<code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">id=&quot;game-board&quot;</span> <span class="pre">...&gt;</span></code> element.</li>
+</ol>
+</li>
+<li>As we add more code to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we will need to update the HTML and
+styling for the cells in the table.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="home-page.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25.3. </span>Create the Home Page</a></li>
+        
+        
+        <li class="next"><a href="home-logic.html"><span class="section-number">25.5. </span>Home Page Logic <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases-part2/game-page.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

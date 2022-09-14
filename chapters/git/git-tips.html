@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.6. Git Tips &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.7. Remote Repositories" href="remote-repository.html" />
+    <link rel="prev" title="18.5. Merging in Git" href="merge.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.6. </span>Git Tips</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="git-tips">
+<h1><span class="section-number">18.6. </span>Git Tips<a class="headerlink" href="#git-tips" title="Permalink to this headline">¶</a></h1>
+<p>Now that we know about branches, we should definitely use them often. Keeping
+the core, working code in <code class="docutils literal notranslate"><span class="pre">main</span></code> and growing that code in branches is a very
+strong technique.</p>
+<p>This page explores some details that often come up as we work with branches.</p>
+<div class="section" id="git-stash">
+<span id="id1"></span><h2><span class="section-number">18.6.1. </span>Git Stash<a class="headerlink" href="#git-stash" title="Permalink to this headline">¶</a></h2>
+<p>It happens to the best of us. We get a great idea for our project, and we dive
+into creating the new code. Things are going well, until we realize that we put
+our brilliant idea in the wrong branch of the repo! Lines and lines of new
+code, all in the wrong place.</p>
+<p>Of <em>course</em> Git offers us a way to remove the new work from the current branch
+and move it into another. The command for this is called <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code>.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> will only save our butts if we have NOT committed the new
+changes to the repo yet. This is why we should always use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to
+check things out before using the <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">commit</span></code> commands.</p>
+</div>
+<div class="section" id="try-it">
+<h3><span class="section-number">18.6.1.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<p>Imagine that you want to add a few more lines to the text file in the
+<code class="docutils literal notranslate"><span class="pre">make-conflict</span></code> branch.</p>
+<ol class="arabic">
+<li><p class="first">Return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repo.</p>
+</li>
+<li><p class="first">Add new lines to <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> and save the file.</p>
+</li>
+<li><p class="first">Type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in the terminal. The first line of the output tells us
+that we’re in the wrong branch. We want to be in <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code>, not
+<code class="docutils literal notranslate"><span class="pre">main</span></code>!</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Changes not staged for commit:
+   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+   modified:   conflict_demo.txt
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span></code> in the terminal and notice how the changes made in
+the text file disappear. Those changes are stored by Git, but they are no
+longer in <code class="docutils literal notranslate"><span class="pre">main</span></code>. Entering <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again shows a clean branch.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to move into the <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code> branch. Follow this
+with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">stash</span> <span class="pre">pop</span></code> command.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout make-conflict
+Switched to branch &#39;make-conflict&#39;
+$ git stash pop
+On branch make-conflict
+Changes not staged for commit:
+   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+      modified:   conflict_demo.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+Dropped refs/stash@{0} (dedea22f5c66ef992103fcc82d7eaed82d4463f5)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Aha! The changes we made in <code class="docutils literal notranslate"><span class="pre">main</span></code> appear in the <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code>
+branch. We can use <code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code> to add them to the repository.</p>
+</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">stash</span></code> is similar to the <code class="docutils literal notranslate"><span class="pre">append</span></code> list method in Python. We don’t need to
+know the complete details for how it works, but we can imagine that <code class="docutils literal notranslate"><span class="pre">stash</span></code>
+takes a snapshot of the branch. It then returns the branch to the state of the
+last commit.</p>
+<p><code class="docutils literal notranslate"><span class="pre">stash</span> <span class="pre">pop</span></code> takes the snapshot and applies it to the current branch.</p>
+</div>
+</div>
+<div class="section" id="deleting-a-branch">
+<h2><span class="section-number">18.6.2. </span>Deleting a Branch<a class="headerlink" href="#deleting-a-branch" title="Permalink to this headline">¶</a></h2>
+<p>Imagine that we finish our work in a branch and successfully merge it into
+<code class="docutils literal notranslate"><span class="pre">main</span></code>. Now that the code exists in <code class="docutils literal notranslate"><span class="pre">main</span></code>, we might not need the old
+branch anymore. To delete a branch, the terminal syntax is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -d branch-name
+</pre></div>
+</div>
+<p>If the branch contains changes that haven’t been merged yet, Git gives us an
+error message and keeps the branch intact. Git will also provide a helpful clue
+about how to remove the branch anyway, if we really want to go through with
+that action.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Deleting a local branch cannot be undone!</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s delete <code class="docutils literal notranslate"><span class="pre">hello-branch</span></code> from the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repository:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+  hello-branch
+* make-conflict
+  main
+$ git branch -d hello-branch
+Deleted branch hello-branch (was d99e424).
+$ git branch
+* make-conflict
+  main
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="git-more-information">
+<h2><span class="section-number">18.6.3. </span>Git More Information<a class="headerlink" href="#git-more-information" title="Permalink to this headline">¶</a></h2>
+<p>If you would like to explore additional discussions, tutorials, and videos
+about Git, here are some resources you can explore on your own:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.git-tower.com/learn/git/ebook/en/command-line/basics/what-is-version-control/#start" target="_blank">What is Version Control<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.git-tower.com/learn/git/ebook/en/command-line/branching-merging/branching-can-change-your-life/#start" target="_blank">Git branches<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.git-tower.com/learn/git/videos/#episodes" target="_blank">Git video tutorial<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+(24 topics to choose from)</li>
+<li><a class="reference external" href="https://git-scm.com/doc" target="_blank">Official Git documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="merge.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.5. </span>Merging in Git</a></li>
+        
+        
+        <li class="next"><a href="remote-repository.html"><span class="section-number">18.7. </span>Remote Repositories <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/git-tips.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

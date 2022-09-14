@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.5. Merging in Git &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.6. Git Tips" href="git-tips.html" />
+    <link rel="prev" title="18.4. Branching Out" href="branches.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.5. </span>Merging in Git</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="merging-in-git">
+<h1><span class="section-number">18.5. </span>Merging in Git<a class="headerlink" href="#merging-in-git" title="Permalink to this headline">¶</a></h1>
+<p>Let’s say we branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code> to work on a new feature for our program.
+After some work, debugging, and several commits, we finally get the new code
+running (yay). Our next step is to git that code into the main branch of our
+program.</p>
+<p id="index-0">We do this by <strong>merging</strong> two separate branches. A merge takes the files and
+code from one branch and combines them to the files and code in another. As
+long as no problems occur, Git will automatically commit the combined files.
+The two branches become one, with a combined history and Git log. (We’ll talk
+about the case when problems <em>do</em> occur a bit later).</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/git-merge.png"><img alt="Merging combines two Git branches into one." src="../../_images/git-merge.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">html-code</span></code> branch is merged into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="how-to-merge">
+<h2><span class="section-number">18.5.1. </span>How to Merge<a class="headerlink" href="#how-to-merge" title="Permalink to this headline">¶</a></h2>
+<p>To combine two branches, we must check a few things first:</p>
+<ol class="arabic simple">
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to check both branches for uncommitted changes. If found,
+save them to the repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code>.</li>
+<li>Once the line <code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code> appears in the
+<code class="docutils literal notranslate"><span class="pre">status</span></code> output for both branches, they are ready to merge.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch to the branch that will <em>receive</em> the other
+one. For example, if we want to merge <code class="docutils literal notranslate"><span class="pre">html-code</span></code> into <code class="docutils literal notranslate"><span class="pre">main</span></code>, then we
+need to switch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+</ol>
+<p>After completing these checks, the terminal syntax for a merge is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git merge branch-name
+</pre></div>
+</div>
+<p>This merges <code class="docutils literal notranslate"><span class="pre">branch-name</span></code> into the current one.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Use the figure at the top of this page as a model. We want to merge the
+<code class="docutils literal notranslate"><span class="pre">html-code</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>After we finish the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> checks, the terminal output would look
+something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+ * html-code
+   main
+$ git checkout main
+Switched to branch &#39;main&#39;
+$ git merge html-code
+Updating db231f2..5e43d6f
+index.html | 5 ++++-
+1 file changed, 4 insertions(+), 1 deletion(-)
+</pre></div>
+</div>
+<p class="last">The output after the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command will vary depending on the
+branches involved and how many changes need to be combined.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">18.5.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>On the <a class="reference internal" href="branches.html#create-git-branch"><span class="std std-ref">previous page</span></a>, you created a second branch in
+the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repository. Let’s merge that branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<ol class="arabic simple">
+<li>In VS Code, use the terminal pane to navigate into the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code>
+folder.</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to see a list of the branches in the repo. This will
+also indicate the current branch.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to move into <code class="docutils literal notranslate"><span class="pre">hello-branch</span></code>.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to check for uncommitted changes in the branch. If
+necessary, add and commit those changes to the repo.</li>
+<li>Repeat steps 3 and 4 for the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</li>
+<li>Make sure you are in <code class="docutils literal notranslate"><span class="pre">main</span></code>, then enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">hello-branch</span></code> to
+combine the two branches. Properly done, you should see <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code>
+appear in the file tree.</li>
+<li>Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> to see the updated history for the repo. Notice that it
+includes the commit messages from <code class="docutils literal notranslate"><span class="pre">hello-branch</span></code> in addition to one about
+the merge.</li>
+</ol>
+</div>
+<div class="section" id="merge-conflicts">
+<span id="local-merge-conflict"></span><h2><span class="section-number">18.5.3. </span>Merge Conflicts<a class="headerlink" href="#merge-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>The merge process usually runs smoothly. In the examples above, we changed the
+code in different files across two branches. These edits were small and didn’t
+interfere with each other, so the merge was quick.</p>
+<p>However, sometimes there is a catch.</p>
+<p id="index-1">A <strong>merge conflict</strong> occurs when we change the same lines of code in both
+branches. Git doesn’t know which change to accept, so it flags the issue in an
+error message. The programmer must then fix the conflict by deciding which
+edits to keep and which ones to ignore.</p>
+<p>Merge conflicts might sound scary to new Git users. However, after fixing a few
+conflicts, solving the problems becomes routine. Merge conflicts don’t always
+happen, but we need to git used to dealing with them when they appear.</p>
+<p>Every programmer deals with merge conflicts, and the best way to deal with them
+is to face them head on. Let’s create a conflict on purpose. That way, we can
+practice resolving it.</p>
+<div class="section" id="conflict-demo">
+<h3><span class="section-number">18.5.3.1. </span>Conflict Demo<a class="headerlink" href="#conflict-demo" title="Permalink to this headline">¶</a></h3>
+<p>Let’s return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in our <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repo. Make sure you
+have committed all recent changes before diving into the steps below.</p>
+<div class="section" id="setup">
+<h4><span class="section-number">18.5.3.1.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Add a new file called <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code>. The <code class="docutils literal notranslate"><span class="pre">.txt</span></code> extension means
+that this will be a simple text file instead of one that holds active code.
+For now, there is no need to type anything in the file.</p>
+</li>
+<li><p class="first">Use the usual <code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code> process to save the text file to the
+repository.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to create a new branch called <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git checkout -b make-conflict
+Switched to a new branch <span class="s1">&#39;make-conflict&#39;</span>
+$ git branch
+* make-conflict
+  main
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>OK. Let’s do some typing in <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code>.</p>
+</div>
+<div class="section" id="add-text-in-both-branches">
+<h4><span class="section-number">18.5.3.1.2. </span>Add Text In Both Branches<a class="headerlink" href="#add-text-in-both-branches" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> in the VS Code editor.</p>
+</li>
+<li><p class="first">Add a few lines of text to the file. It doesn’t matter what you write, as
+long as it’s school-appropriate.</p>
+</li>
+<li><p class="first">Save the file, then add and commit the changes to the repo.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/merge-conflict1.png"><img alt="Excerpt from Green Eggs &amp; Ham added to the conflict_demo.txt file." src="../../_images/merge-conflict1.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Changes made to <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code> branch.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
+</li>
+<li><p class="first">Add a few lines of text to <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code>. Make sure these lines are
+different than the ones you used before. Save and commit the changes to the
+repo.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/merge-conflict2.png"><img alt="Excerpt from the LCHS textbook added to the conflict_demo.txt file." src="../../_images/merge-conflict2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Changes made to <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> in the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="resolving-the-conflict">
+<span id="resolving-merge-conflict"></span><h4><span class="section-number">18.5.3.1.3. </span>Resolving the Conflict<a class="headerlink" href="#resolving-the-conflict" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Try merging the <code class="docutils literal notranslate"><span class="pre">make-conflict</span></code> branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
+  make-conflict
+* main
+$ git merge make-conflict
+Auto-merging conflict_demo.txt
+CONFLICT (content): Merge conflict in conflict_demo.txt
+Automatic merge failed; fix conflicts and then commit the result.
+</pre></div>
+</div>
+</li>
+<li><p class="first">The CONFLICT line tells us that Git hit a problem when it tried to merge the
+changes in the <code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> file. The last line offers us some
+encouragement! Although the automatic merge failed, we can still fix things
+and save the result.</p>
+</li>
+<li><p class="first">Notice that the text in the editor is now highlighted:</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/merge-conflict3.png"><img alt="Green and blue highlighting points out the changes made in each branch." src="../../_images/merge-conflict3.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">conflict_demo.txt</span></code> was changed in both branches.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The green area points out the changes made in our <em>current</em> branch
+(<code class="docutils literal notranslate"><span class="pre">main</span></code>), and the blue area shows the changes coming in from
+<code class="docutils literal notranslate"><span class="pre">make-conflict</span></code>.</p>
+</li>
+<li><p class="first">Just above the green area, we see several options for resolving the conflict:</p>
+<ol class="loweralpha">
+<li><p class="first"><strong>Accept Current Change</strong> keeps the green highlighted text and ignores
+the the text coming in from the other branch (the blue content). Clicking
+on this option causes the result:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/merge-conflict4.png"><img alt="Kept the changes made in the main branch." src="../../_images/merge-conflict4.png" style="width: 60%;" /></a>
+</div>
+</li>
+<li><p class="first"><strong>Accept Incoming Change</strong> keeps the blue highlighted text and uses it to
+replace the green content. The work from the incoming branch overrides
+the current one. Clicking on this option causes the result:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/merge-conflict5.png"><img alt="Kept the changes made in the make-conflict branch." src="../../_images/merge-conflict5.png" style="width: 60%;" /></a>
+</div>
+</li>
+<li><p class="first"><strong>Accept Both Changes</strong> combines all of the changes. The incoming content
+gets inserted just after the existing lines. Clicking on this option
+causes the result:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/merge-conflict6.png"><img alt="Kept the changes made in both branches." src="../../_images/merge-conflict6.png" style="width: 60%;" /></a>
+</div>
+</li>
+<li><p class="first"><strong>Compare Changes</strong> sets up a side-by-side comparison of the overlapping
+lines. You might find this view helpful at times.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/merge-conflict7.png"><img alt="Side by side view of the changes made in each branch." src="../../_images/merge-conflict7.png" style="width: 80%;" /></a>
+</div>
+</li>
+</ol>
+</li>
+<li><p class="first">Choose one of the <code class="docutils literal notranslate"><span class="pre">Accept</span></code> options, then save. Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to check
+the state of the branch, then <code class="docutils literal notranslate"><span class="pre">add</span></code> and <code class="docutils literal notranslate"><span class="pre">commit</span></code> to the repo.</p>
+</li>
+</ol>
+<p>Congratulations! You just fixed your first merge conflict.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log
+commit 47f150deb908f93cc0161fd4bc5f3a4374cb29e3
+Merge: ffc3860 2c5619e
+Author: Conflict Resolver &lt;student@schoolname.edu&gt;
+Date:   Thu Oct 29 10:18:47 2020 -0500
+
+   Resolved first merge conflict.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="avoiding-conflicts">
+<h2><span class="section-number">18.5.4. </span>Avoiding Conflicts<a class="headerlink" href="#avoiding-conflicts" title="Permalink to this headline">¶</a></h2>
+<p>Git happens. Merge conflicts will pop up, but they’re not a big deal. Still,
+the best way to handle them is to try to avoid them in the first place. Here
+are some tips:</p>
+<ol class="arabic simple">
+<li>Deal with any uncommitted work before trying to merge.</li>
+<li>Try to avoid working on the same file, at the same time, in two different
+branches.</li>
+<li>Try to avoid adding code directly into <code class="docutils literal notranslate"><span class="pre">main</span></code>. New ideas should be
+explored in a different branch first and then merged.</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">18.5.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log
+  feature
+  main
+* test
+</pre></div>
+</div>
+<p>A programmer is on the branch <code class="docutils literal notranslate"><span class="pre">test</span></code> and wants to merge <code class="docutils literal notranslate"><span class="pre">feature</span></code> into
+<code class="docutils literal notranslate"><span class="pre">main</span></code>. What should they enter in the terminal? Assume that the status
+for all branches is clean.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout feature</code>, then <code class="pre">git merge main</code>.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git checkout main</code>, then <code class="pre">git merge feature</code>.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout main</code>, then <code class="pre">git merge test</code>.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git checkout feature</code>, then <code class="pre">git merge test</code>.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Just <code class="pre">git checkout feature</code>.</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="branches.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.4. </span>Branching Out</a></li>
+        
+        
+        <li class="next"><a href="git-tips.html"><span class="section-number">18.6. </span>Git Tips <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/merge.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

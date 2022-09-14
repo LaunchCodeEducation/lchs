@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.4. Routes &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.5. HTML Templates" href="form-template.html" />
+    <link rel="prev" title="21.3. Your First Flask App" href="first-flask-app.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.4. </span>Routes</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="routes">
+<span id="flask-routes"></span><h1><span class="section-number">21.4. </span>Routes<a class="headerlink" href="#routes" title="Permalink to this headline">¶</a></h1>
+<p id="index-0"><strong>Routing</strong> manages the flow of data within a network. For example, when a
+server receives a form request, it needs to know where to send the information
+and how to handle the response. Proper routing helps control this process.</p>
+<p>In the case of Flask applications, different HTTP requests trigger different
+functions in the Python program. Let’s take a closer look at how this works
+with <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code>.</p>
+<div class="section" id="server-ip-address">
+<h2><span class="section-number">21.4.1. </span>Server IP Address<a class="headerlink" href="#server-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>When we launch a Flask application, it starts a server on our machine. This
+server gets its own IP address: <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>, which is actually the address of
+our computer.</p>
+<p>Network servers listen for HTTP connections on a specific <em>port</em>. To keep
+things simple, Flask defaults to a port that is freely available on our machine
+(<code class="docutils literal notranslate"><span class="pre">5000</span></code> in this case). Other ports can be used, but they may require
+passwords or other security features. For this course, we won’t change the
+default setting.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you need a quick review, we broke down the different parts of a web
+address in the <a class="reference internal" href="../http/web-addresses.html#web-addresses"><span class="std std-ref">HTTP chapter</span></a>.</p>
+</div>
+<p>When we open a tab in our browser and enter the address
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code>, we send a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the Flask server. When
+the server receives that request, our Python program jumps into action. The
+<code class="docutils literal notranslate"><span class="pre">hello()</span></code> function runs and returns a string. The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in the
+function is the <em>response</em> to the <code class="docutils literal notranslate"><span class="pre">GET</span></code> request. Flask sends the response
+from its server to our browser. This generates the content we see on the page
+(e.g. <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Flask!</span></code>).</p>
+<div class="figure align-default" id="id1">
+<img alt="The request/response flow between the local client and server." src="../../_images/flask-cycle.png" />
+<p class="caption"><span class="caption-text">The request/response cycle between the browser and Flask server.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>How does Flask know what data to send back from the server? This is why we
+include the <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> decorator. The argument inside the parentheses
+corresponds to a specific URL. When the sever receives a request with that web
+address, it runs the function immediately below the decorator. In our simple
+Flask application, this is the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">We use <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> in our code instead of
+<code class="docutils literal notranslate"><span class="pre">&#64;app.route('127.0.0.1:5000')</span></code>. The <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol is an abbreviation. It
+stands for the address of the server. Even if the IP address for the server
+changes, Flask will automatically use the proper URL.</p>
+</div>
+</div>
+<div class="section" id="paths">
+<h2><span class="section-number">21.4.2. </span>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned before, the <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> decorator links a specific URL to one
+Python function. The best way to see what this means is to do some live coding.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p class="first">If your <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program is not currently running, launch it again
+from the terminal. Make sure you see the most recent content in your
+browser.</p>
+<div class="figure align-default" id="id2">
+<img alt="A page with an h1 heading and a &quot;New Number&quot; button." src="../../_images/flask-form.png" />
+<p class="caption"><span class="caption-text">Where we left off on the last page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">In the address bar, change the URL to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code> and
+tap <em>Enter</em>. Note the <em>Not Found</em> error that appears. The message
+explains that the URL you entered isn’t recognized by the server.</p>
+<div class="figure align-default">
+<img alt="Not Found: The URL in the address bar is not recognized by the server." src="../../_images/page-not-found.png" />
+</div>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, change the decorator as follows:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save the code, then refresh the page in your browser. Properly done, you
+should once again see the heading and button.</p>
+</li>
+</ol>
+<p class="last">Let’s think about what just happened.</p>
+</div>
+<p>Recall that URLs can include a <em>path</em> as part of the address. The path consists
+of one or more names separated by <code class="docutils literal notranslate"><span class="pre">/</span></code>. The URL
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code> includes the IP address for the server AND a
+path to follow.</p>
+<p>When you entered <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code> in the address bar, you sent a
+different <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server. You still asked for data, but this
+time you told the server to look inside a directory called <code class="docutils literal notranslate"><span class="pre">hello</span></code>.</p>
+<p>The decorator <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> tells Flask, <em>When a GET request comes for
+127.0.0.1:5000, run the hello() function</em>. However, there is nothing in the
+Python code that recognizes the address <code class="docutils literal notranslate"><span class="pre">127.0.0.1:5000/hello</span></code>. When the
+server receives that request, Flask scans the Python program for a matching
+decorator. Since it doesn’t find one, it returns the <em>Not Found</em> error message.</p>
+<p>By changing <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> to <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/hello')</span></code>, we fixed the
+mismatch. However, this came with a cost.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">Return to your browser and enter <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> in the address
+bar. What happens?</p>
+</div>
+<p>Navigating to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> triggers the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code>
+decorator. Unfortunately, we removed that reference when we replaced <code class="docutils literal notranslate"><span class="pre">'/'</span></code>
+with <code class="docutils literal notranslate"><span class="pre">'/hello'</span></code>.</p>
+<p>This might sound like a picky syntax, but it is actually quite useful. It lets
+us tie specific HTTP requests to specific actions. By adding more <em>routes</em> to
+the Python code, we can make our program respond to more than one URL.</p>
+</div>
+<div class="section" id="add-a-second-page">
+<h2><span class="section-number">21.4.3. </span>Add a Second Page<a class="headerlink" href="#add-a-second-page" title="Permalink to this headline">¶</a></h2>
+<p>Take a moment to run through the usual <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status/add/commit</span></code> sequence.
+Next, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to create a new branch in the repository.</p>
+<p>In the new branch, our code looks something like this:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+   <span class="n">page</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">      &lt;h1&gt;Here&#39;s a random number: </span><span class="si">{0}</span><span class="s2">&lt;/h1&gt;</span>
+<span class="s2">      &lt;form&gt;</span>
+<span class="s2">         &lt;button&gt;New Number&lt;/button&gt;</span>
+<span class="s2">      &lt;/form&gt;</span>
+<span class="s2">   &quot;&quot;&quot;</span>
+   <span class="n">num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">page</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function runs only when the server receives a request with the
+<code class="docutils literal notranslate"><span class="pre">/hello</span></code> path at the end of the URL. However, we can easily assign more than
+one address to the same function.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> decorator before the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+   <span class="c1"># Function code here...</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save the code, then launch the program.</p>
+</li>
+<li><p class="first">Confirm that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
+produce no errors when entered in the address bar.</p>
+</li>
+</ol>
+<p class="last"><strong>Key idea</strong>: Multiple URLs can trigger the same Python function.</p>
+</div>
+<p>Now let’s add another function to our Python code.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p class="first">Open up some space between the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">app.run()</span></code>
+conditional.</p>
+</li>
+<li><p class="first">Add this new decorator and function:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/goodbye&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">goodbye</span><span class="p">():</span>
+   <span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&lt;h2&gt;This is the second page!&lt;/h2&gt;&quot;</span>
+   <span class="k">return</span> <span class="n">message</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save the code, then refresh the page in the browser.</p>
+</li>
+<li><p class="first">Type <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/goodbye</span></code> into the address bar. Do you see
+the new message?</p>
+</li>
+<li><p class="first">Verify that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
+show the original content.</p>
+</li>
+</ol>
+<p class="last"><strong>Key idea</strong>: We can control a multi-page website by adding different
+functions and routes to the Python program.</p>
+</div>
+<p>Nice! We just created a two-page website that responds to three different URLs.
+We can switch between the pages in our project by changing the URL in the
+address bar. Right now, we have to do this manually. However, we will soon
+learn a better way to flip between pages.</p>
+</div>
+<div class="section" id="more-practice">
+<h2><span class="section-number">21.4.4. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Remember that the server and your application are both running locally. Only
+<em>you</em> can see your live webpage.</p>
+</div>
+<ol class="arabic simple">
+<li>First, save and commit your work.</li>
+<li>Code a third function in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. It should return a different string
+compared to the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> and <code class="docutils literal notranslate"><span class="pre">goodbye()</span></code> functions.</li>
+<li>Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/third_page')</span></code> decorator before your new function.</li>
+<li>Save the code, then refresh the page in your browser. Enter
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/third_page</span></code> in the address bar to make sure your
+changes work.</li>
+<li>Flip between the three pages in your website by changing the URL.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>You will often see that the argument inside <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> matches the
+name of the function below it (e.g. <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/hello')</span></code> placed just
+above <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">hello():</span></code>).</p>
+<p class="last">Matching the path and function names is NOT required, but doing so helps you
+organize your code. For example, looking at the path in a URL tells you
+which function controls its content.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">21.4.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume we modify the functions in our program:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hi&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hi</span><span class="p">():</span>
+   <span class="k">return</span> <span class="s2">&quot;Hi!&quot;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hi/status&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">status</span><span class="p">():</span>
+   <span class="k">return</span> <span class="s2">&quot;How are you?&quot;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hi/status/bye&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">bye</span><span class="p">():</span>
+   <span class="k">return</span> <span class="s2">&quot;Bye!&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>In the browser, we enter the URL <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hi/status/bye</span></code>.
+Which function will run in response?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">hi()</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">status()</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">bye()</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> None of them.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> All of them.</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="first-flask-app.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.3. </span>Your First Flask App</a></li>
+        
+        
+        <li class="next"><a href="form-template.html"><span class="section-number">21.5. </span>HTML Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/routes.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

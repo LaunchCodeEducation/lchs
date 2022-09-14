@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.4. Navigating the Terminal Window &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16.5. How to Do Stuff in the Terminal" href="basic-commands.html" />
+    <link rel="prev" title="16.3. Filesystem and Paths" href="filesystem-and-paths.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">16. </span>Terminal</a></li>
+    <li class="active"><span class="section-number">16.4. </span>Navigating the Terminal Window</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="navigating-the-terminal-window">
+<h1><span class="section-number">16.4. </span>Navigating the Terminal Window<a class="headerlink" href="#navigating-the-terminal-window" title="Permalink to this headline">¶</a></h1>
+<p>Moving from a GUI to a CLI can be tricky because we are used to dragging our
+files from one folder to another. The first skill we need to practice is how to
+figure out where we are in the filesystem!</p>
+<p>On the previous page, we used <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to print the path to our current
+directory. However, we can also find clues inside the terminal prompt:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Mac
+   device_name:directory_name username$
+
+Windows
+   username@device_name MINGW64 path$
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">directory_name</span></code> and <code class="docutils literal notranslate"><span class="pre">path</span></code> tell us our location in the system. As we enter
+commands, <code class="docutils literal notranslate"><span class="pre">device_name</span></code> and <code class="docutils literal notranslate"><span class="pre">username</span></code> stay the same. However, <code class="docutils literal notranslate"><span class="pre">path</span></code> and
+<code class="docutils literal notranslate"><span class="pre">directory_name</span></code> change.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">In the remaining terminal examples, we will just display the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol
+from the prompt.</p>
+</div>
+<div class="section" id="moving-between-directories">
+<h2><span class="section-number">16.4.1. </span>Moving Between Directories<a class="headerlink" href="#moving-between-directories" title="Permalink to this headline">¶</a></h2>
+<p>We often need to move between directories in the file system. The command
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> (for <em>change directory</em>) allows us to do this. The general syntax is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd new_directory
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">new_directory</span></code> is the path for where we want to be. We do NOT need to
+indicate our current location.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s assume we want to move from our current location in the file tree
+(<code class="docutils literal notranslate"><span class="pre">Photos</span></code>) to <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>.</p>
+<div class="figure align-default">
+<img alt="File tree with &quot;Photos&quot; marked as the current directory and &quot;Chemistry&quot; marked as the target." src="../../_images/cd-tree.png" />
+</div>
+<p>The terminal command to make this move appears on line 3:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/MyLaptop/Photos
+$ <span class="nb">cd</span> /MyLaptop/School/Chemistry
+$ <span class="nb">pwd</span>
+/MyLaptop/School/Chemistry
+</pre></div>
+</td></tr></table></div>
+<p class="last">In this case, we included <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to show our starting and ending locations.
+However, these commands were not necessary for the move.</p>
+</div>
+<div class="section" id="navigation-shortcuts">
+<h3><span class="section-number">16.4.1.1. </span>Navigation Shortcuts<a class="headerlink" href="#navigation-shortcuts" title="Permalink to this headline">¶</a></h3>
+<p>When moving through a file tree, we often only need to move up or down one
+level. For quick changes like this, we don’t need to type out a full path.</p>
+<div class="admonition-examples admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p>Let’s say we want to move up one level from <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> to <code class="docutils literal notranslate"><span class="pre">School</span></code>.
+Instead of typing out the entire absolute path, we can use a terminal
+shortcut!</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/MyLaptop/School/Chemistry
+$ <span class="nb">cd</span> ..
+$ <span class="nb">pwd</span>
+/MyLaptop/School
+</pre></div>
+</td></tr></table></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> shortcut tells the terminal, <em>From the current directory, move
+up one level</em>.</p>
+<p>To move down one level from a parent directory into a subdirectory, the
+path syntax is <code class="docutils literal notranslate"><span class="pre">./directory_name</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/MyLaptop/School
+$ <span class="nb">cd</span> ./LCHS
+$ <span class="nb">pwd</span>
+/MyLaptop/School/LCHS
+</pre></div>
+</td></tr></table></div>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">.</span></code> represents the path to the current directory. In this case, it
+stands for <code class="docutils literal notranslate"><span class="pre">/MyLaptop/School</span></code>. The command on line 3 tells the terminal,
+<em>From the current directory, move into the LCHS subdirectory</em>.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">..</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code> shortcuts can also be part of a longer path. For example,
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../..</span></code> moves us up two levels from our current directory, while
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./directory_name/other_directory_name</span></code> moves us down two levels.</p>
+</div>
+</div>
+<div class="section" id="feedback">
+<h2><span class="section-number">16.4.2. </span>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+<p>Another big difference between a GUI and a CLI involves the amount of feedback
+we receive. With a GUI, we can see when we move, create, or delete a file. An
+icon appears, moves, or disappears as we perform the action. Sometimes a window
+even pops up to give us more information.</p>
+<div class="figure align-default" id="id1">
+<img alt="Dialog box asking if we really want to empty the trash." src="../../_images/empty-trash.png" />
+<p class="caption"><span class="caption-text">A GUI provides visual feedback.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The terminal rarely displays an output to let us know when a change occurs. We
+need to keep an eye on the prompt and be more deliberate about checking the
+results of our commands.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">16.4.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>Use this file tree to help answer the following questions:</p>
+<div class="figure align-default">
+<img alt="File tree with &quot;Homework&quot; marked as the current directory and &quot;Misc Docs&quot; marked as the target." src="../../_images/file-tree-cc.png" />
+</div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Assume we start in the <code class="docutils literal notranslate"><span class="pre">Homework</span></code> directory. In the terminal, we execute
+the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd ../..
+</pre></div>
+</div>
+<p>What is the path to our new location in the filesystem?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS/Homework</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop</span></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which TWO of the following terminal commands gets us from <code class="docutils literal notranslate"><span class="pre">Homework</span></code> to
+<code class="docutils literal notranslate"><span class="pre">Misc</span> <span class="pre">Docs</span></code>?</p>
+<div class="last"><ol type="a">
+   <li><span id = "A2" onclick="highlight('A2', true)">cd /MyLaptop/Desktop/MiscDocs</span></li>
+   <li><span id = "B2" onclick="highlight('B2', false)">cd /LCHS/School/MyLaptop/Desktop/MiscDocs</span></li>
+   <li><span id = "C2" onclick="highlight('C2', true)">cd ../../../Desktop/MiscDocs</span></li>
+   <li><span id = "D2" onclick="highlight('D2', false)">cd ./Desktop/MiscDocs</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="filesystem-and-paths.html"><span aria-hidden="true">&larr;</span> <span class="section-number">16.3. </span>Filesystem and Paths</a></li>
+        
+        
+        <li class="next"><a href="basic-commands.html"><span class="section-number">16.5. </span>How to Do Stuff in the Terminal <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/terminal/terminal-nav.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.5. How to Do Stuff in the Terminal &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16.6. Running Programs from the Terminal" href="running-programs.html" />
+    <link rel="prev" title="16.4. Navigating the Terminal Window" href="terminal-nav.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">16. </span>Terminal</a></li>
+    <li class="active"><span class="section-number">16.5. </span>How to Do Stuff in the Terminal</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="how-to-do-stuff-in-the-terminal">
+<span id="basic-terminal-commands"></span><h1><span class="section-number">16.5. </span>How to Do Stuff in the Terminal<a class="headerlink" href="#how-to-do-stuff-in-the-terminal" title="Permalink to this headline">¶</a></h1>
+<p>There are many commands we can use in the terminal to move through the
+filesystem of our computers. The list below shows some of the common actions
+programmers take.</p>
+<p>Clicking on a link in the table will lead to a <a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-commands-tutorial"><span class="std std-ref">tutorial</span></a>
+on how to use that command.</p>
+<table border="1" class="docutils align-default" id="id1">
+<caption><span class="caption-text">Basic Terminal Commands</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">ls</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-ls"><span class="std std-ref">Lists</span></a> all files and folders in the current
+directory.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">directory_path</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-cd"><span class="std std-ref">Change directory</span></a>. Navigates from the current
+directory to the new <code class="docutils literal notranslate"><span class="pre">directory_path</span></code>.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">pwd</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-pwd"><span class="std std-ref">Print working directory</span></a>. Prints the path of the
+current directory.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">folder_name</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-mkdir"><span class="std std-ref">Make directory</span></a>. Creates <code class="docutils literal notranslate"><span class="pre">folder_name</span></code> inside
+the current directory.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">new_filename</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-touch"><span class="std std-ref">Creates a file</span></a> called <code class="docutils literal notranslate"><span class="pre">new_filename</span></code> in the
+current directory.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">file_name</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-rm"><span class="std std-ref">Removes</span></a> <code class="docutils literal notranslate"><span class="pre">file_name</span></code> from the current directory.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">command</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-man"><span class="std std-ref">Manual</span></a>. Prints to the screen the manual pages for
+the <code class="docutils literal notranslate"><span class="pre">command</span></code>. This includes the proper syntax and a description of
+how that command works.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">clear</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-clear"><span class="std std-ref">Empties</span></a> the terminal window of old commands and
+output.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">source_path</span> <span class="pre">target_path</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-cp"><span class="std std-ref">Copies</span></a> the file or directory at <code class="docutils literal notranslate"><span class="pre">source_path</span></code> and
+puts it in the <code class="docutils literal notranslate"><span class="pre">target_path</span></code>.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">source_path</span> <span class="pre">target_path</span></code></td>
+<td><a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-mv"><span class="std std-ref">Moves</span></a> the file or directory at <code class="docutils literal notranslate"><span class="pre">source_path</span></code> from
+its current location to <code class="docutils literal notranslate"><span class="pre">target_path</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<ol class="last arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">rm</span></code> permanently deletes items from the computer. This action cannot be
+undone.</li>
+<li>Git Bash does not support <code class="docutils literal notranslate"><span class="pre">man</span></code>. Instead, <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">--help</span></code> provides
+a similar result.</li>
+</ol>
+</div>
+<p>Beyond these basic commands, there are some shortcuts we can use in place of
+typing out a full path or directory name.</p>
+<table border="1" class="colwidths-auto docutils align-default" id="id2">
+<caption><span class="caption-text">Directory Shortcuts</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Shortcut</th>
+<th class="head">Where it goes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">~</span></code></td>
+<td>The Home directory</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">.</span></code></td>
+<td>The current directory</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">..</span></code></td>
+<td>The parent directory of the current directory</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If we type the first few letters of a directory name and tap the <em>Tab</em> key,
+the terminal will often automatically complete the name for us!</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ ls
+homework       really_long_directory_name
+README.md      docs
+$ cd re  &lt;-- Tap the Tab key
+$ cd really_long_directory_name  &lt;-- Presto!
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">16.5.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which terminal command deletes a file completely from the computer?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">cp</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">rm</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">mv</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">del</span></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which shortcut takes you to the parent directory?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">..</span></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">~</span></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">.</span></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="terminal-nav.html"><span aria-hidden="true">&larr;</span> <span class="section-number">16.4. </span>Navigating the Terminal Window</a></li>
+        
+        
+        <li class="next"><a href="running-programs.html"><span class="section-number">16.6. </span>Running Programs from the Terminal <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/terminal/basic-commands.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

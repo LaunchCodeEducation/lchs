@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.1. Background &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.2. What is HTML?" href="html-intro.html" />
+    <link rel="prev" title="14. We Built The Internet on HTML" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">14. </span>We Built The Internet on HTML</a></li>
+    <li class="active"><span class="section-number">14.1. </span>Background</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="background">
+<h1><span class="section-number">14.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h1>
+<p>When programmers make websites, they want their pages to be beautiful,
+interactive, and fun. Python allows us to control the logic for a website
+behind the scenes, but it does not do much to define the structure and
+appearance of a web page.</p>
+<p>In the next two chapters, we will learn about HTML and CSS. These are the two
+most common languages for organizing content and making it look beautiful.</p>
+<p>Before jumping in to learn HTML and CSS, we need to first understand how web
+pages appear on screens.</p>
+<div class="section" id="the-internet-vs-the-web">
+<span id="internet-vs-web"></span><h2><span class="section-number">14.1.1. </span>The Internet vs. The Web<a class="headerlink" href="#the-internet-vs-the-web" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">We often hear the phrase “connected to the internet”, but what does this
+actually mean?</p>
+<p>At the most basic level, the internet is just a wire.</p>
+<p>Picture all of the computers, tablets, phones, etc. that get used at your
+school. All these devices form a <strong>network</strong> when they connect to each other
+via WiFi or cables. Devices on the same network can communicate with each other
+and exchange data.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Even just two devices linked together form a network.</p>
+</div>
+<p>Different schools, businesses, homes, libraries, coffee shops, etc. all create
+their own separate networks. If we connect two of these, say a school and a
+library, then devices from one network can communicate with devices on the
+other. If we add another network to the school-library connection, then we
+increase the resources available to all of the devices in all of the networks.</p>
+<p>When a network includes a device that can communicate with the outside world,
+then it can join forces with others. All of these different networks, connected
+together, form the <strong>internet</strong>.</p>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p><em>Inter</em> is a prefix that means “between two groups”. <em>Net</em> stands for
+“network”.</p>
+<p class="last">Thus, the internet is the connection between networks.</p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/internet-as-wire.png"><img alt="Think of the internet as a wire that connects different networks together." src="../../_images/internet-as-wire.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The internet is a network of networks.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The connections formed by the internet provide us with an amazing amount of
+information and ideas. However, we cannot walk up to a group of wires and ask,
+<em>What movies are opening this weekend?</em> We need something between us and the
+wires.</p>
+<div class="section" id="what-is-the-web">
+<h3><span class="section-number">14.1.1.1. </span>What is the Web?<a class="headerlink" href="#what-is-the-web" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>World Wide Web</strong> is one system we can use to interact with the internet.
+There are other options, but the <strong>web</strong> is the most common. It uses a specific
+programming language to move data between different networks. This <em>file
+transfer protocol</em> helps people all over the world request and share
+information.</p>
+<p>The web forms a smaller part of the whole internet. It is a collection of
+documents that are all formatted with a common structure and set of rules.
+These documents also connect to each other through a series of links embedded
+inside the files. However, the documents are not written in a way that is
+easily understood by non-coders.</p>
+<p>When we view a page in a browser, like Chrome, Firefox, or Safari, we use the
+web to access a portion of the internet. <strong>Browsers</strong> are programs that
+translate requests for data (like clicking a link about the
+<a class="reference external" href="https://www.webelements.com/" target="_blank">periodic table<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>) into the code machines use
+to communicate over the wires. This sets up a transfer of data between
+networks.</p>
+<p>When a browser receives a response to a request, it translates the data from
+the original, user-unfriendly form into something easy to look at on the
+screen. Browsers convert document code into something we recognize, and they
+also convert our actions into a language the machines understand.</p>
+<div class="figure align-default" id="id2">
+<img alt="A person uses browser software to interact with the web. The web contains linked documents that use a common format and data transfer code." src="../../_images/web-internet-connection.png" />
+<p class="caption"><span class="caption-text">Browsers allow users to search the web. The web consists of documents that
+link to each other and use the same formatting code.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>The internet is really just hardware and data - the machines and structures
+that store and transmit information. The web and browsers provide the software
+we use to access those machines and display the data in a useful way.</p>
+</div>
+</div>
+<div class="section" id="web-pages">
+<h2><span class="section-number">14.1.2. </span>Web Pages<a class="headerlink" href="#web-pages" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">A <strong>server</strong> is a machine that provides data to other devices. This includes
+data related to specific web pages. Somewhere, there is a machine that stores
+the information for the page you are looking at right now: the text, images,
+formatting, etc. However, this data is saved as <em>code</em>.</p>
+<p>You are viewing this web page in a browser. Behind the scenes, the program
+requested information from the server about this page, and it received some
+code as a response. The browser then executed that code to build the page you
+see on your screen.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">Right-click on this page and choose <em>View Page Source</em>. A tab should open
+in your browser showing the code used to create the clean page.</p>
+</div>
+<p>When you visit a web page in a browser, three main steps happen:</p>
+<ol class="arabic simple">
+<li>The browser sends a <strong>request</strong> to the server for the web page.</li>
+<li>The server <strong>responds</strong> with the code that makes up the web page.</li>
+<li>The browser receives the code and executes it. This displays the page in the
+browser window in a clean way.</li>
+</ol>
+<p>Looking at the <em>View Page Source</em> result, we see that the code for this web
+page is NOT Python. What language is it?</p>
+<p>Well, let’s take a look at HTML…</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14. </span>We Built The Internet on HTML</a></li>
+        
+        
+        <li class="next"><a href="html-intro.html"><span class="section-number">14.2. </span>What is HTML? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/html/background.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

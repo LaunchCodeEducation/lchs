@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.6. Boolean Functions &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.7. A Good Function-Writing Process" href="process.html" />
+    <link rel="prev" title="10.5. Function Output" href="function-output.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>What’s Your Function</a></li>
+    <li class="active"><span class="section-number">10.6. </span>Boolean Functions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="boolean-functions">
+<h1><span class="section-number">10.6. </span>Boolean Functions<a class="headerlink" href="#boolean-functions" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="boolean-function"></span><p id="index-0">A function that returns a boolean value (<code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>) is known as a
+<strong>boolean function</strong>. One simple example tests if an integer is even or odd.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_int_even</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">integer</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">return</span> <span class="kc">True</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Start the names of boolean functions with either <code class="docutils literal notranslate"><span class="pre">is</span></code> or <code class="docutils literal notranslate"><span class="pre">has</span></code>, which
+helps make their purpose more clear. For example, reading <code class="docutils literal notranslate"><span class="pre">is_int_even(4)</span></code>
+tells us that the function should answer the question: “Is the integer 4
+even?”</p>
+<p class="last">This convention is so widely used by programmers that it extends to nearly
+every language.</p>
+</div>
+<p>Let’s look at <code class="docutils literal notranslate"><span class="pre">is_int_even</span></code> again to see how we can use the power of
+<code class="docutils literal notranslate"><span class="pre">return</span></code> statements to make it even stronger.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">return</span></code> ends the function, we can leave out the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause and
+have the same effect. If <code class="docutils literal notranslate"><span class="pre">integer</span></code> is even, the return statement in line 3
+runs, and the function ends. If <code class="docutils literal notranslate"><span class="pre">integer</span></code> is odd, the <code class="docutils literal notranslate"><span class="pre">if</span></code> block gets
+skipped and the second return statement executes.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_int_even</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">integer</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="k">return</span> <span class="kc">True</span>
+
+   <span class="k">return</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>The updated version returns the same results as the original and contains less code.</p>
+<p>The function returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when the expression
+<code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, and the function returns <code class="docutils literal notranslate"><span class="pre">False</span></code> when
+<code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. In this case, the return value is <em>exactly
+the same</em> as the value of <code class="docutils literal notranslate"><span class="pre">integer</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code>. This means that we can
+simplify the function even more by returning the result of the expression!</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_int_even</span><span class="p">(</span><span class="n">integer</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">integer</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_int_even</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+<p>This version of <code class="docutils literal notranslate"><span class="pre">is_int_even</span></code> is better than the first two, not because it is
+shorter (shorter isn’t always better), but because it is simpler to read. We
+don’t have to break down the conditional logic to see what is being returned.</p>
+<p>Most boolean functions can be written so that they return the result of a
+boolean expression, rather than directly returning <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="section" id="try-it">
+<h2><span class="section-number">10.6.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Complete the <code class="docutils literal notranslate"><span class="pre">is_capitalized</span></code> function to return <code class="docutils literal notranslate"><span class="pre">True</span></code> if a string
+begins with a capital letter and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+<iframe src="https://trinket.io/embed/python3/92ac6b2101?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p><em>Hints</em>:</p>
+<ol class="last arabic simple">
+<li>How do you access the <em>first</em> character in a string?</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">in</span></code> operator will be useful, or you can try the <code class="docutils literal notranslate"><span class="pre">.isupper()</span></code>
+method.</li>
+</ol>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Complete the <code class="docutils literal notranslate"><span class="pre">is_answer_correct</span></code> function to return <code class="docutils literal notranslate"><span class="pre">True</span></code> if a user’s
+answer matches the correct response. The check should be <em>case-insensitive</em>.</p>
+<iframe src="https://trinket.io/embed/python3/e826e9a6f6?runOption=run" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p class="last">With the given answer pairs, the program should count 2 correct responses.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="function-output.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.5. </span>Function Output</a></li>
+        
+        
+        <li class="next"><a href="process.html"><span class="section-number">10.7. </span>A Good Function-Writing Process <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/functions/boolean-functions.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

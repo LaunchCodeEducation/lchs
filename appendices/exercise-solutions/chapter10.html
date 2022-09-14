@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 10: What’s Your Function &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 11: Python Modules" href="chapter11.html" />
+    <link rel="prev" title="Chapter 9: Errors and Debugging" href="chapter09.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 10: What’s Your Function</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-10-what-s-your-function">
+<h1>Chapter 10: What’s Your Function<a class="headerlink" href="#chapter-10-what-s-your-function" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/functions/exercises.html#functions-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/aeb2267502" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<span id="chp10parta"></span><h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-a-more-turtles">
+<h3>Part A: More Turtles<a class="headerlink" href="#part-a-more-turtles" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Use a loop and the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function we wrote
+<a class="reference internal" href="../../chapters/functions/function-output.html#draw-square-code"><span class="std std-ref">in this chapter</span></a>.
+Make each side 30 units long, and note that the turtle moves away from the
+last square.</p>
+<p>(Check the <a class="reference internal" href="../turtles/index.html#turtle-guide"><span class="std std-ref">Turtle Appendix</span></a> if you need to review the
+turtle methods).</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Turtle setup commands. Change these as you see fit!</span>
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+
+<span class="n">num_squares</span> <span class="o">=</span> <span class="mi">5</span>     <span class="c1"># Set the number of shapes to draw.</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">30</span>         <span class="c1"># Set the side length.</span>
+
+<span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_squares</span><span class="p">):</span>
+    <span class="n">draw_square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>    <span class="c1"># Draw one square.</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">penup</span><span class="p">()</span>                 <span class="c1"># Lift the pen.</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">length</span><span class="p">)</span>       <span class="c1"># Move to the next position.</span>
+    <span class="n">bob</span><span class="o">.</span><span class="n">pendown</span><span class="p">()</span>               <span class="c1"># Drop the pen.</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Define a new function called <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code> that
+takes 3 parameters—a turtle object, a number of sides, and the length of
+each side. Place the new function in the lines before
+<code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code>.</p>
+<p><em>Hint</em>: You drew polygons as part of the
+<a class="reference internal" href="../../chapters/loops/project.html#draw-polygon"><span class="std std-ref">Turtle Project</span></a> in the Loops chapter.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_polygon</span><span class="p">(</span><span class="n">turtle_name</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">side_length</span><span class="p">):</span>
+    <span class="n">turn_angle</span> <span class="o">=</span> <span class="mf">360.0</span><span class="o">/</span><span class="n">num_sides</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_sides</span><span class="p">):</span>
+        <span class="n">turtle_name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+        <span class="n">turtle_name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">turn_angle</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p>After you finish coding the function, replace the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function
+call in the loop with <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code> to produce a row of shapes.</p>
+<ol class="arabic" start="3">
+<li><p class="first">Write a function called <code class="docutils literal notranslate"><span class="pre">draw_sprite</span></code> that draws a figure. The function needs
+parameters for the turtle, the number of legs, and the length of the legs.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_sprite</span><span class="p">(</span><span class="n">turtle_name</span><span class="p">,</span> <span class="n">num_legs</span><span class="p">,</span> <span class="n">leg_length</span><span class="p">):</span>
+    <span class="n">turn_angle</span> <span class="o">=</span> <span class="mf">360.0</span><span class="o">/</span><span class="n">num_legs</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_legs</span><span class="p">):</span>
+        <span class="n">turtle_name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">leg_length</span><span class="p">)</span>
+        <span class="n">turtle_name</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">leg_length</span><span class="p">)</span>
+        <span class="n">turtle_name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">turn_angle</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>Call the function to create a sprite with 10 legs of length 115.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span>
+<span class="n">legs</span> <span class="o">=</span> <span class="mi">10</span>      <span class="c1"># Set the number of legs for the sprite.</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">115</span>   <span class="c1"># Set the length for each leg.</span>
+<span class="n">draw_sprite</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="n">legs</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>  <span class="c1"># Draw the sprite.</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p>Try It!</p>
+<p>Add a parameter to draw_polygon called fancy_corners. If True, then the function should call
+draw_sprite at each corner of the shape. Make the sprite legs half the length of each side.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># One possible solution:</span>
+<span class="k">def</span> <span class="nf">draw_fancy_polygon</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">side_length</span><span class="p">,</span> <span class="n">fancy_corners</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="n">turn_angle</span> <span class="o">=</span> <span class="mf">360.0</span><span class="o">/</span><span class="n">num_sides</span>
+    <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_sides</span><span class="p">):</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">fancy_corners</span><span class="p">:</span>
+            <span class="n">draw_sprite</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">num_sides</span><span class="p">,</span> <span class="n">side_length</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">turn_angle</span><span class="p">)</span>
+
+<span class="c1"># Call function</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
+<span class="n">sides</span> <span class="o">=</span> <span class="mi">6</span>      <span class="c1"># Set the number of legs for the polygon.</span>
+<span class="n">length</span> <span class="o">=</span> <span class="mi">100</span>   <span class="c1"># Set the length for each side.</span>
+<span class="c1"># Draw a polygon with sprites at each vertex.</span>
+<span class="n">draw_fancy_polygon</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="n">sides</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/functions/exercises.html#functions-turtle-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-b-return-values">
+<span id="chp10partb"></span><h3>Part B: Return Values<a class="headerlink" href="#part-b-return-values" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Write a <code class="docutils literal notranslate"><span class="pre">shift_case</span></code> function that takes a single string parameter and
+returns a different string. The function should loop through the string and
+change uppercase characters to lowercase, and lowercase to uppercase.</p>
+<p>For example, for the argument <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code>, the function returns
+<code class="docutils literal notranslate"><span class="pre">'hELLO,</span> <span class="pre">wORLD!'</span></code>.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">shift_case</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>
+    <span class="n">shifted_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">a_string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
+            <span class="n">shifted_string</span> <span class="o">+=</span> <span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">shifted_string</span> <span class="o">+=</span> <span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">shifted_string</span>
+
+<span class="c1"># Call the shift_case() function and assign the returned value to result.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">shift_case</span><span class="p">(</span><span class="s1">&#39;Python ROCKS!&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># Fun Fact: Python has a string method that does the same thing!</span>
+<span class="c1"># def shift_case(a_string):</span>
+<span class="c1">#     return a_string.swapcase()</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Write a function <code class="docutils literal notranslate"><span class="pre">make_line(num_chars,</span> <span class="pre">symbol)</span></code> that returns a line with
+exactly <code class="docutils literal notranslate"><span class="pre">num_chars</span></code> symbols. <code class="docutils literal notranslate"><span class="pre">num_chars</span></code> will be an integer, and
+<code class="docutils literal notranslate"><span class="pre">symbol</span></code> will be a character. Note that the function must <em>RETURN</em> a
+string, not print it!</p>
+<p>If the function call does not provide an argument for <code class="docutils literal notranslate"><span class="pre">symbol</span></code>, use the
+default character <code class="docutils literal notranslate"><span class="pre">'#'</span></code>.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_line</span><span class="p">(</span><span class="n">num_chars</span><span class="p">,</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">symbol</span><span class="o">*</span><span class="n">num_chars</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">make_line</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;T&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">make_line</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Add a function called <code class="docutils literal notranslate"><span class="pre">make_rectangle</span></code> that returns a rectangle string with
+a given width, height, and symbol. The function should NOT print each row of
+the rectangle. Instead, it must return a single string that contains the
+entire rectangle shape.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Call your make_line function to create each row of the rectangle string.</span>
+<span class="c1">#The newline character, \n, will be helpful to you.</span>
+<span class="c1">#Do NOT include a newline character at the end of your string.</span>
+<span class="c1">#Use # as the default symbol.</span>
+
+<span class="c1">#One possible solution</span>
+<span class="k">def</span> <span class="nf">make_rectangle</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span><span class="p">):</span>
+    <span class="n">rectangle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="n">rectangle</span> <span class="o">+=</span> <span class="n">make_line</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">make_rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">make_rectangle</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/functions/exercises.html#make-line"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="bonus-exercises">
+<span id="chp10partbonus"></span><h3>Bonus Exercises<a class="headerlink" href="#bonus-exercises" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">draw_spiral</span></code> function to one of the turtle editors to produce
+either of the following shapes. <em>Hint</em>: The function needs a turtle, an
+angle, a starting line length and the number of lines to draw.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="c1"># Start at the center and expand outward.</span>
+<span class="c1"># One possible solution.</span>
+
+<span class="k">def</span> <span class="nf">draw_spiral</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">start_length</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
+    <span class="c1"># turn takes values 0, 1, 2... lines-1.</span>
+    <span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
+        <span class="c1"># Each line is 5 pixels longer than the previous one.</span>
+        <span class="c1">#What happens if you change 5 to 3, or 7? Play around!</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">start_length</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">turn</span><span class="p">)</span>
+        <span class="n">name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="c1"># Turtle setup commands. Change these as you see fit!</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s2">&quot;tomato&quot;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
+
+<span class="c1"># Arguments for the spiral. Play with these!</span>
+<span class="n">turn_angle</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">first_line_length</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">num_lines</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="c1"># Call the function:</span>
+<span class="n">draw_spiral</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="n">turn_angle</span><span class="p">,</span> <span class="n">first_line_length</span><span class="p">,</span> <span class="n">num_lines</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+<li><p class="first">Add functions to the editor in part B, exercise 6 to produce any of the
+following shapes:</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1">##</span>
+<span class="c1">###</span>
+<span class="c1">####</span>
+<span class="c1">#####</span>
+
+<span class="k">def</span> <span class="nf">make_downward_stairs</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span><span class="p">):</span>
+    <span class="n">stairs</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="c1"># row takes values 0, 1, 2, ... height-1.</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="c1"># The number of symbols is 1 larger than the row number (0 --&gt; 1, 1 --&gt; 2, etc.)</span>
+        <span class="n">stairs</span> <span class="o">+=</span> <span class="n">symbol</span><span class="o">*</span><span class="p">(</span><span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="c1"># Add an new line unless its the last row</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">!=</span> <span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">stairs</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">stairs</span>
+
+    <span class="c1"># call your function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">make_downward_stairs</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+
+    <span class="c1">##</span>
+   <span class="c1">####</span>
+  <span class="c1">######</span>
+ <span class="c1">########</span>
+<span class="c1">##########</span>
+
+    <span class="k">def</span> <span class="nf">make_pyramid</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">symbol</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span><span class="p">):</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="c1"># The triangle starts with 2 symbols in the top row.</span>
+        <span class="c1"># Each successive row has 2 more symbols than the previous one.</span>
+        <span class="c1"># The number of symbols = 2*(row + 1). (Where row = 0, 1, 2, ...)</span>
+
+        <span class="c1"># The rows are centered relative to each other. This means that all but the</span>
+        <span class="c1"># bottom row need spaces before the first symbol.</span>
+        <span class="c1"># For a 2-row figure, the top line would need 1 space.</span>
+        <span class="c1"># For a 3-row figure, the top line needs 2 spaces, etc.</span>
+        <span class="c1"># Thus, the number of spaces ranges from 0 (bottom) to height - 1 (top).</span>
+
+        <span class="c1"># row = 0, 1, 2, ... height - 1.</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+            <span class="c1"># Calculate the number of spaces required.</span>
+            <span class="n">num_spaces</span> <span class="o">=</span> <span class="n">height</span> <span class="o">-</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="c1"># Calculate the number of symbols needed.</span>
+            <span class="n">num_symbols</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># Create a string with the calculated number of spaces and symbols,</span>
+            <span class="c1"># then add it to shape.</span>
+            <span class="n">shape</span> <span class="o">+=</span> <span class="n">num_spaces</span><span class="o">*</span><span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">num_symbols</span><span class="o">*</span><span class="n">symbol</span>
+            <span class="c1"># Add a newline for every row except the last one.</span>
+            <span class="k">if</span> <span class="n">row</span> <span class="o">!=</span> <span class="n">height</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">shape</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+        <span class="k">return</span> <span class="n">shape</span>
+
+    <span class="c1"># call your function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">make_pyramid</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">)))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/functions/exercises.html#functions-bonus-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter09.html"><span aria-hidden="true">&larr;</span> Chapter 9: Errors and Debugging</a></li>
+        
+        
+        <li class="next"><a href="chapter11.html">Chapter 11: Python Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter10.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

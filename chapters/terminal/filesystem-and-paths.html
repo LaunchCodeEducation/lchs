@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16.3. Filesystem and Paths &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="16.4. Navigating the Terminal Window" href="terminal-nav.html" />
+    <link rel="prev" title="16.2. What is a Terminal?" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">16. </span>Terminal</a></li>
+    <li class="active"><span class="section-number">16.3. </span>Filesystem and Paths</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="filesystem-and-paths">
+<h1><span class="section-number">16.3. </span>Filesystem and Paths<a class="headerlink" href="#filesystem-and-paths" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">A <strong>filesystem</strong> on a computer controls how data is stored and retrieved on the
+device. One important job of the system is to organize data in a series of
+files and folders.</p>
+<p>Inside a filesystem, folders are called <strong>directories</strong>. Folders nested inside
+other folders are called <strong>subdirectories</strong>. Folders that store others are
+called <strong>parent directories</strong>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">Most of us have a <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> folder on our computers. If there is a folder
+on our Desktop called <code class="docutils literal notranslate"><span class="pre">LCHS_Homework</span></code>, then the parent directory is
+<code class="docutils literal notranslate"><span class="pre">Desktop</span></code> and the subdirectory is <code class="docutils literal notranslate"><span class="pre">LCHS_Homework</span></code>.</p>
+</div>
+<p>Computer file systems start with one top-level directory that holds everything
+else on the machine. This is called the <strong>root directory</strong>. In most cases, the
+root directory refers to the primary hard drive. For Windows, that’s the
+<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">drive</span></code>. On a Mac, we refer to the root directory with <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<p id="index-1">A <strong>path</strong> for files and folders is the list of directories that the computer
+must follow to find a particular item. This begins with the root directory and
+ends with the name of the required item. Think of a path as a set of directions
+to get from point A to point B.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Open the terminal on your device. The window won’t show much, but the
+last line of text will include a prompt similar to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Mac
+   device_name:directory_name username$
+
+Windows
+   username@device_name MINGW64 path$
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">device_name</span></code> is the name for your machine, like <code class="docutils literal notranslate"><span class="pre">MyLaptop</span></code>.
+<code class="docutils literal notranslate"><span class="pre">directory_name</span></code> and <code class="docutils literal notranslate"><span class="pre">path</span></code> show your current location in the file
+system. <code class="docutils literal notranslate"><span class="pre">username</span></code> is you. <code class="docutils literal notranslate"><span class="pre">MINGW64</span></code> you can ignore.</p>
+<p>The symbol that appears after your username can vary (<code class="docutils literal notranslate"><span class="pre">$</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, etc.), but it indicates where to type commands.</p>
+</li>
+<li><p class="first">At the prompt, type the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and tap <em>Enter</em>.</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">working</span> <span class="pre">directory</span></code>. The output shows the path
+from the root directory to your current location in the file system. For
+example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/Users/mjordan/lchs/projects
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<p>File systems use two different types of paths: <em>absolute</em> and <em>relative</em>.
+The <strong>absolute path</strong> starts at the root directory and ends with the file name.
+The <strong>relative path</strong> starts at the current directory and ends with the file
+name.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s assume we have a file inside the <code class="docutils literal notranslate"><span class="pre">LCHS_Homework</span></code> directory called
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. The absolute path would look something like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mac:
+/Users/StudentName/Desktop/LCHS_Homework/hello.py
+
+Windows:
+C:\windows\Desktop\LCHS_Homework\hello.py
+</pre></div>
+</div>
+<p>If we are currently in the <code class="docutils literal notranslate"><span class="pre">Desktop</span></code> directory, then the relative path for
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code> is:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Mac:
+/LCHS_Homework/hello.py
+
+Windows:
+\LCHS_Homework\hello.py
+</pre></div>
+</div>
+</div>
+<p>Many programmers use paths to navigate through the filesystem in the terminal.
+We will practice this in the next section.</p>
+<p>As we work with the CLI more, paying attention to correct file paths becomes
+very important!</p>
+<div class="section" id="picture-this">
+<h2><span class="section-number">16.3.1. </span>Picture This<a class="headerlink" href="#picture-this" title="Permalink to this headline">¶</a></h2>
+<p id="index-2">Computers are basically file storage systems. Sure, they have many applications
+installed, but where do these programs live? In directories, of course!</p>
+<p><strong>File trees</strong> help us see the structure of the filesystem. They show the
+connections between different files and directories. We see them all the time
+when we open a window on our computer. For example:</p>
+<div class="figure align-default" id="id1">
+<img alt="File tree showing the contents of a &quot;Library&quot; folder." src="../../_images/library-file-tree.png" />
+<p class="caption"><span class="caption-text">This file tree shows two levels of subfolders in the Library directory.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The amount of indentation tells us which directories are at the same level
+(<code class="docutils literal notranslate"><span class="pre">Application</span> <span class="pre">Support</span></code> and <code class="docutils literal notranslate"><span class="pre">Audio</span></code>). It also helps us spot the
+subdirectories nested within a particular folder.</p>
+<p>The terminal gives us one way to navigate these directories. Let’s use another
+file tree to help us visualize what a path represents.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/laptop-file-tree1.png"><img alt="File tree showing subdirectories and files inside the &quot;MyLaptop&quot; folder." src="../../_images/laptop-file-tree1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">A path provides directions for moving through the file tree.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>In this diagram, <code class="docutils literal notranslate"><span class="pre">MyLaptop</span></code> represents the parent directory. Subdirectories
+that are at the same level in the filesystem appear in the same row.</p>
+<p>Now imagine that we are standing inside of the file tree. A <em>path</em> gives us a
+map to follow to find a particular file or directory. For example, the path for
+the <code class="docutils literal notranslate"><span class="pre">cake.jpg</span></code> file is <code class="docutils literal notranslate"><span class="pre">/MyLaptop/Photos/cake.jpg</span></code>. If we are standing
+inside the <code class="docutils literal notranslate"><span class="pre">MyLaptop</span></code> folder, the path tells us, <em>Move into the Photos
+subdirectory and look around. You should see a file called ‘cake.jpg’.</em></p>
+<p>For the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file, the path is
+<code class="docutils literal notranslate"><span class="pre">/MyLaptop/School/LCHS/Homework/hello.py</span></code>. This map tells us, <em>Start in the
+MyLaptop directory. Move into the School folder, then the LCHS folder, then the
+Homework folder. Look around to find a file called ‘hello.py’.</em></p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> <span class="section-number">16.2. </span>What is a Terminal?</a></li>
+        
+        
+        <li class="next"><a href="terminal-nav.html"><span class="section-number">16.4. </span>Navigating the Terminal Window <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/terminal/filesystem-and-paths.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

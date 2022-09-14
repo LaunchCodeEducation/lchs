@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Turtles &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Moving Turtles" href="moving-turtles.html" />
+    <link rel="prev" title="What are Python Turtles?" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Python Turtles</a></li>
+    <li class="active">Creating Turtles</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="creating-turtles">
+<h1>Creating Turtles<a class="headerlink" href="#creating-turtles" title="Permalink to this headline">¶</a></h1>
+<p>Let’s write some lines of Python code to create a new turtle and make it draw a
+single line.</p>
+<p>Just like a library holds hundreds of books, some of which we might want to
+check out, the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module contains all the information we need to make
+our drawings. We can choose which of the stored properties and functions to use
+and leave the other parts alone. Before we can use the turtle tools, however,
+we must to add them to our program.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+</pre></div>
+</td></tr></table></div>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">import</span></code> tells Python to find a file called <code class="docutils literal notranslate"><span class="pre">turtle</span></code> and make
+it available to our program. We will not see any extra statements appear in our
+code, but our program can now access the tools we need.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">turtle</span></code> library is one part of the Python software installation, so
+you do not need to worry about adding the file on your own. As long as you
+have Python installed on your machine, you also have turtles!</p>
+</div>
+<div class="section" id="a-new-turtle-object">
+<h2>A New Turtle Object<a class="headerlink" href="#a-new-turtle-object" title="Permalink to this headline">¶</a></h2>
+<p>To create a new turtle object, use the syntax</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">turtle_name</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">turtle_name</span></code> is a variable, and it should follow the Python naming rules.
+<code class="docutils literal notranslate"><span class="pre">turtle.Turtle()</span></code> tells Python to access the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module and call the
+<code class="docutils literal notranslate"><span class="pre">Turtle()</span></code> method. Remember that Python is case-sensitive, so
+<code class="docutils literal notranslate"><span class="pre">turtle.turtle()</span></code> will throw an error message.</p>
+<p>For the examples in this appendix, we will name the turtle <code class="docutils literal notranslate"><span class="pre">bob</span></code>, but any
+valid variable name will work.</p>
+<p>Once we create a turtle, we need to tell it how to move. We will begin with
+a single line:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Run the program to draw a line on the screen.</p>
+<div class="last"><iframe height="450px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Movement-Basics?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<p>The <code class="docutils literal notranslate"><span class="pre">forward</span></code> method changes the location of turtle <code class="docutils literal notranslate"><span class="pre">bob</span></code> on the screen by
+moving it a number of pixels in the direction it is facing.</p>
+<div class="section" id="try-it">
+<h3>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Change the number inside the parentheses () to make <code class="docutils literal notranslate"><span class="pre">bob</span></code> travel a
+different distance.</li>
+<li>Try to make <code class="docutils literal notranslate"><span class="pre">bob</span></code> move backwards instead.</li>
+<li>Can you find the distance from the starting position to the edge of the
+drawing space? (This number will depend on your device and on the size of
+the window).</li>
+</ol>
+</div>
+</div>
+<div class="section" id="open-a-drawing-space">
+<h2>Open A Drawing Space<a class="headerlink" href="#open-a-drawing-space" title="Permalink to this headline">¶</a></h2>
+<p>In the repl.it example above, the drawing space for the turtle graphics is
+included with the code editor and console. There is some code running in the
+background that sets up the view, and this allows us to focus on other parts of
+the program.</p>
+<p>If we want to play with Python turtles outside of repl.it, we need to create
+the drawing space ourselves. Take a look at the following animation that shows
+a different turtle program running outside of repl.it:</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/turtle-window-close.gif"><img alt="GIF showing the drawing space closing immediately after the turtle completes its drawing." src="../../_images/turtle-window-close.gif" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">A closing window means we cannot appreciate our turtle art!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>That looks weird. A window opens, <code class="docutils literal notranslate"><span class="pre">bob</span></code> appears and draws several circles,
+and then the window quickly closes. If we blink at the wrong time, we could
+easily miss the event.</p>
+<p>Later in this appendix, we will provide more details for controlling the
+drawing space. For now we will add two statements to our turtle program to keep
+the window open until we have a chance to admire the art.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+<span class="n">window</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+
+<span class="n">window</span><span class="o">.</span><span class="n">exitonclick</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Just like line 4 creates a new turtle object called <code class="docutils literal notranslate"><span class="pre">bob</span></code>, line 2 creates a
+screen object called <code class="docutils literal notranslate"><span class="pre">window</span></code>. This variable allows us to modify the
+appearance of the drawing space—like its size, title, and background color.</p>
+<p>In the original program, the drawing space closes right after the statement
+<code class="docutils literal notranslate"><span class="pre">bob.forward(75)</span></code>. By defining <code class="docutils literal notranslate"><span class="pre">window</span></code>, we can decide when to close the
+space. In line 8, the screen method <code class="docutils literal notranslate"><span class="pre">exitonclick()</span></code> tells Python to wait for
+the user to click inside the window. Once this happens, the program ends and
+closes the drawing space.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span> <span class="pre">turtle.Screen()</span></code> does not <em>open</em> the drawing space. Instead, it
+allows us to control the space. By assigning <code class="docutils literal notranslate"><span class="pre">Screen()</span></code> to <code class="docutils literal notranslate"><span class="pre">window</span></code>, we
+can access different tools—like choosing how and when to close the drawing
+space.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> What are Python Turtles?</a></li>
+        
+        
+        <li class="next"><a href="moving-turtles.html">Moving Turtles <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/turtles/creating-turtles.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

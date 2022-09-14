@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.3. Flask Cookies &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23.4. Flask Sessions" href="flask-sessions.html" />
+    <link rel="prev" title="23.2. Cookies" href="cookies.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">23. </span>Cookies &amp; Sessions</a></li>
+    <li class="active"><span class="section-number">23.3. </span>Flask Cookies</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="flask-cookies">
+<h1><span class="section-number">23.3. </span>Flask Cookies<a class="headerlink" href="#flask-cookies" title="Permalink to this headline">¶</a></h1>
+<p>When a server executes code to create a cookie, part of the command sets a time
+limit for how long to save the data. If no time is given in the code, then the
+cookie gets erased when we quit the browser. Putting our device to sleep or
+closing the tab does NOT clear cookies!</p>
+<p>Recall that Flask runs a server on our machine when we launch an application.
+This means we can include some Python code to set and access our own cookies.</p>
+<p>Let’s see how to do this.</p>
+<div class="section" id="cookie-video">
+<h2><span class="section-number">23.3.1. </span>Cookie Video<a class="headerlink" href="#cookie-video" title="Permalink to this headline">¶</a></h2>
+<p>Watch this short clip to learn how to set cookies with Flask. You can find the
+starter code in this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_cookie_intro.git" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+By switching between the <code class="docutils literal notranslate"><span class="pre">main</span></code> to <code class="docutils literal notranslate"><span class="pre">final-code</span></code> branch, you can view both
+the starting and ending points of the demonstration.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">To run the app, you will need to create a new virtual environment, activate
+it, and install Flask. The repository includes a README file that guides you
+through this process. You can also review the steps
+<a class="reference internal" href="../flask-intro/install-flask.html#flask-environment"><span class="std std-ref">here</span></a>.</p>
+</div>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/V-jAPj6fETg" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section><p id="index-0"><strong>Video Highlights</strong>:</p>
+<ol class="arabic">
+<li><p class="first">To use Flask to set cookies, stat by importing <code class="docutils literal notranslate"><span class="pre">make_response</span></code> from the
+<code class="docutils literal notranslate"><span class="pre">flask</span></code> library.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">make_response()</span></code> function builds the HTTP response sent by the server
+to the browser.</p>
+</li>
+<li><p class="first">In the previous Flask chapters, we sent HTTP responses with
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code>. <code class="docutils literal notranslate"><span class="pre">make_response()</span></code> lets us do the same thing, but
+it also allows us to set cookies.</p>
+</li>
+<li><p class="first">The argument for <code class="docutils literal notranslate"><span class="pre">make_response()</span></code> can be a simple string like
+<code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>, or it can be the result returned by the
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">response_name</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+
+<span class="c1"># OR</span>
+
+<span class="n">response_name</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;template_name.html&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">To set cookies, we use the (wait for it…) <code class="docutils literal notranslate"><span class="pre">.set_cookie()</span></code> method!
+The general syntax for the method is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">response_name</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="n">cookie_name</span><span class="p">,</span> <span class="n">cookie_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">response_name</span></code> is the variable that holds the result from
+<code class="docutils literal notranslate"><span class="pre">make_response()</span></code>. <code class="docutils literal notranslate"><span class="pre">cookie_name</span></code> and <code class="docutils literal notranslate"><span class="pre">cookie_value</span></code> must be strings.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">set_cookie()</span></code> method can take other arguments as well. However, these
+go beyond the scope of this course. If curious, you can find a more complete
+description for <code class="docutils literal notranslate"><span class="pre">set_cookie()</span></code> <a class="reference external" href="https://pythonise.com/series/learning-flask/flask-cookies#setting-cookies" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="viewing-cookies">
+<h2><span class="section-number">23.3.2. </span>Viewing Cookies<a class="headerlink" href="#viewing-cookies" title="Permalink to this headline">¶</a></h2>
+<p>As shown in the video, we can use our browser tools to view the cookies saved
+for a particular webpage. The specific commands will vary with each browser,
+but right-clicking on the page is a good thing to try first. Select
+<em>Inspect Element</em> from the options that pop up, and then open the <em>Storage</em>
+tab. (For the Chrome browser, the tab is called <em>Application</em>).</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/storage-panel.png"><img alt="View cookies using the browser developer tools. The 'Storage' panel is selected." src="../../_images/storage-panel.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">View stored cookies by using the browser tools. You might need to look carefully to find the tab you want!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p><strong>Safari Users</strong>: If right-clicking on the page doesn’t show the <em>Inspect
+Element</em> option, you need to activate the Developer Tools.</p>
+<p class="last">Under the <em>Safari</em> menu, select <em>Preferences</em>. Click the <em>Advanced</em> tab,
+then select the <em>Show Develop menu in menu bar</em> option. Right-clicking
+should now work as expected!</p>
+</div>
+<p>Note that the cookie data is NOT sent to the webpage as a value. Instead, the
+browser saves a file on our machine to keep track of the key/value pair. Even
+if we stop the Flask application, the cookie <em>persists</em>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/persistent-cookie.png"><img alt="The storage panel shows that the cookie remains on our device." src="../../_images/persistent-cookie.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Even when we stop the Flask application, any cookies set by the program remain on our device.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>If we change the name of the cookie in our Python code and refresh the page, a
+new cookie file is saved. However, the old cookie file remains.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/rename-cookie.png"><img alt="The storage panel shows both the old and new cookie files." src="../../_images/rename-cookie.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Renaming a cookie does not remove the old file.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="accessing-cookie-data">
+<h2><span class="section-number">23.3.3. </span>Accessing Cookie Data<a class="headerlink" href="#accessing-cookie-data" title="Permalink to this headline">¶</a></h2>
+<p>Once Flask saves cookies to our device, every request sent from our browser to
+the server includes the data from ALL of those files. We can access this data
+with the <code class="docutils literal notranslate"><span class="pre">request</span></code> keyword.</p>
+<p>To collect all of the cookie data, the syntax is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">all_cookies</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span>
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">request.cookies</span></code> executes, it returns a collection of key/value pairs
+and assigns it to <code class="docutils literal notranslate"><span class="pre">all_cookies</span></code>. Each pair matches one of the cookie files
+stored on our device. To access the value of a specific cookie, we use bracket
+notation, <code class="docutils literal notranslate"><span class="pre">all_cookies['cookie_name']</span></code>.</p>
+<p>To access just one of the cookie values, we use the syntax:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cookie_value</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;cookie_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When this statement executes, Python scans the cookie data sent with the HTTP
+request. If <code class="docutils literal notranslate"><span class="pre">cookie_name</span></code> matches one of the keys (like <code class="docutils literal notranslate"><span class="pre">fav_cookie</span></code>), then
+the value for that key is assigned to <code class="docutils literal notranslate"><span class="pre">cookie_value</span></code>.</p>
+</div>
+<div class="section" id="resources">
+<h2><span class="section-number">23.3.4. </span>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>This page just scratches the surface on how to use Flask to manage cookies. We
+won’t need to go deeper for this course. However, for those who would like to
+explore further, here are a couple of good places to start:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://pythonise.com/series/learning-flask/flask-cookies" target="_blank">Flask Cookies<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://overiq.com/flask-101/cookies-in-flask/" target="_blank">OverIQ<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">23.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Where is cookie data stored?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> In a file on our device.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> In the webpage open in our browser.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> As a value assigned to a variable.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On a web server.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Refreshing a webpage erases cookies.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Quitting the browser application erases cookies.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Always</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Never</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Sometimes</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="cookies.html"><span aria-hidden="true">&larr;</span> <span class="section-number">23.2. </span>Cookies</a></li>
+        
+        
+        <li class="next"><a href="flask-sessions.html"><span class="section-number">23.4. </span>Flask Sessions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/sessions/managing-cookies.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

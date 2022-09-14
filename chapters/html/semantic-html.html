@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.6. Semantic HTML &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.7. Exercises: HTML" href="exercises.html" />
+    <link rel="prev" title="14.5. HTML Entities" href="entities.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">14. </span>We Built The Internet on HTML</a></li>
+    <li class="active"><span class="section-number">14.6. </span>Semantic HTML</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="semantic-html">
+<h1><span class="section-number">14.6. </span>Semantic HTML<a class="headerlink" href="#semantic-html" title="Permalink to this headline">¶</a></h1>
+<p>In the <em>Try It</em> section on the <a class="reference internal" href="tags.html#tags-try-it"><span class="std std-ref">Tags page</span></a>, we used a
+<code class="docutils literal notranslate"><span class="pre">&lt;div&gt;&lt;/div&gt;</span></code> element to center two paragraphs on the screen. This is an
+example of a very common technique. To organize content on the page, we often
+split the page into separate sections. We can then fiddle with the size, color,
+alignment, etc. for the elements in each section without affecting the
+properties in other parts of the page.</p>
+<p>Here’s an example of an HTML file that organizes a page into six sections:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+         Content...
+         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Text...&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>For this short file, we can count the number of opening <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags to
+identify the number of sections. However, figuring out what each section does
+is more difficult. Is the <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> element on line 13 a figure caption for the
+<code class="docutils literal notranslate"><span class="pre">img</span></code>? Before we can say for sure, we would need to examine the content
+inside that element, or look at the final page in a browser.</p>
+<p>For the sample code above, we would want to include plenty of comments in the
+file to describe the purpose of each <code class="docutils literal notranslate"><span class="pre">div</span></code> element. After all, once we move
+on to our next project, another programmer might need to update the code for
+this page. We must make sure they understand what we created.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Making code work is important, but so is making it easier for others to
+understand. Not every piece of code a programmer reads is something they
+wrote!</p>
+</div>
+<p>Besides comments, HTML also includes a way to use the tags themselves to
+describe the layout of a page. The code below builds exactly the same page as
+the first example. However, note how it helps answer the question, <em>What does
+this section do?</em></p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+         Content...
+         <span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;Text...&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>Content...<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aha! Finding the figure caption is a snap now, and we can see that we have a
+header and footer at the top and bottom of the page. It looks like the purpose
+of the <code class="docutils literal notranslate"><span class="pre">section</span></code> element is to organize related <code class="docutils literal notranslate"><span class="pre">article</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code>
+elements, and the <code class="docutils literal notranslate"><span class="pre">article</span></code> tag name gives us a clue about the type of
+content that begins on line 10.</p>
+<div class="section" id="html-writing-style">
+<h2><span class="section-number">14.6.1. </span>HTML Writing Style<a class="headerlink" href="#html-writing-style" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Just like any other author, programmers write HTML with different style guides
+and ways of thinking. Two different coders can look at the same set of content
+and choose different ways to arrange it on the screen. However, both of them
+use the same set of HTML tags to do their work.</p>
+<p><strong>Semantic HTML</strong> is not about the appearance of the webpage. Instead, it’s
+about the specific meaning of the elements. Semantic HTML uses more descriptive
+tag names to help identify what each section of the code does. This helps
+programmers clarify the structure of a webpage.</p>
+<p>For example, developers can make paragraph text larger than heading text if
+they want to. By looking at the HTML, however, we can still identify what is
+the paragraph and what is the heading. The <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h&gt;</span></code> tags give us
+that information. This is the strength of semantic HTML. The tag names express
+meaning.</p>
+<p>Another benefit to semantic HTML is that programmers find it easier to
+visualize the results when they can put a specific name to a section of their
+code.</p>
+<div class="section" id="screen-readers-and-accessibility">
+<h3><span class="section-number">14.6.1.1. </span>Screen Readers and Accessibility<a class="headerlink" href="#screen-readers-and-accessibility" title="Permalink to this headline">¶</a></h3>
+<p>A well designed webpage organizes content in a clean and attractive way. For
+these pages, sighted users can easily find the navigation bar or identify the
+main content of the page. However, individuals with visual impairments may use
+screen readers to navigate the page.</p>
+<p>Screen readers are tools that verbally describe the content on a page. They
+also describe the HTML tags surrounding the content. With semantic HTML, we can
+make our webpages accessible to all people, including those who use screen
+readers.</p>
+<p>For example, the <code class="docutils literal notranslate"><span class="pre">div</span></code> and <code class="docutils literal notranslate"><span class="pre">span</span></code> elements organize content on the page,
+but they do not provide any information about the content itself. If we use
+separate <code class="docutils literal notranslate"><span class="pre">div</span></code> elements to build a navigation bar and organize a set of blog
+posts, a screen reader can give no clarification to the user. As the person
+listens, they might not recognize which words deal with navigation. However, if
+we replace a <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tag with <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code>, the device can alert the user that
+the elements inside provide links to key locations.</p>
+<p>A screen reader just reads what’s in each element. With semantic HTML, the
+device can inform the user that they have reached a navigation bar, a header, a
+login form, a news article, etc. This helps the user understand the layout of
+the page.</p>
+<p>Without semantic HTML, programmers must add extra attributes (like
+<code class="docutils literal notranslate"><span class="pre">class=&quot;nav-bar&quot;</span></code>) to assist those who rely on screen readers.</p>
+</div>
+<div class="section" id="search-engines">
+<h3><span class="section-number">14.6.1.2. </span>Search Engines<a class="headerlink" href="#search-engines" title="Permalink to this headline">¶</a></h3>
+<p>Search engines also benefit from semantic HTML. If we can communicate which
+part of our page holds the most important content, we give the software a
+better chance to find our website and show users an accurate description.</p>
+<p>For example, assume we create a website with the title “My Great Site”, and we
+follow that title with with a collection of <code class="docutils literal notranslate"><span class="pre">div</span></code> elements. When a user
+types <em>My Great Site</em> into a search engine, the software will find our site and
+display a description of the content. Since <code class="docutils literal notranslate"><span class="pre">div</span></code> tags provide no information
+about the content they contain, the description of our site may be incomplete.</p>
+<p>Carefully using semantic HTML tags helps search engines find and steer users
+toward our home page. If we include a <code class="docutils literal notranslate"><span class="pre">main</span></code> element with some <code class="docutils literal notranslate"><span class="pre">article</span></code>
+elements inside, the engines find our most important content faster and provide
+a more accurate description.</p>
+<p>With search, speed and accuracy are critical! Semantic tags let us tell search
+engines what our website is about. This can help keep our website from
+getting pushed off of the first page of results.</p>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p>Search Engine Optimization (SEO) is big deal for anyone who wants to build a
+successful and relevant website. Just like coding, students can train to
+become SEO experts.</p>
+<p>If you are curious about how people and companies boost their placement in
+web searches, here are a couple of articles to get you started:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://www.webfx.com/internet-marketing/how-SEO-works.html" target="_blank">What is SEO<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://neilpatel.com/what-is-seo/" target="_blank">SEO Made Simple<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="a-div-by-another-name">
+<span id="semantic-tag-list"></span><h2><span class="section-number">14.6.2. </span>A <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> by Another Name<a class="headerlink" href="#a-div-by-another-name" title="Permalink to this headline">¶</a></h2>
+<p>Open a new tab in your browser and visit one of your favorite websites. Before
+you get too distracted, right-click on the page and choose <em>View Page Source</em>.
+Examine the HTML code used to build the page. Most likely, you will find a
+huge number of <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags. These tell the browser how to display the page,
+but they provide few details about the different sections.</p>
+<p>There is absolutely nothing wrong with using <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags in our HTML, but
+semantic tags offer us a better option for our code.</p>
+<p>The latest versions of HTML provide several tag names that can be used in place
+of <code class="docutils literal notranslate"><span class="pre">div</span></code>. They work the same way, but provide more information to readers of
+the code. These include:</p>
+<table border="1" class="colwidths-auto docutils align-default" id="id1">
+<caption><span class="caption-text">Semantic HTML Tags</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag Name</th>
+<th class="head">Code</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Article</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;article&gt;</span></code></td>
+<td>Contains content that can stand on its own, outside of the page (like
+a news story).</td>
+</tr>
+<tr class="row-odd"><td>Aside</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;aside&gt;</span></code></td>
+<td><p class="first">Contains content that supports the main information on the page.</p>
+<div class="admonition-note last admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">This is an example of an aside! It contains useful, but not critical
+information.</p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Figure</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;figure&gt;</span></code></td>
+<td>Contains independent visual content like diagrams, photos, code, etc.</td>
+</tr>
+<tr class="row-odd"><td>Figure Caption</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;figcaption&gt;</span></code></td>
+<td>Contains the description for a <code class="docutils literal notranslate"><span class="pre">figure</span></code> element.</td>
+</tr>
+<tr class="row-even"><td>Footer</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;footer&gt;</span></code></td>
+<td>Appears at the bottom of a page. Usually includes contact or copyright
+information as well as some site navigation.</td>
+</tr>
+<tr class="row-odd"><td>Header</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;header&gt;</span></code></td>
+<td>Contains content like headings, a logo, or introductory information.</td>
+</tr>
+<tr class="row-even"><td>Main</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;main&gt;</span></code></td>
+<td>Identifies the main content of the page. It should not include navigation
+tools or any information that is repeated on other pages of the website.
+There should only be one <code class="docutils literal notranslate"><span class="pre">main</span></code> element for a page.</td>
+</tr>
+<tr class="row-odd"><td>Nav</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code></td>
+<td>Contains a set of navigation links, like menu options or buttons.</td>
+</tr>
+<tr class="row-even"><td>Section</td>
+<td><code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code></td>
+<td>Groups together elements that follow a similar theme.</td>
+</tr>
+</tbody>
+</table>
+<p>Many of the tag names we <a class="reference internal" href="tags.html#html-tags"><span class="std std-ref">considered before</span></a>, like <code class="docutils literal notranslate"><span class="pre">p</span></code>,
+<code class="docutils literal notranslate"><span class="pre">h1</span></code>, and <code class="docutils literal notranslate"><span class="pre">ol</span></code> are also semantic.</p>
+<p>Inline elements like <code class="docutils literal notranslate"><span class="pre">strong</span></code> and <code class="docutils literal notranslate"><span class="pre">em</span></code> instruct screen readers to place
+verbal emphasis on chosen words. Even though the HTML statements</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Bold text<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Strong text<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>both cause text to appear in bold, the <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;</span></code> tag tells a screen reader
+to place stress on the words.</p>
+<p>The figure below shows how helpful semantic HTML tags are in describing the
+content of a webpage. The tag names tell us something about what each element
+represents on the page.</p>
+<div class="figure align-default" id="id2">
+<img alt="Comparing two HTML pages. Semantic tags provide more detail about the structure of the page." src="../../_images/semantic-html.png" />
+<p class="caption"><span class="caption-text">Semantic HTML tags provide more detail than <code class="docutils literal notranslate"><span class="pre">div</span></code> tags about the content of a page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>If we needed to update the page by adding more story links, the code for the
+right hand HTML file would be easier to manage. We would simply find the
+<code class="docutils literal notranslate"><span class="pre">aside</span></code> tag and add new <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> elements inside of it. Adding to the code for
+the left hand page would take more time, since we would need to look at each of
+the <code class="docutils literal notranslate"><span class="pre">div</span></code> tags to find the one we want.</p>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">14.6.3. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>The HTML in the editor below is mostly complete. You just need to rearrange the
+elements to organize the page.</p>
+<p>Lines 38-49 contain the elements you need to move, but they are NOT in the
+correct order. Cut and paste each element from the bottom of the editor into
+the spaces above. Use the hints given by the tag names to decide where to put
+everything!</p>
+<p><em>Consider</em>:</p>
+<ol class="arabic simple">
+<li>Which two elements make the most sense to put inside the <code class="docutils literal notranslate"><span class="pre">header</span></code> element?</li>
+<li>There is only one image. Where should it go, and what text describes it?</li>
+<li>Which paragraph best matches the image?</li>
+<li>Which paragraph does the unordered list support?</li>
+<li>What information should go inside the <code class="docutils literal notranslate"><span class="pre">footer</span></code> element?</li>
+</ol>
+<iframe src="https://trinket.io/embed/html/6f29694e0e" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">14.6.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Semantic HTML helps with all of the following EXCEPT:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the accuracy of search engine results.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the ability of screen readers to clearly present a webpage.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Improving the ability of programmers to read and understand HTML code.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Improving the speed of loading a webpage.</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Check if the following semantic HTML tags are block-level or inline. Click
+each option to see the answer.</p>
+<div class="last"><ol type="a">
+   <li onclick="revealAnswer('resultA', 'block-level')"><span style="color:#419f6a; font-weight: bold">article</span> <span id="resultA"></span></li>
+   <li onclick="revealAnswer('resultB', 'block-level')"><span style="color:#419f6a; font-weight: bold">aside</span> <span id="resultB"></span></li>
+   <li onclick="revealAnswer('resultC', 'inline')"><span style="color:#419f6a; font-weight: bold">strong</span> <span id="resultC"></span></li>
+   <li onclick="revealAnswer('resultD', 'block-level')"><span style="color:#419f6a; font-weight: bold">figure</span> <span id="resultD"></span></li>
+   <li onclick="revealAnswer('resultE', 'block-level')"><span style="color:#419f6a; font-weight: bold">section</span> <span id="resultE"></span></li>
+   <li onclick="revealAnswer('resultF', 'block-level')"><span style="color:#419f6a; font-weight: bold">figcaption</span> <span id="resultF"></span></li>
+   <li onclick="revealAnswer('resultG', 'block-level')"><span style="color:#419f6a; font-weight: bold">nav</span> <span id="resultG"></span></li>
+   <li onclick="revealAnswer('resultH', 'inline')"><span style="color:#419f6a; font-weight: bold">a</span> <span id="resultH"></span></li>
+</ol></div></div>
+<script type="text/JavaScript">
+   function evaluateMC(id, correct) {
+      if (correct) {
+         document.getElementById(id).innerHTML = 'Yep! Tag names do not affect loading speed.';
+         document.getElementById(id).style.color = 'blue';
+      } else {
+         document.getElementById(id).innerHTML = 'Nope!';
+         document.getElementById(id).style.color = 'red';
+      }
+   }
+</script></div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="entities.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.5. </span>HTML Entities</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">14.7. </span>Exercises: HTML <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/html/semantic-html.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

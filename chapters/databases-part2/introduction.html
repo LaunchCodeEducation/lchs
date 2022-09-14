@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.1. Introduction &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25.2. Database Setup" href="db-setup.html" />
+    <link rel="prev" title="25. Build a Minesweeper Game" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+    <li class="active"><span class="section-number">25.1. </span>Introduction</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="introduction">
+<h1><span class="section-number">25.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the end of LaunchCode’s LCHS course! In this chapter, we will use
+our Python, web development, and database skills to build a game application.
+Each of the following pages includes a video tutorial, sample code, and a text
+summary for one piece of the project.</p>
+<p>The goal is to build a <a class="reference external" href="https://youtu.be/UvCri1tqIxQ" target="_blank">Minimum Viable Product.<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+The idea is to keep the scope, short and simple. This is a bare-bones, without bells and whistles
+Minesweeper game. Consider this a prototype for a more refined program.
+By the end of the chapter, we will have a working game, but it will contain a
+few gaps and rough edges. Repeated playing of the game will identify improvements
+that <em>could</em> be made, but these won’t prevent the app from operating.</p>
+<p>Once you have your prototype up and running, feel free to make changes and add
+different features to make the project your own!</p>
+<p>The video clip below demonstrates what the finished project will look like. It
+also provides game instructions for those who might not be familiar with how to
+play Minesweeper.</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/n2tXf33yAQk" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section><div class="section" id="project-setup">
+<h2><span class="section-number">25.1.1. </span>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h2>
+<p>For this project, you will create and update a remote repository in your GitHub
+account. As you work on the local copy of your code, you should frequently push
+those changes up to GitHub.</p>
+<p>Here’s how to create your personal Minesweeper repository.</p>
+<div class="section" id="fork-the-starter-code">
+<h3><span class="section-number">25.1.1.1. </span>Fork the Starter Code<a class="headerlink" href="#fork-the-starter-code" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Login to your <a class="reference external" href="https://github.com/" target="_blank">GitHub account<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Navigate to LaunchCode’s <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_minesweeper" target="_blank">Minesweeper repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first"><em>Fork</em> the repository. This will create an independent copy of the code in
+your account.</p>
+<div class="figure align-default" id="id1">
+<img alt="Showing the Fork button on the LCHS Minesweeper repository page." src="../../_images/fork-project.png" />
+<p class="caption"><span class="caption-text">Click the Fork button to copy the repo to your account.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">After forking, you should be redirected back to your account. If this does
+not happen automatically, navigate to YOUR Minesweeper repository page.</p>
+</li>
+<li><p class="first">Click the <em>Code</em> button and copy the HTTPS URL.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/clone-repo.png"><img alt="Showing the options to click to clone the Minesweeper repository." src="../../_images/clone-repo.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Copy the URL for your new GitHub repository.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="create-your-local-project">
+<h3><span class="section-number">25.1.1.2. </span>Create Your Local Project<a class="headerlink" href="#create-your-local-project" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Launch Visual Studio Code and open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p>
+</li>
+<li><p class="first">Use the URL you copied in step 5 above to clone the Minesweeper starter
+code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone URL-copied-from-GitHub
+</pre></div>
+</div>
+</li>
+<li><p class="first">The project directory is called <code class="docutils literal notranslate"><span class="pre">LCHS_minesweeper</span></code>. Use the <em>File</em> menu in
+VS Code to open this folder.</p>
+</li>
+<li><p class="first">Follow the usual process to install a new virtual environment. Name the
+environment <code class="docutils literal notranslate"><span class="pre">game-env</span></code>. (If you want to use a different name, that’s fine.
+Just remember to update the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file).</p>
+</li>
+<li><p class="first">Activate the virtual environment and install Flask.</p>
+</li>
+</ol>
+<p>OK, you’re ready to go!</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+        
+        
+        <li class="next"><a href="db-setup.html"><span class="section-number">25.2. </span>Database Setup <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases-part2/introduction.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

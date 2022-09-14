@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.1. Keeping Track of Data Values &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23.2. Cookies" href="cookies.html" />
+    <link rel="prev" title="23. Cookies &amp; Sessions" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">23. </span>Cookies &amp; Sessions</a></li>
+    <li class="active"><span class="section-number">23.1. </span>Keeping Track of Data Values</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="keeping-track-of-data-values">
+<h1><span class="section-number">23.1. </span>Keeping Track of Data Values<a class="headerlink" href="#keeping-track-of-data-values" title="Permalink to this headline">¶</a></h1>
+<p>In the past two chapters, you created Flask applications to collect user data
+and display it on a webpage. However, you may have noticed that when you reload
+the page, any data collected from the form disappears. The same thing happens
+if you close the page tab, restart the application, or quit the browser
+completely. Any data assigned to the Python variables is <em>temporary</em>.</p>
+<p>This behavior also means we need to be very careful about sending data back and
+forth between our Python code and a Jinja2 template.</p>
+<div class="section" id="problem-with-guessing-a-number">
+<h2><span class="section-number">23.1.1. </span>Problem With Guessing a Number<a class="headerlink" href="#problem-with-guessing-a-number" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a look at a function that asks a user to guess a secret number.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><strong>The webpage</strong>:</p>
+<div class="figure align-default" id="id1">
+<img alt="Form asking the user to submit a number." src="../../_images/guess-the-number.png" />
+<p class="caption"><span class="caption-text">A simple guess the number form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>The Python code</strong>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/guess_the_number&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">guess_the_number</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="c1"># Collect the user&#39;s entry from the web form:</span>
+      <span class="n">user_guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;user_guess&#39;</span><span class="p">])</span>
+
+      <span class="c1"># Check if the user guessed correctly:</span>
+      <span class="k">if</span> <span class="n">user_guess</span> <span class="o">==</span> <span class="n">magic_number</span><span class="p">:</span>
+         <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;You guessed the number!&#39;</span>
+      <span class="k">else</span><span class="p">:</span>
+         <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Nope! Try again.&#39;</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">magic_number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>  <span class="c1"># Create a random number from 1 - 50.</span>
+      <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;guess_the_number.html&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li>Line 19 generates a random number and assigns the value to
+<code class="docutils literal notranslate"><span class="pre">magic_number</span></code>.</li>
+<li>Line 22 renders the <code class="docutils literal notranslate"><span class="pre">guess_the_number</span></code> template, which displays a form
+for the user.</li>
+</ol>
+</div>
+<p>Unfortunately, when we run the application and make a guess, the program
+crashes when we click <em>Go!</em></p>
+<div class="figure align-default" id="id2">
+<img alt="The browser displays an UnboundLocalError after submitting the form." src="../../_images/unbound-local-error.png" />
+<p class="caption"><span class="caption-text">Unbound local error: <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> referenced before assignment.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Reading the error message tells us what went wrong. In line 14,
+<code class="docutils literal notranslate"><span class="pre">magic_number</span></code> hasn’t been assigned a value. If we think about the flow of
+the program, this might seem odd at first.</p>
+<ol class="arabic simple">
+<li>The browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the <code class="docutils literal notranslate"><span class="pre">guess_the_number()</span></code> function.</li>
+<li>This triggers the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on line 18, and <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> is
+assigned a random number from 1 - 50.</li>
+<li>Line 22 renders the form in the browser, and the user submits their guess.</li>
+<li>The browser sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the function, and line 11 collects
+the user’s guess.</li>
+</ol>
+<p>Following these steps, it seems like <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> should have a value.
+However, this is not the case. The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement on line 22 renders the
+template, but it also ends the <code class="docutils literal notranslate"><span class="pre">guess_the_number()</span></code> function. When this
+happens, the value we assigned to <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> is lost.</p>
+<p>When the function runs after the <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, Python treats
+<code class="docutils literal notranslate"><span class="pre">magic_number</span></code> as a brand new variable. The expression
+<code class="docutils literal notranslate"><span class="pre">user_guess</span> <span class="pre">==</span> <span class="pre">magic_number</span></code> throws an error because <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> has not
+been assigned a value yet.</p>
+</div>
+<div class="section" id="one-solution">
+<h2><span class="section-number">23.1.2. </span>One Solution<a class="headerlink" href="#one-solution" title="Permalink to this headline">¶</a></h2>
+<p>With a little work, we can modify the <code class="docutils literal notranslate"><span class="pre">guess_the_number()</span></code> function to avoid
+the error. One way to do this is to send <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> to the template, and
+then collect it again after the user submits the form. However, this isn’t
+ideal.</p>
+<p>Assigning a value to <code class="docutils literal notranslate"><span class="pre">magic_number</span></code>, sending it to the template, and then
+pulling it back into the same function is inefficient. Also, sending
+<code class="docutils literal notranslate"><span class="pre">magic_number</span></code> to the template makes it part of the HTML page. Even if we
+hide it, users who know how to use the browser tools can find the data. If our
+goal is to have users guess a secret number, we don’t want to give them the
+answer!</p>
+</div>
+<div class="section" id="a-better-solution">
+<h2><span class="section-number">23.1.3. </span>A Better Solution<a class="headerlink" href="#a-better-solution" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">For many web applications, we want data to <strong>persist</strong>. This means saving the
+information even if the user refreshes the page, closes the tab, or quits their
+browser completely. Persistent data also stays around after a <code class="docutils literal notranslate"><span class="pre">return</span></code>
+statement ends a function.</p>
+<p>In this chapter, we will learn two ways to handle short-term data storage. In
+the following chapters, we will use a <em>database</em> to save information over a
+longer period of time.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">23. </span>Cookies &amp; Sessions</a></li>
+        
+        
+        <li class="next"><a href="cookies.html"><span class="section-number">23.2. </span>Cookies <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/sessions/introduction.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.1. What are Modules? &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.2. Importing Modules" href="import-syntax.html" />
+    <link rel="prev" title="11. Python Modules" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Python Modules</a></li>
+    <li class="active"><span class="section-number">11.1. </span>What are Modules?</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="what-are-modules">
+<h1><span class="section-number">11.1. </span>What are Modules?<a class="headerlink" href="#what-are-modules" title="Permalink to this headline">¶</a></h1>
+<p>In the last chapter, we learned that functions allow us to reuse the same block
+of code many times throughout a program. Once we create a useful function, we
+might find a use for it in other programs as well. We could easily copy and
+paste that function into new projects, but this leads to a couple of problems:</p>
+<ol class="arabic simple">
+<li>Copy/pasting code does NOT keep our work DRY (Don’t Repeat Yourself),</li>
+<li>If we make an update to the function, we need to apply that update to ALL
+copies of the function. If the function is super-useful, we probably put it
+into lots of projects. Tracking down and changing every single one would
+take lots of time, and we would likely miss a few.</li>
+</ol>
+<p>Fortunately, we have a way to share functions and other useful tools across
+different programs WITHOUT copy/paste.</p>
+<p id="index-0">A <strong>module</strong> is a file containing Python values, functions, etc. that can be
+used in other Python programs. Instead of pasting a new copy of a function into
+every new project, we store the original in a file and then <em>import</em> that file
+when we need it. Changing the code in the module affects all of the programs
+that imported it. This makes applying updates much more efficient.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/module-diagram.png"><img alt="A module being imported into three different programs." src="../../_images/module-diagram.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">The same module code can be imported and used by completely different programs.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Modules are NOT designed to run on their own. Their purpose is to <em>support</em>
+many different programs by storing the code for commonly used functions,
+values, tools, and tasks.</p>
+</div>
+<div class="section" id="why-use-modules">
+<h2><span class="section-number">11.1.1. </span>Why Use Modules?<a class="headerlink" href="#why-use-modules" title="Permalink to this headline">¶</a></h2>
+<p>There are many modules that come with Python as part of the standard library.
+These offer us lots of ready-made tools that we can use to speed up the time it
+takes us to build our own projects.</p>
+<p>We can also create our own modules to store data, functions, and tools that we
+have built on our own and want to use again later.</p>
+<p>Even better, we can SHARE our modules with other programmers, or combine
+someone else’s work (with permission) to our own. Instead of writing every
+single part of a new project from scratch, another coder might have already
+written some of the code we need. If that person makes their work available, we
+can immediately import their modules into our own project—saving us time and
+effort.</p>
+<blockquote>
+<div>Modules keep us from reinventing the wheel.</div></blockquote>
+<p>We do not need to worry about HOW a module works. We just need to be able to
+pull it into a project and use its functions.</p>
+<p>Finally, modules allow us to keep different parts of our program in separate,
+smaller pieces. We code these smaller chunks and then connect the modules
+together to create the big project. Just like keeping functions small and
+simple helps with debugging, splitting up a large project into smaller pieces
+makes it easier to fix. We can also add more modules to the project to quickly
+give the whole program new abilities.</p>
+</div>
+<div class="section" id="a-list-of-python-modules">
+<h2><span class="section-number">11.1.2. </span>A List of Python Modules<a class="headerlink" href="#a-list-of-python-modules" title="Permalink to this headline">¶</a></h2>
+<p>Python comes with LOTS of modules, and we have already used one of these quite
+a bit—the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module. Once we <em>import</em> the module, we gain access to
+everything it contains.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>           <span class="c1"># Allows us to use the turtle module</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>   <span class="c1"># Create a turtle named bob</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>        <span class="c1"># Move bob forward 150 pixels</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>            <span class="c1"># Turn bob left by 90 degrees</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>          <span class="c1"># Draw a circle with a radius of 75 pixels</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>In this example, we use several tools defined in the module—<code class="docutils literal notranslate"><span class="pre">Turtle()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">forward()</span></code>, <code class="docutils literal notranslate"><span class="pre">left()</span></code>, and <code class="docutils literal notranslate"><span class="pre">circle()</span></code>.</p>
+<p>What if no one told us about <code class="docutils literal notranslate"><span class="pre">turtle</span></code>? How would we know it exists? How
+would we know what it can do for us?</p>
+<p>The <a class="reference external" href="https://docs.python.org/3/" target="_blank">Python Documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> site is an extremely
+useful source of information. The site includes a list of all the standard
+modules that come with Python (called the
+<a class="reference external" href="https://docs.python.org/3/py-modindex.html" target="_blank">Global Module Index<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>).</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/python-docs-page.png"><img alt="The main Python Documentation page, with Global Module Index highlighted." src="../../_images/python-docs-page.png" style="width: 50%;" /></a>
+</div>
+<p>The Global Module Index gives an alphabetical listing of all the modules that
+are available as part of the standard library.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/python-module-index.png"><img alt="The Python Module Index page." src="../../_images/python-module-index.png" style="width: 50%;" /></a>
+</div>
+<p>Clicking on the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> option opens a page that describes all of the
+tools the module contains.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/turtle-graphics-page.png"><img alt="The webpage that describes the Python turtle module." src="../../_images/turtle-graphics-page.png" style="width: 50%;" /></a>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>For now, do not worry about wading through all of the possible modules. In
+this book, we point out the most useful ones for beginning Python coders.</p>
+<p class="last">As your skills grow, you can explore other options on your own.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">11.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In Python a module is:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A file containing Python code for use in other Python programs.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A separate block of code within a program.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> One line of code in a program.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A file that contains information about functions in Python.</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11. </span>Python Modules</a></li>
+        
+        
+        <li class="next"><a href="import-syntax.html"><span class="section-number">11.2. </span>Importing Modules <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/modules/modules-intro.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

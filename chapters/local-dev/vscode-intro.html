@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.3. Visual Studio Code &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.4. Python in VS Code" href="vscode-python.html" />
+    <link rel="prev" title="17.2. Wait… I’m using Replit" href="wait-using-replit.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.3. </span>Visual Studio Code</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="visual-studio-code">
+<h1><span class="section-number">17.3. </span>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">¶</a></h1>
+<p>Before we dive into coding our first local program, let’s take a moment to get
+used to our new code editor.</p>
+<p>Open the Visual Studio Code program and take a look around.</p>
+<div class="section" id="welcome-screen">
+<h2><span class="section-number">17.3.1. </span>Welcome Screen<a class="headerlink" href="#welcome-screen" title="Permalink to this headline">¶</a></h2>
+<p>The first time we run VS Code, the program displays the Welcome screen to get us
+started. Go ahead and click the <em>Open Folder</em> option and then select the
+<em>Desktop</em> directory. (Opening any directory activates the workspace, but for
+now we will practice on the Desktop).</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">When we launch VS Code, it tries to open the last project we worked on. If
+this happens now, don’t worry. Select <em>New Window</em> from the <em>File</em> menu to
+bring up the Welcome screen.</p>
+</div>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/vscode-welcome.png"><img alt="The VS Code Welcome screen." src="../../_images/vscode-welcome.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Welcome to Visual Studio Code!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Next, click on the <em>Terminal</em> menu and select <em>New Terminal</em>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/terminal-menu1.png"><img alt="VS Code Terminal menu options." src="../../_images/terminal-menu1.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Open the terminal inside VS Code.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>We now have several different panels, buttons, and menus that allow us to edit,
+debug, and run our code.</p>
+</div>
+<div class="section" id="the-workspace">
+<h2><span class="section-number">17.3.2. </span>The Workspace<a class="headerlink" href="#the-workspace" title="Permalink to this headline">¶</a></h2>
+<p>The workspace in Visual Studio Code consists of three main panels:</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/labeled-workspace.png"><img alt="VS Code workspace with the terminal, main toolbar, and code editor labeled." src="../../_images/labeled-workspace.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The VS Code workspace.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Terminal Panel</strong>: VS Code allows us to run our terminal application inside
+the workspace. All of the actions we practiced in the
+<a class="reference internal" href="../terminal/index.html#terminal-chapter"><span class="std std-ref">Terminal chapter</span></a> will work here.</li>
+<li><strong>Activity Bar and File Tree</strong>: This panel lets us navigate the file system,
+perform searches, install extensions, update the software, etc.</li>
+<li><strong>Editor Panel</strong>: Our code goes here! VS Code recognizes most major
+programming languages.</li>
+</ol>
+</div>
+<div class="section" id="terminal-panel">
+<span id="local-practice"></span><h2><span class="section-number">17.3.3. </span>Terminal Panel<a class="headerlink" href="#terminal-panel" title="Permalink to this headline">¶</a></h2>
+<p>Let’s run a couple of terminal commands just to see where we are:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Jims-Air:Desktop jimflores$ <span class="nb">pwd</span>
+/Users/jimflores/Desktop
+Jims-Air:Desktop jimflores$ ls
+LCHS Notebook files     Training files
+</pre></div>
+</td></tr></table></div>
+<p>Take a look at the file path returned by <code class="docutils literal notranslate"><span class="pre">pwd</span></code>. By opening the Desktop folder
+from the Welcome screen, VS Code automatically put us in that directory when we
+opened the terminal.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command displays the files and folders currently in <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>.
+Notice how the same items appear in the file tree on the left side of the
+workspace.</p>
+<p>Now use the terminal to create a new directory in the Desktop:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Jims-Air:Desktop jimflores$ mkdir local_practice
+Jims-Air:Desktop jimflores$ ls
+LCHS Notebook files     Training files          local_practice
+</pre></div>
+</td></tr></table></div>
+<p>Check your computer to see that a <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder appeared on the
+Desktop.</p>
+<p>When we write our first local Python program, we will use the terminal to run
+that code.</p>
+</div>
+<div class="section" id="activity-bar-and-file-tree">
+<h2><span class="section-number">17.3.4. </span>Activity Bar and File Tree<a class="headerlink" href="#activity-bar-and-file-tree" title="Permalink to this headline">¶</a></h2>
+<p>The Activity Bar on the left side of the workspace contains several buttons, but we
+will only look at three of them right now.</p>
+<ol class="arabic">
+<li><p class="first"><strong>File Explorer</strong>: Clicking on the top icon hides/reveals the file tree for
+the current directory.</p>
+<div class="figure align-default">
+<img alt="The file tree for the Desktop directory." src="../../_images/vscode-file-tree.png" />
+</div>
+<ol class="loweralpha simple">
+<li>Clicking on the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol next to a folder displays the contents of
+that directory.</li>
+<li>Clicking on a file name opens that file in the editor.</li>
+<li>The file tree includes buttons for adding new files and folders to the
+current directory.</li>
+</ol>
+</li>
+<li><p class="first"><strong>Settings</strong>: Clicking on the gear icon at the bottom of the toolbar brings
+up options for customizing the workspace. For example, if you don’t like the
+default theme (dark background with light text), you can change it!</p>
+</li>
+<li><p class="first"><strong>Extensions</strong>: We can install, update, or uninstall extensions for VS Code.
+Click on the fifth icon from the top to make sure that extensions for Python
+and HTML/CSS are installed. If not, follow the instructions in the
+<a class="reference internal" href="../../appendices/software-installation/vscode-setup.html#vscode-extensions"><span class="std std-ref">Setting Up VS Code</span></a> appendix to add them.</p>
+</li>
+</ol>
+<div class="section" id="add-a-new-file">
+<h3><span class="section-number">17.3.4.1. </span>Add a New File<a class="headerlink" href="#add-a-new-file" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Click on the <em>File Explorer</em> icon to display the file tree.</p>
+</li>
+<li><p class="first">Select the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory, which is currently empty.</p>
+</li>
+<li><p class="first">Click on the <em>New File</em> button.</p>
+<div class="figure align-default">
+<img alt="The New File button appears next to the directory name." src="../../_images/new-file-button.png" />
+</div>
+</li>
+<li><p class="first">Notice that a space opens under the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory where we
+can enter a filename. Type <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and hit <em>Enter</em>.</p>
+</li>
+<li><p class="first">A <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> tab appears in the editor panel. We will add some code to
+this file soon.</p>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension indicates that the file contains Python code. Remember
+to add this extension to all of your Python programs!</p>
+</div>
+</div>
+</div>
+<div class="section" id="editor-panel">
+<h2><span class="section-number">17.3.5. </span>Editor Panel<a class="headerlink" href="#editor-panel" title="Permalink to this headline">¶</a></h2>
+<p>This is where we will do most of our work in VS Code. From our practice in
+<a class="reference external" href="https://repl.it/login" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and <a class="reference external" href="https://trinket.io/login" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+we are familiar with the features of a code editor.</p>
+<div class="admonition-fun-fact admonition">
+<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="last">The developers behind repl.it modeled their editor on the look of Visual
+Studio Code!</p>
+</div>
+<p>Now let’s do some local coding!</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">17.3.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>In VS Code, how do we add a new file to a directory? Select ALL correct
+options.</p>
+<div class="last"><ol type="a">
+   <li><span id = "A1" onclick="highlight('A1', true)">Click on the directory in the file tree and press the <em>New File</em> button.</span></li>
+   <li><span id = "B1" onclick="highlight('B1', false)">Click on the directory in the file tree and press the <em>New Folder</em> button.</span></li>
+   <li><span id = "C1" onclick="highlight('C1', true)">In the terminal, navigate to the directory and use <em>touch new_filename</em>.</span></li>
+   <li><span id = "D1" onclick="highlight('D1', false)">In the terminal, navigate to the directory and use <em>mkdir new_filename</em>.</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="wait-using-replit.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.2. </span>Wait… I’m using Replit</a></li>
+        
+        
+        <li class="next"><a href="vscode-python.html"><span class="section-number">17.4. </span>Python in VS Code <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/vscode-intro.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

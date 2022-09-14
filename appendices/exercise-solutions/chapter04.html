@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 4: Data and Variables &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 5: Making Decisions With Conditionals" href="chapter05.html" />
+    <link rel="prev" title="A Note About The Solutions" href="intro.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 4: Data and Variables</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-4-data-and-variables">
+<h1>Chapter 4: Data and Variables<a class="headerlink" href="#chapter-4-data-and-variables" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/data-and-variables/exercises.html#data-and-variables-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/aeb2267502" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-a">
+<span id="chp4parta"></span><h3>Part A<a class="headerlink" href="#part-a" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Add parenthesis to the expression <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">*</span> <span class="pre">1</span> <span class="pre">-</span> <span class="pre">2</span></code> to change its value from
+<code class="docutils literal notranslate"><span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">-6</span></code>.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Print a selected word in several different patterns.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Rutabaga&#39;</span>
+
+<span class="c1"># Part a: Print the word 4 times on the same line, with spaces in between.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span>
+
+<span class="c1"># Part b: Print 3 lines of 2 words each. Use a single print statement.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>   <span class="c1"># &#39;\n&#39; moves the output to a newline.</span>
+
+<span class="c1"># Part c: Print 3 lines of 3 words each, with tabs between the words.</span>
+<span class="c1"># There are a number of ways to solve this part!</span>
+
+<span class="c1"># One way:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">)</span>  <span class="c1"># Single line of 3 words (with tabs).</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">)</span>  <span class="c1"># Second line</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">word</span><span class="p">)</span>  <span class="c1"># Third line</span>
+
+<span class="c1"># Another way:</span>
+
+<span class="nb">print</span><span class="p">(((</span><span class="n">word</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># This way includes extra tabs and newline.</span>
+
+<span class="c1"># Your way...</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/data-and-variables/exercises.html#data-and-variables-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-b">
+<span id="chp4partb"></span><h3>Part B<a class="headerlink" href="#part-b" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># 1. Declare and assign four variables:</span>
+<span class="n">ship_name</span> <span class="o">=</span> <span class="s1">&#39;Determination&#39;</span>
+<span class="n">speed_mph</span> <span class="o">=</span> <span class="mi">17500</span>
+<span class="n">km_to_mars</span> <span class="o">=</span> <span class="mi">225000000</span>
+<span class="n">mi_per_km</span> <span class="o">=</span> <span class="mf">0.621</span>
+
+<span class="c1"># 2. Define and assign a miles to Mars variable:</span>
+<span class="n">miles_to_mars</span> <span class="o">=</span> <span class="n">km_to_mars</span> <span class="o">*</span> <span class="n">mi_per_km</span>
+
+<span class="c1"># 3 &amp; 4. Calculate and store the hours and days it takes to get to Mars:</span>
+<span class="n">hours_to_mars</span> <span class="o">=</span> <span class="n">miles_to_mars</span><span class="o">/</span><span class="n">speed_mph</span>
+<span class="n">days_to_mars</span> <span class="o">=</span> <span class="n">hours_to_mars</span><span class="o">/</span><span class="mi">24</span>
+
+<span class="c1"># 5. Print the sentence, &quot;___ will take ___ days to reach Mars.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ship_name</span><span class="p">,</span> <span class="s1">&#39;will take&#39;</span><span class="p">,</span> <span class="n">days_to_mars</span><span class="p">,</span> <span class="s1">&#39;days to reach Mars.&#39;</span><span class="p">)</span>
+
+<span class="c1"># 6. Bonus mission:</span>
+<span class="n">km_to_moon</span> <span class="o">=</span> <span class="mi">384400</span>                     <span class="c1"># Assign distance value (in km).</span>
+<span class="n">mi_to_moon</span> <span class="o">=</span> <span class="n">km_to_moon</span> <span class="o">*</span> <span class="mf">0.621</span>         <span class="c1"># Convert km to miles.</span>
+<span class="n">hours_to_moon</span> <span class="o">=</span> <span class="n">mi_to_moon</span><span class="o">/</span><span class="n">speed_mph</span>    <span class="c1"># Calculate hours to moon.</span>
+<span class="n">days_to_moon</span> <span class="o">=</span> <span class="n">hours_to_moon</span><span class="o">/</span><span class="mi">24</span>         <span class="c1"># Calculate days to moon.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ship_name</span><span class="p">,</span> <span class="s1">&#39;will take&#39;</span><span class="p">,</span> <span class="n">days_to_moon</span><span class="p">,</span> <span class="s1">&#39;days to reach the Moon.&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference internal" href="../../chapters/data-and-variables/exercises.html#data-and-variables-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-c">
+<span id="chp4partc"></span><h3>Part C<a class="headerlink" href="#part-c" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">After the user enters a word, print the message, <code class="docutils literal notranslate"><span class="pre">The</span> <span class="pre">word</span> <span class="pre">'___'</span>
+<span class="pre">contains</span> <span class="pre">___</span> <span class="pre">characters.</span></code></p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">user_word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a word: &#39;</span><span class="p">)</span>
+<span class="n">num_chars</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">user_word</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The word &#39;&quot;</span> <span class="o">+</span> <span class="n">user_word</span> <span class="o">+</span> <span class="s2">&quot;&#39; contains&quot;</span><span class="p">,</span> <span class="n">num_chars</span><span class="p">,</span> <span class="s2">&quot;characters.&quot;</span> <span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Write a program that will find the <em>miles per gallon</em> for a car.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">miles_driven</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How many miles did you drive? &#39;</span><span class="p">))</span>
+<span class="n">gallons_used</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;How many gallons did you use? &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your car got&#39;</span><span class="p">,</span> <span class="n">miles_driven</span><span class="o">/</span><span class="n">gallons_used</span><span class="p">,</span> <span class="s1">&#39;miles per gallon.&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In Part C, questions 2 &amp; 3, we use <code class="docutils literal notranslate"><span class="pre">int()</span></code> and <code class="docutils literal notranslate"><span class="pre">float()</span></code> to convert a
+string value into a numerical data type.</p>
+<p>What happens if a user enters a decimal value (like <code class="docutils literal notranslate"><span class="pre">3.33</span></code>) for an
+<code class="docutils literal notranslate"><span class="pre">int()</span></code> input? What if they enter a whole number for a <code class="docutils literal notranslate"><span class="pre">float()</span></code> input?
+What happens if they enter letters instead? TRY IT!</p>
+<p class="last">Later, we will learn how to protect our programs against unexpected input
+values.</p>
+</div>
+<p><a class="reference internal" href="../../chapters/data-and-variables/exercises.html#data-and-variables-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="intro.html"><span aria-hidden="true">&larr;</span> A Note About The Solutions</a></li>
+        
+        
+        <li class="next"><a href="chapter05.html">Chapter 5: Making Decisions With Conditionals <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter04.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

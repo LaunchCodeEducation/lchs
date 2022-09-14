@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.1. What’s Connected to the Wire? &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.2. Web Addresses" href="web-addresses.html" />
+    <link rel="prev" title="19. HTTP and the Internet" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">19. </span>HTTP and the Internet</a></li>
+    <li class="active"><span class="section-number">19.1. </span>What’s Connected to the Wire?</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="what-s-connected-to-the-wire">
+<h1><span class="section-number">19.1. </span>What’s Connected to the Wire?<a class="headerlink" href="#what-s-connected-to-the-wire" title="Permalink to this headline">¶</a></h1>
+<p>Back in the <a class="reference internal" href="../html/background.html#internet-vs-web"><span class="std std-ref">HTML chapter</span></a>, we used a wire to represent
+the internet. Of course, it is a bit more involved, but the picture was a good
+place to start. Now we’re ready to take a deeper look at how the internet
+works.</p>
+<p>Most people use the internet without fully understanding what’s going on behind
+the scenes. It’s fairly easy to open a browser, navigate to a site, and
+interact with it. Knowing exactly <em>how</em> the internet works isn’t really
+necessary for most folks.</p>
+<p>However, for web developers like us, understanding how information flows across
+the internet is essential.</p>
+<div class="section" id="servers-and-clients">
+<h2><span class="section-number">19.1.1. </span>Servers and Clients<a class="headerlink" href="#servers-and-clients" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The Internet uses the <strong>client-server model</strong>. A <strong>server</strong> is a machine that
+provides resources to other devices. These resources include raw data, web
+pages, images, etc. A <strong>client</strong> is an application or device that <em>requests</em>
+resources from a server.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s take a look at one type of client-server exchange. Imagine we are
+surfing the web on our computer or smartphone.</p>
+<ol class="last arabic simple">
+<li>The <em>client</em> is the web browser on our device.</li>
+<li>When we click on a link or type in an address and hit <em>Enter</em>, the client
+sends a request to a server.</li>
+<li>This <em>server</em> (which sits in a building somewhere out in the world)
+receives our request and sends back a response.</li>
+<li>The response contains some amount of data, which is written in HTML code.</li>
+<li>The client receives the response, executes the code, and displays the
+data in a way we can understand.</li>
+</ol>
+</div>
+<p id="index-1">Note that clients, like our smartphones and laptops, are not connected directly
+to the internet. Instead, they interact with an <strong>internet service provider</strong>
+(ISP), which provides a link between clients and the internet. Examples of ISPs
+include Charter, Verizon, and AT&amp;T.</p>
+<p>To update our picture, let’s connect some extra equipment to the wire.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/client-server.png"><img alt="A server connected by wires to two client computers. Arrows indicate a request/response." src="../../_images/client-server.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Two clients communicating with a server.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="addresses">
+<h2><span class="section-number">19.1.2. </span>Addresses<a class="headerlink" href="#addresses" title="Permalink to this headline">¶</a></h2>
+<p>When we make a request inside our web browser, how does the client know where
+to send it? Also, once it receives a request, how does the server know where to
+send the data?</p>
+<p id="index-2">Every device connected directly or indirectly to the internet has its own
+numerical address, called an <strong>IP address</strong>. “IP” stands for <em>Internet
+Protocol</em>. When we click a link on a webpage, our computer identifies the IP
+address for the server we need to contact. Requests also include the address of
+our device, which tells the server where to send the response.</p>
+<p>Any time our request passes through a different device on its way to the server,
+that device adds its own IP address to the request. Think of this like a trail
+of breadcrumbs, or as a series of directions on a map. When the server responds
+to our request, it sends the data through the same IP addresses, but in reverse
+order.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/ip-trail.png"><img alt="A series of IP addresses are gathered as a request makes its way to the server." src="../../_images/ip-trail.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">IP addresses provide a path for data to follow.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="dns">
+<h3><span class="section-number">19.1.2.1. </span>DNS<a class="headerlink" href="#dns" title="Permalink to this headline">¶</a></h3>
+<p>IP addresses look something like this: <code class="docutils literal notranslate"><span class="pre">109.203.100.231</span></code>. When we surf the
+web, however, these addresses are usually hidden. Instead, we see names like
+<code class="docutils literal notranslate"><span class="pre">google.com</span></code>, which are easier to understand.</p>
+<p id="index-3"><strong>DNS</strong> is the address book of the internet. It provides readable and memorable
+names for servers, such as <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code>. These are called
+<strong>domain names</strong>, and they stand in for the actual server IP addresses.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">The domain names for <code class="docutils literal notranslate"><span class="pre">104.25.127.113</span></code> and <code class="docutils literal notranslate"><span class="pre">172.217.8.5</span></code> are
+<code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code> and <code class="docutils literal notranslate"><span class="pre">mail.google.com</span></code>, respectively.</p>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>It’s easy to look up the IP address of any domain name using some free
+online tools.</p>
+<p class="last">Use the popular site <a class="reference external" href="https://mxtoolbox.com/DNSLookup.aspx" target="_blank">MX Toolbox<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+to look up the IP address for <code class="docutils literal notranslate"><span class="pre">python.org</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="protocols">
+<h2><span class="section-number">19.1.3. </span>Protocols<a class="headerlink" href="#protocols" title="Permalink to this headline">¶</a></h2>
+<p>Once a client or server knows where to send a request/response, the actual data
+needs to get transferred.</p>
+<p id="index-4">A <strong>protocol</strong> is a set of rules for communicating between computers. Most web
+communication uses three protocols. We’ve looked at one already, DNS, and here
+is a summary of the other two.</p>
+<table border="1" class="docutils align-default" id="id3">
+<caption><span class="caption-text">Common Web Protocols</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Protocol</th>
+<th class="head">Full Name</th>
+<th class="head">Role</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>HTTP</td>
+<td>Hypertext Transfer Protocol</td>
+<td><p class="first">Used to transfer files and information, including:</p>
+<ul class="last simple">
+<li>HTML, CSS, and JavaScript files</li>
+<li>Images and other media</li>
+<li>Form submissions</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>TCP/IP</td>
+<td>Transmission Control Protocol / Internet Protocol</td>
+<td>Used to transfer small chunks of raw data known as <em>packets</em>.</td>
+</tr>
+<tr class="row-even"><td>DNS</td>
+<td>Domain Name Service</td>
+<td>Translates human-friendly names into server addresses.</td>
+</tr>
+</tbody>
+</table>
+<p>A complete discussion for each of these protocols is beyond the scope of this
+class. However, we should recognize how each one plays a role in making web
+communication happen.</p>
+<div class="section" id="http">
+<h3><span class="section-number">19.1.3.1. </span>HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
+<p id="index-5"><strong>HTTP</strong> sets the structure for requesting common wed data, like HTML files or
+images. It also provides the rules for how to format the responses. The details
+of the request/response structure come later in this chapter.</p>
+<p><strong>HTTPS</strong> adds a secure connection to HTTP. Any data sent is <em>encrypted</em> to
+keep it from being read while in transit. The data is coded at one end of the
+line (by the server or client), and then decoded at the other end.</p>
+</div>
+<div class="section" id="tcp-ip">
+<h3><span class="section-number">19.1.3.2. </span>TCP/IP<a class="headerlink" href="#tcp-ip" title="Permalink to this headline">¶</a></h3>
+<p id="index-6"><strong>TCP/IP</strong> is a standard that allows <em>raw data</em> to get from one place to
+another on the internet.</p>
+<p>When a server sends a file back to a client, that file moves across a series of
+devices and hardware, like cables, routers, and switches. TCP/IP breaks the
+file into <em>packets</em>, which are easier to manage. Packets are small chunks of
+data of a standard size, and they get sent from one location to the next. When
+they arrive at their final destination, the separate packets get put back
+together.</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/tcp-ip.png"><img alt="Sending data across the internet in packets of standard size." src="../../_images/tcp-ip.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">TCP/IP sends data across the internet as a series of packets.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.1.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which protocol is responsible for turning a name like <code class="docutils literal notranslate"><span class="pre">launchcode.org</span></code>
+into an IP address?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> HTTP</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> HTTPS</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> TCP/IP</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> DNS</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> <span class="section-number">19. </span>HTTP and the Internet</a></li>
+        
+        
+        <li class="next"><a href="web-addresses.html"><span class="section-number">19.2. </span>Web Addresses <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/http/how-the-internet-works.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

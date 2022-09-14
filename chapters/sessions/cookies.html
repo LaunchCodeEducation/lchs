@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>23.2. Cookies &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23.3. Flask Cookies" href="managing-cookies.html" />
+    <link rel="prev" title="23.1. Keeping Track of Data Values" href="introduction.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">23. </span>Cookies &amp; Sessions</a></li>
+    <li class="active"><span class="section-number">23.2. </span>Cookies</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="cookies">
+<h1><span class="section-number">23.2. </span>Cookies<a class="headerlink" href="#cookies" title="Permalink to this headline">¶</a></h1>
+<p>At some point, we’ve all received an alert in our browser that says something
+like, <em>This website uses cookies</em>. We hear about cookies all the time, but many
+users don’t think about them too deeply. They either choose <em>Accept</em> or
+<em>Decline</em> when they see the alert, and then they move on to the next task.</p>
+<p>To help us make our Flask applications more efficient, we’ll start by taking a
+closer look at cookies.</p>
+<div class="section" id="cookie-ingredients">
+<h2><span class="section-number">23.2.1. </span>Cookie Ingredients<a class="headerlink" href="#cookie-ingredients" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">A <strong>cookie</strong> is just a text file that stores data. Browsers use cookies to help
+users navigate a specific website. For example, a cookie can store a user’s zip
+code, which helps a shopping app find the closest store.</p>
+<p>By design, cookies are very small (&lt; 4 kB). Each one consists of a single
+key/value pair, like <code class="docutils literal notranslate"><span class="pre">zip_code</span> <span class="pre">=</span> <span class="pre">63108</span></code>. As we surf the web, the browser
+stores cookies on our device, usually in the same directory as our browser.</p>
+<p>Since the file size is so small, a single website often stores many cookies on
+our machine.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>A deep dive into cookie syntax is beyond the scope of this text. However,
+if you are curious, here are some good resources to get you started:</p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://www.allaboutcookies.org/faqs/cookie-file.html" target="_blank">All About Cookies<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.youtube.com/playlist?list=PLs5n5nYB22fLqBWEGW0dBh_yIHdzYlpEz" target="_blank">Cookie playlist from Udacity<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://computer.howstuffworks.com/cookie1.htm" target="_blank">How Stuff Works<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies" target="_blank">HTTP Cookies<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+on the MDN website.</li>
+</ol>
+</div>
+<p>Cookie data is temporary. However, it usually <em>persists</em> longer than the values
+we assign to Python variables. Cookies often survive after we refresh a page or
+exit out of our browser.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>We can use the browser preferences to control how long cookies remain saved
+on our device. We can also remove cookies at any time.</p>
+<p>For example, in Firefox we can check our cookie settings by selecting the
+<em>Privacy &amp; Security</em> option under <em>Preferences</em>. Other browsers provide
+similar features.</p>
+<div class="last figure align-default" id="id1">
+<img alt="Browsers let users manage how cookies are stored on their device." src="../../_images/cookie-settings.png" />
+<p class="caption"><span class="caption-text">We can customize how our browser deals with cookies. We can also clear the data right now.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="how-cookies-work">
+<h2><span class="section-number">23.2.2. </span>How Cookies Work<a class="headerlink" href="#how-cookies-work" title="Permalink to this headline">¶</a></h2>
+<p>One thing we need to remember about cookies is that they are NOT programs. They
+just store a small amount of data that web servers can use when we visit a site.
+Here’s a summary of how the cookie process works:</p>
+<ol class="arabic">
+<li><p class="first">The first time we navigate to a webpage, our browser sends an HTTP request
+(<code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>) to the server.</p>
+</li>
+<li><p class="first">The server sends back an HTTP response, which contains data to display on
+the page. The response also includes a command to create one or more
+cookies.</p>
+</li>
+<li><p class="first">The browser creates the cookie files and stores them on our machine.</p>
+</li>
+<li><p class="first">When our browser communicates with the server again, it includes all of the
+saved cookies with the new HTTP request. The server uses the information to
+help it process the request.</p>
+<p>Cookies set by a specific server can only be sent back to that server. For
+example, a cookie set by <a class="reference external" href="https://trinket.io/" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> won’t be sent to
+the <a class="reference external" href="https://github.com/" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> server.</p>
+</li>
+<li><p class="first">When the server responds to the new request, it can update the existing
+cookies or create new ones.</p>
+</li>
+</ol>
+<div class="figure align-default" id="id2">
+<img alt="Servers send commends to set cookies, and browsers save them on a user's device." src="../../_images/cookie-flow.png" />
+<p class="caption"><span class="caption-text">Servers use commands to set cookies. Browsers create and save cookie files on a user’s device.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Cookies serve several purposes:</p>
+<ol class="arabic simple">
+<li>To keep us logged into a site.</li>
+<li>To store helpful data for the server during our visit. For example:<ol class="loweralpha">
+<li>Our current score in a game we’re playing. If we need to close the tab
+when our teacher/parent/boss walks by, cookies save our progress until we
+return.</li>
+<li>The contents of a shopping cart. When we select <em>Checkout</em> to complete an
+online order, cookies identify the items we want to buy.</li>
+</ol>
+</li>
+<li>To track and analyze our behavior.<ol class="loweralpha">
+<li>Have you received targeted adds while searching the web? Cookie data
+influences what you see!</li>
+<li>Watch this <a class="reference external" href="https://youtu.be/qMFRRoh6vV8" target="_blank">short video clip<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> that
+describes how cookies are used to track your movement on the web.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">23.2.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>A cookie is a small program that runs in the browser.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Where is a cookie file saved?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On a web server</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> In an open browser application</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> On the user's device</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> In the cloud</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="introduction.html"><span aria-hidden="true">&larr;</span> <span class="section-number">23.1. </span>Keeping Track of Data Values</a></li>
+        
+        
+        <li class="next"><a href="managing-cookies.html"><span class="section-number">23.3. </span>Flask Cookies <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/sessions/cookies.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

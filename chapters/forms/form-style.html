@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.9. Styling Forms &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.10. Exercises: Launch Form" href="exercises.html" />
+    <link rel="prev" title="20.8. Form Validation with HTML5" href="html-validation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.9. </span>Styling Forms</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="styling-forms">
+<span id="style-forms"></span><h1><span class="section-number">20.9. </span>Styling Forms<a class="headerlink" href="#styling-forms" title="Permalink to this headline">¶</a></h1>
+<p>The forms we created in this chapter look pretty bland, since we stuck with
+plain HTML. For example:</p>
+<div class="figure align-default">
+<img alt="A plain HTML form with the input fields too close together and a non-exciting appearance." src="../../_images/bland-form.png" />
+</div>
+<p>Visually, the form needs some work. First, the input fields don’t line up
+evenly. They don’t have to, but aligning them makes our form look more
+professional. Next, it would be nice to put some space between the boxes to
+keep them from pushing right up against each other. Finally, the text is pretty
+plain, and the button blends into the background.</p>
+<p>Vanilla is a great ice cream flavor, but <em>vanilla HTML</em> makes a pretty weak web
+form. We want visitors to our site to have a good experience, and presenting an
+attractive page is a key part of this. Here are a few tips to keep in mind when
+coding a form. None of these items are <em>required</em>, but each one improves a
+user’s experience with our work.</p>
+<ol class="arabic simple">
+<li>Include a short heading that identifies the purpose of the form.</li>
+<li>Place only one input element on each line of the form. Vertically stacked
+fields are easier to navigate than side-by-side ones.</li>
+<li>For text inputs, try to keep the width of the boxes the same. Also, have the
+fields line up with each other.</li>
+<li>The part of the page that belongs to the form should be clear. Use shading
+or a border to separate the form from the other content on the page.</li>
+<li>Break longer forms into multiple sections. Each section should deal with
+related information. For example, name and email would go in one section,
+while options for a lunch order would go in another.</li>
+<li>The user shouldn’t need to zoom in. Keep the font size large enough to
+easily read. (<em>Hint</em>: If your parent or teacher needs to squint and lean
+closer to the screen, bump up your font size).</li>
+</ol>
+<p>Fortunately, we can meet these guidelines by applying some CSS style rules!</p>
+<div class="section" id="add-css">
+<h2><span class="section-number">20.9.1. </span>Add CSS<a class="headerlink" href="#add-css" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">One thing to keep in mind as we style our forms is that <code class="docutils literal notranslate"><span class="pre">label</span></code>,
+<code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">select</span></code>, <code class="docutils literal notranslate"><span class="pre">textarea</span></code>, and <code class="docutils literal notranslate"><span class="pre">button</span></code> are all
+<a class="reference internal" href="../html/tags.html#block-vs-inline-elements"><span class="std std-ref">inline elements</span></a>. Even if we put them on
+separate lines in our HTML code, they will appear in the same line of our
+webpage.</p>
+</div>
+<p>Return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of your <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository. Save and
+commit any work, then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to make a new branch called
+<code class="docutils literal notranslate"><span class="pre">form-style</span></code>.</p>
+<p>Paste in this starter code for the <code class="docutils literal notranslate"><span class="pre">form</span></code> element:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>A Few Of My Favorite Things<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Color: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Lucky Number: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;number&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;luck-num&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Class: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav-class&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Favorite Pixar Movie: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;best-pix&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Save your work, then open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in your browser.</p>
+<div class="section" id="margins">
+<h3><span class="section-number">20.9.1.1. </span>Margins<a class="headerlink" href="#margins" title="Permalink to this headline">¶</a></h3>
+<p id="index-0">Let’s start by putting some space between the inputs in our form. We do this
+with the <strong>margin</strong> property. <em>Margin</em> sets the amount of whitespace that
+surrounds an element. The larger its value, the more spaced out two neighboring
+elements will be.</p>
+<ol class="arabic">
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> tab in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">margin</span></code>
+property is assigned inside the element selector. Experiment with changing
+the number of pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>) assigned.</p>
+</li>
+<li><p class="first">What happens to the form if you add a <code class="docutils literal notranslate"><span class="pre">label</span></code> selector that also
+includes a <code class="docutils literal notranslate"><span class="pre">margin</span></code> value?</p>
+<iframe src="https://trinket.io/embed/html/728e86b6f9" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
+</ol>
+<p>Once you finish exploring <code class="docutils literal notranslate"><span class="pre">margin</span></code>, open Visual Studio Code and paste the CSS
+code into your local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. Be sure to refresh the page in your
+browser to see how it looks.</p>
+</div>
+<div class="section" id="field-size">
+<h3><span class="section-number">20.9.1.2. </span>Field Size<a class="headerlink" href="#field-size" title="Permalink to this headline">¶</a></h3>
+<p>We can change the size of an input field with the <code class="docutils literal notranslate"><span class="pre">width</span></code> property. The value
+assigned can be in pixels or a percentage. Using a percentage is recommended,
+since this changes the field size to always fit within a given space.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Resize your browser window to see how these two fields respond:</p>
+<input style="width:50%" type="text" placeholder="Width set to 50%."/><br><br>
+<input style="width:600px" type="text" placeholder="Width set to 600 pixels."/><p class="last">Note that the input field set at <code class="docutils literal notranslate"><span class="pre">50%</span></code> <em>always</em> stretches halfway across
+this Example box, no matter how small we make the window. The <code class="docutils literal notranslate"><span class="pre">600px</span></code> box
+remains the same size.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In the editor above, add a <code class="docutils literal notranslate"><span class="pre">width</span></code> property to the <code class="docutils literal notranslate"><span class="pre">input</span></code> selector.
+Experiment by assigning different <code class="docutils literal notranslate"><span class="pre">px</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code> values to the property.</p>
+</li>
+<li><p class="first">What about the <code class="docutils literal notranslate"><span class="pre">type=&quot;number&quot;</span></code> input? That field doesn’t need to be as
+large as the others. With CSS we can either add a <em>class</em> to set the width,
+or we can try out a new technique. Add this to the CSS code in the editor:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">number</span><span class="o">]</span> <span class="p">{</span>
+   <span class="k">width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">input[type=number]</span></code> sets the style rules for <code class="docutils literal notranslate"><span class="pre">input</span></code> elements that have
+the <code class="docutils literal notranslate"><span class="pre">type=&quot;number&quot;</span></code> attribute. Since we don’t include a <code class="docutils literal notranslate"><span class="pre">margin</span></code>
+property, the number type uses the value set in the other <code class="docutils literal notranslate"><span class="pre">input</span></code>
+selector.</p>
+</li>
+</ol>
+<p>Once you finish exploring <code class="docutils literal notranslate"><span class="pre">width</span></code>, paste the CSS code into your local
+<code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. Save and commit your work.</p>
+</div>
+<div class="section" id="button-style">
+<h3><span class="section-number">20.9.1.3. </span>Button Style<a class="headerlink" href="#button-style" title="Permalink to this headline">¶</a></h3>
+<p>Note that the HTML form uses <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> tags for <em>Send to Parrot</em> instead of
+<code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code>. This lets us separate the styles for the submit button vs. the
+other input fields.</p>
+<p>In the editor below, open the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> tab and play around with the
+properties in the <code class="docutils literal notranslate"><span class="pre">button</span></code> selector. What does each property do? In
+particular, how is <code class="docutils literal notranslate"><span class="pre">padding</span></code> different from <code class="docutils literal notranslate"><span class="pre">margin</span></code>?</p>
+<iframe src="https://trinket.io/embed/html/14d550fada" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>Once you’ve designed a button you like, paste the CSS code into your local
+<code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. Save and commit your work.</p>
+</div>
+<div class="section" id="alignment">
+<h3><span class="section-number">20.9.1.4. </span>Alignment<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h3>
+<p>Right now, the edges of the input fields do not line up because their labels
+are different lengths. There are <em>lots</em> of ways to address this, but one simple
+fix is to put the labels and input fields on different lines.</p>
+<div class="figure align-default" id="id1">
+<img alt="Form with each label on the line above its input field." src="../../_images/label-over-input.png" />
+<p class="caption"><span class="caption-text">It’s not fancy, but it’s quick and easy.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> elements start out aligned on the left
+side of the screen. As long as they have the same <code class="docutils literal notranslate"><span class="pre">margin</span></code> value, they should
+line up nicely.</p>
+<p>In VS Code, update your HTML code to align the input fields how you like. For
+an added amount of control, you can add <code class="docutils literal notranslate"><span class="pre">section</span></code> elements inside the form to
+help align the content.</p>
+<p>Finally, include a <code class="docutils literal notranslate"><span class="pre">form</span></code> element inside <code class="docutils literal notranslate"><span class="pre">styles.css</span></code> to add a few final
+touches, like a background color or border.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/styled-form.png"><img alt="A styled HTML form with a heading, background color, aligned fields, and large button." src="../../_images/styled-form.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">One option for a styled form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Refresh your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> page in your browser to make sure it looks the way
+you want. When you are happy with the result, save and commit your work.</p>
+</div>
+</div>
+<div class="section" id="wrap-up">
+<h2><span class="section-number">20.9.2. </span>Wrap-Up<a class="headerlink" href="#wrap-up" title="Permalink to this headline">¶</a></h2>
+<p>Return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in your repo. Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">form-style</span></code> to
+combine the two branches. Resolve any merge conflicts.</p>
+</div>
+<div class="section" id="resources">
+<h2><span class="section-number">20.9.3. </span>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>The following websites provide more detailed information about styling forms
+with CSS:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/" target="_blank">How to style forms with CSS: A beginner’s guide<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://www.w3schools.com/css/css_form.asp" target="_blank">W3Schools CSS Forms<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li>Dive deep with the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms" target="_blank">MDN documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
+<li><a class="reference external" href="https://getbootstrap.com/docs/4.5/components/forms/" target="_blank">Bootstrap Form Styles<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+(Review the <a class="reference internal" href="../css/bootstrap.html#bootstrap-classes"><span class="std std-ref">Bootstrap</span></a> section in the CSS chapter
+if necessary).</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="html-validation.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.8. </span>Form Validation with HTML5</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">20.10. </span>Exercises: Launch Form <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/form-style.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

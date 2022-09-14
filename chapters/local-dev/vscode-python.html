@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.4. Python in VS Code &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.5. Local Turtles" href="vscode-turtles.html" />
+    <link rel="prev" title="17.3. Visual Studio Code" href="vscode-intro.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.4. </span>Python in VS Code</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="python-in-vs-code">
+<h1><span class="section-number">17.4. </span>Python in VS Code<a class="headerlink" href="#python-in-vs-code" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have installed all the tools we need, we are almost ready to write
+our first local Python program. We just need to run one last check.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The steps on this page are ALMOST the same for both Windows and Mac. If the
+screenshots differ slightly from what you see, it’s because the images were
+taken on a different operating system than yours. However, the menus, steps,
+etc. are the same.</p>
+<p class="last"><strong>Mac users</strong>: Whenever we ask you to type the <code class="docutils literal notranslate"><span class="pre">python</span></code> command, you
+should use <code class="docutils literal notranslate"><span class="pre">python3</span></code> instead. macOS comes pre-installed with a 2.x version
+of Python. This version runs if you use <code class="docutils literal notranslate"><span class="pre">python</span></code>. To make sure you’re
+running the latest version, use <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
+</div>
+<div class="section" id="checking-python-version">
+<h2><span class="section-number">17.4.1. </span>Checking Python Version<a class="headerlink" href="#checking-python-version" title="Permalink to this headline">¶</a></h2>
+<p>Open VS Code and a terminal pane (if it isn’t already open). In the terminal,
+type <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code> (note the capital <code class="docutils literal notranslate"><span class="pre">-V</span></code>). You should see something similar
+to:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mac:
+   $ python3 -V
+   Python 3.8.3
+
+Windows:
+   $ python -V
+   Python 3.8.3
+</pre></div>
+</div>
+<p>This command prints out the version of Python installed on your machine. If
+your version differs slightly from what’s shown, that’s okay, as long as you
+have a 3.x version. If you see 2.x or an error message, go back through the
+<a class="reference internal" href="../../appendices/software-installation/python-setup.html#python-install"><span class="std std-ref">Setting Up Python</span></a> directions in the appendix.</p>
+</div>
+<div class="section" id="first-local-program">
+<h2><span class="section-number">17.4.2. </span>First Local Program<a class="headerlink" href="#first-local-program" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you did not create the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory and <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file
+described on the <a class="reference internal" href="vscode-intro.html#local-practice"><span class="std std-ref">previous page</span></a>, go back and do that
+now.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">If it’s not already open, launch Visual Studio Code.</p>
+</li>
+<li><p class="first">From the <em>File</em> menu, select <em>Open</em>. Choose the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder.
+The file tree should update to look something like this:</p>
+<div class="figure align-default">
+<img alt="File tree for the local_practice directory. It only contains hello.py." src="../../_images/local-hello-tree.png" />
+</div>
+</li>
+<li><p class="first">Double-click on <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> from the file tree to open it in the editor.</p>
+</li>
+<li><p class="first">On line 1, type <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">Local</span> <span class="pre">World!&quot;)</span></code>.</p>
+</li>
+<li><p class="first">Save your changes by using <em>File –&gt; Save</em> or a keyboard shortcut.</p>
+</li>
+</ol>
+<div class="section" id="linting">
+<h3><span class="section-number">17.4.2.1. </span>Linting<a class="headerlink" href="#linting" title="Permalink to this headline">¶</a></h3>
+<p>When you type in your first Python statement, VS Code may ask you to install a
+<strong>linter</strong>. This is a feature that provides some extra assistance while you
+code. For example, the linter flags syntax errors, undefined variables, etc.</p>
+<p>Go ahead and click <em>Install</em> if you see this popup. If it works, great! If
+not, don’t worry about it. VS Code provides a basic level of linting by default.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/linter-popup.png"><img alt="Linter pop up box with 3 options: Install, Select Linter, Don't Show Again." src="../../_images/linter-popup.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Try to install the linter, or choose not to be bothered by the popup.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="running-a-local-program">
+<h2><span class="section-number">17.4.3. </span>Running a Local Program<a class="headerlink" href="#running-a-local-program" title="Permalink to this headline">¶</a></h2>
+<p>We have several options for running a program locally. Be sure to try out each
+one to see how they all work!</p>
+<div class="section" id="terminal">
+<h3><span class="section-number">17.4.3.1. </span>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
+<p>To launch a Python program from the terminal, the general syntax is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python filename.py
+</pre></div>
+</div>
+<p>This works if we are in the directory that holds <code class="docutils literal notranslate"><span class="pre">filename.py</span></code>. If we are in
+a different directory, then we can include a path to tell the computer where to
+find our program (e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">/Users/username/directory_name/filename.py</span></code>).</p>
+<p>From the terminal, run <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. The output should look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python hello.py
+Hello, Local World!
+</pre></div>
+</div>
+<p><em>Mac users</em>: Remember to use <code class="docutils literal notranslate"><span class="pre">python3</span></code> instead of <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+</div>
+<div class="section" id="right-click">
+<h3><span class="section-number">17.4.3.2. </span>Right-Click<a class="headerlink" href="#right-click" title="Permalink to this headline">¶</a></h3>
+<p>From the file tree, right-click on the file and choose <em>Run Python File in
+Terminal</em>.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/rclick-run.png"><img alt="Right-click on the hello.py filename to bring up a menu of options." src="../../_images/rclick-run.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Run by right-clicking!</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>If all goes well, you’ll see <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Local</span> <span class="pre">World!</span></code> appear in the terminal
+pane.</p>
+</div>
+<div class="section" id="run-button">
+<h3><span class="section-number">17.4.3.3. </span>Run Button<a class="headerlink" href="#run-button" title="Permalink to this headline">¶</a></h3>
+<p>The Python extension for VS Code adds a green <em>Run</em> button at the top right of
+the workspace.</p>
+<div class="figure align-default" id="id3">
+<img alt="Green Run button at the top of the workspace." src="../../_images/run-button.png" />
+<p class="caption"><span class="caption-text">Yep, we have a Run button!</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>Clicking the button runs the code in the currently open tab. Try this with
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code>.</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">17.4.4. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Be sure to save your work after you change your code! If you forget to do
+this, VS Code will run the last saved version of your program instead of
+the newer one.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Now that you’ve got the classic <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> program under your belt,
+add a loop and a conditional to your program. Save your work, then run
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code> again to see the change.</p>
+</li>
+<li><p class="first">Create a new Python file in the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder. Be sure to
+include the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension.</p>
+</li>
+<li><p class="first">Your new file should open into its own tab in VS Code. If it does not, click
+on its name in the file tree.</p>
+</li>
+<li><p class="first">Log into <a class="reference external" href="https://repl.it/login" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://trinket.io/login" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and find one of your favorite exercises, activities, or assignments.
+Copy your code from there and paste it into VS Code. Some nice options
+include:</p>
+<ol class="loweralpha simple">
+<li>The <em>Choose Your Own Adventure</em> activity that your teacher may have assigned back in chapter 5.</li>
+<li>Your <a class="reference internal" href="../../assignments/candidate-quiz.html#candidate-quiz"><span class="std std-ref">Candidate Quiz</span></a> assignment.</li>
+<li>Anything from the <a class="reference internal" href="../functions/project.html#functions-project"><span class="std std-ref">Functions chapter project</span></a>.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Steer clear of turtle programs for now. They require a little extra
+attention to get them working in VS Code. We will take a closer look at
+Python turtles on the next page.</p>
+</div>
+</li>
+<li><p class="first">Check to see if VS Code flags any errors in your code. Fix these first, then
+run your program. If it works, great! If not, debug your code and get it
+running.</p>
+</li>
+<li><p class="first">Practice renaming your program file. Right-click on its name in the file
+tree and choose <em>Rename</em>. Type in a new option and hit <em>Enter</em>. Be sure to
+keep the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension!</p>
+</li>
+</ol>
+</div>
+<div class="section" id="naming-python-files">
+<h2><span class="section-number">17.4.5. </span>Naming Python Files<a class="headerlink" href="#naming-python-files" title="Permalink to this headline">¶</a></h2>
+<p>We learned the naming rules for Python files in the
+<a class="reference internal" href="../modules/creating-modules.html#custom-modules"><span class="std std-ref">Modules chapter</span></a>. Just as a reminder, here they are
+again.</p>
+<p>Python file names should:</p>
+<ol class="arabic simple">
+<li>Begin with a letter and contain only lowercase letters.</li>
+<li>Be as short as possible, but still descriptive.</li>
+<li>Separate words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</li>
+<li>End with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="vscode-intro.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.3. </span>Visual Studio Code</a></li>
+        
+        
+        <li class="next"><a href="vscode-turtles.html"><span class="section-number">17.5. </span>Local Turtles <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/vscode-python.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.3. Database Operations &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.4. SQLite" href="sqlite.html" />
+    <link rel="prev" title="24.2. Database Structure" href="db-tables.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">24. </span>Databases</a></li>
+    <li class="active"><span class="section-number">24.3. </span>Database Operations</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="database-operations">
+<h1><span class="section-number">24.3. </span>Database Operations<a class="headerlink" href="#database-operations" title="Permalink to this headline">¶</a></h1>
+<p>Before we set up our first database, we need to recognize the four main actions
+we will perform with it.</p>
+<div class="section" id="crud">
+<span id="crud-operations"></span><h2><span class="section-number">24.3.1. </span>CRUD<a class="headerlink" href="#crud" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="index-0"></span><p id="index-1">To interact with a database, we write a <strong>query</strong>. Queries can be simple or
+complex, depending on the task. We can fit each query’s purpose into one of
+four categories:</p>
+<ol class="arabic simple">
+<li>Create</li>
+<li>Read</li>
+<li>Update</li>
+<li>Delete</li>
+</ol>
+<p>Taking the first letter from each category gives us the term <strong>CRUD</strong>. Let’s
+look at each type of operation in more detail.</p>
+</div>
+<div class="section" id="create">
+<h2><span class="section-number">24.3.2. </span>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<p>When we talk about <em>creating</em> something in a database, this can mean adding a
+new table, a new row, or a new column.</p>
+<div class="section" id="adding-a-table">
+<h3><span class="section-number">24.3.2.1. </span>Adding a Table<a class="headerlink" href="#adding-a-table" title="Permalink to this headline">¶</a></h3>
+<p>To add a new table to the database, the query must include the following:</p>
+<ol class="arabic simple">
+<li>A name for the table,</li>
+<li>A label for each column,</li>
+<li>The data type for each column.</li>
+</ol>
+<p>We will worry about the exact syntax later, but the query looks something like
+this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">column_name_1</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">column_name_2</span> <span class="n">data_type</span><span class="p">,...)</span>
+</pre></div>
+</div>
+<p>Notice that a column name and its data type come as a pair
+(<code class="docutils literal notranslate"><span class="pre">column_name_1</span> <span class="pre">data_type</span></code>) and are NOT separated by commas. However, commas
+ARE used to separate different name/type pairs inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
+</div>
+<div class="section" id="adding-a-row">
+<span id="sql-insert-syntax"></span><h3><span class="section-number">24.3.2.2. </span>Adding a Row<a class="headerlink" href="#adding-a-row" title="Permalink to this headline">¶</a></h3>
+<p>Once we have a table ready to go, the query to add a new entry must include:</p>
+<ol class="arabic simple">
+<li>The name of the table,</li>
+<li>The name of one or more of columns in that table,</li>
+<li>A value for each of the selected columns.</li>
+</ol>
+<p>The general syntax to add a new row looks like this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">column_1</span><span class="p">,</span> <span class="n">column_2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="p">...)</span>
+</pre></div>
+</div>
+<p>When we insert a new row, we do NOT have to include a value for every column in
+the table. When we leave out values, those spots in the table remain empty.</p>
+</div>
+<div class="section" id="adding-a-column">
+<span id="add-table-column"></span><h3><span class="section-number">24.3.2.3. </span>Adding a Column<a class="headerlink" href="#adding-a-column" title="Permalink to this headline">¶</a></h3>
+<p>To add a column to an existing table, the query must include:</p>
+<ol class="arabic simple">
+<li>The name of the table,</li>
+<li>The name for the new column,</li>
+<li>The data type for the new column.</li>
+</ol>
+<p>The general syntax looks like this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="k">column_name</span> <span class="n">data_type</span>
+</pre></div>
+</div>
+<p>When we create a new column in a table, we don’t need to fill it with any
+values. Existing rows in the table will add the new slot but keep it empty.</p>
+<div class="admonition-note admonition" id="index-2">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Empty spaces in a database are assigned a special value called <strong>NULL</strong>.</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">NULL</span></code> is NOT the same as an empty string, <code class="docutils literal notranslate"><span class="pre">0</span></code>, or <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
+is literally an empty space, and it indicates that a data value does not
+exist for that spot in the table.</p>
+</div>
+</div>
+</div>
+<div class="section" id="read">
+<span id="sql-select-syntax"></span><h2><span class="section-number">24.3.3. </span>Read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<p>To get information from a table, the query must include:</p>
+<ol class="arabic simple">
+<li>The table name,</li>
+<li>The name of one or more columns.</li>
+</ol>
+<p>The query may also include a <em>condition</em> to help filter the results.</p>
+<p>The general syntax looks like this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">column_name_1</span><span class="p">,</span> <span class="n">column_name_2</span><span class="p">,</span> <span class="p">...</span>
+<span class="k">FROM</span> <span class="k">table_name</span>
+<span class="k">WHERE</span> <span class="k">condition</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="update">
+<span id="sql-update-syntax"></span><h2><span class="section-number">24.3.4. </span>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<p>Once we get comfortable adding and retrieving information from the database,
+the next step is to start changing it!</p>
+<p>To modify a value in a table, the query must include:</p>
+<ol class="arabic simple">
+<li>The table name,</li>
+<li>The name of a column,</li>
+<li>The new value,</li>
+<li>A condition.</li>
+</ol>
+<p>The general syntax looks like this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="k">table_name</span>
+<span class="k">SET</span> <span class="k">column_name</span> <span class="o">=</span> <span class="n">new_value</span>
+<span class="k">WHERE</span> <span class="k">condition</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">SET</span></code> selects a column from the table, and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> choses a specific row.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> statement is optional, but we really want to include it! If we
+don’t, then EVERY value in that column will be changed to <code class="docutils literal notranslate"><span class="pre">new_value</span></code>.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">We must be very careful when we updating a table. There is no <em>Undo</em> command
+if we make a mistake!</p>
+</div>
+</div>
+<div class="section" id="delete">
+<span id="sql-delete-syntax"></span><h2><span class="section-number">24.3.5. </span>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<p>Finally, there comes a time when we need to remove an entry from the database.
+This does more than clear the values in the columns. The <em>entire row</em> is
+removed from the table. If we print a table before and after a delete action,
+we will see no gap where data used to be. Instead, we will see a new, shorter
+table.</p>
+<p>To delete a row from a table, the query must include:</p>
+<ol class="arabic simple">
+<li>The table name,</li>
+<li>A condition to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
+</ol>
+<p>The general syntax looks like this:</p>
+<div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table_name</span> <span class="k">WHERE</span> <span class="k">condition</span>
+</pre></div>
+</div>
+<p>When the query runs, each row in the table is checked for the <code class="docutils literal notranslate"><span class="pre">condition</span></code>. If
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, then the row is removed from the table.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Deleting a row permanently removes it from the table, and there is no
+<em>Undo</em> option!</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">24.3.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Given this query:</p>
+<div class="highlight-mysql notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">event</span>
+<span class="k">FROM</span> <span class="n">events_master</span>
+<span class="k">WHERE</span> <span class="k">month</span> <span class="o">=</span> <span class="mi">07</span>
+</pre></div>
+</td></tr></table></div>
+<p>What is the name of the table?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">event</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">events_master</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">month</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For the same query, what is the name of the column that holds the data we
+want?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">event</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">events_master</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">month</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What action will this query perform?</p>
+<div class="highlight-mysql notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">accounts</span> <span class="k">WHERE</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">16</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It removes the 'age' column from the 'accounts' table.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It removes rows 0 - 15 from the 'accounts' table.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> It removes any row from 'accounts' that has a value less than 16 in the 'age' column.</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="db-tables.html"><span aria-hidden="true">&larr;</span> <span class="section-number">24.2. </span>Database Structure</a></li>
+        
+        
+        <li class="next"><a href="sqlite.html"><span class="section-number">24.4. </span>SQLite <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/crud.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.5. Function Output &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="10.6. Boolean Functions" href="boolean-functions.html" />
+    <link rel="prev" title="10.4. Function Input" href="function-input.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">10. </span>What’s Your Function</a></li>
+    <li class="active"><span class="section-number">10.5. </span>Function Output</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="function-output">
+<h1><span class="section-number">10.5. </span>Function Output<a class="headerlink" href="#function-output" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have examined arguments and parameters in more detail, let’s take a
+look at the other end of the function machine—<em>output</em>.</p>
+<p id="index-0">When we call a function, we often send one or more arguments <em>to</em> that
+function. Many functions also send data <em>back</em> to the main program. We say
+these functions <strong>return</strong> a value.</p>
+<div class="section" id="return-statements">
+<h2><span class="section-number">10.5.1. </span>Return Statements<a class="headerlink" href="#return-statements" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">One example of a function that returns a value is <code class="docutils literal notranslate"><span class="pre">len()</span></code>. When called, the
+function takes an argument—like a string or a list—and figures out how many
+characters or elements are in the collection. We do not need to know HOW the
+<code class="docutils literal notranslate"><span class="pre">len()</span></code> function works. We just need the result.</p>
+<p><code class="docutils literal notranslate"><span class="pre">len()</span></code> <em>returns</em> the answer we want—the length of the collection. We send
+the function an argument (a string or list), and it sends back an integer in
+response.</p>
+<p>The returned result is the output of the function, and we can picture the
+process something like this:</p>
+<div class="figure align-default" id="id1">
+<img alt="Diagram that shows sending an argument ('Python') to the len() function and returning the value 6." src="../../_images/return-diagram.png" />
+<p class="caption"><span class="caption-text">The argument ‘Python’ is sent to the len() function, and the function returns
+the value 6.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can see this result if we <code class="docutils literal notranslate"><span class="pre">print(len('Python'))</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<p>Note that we do NOT see <code class="docutils literal notranslate"><span class="pre">&quot;len('Python')&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">Python</span></code> on the screen.
+Instead, the code prints the value <em>returned</em> by the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function.</p>
+<div class="section" id="returning-a-value">
+<h3><span class="section-number">10.5.1.1. </span>Returning a Value<a class="headerlink" href="#returning-a-value" title="Permalink to this headline">¶</a></h3>
+<p>To return a value from functions that we create, we add a <strong>return statement</strong>
+to the function body. A return statement has the general syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">some_value</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">return</span></code> is the keyword that tells Python: “Send information back to the main
+program.” <code class="docutils literal notranslate"><span class="pre">some_value</span></code> is the data that gets returned, and it may be any data
+type (<code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, etc.).</p>
+<p>Functions can return the value of a variable or the result of an expression.
+For example, <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">num</span></code> returns whatever value has been assigned to
+<code class="docutils literal notranslate"><span class="pre">num</span></code>, while <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">num</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code> sends back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">an_int</span></code>, which is expected to be
+a positive integer. It returns the sum of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">an_int</span></code>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_one_to_n</span><span class="p">(</span><span class="n">an_int</span><span class="p">):</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">an_int</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+      <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+
+   <span class="k">return</span> <span class="n">total</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">sum_one_to_n</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<p class="last">Notice that the function <code class="docutils literal notranslate"><span class="pre">sum_one_to_n</span></code> contains no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements!</p>
+</div>
+<p>Let’s take a look at the order of events after we call the function:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">sum_one_to_n(3)</span></code> calls the function and sends it the argument <code class="docutils literal notranslate"><span class="pre">3</span></code>.</li>
+<li>Python assigns the argument to the parameter (<code class="docutils literal notranslate"><span class="pre">an_int</span> <span class="pre">=</span> <span class="pre">3</span></code>) and then
+runs the function body. <code class="docutils literal notranslate"><span class="pre">total</span></code> stores the result from the accumulator
+pattern.</li>
+<li>Line 6 <em>returns</em> the value of <code class="docutils literal notranslate"><span class="pre">total</span></code> back to the main program.</li>
+<li>Line 8 assigns the answer returned by the function to the variable
+<code class="docutils literal notranslate"><span class="pre">result</span></code>.</li>
+<li>The output we see comes from the final line of the program, which prints the
+value of <code class="docutils literal notranslate"><span class="pre">result</span></code>.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">A <code class="docutils literal notranslate"><span class="pre">return</span></code> statement does not print anything. If we want to see the value
+returned by a function, then we must print it AFTER calling the function.</p>
+</div>
+</div>
+<div class="section" id="no-return-value">
+<span id="draw-square-code"></span><h3><span class="section-number">10.5.1.2. </span>No <code class="docutils literal notranslate"><span class="pre">return</span></code> Value<a class="headerlink" href="#no-return-value" title="Permalink to this headline">¶</a></h3>
+<p>Not every function needs to return a value. For example, we can define the
+<code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function for a turtle as follows:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="k">def</span> <span class="nf">draw_square</span><span class="p">(</span><span class="n">turtle_name</span><span class="p">,</span> <span class="n">side_length</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">side</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+      <span class="n">turtle_name</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">side_length</span><span class="p">)</span>
+      <span class="n">turtle_name</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">draw_square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>When we call <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> in line 9, we do not want the function to give us
+an <em>answer</em>. Instead, we want it to make a turtle draw a specific shape on the
+screen. In this case, the function does not need to send any data back to the
+main program. Once the turtle finishes moving, the function ends, and control
+passes to the statement after the function call.</p>
+<p>When we write a function, we must decide whether or not it will return data
+once its job is done. We do not need to include the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword in
+every function.</p>
+</div>
+</div>
+<div class="section" id="return-stops-a-function">
+<h2><span class="section-number">10.5.2. </span><code class="docutils literal notranslate"><span class="pre">return</span></code> Stops a Function<a class="headerlink" href="#return-stops-a-function" title="Permalink to this headline">¶</a></h2>
+<p>When a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement executes, the function ends, even if more code
+follows in the function body. We must be careful to use <code class="docutils literal notranslate"><span class="pre">return</span></code> only when
+the work of the function is done.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements in this function never execute, since the function
+returns before either one is reached.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">past_the_point_of_return</span><span class="p">():</span>
+   <span class="k">return</span> <span class="s2">&quot;I&#39;m done!&quot;</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will NOT be printed!!!!!&quot;</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neither will this!!!!!&quot;</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">past_the_point_of_return</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I&#39;m done!
+</pre></div>
+</div>
+<p class="last">Written this way, the function behaves as if lines 3 - 5 do not exist!</p>
+</div>
+<p>We can use the fact that <code class="docutils literal notranslate"><span class="pre">return</span></code> ends a function to force it to stop at a
+specific point.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>This function adds up the integers <code class="docutils literal notranslate"><span class="pre">0...n</span></code>. However, if we send in an argument
+that is not a positive integer, the function sends back an error message.</p>
+<iframe src="https://trinket.io/embed/python/14412b9424?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>On line 12, try replacing the argument in the function call with:</p>
+<ol class="last arabic simple">
+<li>a negative number,</li>
+<li>a decimal value,</li>
+<li>a string (like <code class="docutils literal notranslate"><span class="pre">'abc'</span></code>).</li>
+</ol>
+</div>
+<p>Consider what happens if we call the <code class="docutils literal notranslate"><span class="pre">sum_one_to_n()</span></code> function and use the
+string <code class="docutils literal notranslate"><span class="pre">'abc'</span></code> as the argument. Since the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in line 3 (<code class="docutils literal notranslate"><span class="pre">type('abc')</span> <span class="pre">!=</span> <span class="pre">int</span></code>)
+is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement on line 4 runs and sends the error message back to the main program.
+In this case, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop on line 7 does not run.</p>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">10.5.3. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In the editor below, define a function called <code class="docutils literal notranslate"><span class="pre">double_value</span></code>, which takes
+a single parameter called <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+</li>
+<li><p class="first">Inside the function, add the statement <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">value*2</span></code>. Don’t forget to
+indent!</p>
+</li>
+<li><p class="first">Run your program to check for error messages. If any occur, fix the bugs and
+try again. Properly done, NOTHING shows up in the console! The code contains
+no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements yet.</p>
+</li>
+<li><p class="first">Below the function, define a new variable and assign it to <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>.</p>
+</li>
+<li><p class="first">Finally, print the value of your new variable.</p>
+</li>
+<li><p class="first">Run your program to check your work. For <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>, the printed
+result should be <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<iframe src="https://trinket.io/embed/python/c96a6ba9a4?runOption=run" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
+<li><p class="first">What happens if you send in a string instead of a number?</p>
+</li>
+<li><p class="first">Assign a value to a variable, then call the function with the variable as
+the argument (e.g. <code class="docutils literal notranslate"><span class="pre">double_value(variable_name)</span></code>).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">10.5.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does the following code output?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plus_two</span><span class="p">(</span><span class="n">a_number</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">a_number</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">total</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+   <span class="n">total</span> <span class="o">=</span> <span class="n">plus_two</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 6</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 8</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 10</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What does the following function <em>return</em>?</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">(</span><span class="n">user_input</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span><span class="p">):</span>
+   <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">str</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s2">&quot;Invalid entry.&quot;</span>
+
+   <span class="k">return</span> <span class="s2">&quot;Hello, </span><span class="si">{0}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="n">say_hello</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, World!</span></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, 5!</span></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">Invalid entry.</span></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is returned by the function</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Three of the following functions should include a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement,
+while the others do not need one. Pick the functions that <em>require</em> a
+<code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<div class="last"><ol type="a">
+   <li><span id = "A1" onclick="highlight('A1', true)">calculate_area</span></li>
+   <li><span id = "B1" onclick="highlight('B1', false)">draw_polygon</span></li>
+   <li><span id = "C1" onclick="highlight('C1', false)">print_names</span></li>
+   <li><span id = "D1" onclick="highlight('D1', true)">find_average_score</span></li>
+   <li><span id = "E1" onclick="highlight('E1', false)">change_screen_color</span></li>
+   <li><span id = "F1" onclick="highlight('F1', true)">create_sorted_string</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="function-input.html"><span aria-hidden="true">&larr;</span> <span class="section-number">10.4. </span>Function Input</a></li>
+        
+        
+        <li class="next"><a href="boolean-functions.html"><span class="section-number">10.6. </span>Boolean Functions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/functions/function-output.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

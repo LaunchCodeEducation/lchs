@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 11: Python Modules &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 12: Python Dictionaries" href="chapter12.html" />
+    <link rel="prev" title="Chapter 10: What’s Your Function" href="chapter10.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 11: Python Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-11-python-modules">
+<h1>Chapter 11: Python Modules<a class="headerlink" href="#chapter-11-python-modules" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/modules/exercises.html#modules-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/fccf48bf5a" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<p>Practice makes better. You will create a program that accomplishes the
+following:</p>
+<ol class="loweralpha simple">
+<li>Steps through a list of Yes/No questions.</li>
+<li>Calls functions based on the user’s responses.</li>
+</ol>
+<p>Rather than coding all of the functions from scratch, you are going to use
+existing modules to help assemble your project. <a class="reference internal" href="../../chapters/modules/exercises.html#chp11startercode"><span class="std std-ref">Get Starter Code Here</span></a>.</p>
+<div class="section" id="import-module-code">
+<span id="chp11part1"></span><h3>Import Module Code<a class="headerlink" href="#import-module-code" title="Permalink to this headline">¶</a></h3>
+<p>Lucky you! Most of the functions you need are in the <code class="docutils literal notranslate"><span class="pre">averages.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">display.py</span></code> files.</p>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add a statement to import all functions from the
+<code class="docutils literal notranslate"><span class="pre">averages</span></code> module.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">averages</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to rename the imported <code class="docutils literal notranslate"><span class="pre">print_all</span></code> function to
+<code class="docutils literal notranslate"><span class="pre">display_results</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">display</span> <span class="kn">import</span> <span class="n">print_all</span> <span class="k">as</span> <span class="n">display_results</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/modules/exercises.html#chp11partimc"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="finish-coding-a-new-module">
+<span id="chp11part2"></span><h3>Finish Coding A New Module<a class="headerlink" href="#finish-coding-a-new-module" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">random_select.py</span></code> requires your attention.</p>
+<ol class="arabic">
+<li><p class="first">Add code to complete the <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> function. It should take a
+list as an argument and then return a
+<a class="reference internal" href="../../chapters/modules/random-module.html#random-collection-item"><span class="std std-ref">randomly selected element</span></a> from that list.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">random_from_list</span><span class="p">(</span><span class="n">a_list</span><span class="p">):</span>
+   <span class="c1"># Your code here to select a random element from the list passed to the function.</span>
+   <span class="n">random_element</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+
+   <span class="c1"># Return the selected element</span>
+   <span class="k">return</span> <span class="n">random_element</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/modules/exercises.html#chp11partfcanm"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="finish-the-project">
+<span id="chp11part3"></span><h3>Finish the Project<a class="headerlink" href="#finish-the-project" title="Permalink to this headline">¶</a></h3>
+<p>Now complete the project code.</p>
+<p>The line references given below assume that you added no blank lines during
+your work in the previous sections. If you did, do not worry. The comments
+in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will still show you where to add code.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Line 19</strong>: Call <code class="docutils literal notranslate"><span class="pre">display_results</span></code> to print all of the tests and student
+scores. Be sure to pass in the correct arguments.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">display_results</span><span class="p">(</span><span class="n">astronauts</span><span class="p">,</span> <span class="n">test_titles</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><strong>Line 23</strong>: Using dot notation, call <code class="docutils literal notranslate"><span class="pre">average_for_test</span></code> to print the
+class average for each test. Use <code class="docutils literal notranslate"><span class="pre">title_index</span></code> and <code class="docutils literal notranslate"><span class="pre">scores</span></code> as
+arguments.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">avg</span> <span class="o">=</span> <span class="n">averages</span><span class="o">.</span><span class="n">average_for_test</span><span class="p">(</span><span class="n">title_index</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p class="first"><strong>Line 30</strong>: Call <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> to pick the next spacewalker from the
+<code class="docutils literal notranslate"><span class="pre">astronauts</span></code> list.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">walker</span> <span class="o">=</span> <span class="n">random_select</span><span class="o">.</span><span class="n">random_from_list</span><span class="p">(</span><span class="n">astronauts</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/modules/exercises.html#chp11partftp"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="sanity-check">
+<h3>Sanity check!<a class="headerlink" href="#sanity-check" title="Permalink to this headline">¶</a></h3>
+<p>In your output, the spacings for the test score columns will probably NOT line up
+perfectly as seen below. <em>This is OK!</em></p>
+<p>When we learn how to display output in a window <em>other</em> than the console,
+we will worry about making columns look nice.</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Would you like to display all scores? Y/N: Y
+Name    Math    Fitness Coding  Nav Communication
+Fox 95  86  83  81  76
+Turtle  79  71  79  87  72
+Cat 94  87  87  83  82
+Hippo   99  77  91  79  80
+Dog 96  95  99  82  70
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter10.html"><span aria-hidden="true">&larr;</span> Chapter 10: What’s Your Function</a></li>
+        
+        
+        <li class="next"><a href="chapter12.html">Chapter 12: Python Dictionaries <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter11.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

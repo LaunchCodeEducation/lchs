@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.3. Chapter Practice &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.4. Adding Logic to Templates" href="logic-in-templates.html" />
+    <link rel="prev" title="22.2. Jinja3 Templates" href="what-is-jinja3.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.3. </span>Chapter Practice</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-practice">
+<h1><span class="section-number">22.3. </span>Chapter Practice<a class="headerlink" href="#chapter-practice" title="Permalink to this headline">¶</a></h1>
+<p>Just like last chapter, we will create a small project and update it as we go
+along. Follow the instructions below to get started.</p>
+<ol class="arabic">
+<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder in Visual Studio code. Add a new
+directory called <code class="docutils literal notranslate"><span class="pre">flask_logic</span></code>.</p>
+</li>
+<li><p class="first">From the <em>File</em> menu, open <code class="docutils literal notranslate"><span class="pre">flask_logic</span></code> in your workspace. Initialize
+the directory as a new Git repository.</p>
+</li>
+<li><p class="first">Use the terminal to set up and activate a new virtual environment for the
+project. This time, we will name the environment <code class="docutils literal notranslate"><span class="pre">flask-env</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Mac:
+$ python3 -m venv flask-env
+$ . flask-env/bin/activate
+
+Windows:
+$ py -3 -m venv flask-env
+$ . flask-env/Scripts/activate
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install Flask with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">flask</span></code>.</p>
+</li>
+<li><p class="first">Use the buttons in the left panel to add the files and folders shown in the
+filetree below. For now, leave the Python, HTML, and CSS files empty.</p>
+<div class="figure align-default">
+<img alt="Filetree with the static, templates, and flask-env folders. Also, files style.css, main.py, and checkbox_form.html." src="../../_images/initial-filetree.png" />
+</div>
+</li>
+</ol>
+<div class="section" id="pro-tip">
+<span id="create-gitignore"></span><h2><span class="section-number">22.3.1. </span>Pro Tip!<a class="headerlink" href="#pro-tip" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">Since we are using version control, Git tracks <em>every</em> file we put into the
+project folder. This includes the thousands of small files created when we
+set up the virtual environment and install Flask. Since we won’t change any of
+these ourselves, tracking them clutters up our repository. These files should
+be ignored when we save and commit changes. Fortunately, Git allows us to
+create a list of items that can be skipped.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">As a general rule, we should NOT track files that we didn’t write ourselves.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">In Visual Studio Code, add one more file to the project folder. Call it
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>. Any file or directory names included in this document will
+be left out of the version control.</p>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> in the workspace, then paste the following items.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span>flask-env/
+
+*.pyc
+__pycache__/
+
+instance/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+dist/
+build/
+*.egg-info/
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Line 1 is the name of the directory for the virtual environment. Once we
+save, <code class="docutils literal notranslate"><span class="pre">flask-env</span></code> turns gray in the file tree. The folder will no longer
+be tracked by Git.</p>
+<div class="figure align-default">
+<img alt="Project filetree indicating that flask-env is no longer being tracked." src="../../_images/gitignore-filetree.png" />
+</div>
+</li>
+<li><p class="first">For different projects, change line 1 to match the name used for the virtual
+environment.</p>
+</li>
+<li><p class="first">Save and commit your work.</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="what-is-jinja3.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.2. </span>Jinja3 Templates</a></li>
+        
+        
+        <li class="next"><a href="logic-in-templates.html"><span class="section-number">22.4. </span>Adding Logic to Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/chapter-setup.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

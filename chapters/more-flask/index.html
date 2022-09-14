@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22. Refill the Flask &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.1. HTML Escaping" href="html-escaping.html" />
+    <link rel="prev" title="21.10. Project: Web Form (Part 2)" href="../flask-intro/project.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">22. </span>Refill the Flask</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="refill-the-flask">
+<h1><span class="section-number">22. </span>Refill the Flask<a class="headerlink" href="#refill-the-flask" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="html-escaping.html">22.1. HTML Escaping</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="html-escaping.html#escaping-text-entries">22.1.1. Escaping Text Entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html-escaping.html#always-escape">22.1.2. Always Escape</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="what-is-jinja3.html">22.2. Jinja3 Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="what-is-jinja3.html#more-reasons-for-using-templates">22.2.1. More Reasons for Using Templates</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter-setup.html">22.3. Chapter Practice</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="chapter-setup.html#pro-tip">22.3.1. Pro Tip!</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logic-in-templates.html">22.4. Adding Logic to Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="logic-in-templates.html#loops-in-templates">22.4.1. Loops in Templates</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="logic-in-templates.html#using-index-values">22.4.1.1. Using Index Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logic-in-templates.html#placement-matters">22.4.1.2. Placement Matters</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logic-in-templates.html#try-it">22.4.2. Try It!</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="logic-in-templates.html#bonus-try-it">22.4.2.1. Bonus Try It!</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="logic-in-templates.html#check-your-understanding">22.4.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="template-conditionals.html">22.5. Conditionals in Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="template-conditionals.html#if-elif-else-syntax">22.5.1. <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template-conditionals.html#try-it">22.5.2. Try It!</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="template-conditionals.html#add-the-conditional">22.5.2.1. Add the Conditional</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="template-conditionals.html#check-your-understanding">22.5.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reusing-content.html">22.6. Reusing Content</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#a-base-template">22.6.1. A <code class="docutils literal notranslate"><span class="pre">base</span></code> Template</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="reusing-content.html#block-out-space-for-other-html-code">22.6.1.1. Block Out Space for Other HTML Code</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#extending-from-the-base">22.6.2. Extending From the Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#add-a-common-header">22.6.3. Add A Common Header</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="reusing-content.html#finishing-touches">22.6.3.1. Finishing Touches</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#extend-base-to-a-second-page">22.6.4. Extend <code class="docutils literal notranslate"><span class="pre">base</span></code> to a Second Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#multiple-blocks">22.6.5. Multiple Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#video-summary">22.6.6. Video Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reusing-content.html#check-your-understanding">22.6.7. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-navigation.html">22.7. Page Navigation</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="page-navigation.html#a-list-of-links">22.7.1. A List of Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-navigation.html#bring-in-some-logic">22.7.2. Bring in Some Logic</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="page-navigation.html#update-main-py">22.7.2.1. Update <code class="docutils literal notranslate"><span class="pre">main.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="page-navigation.html#update-base-html">22.7.2.2. Update <code class="docutils literal notranslate"><span class="pre">base.html</span></code></a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="page-navigation.html#a-dropdown-menu">22.7.3. A Dropdown Menu</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="page-navigation.html#css-breakdown">22.7.3.1. CSS Breakdown</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="page-navigation.html#navigation-bar-and-other-options">22.7.4. Navigation Bar and Other Options</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="redirect.html">22.8. Redirecting</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="redirect.html#render-template-vs-redirect">22.8.1. Render Template vs. Redirect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redirect.html#redirect-with-flask">22.8.2. Redirect with Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redirect.html#difference-summary">22.8.3. Difference Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="redirect.html#redirect-methods">22.8.4. Redirect Methods</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="redirect.html#response-codes">22.8.4.1. Response Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="redirect.html#technical-details-optional">22.8.4.2. Technical Details (Optional)</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="redirect.html#check-your-understanding">22.8.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="better-ux.html">22.9. The User Experience</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="better-ux.html#explore-ux">22.9.1. Explore UX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="better-ux.html#other-reading">22.9.2. Other Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="better-ux.html#check-your-understanding">22.9.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">22.10. Exercises: Logic In Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#setup">22.10.1. Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-a-extend-from-base-html">22.10.2. Part A: Extend from <code class="docutils literal notranslate"><span class="pre">base.html</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-b-add-a-loop">22.10.3. Part B: Add a Loop</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#the-choices-dictionary">22.10.3.1. The <code class="docutils literal notranslate"><span class="pre">choices</span></code> Dictionary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#update-grid-html">22.10.3.2. Update <code class="docutils literal notranslate"><span class="pre">grid.html</span></code></a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-c-add-a-conditional">22.10.4. Part C: Add a Conditional</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">22.11. Project: Improve the User Experience</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="project.html#setup">22.11.1. Setup</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#run-the-application">22.11.1.1. Run the Application</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-a-clean-up-the-view">22.11.2. Part A: Clean Up the View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-b-keep-valid-entries">22.11.3. Part B: Keep Valid Entries</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#update-register-html">22.11.3.1. Update <code class="docutils literal notranslate"><span class="pre">register.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html#update-main-py">22.11.3.2. Update <code class="docutils literal notranslate"><span class="pre">main.py</span></code></a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-c-display-error-messages">22.11.4. Part C: Display Error Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-d-redirect-on-success">22.11.5. Part D: Redirect on Success</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#bonus-mission">22.11.6. Bonus Mission</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../flask-intro/project.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.10. </span>Project: Web Form (Part 2)</a></li>
+        
+        
+        <li class="next"><a href="html-escaping.html"><span class="section-number">22.1. </span>HTML Escaping <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

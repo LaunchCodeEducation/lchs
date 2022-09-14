@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.2. Repositories and Commits &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.3. Navigating Commits" href="log-nav.html" />
+    <link rel="prev" title="18.1. What is Git?" href="background.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.2. </span>Repositories and Commits</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="repositories-and-commits">
+<h1><span class="section-number">18.2. </span>Repositories and Commits<a class="headerlink" href="#repositories-and-commits" title="Permalink to this headline">¶</a></h1>
+<p>To use all of the tools and benefits of Git, we need to set up a repository for
+each new project we create. Once we do that, the next step is learning how to
+save and track our changes.</p>
+<div class="section" id="create-a-repository">
+<h2><span class="section-number">18.2.1. </span>Create a Repository<a class="headerlink" href="#create-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>To create a Git repository, we will use Visual Studio Code, the terminal, and a
+series of specific commands.</p>
+<div class="admonition-try-it admonition" id="index-0">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Follow these steps to create your first repository (called a <strong>repo</strong> for
+short).</p>
+<ol class="last arabic">
+<li><p class="first">Launch Visual Studio Code and open the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder you
+created in the last chapter.</p>
+</li>
+<li><p class="first">Use the buttons in the File Explorer to create a new directory called
+<code class="docutils literal notranslate"><span class="pre">git_practice</span></code>.</p>
+<div class="figure align-default" id="id1">
+<img alt="VS Code file tree showing the new git_practice directory." src="../../_images/git-init-filetree.png" />
+<p class="caption"><span class="caption-text">Our new file tree for local_practice.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Open the terminal panel if it’s not already there. Use it to navigate
+into the new <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> directory.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ls
+git_practice   hello.py   hello_web   module_practice   turtle_fun.py
+$ <span class="nb">cd</span> git_practice
+$ <span class="nb">pwd</span>
+/Users/username/Desktop/local_practice/git_practice
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Finally, initialize the new repository with the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git init
+   Initialized empty Git repository <span class="k">in</span> /Users/username/Desktop/local_practice/git_practice/.git
+</pre></div>
+</td></tr></table></div>
+<p>Notice <code class="docutils literal notranslate"><span class="pre">.git</span></code> at the end of the file path on line 7. This is the name
+for a <em>hidden</em> directory that stores the repository data. The folder won’t
+appear in our file tree, but we can see it if we use the terminal command
+<code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Sometimes programers accidentally enter the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command when they
+are inside the wrong directory. This initializes a new repository where it
+doesn’t belong.</p>
+<p>No worries! The solution is quick. Just delete the <code class="docutils literal notranslate"><span class="pre">.git</span></code> directory using
+the terminal and the <a class="reference internal" href="../../appendices/terminal-commands/terminal-commands-tutorial.html#terminal-rm"><span class="std std-ref">rm command</span></a>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/Users/username/wrong_directory
+$ ls -a
+.     ..    .git     oops.py
+$ rm -rf .git
+</pre></div>
+</td></tr></table></div>
+<p class="last">After that, move to the <em>correct</em> directory and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> again.</p>
+</div>
+<p>We are now set up to have Git track all changes made inside the
+<code class="docutils literal notranslate"><span class="pre">git_practice</span></code> folder. Let’s make some changes and see how to track our
+project!</p>
+</div>
+<div class="section" id="making-commits">
+<span id="check-git-status"></span><h2><span class="section-number">18.2.2. </span>Making Commits<a class="headerlink" href="#making-commits" title="Permalink to this headline">¶</a></h2>
+<p>Right now, <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> is empty. However, the version control is already
+tracking the directory. We can see this by trying out a second Git command in
+the terminal:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git status
+On branch main
+
+No commits yet
+
+nothing to commit, create/copy files and use <span class="s2">&quot;git add&quot;</span> to track
+</pre></div>
+</td></tr></table></div>
+<p>We will deal with <code class="docutils literal notranslate"><span class="pre">On</span> <span class="pre">branch</span> <span class="pre">main</span></code> later in this chapter, but the next two
+lines deserve some attention.</p>
+<span class="target" id="index-1"></span><ol class="arabic simple" id="index-2">
+<li>Line 4 tells us that we have made <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">commits</span> <span class="pre">yet</span></code>. A <strong>commit</strong> is an
+update recorded in the repo. If we think of the repository as a container,
+then the commits are smaller containers stacked on top of each other inside
+the repo. Each commit includes a timestamp and a copy of all the files as
+they existed at that time. The deeper we dig down inside a repository, the
+farther back in time we go.</li>
+<li>Line 6 tells us, <em>Hey, if you want to track your project, you need to put
+something in this directory!</em></li>
+</ol>
+<p>Let’s add a new file to the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> folder and then make our first
+commit.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="last">In VS Code, complete the steps described in the next three sections.</p>
+</div>
+<div class="section" id="step-1-make-a-change">
+<h3><span class="section-number">18.2.2.1. </span>Step 1: Make a Change<a class="headerlink" href="#step-1-make-a-change" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Using either the terminal or the buttons in VS Code, create the file
+<code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> folder. This action makes a change
+to the repository.</p>
+</li>
+<li><p class="first">In the terminal, make sure you are in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> folder.</p>
+</li>
+<li><p class="first">Enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+/Users/username/Desktop/local_practice/git_practice
+$ git status
+On branch main
+
+Initial commit
+
+Untracked files:
+<span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="k">in</span> what will be committed<span class="o">)</span>
+
+   num_guess.py
+
+nothing added to commit but untracked files present <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> to track<span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> command returns information about two types of changes:
+modified <em>tracked</em> files and modified <em>untracked</em> files. <em>Tracked</em> means that
+the file already exists in the Git repository. <em>Untracked</em> means that the file
+is not currently in the repo.</p>
+<p>Since we just added <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>, lines 8 - 11 list it as an untracked
+file. Line 13 tells us about changes found in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> directory,
+but the updates are not set up as part of the tracking. The output also gives
+us a clue about what we need to do next.</p>
+</div>
+<div class="section" id="step-2-add-changes-to-a-commit">
+<h3><span class="section-number">18.2.2.2. </span>Step 2: Add Changes to a Commit<a class="headerlink" href="#step-2-add-changes-to-a-commit" title="Permalink to this headline">¶</a></h3>
+<p>Currently, Git notices <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>, but it will NOT track the changes we
+make to the file yet. Our next step is to add the file to the tracking record
+to make it part of our first <em>commit</em>.</p>
+<ol class="arabic">
+<li><p class="first">In the terminal, use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> (The period is part of the
+command).</p>
+</li>
+<li><p class="first">Follow this with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see what happens as a result.</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git add .
+$ git status
+On branch main
+
+Initial commit
+
+Changes to be committed:
+<span class="o">(</span>use <span class="s2">&quot;git rm --cached &lt;file&gt;...&quot;</span> to unstage<span class="o">)</span>
+
+   new file:   num_guess.py
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code> takes ALL of the tracked and untracked files in the
+current directory and adds them to the commit. We only have one change this
+time, but later on the list will be longer.</p>
+<p>Lines 7 - 10 tell us that <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code> will be included in the repository
+once we finish the commit.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If we have a long list changes and only want to add a few of them to the
+commit, we can do that. Just replace the <code class="docutils literal notranslate"><span class="pre">.</span></code> with a list of specific file
+names.</p>
+</div>
+</div>
+<div class="section" id="step-3-commit-the-changes">
+<h3><span class="section-number">18.2.2.3. </span>Step 3: Commit the Changes<a class="headerlink" href="#step-3-commit-the-changes" title="Permalink to this headline">¶</a></h3>
+<p>The last step of the commit process is to give the saved changes a description
+and add them to the repository.</p>
+<p>In the terminal, enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;My</span> <span class="pre">first</span> <span class="pre">commit.&quot;</span></code></p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;My first commit.&quot;</span>
+<span class="o">[</span>main <span class="o">(</span>root-commit<span class="o">)</span> 84310df<span class="o">]</span> My first commit.
+<span class="m">1</span> file changed, <span class="m">0</span> insertions<span class="o">(</span>+<span class="o">)</span>, <span class="m">0</span> deletions<span class="o">(</span>-<span class="o">)</span>
+create mode <span class="m">100644</span> num_guess.py
+</pre></div>
+</td></tr></table></div>
+<ol class="arabic simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command creates a new commit in the repository. It
+contains all of the files that we created or modified since our last commit.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">-m</span></code> syntax adds a message to the commit. The message itself follows
+the <code class="docutils literal notranslate"><span class="pre">-m</span></code> and is inside quotation marks. In this case, we added the comment
+<code class="docutils literal notranslate"><span class="pre">&quot;My</span> <span class="pre">first</span> <span class="pre">commit.&quot;</span></code></li>
+<li>Using the <code class="docutils literal notranslate"><span class="pre">-m</span></code> feature is helpful because it lets us leave notes for when
+we look back into the history. ALWAYS add detailed comments to describe the
+changes made in each commit.</li>
+</ol>
+<p>Note that line 3 in the output gives us some details about the changes we just
+saved to the repository. <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">insertions(+),</span> <span class="pre">0</span> <span class="pre">deletions(-)</span></code> means we
+modified no lines inside the file. This makes sense, because all we did was
+to create the new Python file. We haven’t added any code to it yet.</p>
+</div>
+</div>
+<div class="section" id="make-another-commit">
+<h2><span class="section-number">18.2.3. </span>Make Another Commit<a class="headerlink" href="#make-another-commit" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>, use the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to select an integer from 1 -
+100. Print that number to the console.</p>
+</li>
+<li><p class="first">Once you have your program running, save your work and go through the commit
+process again. The terminal output will look something like this:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Changes not staged <span class="k">for</span> commit:
+   <span class="o">(</span>use <span class="s2">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="o">)</span>
+   <span class="o">(</span>use <span class="s2">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="k">in</span> working directory<span class="o">)</span>
+
+      modified:   num_guess.py
+
+no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+$ git add .
+$ git commit -m <span class="s2">&quot;Added random number selection code.&quot;</span>
+<span class="o">[</span>main 9bdcaab<span class="o">]</span> Added random number selection code.
+<span class="m">1</span> file changed, <span class="m">4</span> insertions<span class="o">(</span>+<span class="o">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">You now have two sets of changes recorded in your Git repository.</p>
+</li>
+</ol>
+<p>Lines 3 - 7 show the changes Git found since our first commit. Since we set up
+tracking for <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code> earlier, the file is listed as <code class="docutils literal notranslate"><span class="pre">modified</span></code>. Line
+10 adds all of the changes found in the directory. Line 13 summarizes the
+changes saved to this commit. The output will vary depending on what you did
+in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>, but in this example 4 new lines were added to 1 file.</p>
+</div>
+<div class="section" id="when-to-commit-changes">
+<h2><span class="section-number">18.2.4. </span>When to Commit Changes<a class="headerlink" href="#when-to-commit-changes" title="Permalink to this headline">¶</a></h2>
+<p>As we take a project from start to finish, we will make lots of changes and
+save our files many times over. How often should we add commits to the
+repository?</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Git does NOT automatically save changes to a project! To update the repo, we
+must use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> commands
+in the terminal.</p>
+</div>
+<p>The general rule of thumb is that any time we make a significant change to the
+project, we should also do a commit. This includes things like:</p>
+<ol class="arabic simple">
+<li>The initial setup when we make our new project directory and add the first
+empty file.</li>
+<li>After we add a new, working feature (loop, function, module, HTML/CSS, etc.)
+to our code.</li>
+<li>Just before we share our project with another developer, especially if they
+want to modify the code.</li>
+</ol>
+<p>There is nothing wrong with making lots of tiny commits. However, there will be
+a problem if we make too few. Commit early, and commit often!</p>
+<p>Imagine we are working on a big project, and we’re almost done. Unfortunately,
+somewhere along the line we created some <a class="reference internal" href="../errors-and-debugging/error-types.html#logic-error"><span class="std std-ref">logic errors</span></a>. Now
+imagine that the debugging causes other problems in the program. Frustrating!
+However, if we made plenty of commits to the repository, one solution is to
+search through the history and find a spot BEFORE we introduced the errors. We
+can then restore that working version and move on from there.</p>
+<p>If we didn’t make any commits, then we might just have to start all over again.
+Many developers have ignored version control and regretted it later!</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/git-happens.png"><img alt="Compare the situations of not committing enough vs. doing so often." src="../../_images/git-happens.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Committing often makes it easy to roll back to an earlier, working version of your program.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>NEVER commit broken code! If your program isn’t working, then don’t save it
+as part of the version control.</p>
+<p class="last">You want your version history to be clean. Saving a bug means that if you
+roll back to that earlier version, you will need to re-fix the same error.</p>
+</div>
+</div>
+<div class="section" id="commit-process-summary">
+<span id="commit-summary"></span><h2><span class="section-number">18.2.5. </span>Commit Process Summary<a class="headerlink" href="#commit-process-summary" title="Permalink to this headline">¶</a></h2>
+<p>The procedure for making a commit to a Git repository includes 4 stages.</p>
+<ol class="arabic simple">
+<li>Make one or more changes to the project files.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see information about files that have been changed.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to include some or all of the changed files to the commit.</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Notes...&quot;</span></code> to create the new commit (with a message)
+in the repo.</li>
+</ol>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> only collects a list of changes that need to be recorded. It
+does NOT save them to the repository. Remember to follow <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code>.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">18.2.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which command creates a new repository?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git add .</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git init</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git commit -m "notes..."</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git status</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which command saves a group of changes to an existing repository?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git add .</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git init</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">git commit -m "notes..."</code></li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">git status</code></li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="background.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.1. </span>What is Git?</a></li>
+        
+        
+        <li class="next"><a href="log-nav.html"><span class="section-number">18.3. </span>Navigating Commits <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/repositories-and-commits.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21. Hello, Flask! &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.1. What is Flask" href="what-is-flask.html" />
+    <link rel="prev" title="20.11. Project: Web Form (Part 1)" href="../forms/project.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">21. </span>Hello, Flask!</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="hello-flask">
+<h1><span class="section-number">21. </span>Hello, Flask!<a class="headerlink" href="#hello-flask" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="what-is-flask.html">21.1. What is Flask</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="what-is-flask.html#web-applications">21.1.1. Web Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="what-is-flask.html#a-web-framework">21.1.2. A Web Framework</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-flask.html">21.2. Install Flask</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="install-flask.html#create-a-project-directory">21.2.1. Create a Project Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-flask.html#create-a-virtual-environment">21.2.2. Create a Virtual environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-flask.html#add-flask">21.2.3. Add Flask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-flask.html#ready-to-go">21.2.4. Ready to Go!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install-flask.html#video-summary">21.2.5. Video Summary</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="first-flask-app.html">21.3. Your First Flask App</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#initial-code">21.3.1. Initial Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#launch-the-app">21.3.2. Launch the App</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="first-flask-app.html#change-the-python-code">21.3.2.1. Change the Python Code</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#add-some-html">21.3.3. Add Some HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#stopping-the-application">21.3.4. Stopping the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#video-summary">21.3.5. Video Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first-flask-app.html#check-your-understanding">21.3.6. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="routes.html">21.4. Routes</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="routes.html#server-ip-address">21.4.1. Server IP Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routes.html#paths">21.4.2. Paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routes.html#add-a-second-page">21.4.3. Add a Second Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routes.html#more-practice">21.4.4. More Practice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routes.html#check-your-understanding">21.4.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="form-template.html">21.5. HTML Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#what-are-templates">21.5.1. What are Templates?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#templates-with-flask">21.5.2. Templates with Flask</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="form-template.html#add-a-template">21.5.2.1. Add a Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form-template.html#the-render-template-function">21.5.2.2. The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> Function</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#sending-data-to-a-template">21.5.3. Sending Data to a Template</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="form-template.html#arguments-with-render-template">21.5.3.1. Arguments with <code class="docutils literal notranslate"><span class="pre">render_template</span></code></a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#expressions-in-placeholders">21.5.4. Expressions in Placeholders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#video-summaries">21.5.5. Video Summaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form-template.html#check-your-understanding">21.5.6. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-exchange.html">21.6. Data Collection</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="data-exchange.html#collect-color">21.6.1. Collect Color</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="data-exchange.html#update-favorite-form-html">21.6.1.1. Update <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-exchange.html#add-a-new-route">21.6.1.2. Add a New Route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data-exchange.html#add-the-form-results-template">21.6.1.3. Add the <code class="docutils literal notranslate"><span class="pre">form_results</span></code> Template</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data-exchange.html#try-it">21.6.2. Try It!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-exchange.html#template-variable-names">21.6.3. Template Variable Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-exchange.html#video-summary">21.6.4. Video Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-exchange.html#check-your-understanding">21.6.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">21.7. Form Validation with Flask</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="validation.html#validation">21.7.1. Validation</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="validation.html#why-do-both">21.7.1.1. Why Do Both?</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="validation.html#server-side-validation">21.7.2. Server-Side Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation.html#a-better-user-experience">21.7.3. A Better User Experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation.html#video-summary">21.7.4. Video Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="validation.html#check-your-understanding">21.7.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="style-templates.html">21.8. Styling Flask Templates</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="style-templates.html#the-static-directory">21.8.1. The <code class="docutils literal notranslate"><span class="pre">static</span></code> Directory</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="style-templates.html#link-to-the-stylesheet">21.8.1.1. Link to the Stylesheet</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style-templates.html#pro-tip">21.8.2. Pro Tip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-templates.html#style-another-template">21.8.3. Style Another Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="style-templates.html#video-summary">21.8.4. Video Summary</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">21.9. Exercises: Flask Intro</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-a-setup">21.9.1. Part A: Setup</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#install-flask">21.9.1.1. Install Flask</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#add-directories">21.9.1.2. Add Directories</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-b-render-the-form">21.9.2. Part B: Render the Form</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#add-placeholders">21.9.2.1. Add Placeholders</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-c-collect-user-input">21.9.3. Part C: Collect User Input</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#check-the-method">21.9.3.1. Check the Method</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-d-validate-the-input">21.9.4. Part D: Validate the Input</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#check-input-length">21.9.4.1. Check Input Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises.html#check-characters">21.9.4.2. Check Characters</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">21.10. Project: Web Form (Part 2)</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-a-setup">21.10.1. Part A: Setup</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#pull-in-your-part-1-work">21.10.1.1. Pull in Your Part 1 Work</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-b-update-the-form-page">21.10.2. Part B: Update the Form Page</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#collect-and-display-message">21.10.2.1. Collect and Display Message</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-c-change-the-message">21.10.3. Part C: Change the Message</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="project.html#encrypt-the-message">21.10.3.1. Encrypt the Message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html#decrypt-message">21.10.3.2. Decrypt Message</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#part-d-server-side-validation">21.10.4. Part D: Server-Side Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#bonus-mission">21.10.5. Bonus Mission</a></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../forms/project.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.11. </span>Project: Web Form (Part 1)</a></li>
+        
+        
+        <li class="next"><a href="what-is-flask.html"><span class="section-number">21.1. </span>What is Flask <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

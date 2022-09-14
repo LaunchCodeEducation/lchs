@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.3. Create the Home Page &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25.4. Create the Game Page" href="game-page.html" />
+    <link rel="prev" title="25.2. Database Setup" href="db-setup.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+    <li class="active"><span class="section-number">25.3. </span>Create the Home Page</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="create-the-home-page">
+<h1><span class="section-number">25.3. </span>Create the Home Page<a class="headerlink" href="#create-the-home-page" title="Permalink to this headline">¶</a></h1>
+<p>The Minesweeper game uses two different webpages: a home screen plus an active
+playing space. We need to build an HTML template for each page.</p>
+<div class="section" id="review-base-html">
+<h2><span class="section-number">25.3.1. </span>Review <code class="docutils literal notranslate"><span class="pre">base.html</span></code><a class="headerlink" href="#review-base-html" title="Permalink to this headline">¶</a></h2>
+<p>Since both game pages use the same <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> element, we can put that common
+code into a base template:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">base.html</span></code> file to find this code:</p>
+<div class="last highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>LCHS Minesweeper<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span>
+         <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{page_title}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   {% block content %}
+   {% endblock %}
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Note the following:</p>
+<ol class="arabic simple">
+<li>We link to a <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file in line 8. It contains some basic styling
+rules for the game, and the tutorials won’t instruct you to change any of
+the settings. However, you absolutely CAN adjust the properties and values
+as you see fit! Don’t like the gray background on the board? Fix it!</li>
+<li>On line 13, the placeholder for the page title needs to be filled. Don’t
+forget to <a class="reference internal" href="../flask-intro/form-template.html#template-placeholders"><span class="std std-ref">pass a value</span></a> to <code class="docutils literal notranslate"><span class="pre">page_title</span></code> from
+each <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function.</li>
+<li>Feel free to add extra elements to <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Remember that this
+content will appear on any template that extends from the base.</li>
+</ol>
+</div>
+<div class="section" id="build-index-html">
+<h2><span class="section-number">25.3.2. </span>Build <code class="docutils literal notranslate"><span class="pre">index.html</span></code><a class="headerlink" href="#build-index-html" title="Permalink to this headline">¶</a></h2>
+<p>The home screen for the game presents users with an inactive copy of the board,
+a menu for choosing the number of mines, and a space for instructions.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/home-page.png"><img alt="Showing the home screen for the LCHS Minesweeper game." src="../../_images/home-page.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">The LCHS Minesweeper home page.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Remember that our goal is to get the game working, so we will keep this page
+simple for now. We can always make improvements and add other features later!</p>
+<p>Open your Minesweeper project and code along with the video as we build the
+HTML template:</p>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/iKkYGMHWWco" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">25.3.3. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Our focus is to set up the structure for the home page. We won’t worry about
+placing the mines or collecting data from the form.</li>
+<li>The home page includes a title, one small form (<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span></code>), an inactive
+copy of the game board, and a reserved space for game instructions.</li>
+<li>The form contains a single <code class="docutils literal notranslate"><span class="pre">input</span></code> field of type <code class="docutils literal notranslate"><span class="pre">number</span></code>. Other
+attributes include <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> values to encourage the user to
+select a reasonable number of mines. Adding some <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> text
+inside the input box helps with the UI/UX.</li>
+<li>Use a <code class="docutils literal notranslate"><span class="pre">table</span></code> element to build the rows and columns in the game board.<ol class="loweralpha">
+<li>Use one <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;&lt;/tr&gt;</span></code> element for each row in the table.</li>
+<li>Inside each row element, use <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tags for the individual
+cells. The number of cells in each row matches the number of columns we
+want in the table.</li>
+<li>Use one Jinja3 loop to display the column headings (1 - 10) at the top
+of the table.</li>
+<li>Use a nested pair of loops to display the row label or button in each
+individual cell.</li>
+</ol>
+</li>
+<li>The text that appears on the board is stored in a session cookie. Column
+headings can be accessed from a list assigned to the <code class="docutils literal notranslate"><span class="pre">session['columns']</span></code>
+key. Row data can be accessed from <code class="docutils literal notranslate"><span class="pre">session['rows']</span></code>.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember, you don’t have to keep the default styling! Feel free to
+modify your project’s CSS file to change the appearance of the page.</p>
+<p class="last">If you wish, you can also link to the <a class="reference external" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">Bootstrap CSS library<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and use <a class="reference internal" href="../css/bootstrap.html#bootstrap-classes"><span class="std std-ref">their classes</span></a> to style your page.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="db-setup.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25.2. </span>Database Setup</a></li>
+        
+        
+        <li class="next"><a href="game-page.html"><span class="section-number">25.4. </span>Create the Game Page <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases-part2/home-page.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

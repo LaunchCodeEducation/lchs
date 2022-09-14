@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.4. More on Variables &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.5. Statements and Expressions" href="expressions-and-statements.html" />
+    <link rel="prev" title="4.3. Variables" href="variables.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.4. </span>More on Variables</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="more-on-variables">
+<h1><span class="section-number">4.4. </span>More on Variables<a class="headerlink" href="#more-on-variables" title="Permalink to this headline">¶</a></h1>
+<p>The previous section covered the big picture for variables–creating,
+evaluating, and reassigning. This section deals with some of the finer points
+for variables.</p>
+<div class="section" id="naming-python-variables">
+<h2><span class="section-number">4.4.1. </span>Naming Python Variables<a class="headerlink" href="#naming-python-variables" title="Permalink to this headline">¶</a></h2>
+<p>Just like the <code class="docutils literal notranslate"><span class="pre">print</span></code> function must follow specific syntax rules, variable
+names in Python have their own set of rules:</p>
+<ol class="arabic simple">
+<li>Variable names MUST begin with a letter or an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</li>
+<li>Variable names CANNOT contain spaces. If you have more than one word in a
+name, connect the words with underscores (e.g. <code class="docutils literal notranslate"><span class="pre">price_of_eggs</span></code>).</li>
+<li>Variable names may only use letters (a-z and A-Z), underscores (_), and
+numbers (0-9).</li>
+<li>Case matters! <code class="docutils literal notranslate"><span class="pre">animal</span></code> and <code class="docutils literal notranslate"><span class="pre">Animal</span></code> are different variable names.</li>
+</ol>
+<p>In addition to these rules, there are also some <em>conventions</em>. These are
+habits that Python programmers follow to keep their code consistent with
+others’ across the world. You do not have to follow these suggestions, but you
+really <em>SHOULD</em>:</p>
+<ol class="arabic simple">
+<li>Use names that clearly describe their values. For example, if you need to
+store the price of eggs, call your variable <code class="docutils literal notranslate"><span class="pre">price_of_eggs</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">x</span></code>. Similarly, <code class="docutils literal notranslate"><span class="pre">vowel</span></code> makes more sense than <code class="docutils literal notranslate"><span class="pre">v</span></code>.</li>
+<li>Stick to lowercase letters and underscores in the variable name, unless the
+value is a constant.</li>
+<li>Use all UPPERCASE to name constants (e.g. <code class="docutils literal notranslate"><span class="pre">PI</span></code> or <code class="docutils literal notranslate"><span class="pre">SPEED_OF_LIGHT</span></code>).</li>
+</ol>
+<div class="section" id="compare">
+<h3><span class="section-number">4.4.1.1. </span>Compare<a class="headerlink" href="#compare" title="Permalink to this headline">¶</a></h3>
+<p>Writing good code is about more than just solving the task at hand. It also
+includes making the code easy to read, update, and maintain.</p>
+<p>Consider these examples of variable names:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><strong>Weaker variable names</strong>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>What is this program doing? Hard to say. The variable names <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">z</span></code> don’t tell us anything about how they are used.</p>
+<p>Let’s look at an improved version of this program.</p>
+<p><strong>Stronger variable names</strong>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">radius_of_circle</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">area_of_circle</span> <span class="o">=</span> <span class="n">PI</span> <span class="o">*</span> <span class="n">radius_of_circle</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">area_of_circle</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">With improved variable names, it becomes clear that the program is
+calculating the area of a circle of radius 5. Here’s another benefit of descriptive variable names.
+Although we have not yet learned what the symbols <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">**</span></code> do on line 3, the variable
+names give us an idea of what the symbols mean.</p>
+</div>
+</div>
+</div>
+<div class="section" id="keywords">
+<h2><span class="section-number">4.4.2. </span>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The following code produces an error:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+</pre></div>
+</div>
+<p>The problem here is that <code class="docutils literal notranslate"><span class="pre">print</span></code> is a Python <strong>keyword</strong>—a word
+reserved by the language for its own use. <code class="docutils literal notranslate"><span class="pre">print</span></code> does something very
+specific, so we cannot use it to store a value.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Most code editors will highlight keywords in a different color than
+variables or other parts of your code. This gives you a visual clue about
+which words are reserved for use as keywords.</p>
+</div>
+<p>There are a little over 30 keywords in Python. You can find a complete list of
+them <a class="reference external" href="https://www.programiz.com/python-programming/keyword-list" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="cool-tricks">
+<h2><span class="section-number">4.4.3. </span>Cool Tricks<a class="headerlink" href="#cool-tricks" title="Permalink to this headline">¶</a></h2>
+<p>Finally, here are a couple of nice details that save you a few lines of code.</p>
+<ol class="arabic">
+<li><p class="first">You can assign multiple values to multiple variables in the same line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">message</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">PI</span> <span class="o">=</span> <span class="s2">&quot;Python ROCKS!&quot;</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can assign the same value to multiple variables all at once.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word_1</span> <span class="o">=</span> <span class="n">word_2</span> <span class="o">=</span> <span class="s2">&quot;same&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following are legal Python variable names? Select ALL that
+apply.</p>
+<div class="last"><ol type="a">
+   <li><span id = "1a" onclick="highlight('1a', false)">Student_Grade%</span></li>
+   <li><span id = "1b" onclick="highlight('1b', true)">Student_Grade_Percent</span></li>
+   <li><span id = "1c" onclick="highlight('1c', false)">Student Grade Percent</span></li>
+   <li><span id = "1d" onclick="highlight('1d', false)">student_grade%</span></li>
+   <li><span id = "1e" onclick="highlight('1e', true)">student_grade_percent</span></li>
+   <li><span id = "1f" onclick="highlight('1f', false)">student grade percent</span></li>
+   <li><span id = "1g" onclick="highlight('1g', true)">g</span></li>
+</ol></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following are legal AND recommended Python variable names?
+Select ALL that apply.</p>
+<div class="last"><ol type="a">
+   <li><span id = "2a" onclick="highlight('2a', false)">Student_Grade%</span></li>
+   <li><span id = "2b" onclick="highlight('2b', false)">Student_Grade_Percent</span></li>
+   <li><span id = "2c" onclick="highlight('2c', false)">Student Grade Percent</span></li>
+   <li><span id = "2d" onclick="highlight('2d', false)">student_grade%</span></li>
+   <li><span id = "2e" onclick="highlight('2e', true)">student_grade_percent</span></li>
+   <li><span id = "2f" onclick="highlight('2f', false)">student grade percent</span></li>
+   <li><span id = "2g" onclick="highlight('2g', false)">g</span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="variables.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.3. </span>Variables</a></li>
+        
+        
+        <li class="next"><a href="expressions-and-statements.html"><span class="section-number">4.5. </span>Statements and Expressions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/more-on-variables.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

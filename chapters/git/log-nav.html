@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18.3. Navigating Commits &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="18.4. Branching Out" href="branches.html" />
+    <link rel="prev" title="18.2. Repositories and Commits" href="repositories-and-commits.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">18. </span>Git Some Control</a></li>
+    <li class="active"><span class="section-number">18.3. </span>Navigating Commits</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="navigating-commits">
+<h1><span class="section-number">18.3. </span>Navigating Commits<a class="headerlink" href="#navigating-commits" title="Permalink to this headline">¶</a></h1>
+<p>After adding a series of commits to a Git repository, we can navigate through
+them. If necessary, we can also restore an older version of our code.</p>
+<p>Let’s add one more commit to the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repo. Then we will learn how
+to move through its history.</p>
+<div class="section" id="commit-to-num-guess-py-again">
+<h2><span class="section-number">18.3.1. </span>Commit to <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code> Again<a class="headerlink" href="#commit-to-num-guess-py-again" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Add some more statements to your code in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>. You don’t need
+anything fancy. Any simple, working program that is different from what you
+committed before will work.</p>
+<p>Feel free to use the LCHS code <a class="reference external" href="https://repl.it/&#64;launchcode/Simple-number-guessing-game#main.py" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to save a new
+commit to the repository.</p>
+</li>
+</ol>
+<p>You should now have at least three total commits in the repo.</p>
+</div>
+<div class="section" id="commit-log">
+<h2><span class="section-number">18.3.2. </span>Commit Log<a class="headerlink" href="#commit-log" title="Permalink to this headline">¶</a></h2>
+<p>In the terminal, enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> and examine the output. The
+command displays a record of every commit in the repository. The top entry is
+the most recent.</p>
+<div class="admonition-example admonition" id="git-log-example">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The log for the three entries in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repo will look
+something like this:</p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log
+commit 39ab2d77c7813c67958e996961ddbca7a32b6762 (HEAD -&gt; main)
+Author: I. M. Great &lt;student@schoolname.edu&gt;
+Date:   Mon Oct 26 15:46:41 2020 -0500
+
+   Pasted in code from the LCHS number guessing repl.
+
+commit 479b8b3d84d485cff213015dfcf45b04ef7ea783
+Author: I. M. Great &lt;student@schoolname.edu&gt;
+Date:   Mon Oct 26 14:35:00 2020 -0500
+
+   Added random number selection code.
+
+commit e14be18ae18e47084fca7d97f25474762b7e8a40
+Author: I. M. Great &lt;student@schoolname.edu&gt;
+Date:   Mon Oct 26 14:23:17 2020 -0500
+
+   My first commit.
+</pre></div>
+</div>
+</div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">If the output reaches the bottom of the terminal pane before finishing, tap
+the space bar to display the next section of text. To stop the output and
+return to the command prompt, tap <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
+</div>
+<p>Each entry in the log contains four items:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> shows a 40-character long code. This provides the key that Git
+uses to organize the commits in the repository.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Author</span></code> indicates who made the commit. This becomes important when
+multiple coders work on the same project.</li>
+<li><code class="docutils literal notranslate"><span class="pre">Date</span></code> indicates the day and time the commit was made.</li>
+<li>The indented line shows the comment saved with the commit. The more details
+we include in each comment, the easier it is to look through the log and
+know what changes were made between saves.</li>
+</ol>
+</div>
+<div class="section" id="undo-changes-since-last-commit">
+<h2><span class="section-number">18.3.3. </span>Undo Changes Since Last Commit<a class="headerlink" href="#undo-changes-since-last-commit" title="Permalink to this headline">¶</a></h2>
+<p>New code usually doesn’t work perfectly on the first try. This is especially
+true as our programs get larger.</p>
+<p>One big advantage of version control is that it allows us to save working code
+before we add and test a new feature. If the feature works, great! If not, we
+tinker with it until it does. However, sometimes we will just create a complete
+mess. When this happens, we need to step back, take a break, and then rethink
+how to make the feature work.</p>
+<p>Since we made a commit just before adding the new code, we can <em>restore</em> our
+most recent version. This wipes away all of the changes made since that commit.
+We can then start with our old, working code and try something different.</p>
+<p>Let’s see how this works.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Restoring your most recent commit acts like a great big <em>Undo</em>.</p>
+<ol class="arabic">
+<li><p class="first">Add a few comment lines after the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in
+<code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>. It doesn’t matter what you type, as long as you make
+an obvious change.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Git pun number 1...</span>
+<span class="c1"># Git pun number 2...</span>
+<span class="c1"># This lets us git some practice.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save your work in VS Code, but do NOT commit it.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to verify that you have uncommitted changes in the
+file.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
+On branch main
+Changes not staged for commit:
+(use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+(use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+      modified:   num_guess.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now enter the following command in the terminal. Pay close attention to
+what happens to the comments you added in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git reset --hard HEAD
+</pre></div>
+</div>
+</li>
+</ol>
+<p class="last">Whoa, the added statements disappear!</p>
+</div>
+<p><strong>Syntax review</strong>:</p>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> moves us backwards through the commit history.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> identifies the commit to move to. Looking at the output from the
+<a class="reference internal" href="#git-log-example"><span class="std std-ref">git log example</span></a>, we see that the first entry is
+labeled with <code class="docutils literal notranslate"><span class="pre">(HEAD</span> <span class="pre">-&gt;</span> <span class="pre">main)</span></code>. Think of <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> like a bookmark in the
+log.</li>
+<li><code class="docutils literal notranslate"><span class="pre">--hard</span></code> removes all changes made after the most recent commit.</li>
+</ol>
+<div class="figure align-default">
+<img alt="The git reset command removes uncommitted changes from the files." src="../../_images/git-reset.gif" />
+</div>
+</div>
+<div class="section" id="switching-between-commits">
+<h2><span class="section-number">18.3.4. </span>Switching Between Commits<a class="headerlink" href="#switching-between-commits" title="Permalink to this headline">¶</a></h2>
+<p>What if we want to move further back in the commit history? It’s possible, but
+doing this is actively discouraged in the coding community! Resetting to
+anything before the last commit complicates the history of the repository.</p>
+<p>Fortunately, Git provides a way for us to keep the history clean, experiment
+with new features, and keep our teamwork efficient.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="repositories-and-commits.html"><span aria-hidden="true">&larr;</span> <span class="section-number">18.2. </span>Repositories and Commits</a></li>
+        
+        
+        <li class="next"><a href="branches.html"><span class="section-number">18.4. </span>Branching Out <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/git/log-nav.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.10. Exercises: Launch Form &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.11. Project: Web Form (Part 1)" href="project.html" />
+    <link rel="prev" title="20.9. Styling Forms" href="form-style.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.10. </span>Exercises: Launch Form</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercises-launch-form">
+<h1><span class="section-number">20.10. </span>Exercises: Launch Form<a class="headerlink" href="#exercises-launch-form" title="Permalink to this headline">¶</a></h1>
+<p>Hello, programmer. We need you to make a Rocket Simulation form. Please follow
+the steps below. Happy coding!</p>
+<div class="section" id="part-a-setup">
+<h2><span class="section-number">20.10.1. </span>Part A: Setup<a class="headerlink" href="#part-a-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">From the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in your <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository, create a new
+branch called <code class="docutils literal notranslate"><span class="pre">rocket-form</span></code>.</p>
+</li>
+<li><p class="first">In the new branch, create the <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> and <code class="docutils literal notranslate"><span class="pre">rocket.css</span></code> files.</p>
+</li>
+<li><p class="first">Paste the following starter code into the HTML file:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Rocket Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;rocket.css&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- TODO: Add your code here. --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Paste this code into the CSS file.</p>
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">label</span> <span class="p">{</span>
+   <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+   <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">block;</span></code> formats an element as a block-type. In this case, each
+<code class="docutils literal notranslate"><span class="pre">label</span></code> (and its wrapped input) will start on a new line. Now you won’t
+need to use as many <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> elements to separate the rows in your form!</p>
+</div>
+</li>
+<li><p class="first">Save and commit your work.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="part-b-first-input">
+<h2><span class="section-number">20.10.2. </span>Part B: First Input<a class="headerlink" href="#part-b-first-input" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Create a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> with these attributes.</p>
+<ol class="loweralpha simple">
+<li>Set <code class="docutils literal notranslate"><span class="pre">method</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code></li>
+<li>Set <code class="docutils literal notranslate"><span class="pre">action</span></code> to
+<code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span></code>.</li>
+</ol>
+</li>
+<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">form</span></code> element, add a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> for
+<code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Name</span></code>:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Test Name: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;test-name&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Save your work, then open <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> in your browser. What keeps
+you from submitting the form right now?</p>
+</li>
+<li><p class="first">Add a submit button called <em>Run Simulation</em> to your form.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Run Simulation<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- OR --&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Run Simulation&quot;</span><span class="p">/&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enter a value into the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> input and submit the form. Was the
+key/value pair properly sent to the server?</p>
+<div class="figure align-default" id="id1">
+<img alt="Request Parrot page showing the key/value pair &quot;test-name/Input success!&quot;" src="../../_images/exercises-partB.png" />
+<p class="caption"><span class="caption-text">Data successfully sent to the parrot server.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Save and commit your work before starting Part C.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="part-c-more-inputs">
+<h2><span class="section-number">20.10.3. </span>Part C: More Inputs<a class="headerlink" href="#part-c-more-inputs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Add these five <code class="docutils literal notranslate"><span class="pre">inputs</span></code> to your form. Pay attention to the types and
+required values. Be sure to add a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> for each input.</p>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Input Type</th>
+<th class="head">Input Name</th>
+<th class="head">Required Values</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Test Date</td>
+<td><code class="docutils literal notranslate"><span class="pre">date</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">test-date</span></code></td>
+<td>Date format <code class="docutils literal notranslate"><span class="pre">mm/dd/yyyy</span></code></td>
+</tr>
+<tr class="row-odd"><td>Rocket Type</td>
+<td><code class="docutils literal notranslate"><span class="pre">select</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">rocket-type</span></code></td>
+<td>Options for <code class="docutils literal notranslate"><span class="pre">Falcon</span></code>, <code class="docutils literal notranslate"><span class="pre">Saturn</span></code>, <code class="docutils literal notranslate"><span class="pre">Orion</span></code>, and <code class="docutils literal notranslate"><span class="pre">Terrier</span></code>.</td>
+</tr>
+<tr class="row-even"><td>Number of Engines</td>
+<td><code class="docutils literal notranslate"><span class="pre">number</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">engine-count</span></code></td>
+<td>A whole number from 1 - 9.</td>
+</tr>
+<tr class="row-odd"><td>Wind Rating</td>
+<td><code class="docutils literal notranslate"><span class="pre">radio</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">wind-rating</span></code></td>
+<td>Options for <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Wind</span></code>, <code class="docutils literal notranslate"><span class="pre">Mild</span></code>, and <code class="docutils literal notranslate"><span class="pre">Strong</span></code> (see note below).</td>
+</tr>
+<tr class="row-even"><td>Use Autopilot</td>
+<td><code class="docutils literal notranslate"><span class="pre">checkbox</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">autopilot</span></code></td>
+<td><code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p class="first"><em>Note</em>: Each <code class="docutils literal notranslate"><span class="pre">wind-rating</span></code> input needs to include a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute.
+For <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Wind</span></code>, set the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>. For <code class="docutils literal notranslate"><span class="pre">Mild</span></code>, set the value to
+<code class="docutils literal notranslate"><span class="pre">10</span></code>. For <code class="docutils literal notranslate"><span class="pre">Strong</span></code>, set the value to <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+</li>
+<li><p class="first">Add placeholder text to the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">engine-count</span></code> input fields.</p>
+</li>
+<li><p class="first">Include an empty <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> element with the <code class="docutils literal notranslate"><span class="pre">select</span></code> input. Make it the
+default choice, set <code class="docutils literal notranslate"><span class="pre">value=&quot;&quot;</span></code>, and add the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute to add some validation. Prevent the form from
+being submitted if any input <em>besides</em> <code class="docutils literal notranslate"><span class="pre">autopilot</span></code> is left blank.</p>
+</li>
+<li><p class="first">Add a <em>Scrub Launch</em> button that resets the form.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Before submitting, your form should look something like:</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/rocket-form.png"><img alt="The empty form on the left, and the completed form on the right." src="../../_images/rocket-form.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The empty and filled rocket simulation form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>After submitting:</p>
+<div class="last figure align-default">
+<img alt="The response from the parrot server, showing the key/value pairs set by the form submission." src="../../_images/rocket-response.png" />
+</div>
+</div>
+</li>
+<li><p class="first">Save and commit your work before starting Part D.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="part-d-style-the-form">
+<h2><span class="section-number">20.10.4. </span>Part D: Style the Form<a class="headerlink" href="#part-d-style-the-form" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Add a centered heading to your form. Make the text a different color, font,
+and/or style compared to the labels.</li>
+<li>Add a border or a background color (or both) to the form.</li>
+<li>Center the <em>Run Simulation</em> and <em>Scrub Launch</em> buttons inside the form.
+Also, make them different colors.</li>
+<li>Divide the form into three parts: One for the test name and date, one for
+the rocket type and engine count, and one for the wind rating and autopilot.</li>
+<li>Align the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">test-date</span></code> fields. Also, make the
+<code class="docutils literal notranslate"><span class="pre">engine-count</span></code> field shorter than the name and date boxes.</li>
+<li><em>Optional</em>: Add more styling to the form and inputs! Feel free to include
+images or adjust the text/background color, margins, padding, borders,
+shading, font, etc. Have a little fun.</li>
+<li>Remember to save and commit your work.</li>
+</ol>
+<div class="figure align-default" id="id3">
+<img alt="A styled Rocket Simulation form." src="../../_images/rocket-styled.png" />
+<p class="caption"><span class="caption-text"><strong>Note</strong>: The LaunchCode rocket logo is trademarked.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="form-style.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.9. </span>Styling Forms</a></li>
+        
+        
+        <li class="next"><a href="project.html"><span class="section-number">20.11. </span>Project: Web Form (Part 1) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/exercises.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.8. Redirecting &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.9. The User Experience" href="better-ux.html" />
+    <link rel="prev" title="22.7. Page Navigation" href="page-navigation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.8. </span>Redirecting</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="redirecting">
+<span id="redirect"></span><h1><span class="section-number">22.8. </span>Redirecting<a class="headerlink" href="#redirecting" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">The term <strong>redirect</strong> means to send a user from one URL to a different one. We
+can see a simple example of this with an HTML link element:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;target_URL&quot;</span><span class="p">&gt;</span>Link text<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">target_URL</span></code> is the address for the new webpage.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="last">For <a class="reference external" href="https://www.python.org/" target="_blank">this link<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+<code class="docutils literal notranslate"><span class="pre">href=&quot;https://www.python.org/&quot;</span></code>.</p>
+</div>
+<p>Sometimes, clicking a link opens a new tab in the browser. Other times, the new
+page loads in the current tab. In both cases, users are sent to a different
+URL. This can be confirmed by looking at the address bar before and after the
+redirect.</p>
+<p>We have also set up redirects with the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute in a form.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>In the <a class="reference internal" href="../forms/form-post.html#send-data-to-server"><span class="std std-ref">Forms chapter</span></a>, we sent requests to a
+server.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;URL_of_server&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- Form code --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>When the user clicks the <em>Submit</em> button, an HTTP request is sent to the URL
+assigned to <code class="docutils literal notranslate"><span class="pre">action</span></code>. This address doesn’t have to be the same as the form
+page.</p>
+<p class="last">When the server responds to the request, the browser renders a webpage, and
+a new URL appears in the address bar.</p>
+</div>
+<div class="section" id="render-template-vs-redirect">
+<h2><span class="section-number">22.8.1. </span>Render Template vs. Redirect<a class="headerlink" href="#render-template-vs-redirect" title="Permalink to this headline">¶</a></h2>
+<p>Up until now, we’ve used the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function to send an HTML
+file from the Flask server to the browser. Once the page renders, the URL in
+the address bar looks something like <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/path</span></code>. For each
+page in our website, <code class="docutils literal notranslate"><span class="pre">path</span></code> is different.</p>
+<p>It is important to recognize that the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function is NOT the
+same thing as a redirect. The best way to see this is with an example.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>The practice website we’ve built for this chapter, currently has three
+pages. We’ll use <code class="docutils literal notranslate"><span class="pre">second.html</span></code> and <code class="docutils literal notranslate"><span class="pre">third.html</span></code> for this example.</p>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">second.html</span></code> and add a short form after the <code class="docutils literal notranslate"><span class="pre">h2</span></code>:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Look! A second page!<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;centered&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/second&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Move to the third page?<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;choice&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;yes&quot;</span><span class="p">/&gt;</span>Yes<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;choice&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;no&quot;</span><span class="p">/&gt;</span>No<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">section</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;centered&quot;</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Submit<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The new form asks the user if they want to move to the third page. The
+<code class="docutils literal notranslate"><span class="pre">action</span></code> attribute sends the response to the current URL.</p>
+</li>
+<li><p class="first">Now open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and update the function that controls the second
+page:</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/second&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">second_page</span><span class="p">():</span>
+   <span class="n">tab_title</span> <span class="o">=</span> <span class="s2">&quot;Second Page&quot;</span>
+   <span class="n">page_title</span> <span class="o">=</span> <span class="s2">&quot;Second Page&quot;</span>
+
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">choice</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;third.html&#39;</span><span class="p">,</span> <span class="n">tab_title</span> <span class="o">=</span> <span class="n">tab_title</span><span class="p">,</span>
+            <span class="n">page_title</span> <span class="o">=</span> <span class="n">page_title</span><span class="p">,</span> <span class="n">navigation</span> <span class="o">=</span> <span class="n">navigation</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+         <span class="n">page_title</span> <span class="o">=</span> <span class="s2">&quot;Welcome Back!&quot;</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;second.html&#39;</span><span class="p">,</span> <span class="n">tab_title</span> <span class="o">=</span> <span class="n">tab_title</span><span class="p">,</span>
+      <span class="n">page_title</span> <span class="o">=</span> <span class="n">page_title</span><span class="p">,</span> <span class="n">navigation</span> <span class="o">=</span> <span class="n">navigation</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>If the user responds <code class="docutils literal notranslate"><span class="pre">No</span></code> in the form, line 36 executes, followed by the
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function on line 38. The second page reloads, but it
+shows different text in the heading. (TRY IT!)</p>
+<p class="last">If the user responds <code class="docutils literal notranslate"><span class="pre">Yes</span></code> in the form, line 33 executes. It renders the
+template for the third page. (TRY IT!)</p>
+</div>
+<p>Responding <code class="docutils literal notranslate"><span class="pre">No</span></code> in the form keeps us on the second page. Even though some of
+the content changes, the browser still renders the <code class="docutils literal notranslate"><span class="pre">second.html</span></code> template.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/render-vs-redirect-1.png"><img alt="The &quot;No&quot; answer renders second.html with different content." src="../../_images/render-vs-redirect-1.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">Even though the heading changes, the template and URL remain the same.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>However, notice what happens to the webpage after a <code class="docutils literal notranslate"><span class="pre">Yes</span></code> response. The web
+address stays the same (<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/second</span></code>), but the page itself
+is different. The URL and heading still indicate the second page, but the
+content displayed is for the third.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/render-vs-redirect-2.png"><img alt="The &quot;Yes&quot; answer renders third.html at the same URL second.html." src="../../_images/render-vs-redirect-2.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">third.html</span></code> renders at the same URL as <code class="docutils literal notranslate"><span class="pre">second.html</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>As written, the Flask application renders both templates at the same URL. <em>This
+is NOT a good result</em>! To keep our website organized, each Python function
+should always render the same template. <code class="docutils literal notranslate"><span class="pre">second_page()</span></code> should only deal with
+<code class="docutils literal notranslate"><span class="pre">second.html</span></code>.</p>
+<p>When we want to render <code class="docutils literal notranslate"><span class="pre">third.html</span></code>, we need to shift control from
+<code class="docutils literal notranslate"><span class="pre">second_page()</span></code> to a different Python function. We also need to use a new
+URL.</p>
+</div>
+<div class="section" id="redirect-with-flask">
+<h2><span class="section-number">22.8.2. </span>Redirect with Flask<a class="headerlink" href="#redirect-with-flask" title="Permalink to this headline">¶</a></h2>
+<p>Each page in our Flask application needs its own template, path, and Python
+function. <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> should ONLY be used for the HTML file assigned
+to the path in <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code>. To render a different template, we redirect
+the program flow to a different function.</p>
+<p>The general syntax for a redirect in Flask is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/path_name&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/path_name</span></code> matches the string from one of the other <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code>
+handlers.</p>
+<p>Let’s update the <code class="docutils literal notranslate"><span class="pre">second_page()</span></code> function to use <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code>.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code> in Visual Studio Code.</p>
+<ol class="arabic">
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">redirect</span></code> function to the top <code class="docutils literal notranslate"><span class="pre">import</span></code> statement.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">second_page()</span></code> function, replace <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> on
+line 33 with <code class="docutils literal notranslate"><span class="pre">redirect()</span></code>.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">choice</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+         <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/third&#39;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+         <span class="n">page_title</span> <span class="o">=</span> <span class="s2">&quot;Welcome Back!&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>The argument inside <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> might be different in your code. It
+needs to match the path you used in the <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> statement above
+the target function.</p>
+</li>
+<li><p class="first">Save your work, then reload the page in the browser.</p>
+</li>
+<li><p class="first">Use the form on the second page to answer <code class="docutils literal notranslate"><span class="pre">Yes</span></code>. After submitting,
+check the URL, heading text, and other content on the page.</p>
+</li>
+</ol>
+<p>Ta da! We’re now properly on the third page!</p>
+<div class="last figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/render-vs-redirect-3.png"><img alt="The &quot;Yes&quot; answer renders third.html at a different URL." src="../../_images/render-vs-redirect-3.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">third.html</span></code> now renders at its own URL.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p>Notice that besides the path, we didn’t include any other arguments inside
+<code class="docutils literal notranslate"><span class="pre">redirect()</span></code>. Since it shifts control to a different function, that code
+becomes responsible for rendering <code class="docutils literal notranslate"><span class="pre">third.html</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">redirect()</span></code> does NOT directly send any data to the browser. Instead, it
+moves control between functions within <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+</div>
+<div class="section" id="difference-summary">
+<h2><span class="section-number">22.8.3. </span>Difference Summary<a class="headerlink" href="#difference-summary" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> and <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> functions Do. Different. Things.</p>
+<p><code class="docutils literal notranslate"><span class="pre">render_template()</span></code>:</p>
+<ol class="arabic simple">
+<li>Deals with displaying a webpage at the current URL.</li>
+<li>Indicates which file the Flask server sends to the browser.</li>
+<li>Passes data to the selected template file.</li>
+<li>The browser renders the file at the path specified in <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code>.</li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">redirect()</span></code>:</p>
+<ol class="arabic simple">
+<li>Deals with moving the user from one URL to another.</li>
+<li>Takes a path argument instead of a file name.</li>
+<li>Shifts control from one Python function to another.</li>
+<li>Sends no data directly to the browser.</li>
+</ol>
+<p>If <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> could talk, it would say something like,
+<em>Hey! Look at this cool stuff right here</em>. On the other hand, <code class="docutils literal notranslate"><span class="pre">redirect()</span></code>
+would say something like, <em>Hey! Go somewhere else now</em>.</p>
+</div>
+<div class="section" id="redirect-methods">
+<h2><span class="section-number">22.8.4. </span>Redirect Methods<a class="headerlink" href="#redirect-methods" title="Permalink to this headline">¶</a></h2>
+<p>In the <a class="reference internal" href="../http/http-requests.html#http-requests"><span class="std std-ref">HTTP chapter</span></a>, we learned about GET and POST
+requests. In the <a class="reference internal" href="../forms/form-post.html#send-data-to-server"><span class="std std-ref">Forms chapter</span></a>, we learned how to
+send each type of request using the <code class="docutils literal notranslate"><span class="pre">method</span></code> attribute.</p>
+<p>The form on the second page sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the path <code class="docutils literal notranslate"><span class="pre">/second</span></code>.
+However, what happens when the <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> statement executes? Does it send
+a <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code> request? Let’s find out!</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In VS Code, open the template for the third webpage.</p>
+<ol class="last arabic">
+<li><p class="first">Add a new element and placeholder below the <code class="docutils literal notranslate"><span class="pre">h2</span></code>.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>{% extends &quot;base.html&quot; %}
+
+{% block content %}
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Look! A third page!<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>{{method_message}}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+{% endblock %}
+</pre></div>
+</td></tr></table></div>
+<p>We will fill the <code class="docutils literal notranslate"><span class="pre">{{method_message}}</span></code> placeholder with different text
+depending on whether we make a <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to reach the
+page.</p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, update the function that controls the third page. Note
+that the names you used for the path, function, and template might be
+different than the ones shown below.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/third&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">third_page</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">method_message</span> <span class="o">=</span> <span class="s1">&#39;You reached this page through a POST request.&#39;</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">method_message</span> <span class="o">=</span> <span class="s1">&#39;You reached this page through a GET request.&#39;</span>
+
+   <span class="n">tab_title</span> <span class="o">=</span> <span class="s1">&#39;Third Page&#39;</span>
+   <span class="n">page_title</span> <span class="o">=</span> <span class="s2">&quot;Third Page&quot;</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;third.html&#39;</span><span class="p">,</span> <span class="n">tab_title</span><span class="o">=</span><span class="n">tab_title</span><span class="p">,</span> <span class="n">page_title</span><span class="o">=</span><span class="n">page_title</span><span class="p">,</span>
+      <span class="n">navigation</span><span class="o">=</span><span class="n">navigation</span><span class="p">,</span> <span class="n">method_message</span><span class="o">=</span><span class="n">method_message</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>When the <code class="docutils literal notranslate"><span class="pre">third_page()</span></code> function executes, it checks the method type.
+Depending on the result, <code class="docutils literal notranslate"><span class="pre">method_message</span></code> is assigned one of two possible
+string values.</p>
+</li>
+<li><p class="first">Save your work, then reload the tab. Use the address bar to navigate to
+the third page (<code class="docutils literal notranslate"><span class="pre">127.0.0.1:5000/third</span></code>). Does this action make a
+<code class="docutils literal notranslate"><span class="pre">GET</span></code> or a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request?</p>
+</li>
+<li><p class="first">Navigate to a different page in the website. Use the Page Navigation
+links to return to the third page. Does clicking the link make a <code class="docutils literal notranslate"><span class="pre">GET</span></code>
+or a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request?</p>
+</li>
+<li><p class="first">Finally, return to the second page. Use the form to submit a <code class="docutils literal notranslate"><span class="pre">Yes</span></code>
+answer to the question. This will trigger the <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> statement in
+the <code class="docutils literal notranslate"><span class="pre">second_page()</span></code> function. Does the <code class="docutils literal notranslate"><span class="pre">redirect</span></code> make a <code class="docutils literal notranslate"><span class="pre">GET</span></code> or a
+<code class="docutils literal notranslate"><span class="pre">POST</span></code> request?</p>
+</li>
+</ol>
+</div>
+<p>In the example above, each time we reached <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/third</span></code>,
+<code class="docutils literal notranslate"><span class="pre">method_message</span></code> indicated that a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request was made. Even though the
+form sent a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, <code class="docutils literal notranslate"><span class="pre">redirect</span></code> changed it into a <code class="docutils literal notranslate"><span class="pre">GET</span></code>.</p>
+<p>This shows an important point. By default, <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code>
+request to the new URL. Many times, this is perfectly fine. However, a form
+submission should preserve the <code class="docutils literal notranslate"><span class="pre">POST</span></code> request.</p>
+<div class="section" id="response-codes">
+<h3><span class="section-number">22.8.4.1. </span>Response Codes<a class="headerlink" href="#response-codes" title="Permalink to this headline">¶</a></h3>
+<p>To make <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> send a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, we need to add another argument
+after the path.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, replace line 33 with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/third&#39;</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="mi">307</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Save, then navigate to the form on the second page. Submit a <code class="docutils literal notranslate"><span class="pre">Yes</span></code>
+answer and examine the message displayed on the page.</p>
+<div class="figure align-default">
+<img alt="Code 307 preserves the POST request through the redirect." src="../../_images/third-post.png" />
+</div>
+</li>
+</ol>
+</div>
+<p>We learned about response codes in the HTTP chapter, but we aren’t going to
+dive into any of those details here. A discussion of why code <code class="docutils literal notranslate"><span class="pre">307</span></code> works is
+beyond the scope of this book. We just need to remember that it preserves a
+<code class="docutils literal notranslate"><span class="pre">POST</span></code> method.</p>
+</div>
+<div class="section" id="technical-details-optional">
+<h3><span class="section-number">22.8.4.2. </span>Technical Details (Optional)<a class="headerlink" href="#technical-details-optional" title="Permalink to this headline">¶</a></h3>
+<p>For those interested in digging deeper into code <code class="docutils literal notranslate"><span class="pre">307</span></code> (and others), start
+with the following links:</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.pmg.com/blog/301-302-303-307-many-redirects/" target="_blank">How many redirects are there?<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<li><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#redirection_messages" target="_blank">Redirection messages (MDN Docs)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">As your Flask application runs, keep an eye on the console in VS Code. It
+displays a log of the HTTP responses as you navigate between pages.</p>
+</div>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">22.8.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which function matches a template to a specific URL?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">render_template()</code></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">redirect()</code></li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Clicking a page navigation link will:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> render a different HTML file at the current URL</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> redirect the user to a new URL</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which function can change the appearance of the page at the current URL?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">render_template()</code></li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">redirect()</code></li>
+</ol>
+<p id="Q3"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>It’s OK to render different templates at the same URL.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+   <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+</ol>
+<p id="Q4"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="page-navigation.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.7. </span>Page Navigation</a></li>
+        
+        
+        <li class="next"><a href="better-ux.html"><span class="section-number">22.9. </span>The User Experience <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/redirect.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

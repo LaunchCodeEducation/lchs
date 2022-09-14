@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>6.4. Iteration Improves the Turtle Program &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6.5. Loop Through a String" href="iterating-over-collections.html" />
+    <link rel="prev" title="6.3. More on range" href="range-options.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">6. </span>Repeating Things With Loops</a></li>
+    <li class="active"><span class="section-number">6.4. </span>Iteration Improves the Turtle Program</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="iteration-improves-the-turtle-program">
+<h1><span class="section-number">6.4. </span>Iteration Improves the Turtle Program<a class="headerlink" href="#iteration-improves-the-turtle-program" title="Permalink to this headline">¶</a></h1>
+<p>Take another look at the turtle code for drawing a square. Which statements are
+repeated? How many times?</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Turtle statements for drawing a square:</p>
+<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">pet</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+
+<span class="n">pet</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">pet</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>We can <em>DRY</em> the code by using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Complete the code below by
+entering a value into <code class="docutils literal notranslate"><span class="pre">range</span></code>. Next, copy and paste the SMALLEST number of
+statements into the loop body that will make the turtle draw a square. Don’t
+forget to indent!</p>
+<iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Square?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe><p>Nice! By adding a loop, you were able to use only 3 lines of code to draw a
+square instead of the original 8.</p>
+<p>While “saving some lines of code” might be convenient, it is NOT the big deal
+here. What is much more important is that we found a <em>repeating pattern</em> of
+statements, and we changed our program to repeat the pattern.</p>
+<p>Finding repeatable chunks of code and building our programs around those
+chunks is a vital skill for coding.</p>
+<div class="section" id="how-about-drawing-other-shapes">
+<h2><span class="section-number">6.4.1. </span>How About Drawing Other Shapes?<a class="headerlink" href="#how-about-drawing-other-shapes" title="Permalink to this headline">¶</a></h2>
+<p>What if we want the turtle to draw a triangle instead of a square? Note that
+<code class="docutils literal notranslate"><span class="pre">range(4)</span></code> made the loop run 4 times and produced 4 lines. It seems
+like we can change the value in <code class="docutils literal notranslate"><span class="pre">range</span></code> to make other shapes.</p>
+<p>For a triangle, let’s try replacing <code class="docutils literal notranslate"><span class="pre">range(4)</span></code> with <code class="docutils literal notranslate"><span class="pre">range(3)</span></code> to make 3
+sides instead of 4:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last"><iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Polygons?lite=true" scrolling="no" frameborder="yes"></iframe></div></div>
+<p>Hmmm… that didn’t quite work. This is because of line 7. <code class="docutils literal notranslate"><span class="pre">bob.left(90)</span></code>
+works fine for the square (all right angles), but the turtle needs to turn by a
+different amount for a triangle.</p>
+<p>Without getting deep into the geometry here, the answer is… 120 degrees!
+Replace <code class="docutils literal notranslate"><span class="pre">90</span></code> with <code class="docutils literal notranslate"><span class="pre">120</span></code> and then run the program again.</p>
+<div class="section" id="now-add-variables">
+<h3><span class="section-number">6.4.1.1. </span>Now Add Variables!<a class="headerlink" href="#now-add-variables" title="Permalink to this headline">¶</a></h3>
+<p>We built one <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to draw a square and a separate <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to draw
+a triangle. However, both loops do essentially the same thing—move the turtle
+and then turn the turtle.</p>
+<p>Rather than coding separate loops for every possible polygon (triangle, square,
+pentagon, hexagon, etc.) we should DRY the loop! By using variables instead of
+specific numbers inside <code class="docutils literal notranslate"><span class="pre">range</span></code> and <code class="docutils literal notranslate"><span class="pre">left()</span></code>, we can make ONE loop that
+works for ALL polygons.</p>
+<p>Make the following adjustments in the editor above:</p>
+<ol class="arabic simple">
+<li>Before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> and assign it a
+value. This stores the number of sides of the shape we want to draw.</li>
+<li>Also before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>. This stores
+the number of degrees that the turtle needs to rotate after drawing each
+side.</li>
+<li><code class="docutils literal notranslate"><span class="pre">turn_angle</span></code> needs to be calculated. Set
+the variable equal to <code class="docutils literal notranslate"><span class="pre">360.0</span> <span class="pre">/</span> <span class="pre">num_sides</span></code> (360.0 degrees divided by the
+number of sides). If you want to know why this works, go ask your math
+teacher! They will LOVE to explain it to you.</li>
+<li>Replace the number in <code class="docutils literal notranslate"><span class="pre">range</span></code> with the variable <code class="docutils literal notranslate"><span class="pre">num_sides</span></code>.</li>
+<li>Replace the number in <code class="docutils literal notranslate"><span class="pre">left</span></code> with <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>.</li>
+<li>Test the program by having it draw a square first (<code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">4</span></code>), then
+change <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to make a triangle.</li>
+<li>Ever wanted to know what a <em>nonagon</em> looks like (9 sides)? How about a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Tridecagon" target="_blank">triskaidecagon<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>? Change the
+value of <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to find out!</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">If you have your own repl.it account, you can save a copy of the finished
+polygon loop by logging in and <em>forking</em> the <a class="reference external" href="https://repl.it/&#64;launchcode/LCHS-Turtle-Polygons-Solution" target="_blank">final code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="range-options.html"><span aria-hidden="true">&larr;</span> <span class="section-number">6.3. </span>More on <code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+        
+        
+        <li class="next"><a href="iterating-over-collections.html"><span class="section-number">6.5. </span>Loop Through a String <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/loops/turtle-iteration.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

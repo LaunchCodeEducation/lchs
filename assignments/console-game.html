@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment #3: Console Game &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment #4: HTML Me Something" href="html-me-something.html" />
+    <link rel="prev" title="Assignment #2: Coded Messages" href="coded-messages.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #3: Console Game</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="assignment-3-console-game">
+<span id="console-game"></span><h1>Assignment #3: Console Game<a class="headerlink" href="#assignment-3-console-game" title="Permalink to this headline">¶</a></h1>
+<p>You and a partner will design a simple console game app. For example:</p>
+<ol class="arabic simple">
+<li>Guess letters to figure out a word or sentence</li>
+<li>Guess a 3 or 4-color sequence</li>
+<li>Play a game of 21</li>
+<li>Global Thermonuclear War</li>
+<li>etc.</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Click <em>Run</em> to play Rock, Paper, Scissors against the computer!</p>
+<div class="last"><iframe src="https://trinket.io/embed/python3/ed6caf8b53?outputOnly=true&runOption=run" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<div class="section" id="requirements">
+<span id="assignment3-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>To be considered complete, your program must include each of the following:</p>
+<ol class="arabic simple">
+<li>User input (to make the program interactive).</li>
+<li>At least one loop and one conditional.</li>
+<li>Two or more functions, one of which must be a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</li>
+<li>At least one list.</li>
+<li>A replay option (e.g. “Would you like to play again?”).</li>
+</ol>
+<p>To boost your score for this assignment, you and your partner can include one
+or more of the following <strong>Bonus Items</strong>:</p>
+<ol class="arabic simple">
+<li>Use at least one dictionary in addition to (or in place of) the required
+list(s).</li>
+<li>Use classes/objects.</li>
+<li>Use a module (custom or ready-made).</li>
+</ol>
+</div>
+<div class="section" id="part-1-choose-an-idea">
+<h2>Part 1: Choose an Idea<a class="headerlink" href="#part-1-choose-an-idea" title="Permalink to this headline">¶</a></h2>
+<p>Before you start coding, you and your partner must decide what game you want to
+create!</p>
+<ol class="arabic simple">
+<li>Brainstorm ideas and write them down.</li>
+<li>Show the list of your ideas to your teacher. Receive feedback on which ones
+are suitable for this assignment.</li>
+<li>Narrow down your list, then select the idea that excites you the most.</li>
+</ol>
+<p>Next, describe to each other what you want the program to do. Now is NOT the
+time to write code! Discuss the GAME, not Python.</p>
+<ol class="arabic simple">
+<li>Write down the features you want your game to have.</li>
+<li>Start simple! From your features list, select only the most important ideas
+for your game. You have a limited amount of time, and you can always add
+more features later.</li>
+<li>Write down how the game will be played by the user. What inputs will be
+needed?</li>
+<li>Identify what information needs to be displayed in the console (intro, user
+input prompts, results, etc.).</li>
+</ol>
+</div>
+<div class="section" id="part-2-outline-the-program">
+<h2>Part 2: Outline the Program<a class="headerlink" href="#part-2-outline-the-program" title="Permalink to this headline">¶</a></h2>
+<p>Now that you and your partner have chosen a game idea, the next step is to
+block out the different parts of the program. This can be done with pencil and
+paper, in a shared document, or with comments in a code editor.</p>
+<p>The idea here is to describe how each part of the program works without
+worrying about the actual Python code yet. This can include an outline of the
+data and variables needed and/or a short description of the logic for each part
+of the game (e.g. loops, conditionals, functions, etc.).</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>For the Rock, Paper, Scissors game above, the outline might look something
+like:</p>
+<div class="last figure align-default">
+<img alt="A four part outline describing the different pieces of a rock-paper-scissors program." src="../_images/rock-paper-scissors-outline.png" />
+</div>
+</div>
+</div>
+<div class="section" id="part-3-code-the-console-game">
+<h2>Part 3: Code the Console Game<a class="headerlink" href="#part-3-code-the-console-game" title="Permalink to this headline">¶</a></h2>
+<p>Login to your Trinket or repl.it account. Start a new project and give it a
+descriptive name (something flashier than <code class="docutils literal notranslate"><span class="pre">Assignment</span> <span class="pre">3</span></code>). Be sure to share
+the link to the project with your partner!</p>
+<p>Begin coding your game by following the outline you made in Part 2. Here are a
+few tips to help you complete your project with less hassle:</p>
+<ol class="arabic simple">
+<li>Start by coding something small that works (NOT the whole game). For
+example, when the player clicks <em>Run</em>, what should they see on the screen
+first?</li>
+<li>Test your new program carefully before moving on.</li>
+<li>Next, add one small, new thing to the program. IMPORTANT: Keep your code
+working! If the new feature breaks the program, find and fix the bugs before
+moving on.</li>
+<li>Add another feature to the program. Keep the code working.</li>
+<li>Repeat this process until you have added all your planned features.</li>
+</ol>
+</div>
+<div class="section" id="part-4-challenge-your-game">
+<h2>Part 4: Challenge Your Game<a class="headerlink" href="#part-4-challenge-your-game" title="Permalink to this headline">¶</a></h2>
+<p>Your game is almost complete! You just need to run it a few times to check for
+any leftover bugs.</p>
+<p>Users often enter the wrong thing when prompted. For example, if they are asked
+for a number between <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>, they might enter <code class="docutils literal notranslate"><span class="pre">100</span></code> or the string
+<code class="docutils literal notranslate"><span class="pre">'one'</span></code>. Your program needs to survive these cases.</p>
+<p id="index-0">Also, you need to check to make sure your program deals with <strong>edge cases</strong>
+correctly. For example, in the range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">10</span></code>, the values <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code>
+are at the <em>edge</em> of the accepted entries. A conditional that checks for
+<code class="docutils literal notranslate"><span class="pre">user_choice</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> behaves differently than one that uses
+<code class="docutils literal notranslate"><span class="pre">user_choice</span> <span class="pre">&lt;=</span> <span class="pre">1</span></code>. This small change in logic can cause unexpected results,
+like never being able to select <code class="docutils literal notranslate"><span class="pre">Rock</span></code> in the Rock, Paper, Scissors game.</p>
+<p>Run your program several times and do the following:</p>
+<ol class="arabic simple">
+<li>For every input statement, enter an invalid response. Try using values
+outside of the expected range. Also try entering the wrong data type (e.g.
+<code class="docutils literal notranslate"><span class="pre">float</span></code> or <code class="docutils literal notranslate"><span class="pre">str</span></code> when an <code class="docutils literal notranslate"><span class="pre">int</span></code> is required).</li>
+<li>For every numerical input, enter the smallest valid option.</li>
+<li>For every numerical input, enter the largest valid option.</li>
+</ol>
+<p>If your program crashes or produces unexpected results during these tests, then
+you need to find and fix the bugs.</p>
+<p>Once you finish this final round of debugging, your game is ready!</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">One of the best ways to find bugs in your game is to let someone else play
+it!</p>
+</div>
+</div>
+<div class="section" id="scoring">
+<h2>Scoring<a class="headerlink" href="#scoring" title="Permalink to this headline">¶</a></h2>
+<p>Before you submit your final program, be sure that your code:</p>
+<ol class="arabic simple">
+<li>Works.</li>
+<li>Includes your name and your partner’s name.</li>
+<li>Includes each of <a class="reference internal" href="#assignment3-requirements"><span class="std std-ref">the required items</span></a>.</li>
+<li>Survives invalid input. For example, if your program asks the user to enter
+a number, it should not crash when they enter a letter.</li>
+<li>Includes enough comments to describe what each part of the code is doing.</li>
+<li>Follows proper Python naming conventions.</li>
+</ol>
+<p>Your teacher will provide you with a detailed <strong>rubric</strong> for this assignment.
+This describes how each part of the project will be graded, as well as how
+many points each part can earn.</p>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<p>Your teacher will provide instructions for sharing the URL for your project.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="coded-messages.html"><span aria-hidden="true">&larr;</span> Assignment #2: Coded Messages</a></li>
+        
+        
+        <li class="next"><a href="html-me-something.html">Assignment #4: HTML Me Something <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/assignments/console-game.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

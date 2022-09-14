@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.10. Project: Movie SQLs &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.11. Project: Movie SQLs (Part 2)" href="project-part2.html" />
+    <link rel="prev" title="24.9. Exercises: Databases" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">24. </span>Databases</a></li>
+    <li class="active"><span class="section-number">24.10. </span>Project: Movie SQLs</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-movie-sqls">
+<h1><span class="section-number">24.10. </span>Project: Movie SQLs<a class="headerlink" href="#project-movie-sqls" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we assigned different string values to a <code class="docutils literal notranslate"><span class="pre">sql_query</span></code>
+variable and used that to execute SQL commands. For the short practice
+examples, this worked well. However, we need a better way to create and run
+our queries, since we don’t want to rewrite our code every time we interact
+with the database!</p>
+<p>In this project, you will use input from a web form to build <code class="docutils literal notranslate"><span class="pre">sql_query</span></code>
+strings. These queries will work on two tables stored in a database: <code class="docutils literal notranslate"><span class="pre">movies</span></code>
+and <code class="docutils literal notranslate"><span class="pre">directors</span></code>.</p>
+<p>The database and the HTML templates are ready to go, but the application is
+incomplete. Your job is to fill in the gaps to successfully collect and execute
+SQL queries. You will also get to review your HTML, CSS, and Flask skills!</p>
+<div class="section" id="project-setup">
+<h2><span class="section-number">24.10.1. </span>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory in Visual Studio Code. Clone a copy
+of the starter code from this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_movie_sql_project" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</li>
+<li><p class="first">Use the <em>File</em> menu to open the <code class="docutils literal notranslate"><span class="pre">LCHS_movie_sql_project</span></code> folder you just
+downloaded.</p>
+</li>
+<li><p class="first">Follow the usual procedure to create a new virtual environment, activate it,
+and install Flask. If you need a reminder for how to do this, the <code class="docutils literal notranslate"><span class="pre">README</span></code>
+file contains a summary of the process.</p>
+</li>
+<li><p class="first">Add the name of your virtual environment to the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
+</li>
+<li><p class="first">The project file tree should now look something like the figure below. If
+you gave a different name to your virtual environment, it will appear
+instead of <code class="docutils literal notranslate"><span class="pre">movie-env</span></code>.</p>
+<div class="figure align-default" id="id1">
+<img alt="File tree showing 4 folders, 6 templates, main.py, db_setup.py, style.css, .gitignore, and a README file." src="../../_images/db-project-tree-start.png" />
+<p class="caption"><span class="caption-text">For this project, you will do most of your work in the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<div class="section" id="create-the-database">
+<h3><span class="section-number">24.10.1.1. </span>Create the Database<a class="headerlink" href="#create-the-database" title="Permalink to this headline">¶</a></h3>
+<p>The file <code class="docutils literal notranslate"><span class="pre">db_setup.py</span></code> is a separate program. Its only job is to create the
+database, add the <code class="docutils literal notranslate"><span class="pre">movies</span></code> and <code class="docutils literal notranslate"><span class="pre">directors</span></code> tables, and insert several rows
+into each one.</p>
+<ol class="arabic">
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">db_setup.py</span></code>. A database file called <code class="docutils literal notranslate"><span class="pre">project.db</span></code> should appear in
+the file tree.</p>
+<div class="figure align-default" id="id2">
+<img alt="The project.db file name appears in the file tree." src="../../_images/project-db-in-tree.png" />
+<p class="caption"><span class="caption-text">The database name appears gray because its name appears in the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Right-click on <code class="docutils literal notranslate"><span class="pre">project.db</span></code> and select <em>Open Database</em>.</p>
+</li>
+<li><p class="first">Use the tools in the <a class="reference internal" href="db-practice.html#sqlite-explorer"><span class="std std-ref">SQLite Explorer</span></a> tab to confirm
+that the tables and data were successfully created.</p>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">At any time during the project, you can rerun <code class="docutils literal notranslate"><span class="pre">db_setup.py</span></code> to reset the
+database to its starting configuration.</p>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status/git</span> <span class="pre">add</span> <span class="pre">./git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to begin a version control record.
+If you have your own GitHub account, take a moment to push the repository up to
+the site.</p>
+</div>
+</div>
+<div class="section" id="the-home-page-index-html">
+<h2><span class="section-number">24.10.2. </span>The Home Page (<code class="docutils literal notranslate"><span class="pre">index.html</span></code>)<a class="headerlink" href="#the-home-page-index-html" title="Permalink to this headline">¶</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and open the application in a browser. You should see a home
+page:</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/db-project-home.png"><img alt="The index.html page, showing a form to select the type of SQL query." src="../../_images/db-project-home.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">The form lets users select the SQL query type and a table from the database.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p id="index-0">The home page gives users four options to choose from, plus a dropdown menu to
+select a table. <code class="docutils literal notranslate"><span class="pre">index.html</span></code> serves as a <strong>gateway page</strong>. Its job is to
+direct users to different pages based on the CRUD operation they pick.</p>
+<p>Try it! Select an option and table, then click <em>Submit</em>. Repeat this for the
+other choices.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you’re curious about how the gateway page operates, check out the
+comments included with the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">index.html</span></code> template also includes comments describing how the page
+is put together.</p>
+</div>
+<p>Each form is complete, but none of them produce correct SQL strings yet. The
+functions controlling the pages need to be finished.</p>
+<p>Your job is to fill in the missing pieces, starting with the easiest function.
+Be sure to follow the recommended order! Each part asks you to do a little more
+than the one that came before.</p>
+</div>
+<div class="section" id="the-delete-form">
+<h2><span class="section-number">24.10.3. </span>The DELETE Form<a class="headerlink" href="#the-delete-form" title="Permalink to this headline">¶</a></h2>
+<p>From the home page, select <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> and the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table. This will
+redirect you to a specific form.</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/delete-form.png"><img alt="The DELETE form, with one input box for the WHERE condition." src="../../_images/delete-form.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">With the <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> form, users submit a condition for the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Try typing something into the input box, then submit the form. Nothing seems to
+happen, because the <code class="docutils literal notranslate"><span class="pre">delete_query()</span></code> function in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> is almost empty.
+You need to add code to the function that will:</p>
+<ul>
+<li><p class="first">Request data from the form.</p>
+</li>
+<li><p class="first">Build a <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string based on that input.</p>
+</li>
+<li><p class="first">Render the page again, but display the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string below the form.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/delete-form-function.png"><img alt="The DELETE query form, with an input box where users can enter a WHERE condition." src="../../_images/delete-form-function.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">delete_query()</span></code> function in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> builds a SQL query string.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ul>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and add this code inside the <code class="docutils literal notranslate"><span class="pre">delete_query()</span></code> function.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>48
+49
+50
+51
+52
+53</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete_query</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">pass</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;delete.html&#39;</span><span class="p">,</span> <span class="n">tab_title</span> <span class="o">=</span> <span class="s1">&#39;DELETE query&#39;</span><span class="p">,</span> <span class="n">home</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Next, add code to collect the <code class="docutils literal notranslate"><span class="pre">condition</span></code> text from the form. Also,
+collect the table name from the session cookie.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>48
+49
+50
+51
+52
+53</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete_query</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">condition</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;condition&#39;</span><span class="p">]</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s1">&#39;table&#39;</span><span class="p">]</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="k">pass</span>
+</pre></div>
+</td></tr></table></div>
+<p>On line 50, <code class="docutils literal notranslate"><span class="pre">['condition']</span></code> matches to the name attribute given to the
+input element in <code class="docutils literal notranslate"><span class="pre">delete.html</span></code>. Line 51 retrieves the value assigned to
+<code class="docutils literal notranslate"><span class="pre">session['table']</span></code>. This value was set inside the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">table</span></code> and <code class="docutils literal notranslate"><span class="pre">condition</span></code> variables to build the string for the
+SQL query. Also, assign the empty string to <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> in the <code class="docutils literal notranslate"><span class="pre">else</span></code>
+clause.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>48
+49
+50
+51
+52
+53
+54</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete_query</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">condition</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;condition&#39;</span><span class="p">]</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s1">&#39;table&#39;</span><span class="p">]</span>
+      <span class="n">sql_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DELETE FROM </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> WHERE </span><span class="si">{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Finally, use the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function to pass <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">delete.html</span></code> template.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">delete_query</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="n">condition</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;condition&#39;</span><span class="p">]</span>
+      <span class="n">table</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s1">&#39;table&#39;</span><span class="p">]</span>
+      <span class="n">sql_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;DELETE FROM </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> WHERE </span><span class="si">{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;delete.html&#39;</span><span class="p">,</span> <span class="n">tab_title</span> <span class="o">=</span> <span class="s1">&#39;DELETE query&#39;</span><span class="p">,</span>
+      <span class="n">home</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">sql_query</span> <span class="o">=</span> <span class="n">sql_query</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save your changes. Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and submit the form several times to
+check your code. Fix any bugs that occur.</p>
+</li>
+</ol>
+<p>Congratulations! The <code class="docutils literal notranslate"><span class="pre">delete_query()</span></code> function now builds the required
+string. Be sure to save, commit, and push your work.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Right now, users can type whatever they want into the input box. Don’t worry
+about checking the accuracy of the SQL query yet.</p>
+</div>
+</div>
+<div class="section" id="the-update-form">
+<h2><span class="section-number">24.10.4. </span>The UPDATE Form<a class="headerlink" href="#the-update-form" title="Permalink to this headline">¶</a></h2>
+<p>From the home page, select <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> and the <code class="docutils literal notranslate"><span class="pre">directors</span></code> table. When the new
+page loads, notice that the form contains two input fields.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../_images/update-form.png"><img alt="The UPDATE form, with input fields for SET and WHERE." src="../../_images/update-form.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">With the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> form, users submit text for both <code class="docutils literal notranslate"><span class="pre">SET</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>This page behaves in a similar way to <code class="docutils literal notranslate"><span class="pre">delete.html</span></code>. Users submit TWO text
+fields, and the <code class="docutils literal notranslate"><span class="pre">update_query()</span></code> function sends back a completed query
+string.</p>
+<ol class="arabic">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">update.html</span></code> and identify the name for each input element.</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Enter your SQL query here:<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>UPDATE <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-col-names&quot;</span><span class="p">&gt;</span>{{session[&#39;table&#39;]}}<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>SET <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;query-input&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;new_value&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;column_name = new_value&quot;</span> <span class="na">required</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>WHERE <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;query-input&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;condition&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;condition&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">update_query()</span></code> function. Add a basic
+<code class="docutils literal notranslate"><span class="pre">if/else</span></code> conditional.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>44
+45
+46
+47
+48
+49
+50</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_query</span><span class="p">():</span>
+   <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+      <span class="k">pass</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">sql_query</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;update.html&quot;</span><span class="p">,</span> <span class="n">tab_title</span> <span class="o">=</span> <span class="s2">&quot;UPDATE query&quot;</span><span class="p">,</span> <span class="n">home</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Using the <code class="docutils literal notranslate"><span class="pre">delete_query()</span></code> function as a model, replace the <code class="docutils literal notranslate"><span class="pre">pass</span></code>
+keyword. Collect the SET and WHERE entries from the form and the table name
+from the session. Assign the values to the variables <code class="docutils literal notranslate"><span class="pre">new_value</span></code>,
+<code class="docutils literal notranslate"><span class="pre">condition</span></code>, and <code class="docutils literal notranslate"><span class="pre">table</span></code>.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">table</span></code> and <code class="docutils literal notranslate"><span class="pre">new_value</span></code> variables to build the first part of the
+<code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;UPDATE </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> SET </span><span class="si">{</span><span class="n">new_value</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For an <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query, the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause is optional. A user might not
+always submit one. Add a conditional to deal with this possibility:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;UPDATE </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2"> SET </span><span class="si">{</span><span class="n">new_value</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">if</span> <span class="n">condition</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+   <span class="n">sql_query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="n">condition</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Finally, use the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function to pass <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">update.html</span></code> template.</p>
+</li>
+<li><p class="first">Save your changes and run the application to check your code.</p>
+</li>
+</ol>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../_images/update-form-working.png"><img alt="A properly formatted SQL query string displayed below the UPDATE form." src="../../_images/update-form-working.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">update_query()</span></code> function combines several pieces of data to complete a SQL query string.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="the-insert-and-select-forms">
+<h2><span class="section-number">24.10.5. </span>The INSERT and SELECT Forms<a class="headerlink" href="#the-insert-and-select-forms" title="Permalink to this headline">¶</a></h2>
+<p>Follow the same process as above to finish the <code class="docutils literal notranslate"><span class="pre">insert_query()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">select_query()</span></code> functions.</p>
+<ol class="arabic simple">
+<li>Make sure to place parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> around the column names and values
+in the <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> query.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause is optional in <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>. Your <code class="docutils literal notranslate"><span class="pre">select_query()</span></code>
+function needs to deal with this.</li>
+</ol>
+<div class="figure align-default" id="id8">
+<img alt="Properly formatted SQL strings displayed below the INSERT and SELECT forms." src="../../_images/insert-select-forms.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">insert_query()</span></code> and <code class="docutils literal notranslate"><span class="pre">select_query()</span></code> functions also return SQL strings.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2><span class="section-number">24.10.6. </span>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations! Your Flask application builds SQL query strings from different
+web forms. Now you need to execute those queries, update the database, and
+display feedback to the user.</p>
+<p>Continue on to <a class="reference internal" href="project-part2.html#movie-sql-part-2"><span class="std std-ref">Part 2</span></a> of this project.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">24.9. </span>Exercises: Databases</a></li>
+        
+        
+        <li class="next"><a href="project-part2.html"><span class="section-number">24.11. </span>Project: Movie SQLs (Part 2) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

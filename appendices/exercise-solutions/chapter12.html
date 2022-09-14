@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 12: Python Dictionaries &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 13: Classes and Objects" href="chapter13.html" />
+    <link rel="prev" title="Chapter 11: Python Modules" href="chapter11.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 12: Python Dictionaries</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-12-python-dictionaries">
+<h1>Chapter 12: Python Dictionaries<a class="headerlink" href="#chapter-12-python-dictionaries" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/dictionaries/exercises.html#dictionaries-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/5e09fffbac" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<span id="chp12parta"></span><h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-a-search-a-dictionary">
+<h3>Part A: Search a Dictionary<a class="headerlink" href="#part-a-search-a-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">flavors</span></code> dictionary contains entries that pair different ice cream
+flavors with their cost per scoop. Your job is to do the following:</p>
+<ol class="arabic">
+<li><p class="first">Write a function called <code class="docutils literal notranslate"><span class="pre">return_cost</span></code> that takes a dictionary and flavor
+choice as parameters.</p>
+<ol class="loweralpha simple">
+<li>The function searches the dictionary for the flavor and returns its cost.</li>
+<li>If the flavor is not in the dictionary, return a value of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
+</ol>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_cost</span><span class="p">(</span><span class="n">menu</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+   <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">menu</span><span class="p">:</span>        <span class="c1"># Check if &#39;item&#39; is a key in the &#39;menu&#39; dictionary.</span>
+      <span class="k">return</span> <span class="n">menu</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>   <span class="c1"># Return the value for the key.</span>
+   <span class="k">return</span> <span class="mi">0</span>                <span class="c1"># If &#39;item&#39; isn&#39;t in the dictionary, return 0.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="3">
+<li><p class="first">Write a function called <code class="docutils literal notranslate"><span class="pre">fanciest_flavor</span></code> that takes a dictionary as a
+parameter. The function should return the key name for the most expensive
+choice in the dictionary.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Write your fanciest_flavor function here:</span>
+<span class="k">def</span> <span class="nf">fanciest_flavor</span><span class="p">(</span><span class="n">menu</span><span class="p">):</span>  <span class="c1"># &#39;menu&#39; is the dictionary sent to the function.</span>
+   <span class="n">highest_cost</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">fanciest</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+   <span class="c1"># Loop through each key/value pair in the dictionary.</span>
+   <span class="k">for</span> <span class="p">(</span><span class="n">flavor</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="n">highest_cost</span><span class="p">:</span>    <span class="c1"># Compare the price for the current flavor vs. highest_cost.</span>
+            <span class="n">fanciest</span> <span class="o">=</span> <span class="n">flavor</span>       <span class="c1"># If True, reassign the most expensive flavor</span>
+            <span class="n">highest_cost</span> <span class="o">=</span> <span class="n">price</span>    <span class="c1"># and the highest_cost.</span>
+   <span class="k">return</span> <span class="n">fanciest</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/dictionaries/exercises.html#dictionaries-exercises"><span class="std std-ref">Back to exercises</span></a>.</p>
+</div>
+<div class="section" id="part-b-keys-from-a-collection">
+<span id="chp12partb"></span><h3>Part B: Keys from a Collection<a class="headerlink" href="#part-b-keys-from-a-collection" title="Permalink to this headline">¶</a></h3>
+<p>Use the accumulator pattern to add new key/value pairs to an empty dictionary.</p>
+<ol class="arabic" start="2">
+<li><p class="first">The function should take each name from the list and use it to create a key
+in the dictionary.</p>
+</li>
+<li><p class="first">For the value of each key, assign a random integer from 100-500.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">tickets</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c1"># Create an empty dictionary.</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>  <span class="c1"># Loop through the &#39;names&#39; list.</span>
+<span class="n">tickets</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>    <span class="c1"># Assign a random number from 100 - 500 to the &#39;name&#39; key.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="5">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call the <code class="docutils literal notranslate"><span class="pre">assign_tickets</span></code> function and assign the result to
+a <code class="docutils literal notranslate"><span class="pre">ticket_holders</span></code> variable.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Caleb&#39;</span><span class="p">,</span> <span class="s1">&#39;Naomi&#39;</span><span class="p">,</span> <span class="s1">&#39;Owen&#39;</span><span class="p">,</span> <span class="s1">&#39;Ava&#39;</span><span class="p">,</span> <span class="s1">&#39;Aaron&#39;</span><span class="p">,</span> <span class="s1">&#39;Lydia&#39;</span><span class="p">]</span>
+
+   <span class="n">ticket_holders</span> <span class="o">=</span> <span class="n">assign_tickets</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">ticket_holders</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/dictionaries/exercises.html#chp12keys"><span class="std std-ref">Back to exercises</span></a>.</p>
+</div>
+<div class="section" id="part-c-modify-values">
+<span id="chp12partc"></span><h3>Part C: Modify Values<a class="headerlink" href="#part-c-modify-values" title="Permalink to this headline">¶</a></h3>
+<p>Oh no! Ticket numbers 100-199 were supposed to be held back for VIPs. You need
+to reassign tickets to anyone who was given one of the reserved seats. Use the
+editor in part B as you update your code.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">fix_tickets</span></code> function should:</p>
+<ol class="arabic">
+<li><p class="first">Accept a dictionary as a parameter.</p>
+</li>
+<li><p class="first">Loop through the dictionary and check each ticket number to see if it is in
+the range 100-199 (including the end points).</p>
+</li>
+<li><p class="first">For a ticket within the range, increase its value by <code class="docutils literal notranslate"><span class="pre">500</span></code> and reassign it
+to the key.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fix_tickets</span><span class="p">(</span><span class="n">tickets</span><span class="p">):</span>
+<span class="c1"># Iterate through the key/value pairs in the dictionary:</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tickets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="k">if</span> <span class="mi">100</span> <span class="o">&lt;=</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">199</span><span class="p">:</span>     <span class="c1"># Check if &#39;value&#39; is in the desired range.</span>
+      <span class="n">tickets</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">500</span>     <span class="c1"># If True, increase &#39;value&#39; by 500 and reassign it to the key.</span>
+</pre></div>
+</td></tr></table></div>
+<p>To check your code, be sure to print <code class="docutils literal notranslate"><span class="pre">ticket_holders</span></code> before and after
+calling the <code class="docutils literal notranslate"><span class="pre">fix_tickets</span></code> function.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># In main:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before:&#39;</span><span class="p">,</span> <span class="n">ticket_holders</span><span class="p">)</span>
+<span class="n">fix_tickets</span><span class="p">(</span><span class="n">ticket_holders</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After:&#39;</span><span class="p">,</span> <span class="n">ticket_holders</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/dictionaries/exercises.html#chp12mv"><span class="std std-ref">Back to exercises</span></a>.</p>
+</div>
+<div class="section" id="part-d-counting-characters">
+<span id="chp12partd"></span><h3>Part D: Counting Characters<a class="headerlink" href="#part-d-counting-characters" title="Permalink to this headline">¶</a></h3>
+<p>Write a function called <code class="docutils literal notranslate"><span class="pre">character_count</span></code> that counts how many times each
+character appears in a string.</p>
+<p>The function should:</p>
+<ol class="arabic" start="2">
+<li><p class="first">Create an empty dictionary called <code class="docutils literal notranslate"><span class="pre">counts</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>                     <span class="c1"># Define an empty dictionary.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Loop through the string and check each character.</p>
+<ol class="loweralpha simple">
+<li>If the character does NOT exist in as a key in <code class="docutils literal notranslate"><span class="pre">counts</span></code>, add it and
+assign it a value of <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+<li>If the character DOES exist as a key in <code class="docutils literal notranslate"><span class="pre">counts</span></code>, increase its value by
+one.</li>
+</ol>
+<p>The counting should be <em>case-insensitive</em>. For example, <code class="docutils literal notranslate"><span class="pre">'a'</span></code> and <code class="docutils literal notranslate"><span class="pre">'A'</span></code>
+both count as the same letter.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">a_string</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>   <span class="c1"># Loop through each character in a_string.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Return the completed <code class="docutils literal notranslate"><span class="pre">counts</span></code> dictionary and assign it to a <code class="docutils literal notranslate"><span class="pre">results</span></code>
+variable in <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#In the main function under the variable text</span>
+<span class="c1"># Call the character_count() function. Assign the returned dictionary to results.</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">character_count</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/dictionaries/exercises.html#chp12cc"><span class="std std-ref">Back to exercises</span></a>.</p>
+</div>
+<div class="section" id="part-e-use-a-list-to-sort-key-value-output">
+<span id="chp12parte"></span><h3>Part E: Use a List to Sort Key/Value Output<a class="headerlink" href="#part-e-use-a-list-to-sort-key-value-output" title="Permalink to this headline">¶</a></h3>
+<p>Now display the character count result in a cleaner way. Update your code in
+the part D editor.</p>
+<ol class="arabic" start="2">
+<li><p class="first">Modify your code to print a key/value pair ONLY IF the character is a
+letter.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Print the introductory sentence:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter counts for &#39;</span><span class="si">{0}</span><span class="s2">&#39; are:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+<span class="c1"># Loop through the dictionary:</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+   <span class="c1"># Check if key is a letter.</span>
+   <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">:</span>
+      <span class="c1"># If True, print the key and its value from the results dictionary.</span>
+      <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Modify your code again, but this time display the character counts in
+alphabetical order.</p>
+<ol class="loweralpha simple">
+<li>Use the <code class="docutils literal notranslate"><span class="pre">list</span></code> function to create a list of the keys from the
+<code class="docutils literal notranslate"><span class="pre">results</span></code> dictionary.</li>
+</ol>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Create a list of the keys from the results dictionary.</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="loweralpha simple" start="2">
+<li>Sort the list, then use a loop to print the key/value pairs, one pair
+per line.</li>
+</ol>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Sort the keys alphabetically.</span>
+<span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+   <span class="c1"># Check if key is a letter.</span>
+   <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">:</span>
+      <span class="c1"># If True, print the key and its value from the results dictionary.</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">: </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/dictionaries/exercises.html#chp12uselist"><span class="std std-ref">Back to exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter11.html"><span aria-hidden="true">&larr;</span> Chapter 11: Python Modules</a></li>
+        
+        
+        <li class="next"><a href="chapter13.html">Chapter 13: Classes and Objects <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter12.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

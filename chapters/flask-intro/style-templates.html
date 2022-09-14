@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.8. Styling Flask Templates &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21.9. Exercises: Flask Intro" href="exercises.html" />
+    <link rel="prev" title="21.7. Form Validation with Flask" href="validation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.8. </span>Styling Flask Templates</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="styling-flask-templates">
+<h1><span class="section-number">21.8. </span>Styling Flask Templates<a class="headerlink" href="#styling-flask-templates" title="Permalink to this headline">¶</a></h1>
+<p>So far, we’ve used plain HTML for our sample form. However, in the
+<a class="reference internal" href="../forms/form-style.html#style-forms"><span class="std std-ref">last chapter</span></a>, we applied some CSS rules to spice up how
+it looks.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/styled-favorite-form.png"><img alt="A styled HTML form with a heading, background color, aligned fields, and large button." src="../../_images/styled-favorite-form.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-text">One option for a styled form.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For our web applications, we definitely want to link a stylesheet to our HTML
+templates. To do this, we must save the <code class="docutils literal notranslate"><span class="pre">.css</span></code> file in a very specific place
+within our project.</p>
+<div class="section" id="the-static-directory">
+<h2><span class="section-number">21.8.1. </span>The <code class="docutils literal notranslate"><span class="pre">static</span></code> Directory<a class="headerlink" href="#the-static-directory" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">By adding placeholders to our templates, we can change the content on a webpage
+based on a user’s actions. This makes the page <strong>dynamic</strong>. Style rules, on the
+other hand, remain fixed.</p>
+<p>CSS code is an example of a <strong>static</strong> file. It does not change as the user
+interacts with the page. Other examples of static files include images, video
+clips, and JavaScript code.</p>
+<p>In our Flask project, the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder holds all of the <code class="docutils literal notranslate"><span class="pre">.html</span></code> files
+for our website. We need to create a similar directory for our static files.</p>
+<ol class="arabic">
+<li><p class="first">In Visual Studio Code, use the terminal panel (or the buttons in the File
+Explorer pane) to create a new directory called <code class="docutils literal notranslate"><span class="pre">static</span></code>. The folder
+should be at the same level as <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code>.</p>
+<div class="figure align-default" id="id2">
+<img alt="A file tree showing the 'static' folder in the 'hello_flask' directory." src="../../_images/static-directory.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">static</span></code> folder in the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code> project tree.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder, create a new file called <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
+</li>
+<li><p class="first">Find the CSS code you used in the <a class="reference internal" href="../forms/form-style.html#style-forms"><span class="std std-ref">last chapter</span></a> to
+style your form. Copy and paste that code into <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
+</li>
+<li><p class="first">Save and commit your work.</p>
+</li>
+</ol>
+<div class="section" id="link-to-the-stylesheet">
+<span id="link-stylesheet-flask"></span><h3><span class="section-number">21.8.1.1. </span>Link to the Stylesheet<a class="headerlink" href="#link-to-the-stylesheet" title="Permalink to this headline">¶</a></h3>
+<p>When <code class="docutils literal notranslate"><span class="pre">.html</span></code> and <code class="docutils literal notranslate"><span class="pre">.css</span></code> files are in the same directory, the syntax for the
+<code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> tag is:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Now that we’ve separated our HTML and CSS files, we need to update the <code class="docutils literal notranslate"><span class="pre">href</span></code>
+attribute. Instead of <code class="docutils literal notranslate"><span class="pre">style.css</span></code>, we need to fill in a <em>path</em> that describes
+where to find the stylesheet.</p>
+<p>Fortunately, Flask provides a function that does this automatically! The syntax
+for this is:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Note the following:</p>
+<ol class="arabic simple">
+<li>The double curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code> act as a placeholder in our HTML file.</li>
+<li>Instead of a variable name, we call the <code class="docutils literal notranslate"><span class="pre">url_for()</span></code> function. As its name
+implies, it finds the URL for the selected file. The <code class="docutils literal notranslate"><span class="pre">'static'</span></code> and
+<code class="docutils literal notranslate"><span class="pre">filename</span></code> arguments indicate the directory and file we want.</li>
+<li><code class="docutils literal notranslate"><span class="pre">url_for()</span></code> returns the path for the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. When the browser
+renders the HTML template, that path gets assigned to <code class="docutils literal notranslate"><span class="pre">href</span></code> instead of
+the placeholder.</li>
+</ol>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">head</span></code> element in <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code> to link to your
+stylesheet.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Favorite Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{url_for(&#39;static&#39;, filename=&#39;style.css&#39;)}}&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save the changes, then launch the application.</p>
+</li>
+<li><p class="first">Navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code> to see if your CSS styles were
+applied to the form.</p>
+</li>
+<li><p class="first">Tweak your HTML and CSS code as necessary to get the form to look the way
+you want.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="pro-tip">
+<h2><span class="section-number">21.8.2. </span>Pro Tip<a class="headerlink" href="#pro-tip" title="Permalink to this headline">¶</a></h2>
+<p>When we save a change to our HTML code, clicking the <em>Refresh</em> button in the
+browser displays the new layout. However, this doesn’t always work for changes
+made to the CSS. Browsers often save the stylesheet in memory to speed up
+reloading. If the browser continues to use the old code, we won’t be able to
+see our new styles.</p>
+<p>To fix this, we need to force a clean reload of the page. For most browsers
+(like Firefox, Chrome, and Safari), hold down the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key and click
+<em>Refresh</em>. For Microsoft Edge, use the <code class="docutils literal notranslate"><span class="pre">Control</span></code> key plus <em>Refresh</em>.</p>
+</div>
+<div class="section" id="style-another-template">
+<h2><span class="section-number">21.8.3. </span>Style Another Template<a class="headerlink" href="#style-another-template" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> template also contains plain HTML.</p>
+<ol class="arabic simple">
+<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> to the same stylesheet you used for your form.</li>
+<li>Navigate to the form in your browser. Fill in the fields and click <em>Submit</em>.</li>
+<li>Once on the results page, check to make sure your style rules were applied.</li>
+<li>If necessary, adjust your HTML and CSS code. Try to refine the appearance of
+the results page WITHOUT altering the look of the form.</li>
+</ol>
+</div>
+<div class="section" id="video-summary">
+<h2><span class="section-number">21.8.4. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube.com/embed/jR0xncreOVg" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="validation.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.7. </span>Form Validation with Flask</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">21.9. </span>Exercises: Flask Intro <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/style-templates.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

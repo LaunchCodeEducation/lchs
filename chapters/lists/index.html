@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8. Lists Keep Things in Order &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="8.1. List Basics" href="list-basics.html" />
+    <link rel="prev" title="7.12. Project: Strings" href="../strings/project.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">8. </span>Lists Keep Things in Order</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="lists-keep-things-in-order">
+<h1><span class="section-number">8. </span>Lists Keep Things in Order<a class="headerlink" href="#lists-keep-things-in-order" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="list-basics.html">8.1. List Basics</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="list-basics.html#create-a-new-list">8.1.1. Create a New List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-basics.html#accessing-elements">8.1.2. Accessing Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-basics.html#check-your-understanding">8.1.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lists-are-like-strings.html">8.2. Lists Are Like Strings</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="lists-are-like-strings.html#list-length">8.2.1. List Length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists-are-like-strings.html#combining-lists">8.2.2. Combining Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists-are-like-strings.html#in-and-not-in">8.2.3. <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="lists-are-like-strings.html#list-slices">8.2.4. List Slices</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="lists-are-like-strings.html#try-it">8.2.4.1. Try It!</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lists-are-like-strings.html#check-your-understanding">8.2.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="working-with-lists.html">8.3. Working with Lists</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="working-with-lists.html#changing-one-element">8.3.1. Changing One Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-lists.html#removing-elements-part-1">8.3.2. Removing Elements (Part 1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-lists.html#the-slice-operator">8.3.3. The Slice Operator</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="working-with-lists.html#inserting-new-elements">8.3.3.1. Inserting New Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="working-with-lists.html#replacing-elements">8.3.3.2. Replacing Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="working-with-lists.html#removing-elements-part-2">8.3.3.3. Removing Elements (Part 2)</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-lists.html#try-it">8.3.4. Try It!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="working-with-lists.html#check-your-understanding">8.3.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list-methods.html">8.4. List Methods</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="list-methods.html#common-list-methods">8.4.1. Common List Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-methods.html#check-your-understanding">8.4.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="list-iteration.html">8.5. Iterating Through Lists</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="list-iteration.html#loop-by-element">8.5.1. Loop by Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-iteration.html#loop-by-index">8.5.2. Loop by Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="list-iteration.html#which-syntax-should-we-use">8.5.3. Which Syntax Should We Use?</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="list-iteration.html#take-home-ideas">8.5.3.1. Take Home Ideas</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="list-iteration.html#try-it">8.5.4. Try It!</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="common-list-tasks.html">8.6. Common List Tasks</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="common-list-tasks.html#switching-two-elements">8.6.1. Switching Two Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-list-tasks.html#accumulating-list-elements">8.6.2. Accumulating List Elements</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="common-list-tasks.html#multiple-list-options">8.6.2.1. Multiple List Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="common-list-tasks.html#try-it">8.6.2.2. Try It!</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="common-list-tasks.html#finding-max-and-min">8.6.3. Finding Max and Min</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common-list-tasks.html#check-your-understanding">8.6.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cloning-lists.html">8.7. Cloning Lists</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="cloning-lists.html#creating-an-independent-copy">8.7.1. Creating an Independent Copy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloning-lists.html#check-your-understanding">8.7.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="split-and-join.html">8.8. <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code></a><ol>
+<li class="toctree-l2"><a class="reference internal" href="split-and-join.html#use-split-and-join">8.8.1. Use <code class="docutils literal notranslate"><span class="pre">split</span></code> and <code class="docutils literal notranslate"><span class="pre">join</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="split-and-join.html#list-type-conversion">8.8.2. List Type Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="split-and-join.html#check-your-understanding">8.8.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multi-dimensional-lists.html">8.9. Lists Within Lists</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-lists.html#two-dimensional-lists">8.9.1. Two Dimensional Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-lists.html#applying-methods-to-nested-lists">8.9.2. Applying Methods to Nested Lists</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="multi-dimensional-lists.html#try-it">8.9.2.1. Try It!</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-lists.html#beyond-two-dimensional-lists">8.9.3. Beyond Two Dimensional lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi-dimensional-lists.html#check-your-understanding">8.9.4. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">8.10. Exercises: Lists</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-one-adding-and-removing-items">8.10.1. Part One: Adding and Removing Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-two-slices-methods">8.10.2. Part Two: Slices &amp; Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-three-split-list-and-join">8.10.3. Part Three: Split, List, and Join</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#part-four-multi-dimensional-lists">8.10.4. Part Four: Multi-dimensional Lists</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">8.11. Project: Lists</a></li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../strings/project.html"><span aria-hidden="true">&larr;</span> <span class="section-number">7.12. </span>Project: Strings</a></li>
+        
+        
+        <li class="next"><a href="list-basics.html"><span class="section-number">8.1. </span>List Basics <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/lists/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment #6: Flask Game &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="About This Book" href="../appendices/about-this-book.html" />
+    <link rel="prev" title="Assignment #5: Communication Log" href="communication-log.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Assignment #6: Flask Game</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="assignment-6-flask-game">
+<span id="flask-game"></span><h1>Assignment #6: Flask Game<a class="headerlink" href="#assignment-6-flask-game" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="console-game.html#console-game"><span class="std std-ref">Assignment #3</span></a>, you and a partner designed a game app
+that ran in the console. This was good practice for creating a complete program
+from start to finish.</p>
+<p>Now that you have some Flask experience, your team can move the game out of the
+console and into a browser!</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>On the left is the same console Rock-Paper-Scissors example from Assignment 3.
+The right hand side shows what it could look like in a browser as a Flask app.</p>
+<div class="last figure align-default">
+<a class="reference internal image-reference" href="../_images/RPSLS.gif"><img alt="On left console version of rock paper scissors, on the right the flask version." src="../_images/RPSLS.gif" style="width: 80%;" /></a>
+</div>
+</div>
+<p>If your teacher didn’t ask you to complete the <a class="reference internal" href="console-game.html#console-game"><span class="std std-ref">Console Game</span></a>
+assignment, you should review that page to get some ideas about how the game
+needed to operate.</p>
+<p>If you DID create a console game but want to create a different one now, that’s
+fine! Maybe your teacher had you code a choose-your-own-adventure program after
+chapter 5. Imagine what that would look like on the web, with each choice
+updating the page or redirecting to a different one. You are free to recycle
+any old project or think up something completely new.</p>
+<div class="section" id="requirements">
+<span id="assignment6-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>Your Flask application must include each of the following:</p>
+<ol class="arabic simple">
+<li>A web form to collect user input.</li>
+<li>At least two HTML templates, one of which can be a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> file. These
+should include placeholders to display data that can change when the page
+reloads.</li>
+<li>CSS styling, either from a local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file or from
+<a class="reference internal" href="../chapters/css/bootstrap.html#bootstrap-classes"><span class="std std-ref">Bootstrap</span></a>.</li>
+<li>At least one Jinja3 loop or conditional within the template(s).</li>
+<li>Both <a class="reference internal" href="../chapters/flask-intro/validation.html#client-server-validation"><span class="std std-ref">client-side and server-side validation</span></a>.</li>
+<li>Python code that:<ol class="loweralpha">
+<li>Renders the required templates.</li>
+<li>Collects user input from the web form.</li>
+<li>Creates, accesses, modifies, or deletes data from a Flask <code class="docutils literal notranslate"><span class="pre">session</span></code>.</li>
+<li>Generates feedback messages for the user.</li>
+<li>Runs the game!</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="part-1-choose-an-idea">
+<h2>Part 1: Choose an Idea<a class="headerlink" href="#part-1-choose-an-idea" title="Permalink to this headline">¶</a></h2>
+<p>Before you dive into the code, you and your partner need to make a plan. This
+is a bigger project, and your work will be much easier if you start with some
+thinking time.</p>
+<p><strong>If you want to recycle code from an earlier game</strong>:</p>
+<ol class="arabic simple">
+<li>Discuss what you want the game to look like in the browser. Make sketches
+for each of the planned webpages.</li>
+<li>Decide if you will use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template. If so, consider what HTML
+elements you want to put in that file.</li>
+<li>Examine your old Python code and determine what needs to be replaced. For
+example, console games rely on <code class="docutils literal notranslate"><span class="pre">print</span></code> statements to display text. Flask
+applications send data to an HTML file instead.</li>
+<li>Identify which of your old functions can be used as-is. Importing them as a
+module will save you some time and effort.</li>
+<li>Decide which functions need to be refactored. Some might need to be replaced
+completely, while others might require small modifications to render a
+template and/or collect data.</li>
+</ol>
+<p><strong>If you want to create a new game</strong>:</p>
+<ol class="arabic simple">
+<li>Brainstorm! Describe to each other some game possibilities, then pick one.</li>
+<li>Write down the features you want your game to have.</li>
+<li>Start simple! From your features list, select only the most important ideas
+for your game. You have a limited amount of time, and you can always add
+more features later.</li>
+<li>Identify what information needs to be displayed in the browser (intro,
+forms, results, etc.).</li>
+<li>Make sketches for what your game will look like in the browser. How many
+templates will you need? Will you use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template?</li>
+<li>Create a general outline for the functions your application is going to
+need.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Regardless of whether you recycle old code or not, your Flask application
+is going to need multiple functions! Even if your app only renders one
+webpage, you should NOT cram all of the game logic in the same place.
+Remember, functions should be small and accomplish only one task.</p>
+<p class="last">Not every function in a Flask app has to render a template. It’s perfectly
+fine for a function to serve a supporting role instead.</p>
+</div>
+</div>
+<div class="section" id="part-2-create-a-github-repository">
+<span id="flask-game-part-2"></span><h2>Part 2: Create a GitHub Repository<a class="headerlink" href="#part-2-create-a-github-repository" title="Permalink to this headline">¶</a></h2>
+<p>Since you will work on this project from multiple locations, on different
+devices, and as part of a team, keeping track of your code is critical.</p>
+<p>To help manage this, you will save your project on <a class="reference external" href="https://github.com" target="_blank">GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+Follow the steps on the <a class="reference internal" href="flask-game-repo.html#flask-game-repo"><span class="std std-ref">Remote Setup</span></a> page to create a
+new Git repository, push it up to GitHub, and give your partner permission to
+make edits.</p>
+<p>Once your remote repo is ready, return to this page and start working on your
+project!</p>
+</div>
+<div class="section" id="part-3-code-the-flask-application">
+<h2>Part 3: Code the Flask Application<a class="headerlink" href="#part-3-code-the-flask-application" title="Permalink to this headline">¶</a></h2>
+<p>Begin coding your game by following the notes you made in Part 1. Here are some
+reminders about building larger projects:</p>
+<ol class="arabic simple">
+<li>Commit early and often.</li>
+<li>Start small. For example, what template needs to render when the player
+first loads the page? What should the page look like?</li>
+<li>Test that starter code to make sure it works. Save, commit, and push your
+changes to GitHub.</li>
+<li>Add one small, new thing to the program. IMPORTANT: Keep your code working!
+If the new feature breaks the program, find and fix the bugs before moving
+on.</li>
+<li>Save, commit, and push!</li>
+<li>Repeat this process for all of your planned features.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Remember, you can use Git to <a class="reference internal" href="../chapters/git/branches.html#branching-in-git"><span class="std std-ref">checkout a new branch</span></a>
+before you add a new feature to your game. That way, if your experiment
+crashes and burns, you can restore a working version of your code.</p>
+<p class="last">Also, working with branches saves time! One partner can focus on the webpage
+design (HTML/CSS), and the other can checkout a different branch to focus on
+the game logic.</p>
+</div>
+</div>
+<div class="section" id="part-4-test-your-game">
+<h2>Part 4: Test Your Game<a class="headerlink" href="#part-4-test-your-game" title="Permalink to this headline">¶</a></h2>
+<p>Your team has run the application lots of times to check the different pieces.
+Now it’s time to challenge your game! The goal here is to find bugs by
+deliberately trying to break your program.</p>
+<ol class="arabic simple" id="index-0">
+<li>Start by checking the web form. Be brutal! Any errors you miss will
+eventually be found by visitors to your site.<ol class="loweralpha">
+<li>What happens when you submit an invalid entry?</li>
+<li>What happens when you refresh the page or reload it from the address bar?</li>
+<li>What if you try to submit duplicate entries?</li>
+<li>What if you submit HTML code?</li>
+<li>What if you use the browser tools to remove the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute
+from the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag and submit an empty response?</li>
+</ol>
+</li>
+<li>Test <strong>edge cases</strong>, which are entries that fall at the ends of an accepted
+range (like <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code> in the range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">10</span></code>).</li>
+<li>If users must make a series of choices in the game, test every possible
+order and combination of those choices.</li>
+<li>Play the game like it’s the first time you’ve seen it. Don’t just run
+through the actions that you <em>know</em> work.</li>
+<li>Proofread the game instructions. Are they clear? How might users
+misinterpret them?</li>
+<li>Find one or more <strong>beta testers</strong>. These are people who had no other role
+in creating your game. Have them play, then ask them for their feedback.</li>
+</ol>
+</div>
+<div class="section" id="submitting-your-work">
+<h2>Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink to this headline">¶</a></h2>
+<p>Your teacher will provide instructions for sharing your GitHub URL and/or
+demonstrating your project.</p>
+<p>Before you submit your application, be sure that it:</p>
+<ol class="arabic simple">
+<li>Works.</li>
+<li>Provides a good user interface (UI) and user experience (UX).</li>
+<li>Meets each of the <a class="reference internal" href="#assignment6-requirements"><span class="std std-ref">project requirements</span></a>.</li>
+<li>Survives invalid input.</li>
+<li>Includes enough comments in the code to describe what each part does.</li>
+<li>Is fun to play!</li>
+</ol>
+<p>Your teacher will provide you with a detailed rubric for this assignment. This
+describes how each part of the project will be graded.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="communication-log.html"><span aria-hidden="true">&larr;</span> Assignment #5: Communication Log</a></li>
+        
+        
+        <li class="next"><a href="../appendices/about-this-book.html">About This Book <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/assignments/flask-game.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

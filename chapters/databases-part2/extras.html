@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.8. Next Steps &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25.9. Gameplay Functions Review (Optional)" href="game-functions.html" />
+    <link rel="prev" title="25.7. Game Page Logic" href="game-logic.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+    <li class="active"><span class="section-number">25.8. </span>Next Steps</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="next-steps">
+<span id="game-refinements"></span><h1><span class="section-number">25.8. </span>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h1>
+<p>Besides squashing bugs, feel free to make changes and experiment with new
+features. You can browse the options below for ideas, but there are plenty of
+other directions you can follow.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Before you start making changes to the game, be sure to create a new Git
+branch!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b new-branch-name
+</pre></div>
+</div>
+<p class="last">This way, you preserve a working copy of your project. If your new idea ends
+in disaster, you can always make a fresh start from the working application.</p>
+</div>
+<div class="section" id="appearance-options">
+<h2><span class="section-number">25.8.1. </span>Appearance Options<a class="headerlink" href="#appearance-options" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">The styling for the home and game page is pretty minimal. Change the look
+of the website by updating the rules inside the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file.
+Alternatively, import the <a class="reference external" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">Bootstrap<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+library and play around with different <code class="docutils literal notranslate"><span class="pre">class</span></code> values.</p>
+</li>
+<li><p class="first">Currently, the application doesn’t tell the user how to play Minesweeper.
+Include some instructions to fix this.</p>
+</li>
+<li><p class="first">Automatically resize the table to fit different screens. Scrolling is
+distracting for this type of game! To test resizing behavior, click and drag
+the bottom corer of your browser window. You want the content to grow and
+shrink to keep all the rows, columns, and text in view.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/responsive-board.gif"><img alt="The game table resizes to fit the window." src="../../_images/responsive-board.gif" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Having to scroll to play Minesweeper provides a poor UX. The table should
+resize to fit in the available space.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="gameplay-options">
+<h2><span class="section-number">25.8.2. </span>Gameplay Options<a class="headerlink" href="#gameplay-options" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Currently, the game board is set as a 10x10 grid. Try refactoring your code
+to work with different table layouts. Can you give the player a choice for
+the board they want to use?</li>
+<li>How can you tell if your Minesweeper performance improved? By adding a
+timer, of course! Research different Python modules and/or functions to
+track how long it takes to win a game.</li>
+<li>Add more server-side validation for the <em>Main Menu</em> input. Currently, there
+is no check for mine numbers that fall outside of the 5 - 25 range.</li>
+<li>Entering the URL for the game board <em>before</em> visiting the home page throws
+an error. Smooth over this rough patch by checking if <code class="docutils literal notranslate"><span class="pre">num_mines</span></code> is in
+the session.</li>
+<li>When a game is in progress, clicking the <em>Back</em> button in the browser causes
+problems. Explore what goes wrong, then try to code a solution.</li>
+</ol>
+</div>
+<div class="section" id="database-options">
+<h2><span class="section-number">25.8.3. </span>Database Options<a class="headerlink" href="#database-options" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">How about adding a <em>Save Game</em> feature? A player might want to leave their
+current game and come back later.</p>
+<ol class="loweralpha simple">
+<li>Try storing all of the session data to a new table in the database, then
+practice retrieving it.</li>
+<li>Include a <em>Save</em> button on the game page, and add a <em>Resume</em> button to
+the main menu.</li>
+</ol>
+</li>
+<li><p class="first">Save a player’s name (or initials) plus their win/loss data. Maybe you can
+display some type of <em>High Scores</em> list.</p>
+<div class="figure align-default" id="id2">
+<img alt="An high scores list from an arcade game." src="../../_images/high-scores.png" />
+<p class="caption"><span class="caption-text">This is from an arcade game, not Minesweeper, but you get the idea.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="game-logic.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25.7. </span>Game Page Logic</a></li>
+        
+        
+        <li class="next"><a href="game-functions.html"><span class="section-number">25.9. </span>Gameplay Functions Review (Optional) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases-part2/extras.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>25.7. Game Page Logic &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="25.8. Next Steps" href="extras.html" />
+    <link rel="prev" title="25.6. Database Functions" href="db-logic.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">25. </span>Build a Minesweeper Game</a></li>
+    <li class="active"><span class="section-number">25.7. </span>Game Page Logic</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="game-page-logic">
+<h1><span class="section-number">25.7. </span>Game Page Logic<a class="headerlink" href="#game-page-logic" title="Permalink to this headline">¶</a></h1>
+<p>Our home page is ready, the database functions operate, and we have access to
+ready-made functions in <code class="docutils literal notranslate"><span class="pre">game_logic.py</span></code>. After we add one final bit of code,
+we can finally play our Minesweeper game!</p>
+<div class="section" id="the-play-function">
+<h2><span class="section-number">25.7.1. </span>The <code class="docutils literal notranslate"><span class="pre">play()</span></code> Function<a class="headerlink" href="#the-play-function" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">play()</span></code> function controls the game page. It renders the <code class="docutils literal notranslate"><span class="pre">mines.html</span></code>
+template, collects and validates data from the form, calls a function to
+analyze each guess, and redirects players to the home page as needed.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file in Visual Studio Code, then code along with each of
+the following videos.</p>
+<div class="section" id="collect-and-validate-guesses">
+<h3><span class="section-number">25.7.1.1. </span>Collect and Validate Guesses<a class="headerlink" href="#collect-and-validate-guesses" title="Permalink to this headline">¶</a></h3>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/aDLCNfNkS5U" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="collect-checkbox-data-and-call-check-guess">
+<h3><span class="section-number">25.7.1.2. </span>Collect Checkbox Data and Call <code class="docutils literal notranslate"><span class="pre">check_guess()</span></code><a class="headerlink" href="#collect-checkbox-data-and-call-check-guess" title="Permalink to this headline">¶</a></h3>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/P_P5l7GQ_9Y" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+</div>
+<div class="section" id="play-summary">
+<h2><span class="section-number">25.7.2. </span><code class="docutils literal notranslate"><span class="pre">play()</span></code> Summary<a class="headerlink" href="#play-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">By typing the URL of the game page into the address bar, players can access
+the board before hiding any mines. To prevent this, we redirect them back to
+the home page if they arrive at the page through a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p>
+</li>
+<li><p class="first">We need to collect two pieces of information from the game board: which cell
+the player selected and whether or not they clicked the <em>Flag Mine</em>
+checkbox.</p>
+<ol class="loweralpha">
+<li><p class="first">Each button on the board has the same name, and the value for each one
+matches its cell coordinates (like <code class="docutils literal notranslate"><span class="pre">A10</span></code>).</p>
+</li>
+<li><p class="first">However, the value for the <em>New Game</em> button is the empty string.</p>
+</li>
+<li><p class="first">The checkbox input has a different name from the buttons.</p>
+</li>
+<li><p class="first">The syntax for requesting the button and checkbox data is slightly
+different.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Request button data from the form:</span>
+<span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;button_name&#39;</span><span class="p">]</span>
+
+<span class="c1"># Request checkbox data:</span>
+<span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;checkbox_name&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</li>
+<li><p class="first">Even though each button has a defined <code class="docutils literal notranslate"><span class="pre">value</span></code>, we still need to include
+some server-side validation. Invalid input redirects the user back to the
+home page.</p>
+</li>
+<li><p class="first">After validating the data, we call the <code class="docutils literal notranslate"><span class="pre">check_guess()</span></code> function to see if
+the player clicked a mine or made a safe choice on the board.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="update-mines-html">
+<h2><span class="section-number">25.7.3. </span>Update <code class="docutils literal notranslate"><span class="pre">mines.html</span></code><a class="headerlink" href="#update-mines-html" title="Permalink to this headline">¶</a></h2>
+<p>As the user plays the game, the appearance of the board changes. There are 4
+possibilities for the cells in the table. Each one is either:</p>
+<ol class="arabic simple">
+<li><strong>Unselected</strong>: These appear with a gray background and have an active, blue
+button.</li>
+<li><strong>Selected and safe</strong>: These appear with a white background and display a
+number showing how many mines are in the surrounding spaces.</li>
+<li><strong>Flagged</strong>: These appear with a goldenrod background and have an active,
+blue button.</li>
+<li><strong>Mined</strong>: These appear with a red background and an inactive button.
+Clicking a mined cell ends the game and reveals the locations of all
+remaining mines on the board.</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">play()</span></code> function calls <code class="docutils literal notranslate"><span class="pre">check_guess()</span></code> each time the user clicks a
+button on the board. The results determine the how that cell should change
+after it is selected.</p>
+<p>To finish our Minesweeper game, we need to update the code in <code class="docutils literal notranslate"><span class="pre">mines.html</span></code>.
+Our goal is to properly display the board after each turn. Also, we’ll provide
+different feedback messages to indicate victory or defeat.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">mines.html</span></code> template in Visual Studio Code, then code along with
+the following videos.</p>
+<div class="section" id="change-cells-after-click">
+<h3><span class="section-number">25.7.3.1. </span>Change Cells After Click<a class="headerlink" href="#change-cells-after-click" title="Permalink to this headline">¶</a></h3>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/an8sh-Xp5PQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+<div class="section" id="add-feedback-messages">
+<h3><span class="section-number">25.7.3.2. </span>Add Feedback Messages<a class="headerlink" href="#add-feedback-messages" title="Permalink to this headline">¶</a></h3>
+<section class="vid_box">
+   <iframe class="vid" src="https://www.youtube-nocookie.com/embed/aIJZhKCjX1E" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section></div>
+</div>
+<div class="section" id="mines-html-summary">
+<h2><span class="section-number">25.7.4. </span><code class="docutils literal notranslate"><span class="pre">mines.html</span></code> Summary<a class="headerlink" href="#mines-html-summary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Each time a player clicks a button on the game board, its appearance
+changes.</li>
+<li>We use 5 session key/value pairs to determine the styling and content for
+each cell:<ol class="loweralpha">
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: This key points to a list of all the cells the player marked
+with the <em>Flag Mine</em> option.</li>
+<li><code class="docutils literal notranslate"><span class="pre">guesses</span></code>: Points to a list of safe cells the player has clicked.</li>
+<li><code class="docutils literal notranslate"><span class="pre">mine_counts</span></code>: Points to a dictionary that contains the number of mines
+surrounding each space on the board.</li>
+<li><code class="docutils literal notranslate"><span class="pre">hit_mine</span></code>: A boolean value. Set to <code class="docutils literal notranslate"><span class="pre">True</span></code> when the player clicks on
+a mine.</li>
+<li><code class="docutils literal notranslate"><span class="pre">mines</span></code>: Points to a list containing the locations of hidden mines.</li>
+</ol>
+</li>
+<li>By adding an extended <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> block to <code class="docutils literal notranslate"><span class="pre">mines.html</span></code>, we can check
+the conditions for each cell just before it is rendered on the page.</li>
+<li>Adding another Jinja3 conditional inside the <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;&lt;/header&gt;</span></code> element
+allows us to display different feedback messages to the player.</li>
+</ol>
+</div>
+<div class="section" id="test-the-game">
+<h2><span class="section-number">25.7.5. </span>Test the Game!<a class="headerlink" href="#test-the-game" title="Permalink to this headline">¶</a></h2>
+<p>Yay! Our Minesweeper game is ready. Play a few games to see how the application
+behaves.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">When your teacher and/or parents ask why you’re playing games instead of
+doing homework, tell them you’re <em>beta-testing</em> a coding project.</p>
+</div>
+<p>As you play, you will find some glitches and rough spots in the game. This is
+expected, and it’s the whole point of testing! Keep a record of the flaws you
+find, and note how serious each one is. Errors that crash the application or
+impact the gameplay should be addressed before minor annoyances.</p>
+<p>Even though the game functions, we can’t call the application “complete” just
+yet. In this chapter, we focused on getting the game up and running, and we
+accomplished that goal. However, the project does contain a number of
+shortcomings. How to fix these is up to you! You have a good starting place
+right now. Your ideas will determine the next step.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">No project is ever really done. Unusual bugs will pop up that need to be
+fixed, or new feature ideas will pop into your brain. Coding an application
+is a continuous process of tinkering, testing, and discovery!</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="db-logic.html"><span aria-hidden="true">&larr;</span> <span class="section-number">25.6. </span>Database Functions</a></li>
+        
+        
+        <li class="next"><a href="extras.html"><span class="section-number">25.8. </span>Next Steps <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases-part2/game-logic.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

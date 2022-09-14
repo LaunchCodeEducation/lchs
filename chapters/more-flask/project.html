@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.11. Project: Improve the User Experience &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="23. Cookies &amp; Sessions" href="../sessions/index.html" />
+    <link rel="prev" title="22.10. Exercises: Logic In Templates" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.11. </span>Project: Improve the User Experience</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-improve-the-user-experience">
+<h1><span class="section-number">22.11. </span>Project: Improve the User Experience<a class="headerlink" href="#project-improve-the-user-experience" title="Permalink to this headline">¶</a></h1>
+<p>Recall the web form we created in <a class="reference internal" href="../flask-intro/validation.html#server-side-validation"><span class="std std-ref">the last chapter</span></a>.
+As designed, if the user enters invalid data, they won’t know about their
+mistake until they reach the results page. This flaw in the user interface (UI)
+lowers the quality of the user experience (UX).</p>
+<p>One common practice for web forms is to keep a user on the original page when
+they make a mistake. Also, displaying an error message about what went wrong
+gives the user a smooth way to make corrections.</p>
+<p>For this project, you will update a fake account sign-up page to improve the
+UI/UX. When a user submits invalid information, the following should happen:</p>
+<ol class="arabic simple">
+<li>The form page will reload,</li>
+<li>All valid entries will remain in their input fields,</li>
+<li>One or more messages will appear explaining what went wrong,</li>
+<li>The user can re-enter information and submit again.</li>
+</ol>
+<p>When the user successfully fills out the form, they will be sent to a different
+webpage.</p>
+<div class="section" id="setup">
+<h2><span class="section-number">22.11.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>The starter code for this project is saved in the same
+<a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_flask_logic" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+you used for the exercises. However, the project code is in a separate branch.</p>
+<ol class="arabic">
+<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">LCHS_flask_logic</span></code> directory in Visual Studio Code. If you
+haven’t downloaded it from GitHub yet, return to <a class="reference internal" href="exercises.html#more-flask-exercises-setup"><span class="std std-ref">the exercises</span></a>
+and follow the instructions for cloning the project to your device.</p>
+</li>
+<li><p class="first">In the terminal, switch to the <code class="docutils literal notranslate"><span class="pre">project-start</span></code> branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout project-start
+</pre></div>
+</div>
+</li>
+<li><p class="first">Just like you did for <a class="reference internal" href="exercises.html#more-flask-exercises-setup"><span class="std std-ref">the chapter exercises</span></a>,
+create and activate a new virtual environment.</p>
+</li>
+<li><p class="first">Install Flask.</p>
+</li>
+<li><p class="first">Save and commit your work.</p>
+</li>
+</ol>
+<div class="section" id="run-the-application">
+<h3><span class="section-number">22.11.1.1. </span>Run the Application<a class="headerlink" href="#run-the-application" title="Permalink to this headline">¶</a></h3>
+<p>Launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and open the application in a new tab in your browser.</p>
+<p>As designed, the form works. Submitting a valid set of data will lead to a
+success page. However, the user interface needs some major fixes.</p>
+<p>Recall that part of a UI is the code that makes it work. However, the
+appearance of the interface is just as important.</p>
+</div>
+</div>
+<div class="section" id="part-a-clean-up-the-view">
+<h2><span class="section-number">22.11.2. </span>Part A: Clean Up the View<a class="headerlink" href="#part-a-clean-up-the-view" title="Permalink to this headline">¶</a></h2>
+<p>The layout and colors on the page are a bit distracting. Since this is the
+sign-up page for your web application, it is the first thing new users see. If
+it gives them a poor UX, then they might decide NOT to join!</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> and <code class="docutils literal notranslate"><span class="pre">register.html</span></code> files in Visual Studio Code. Make
+the following changes by adjusting the CSS style rules, adding <code class="docutils literal notranslate"><span class="pre">class</span></code>
+attributes inside the HTML tags, or adding new HTML code.</p>
+<ol class="arabic">
+<li><p class="first">Remove the yellow background color from the page.</p>
+</li>
+<li><p class="first">Fix the rainbow background in the header. Just because you <em>can</em> apply lots
+of color, doesn’t mean you <em>should</em>.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Note how the black letters in the heading stand out against the lighter
+colors, but get hard to read on top of the darker colors. The opposite
+would be true for a light text color.</p>
+<p class="last">For best results, try to keep a consistent, sharp contrast between the
+text color and the background.</p>
+</div>
+</li>
+<li><p class="first">Center the <code class="docutils literal notranslate"><span class="pre">h2</span></code> and <code class="docutils literal notranslate"><span class="pre">form</span></code> elements on the page.</p>
+</li>
+<li><p class="first">Inside the form, left-align the input labels and center the <em>Submit</em> button.</p>
+</li>
+<li><p class="first">Make the font size for the labels and input boxes large enough to easily
+read.</p>
+</li>
+<li><p class="first">Style the <em>Submit</em> button to make it stand out more.</p>
+</li>
+<li><p class="first">Below the form, display some rules for filling out the input fields:</p>
+<ol class="loweralpha simple">
+<li>The username should be 3-8 characters long. It cannot contain spaces.</li>
+<li>The password needs to be 8 or more characters long, with no spaces. Also,
+it should contain at least one letter, one number, and one special symbol
+(<code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, or <code class="docutils literal notranslate"><span class="pre">*</span></code>).</li>
+</ol>
+</li>
+<li><p class="first">Once you finish updating the appearance of the page, save and commit your
+work.</p>
+</li>
+</ol>
+<p>The form looks better now, and it does work. However, try entering some invalid
+information and click <em>Submit</em>.</p>
+<p>Notice that the form gets erased, and this is a problem. The code behaves
+correctly by rejecting invalid entries. However, the user has no way of knowing
+this! To them, the form simply didn’t work.</p>
+<p>To improve their experience, users need to receive some type of feedback
+whenever they submit a form. This will be your focus in the remaining sections.</p>
+</div>
+<div class="section" id="part-b-keep-valid-entries">
+<h2><span class="section-number">22.11.3. </span>Part B: Keep Valid Entries<a class="headerlink" href="#part-b-keep-valid-entries" title="Permalink to this headline">¶</a></h2>
+<p>One good way to improve the UX is to keep any <em>correct</em> entries in place and
+remove the incorrect ones. This becomes more and more important as the number
+of input fields increases.</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and take a look inside the <code class="docutils literal notranslate"><span class="pre">sign_up()</span></code> function. The
+<code class="docutils literal notranslate"><span class="pre">inputs</span></code> dictionary organizes data for the form. Each key is the label for
+one of the input fields. Each value is a list with strings to assign to the
+<code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, and <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> attributes.</p>
+<p>Inside <code class="docutils literal notranslate"><span class="pre">register.html</span></code>, note how the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop builds the labels and input
+fields for the form.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>{% for (label, values) in inputs.items() %}
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>{{label}}: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;{{values[0]}}&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{{values[1]}}&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;{{values[2]}}&quot;</span> <span class="na">required</span> <span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+{% endfor %}
+</pre></div>
+</td></tr></table></div>
+<ol class="last arabic simple">
+<li><strong>Line 7</strong>: The <code class="docutils literal notranslate"><span class="pre">label</span></code> variable is assigned a key from the <code class="docutils literal notranslate"><span class="pre">inputs</span></code>
+dictionary. The <code class="docutils literal notranslate"><span class="pre">values</span></code> variable is assigned the list for that key.</li>
+<li><strong>Line 8</strong>: Each time the loop repeats, the <code class="docutils literal notranslate"><span class="pre">{{label}}</span></code> placeholder is
+filled in by a key from the dictionary. The <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">placeholder</span></code> strings are assigned from the <code class="docutils literal notranslate"><span class="pre">values</span></code> list.</li>
+</ol>
+</div>
+<p>In order to save valid entries after the user submits the form, you need to
+update both the HTML and the Python code.</p>
+<div class="section" id="update-register-html">
+<h3><span class="section-number">22.11.3.1. </span>Update <code class="docutils literal notranslate"><span class="pre">register.html</span></code><a class="headerlink" href="#update-register-html" title="Permalink to this headline">¶</a></h3>
+<p>The template only needs one modification for this part. Inside the <code class="docutils literal notranslate"><span class="pre">input</span></code>
+tag, add the <code class="docutils literal notranslate"><span class="pre">value=&quot;{{values[3]}}&quot;</span></code> attribute. If the user submits a valid
+entry, it will be saved in the <code class="docutils literal notranslate"><span class="pre">values</span></code> list. <code class="docutils literal notranslate"><span class="pre">{{values[3]}}</span></code> will place
+that value into the input field when the page reloads.</p>
+<p>If the user submits an invalid entry, <code class="docutils literal notranslate"><span class="pre">values[3]</span></code> will be assigned the empty
+string. This clears the input field when the page reloads.</p>
+</div>
+<div class="section" id="update-main-py">
+<h3><span class="section-number">22.11.3.2. </span>Update <code class="docutils literal notranslate"><span class="pre">main.py</span></code><a class="headerlink" href="#update-main-py" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. For each list in the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> dictionary, add the
+empty string as the last element.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="c1"># Label: [type, name, placeholder, value]</span>
+   <span class="s1">&#39;Username&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;3-8 characters, no spaces&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Password&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;8 or more characters, no spaces&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Confirm Password&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;confirm&#39;</span><span class="p">,</span> <span class="s1">&#39;Retype the password&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The first time the page loads, all of the input fields will be empty, and
+the <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> text will appear.</p>
+</li>
+<li><p class="first">Examine the <code class="docutils literal notranslate"><span class="pre">check_username()</span></code> function. It defines two parameters,
+<code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">form_info</span></code>. <code class="docutils literal notranslate"><span class="pre">name</span></code> is the string the user submitted in the
+<code class="docutils literal notranslate"><span class="pre">Username</span></code> field. <code class="docutils literal notranslate"><span class="pre">form_info</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">inputs</span></code> dictionary. The
+function returns <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> depending on whether or not <code class="docutils literal notranslate"><span class="pre">name</span></code>
+is valid (3-8 characters long, with no spaces).</p>
+</li>
+<li><p class="first">Add a conditional to the function. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, assign <code class="docutils literal notranslate"><span class="pre">name</span></code> to the
+<code class="docutils literal notranslate"><span class="pre">Username</span></code> list in the dictionary.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_username</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">form_info</span><span class="p">):</span>
+   <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+      <span class="n">form_info</span><span class="p">[</span><span class="s1">&#39;Username&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+
+   <span class="k">return</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span>
+</pre></div>
+</td></tr></table></div>
+<p>In line 18, <code class="docutils literal notranslate"><span class="pre">form_info['Username'][3]</span></code> refers to index 3 of the
+<code class="docutils literal notranslate"><span class="pre">Username</span></code> list. When the webpage loads, this entry will be assigned to
+the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag.</p>
+</li>
+<li><p class="first">Save your work, then reload the webpage. Test the code by entering a valid
+username and invalid password. Properly done, your correct entry should
+remain in the input field after the page reloads. Test the code again by
+entering an invalid username. This time, the name field should clear when
+the page reloads.</p>
+</li>
+<li><p class="first">Follow a similar process for the <code class="docutils literal notranslate"><span class="pre">check_password()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">check_confirm()</span></code> functions.</p>
+</li>
+<li><p class="first">Check your work! There are six possible valid/invalid combinations to test
+with the form. Note that an invalid password should clear the <em>bottom two</em>
+input fields.</p>
+</li>
+</ol>
+<p>Once your application passes all of the tests, save and commit your code.</p>
+</div>
+</div>
+<div class="section" id="part-c-display-error-messages">
+<h2><span class="section-number">22.11.4. </span>Part C: Display Error Messages<a class="headerlink" href="#part-c-display-error-messages" title="Permalink to this headline">¶</a></h2>
+<p>Your next step is to display error messages on the form page. Each message will
+appear below its matching input box. These alerts provide details for fixing
+any mistakes.</p>
+<p>Once again, you will need to work with the code in both the template and
+<code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">register.html</span></code>, add a paragraph element below the input.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span>{% for (label, values) in inputs.items() %}
+   <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>{{label}}: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;{{values[0]}}&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;{{values[1]}}&quot;</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">&quot;{{values[2]}}&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{values[3]}}&quot;</span> <span class="na">required</span> <span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;error&quot;</span><span class="p">&gt;</span>{{values[4]}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endfor %}
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">{{values[4]}}</span></code> is a placeholder for the error message. If the entry is
+valid, this space will remain empty. If the entry is invalid, text will be
+inserted.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute applies some styling to the error text.</p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add another empty string to the end of each list in the
+<code class="docutils literal notranslate"><span class="pre">inputs</span></code> dictionary.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">inputs</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="c1"># Label: [type, name, placeholder, value, error_msg]</span>
+   <span class="s1">&#39;Username&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;3-8 characters, no spaces&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Password&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;8 or more characters, no spaces&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+   <span class="s1">&#39;Confirm Password&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;confirm&#39;</span><span class="p">,</span> <span class="s1">&#39;Retype the password&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>The first time the page loads, no error messages appear.</p>
+</li>
+<li><p class="first">Return to the <code class="docutils literal notranslate"><span class="pre">check_username()</span></code> function. An invalid username is either
+too long, too short, or contains spaces. Modify the conditional to check for
+each of these errors:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_username</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">form_info</span><span class="p">):</span>
+   <span class="k">if</span> <span class="s1">&#39; &#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+      <span class="n">form_info</span><span class="p">[</span><span class="s1">&#39;Username&#39;</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Username cannot contain spaces.&#39;</span>
+   <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+      <span class="n">form_info</span><span class="p">[</span><span class="s1">&#39;Username&#39;</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Username must be 3-8 characters long.&#39;</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">form_info</span><span class="p">[</span><span class="s1">&#39;Username&#39;</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+   <span class="k">return</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="s1">&#39; &#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span>
+</pre></div>
+</td></tr></table></div>
+<ol class="loweralpha simple">
+<li><strong>Lines 17 &amp; 18</strong>: Check for spaces in <code class="docutils literal notranslate"><span class="pre">name</span></code>. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, replace the
+last entry in the <code class="docutils literal notranslate"><span class="pre">Username</span></code> list with an error message.</li>
+<li><strong>Lines 19 &amp; 20</strong>: Check if <code class="docutils literal notranslate"><span class="pre">name</span></code> is too short or too long. If
+<code class="docutils literal notranslate"><span class="pre">True</span></code>, replace the last entry in the <code class="docutils literal notranslate"><span class="pre">Username</span></code> list with a
+different error message.</li>
+<li><strong>Lines 21 &amp; 22</strong>: If both conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code>, then <code class="docutils literal notranslate"><span class="pre">name</span></code> is
+valid. Store its value in the <code class="docutils literal notranslate"><span class="pre">Username</span></code> list, just like in part B.</li>
+</ol>
+</li>
+<li><p class="first">Save your work, then reload the webpage. Test by entering usernames that are
+too long, too short, or contain spaces. Make sure you see the proper error
+message each time. Also, be sure to enter a valid username (no error message
+should appear).</p>
+</li>
+<li><p class="first">Follow a similar process for the <code class="docutils literal notranslate"><span class="pre">check_password()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">check_confirm()</span></code> functions. Be sure to test your application!</p>
+</li>
+</ol>
+<p>Save and commit your code before moving to Part D.</p>
+</div>
+<div class="section" id="part-d-redirect-on-success">
+<h2><span class="section-number">22.11.5. </span>Part D: Redirect on Success<a class="headerlink" href="#part-d-redirect-on-success" title="Permalink to this headline">¶</a></h2>
+<p>OK, you’ve got the appearance, validation, and error messages in place. The
+final part of this project deals with what happens <em>after</em> a successful form
+submission.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">sign_up()</span></code> function <em>redirects</em> the user to a success page if
+all of their entries are valid.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># If all of the input fields contain valid data, send the user to the success page.</span>
+<span class="k">if</span> <span class="n">check_inputs</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">confirm</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/success&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As mentioned earlier <a class="reference internal" href="redirect.html#redirect"><span class="std std-ref">in this chapter</span></a>, <code class="docutils literal notranslate"><span class="pre">redirect</span></code> sends the
+program flow to a different path and function. In this case, the user sees a
+cheerful success message! However, what happens if a user guesses the path for
+the success page?</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Reload the form page. Instead of filling in the input fields, enter
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/success</span></code> in the address bar.</p>
+<p class="last">Whoa! Success without ANY valid data!</p>
+</div>
+<p>Your application lets users access any webpage on your site if they know its
+URL. However, they should only be able to reach the success page if they
+submit valid data from the form. You need to fix this!</p>
+<ol class="arabic simple">
+<li>In the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">redirect()</span></code> statement, add <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">=</span> <span class="pre">307</span></code> after the
+template name.</li>
+<li>In the <code class="docutils literal notranslate"><span class="pre">success()</span></code> function, add a conditional to check for a <code class="docutils literal notranslate"><span class="pre">GET/POST</span></code>
+request.<ol class="loweralpha">
+<li>If a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request was made, <code class="docutils literal notranslate"><span class="pre">redirect</span></code> back to the form page.</li>
+<li>For a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, <code class="docutils literal notranslate"><span class="pre">render</span></code> the <code class="docutils literal notranslate"><span class="pre">success.html</span></code> template.</li>
+</ol>
+</li>
+<li>Save, then reload the form page. Test your code by entering the URL for the
+success page in the address bar. You should be redirected back to the form.
+Also, make sure you wind up at the success page when you submit valid
+entries in the form!</li>
+<li>Demonstrate your finished application to your teacher. Once it checks out,
+save and commit your code.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">=</span> <span class="pre">307</span></code> is a crude way of restricting access to the success page, but
+it gets you thinking in the right direction.</p>
+<p class="last">Unfortunately, exploring better ways to restrict access is beyond the scope of
+this text.</p>
+</div>
+</div>
+<div class="section" id="bonus-mission">
+<h2><span class="section-number">22.11.6. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">In this project, you built code to display error messages inside a form. The
+goal was to provide feedback to the user so they could correct their mistakes.</p>
+<p>The Flask framework contains tools to handle user feedback. The process is
+called <strong>message flashing</strong>, and it gives developers a way to streamline their
+code.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, you kept track of messages as part of the <code class="docutils literal notranslate"><span class="pre">inputs</span></code>
+dictionary. With message flashing, Flask does this work automatically. The
+<a class="reference external" href="https://flask.palletsprojects.com/en/2.0.x/patterns/flashing/" target="_blank">Flask website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+provides a short tutorial on how to set up and display <code class="docutils literal notranslate"><span class="pre">flash</span></code> messages. Take
+a look at the examples, and then refactor your application to use the <code class="docutils literal notranslate"><span class="pre">flash</span></code>
+tools.</p>
+<blockquote class="pull-quote">
+<div><p>Good applications and user interfaces are all about feedback. If the user
+does not get enough feedback they will probably end up hating the application.
+Flask provides a really simple way to give feedback to a user with the
+flashing system.</p>
+<p class="attribution">&mdash;Flask documentation</p>
+</div></blockquote>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.10. </span>Exercises: Logic In Templates</a></li>
+        
+        
+        <li class="next"><a href="../sessions/index.html"><span class="section-number">23. </span>Cookies &amp; Sessions <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

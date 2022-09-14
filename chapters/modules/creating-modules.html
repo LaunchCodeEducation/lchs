@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.5. Creating Modules &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.6. The main() Event" href="the-main-function.html" />
+    <link rel="prev" title="11.4. The math Module" href="math-module.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Python Modules</a></li>
+    <li class="active"><span class="section-number">11.5. </span>Creating Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="creating-modules">
+<span id="custom-modules"></span><h1><span class="section-number">11.5. </span>Creating Modules<a class="headerlink" href="#creating-modules" title="Permalink to this headline">¶</a></h1>
+<p>Up until now, we have imported modules that are already part of the Python
+libraries. Now let’s look at how to define our own modules and save them
+in a form we can use in other programs.</p>
+<div class="section" id="create-a-new-python-file">
+<h2><span class="section-number">11.5.1. </span>Create a New Python File<a class="headerlink" href="#create-a-new-python-file" title="Permalink to this headline">¶</a></h2>
+<p>The first step in making a module is to decide which values and functions
+belong in that module. These should all perform similar tasks and/or be related
+to each other in some way.</p>
+<p>For example, let’s assume we want to create a module called <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code>.
+Functions like <code class="docutils literal notranslate"><span class="pre">draw_square</span></code>, <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code>, and <code class="docutils literal notranslate"><span class="pre">draw_sprite</span></code> would be
+good choices to put in the module, but something like
+<code class="docutils literal notranslate"><span class="pre">calculate_average_grade</span></code> definitely does NOT belong.</p>
+<p>The next step is to open a new file in our code editor and give it a name that:</p>
+<ol class="arabic simple">
+<li>begins with a letter and contains only lowercase letters,</li>
+<li>is as short as possible but still descriptive,</li>
+<li>separates words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>,</li>
+<li>ends with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code>).</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension tells a code editor that the contents of the file
+follow the Python programming syntax.</p>
+</div>
+<p>Finally, we add the functions and values we want in the module. We code these
+just like any other program, with <code class="docutils literal notranslate"><span class="pre">import</span></code> statements first, then function
+definitions, then variable assignments.</p>
+<p>That’s pretty much it. Once we save the file, we can use the syntax we learned
+to import the entire module or specific parts of it into another program:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle_shapes</span>
+<span class="kn">from</span> <span class="nn">turtle_shapes</span> <span class="kn">import</span> <span class="n">draw_polygon</span>
+</pre></div>
+</div>
+<p>Note that we do NOT need to include the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension when we import the
+module.</p>
+<p>Let’s build a module to practice this process.</p>
+</div>
+<div class="section" id="setting-turtle-properties">
+<h2><span class="section-number">11.5.2. </span>Setting Turtle Properties<a class="headerlink" href="#setting-turtle-properties" title="Permalink to this headline">¶</a></h2>
+<p>You probably noticed that every time we use a turtle in an example or exercise,
+we include a set of statements that define properties for that turtle:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Count the number of “prep” steps we need before our turtle draws its first
+line:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="s1">&#39;turtle&#39;</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">bob</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">Line 3 creates the new turtle object, called <code class="docutils literal notranslate"><span class="pre">bob</span></code>. Lines 4 - 7 set the
+properties, and line 9 finally draws something on the screen.</p>
+</div>
+<p>It takes one line of code to set each of the properties for a turtle. If we
+need to define multiple turtles, this gets tedious really fast.</p>
+<p>We can help ourselves by moving the setup code into a pair of functions, and
+then calling those functions for each new turtle:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>By including some default values, we can call the <code class="docutils literal notranslate"><span class="pre">create_new_turtle</span></code>
+function with no arguments, with values for some of the properties, or
+with arguments for each property.</p>
+<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">turtle</span>
+
+<span class="k">def</span> <span class="nf">create_new_turtle</span><span class="p">(</span><span class="n">t_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">t_shape</span><span class="o">=</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="n">t_pen</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">t_speed</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+   <span class="n">turtle_name</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+   <span class="n">set_turtle_properties</span><span class="p">(</span><span class="n">turtle_name</span><span class="p">,</span> <span class="n">t_color</span><span class="p">,</span> <span class="n">t_shape</span><span class="p">,</span> <span class="n">t_pen</span><span class="p">,</span> <span class="n">t_speed</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">turtle_name</span>
+
+<span class="k">def</span> <span class="nf">set_turtle_properties</span><span class="p">(</span><span class="n">t_name</span><span class="p">,</span> <span class="n">t_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">t_shape</span><span class="o">=</span><span class="s1">&#39;turtle&#39;</span><span class="p">,</span> <span class="n">t_pen</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">t_speed</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+   <span class="n">t_name</span><span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">t_color</span><span class="p">)</span>
+   <span class="n">t_name</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">t_shape</span><span class="p">)</span>
+   <span class="n">t_name</span><span class="o">.</span><span class="n">pensize</span><span class="p">(</span><span class="n">t_pen</span><span class="p">)</span>
+   <span class="n">t_name</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="n">t_speed</span><span class="p">)</span>
+
+<span class="n">bob</span> <span class="o">=</span> <span class="n">create_new_turtle</span><span class="p">()</span>
+<span class="n">lin</span> <span class="o">=</span> <span class="n">create_new_turtle</span><span class="p">(</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;square&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>This is better, since it reduces the repetition in the program. However, if we
+want to use this shortcut in ALL of our turtle programs, we need to create a
+module to hold the code.</p>
+<div class="section" id="create-the-turtle-prep-module">
+<h3><span class="section-number">11.5.2.1. </span>Create the <code class="docutils literal notranslate"><span class="pre">turtle_prep</span></code> Module<a class="headerlink" href="#create-the-turtle-prep-module" title="Permalink to this headline">¶</a></h3>
+<p>In the editor below, notice that there are two file tabs open—<code class="docutils literal notranslate"><span class="pre">main.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code>. The first file contains the code that directs what gets
+drawn on the screen. The second file is currently empty, but it will eventually
+hold all of the setup steps to get each turtle ready.</p>
+<p>Follow these instructions to create the <code class="docutils literal notranslate"><span class="pre">turtle_prep</span></code> module:</p>
+<ol class="arabic simple">
+<li>Run the program as-is to see how it works.</li>
+<li>Click on the <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code> tab to access the editor for that file.
+(The workspace should be empty).</li>
+<li>Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. <em>REMOVE</em> lines 1 - 12 from <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and paste them
+into <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code>.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle_prep</span></code> on line 1.</li>
+<li>Use dot notation to update <code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">create_new_turtle()</span></code> to
+<code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">turtle_prep.create_new_turtle()</span></code>. Do the same for <code class="docutils literal notranslate"><span class="pre">lin</span></code>.</li>
+<li>Click <em>Run</em> to verify that the program still works.</li>
+<li>Change the arguments in the <code class="docutils literal notranslate"><span class="pre">create_new_turtle</span></code> function calls to see how
+that affects the drawing.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, call the <code class="docutils literal notranslate"><span class="pre">set_turtle_properties</span></code> function to change the
+properties of the turtles after they draw the circles. Add a new line or
+shape to check your work.</li>
+</ol>
+<iframe src="https://trinket.io/embed/python/02c9ec9aef" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>Cool, we now have a set of code that we can pull into future turtle projects!</p>
+</div>
+</div>
+<div class="section" id="file-locations">
+<span id="module-location"></span><h2><span class="section-number">11.5.3. </span>File Locations<a class="headerlink" href="#file-locations" title="Permalink to this headline">¶</a></h2>
+<p>One important thing to note is that when we import a module into a program,
+Python needs to know exactly where to find that file.</p>
+<p>When Python reads <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module_name</span></code>, it first checks to see if the module
+is one of the built-in Python files. Python knows exactly where these modules
+are stored on our device, so the import occurs easily.</p>
+<p>If a built-in module is not found, Python looks in the current <em>directory</em>,
+which is the folder that holds the main program. If it finds a
+<code class="docutils literal notranslate"><span class="pre">module_name.py</span></code> file, it imports that into the program.</p>
+<p>If the module is NOT in the same folder, Python expands its search to a larger
+list of directories. This is a more complicated process, and it requires the
+programmer to either save the new module in one of these directories or give
+Python a detailed <em>path</em> to follow.</p>
+<p>We will learn more about navigating different paths much later in the course.
+For now, we will keep things simple by saving new modules in the same location
+as <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">11.5.4. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Let’s add another module to our turtle program.</p>
+<p>In the editor above, click on the <em>New File</em> button to the right of the file
+tabs. Name the new file <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code>.</p>
+<div class="figure align-default" id="id1">
+<img alt="Image showing the location (upper right corner) of the New File button in the code editor." src="../../_images/trinket-new-tab-button.png" />
+<p class="caption"><span class="caption-text">New File button.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li>Open the <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code> tab and enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> on line 1.</li>
+<li>Paste in copies of the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code>, <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">draw_sprite</span></code> functions you created in the
+<a class="reference internal" href="../functions/exercises.html#functions-turtle-exercises"><span class="std std-ref">last chapter</span></a>. Be sure to include only
+the function code and NOT any turtle drawing commands.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code> module.</li>
+<li>Instead of the circle, have <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw a different shape. Use dot notation
+to call one of the functions from <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code>. Make sure you include
+the required arguments in the proper order.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="math-module.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.4. </span>The <code class="docutils literal notranslate"><span class="pre">math</span></code> Module</a></li>
+        
+        
+        <li class="next"><a href="the-main-function.html"><span class="section-number">11.6. </span>The <code class="docutils literal notranslate"><span class="pre">main()</span></code> Event <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/modules/creating-modules.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

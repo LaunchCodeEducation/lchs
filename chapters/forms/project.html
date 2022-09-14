@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.11. Project: Web Form (Part 1) &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="21. Hello, Flask!" href="../flask-intro/index.html" />
+    <link rel="prev" title="20.10. Exercises: Launch Form" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.11. </span>Project: Web Form (Part 1)</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-web-form-part-1">
+<span id="web-caesar-part1"></span><h1><span class="section-number">20.11. </span>Project: Web Form (Part 1)<a class="headerlink" href="#project-web-form-part-1" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, we coded several forms and used the <em>Parrot Server</em> to check
+the data submitted. Of course, the parrot isn’t a real server. It stores no
+data, and it performs no actions other than sending back the key/value pairs it
+receives in an HTTP request. It behaves like an electronic mirror.</p>
+<p>In the next few chapters, we will learn how to run a <em>local</em> server on our
+computer. This will allow us to receive form data, <em>do something</em> with it,
+and then send back a carefully crafted response. By doing this, we can create
+truly interactive webpages and websites.</p>
+<p>With this in mind, we are going to split this project across two chapters. In
+Part 1 (this chapter), you will create a form and verify that it submits its
+data correctly. In Part 2 (next chapter), you will write Python code to collect
+the data and act on it.</p>
+<div class="section" id="introduction">
+<h2><span class="section-number">20.11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="../../assignments/coded-messages.html#coded-messages"><span class="std std-ref">Assignment #2</span></a>, you wrote a Python program that takes
+a string and <em>encrypts</em> it to create a coded message. The program also changes
+a coded message back into plain text.</p>
+<p>Your old program ran in the console. In this project, you will adapt the
+program to run in a browser. To do this, you will need to create a form with
+inputs for the original message, the size of the character shift, and whether
+to encrypt or decrypt the message.</p>
+<div class="figure align-default" id="id1">
+<img alt="A Caesar Cipher form, with inputs for the original message, the amount to shift, and whether to encrypt or decrypt the text." src="../../_images/caesar-form1.png" />
+<p class="caption"><span class="caption-text">One possible form style.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You will deal with the Python code later. For now, your job is to build a nice
+looking form.</p>
+</div>
+<div class="section" id="getting-started">
+<h2><span class="section-number">20.11.2. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Launch Visual Studio Code and open your <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> folder.</p>
+</li>
+<li><p class="first">Save and commit any recent work in the repository.</p>
+</li>
+<li><p class="first">From <code class="docutils literal notranslate"><span class="pre">main</span></code>, checkout a new branch called <code class="docutils literal notranslate"><span class="pre">web-caesar</span></code>.</p>
+</li>
+<li><p class="first">In the <em>File Explorer</em> panel, use the buttons to create a new folder. Call
+it <code class="docutils literal notranslate"><span class="pre">project</span></code>.</p>
+</li>
+<li><p class="first">Inside <code class="docutils literal notranslate"><span class="pre">project</span></code> create empty <code class="docutils literal notranslate"><span class="pre">.html</span></code> and <code class="docutils literal notranslate"><span class="pre">.css</span></code> files. Be sure to
+give the files descriptive names.</p>
+</li>
+<li><p class="first">In the empty HTML file, type <code class="docutils literal notranslate"><span class="pre">html:5</span></code> and hit <em>Enter</em>. Whoa! Instant
+starter code appears!</p>
+<div class="figure align-default" id="id2">
+<img alt="Typing html:5 in VS Code automatically adds boilerplate HTML." src="../../_images/boilerplate-html.gif" />
+<p class="caption"><span class="caption-text">OK, that’s really cool.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Change the text in the <code class="docutils literal notranslate"><span class="pre">title</span></code> element, then add a <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> to your
+project’s CSS file.</p>
+</li>
+<li><p class="first">Save and commit your work.</p>
+</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">You will be working on this project over multiple chapters, and possibly
+from different locations or devices. It would be a good idea to add a
+<a class="reference internal" href="../git/project.html#git-project"><span class="std std-ref">remote repository</span></a> on GitHub to help track your work.</p>
+</div>
+</div>
+<div class="section" id="collect-a-message-from-the-user">
+<h2><span class="section-number">20.11.3. </span>Collect a Message From the User<a class="headerlink" href="#collect-a-message-from-the-user" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="coded-messages" target="_blank">Caesar Cipher<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> codes a message by shifting each letter
+a certain number of places in the alphabet. In your old assignment 2 Python
+code, you used the console to collect input from the user. In this updated
+project, you will use a web form to gather the same information.</p>
+<ol class="arabic">
+<li><p class="first">Create a new <code class="docutils literal notranslate"><span class="pre">form</span></code> element in your HTML file. For now, assign the URL for
+the parrot server to <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a heading inside the form.</p>
+</li>
+<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">textarea</span></code> element where the user will enter their original message.
+Be sure to give this input a <code class="docutils literal notranslate"><span class="pre">label</span></code>. Also, add some placeholder text.</p>
+</li>
+<li><p class="first">Add a <em>Submit</em> button to the form. However, label it something more clever
+than <em>Submit</em>.</p>
+</li>
+<li><p class="first">Save your code, then open the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file in your browser. Test your form
+to make sure it works.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/textarea-input.png"><img alt="Showing a label and textarea input, followed by the response." src="../../_images/textarea-input.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">Check that the form sends a key/value pair for the <code class="docutils literal notranslate"><span class="pre">textarea</span></code> input.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Commit your work before moving to the next section.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="add-number-and-radio-inputs">
+<h2><span class="section-number">20.11.4. </span>Add Number and Radio Inputs<a class="headerlink" href="#add-number-and-radio-inputs" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have the <code class="docutils literal notranslate"><span class="pre">textarea</span></code> element working, you need to gather the rest
+of the required information.</p>
+<ol class="arabic">
+<li><p class="first">Below the <code class="docutils literal notranslate"><span class="pre">textarea</span></code>, add an <code class="docutils literal notranslate"><span class="pre">input</span></code> element that accepts an integer.
+The user will use this field to set how many places to shift each letter in
+the original message.</p>
+</li>
+<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> attributes to add validation to the field.
+Allowed values for this input run from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">25</span></code>.</p>
+</li>
+<li><p class="first">Add placeholder text to this input to tell the user the allowed range.</p>
+</li>
+<li><p class="first">Below the number field, use radio buttons to let the user select if the
+message should be encrypted or decrypted. Use the <code class="docutils literal notranslate"><span class="pre">checked</span></code> attribute to
+select one of the choices as the default.</p>
+</li>
+<li><p class="first">Save your code, then refresh the page in your browser. Test the form to make
+sure it sends three key/value pairs to the server.</p>
+<div class="figure align-default" id="id4">
+<img alt="Request Parrot response to sending 3 input values from the form." src="../../_images/parrot-project-response.png" />
+<p class="caption"><span class="caption-text">The form sends key/value pairs for the message, shift value, and whether to encrypt or translate the message.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Commit your work before moving to the next section.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="style-the-form">
+<h2><span class="section-number">20.11.5. </span>Style the Form<a class="headerlink" href="#style-the-form" title="Permalink to this headline">¶</a></h2>
+<p>Now you need to make your form look nice.</p>
+<ol class="arabic simple">
+<li>Open the empty <code class="docutils literal notranslate"><span class="pre">.css</span></code> file. Add style rules for the form, input fields,
+and submit button.</li>
+<li>Center the form on the page. By default, the browser displays it on the left
+side of the screen. Here’s one way to change this:<ol class="loweralpha">
+<li>In the CSS file, define a new class called <code class="docutils literal notranslate"><span class="pre">centered</span></code>. Inside this
+class, add the rule <code class="docutils literal notranslate"><span class="pre">text-align:</span> <span class="pre">center;</span></code>.</li>
+<li>Wrap the <code class="docutils literal notranslate"><span class="pre">form</span></code> element between <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> tags.</li>
+<li>Add the <code class="docutils literal notranslate"><span class="pre">class=&quot;centered&quot;</span></code> attribute to the <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> tag.</li>
+<li>Back in the CSS file, add <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">inline-block;</span></code> to the <code class="docutils literal notranslate"><span class="pre">form</span></code>
+selector.</li>
+</ol>
+</li>
+<li>Save your CSS code, then refresh the page in the browser. Properly done,
+your form should now be horizontally centered on the screen. Try changing
+the <code class="docutils literal notranslate"><span class="pre">text-align</span></code> value to <code class="docutils literal notranslate"><span class="pre">left</span></code> or <code class="docutils literal notranslate"><span class="pre">right</span></code> to see how this affects
+the view.</li>
+<li>Commit your work. If you created a remote repository, don’t forget to
+<code class="docutils literal notranslate"><span class="pre">push</span></code> the changes up to GitHub.</li>
+</ol>
+</div>
+<div class="section" id="coming-up-next">
+<h2><span class="section-number">20.11.6. </span>Coming Up Next<a class="headerlink" href="#coming-up-next" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="../flask-intro/project.html#web-caesar-part2"><span class="std std-ref">Part 2</span></a> of this project, you will write some
+Python code to collect the form data. Your program will then encrypt or
+decrypt the message and display it on the webpage.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.10. </span>Exercises: Launch Form</a></li>
+        
+        
+        <li class="next"><a href="../flask-intro/index.html"><span class="section-number">21. </span>Hello, Flask! <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.3. HTML Structure &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14.4. HTML Tags" href="tags.html" />
+    <link rel="prev" title="14.2. What is HTML?" href="html-intro.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">14. </span>We Built The Internet on HTML</a></li>
+    <li class="active"><span class="section-number">14.3. </span>HTML Structure</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="html-structure">
+<h1><span class="section-number">14.3. </span>HTML Structure<a class="headerlink" href="#html-structure" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">To make sure their web pages work as planned, programmers should follow certain
+rules about how to organize an HTML file. These rules, and the tags used within
+the HTML structure, are vital to make sure all browsers render the page
+correctly.</p>
+<div class="section" id="structure-rules">
+<h2><span class="section-number">14.3.1. </span>Structure Rules<a class="headerlink" href="#structure-rules" title="Permalink to this headline">¶</a></h2>
+<p>For the overall structure of an HTML file, a programmer should follow 5 rules:</p>
+<ol class="arabic">
+<li><p class="first">Every HTML file needs a <code class="docutils literal notranslate"><span class="pre">DOCTYPE</span></code> tag, which identifies the version of
+HTML to use. The syntax <code class="docutils literal notranslate"><span class="pre">&lt;!DOCTYPE</span> <span class="pre">html&gt;</span></code> selects the current version of
+HTML by default.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">DOCTYPE</span></code> is one of few tags that does not require a closing tag.</p>
+</div>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">&lt;html&gt;</span></code> element marks the beginning and end of the HTML code written
+by the programmer.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> element contains data about the web page. Most of this data
+will NOT be seen by visitors to the web page.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> element contains everything that appears in the browser when
+the page is viewed.</p>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">&lt;title&gt;</span></code> element goes in the <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> of the document, and browsers
+require it. We see the <code class="docutils literal notranslate"><span class="pre">title</span></code> of a web page in its browser tab.</p>
+</li>
+</ol>
+<div class="figure align-default" id="id1">
+<img alt="The text in the ``title`` element provides the label seen in the browser tab." src="../../_images/title-element.png" />
+<p class="caption"><span class="caption-text">The text in the <code class="docutils literal notranslate"><span class="pre">title</span></code> element appears in the browser tab.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Here is the structure for an HTML page that follows these rules:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Web Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- Page data elements... --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      Page content...
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note the following:</p>
+<ol class="arabic">
+<li><p class="first">An element can take up multiple lines in the editor. For example, the
+<code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">body</span></code> elements are both nested inside the <code class="docutils literal notranslate"><span class="pre">html</span></code> element,
+which runs from lines 2 - 10.</p>
+</li>
+<li><p class="first">While not necessary, using indentation to organize the start and end tags
+for different elements is a great idea.</p>
+<p>The following code works as an HTML document, but it is poorly organized and
+very hard to follow.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Web Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span><span class="c">&lt;!-- Page data elements... --&gt;</span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span>Page content...<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Adding whitespace in your HTML file helps other programmers read and
+understand your work!</p>
+</li>
+</ol>
+</div>
+<div class="section" id="document-head">
+<h2><span class="section-number">14.3.2. </span>Document Head<a class="headerlink" href="#document-head" title="Permalink to this headline">¶</a></h2>
+<p>So other than the title, what goes in the <code class="docutils literal notranslate"><span class="pre">head</span></code> element?</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> includes links to support files and other data about the document.
+For example, we can include some styling instructions in <code class="docutils literal notranslate"><span class="pre">head</span></code> to change
+things like background color, font, or text size.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last"><em>Style code</em> helps to make a web page beautiful. How to do add styles to
+<code class="docutils literal notranslate"><span class="pre">head</span></code> is covered in the next chapter on CSS.</p>
+</div>
+<p>Remember, browsers do not display the content in the <code class="docutils literal notranslate"><span class="pre">head</span></code> element.</p>
+</div>
+<div class="section" id="document-body">
+<h2><span class="section-number">14.3.3. </span>Document Body<a class="headerlink" href="#document-body" title="Permalink to this headline">¶</a></h2>
+<p>After finishing the <code class="docutils literal notranslate"><span class="pre">head</span></code> of the document, it is time to move on to the
+<code class="docutils literal notranslate"><span class="pre">&lt;body&gt;&lt;/body&gt;</span></code> element.</p>
+<p>The body of the document contains the content that appears on the web page.
+Within the <code class="docutils literal notranslate"><span class="pre">body</span></code> element, programmers use different HTML tags to add images,
+text, videos, GIFs, and even samples of other code.</p>
+<p>Content outside of the <code class="docutils literal notranslate"><span class="pre">body</span></code> element will not appear on the page.</p>
+</div>
+<div class="section" id="other-details">
+<h2><span class="section-number">14.3.4. </span>Other Details<a class="headerlink" href="#other-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adding-comments">
+<h3><span class="section-number">14.3.4.1. </span>Adding <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">Comments</span> <span class="pre">--&gt;</span></code><a class="headerlink" href="#adding-comments" title="Permalink to this headline">¶</a></h3>
+<p>To make our HTML more readable to other people, we can include comments in the
+code. To add a comment, begin with <code class="docutils literal notranslate"><span class="pre">&lt;!--</span></code>, then type the message. End the
+comment with <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>. The general syntax for an HTML comment is:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- This is an important comment --&gt;</span>
+</pre></div>
+</div>
+<p>We can place comments anywhere inside the HTML file.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="c">&lt;!-- This is an important comment --&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>My Web Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- This is an important comment --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="c">&lt;!-- This is another important comment --&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- This is the final comment --&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Comments help us describe our code to others, and they do NOT appear on the web
+page.</p>
+</div>
+<div class="section" id="tags-are-case-insensitive">
+<h3><span class="section-number">14.3.4.2. </span>Tags Are Case-Insensitive<a class="headerlink" href="#tags-are-case-insensitive" title="Permalink to this headline">¶</a></h3>
+<p>Using capital letters vs. lowercase letters in a tag name does not matter. For
+example, the following statements all work, and they all produce the same
+result on screen:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">H1</span><span class="p">&gt;</span>Hello!<span class="p">&lt;/</span><span class="nt">H1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">H1</span><span class="p">&gt;</span>Hello!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Even though case does not matter, developers usually stick with lowercase
+letters for the tag names. We encourage you to follow this convention.</p>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">14.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which HTML tag does NOT require a closing tag?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">title</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">body</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">head</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">DOCTYPE</span></li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">html</span></li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="html-intro.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.2. </span>What is HTML?</a></li>
+        
+        
+        <li class="next"><a href="tags.html"><span class="section-number">14.4. </span>HTML Tags <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/html/structure.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

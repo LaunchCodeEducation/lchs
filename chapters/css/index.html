@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15. Styling the Web With CSS &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15.1. What is CSS?" href="background.html" />
+    <link rel="prev" title="14.8. Project: HTML" href="../html/project.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li class="active"><span class="section-number">15. </span>Styling the Web With CSS</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="styling-the-web-with-css">
+<span id="css-index"></span><h1><span class="section-number">15. </span>Styling the Web With CSS<a class="headerlink" href="#styling-the-web-with-css" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="background.html">15.1. What is CSS?</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="background.html#background">15.1.1. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background.html#check-your-understanding">15.1.2. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">15.2. CSS Syntax</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#writing-css">15.2.1. Writing CSS</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="structure.html#css-selectors">15.2.1.1. CSS Selectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html#declaration-blocks">15.2.1.2. Declaration Blocks</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#css-examples">15.2.2. CSS Examples</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="structure.html#element-selector">15.2.2.1. Element Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html#class-selector">15.2.2.2. Class Selector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html#id-selector">15.2.2.3. ID Selector</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#css-comments">15.2.3. CSS Comments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#try-it">15.2.4. Try It!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html#check-your-understanding">15.2.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="css-locations.html">15.3. Linking CSS to HTML</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="css-locations.html#css-order-of-importance">15.3.1. CSS Order of Importance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css-locations.html#try-it">15.3.2. Try It!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css-locations.html#check-your-understanding">15.3.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="properties.html">15.4. CSS Properties</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#good-css-properties-to-know">15.4.1. Good CSS Properties to Know</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#css-example">15.4.2. CSS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#check-your-understanding">15.4.3. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bootstrap.html">15.5. Bootstrap</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html#what-is-bootstrap">15.5.1. What is Bootstrap?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html#link-to-the-bootstrap-library">15.5.2. Link to the Bootstrap Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html#using-bootstrap-styles">15.5.3. Using Bootstrap Styles</a><ol>
+<li class="toctree-l3"><a class="reference internal" href="bootstrap.html#bootstrap-documentation">15.5.3.1. Bootstrap Documentation</a></li>
+</ol>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html#try-it">15.5.4. Try It!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bootstrap.html#check-your-understanding">15.5.5. Check Your Understanding</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exercises.html">15.6. Exercises: CSS</a><ol>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#external-css">15.6.1. External CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exercises.html#internal-css">15.6.2. Internal CSS</a></li>
+</ol>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">15.7. Project: CSS</a></li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="../html/project.html"><span aria-hidden="true">&larr;</span> <span class="section-number">14.8. </span>Project: HTML</a></li>
+        
+        
+        <li class="next"><a href="background.html"><span class="section-number">15.1. </span>What is CSS? <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/css/index.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

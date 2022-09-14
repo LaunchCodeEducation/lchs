@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 5: Making Decisions With Conditionals &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 6: Repeating Things With Loops" href="chapter06.html" />
+    <link rel="prev" title="Chapter 4: Data and Variables" href="chapter04.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 5: Making Decisions With Conditionals</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-5-making-decisions-with-conditionals">
+<h1>Chapter 5: Making Decisions With Conditionals<a class="headerlink" href="#chapter-5-making-decisions-with-conditionals" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/booleans-and-conditionals/exercises.html#booleans-and-conditionals-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/fccf48bf5a" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-a-basic-selection">
+<span id="chp5parta"></span><h3>Part A: Basic Selection<a class="headerlink" href="#part-a-basic-selection" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">If the user’s entry is longer than 5 characters, print <code class="docutils literal notranslate"><span class="pre">&quot;Your</span> <span class="pre">entry</span> <span class="pre">is</span>
+<span class="pre">longer</span> <span class="pre">than</span> <span class="pre">5</span> <span class="pre">characters!&quot;</span></code> Otherwise, print nothing.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">user_entry</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a word: &#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">user_entry</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your entry is longer than 5 characters!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">If the number entered is 100 or larger, print <code class="docutils literal notranslate"><span class="pre">&quot;Valid</span> <span class="pre">entry!&quot;</span></code>  Otherwise,
+print, <code class="docutils literal notranslate"><span class="pre">&quot;Number</span> <span class="pre">too</span> <span class="pre">small.&quot;</span></code></p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num_entry</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number larger than 100: &#39;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">num_entry</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valid entry!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number too small.&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Prompt the user to enter a letter. If the letter is a vowel, print
+<code class="docutils literal notranslate"><span class="pre">&quot;___</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">vowel.&quot;</span></code> Else, print, <code class="docutils literal notranslate"><span class="pre">&quot;___</span> <span class="pre">is</span> <span class="pre">NOT</span> <span class="pre">a</span> <span class="pre">vowel.&quot;</span></code></p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">user_letter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a letter: &#39;</span><span class="p">)</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="s1">&#39;aeiouAEIOU&#39;</span>
+<span class="k">if</span> <span class="n">user_letter</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">user_letter</span> <span class="o">+</span> <span class="s2">&quot; is a vowel.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">user_letter</span> <span class="o">+</span> <span class="s2">&quot; is NOT vowel.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/booleans-and-conditionals/exercises.html#booleans-and-conditionals-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-b-logical-operators">
+<span id="chp5partb"></span><h3>Part B: Logical Operators<a class="headerlink" href="#part-b-logical-operators" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="2">
+<li><p class="first">Check if an integer is even and divisible by 5.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">test_string_1</span> <span class="o">=</span> <span class="s1">&#39;bookkeepers&#39;</span>
+<span class="n">test_string_2</span> <span class="o">=</span> <span class="s1">&#39;Apricots and apples&#39;</span>
+<span class="n">test_string_3</span> <span class="o">=</span> <span class="s1">&#39;carrot&#39;</span>
+<span class="n">test_string_4</span> <span class="o">=</span> <span class="s1">&#39;apple pie&#39;</span>
+
+<span class="c1"># Replace test_string_1 with the other variable names to check each one.</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_string_1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="ow">and</span> <span class="s2">&quot; &quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">test_string_1</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">test_string_1</span> <span class="o">+</span> <span class="s2">&quot; is a really long word!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">test_string_1</span> <span class="o">+</span> <span class="s2">&quot; is either short, or it contains multiple words.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Adding the <code class="docutils literal notranslate"><span class="pre">not</span></code> in front of <code class="docutils literal notranslate"><span class="pre">cap_consonants</span></code> will execute the first
+<code class="docutils literal notranslate"><span class="pre">print</span></code> statement, since <code class="docutils literal notranslate"><span class="pre">'A'</span></code> is NOT in <code class="docutils literal notranslate"><span class="pre">cap_consonants</span></code>. This makes
+the output inaccurate. Similarly, for capital constants, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause
+runs and displays incorrect output.</p>
+<p>Only lowercase vowels lead to an accurate print statement.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">letter</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="n">cap_consonants</span> <span class="o">=</span> <span class="s1">&#39;BCDFGHJKLMNPQRSTVWXYZ&#39;</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="s1">&#39;aeiou&#39;</span>
+
+<span class="c1"># Original code:</span>
+<span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">cap_consonants</span> <span class="ow">or</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">letter</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;is either a lowercase vowel OR a capital consonant.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick a capital consonant or a lowercase vowel&quot;</span><span class="p">)</span>
+
+<span class="c1"># Code with one &#39;not&#39; added:</span>
+<span class="k">if</span> <span class="n">letter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cap_consonants</span> <span class="ow">or</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">letter</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;is either a lowercase vowel OR a lowercase consonant.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pick a capital consonant or a lowercase vowel&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first"><strong>Tip</strong>: To check the expressions given in this problem, just put them
+inside a <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement and check the output!</p>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/booleans-and-conditionals/exercises.html#booleans-and-conditionals-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-c-chained-conditionals">
+<span id="chp5partc"></span><h3>Part C: Chained Conditionals<a class="headerlink" href="#part-c-chained-conditionals" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="2">
+<li><p class="first">Given the score on an exam, assign it the proper letter grade. Print the
+results as <code class="docutils literal notranslate"><span class="pre">___%</span> <span class="pre">=</span> <span class="pre">___</span></code>.</p>
+<p><strong>Tip</strong>: Be sure to test your code with decimals like <code class="docutils literal notranslate"><span class="pre">89.5</span></code> or <code class="docutils literal notranslate"><span class="pre">79.99</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a score: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;% = A&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;% = B&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">70</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;% = C&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">60</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;% = D&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;% = F&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Pick an activity based on the current weather.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>  <span class="c1"># Change these 2 vales to print different results.</span>
+<span class="n">humidity</span> <span class="o">=</span> <span class="s1">&#39;rainy&#39;</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">==</span> <span class="s2">&quot;hot&quot;</span> <span class="ow">and</span> <span class="n">humidity</span> <span class="o">==</span> <span class="s2">&quot;rainy&quot;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should stay in and watch Netflix.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">==</span> <span class="s2">&quot;hot&quot;</span> <span class="ow">and</span> <span class="n">humidity</span> <span class="o">==</span> <span class="s2">&quot;dry&quot;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should go swimming!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">==</span> <span class="s2">&quot;cold&quot;</span> <span class="ow">and</span> <span class="n">humidity</span> <span class="o">==</span> <span class="s2">&quot;dry&quot;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should go visit a friend.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">temperature</span> <span class="o">==</span> <span class="s2">&quot;cold&quot;</span> <span class="ow">and</span> <span class="n">humidity</span> <span class="o">==</span> <span class="s2">&quot;rainy&quot;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You should get under a blanket and read.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Do what ever you want to do!&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/booleans-and-conditionals/exercises.html#booleans-and-conditionals-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-d-nested-conditionals">
+<span id="chp5partd"></span><h3>Part D: Nested Conditionals<a class="headerlink" href="#part-d-nested-conditionals" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic" start="5">
+<li><p class="first">Collect a user’s lunch order and calculate the bill.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">cost</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">lunch_selection</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Welcome! Would you like a burger or a salad? &#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">lunch_selection</span> <span class="o">==</span> <span class="s2">&quot;salad&quot;</span><span class="p">:</span>
+   <span class="n">cost</span> <span class="o">+=</span> <span class="mf">4.99</span>
+   <span class="n">dressing</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What kind of dressing would you like, ranch or italian? &quot;</span><span class="p">)</span>
+   <span class="k">if</span> <span class="n">dressing</span> <span class="o">==</span> <span class="s1">&#39;ranch&#39;</span><span class="p">:</span>
+      <span class="n">cost</span> <span class="o">+=</span> <span class="mf">0.50</span>
+   <span class="k">else</span><span class="p">:</span>
+      <span class="n">cost</span> <span class="o">+=</span> <span class="mf">0.25</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your order is a salad with &quot;</span> <span class="o">+</span> <span class="n">dressing</span> <span class="o">+</span> <span class="s2">&quot; dressing, and your total is $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cost</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+   <span class="n">cost</span> <span class="o">+=</span> <span class="mf">6.99</span>
+   <span class="n">cheese</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Would you like cheese, yes or no? &quot;</span><span class="p">)</span>
+   <span class="k">if</span> <span class="n">cheese</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">:</span>
+      <span class="n">cost</span> <span class="o">+=</span> <span class="mf">1.50</span>
+      <span class="n">lunch_selection</span> <span class="o">=</span> <span class="s2">&quot;burger with cheese&quot;</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your order is a &quot;</span> <span class="o">+</span> <span class="n">lunch_selection</span> <span class="o">+</span> <span class="s2">&quot;. Your total is $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cost</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Where would be the BEST place to ask about adding a drink? EXPLAIN your reasoning.</p>
+<p>There is more than one way to do this, and being able to explain your
+reasoning is important!</p>
+<p>One possibility is to put the question inside the nested statements, but
+after the cheese/dressing conditional. It makes sense to complete the food
+order before repeating it back to the customer with their total. To do this,
+we will need to add a second nested conditional inside the outer <code class="docutils literal notranslate"><span class="pre">if</span></code> and
+<code class="docutils literal notranslate"><span class="pre">else</span></code> blocks.</p>
+<p>Alternatively, put the drink question in its own conditional outside of
+the nested statements. This avoids having to keep a copy of the same code in
+both of the outer <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> blocks. However, we will need to
+move the <code class="docutils literal notranslate"><span class="pre">print</span></code> statements into the drink conditional.</p>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/booleans-and-conditionals/exercises.html#booleans-and-conditionals-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter04.html"><span aria-hidden="true">&larr;</span> Chapter 4: Data and Variables</a></li>
+        
+        
+        <li class="next"><a href="chapter06.html">Chapter 6: Repeating Things With Loops <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter05.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

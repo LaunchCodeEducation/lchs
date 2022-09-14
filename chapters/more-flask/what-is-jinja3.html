@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.2. Jinja3 Templates &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.3. Chapter Practice" href="chapter-setup.html" />
+    <link rel="prev" title="22.1. HTML Escaping" href="html-escaping.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.2. </span>Jinja3 Templates</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="jinja3-templates">
+<h1><span class="section-number">22.2. </span>Jinja3 Templates<a class="headerlink" href="#jinja3-templates" title="Permalink to this headline">¶</a></h1>
+<p>In the <a class="reference internal" href="../flask-intro/form-template.html#flask-templates"><span class="std std-ref">last chapter</span></a>, we learned how to render a
+<em>template</em> in the browser. We also practiced adding <a class="reference internal" href="../flask-intro/form-template.html#template-placeholders"><span class="std std-ref">placeholders</span></a>
+to the template and filling them with data sent from a Python function. At the
+time, we didn’t give these templates an official name.</p>
+<p id="index-0">The Flask framework uses the Jinja3 template language. Jinja3 lets us include
+both variables and a little programming logic inside of an HTML document. When
+the file is rendered by a browser, these placeholders get replaced with actual
+values.</p>
+<p>Most of a Jinja3 template consists of normal HTML. Sprinkled throughout the
+code, however, we will find the following:</p>
+<ol class="arabic simple">
+<li><strong>Double curly braces</strong>: <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> These surround a variable or an
+expression. When we create a template, sometimes we know where we want to
+place a specific item, but we don’t know its exact value. For example, if we
+want to list movies playing in our area, we can’t hard-code titles. We want
+our application to automatically fill in the list when the titles change.
+<code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">}}</span></code> serve as placeholders for future data.</li>
+<li><strong>Code statements</strong>: <code class="docutils literal notranslate"><span class="pre">{%</span>&#160; <span class="pre">%}</span></code> This syntax surrounds simple statements like
+loops or conditionals. Adding small bits of logic to our HTML helps us avoid
+some of the more tedious steps for building a webpage. We will learn more
+about this later in the chapter.</li>
+</ol>
+<div class="section" id="more-reasons-for-using-templates">
+<h2><span class="section-number">22.2.1. </span>More Reasons for Using Templates<a class="headerlink" href="#more-reasons-for-using-templates" title="Permalink to this headline">¶</a></h2>
+<p>As we saw last chapter, templates help organize our application. They let us
+keep our HTML code (the view) separate from the nuts-and-bolts processing tasks
+of our program (the logic). We can send data from our Python code to the
+template, and this changes the content that appears on the page. We can also
+collect information from the browser and process it by sending the data to
+specific functions.</p>
+<p>Jinja3 templates also provide strong, automatic <a class="reference internal" href="html-escaping.html#html-escaping"><span class="std std-ref">HTML escaping</span></a>.
+This saves us some work by automating part of the validation process.</p>
+<p>Finally, if we have content that needs to appear on multiple pages on our site,
+Jinja3 lets us build one template off of another. For example, maybe we have a
+menu bar or logo that we want to reuse. To keep our work DRY, it makes sense to
+reuse one set of code instead of putting identical statements in separate
+files.</p>
+<p>The idea is to keep common code in a single file, then link that file to
+others. This lets us <em>extend</em> a standard layout across different pages. We link
+a shared base structure to more specific code stored in different files.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="html-escaping.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.1. </span>HTML Escaping</a></li>
+        
+        
+        <li class="next"><a href="chapter-setup.html"><span class="section-number">22.3. </span>Chapter Practice <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/what-is-jinja3.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

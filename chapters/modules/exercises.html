@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11.8. Exercises: Modules &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11.9. Project: Collaborative Turtles Activity" href="project.html" />
+    <link rel="prev" title="11.7. More About main()" href="more-on-main.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">11. </span>Python Modules</a></li>
+    <li class="active"><span class="section-number">11.8. </span>Exercises: Modules</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="exercises-modules">
+<span id="modules-exercises"></span><h1><span class="section-number">11.8. </span>Exercises: Modules<a class="headerlink" href="#exercises-modules" title="Permalink to this headline">¶</a></h1>
+<p>Practice makes better. You will create a program that accomplishes the
+following:</p>
+<ol class="loweralpha simple">
+<li>Steps through a list of Yes/No questions.</li>
+<li>Calls functions based on the user’s responses.</li>
+</ol>
+<p>Rather than coding all of the functions from scratch, you are going to use
+existing modules to help assemble your project.</p>
+<div class="admonition-note admonition" id="chp11startercode">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If your teacher added you to a <a class="reference internal" href="../../appendices/classrooms/trinket-classroom.html#trinket-course-assignments"><span class="std std-ref">Trinket course</span></a>,
+complete the exercises there.</p>
+<p>Otherwise, use the links below to code in your own free account.</p>
+<ol class="last arabic simple">
+<li>Open this <a class="reference external" href="https://trinket.io/python/a579c40c9f" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and <em>Remix</em>
+before getting started.</li>
+<li>Open this <a class="reference external" href="https://repl.it/&#64;launchcode/LCHS-Modules-Chapter-Exercises" target="_blank">repl<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+and <em>Fork</em> before getting started.</li>
+</ol>
+</div>
+<div class="section" id="import-module-code">
+<span id="chp11partimc"></span><h2><span class="section-number">11.8.1. </span>Import Module Code<a class="headerlink" href="#import-module-code" title="Permalink to this headline">¶</a></h2>
+<p>Lucky you! Most of the functions you need are in the <code class="docutils literal notranslate"><span class="pre">averages.py</span></code> and
+<code class="docutils literal notranslate"><span class="pre">display.py</span></code> files.</p>
+<ol class="arabic simple">
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add a statement to import all functions from the
+<code class="docutils literal notranslate"><span class="pre">averages</span></code> module.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add code to import ONLY the <code class="docutils literal notranslate"><span class="pre">print_all</span></code> function from
+the <code class="docutils literal notranslate"><span class="pre">display</span></code> module.</li>
+<li>Use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to rename the imported <code class="docutils literal notranslate"><span class="pre">print_all</span></code> function to
+<code class="docutils literal notranslate"><span class="pre">display_results</span></code>.</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/chapter11.html#chp11part1"><span class="std std-ref">Check your solutions</span></a>.</p>
+</div>
+<div class="section" id="finish-coding-a-new-module">
+<span id="chp11partfcanm"></span><h2><span class="section-number">11.8.2. </span>Finish Coding A New Module<a class="headerlink" href="#finish-coding-a-new-module" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">random_select.py</span></code> requires your attention.</p>
+<ol class="arabic simple">
+<li>Add code to complete the <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> function. It should take a
+list as an argument and then return a
+<a class="reference internal" href="random-module.html#random-collection-item"><span class="std std-ref">randomly selected element</span></a> from that list.</li>
+<li>Import the <code class="docutils literal notranslate"><span class="pre">random_select</span></code> module into the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> program.</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you add any loose statements in the <code class="docutils literal notranslate"><span class="pre">random_select.py</span></code> file, remember
+to place them into a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function.</p>
+</div>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/chapter11.html#chp11part2"><span class="std std-ref">Check your solutions</span></a>.</p>
+</div>
+<div class="section" id="finish-the-project">
+<span id="chp11partftp"></span><h2><span class="section-number">11.8.3. </span>Finish the Project<a class="headerlink" href="#finish-the-project" title="Permalink to this headline">¶</a></h2>
+<p>Now complete the project code.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The line references given below assume that you added no blank lines during
+your work in the previous sections. If you did, do not worry. The comments
+in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will still show you where to add code.</p>
+</div>
+<ol class="arabic simple">
+<li><strong>Line 19</strong>: Call <code class="docutils literal notranslate"><span class="pre">display_results</span></code> to print all of the tests and student
+scores. Be sure to pass in the correct arguments.</li>
+<li><strong>Line 23</strong>: Using dot notation, call <code class="docutils literal notranslate"><span class="pre">average_for_test</span></code> to print the
+class average for each test. Use <code class="docutils literal notranslate"><span class="pre">title_index</span></code> and <code class="docutils literal notranslate"><span class="pre">scores</span></code> as
+arguments.</li>
+<li><strong>Line 27</strong>: Call <code class="docutils literal notranslate"><span class="pre">average_for_student</span></code> (with the proper arguments) to
+print each astronaut’s average score.</li>
+<li><strong>Line 30</strong>: Call <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> to pick the next spacewalker from the
+<code class="docutils literal notranslate"><span class="pre">astronauts</span></code> list.</li>
+</ol>
+<p><a class="reference internal" href="../../appendices/exercise-solutions/chapter11.html#chp11part3"><span class="std std-ref">Check your solutions</span></a>.</p>
+</div>
+<div class="section" id="sanity-check">
+<h2><span class="section-number">11.8.4. </span>Sanity check!<a class="headerlink" href="#sanity-check" title="Permalink to this headline">¶</a></h2>
+<p>Properly done, your output should look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Would you like to display all scores? Y/N: y
+Name        Math      Fitness   Coding    Nav       Communication
+Fox         95        86        83        81        76
+Turtle      79        71        79        87        72
+Cat         94        87        87        83        82
+Hippo       99        77        91        79        80
+Dog         96        95        99        82        70
+
+Would you like to average the scores for each test? Y/N: y
+Math test average = 92.6%.
+Fitness test average = 83.2%.
+Coding test average = 87.8%.
+Nav test average = 82.4%.
+Communication test average = 76%.
+
+Would you like to average the scores for each astronaut? Y/N: y
+Fox&#39;s test average = 84.2%.
+Turtle&#39;s test average = 77.6%.
+Cat&#39;s test average = 86.6%.
+Hippo&#39;s test average = 85.2%.
+Dog&#39;s test average = 88.4%.
+
+Would you like to select the next spacewalker? Y/N: y
+Turtle is the next spacewalker.
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In your output, the spacings for the test score columns will probably NOT
+line up perfectly. <em>This is OK</em>.</p>
+<p class="last">When we learn how to display output in a window <em>other</em> than the console,
+we will worry about making columns look nice.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="more-on-main.html"><span aria-hidden="true">&larr;</span> <span class="section-number">11.7. </span>More About <code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+        
+        
+        <li class="next"><a href="project.html"><span class="section-number">11.9. </span>Project: Collaborative Turtles Activity <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/modules/exercises.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

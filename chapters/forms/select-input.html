@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20.6. Select Inputs &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="20.7. More Input Attributes" href="input-extras.html" />
+    <link rel="prev" title="20.5. Checkboxes and Radio Buttons" href="check-radio-input.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">20. </span>User Input with Forms</a></li>
+    <li class="active"><span class="section-number">20.6. </span>Select Inputs</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="select-inputs">
+<h1><span class="section-number">20.6. </span>Select Inputs<a class="headerlink" href="#select-inputs" title="Permalink to this headline">¶</a></h1>
+<p>A <em>select</em> input creates a clickable menu that gives the user a drop-down list
+of options. While it is possible to make the input accept more than one choice,
+it’s usually best to stick with allowing just one item.</p>
+<p>The select input combines two HTML tags: <code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code>. The
+general syntax is:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>First menu option.<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">&gt;</span>Second menu option.<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="c">&lt;!-- etc. --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>When the form gets submitted, the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute in the <code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code> tag
+provides the key. The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute from the chosen <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> is
+assigned to that key.</p>
+<p>A select input works very much like a group of radio buttons.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s use a drop-down menu to select our color choice.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span> Red<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">&gt;</span> Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">&gt;</span> Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Send to Parrot<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<div class="last figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/select-parrot.png"><img alt="The 'Red' menu option is selected. This assigns the value 'red' to the 'color' key." src="../../_images/select-parrot.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">The value of the selected <code class="docutils literal notranslate"><span class="pre">option</span></code> element is assigned to the <code class="docutils literal notranslate"><span class="pre">color</span></code> key.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="setting-a-default-option">
+<h2><span class="section-number">20.6.1. </span>Setting a Default <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code><a class="headerlink" href="#setting-a-default-option" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">select</span></code> input always returns a value when a form is submitted, even if the
+user never clicks on the menu. By default, <code class="docutils literal notranslate"><span class="pre">select</span></code> displays the first
+<code class="docutils literal notranslate"><span class="pre">option</span></code> element as the current choice.</p>
+<p>Just like a radio button group, we should ALWAYS offer the user a <em>No Choice</em>
+option. This can be an empty menu slot or some form of non-selectable title.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Here are two examples of <em>no choice</em> menu options. Each one is the first
+<code class="docutils literal notranslate"><span class="pre">option</span></code> element, and the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is assigned the empty
+string.</p>
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Example 1: Empty Top Slot --&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">selected</span><span class="p">&gt;&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span> Red<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">&gt;</span> Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">&gt;</span> Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Example 2: Title --&gt;</span>
+<span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;color&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">disabled</span> <span class="na">selected</span><span class="p">&gt;</span>Choose a color:<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">&gt;</span> Red<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">&gt;</span> Green<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">&gt;</span> Blue<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<table border="1" class="docutils align-default">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Example 1</th>
+<th class="head">Example 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last"><select name="color"> Example #1
+   <option value="" selected></option>
+   <option value="red"> Red</option>
+   <option value="green"> Green</option>
+   <option value="blue"> Blue</option>
+</select></div></td>
+<td><div class="first last"><select name="color">
+   <option value="" disabled selected>Choose a color:</option>
+   <option value="red"> Red</option>
+   <option value="green"> Green</option>
+   <option value="blue"> Blue</option>
+</select></div></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">selected</span></code> attribute sets an option as the default choice, and it will
+be displayed when the page first loads.</p>
+<p class="last">In Example 1, the blank menu slot can be chosen as an option. The
+<code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute in Example 2 (line 11) means that once the user picks
+a different option, the default title cannot be re-selected.</p>
+</div>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Return to your local <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form.</p>
+<ol class="last arabic simple">
+<li>Save and commit the work in the <code class="docutils literal notranslate"><span class="pre">radio</span></code> branch.</li>
+<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and checkout a new branch called <code class="docutils literal notranslate"><span class="pre">select</span></code>.</li>
+<li>In the new branch, modify your form to use a select input with at least
+three options.</li>
+<li>What happens if you submit the form without clicking the select menu?</li>
+<li>Experiment by placing the <code class="docutils literal notranslate"><span class="pre">selected</span></code> and <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attributes inside
+different <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</li>
+<li>Try using the <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute in place of <code class="docutils literal notranslate"><span class="pre">disabled</span></code>. What does it
+do to the input?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="when-to-use-what">
+<h2><span class="section-number">20.6.2. </span>When to Use What<a class="headerlink" href="#when-to-use-what" title="Permalink to this headline">¶</a></h2>
+<p>Checkboxes, radio buttons, and select drop-down menus all behave in a similar
+way. However, they are NOT always interchangeable. When should we use each
+input type?</p>
+<p>Here are a few guidelines:</p>
+<ol class="arabic simple">
+<li>If the user needs to select multiple options, or be able to unselect items,
+go with checkboxes.</li>
+<li>If the user must make a single choice from a long list, radio buttons work
+better than a drop-down menu.</li>
+<li>Top-down lists are easier to read. Whenever possible, arrange a set of
+choices vertically instead of side-by-side.</li>
+</ol>
+<p><a class="reference external" href="https://community.appway.com/screen/kb/article/checkboxes-radio-buttons-dropdowns-when-to-use-what-1482810890174" target="_blank">This article<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+also gives a nice summary of when to use the different input types.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">20.6.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>For a select input, what determines the key/value pair when the form is
+submitted?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> and <code class="pre">value</code> attributes inside the <code class="pre">select</code> tag.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> and <code class="pre">value</code> attributes inside the <code class="pre">option</code> tag.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The <code class="pre">name</code> from the <code class="pre">select</code> tag and the <code class="pre">value</code> from <code class="pre">option</code>.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> from the <code class="pre">option</code> tag and the <code class="pre">value</code> from <code class="pre">select</code>.</li>
+</ol>
+<p id="Q1"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="check-radio-input.html"><span aria-hidden="true">&larr;</span> <span class="section-number">20.5. </span>Checkboxes and Radio Buttons</a></li>
+        
+        
+        <li class="next"><a href="input-extras.html"><span class="section-number">20.7. </span>More Input Attributes <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/forms/select-input.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

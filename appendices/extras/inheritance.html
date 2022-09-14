@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance (Part 1) &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Inheritance (Part 2)" href="inheritance-cont.html" />
+    <link rel="prev" title="Optional Course Content" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Optional Course Content</a></li>
+    <li class="active">Inheritance (Part 1)</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="inheritance-part-1">
+<span id="class-inheritance"></span><h1>Inheritance (Part 1)<a class="headerlink" href="#inheritance-part-1" title="Permalink to this headline">¶</a></h1>
+<p>Throughout this textbook, we try to follow the simple goal of <em>Don’t Repeat
+Yourself</em> (DRY). Loops, functions, modules, objects, etc. allow us to create
+and then reuse blocks of code. Classes are no different.</p>
+<p>Imagine we have two objects that are very similar but not <em>quite</em> the same. One
+example would be an electric car compared to one that runs on gasoline. Both
+are cars, and they share a number of properties and behaviors. However, there
+are definite differences between the two.</p>
+<p>We could code separate <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> and <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> classes, but notice how each
+one repeats some of the same code:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EVCar</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">battery_size</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">battery_size</span> <span class="o">=</span> <span class="n">battery_size</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">charge_level</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Begin with 100% charge.</span>
+
+   <span class="k">def</span> <span class="nf">honk_horn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s2">&quot;Beep!&quot;</span>
+
+   <span class="k">def</span> <span class="nf">recharge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Code for recharging the battery.</span>
+
+   <span class="k">def</span> <span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Code for decreasing charge_level after moving.</span>
+
+<span class="k">class</span> <span class="nc">GasCar</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tank_size</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">tank_size</span> <span class="o">=</span> <span class="n">tank_size</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">fuel_level</span> <span class="o">=</span> <span class="n">tank_size</span>   <span class="c1"># Begin with a full tank.</span>
+
+   <span class="k">def</span> <span class="nf">honk_horn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s2">&quot;Beep!&quot;</span>
+
+   <span class="k">def</span> <span class="nf">refuel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Code for refilling the gas tank.</span>
+
+   <span class="k">def</span> <span class="nf">drive</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Code for decreasing fuel_level after moving.</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p id="index-0"><strong>Inheritance</strong> refers to one class taking the same properties and methods from
+a different one. In the example above, the two classes share the <code class="docutils literal notranslate"><span class="pre">make</span></code>,
+<code class="docutils literal notranslate"><span class="pre">model</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, and <code class="docutils literal notranslate"><span class="pre">color</span></code> property names. The classes also share the
+same code for the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code> method.</p>
+<p>Instead of repeating statements, we define a <strong>parent class</strong> to hold all of
+the shared code. Next, we add <strong>child classes</strong>, which will <em>inherit</em> the
+shared code. Finally, we add new properties and methods to the child classes.
+This makes them distinct from each other, but they are both related to the same
+parent.</p>
+<p>Let’s work through an example.</p>
+<div class="section" id="define-a-parent-class">
+<h2>Define a Parent Class<a class="headerlink" href="#define-a-parent-class" title="Permalink to this headline">¶</a></h2>
+<p>First, we want to define the parent class called <code class="docutils literal notranslate"><span class="pre">Car</span></code>. It holds the
+properties and one method that <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> and <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> share.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+   <span class="k">def</span> <span class="nf">honk_horn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s2">&quot;Beep!&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Car</span></code> class is fully functional, and we can use it to create multiple
+<code class="docutils literal notranslate"><span class="pre">Car</span></code> objects with different makes, models, years, and colors.</p>
+</div>
+<div class="section" id="define-a-child-class">
+<h2>Define a Child Class<a class="headerlink" href="#define-a-child-class" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">Now let’s add a child class (also called a <strong>subclass</strong>) that inherits the code
+contained in <code class="docutils literal notranslate"><span class="pre">Car</span></code>.</p>
+<p>The general syntax to define a child class is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ChildClassName</span><span class="p">(</span><span class="n">ParentClassName</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>By placing <code class="docutils literal notranslate"><span class="pre">ParentClassName</span></code> inside the parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>, we link
+<code class="docutils literal notranslate"><span class="pre">ChildClassName</span></code> to all of the code the parent contains.</p>
+<p>Let’s start with <code class="docutils literal notranslate"><span class="pre">EVCar</span></code>, and for now we will only add one new method:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>The following program creates one <code class="docutils literal notranslate"><span class="pre">Car</span></code> object and one <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> object.
+Notice that the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> class does not include an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method.</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+   <span class="k">def</span> <span class="nf">honk_horn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s2">&quot;Beep!&quot;</span>
+
+<span class="k">class</span> <span class="nc">EVCar</span><span class="p">(</span><span class="n">Car</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">recharge</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="c1"># Code for recharging the battery.</span>
+      <span class="k">return</span> <span class="s2">&quot;Fully charged!&quot;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+   <span class="n">my_car</span> <span class="o">=</span> <span class="n">Car</span><span class="p">(</span><span class="s1">&#39;Saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;SW-1&#39;</span><span class="p">,</span> <span class="mi">1999</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+   <span class="n">dream_car</span> <span class="o">=</span> <span class="n">EVCar</span><span class="p">(</span><span class="s1">&#39;Tesla&#39;</span><span class="p">,</span> <span class="s1">&#39;Model S&#39;</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">my_car</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">dream_car</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_car</span><span class="o">.</span><span class="n">make</span><span class="p">,</span> <span class="n">my_car</span><span class="o">.</span><span class="n">honk_horn</span><span class="p">())</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">dream_car</span><span class="o">.</span><span class="n">make</span><span class="p">,</span> <span class="n">dream_car</span><span class="o">.</span><span class="n">honk_horn</span><span class="p">())</span>
+
+   <span class="nb">print</span><span class="p">(</span><span class="n">dream_car</span><span class="o">.</span><span class="n">recharge</span><span class="p">())</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_car</span><span class="o">.</span><span class="n">recharge</span><span class="p">())</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Car&#39;&gt; &lt;class &#39;__main__.EVCar&#39;&gt;
+Saturn Beep!
+Tesla Beep!
+Fully charged!
+File &quot;main.py&quot;, line 25, in main
+   print(my_car.recharge())
+AttributeError: &#39;Car&#39; object has no attribute &#39;recharge&#39;
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple">
+<li>Lines 17 and 18 call the two classes and create the <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">EVCar</span></code>
+objects. Note that both statements include the same number and types of
+arguments.</li>
+<li>Line 20 shows us that <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> are different data types.</li>
+<li>Line 21 prints the <code class="docutils literal notranslate"><span class="pre">make</span></code> property and calls the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code> method for
+the <code class="docutils literal notranslate"><span class="pre">Car</span></code> object.</li>
+<li>Line 22 shows us that even without its own <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, properties
+were assigned to the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> object. <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> can also call the
+<code class="docutils literal notranslate"><span class="pre">Car</span></code> method <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>!</li>
+<li>Lines 24 and 25 show us that <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> can call the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> method
+<code class="docutils literal notranslate"><span class="pre">recharge</span></code>, but <code class="docutils literal notranslate"><span class="pre">my_car</span></code> cannot.</li>
+</ol>
+<p>This is what inheritance does! It allows a subclass to use the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and
+other methods defined in the parent class.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In the editor below:</p>
+<ol class="arabic simple">
+<li>Add the <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> child class to the program. It should inherit from the
+<code class="docutils literal notranslate"><span class="pre">Car</span></code> parent class.</li>
+<li>Add a simple <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method that returns the string <code class="docutils literal notranslate"><span class="pre">'Tank</span> <span class="pre">full'</span></code>.</li>
+<li>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, test your new class:<ol class="loweralpha">
+<li>Create a <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> object and print its data type.</li>
+<li>Print one or more of its properties, and call the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>
+method.</li>
+<li>Call the <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method and print the returned string.</li>
+<li>Verify that the <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> objects cannot call the
+<code class="docutils literal notranslate"><span class="pre">refuel()</span></code> method.</li>
+</ol>
+</li>
+</ol>
+<div class="last"><iframe src="https://trinket.io/embed/python/d77c290132" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+</div>
+<div class="section" id="similar-but-different">
+<h2>Similar, but Different<a class="headerlink" href="#similar-but-different" title="Permalink to this headline">¶</a></h2>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> and <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> objects need to include properties that
+are NOT defined in the <code class="docutils literal notranslate"><span class="pre">Car</span></code> class: <code class="docutils literal notranslate"><span class="pre">battery_size</span></code>, <code class="docutils literal notranslate"><span class="pre">charge_level</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tank_size</span></code>, and <code class="docutils literal notranslate"><span class="pre">fuel_level</span></code>.</p>
+<p>On the next page, we will learn how to add new properties to a child class.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="index.html"><span aria-hidden="true">&larr;</span> Optional Course Content</a></li>
+        
+        
+        <li class="next"><a href="inheritance-cont.html">Inheritance (Part 2) <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/extras/inheritance.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

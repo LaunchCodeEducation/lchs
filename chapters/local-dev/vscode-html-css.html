@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17.7. Local HTML/CSS Files &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="17.8. Exercises: Local Development" href="exercises.html" />
+    <link rel="prev" title="17.6. Importing Our Own Modules" href="vscode-custom-modules.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">17. </span>Local Development</a></li>
+    <li class="active"><span class="section-number">17.7. </span>Local HTML/CSS Files</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="local-html-css-files">
+<h1><span class="section-number">17.7. </span>Local HTML/CSS Files<a class="headerlink" href="#local-html-css-files" title="Permalink to this headline">¶</a></h1>
+<p>Visual Studio Code recognizes many different programming languages. We can use
+the application for our Python projects and our HTML/CSS work.</p>
+<p>Let’s build a simple webpage just like we did in the <a class="reference internal" href="../html/index.html#html-chapter"><span class="std std-ref">HTML</span></a>
+and <a class="reference internal" href="../css/index.html#css-index"><span class="std std-ref">CSS</span></a> chapters. However, this time we will do it locally.</p>
+<div class="section" id="hello-web">
+<h2><span class="section-number">17.7.1. </span>Hello, Web<a class="headerlink" href="#hello-web" title="Permalink to this headline">¶</a></h2>
+<p>Add a new directory to <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> called <code class="docutils literal notranslate"><span class="pre">hello_web</span></code>. Next, create
+two files in the directory called <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
+<p>Our file tree should look something like this:</p>
+<div class="figure align-default" id="id1">
+<img alt="File tree for the hello_web directory. It contains the index.html and style.css files." src="../../_images/html-file-tree.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">hello_web</span></code> directory tree.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notice that VS Code displays different symbols next to the files. It uses the
+<code class="docutils literal notranslate"><span class="pre">.html</span></code>, <code class="docutils literal notranslate"><span class="pre">.css</span></code>, and <code class="docutils literal notranslate"><span class="pre">.py</span></code> extensions to identify the programming
+language they contain.</p>
+<p>Paste this code into <code class="docutils literal notranslate"><span class="pre">index.html</span></code>:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello, Web!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, Local Webpage!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Even though the code only contains a single <code class="docutils literal notranslate"><span class="pre">h1</span></code> element inside the
+<code class="docutils literal notranslate"><span class="pre">&lt;body&gt;</span></code> tags, it is still a fully functional HTML file. Let’s see what it
+looks like in a browser!</p>
+</div>
+<div class="section" id="viewing-local-files-in-a-browser">
+<span id="view-local-html"></span><h2><span class="section-number">17.7.2. </span>Viewing Local Files in a Browser<a class="headerlink" href="#viewing-local-files-in-a-browser" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to view our local HTML file in a browser.</p>
+<ol class="arabic">
+<li><p class="first"><strong>Option 1:</strong> Open a web browser. Click on <em>File –&gt; Open File</em> from the
+menu options. In the box that pops up, navigate to the <code class="docutils literal notranslate"><span class="pre">.html</span></code> file we
+want. Click <em>Open</em>.</p>
+<div class="figure align-default">
+<img alt="File menu and dialog box for opening a local file in a browser." src="../../_images/open-html-file.png" />
+</div>
+</li>
+<li><p class="first"><strong>Option 2:</strong> In VS Code, right-click on the tab of the file we want. Choose
+the <em>Copy Path</em> option. Next, open a web browser and paste the path into the
+address bar.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/copy-path.png"><img alt="Menu options that appear after right-clicking a file tab in VS Code. &quot;Copy Path&quot; is highlighted." src="../../_images/copy-path.png" style="width: 30%;" /></a>
+</div>
+</li>
+</ol>
+<p>Ta da! Our webpage appears. Notice the path in the address bar. It looks very
+similar to the result we would see from the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command in the terminal.
+The copied path changes depending on the file chosen.</p>
+<div class="figure align-default">
+<img alt="&quot;Hello, Local Web!&quot; heading, with the address bar displayed." src="../../_images/hello-web.png" />
+</div>
+<div class="section" id="add-more-elements">
+<h3><span class="section-number">17.7.2.1. </span>Add More Elements<a class="headerlink" href="#add-more-elements" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Return to VS Code and add a few more elements to the <code class="docutils literal notranslate"><span class="pre">index.html</span></code>
+document. Be sure to use some of the <a class="reference internal" href="../html/semantic-html.html#semantic-tag-list"><span class="std std-ref">semantic HTML</span></a>
+we learned earlier.</li>
+<li>Save your work.</li>
+<li>Go back into the browser and refresh the tab for your HTML file. You should
+see the results of your changes.</li>
+</ol>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>VS Code has a nice feature to let us know if we have saved our work
+recently! In the editor tabs, if we see a solid dot (<code class="docutils literal notranslate"><span class="pre">•</span></code>) next to a
+filename, that means we have unsaved changes in our code. If we see an
+<code class="docutils literal notranslate"><span class="pre">X</span></code> instead, then all of the code in the file has been saved.</p>
+<div class="last figure align-default">
+<a class="reference internal image-reference" href="../../_images/save-dot.png"><img alt="Two tabs, one marked with a dot to indicate unsaved changes." src="../../_images/save-dot.png" style="width: 70%;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="for-your-eyes-only">
+<h3><span class="section-number">17.7.2.2. </span>For Your Eyes Only<a class="headerlink" href="#for-your-eyes-only" title="Permalink to this headline">¶</a></h3>
+<p>Only you can see your local webpage. Looking at the address bar tells us this.
+Instead of <code class="docutils literal notranslate"><span class="pre">https://www.etc.</span></code>, we see the <code class="docutils literal notranslate"><span class="pre">file://</span></code> prefix. This indicates
+that the browser opened a file on your personal machine. No one else in the
+world can view your page unless they are looking over your shoulder right now
+(or hacked into your device).</p>
+<p>Much later in this course, we will learn how to <em>deploy</em> a website and make it
+visible to anyone who accesses the web.</p>
+</div>
+</div>
+<div class="section" id="adding-css">
+<h2><span class="section-number">17.7.3. </span>Adding CSS<a class="headerlink" href="#adding-css" title="Permalink to this headline">¶</a></h2>
+<p>Since the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code> files are in the same directory, we
+can link them together by adding one statement to our <code class="docutils literal notranslate"><span class="pre">head</span></code> element:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello, Web!<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;style.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 7 uses the identical format to what we learned in the
+<a class="reference internal" href="../css/css-locations.html#link-external-css"><span class="std std-ref">Linking CSS to HTML</span></a> section.</p>
+<div class="section" id="try-it">
+<h3><span class="section-number">17.7.3.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Paste this code into the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span>h1 {
+   color: purple;
+   text-align: center;
+   text-decoration: underline overline wavy;
+   font-family: impact, helvetica;
+}
+
+section {
+   background-color: lightgreen;
+   text-align: center;
+   font-size: 36px;
+   border: solid 2px;
+   width: 50%;
+}
+
+.shadow {
+   color: green;
+   text-shadow: 3px 3px 4px blue;
+}
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Save your work in both the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code> files. Return to
+the browser and refresh the tab. Properly done, the <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Local</span> <span class="pre">Webpage!</span></code>
+heading changed appearance. Also, if you added any <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> elements on
+the page, they will also look different.</p>
+<div class="figure align-default" id="id2">
+<img alt="The local webpage with CSS style rules applied." src="../../_images/styled-local-page.png" />
+<p class="caption"><span class="caption-text">A styled local webpage.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">Notice that the CSS code defines a class called <code class="docutils literal notranslate"><span class="pre">shadow</span></code>. Add this class
+inside one of your HTML tags and save your work. Refresh the page in your
+browser to see the result.</p>
+</li>
+<li><p class="first">Add other style rules to the CSS file to change the appearance of other
+elements in your webpage. Be sure to practice using
+<a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">element, class, and id selectors</span></a>.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="style-css-in-a-different-directory">
+<h3><span class="section-number">17.7.3.2. </span><code class="docutils literal notranslate"><span class="pre">style.css</span></code> in a Different Directory<a class="headerlink" href="#style-css-in-a-different-directory" title="Permalink to this headline">¶</a></h3>
+<p>If the CSS file is located in a different directory from the HTML page that
+uses it, we need to add the proper path inside the <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> tag. Let’s take a
+look at three possible cases:</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="figure align-default" id="id3">
+<img alt="File tree for hello_web showing style.css in a subfolder." src="../../_images/css-level-down.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">style.css</span></code> is inside the subfolder <code class="docutils literal notranslate"><span class="pre">the_styles</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>When the stylesheet is one level down from our HTML file, update the
+<code class="docutils literal notranslate"><span class="pre">href</span></code> attribute by adding a relative path that points to the CSS file.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./the_styles/style.css&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="last">The path <code class="docutils literal notranslate"><span class="pre">./the_styles/style.css</span></code> tells VS Code, <em>From the current
+directory, find the folder called the_styles. Move into that folder and find
+the file called style.css</em>.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="figure align-default" id="id4">
+<img alt="File tree for local_practice showing style.css one level above index.html." src="../../_images/css-level-up.png" />
+<p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">style.css</span></code> is inside the parent directory of <code class="docutils literal notranslate"><span class="pre">hello_web</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>When the stylesheet is one level up from our HTML file, use the <code class="docutils literal notranslate"><span class="pre">..</span></code>
+shortcut in the relative path.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;../style.css&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="last">The path <code class="docutils literal notranslate"><span class="pre">../style.css</span></code> tells VS Code, <em>From the current directory, move
+up one level into the parent folder. Find the file called style.css</em>.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>If we pull a stylesheet from a website (like <a class="reference external" href="https://getbootstrap.com/docs/4.5/getting-started/introduction/" target="_blank">Bootstrap<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>),
+use the web address for the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://websiteURL&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p class="last">Notice that the external link does not include the <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute.</p>
+</div>
+<p>Finally, we can always use the full path to the stylesheet. Right click on the
+<code class="docutils literal notranslate"><span class="pre">style.css</span></code> tab and choose the <em>Copy Path</em> option. Paste the path inside the
+quotes for the <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute.</p>
+</div>
+</div>
+<div class="section" id="local-project">
+<h2><span class="section-number">17.7.4. </span>Local Project<a class="headerlink" href="#local-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>In the <a class="reference internal" href="../../assignments/html-me-something.html#html-me-something"><span class="std std-ref">HTML Me Something</span></a> assignment, you built
+and styled your own webpage in repl.it or Trinket. Login to your account now
+and open up that project.</li>
+<li>In VS Code, create a new directory called <code class="docutils literal notranslate"><span class="pre">html_me</span></code>.</li>
+<li>Inside this directory, create an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file.</li>
+<li>Copy your HTML code from your repl.it/Trinket project and paste it into VS
+Code.</li>
+<li>Repeat this copy/paste process for the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file.</li>
+<li>If your repl.it/Trinket project contains any other files (like images, gifs,
+etc.), drag and drop copies of these files into the <code class="docutils literal notranslate"><span class="pre">html_me</span></code> directory.</li>
+<li>Open your new <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in a browser. Properly done, you should
+see your awesome webpage! However, now you have it saved on your personal
+device.</li>
+</ol>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">17.7.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Visual Studio Code automatically saves our work.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Visual Studio Code works with other languages besides Python, HTML, and CSS.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
+</ol>
+<p id="Q2"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>After making a change in our HTML or CSS code, how do we see those updates
+in a web browser?</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Refresh the tab in the browser.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Save our work in VS Code.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Save our work in VS Code, then refresh the tab in the browser.</li>
+   <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Refresh the tab in the browser, then save our work in VS Code.</li>
+</ol>
+<p id="Q3"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="vscode-custom-modules.html"><span aria-hidden="true">&larr;</span> <span class="section-number">17.6. </span>Importing Our Own Modules</a></li>
+        
+        
+        <li class="next"><a href="exercises.html"><span class="section-number">17.8. </span>Exercises: Local Development <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/local-dev/vscode-html-css.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

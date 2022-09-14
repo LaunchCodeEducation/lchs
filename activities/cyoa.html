@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity #2: Adventure Time! &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Activity #3: Making Diamonds" href="making-diamonds.html" />
+    <link rel="prev" title="Activity #1: User Input" href="user-input.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../index.html"><span><img src="../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../index.html">Contents</a></li>
+    <li class="active">Activity #2: Adventure Time!</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="activity-2-adventure-time">
+<h1>Activity #2: Adventure Time!<a class="headerlink" href="#activity-2-adventure-time" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">For best results, complete the <a class="reference internal" href="../chapters/booleans-and-conditionals/index.html#conditionals"><span class="std std-ref">Conditionals chapter</span></a>
+before starting this activity.</p>
+</div>
+<p>While playing a game or reading a story, you may have needed to make a choice.
+Your decision affects how the rest of the story unfolds. What should you do?
+This is an example of the <em>Choose Your Own Adventure</em> (CYOA) idea.</p>
+<p>At a certain point in the text, you must make a choice about what a character
+does next - such as opening a door or walking down a hallway. The story then
+follows a different path based on your choice.</p>
+<div class="figure align-default" id="id1">
+<img alt="Showing Leslie Jones (as Patty Tolan in Ghostbusters) outside of a mannequin closet." src="../_images/not-going-in-there.png" />
+<p class="caption"><span class="caption-text">Choices have consequences!</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>The more choices the story contains, the more events and endings become
+possible. For example:</p>
+<ol class="arabic simple">
+<li><em>You are standing in an open field west of a white house, with a boarded
+front door. There is a small mailbox here.</em><ul>
+<li>Do you open the mailbox, walk around the house, try the front door, or
+just walk away? (4 choices, 4 paths to follow)</li>
+</ul>
+</li>
+<li><em>You are standing outside of an open closet full of life-size puppets.</em><ul>
+<li>Do you close the closet door, dance with the puppets, or run screaming
+down the hall? (3 choices, 3 possible outcomes)</li>
+</ul>
+</li>
+</ol>
+<p><strong>Decisions, Decisions</strong>:</p>
+<p>In this activity, you and your team will build a short CYOA story. When run,
+your program offers the user a series of choices, and their responses to the
+questions produce different results.</p>
+<div class="section" id="choice-trees">
+<h2>Choice Trees<a class="headerlink" href="#choice-trees" title="Permalink to this headline">¶</a></h2>
+<p>A simple <strong>binary choice</strong> is a decision that leads to two separate results.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/binary-choice.png"><img alt="A binary tree, showing two possible results from a single decision." src="../_images/binary-choice.png" style="width: 30%;" /></a>
+</div>
+<p>What if we add a second choice in place of each end point? Doing so increases
+the number of possible endings. Here is a diagram for asking two questions:</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/nested-choices.png"><img alt="Showing 4 possible endings from 2 sequential choices." src="../_images/nested-choices.png" style="width: 30%;" /></a>
+</div>
+<p id="index-0">Adding more questions increases the detail and complexity of the story. To help
+keep track of all the options, draw a <strong>choice tree</strong>, which is a diagram
+showing the paths that lead to each ending.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../_images/large-choice-tree.png"><img alt="Showing a choice tree that leads to 9 possible endings." src="../_images/large-choice-tree.png" style="width: 40%;" /></a>
+</div>
+</div>
+<div class="section" id="project-requirements">
+<h2>Project Requirements<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The adventure you design must be school appropriate, and it should ask the
+user to make <em>at least</em> 2 decisions, which lead to <em>at least</em> 4 endings.</li>
+<li>Your team can add more choices, but the maximum limit is 8 endings.</li>
+<li>Begin your CYOA with a short backstory or introduction, and then ask the
+users to make their decisions.</li>
+<li>Each ending should be distinct from the others! Having ALL choices lead to
+the same result is weak and boring.</li>
+</ol>
+</div>
+<div class="section" id="make-a-plan">
+<h2>Make a Plan<a class="headerlink" href="#make-a-plan" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Discuss with your team different ideas and/or themes for your story.</li>
+<li>Decide on your favorite idea, then write down some possible choices and
+consequences that a character in the story could face. If you think of too
+many, select the ones that work best as <em>binary</em> decisions.</li>
+<li>Draw a <em>choice tree</em> to map out the questions, paths, and endings for your
+story.</li>
+<li>Write the text for the backstory/introduction.</li>
+<li>In a code editor, use comments to map out your CYOA program.<ol class="loweralpha">
+<li>Now is NOT the time to actually code anything. # Comments ONLY.</li>
+<li>Use your choice tree to help organize the comments for your story.</li>
+<li>For 2 questions and 4 endings, your program should need 10 - 15 comments.</li>
+</ol>
+</li>
+</ol>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Intro text...</span>
+
+<span class="c1"># First choice: Upstairs or Downstairs?</span>
+
+<span class="c1"># User chooses Upstairs</span>
+
+   <span class="c1"># Upstairs description...</span>
+
+   <span class="c1"># Second choice: Hide or Open Secret Door?</span>
+
+      <span class="c1"># ...</span>
+
+<span class="c1"># User chooses Downstairs</span>
+
+   <span class="c1"># etc.</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="now-code">
+<h2>Now Code<a class="headerlink" href="#now-code" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements are the perfect tool to set up binary decisions, and
+<em>nesting</em> the conditionals creates the backbone for your CYOA story. Refer to
+your comments and choice tree as you code your adventure.</p>
+<ol class="arabic simple">
+<li>Use a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to display the introduction/backstory. Follow this
+with an <code class="docutils literal notranslate"><span class="pre">input</span></code> statement to prompt the user to make their first choice.</li>
+<li>Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement to analyze the user’s answer and move on to the
+selected part of the story.</li>
+<li>Now what?</li>
+</ol>
+</div>
+<div class="section" id="test-your-code">
+<h2>Test Your Code<a class="headerlink" href="#test-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Run your CYOA program and follow ALL of the different paths to make sure your
+code behaves as expected. Use your choice tree as a checklist to keep track of
+which choices still need to be tested or which ones need to be fixed.</p>
+</div>
+<div class="section" id="tip">
+<h2>Tip<a class="headerlink" href="#tip" title="Permalink to this headline">¶</a></h2>
+<p>It can be hard to predict what the user will enter, so you may want to check
+only the first letter of their response. Also, converting that letter to
+UPPERCASE or lowercase helps analyze their choice.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Do you want to head to the [A]ttic or to the [B]asement?&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">choice</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+   <span class="c1"># Attic code here...</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last"><code class="docutils literal notranslate"><span class="pre">choice[0]</span></code> looks at the first character in the <code class="docutils literal notranslate"><span class="pre">choice</span></code> string, and
+<code class="docutils literal notranslate"><span class="pre">.lower()</span></code> casts it into lowercase.</p>
+</div>
+</div>
+<div class="section" id="bonus-tasks">
+<h2>Bonus Tasks<a class="headerlink" href="#bonus-tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Expand your story to include more than 2 questions and 4 endings.</li>
+<li>Include one <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> statement to give the user three possible
+options (e.g. go upstairs, go downstairs, or walk down the hall).</li>
+<li>Update your code to deal with invalid entries. For example, the user enters
+something unexpected like “run” instead of “open door” or “turn on the
+lights”.</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="user-input.html"><span aria-hidden="true">&larr;</span> Activity #1: User Input</a></li>
+        
+        
+        <li class="next"><a href="making-diamonds.html">Activity #3: Making Diamonds <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../_sources/activities/cyoa.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

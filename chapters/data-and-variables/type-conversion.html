@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.2. Type Conversion &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.3. Variables" href="variables.html" />
+    <link rel="prev" title="4.1. Values and Data Types" href="values-and-data-types.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.2. </span>Type Conversion</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="type-conversion">
+<span id="id1"></span><h1><span class="section-number">4.2. </span>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="index-0"></span><p id="index-1">Sometimes it is necessary to convert values from one type to another. A common
+example occurs when a program receives string input, like <code class="docutils literal notranslate"><span class="pre">&quot;23&quot;</span></code>, but needs
+to use the value as a number.</p>
+<p>Python provides a few simple <strong>type conversion</strong> functions that allow us to
+change between data types. The functions <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code> and <code class="docutils literal notranslate"><span class="pre">str()</span></code>
+will try to convert whatever is in the <code class="docutils literal notranslate"><span class="pre">()</span></code> (the <em>argument</em>) into the types
+<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> and <code class="docutils literal notranslate"><span class="pre">string</span></code>, respectively.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">int()</span></code> function takes a floating point number or a string and turns it
+into whole number. Instead of <em>rounding</em> a decimal value, <code class="docutils literal notranslate"><span class="pre">int()</span></code> <em>discards</em>
+the decimal portion of the number.</p>
+<div class="admonition-example admonition" id="index-2">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s see <code class="docutils literal notranslate"><span class="pre">int()</span></code> in action. Run the following code and note how <code class="docutils literal notranslate"><span class="pre">int()</span></code>
+changes the decimal values.</p>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-int?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe><p class="last">New vocabulary! <strong>Truncate</strong>: Remove the decimal part of a number WITHOUT rounding.</p>
+</div>
+<p>What happens if we try to convert a string to an integer, but the string is not
+actually a whole number? Add the following code to the editor above, then run
+the program again. You should see an error message.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;80days&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;12.34&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In order for <code class="docutils literal notranslate"><span class="pre">int()</span></code> to work, the string has to be a whole number like
+<code class="docutils literal notranslate"><span class="pre">'-2'</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;526&quot;</span></code>. Any string with letters, spaces, or punctuation will
+throw an error. Modify the new examples by deleting the <code class="docutils literal notranslate"><span class="pre">days</span></code> and <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+then rerun the program. You should see the integers <code class="docutils literal notranslate"><span class="pre">80</span></code> and <code class="docutils literal notranslate"><span class="pre">1234</span></code>.</p>
+<p>The type converter <code class="docutils literal notranslate"><span class="pre">float()</span></code> turns an integer or an allowed string into a
+<code class="docutils literal notranslate"><span class="pre">float</span></code>. The type converter <code class="docutils literal notranslate"><span class="pre">str()</span></code> turns its argument into a <code class="docutils literal notranslate"><span class="pre">string</span></code>.</p>
+<p>Remember that when we print a string, the quotes are removed. However, if we
+use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function, we can see the data type.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Let’s see <code class="docutils literal notranslate"><span class="pre">float()</span></code> and <code class="docutils literal notranslate"><span class="pre">str()</span></code> in action.</p>
+<div class="last"><iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-float-and-str?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe></div></div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">4.2.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>What value is printed when the following statement runs?</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="mf">53.785</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is printed. An error is generated.</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 53.785</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 54</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 53</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which of the following generates an error message when passed to
+<code class="docutils literal notranslate"><span class="pre">float()</span></code>? Feel free to try running each of the options.</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> '3'</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 18</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> '3 3'</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> '12.38'</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="values-and-data-types.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.1. </span>Values and Data Types</a></li>
+        
+        
+        <li class="next"><a href="variables.html"><span class="section-number">4.3. </span>Variables <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/type-conversion.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

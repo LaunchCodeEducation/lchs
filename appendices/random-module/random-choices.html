@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choosing Random Items from a Collection &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Python Turtles" href="../turtles/index.html" />
+    <link rel="prev" title="Generating a Random Number List" href="random-number-list.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Random Module</a></li>
+    <li class="active">Choosing Random Items from a Collection</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="choosing-random-items-from-a-collection">
+<span id="random-choices"></span><h1>Choosing Random Items from a Collection<a class="headerlink" href="#choosing-random-items-from-a-collection" title="Permalink to this headline">¶</a></h1>
+<p>In the <a class="reference internal" href="../../chapters/modules/random-module.html#random-collection-item"><span class="std std-ref">Select from a Collection</span></a> section, we see
+how to use the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to pick one item at random from a string or a
+list.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;indigo&#39;</span><span class="p">,</span> <span class="s1">&#39;violet&#39;</span><span class="p">]</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;The Princess Bride&#39;</span>
+
+<span class="c1"># Select a random element from the colors list:</span>
+<span class="n">color_choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="c1"># Select a random character from the title string:</span>
+<span class="n">char_choice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Just like with random numbers, we can use the accumulator pattern to build
+a new collection by randomly selecting items from a different collection.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Run the following program several times to see how it works!</p>
+<div class="last"><iframe src="https://trinket.io/embed/python3/8650e179cb" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<div class="section" id="choose-random-unique-values">
+<h2>Choose Random, Unique Values<a class="headerlink" href="#choose-random-unique-values" title="Permalink to this headline">¶</a></h2>
+<p>Just like with generating a list of random numbers, if we run the program above
+several times, we will notice repeated characters in our collections.</p>
+<p>To generate a set of <em>unique</em> characters (no repeats), we must use a <code class="docutils literal notranslate"><span class="pre">while</span></code>
+loop as we did before:</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Paste this code into the editor above to practice making unique <code class="docutils literal notranslate"><span class="pre">choice</span></code>
+collections.</p>
+<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">char_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">collection_length</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">char_string</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">collection_length</span><span class="p">:</span>
+   <span class="c1"># Select a random letter from &#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;:</span>
+   <span class="n">new_char</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span><span class="p">)</span>
+
+   <span class="c1"># Check if new_char is NOT already in char_string:</span>
+   <span class="k">if</span> <span class="n">new_char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">char_string</span><span class="p">:</span>
+      <span class="n">char_string</span> <span class="o">+=</span> <span class="n">new_char</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">char_string</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>A slight modification to the code will append the random choice to a list
+instead.</p>
+</div>
+<div class="section" id="choose-from-a-dictionary">
+<h2>Choose From a Dictionary<a class="headerlink" href="#choose-from-a-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>If we have a dictionary, we can select a random element from it using the
+following syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dictionary_name</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dictionary_name</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</pre></div>
+</div>
+<p>The first line selects a <em>key</em> from <code class="docutils literal notranslate"><span class="pre">dictionary_name</span></code>. Note that with this
+key we also get access to its value. The second line selects a <em>value</em> from
+<code class="docutils literal notranslate"><span class="pre">dictionary_name</span></code>, but NOT the key it is linked to.</p>
+<p>Note the use of the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function! When Python pulls from a collection,
+it does so by using an <em>index</em> value. Since dictionaries are <em>unordered</em>, they
+have no indexes. Thus, we need to convert the keys (or values) into a list
+format before making the random choice.</p>
+<p>If we leave off the method name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dictionary_name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Python defaults to selecting from the keys.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Run the following program several times to see how the results change.</p>
+<iframe src="https://trinket.io/embed/python3/7244d92997" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p><strong>Now try this:</strong></p>
+<ol class="last arabic">
+<li><p class="first">Replace lines 16 &amp; 17 with</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">raffle_tickets</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">What do you notice?</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="random-number-list.html"><span aria-hidden="true">&larr;</span> Generating a Random Number List</a></li>
+        
+        
+        <li class="next"><a href="../turtles/index.html">Python Turtles <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/random-module/random-choices.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

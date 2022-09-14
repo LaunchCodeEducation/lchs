@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21.10. Project: Web Form (Part 2) &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22. Refill the Flask" href="../more-flask/index.html" />
+    <link rel="prev" title="21.9. Exercises: Flask Intro" href="exercises.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">21. </span>Hello, Flask!</a></li>
+    <li class="active"><span class="section-number">21.10. </span>Project: Web Form (Part 2)</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="project-web-form-part-2">
+<span id="web-caesar-part2"></span><h1><span class="section-number">21.10. </span>Project: Web Form (Part 2)<a class="headerlink" href="#project-web-form-part-2" title="Permalink to this headline">¶</a></h1>
+<p>In <a class="reference internal" href="../forms/project.html#web-caesar-part1"><span class="std std-ref">Part 1 of this project</span></a>, you designed a form to
+collect a text message and two other inputs from the user.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/caesar-form.png"><img alt="A Caesar Cipher form, with inputs for the original message, the amount to shift, and whether to encrypt or decrypt the text." src="../../_images/caesar-form.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">One possible form style.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Today, you will move your HTML/CSS code into a Flask application. The goal is
+to create a webpage that will encrypt or decrypt the user’s message when they
+click <em>Run</em>.</p>
+<div class="section" id="part-a-setup">
+<h2><span class="section-number">21.10.1. </span>Part A: Setup<a class="headerlink" href="#part-a-setup" title="Permalink to this headline">¶</a></h2>
+<p>Good news! When you cloned the GitHub repository for the
+<a class="reference internal" href="exercises.html#flask-repo"><span class="std std-ref">chapter exercises</span></a>, you also got access to the starter code
+for this project.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">If you didn’t clone the repository, do that now. Return to the exercises
+and follow the Git instructions in the <em>Setup</em> section.</p>
+</div>
+<p>The starter code is located in a different branch in the repository.</p>
+<ol class="arabic">
+<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">lchs_flask_into</span></code> folder in Visual Studio Code.</p>
+</li>
+<li><p class="first">Save and commit any work you have from the exercises.</p>
+</li>
+<li><p class="first">In the terminal, checkout the project branch:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git checkout caesar-project
+</pre></div>
+</div>
+</li>
+<li><p class="first">The file tree will change, but don’t worry! All your old work is saved in
+your local repository. It’s just in a different branch. The new file
+structure looks like this:</p>
+<div class="figure align-default" id="id2">
+<img alt="Filetree showing 2 folders and 5 files." src="../../_images/caesar-filetree.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">static</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code> directories are ready for your HTML and CSS files.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<div class="section" id="pull-in-your-part-1-work">
+<h3><span class="section-number">21.10.1.1. </span>Pull in Your Part 1 Work<a class="headerlink" href="#pull-in-your-part-1-work" title="Permalink to this headline">¶</a></h3>
+<p>You have a couple of different ways to move your form from Part 1 into this
+Flask project.</p>
+<ol class="arabic">
+<li><p class="first">On your device, locate the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file you created for Part 1.</p>
+</li>
+<li><p class="first">To transfer the CSS code to your new project EITHER:</p>
+<ol class="loweralpha">
+<li><p class="first">Drag-and-drop your old file into the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder. A dialog box
+might pop up and ask if you really want to do this. Agree.</p>
+<p><em>OR</em></p>
+</li>
+<li><p class="first">Copy your old code and paste it into the empty <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. You now
+have two copies of the same code on your machine. This isn’t really DRY,
+but we won’t judge (much).</p>
+</li>
+</ol>
+</li>
+<li><p class="first">Follow a similar process to move your old HTML code into the
+<code class="docutils literal notranslate"><span class="pre">user_message</span></code> file.</p>
+</li>
+<li><p class="first">Once the two files are in place, launch the <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code> program. Open
+your browser and navigate to the form page.</p>
+<ol class="loweralpha simple">
+<li>If you used a different name for your <code class="docutils literal notranslate"><span class="pre">.html</span></code> file, update the
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function in the Python code.</li>
+<li>Remember to use <code class="docutils literal notranslate"><span class="pre">url_for</span></code> in your template to link it to the
+stylesheet.</li>
+</ol>
+</li>
+<li><p class="first">When your form renders properly, save and commit your setup.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="part-b-update-the-form-page">
+<h2><span class="section-number">21.10.2. </span>Part B: Update the Form Page<a class="headerlink" href="#part-b-update-the-form-page" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes in the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. When
+you submit the form, send the data to the <code class="docutils literal notranslate"><span class="pre">/user_message</span></code> route.</p>
+</li>
+<li><p class="first">Add a section underneath the form to display the message the user submits
+and the coded result. Use placeholders where you want the text to appear
+on the page.</p>
+</li>
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>, add variables for the plain and coded message. Pass
+their values to the template using <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>.</p>
+</li>
+<li><p class="first">Refresh the page to make sure the data moves correctly from your Python code
+to the template.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/form-with-message.png"><img alt="The Caesar Cipher form, with space underneath for displaying messages." src="../../_images/form-with-message.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-text">Use one placeholder for each message. The italicized text changes after submitting the form.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<div class="section" id="collect-and-display-message">
+<h3><span class="section-number">21.10.2.1. </span>Collect and Display Message<a class="headerlink" href="#collect-and-display-message" title="Permalink to this headline">¶</a></h3>
+<p>Return to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>.</p>
+<ol class="arabic simple">
+<li>Update the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/user_message')</span></code> handler to accept both <code class="docutils literal notranslate"><span class="pre">GET</span></code>
+and <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</li>
+<li>Using the <a class="reference internal" href="exercises.html#flask-check-method"><span class="std std-ref">hex code exercise</span></a> as an example, add
+a conditional to check the type of request made when the page loads.</li>
+<li>If <code class="docutils literal notranslate"><span class="pre">POST</span></code>:<ol class="loweralpha">
+<li>Collect data from all 3 of the input fields on the form. This will
+include the user’s message, the number of letters to shift, and whether
+to encrypt or decrypt the text.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">by</span></code> value is a number, but <em>Flask pulls the data in as a
+string</em>. You need to convert the value to <code class="docutils literal notranslate"><span class="pre">int</span></code>.</li>
+<li>For now, just send the user’s message back to the form page. It should
+appear below the form after submission.</li>
+</ol>
+</li>
+<li>For a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, assign the empty string to the placeholder variables,
+then render the template.</li>
+<li>Use the form to submit a few test messages. Make sure they appear below the
+form.</li>
+</ol>
+<p>Remember to save and commit your work before starting the next section.</p>
+</div>
+</div>
+<div class="section" id="part-c-change-the-message">
+<h2><span class="section-number">21.10.3. </span>Part C: Change the Message<a class="headerlink" href="#part-c-change-the-message" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="../../assignments/coded-messages.html#coded-messages"><span class="std std-ref">Assignment #2</span></a>, you wrote a Python program that takes
+a string and converts it into a coded message. Now it’s time to reuse that
+code! At the time, you were still using repl.it or Trinket to store your
+projects. Login to your account and locate your <code class="docutils literal notranslate"><span class="pre">Coded</span> <span class="pre">Messages</span></code> program.</p>
+<ol class="arabic">
+<li><p class="first">Copy the <code class="docutils literal notranslate"><span class="pre">alphabet_position()</span></code> function and paste it into the
+<code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code> file in Visual Studio Code.</p>
+</li>
+<li><p class="first">Do the same thing for the <code class="docutils literal notranslate"><span class="pre">shift_character()</span></code>, <code class="docutils literal notranslate"><span class="pre">build_code_dict()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> functions.</p>
+</li>
+<li><p class="first">If your functions depend on any Python modules (like <code class="docutils literal notranslate"><span class="pre">string</span></code>), import
+those into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p>
+</li>
+<li><p class="first">Finally, return to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>. Add an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement for the
+<code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">encrypt</span> <span class="kn">import</span> <span class="n">encrypt_with_shift</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If your teacher didn’t ask you to complete Assignment 2, never fear. You can
+find a scaled down version of the functions
+<a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS-web-form-part-2" target="_blank">on GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p class="last">Paste the posted code into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p>
+</div>
+<div class="section" id="encrypt-the-message">
+<h3><span class="section-number">21.10.3.1. </span>Encrypt the Message<a class="headerlink" href="#encrypt-the-message" title="Permalink to this headline">¶</a></h3>
+<p>After all of the <code class="docutils literal notranslate"><span class="pre">request.form</span></code> statements execute, you should have the
+user’s message and the amount to shift each letter.</p>
+<ol class="arabic simple">
+<li>Call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function. Send the message text and shift
+value as arguments.</li>
+<li>The function returns a coded message. Assign this to a variable.</li>
+<li>Send the original text and the new message to the template.</li>
+<li>Save your work, then refresh the page in your browser.</li>
+<li>Test your code by submitting a simple message like <code class="docutils literal notranslate"><span class="pre">abc</span></code> and a shift
+value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. If <code class="docutils literal notranslate"><span class="pre">bcd</span></code> appears on the page, congratulations!</li>
+<li>Test your code with more complicated messages with MixED CasE, digits,
+symbols, etc.</li>
+</ol>
+</div>
+<div class="section" id="decrypt-message">
+<h3><span class="section-number">21.10.3.2. </span>Decrypt Message<a class="headerlink" href="#decrypt-message" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>If the user submits the form with the <code class="docutils literal notranslate"><span class="pre">Decrypt</span></code> radio button selected,
+call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function like before. However, send in the
+<em>negative</em> of the shift value.</li>
+<li>Test your code again to make sure it correctly encrypts and decrypts
+messages using the Caesar Cipher.</li>
+</ol>
+<table border="1" class="docutils align-default" id="id4">
+<caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Message</th>
+<th class="head">Action</th>
+<th class="head">Shift</th>
+<th class="head">New Message</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Hello, World.</td>
+<td>Encrypt</td>
+<td>5</td>
+<td>Mjqqt, Btwqi.</td>
+</tr>
+<tr class="row-odd"><td>Agvnf MJXFN!</td>
+<td>Decrypt</td>
+<td>21</td>
+<td>Flask ROCKS!</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="part-d-server-side-validation">
+<h2><span class="section-number">21.10.4. </span>Part D: Server-Side Validation<a class="headerlink" href="#part-d-server-side-validation" title="Permalink to this headline">¶</a></h2>
+<p>In <a class="reference internal" href="../forms/project.html#web-caesar-part1"><span class="std std-ref">Part 1 of this project</span></a>, you used the <code class="docutils literal notranslate"><span class="pre">max</span></code>,
+<code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">required</span></code>, and <code class="docutils literal notranslate"><span class="pre">checked</span></code> attributes to validate the form inputs.
+However, client-side checks are surprisingly easy to bypass, or they may not be
+specific enough to catch every error. It’s always a good idea to combine client
+and server-side validation.</p>
+<p>Add code to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code> to catch the following errors:</p>
+<ol class="arabic simple">
+<li>The message contains no letters or is blank.</li>
+<li>The shift value is less than 1 or greater than 25.</li>
+<li>The message exceeds a maximum number of characters or words.</li>
+</ol>
+<p>For any error, your program should generate a message that tells the user
+exactly what went wrong. Add a placeholder to the HTML page to display the
+message <em>inside</em> the form. If no problems occur, that space should remain
+empty.</p>
+</div>
+<div class="section" id="bonus-mission">
+<h2><span class="section-number">21.10.5. </span>Bonus Mission<a class="headerlink" href="#bonus-mission" title="Permalink to this headline">¶</a></h2>
+<p>The Caesar Cipher is pretty easy to decode. All we need to do is take the
+message and apply different shift values until we see a clear result.</p>
+<p>To bump up the security of the cipher, we can add a <em>keyword</em> to the alphabet
+string. Instead of using <code class="docutils literal notranslate"><span class="pre">&quot;abcdef...&quot;</span></code>, we move selected letters to the start
+of the string. This makes it harder to decode a captured message because the
+letter order isn’t as predictable.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../_images/keyword-cipher-2.png"><img alt="Rearrange letters to form a keyword at the start of the alphabet string." src="../../_images/keyword-cipher-2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Difference between the original and keyword cipher. The shift value in each case is 1.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Add a keyword input field to the form. This word can have no repeated
+letters, so you will need some server-side validation. Next, add a new function
+in <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code> to build the keyword string. Use that result instead of the
+plain alphabet to code a message.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="exercises.html"><span aria-hidden="true">&larr;</span> <span class="section-number">21.9. </span>Exercises: Flask Intro</a></li>
+        
+        
+        <li class="next"><a href="../more-flask/index.html"><span class="section-number">22. </span>Refill the Flask <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/flask-intro/project.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

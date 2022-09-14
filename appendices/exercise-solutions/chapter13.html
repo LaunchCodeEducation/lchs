@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 13: Classes and Objects &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapters" href="../../index-full.html" />
+    <link rel="prev" title="Chapter 12: Python Dictionaries" href="chapter12.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 13: Classes and Objects</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-13-classes-and-objects">
+<h1>Chapter 13: Classes and Objects<a class="headerlink" href="#chapter-13-classes-and-objects" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#classes-and-objects-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/560cc5a91d" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<p>In these exercises, you will create a <code class="docutils literal notranslate"><span class="pre">Robot</span></code> class and use it to create
+four <code class="docutils literal notranslate"><span class="pre">Robot</span></code> objects. You will also practice writing functions that display
+information about the objects and race them against each other.</p>
+<div class="section" id="part-1-create-a-new-class">
+<span id="chp13part1"></span><h3>Part 1: Create a New Class<a class="headerlink" href="#part-1-create-a-new-class" title="Permalink to this headline">¶</a></h3>
+<p>Open up the starter code and notice that it imports the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.
+Below the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement, define the <code class="docutils literal notranslate"><span class="pre">Robot</span></code> class.</p>
+</div>
+<div class="section" id="add-properties-to-robot">
+<h3>Add Properties to <code class="docutils literal notranslate"><span class="pre">Robot</span></code><a class="headerlink" href="#add-properties-to-robot" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Inside the class, define the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method. It should include
+parameters for <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Robot</span><span class="p">:</span>
+<span class="c1">#set up Robot Object Properties</span>
+   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">mass</span> <span class="o">=</span> <span class="n">mass</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Give a default value to <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">1942</span><span class="p">):</span>
+</pre></div>
+</td></tr></table></div>
+<p>Before you move on, test your new class! In <code class="docutils literal notranslate"><span class="pre">main()</span></code>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#a. Call the ``Robot`` class to create a new object. Assign it to a variable.</span>
+<span class="n">robot_bob</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">1974</span><span class="p">)</span>
+
+<span class="c1">#Code to test creation of Robot class</span>
+<span class="c1">#b. Use dot notation to ``print`` the values for each property.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Robot Information:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Name: &quot;</span> <span class="o">+</span> <span class="n">robot_bob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Mass: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">robot_bob</span><span class="o">.</span><span class="n">mass</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;kg&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Year Made: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">robot_bob</span><span class="o">.</span><span class="n">year</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Distance Traveled: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">robot_bob</span><span class="o">.</span><span class="n">distance</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+<div class="section" id="add-methods-to-robot">
+<h3>Add Methods to <code class="docutils literal notranslate"><span class="pre">Robot</span></code><a class="headerlink" href="#add-methods-to-robot" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Below <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, define a second method called <code class="docutils literal notranslate"><span class="pre">move()</span></code>. This method should:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#a. Only take the ``self`` parameter.</span>
+<span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="c1">#c. Increase the ``distance`` property by the number of steps.</span>
+<span class="n">steps_taken</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">+=</span> <span class="n">steps_taken</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method to return a string of the object properties.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#returns a string of robot properties of our choosing</span>
+<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+   <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Robot Info: </span><span class="se">\n</span><span class="s2">   Name: </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">   Mass: </span><span class="si">{1}</span><span class="s2"> kg</span><span class="se">\n</span><span class="s2">   Year made: </span><span class="si">{2}</span><span class="se">\n</span><span class="s2">   Distance traveled: </span><span class="si">{3}</span><span class="s2">&quot;</span>
+   <span class="k">return</span> <span class="n">output</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Test your methods! In <code class="docutils literal notranslate"><span class="pre">main()</span></code>:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#a. ``print`` the ``Robot`` object to check the output.</span>
+<span class="c1">#Code that calls the __str__ method</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">robot_bob</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#chp13partnewclass"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-2-create-objects">
+<span id="chp13part2"></span><h3>Part 2: Create Objects<a class="headerlink" href="#part-2-create-objects" title="Permalink to this headline">¶</a></h3>
+<p>In part 1, you defined a class and created one <code class="docutils literal notranslate"><span class="pre">Robot</span></code> object in <code class="docutils literal notranslate"><span class="pre">main()</span></code>.
+Now create three more objects:</p>
+<ol class="arabic" start="3">
+<li><p class="first">Use a mass value from <code class="docutils literal notranslate"><span class="pre">25</span></code> to <code class="docutils literal notranslate"><span class="pre">40</span></code>. (<em>Bonus</em>: Use <code class="docutils literal notranslate"><span class="pre">randint</span></code> to
+generate the mass value instead of hard-coding a number when you call the
+class).</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">robot_unimate</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;Unimate&quot;</span><span class="p">,</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">1954</span><span class="p">)</span>
+<span class="n">robot_terry</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;Terry&quot;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1923</span><span class="p">,</span> <span class="mi">2022</span><span class="p">))</span>
+<span class="n">robot_jones</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">(</span><span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="mi">42</span> <span class="p">,</span> <span class="mi">1969</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>You now have 4 total robots. Add another statement in <code class="docutils literal notranslate"><span class="pre">main()</span></code> where you
+place the objects inside a list. Assign the collection to a variable called
+<code class="docutils literal notranslate"><span class="pre">robots</span></code>.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">robots</span> <span class="o">=</span> <span class="p">[</span><span class="n">robot_bob</span><span class="p">,</span> <span class="n">robot_unimate</span><span class="p">,</span> <span class="n">robot_terry</span><span class="p">,</span> <span class="n">robot_jones</span><span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+</div>
+<div class="section" id="update-distances">
+<h3>Update Distances<a class="headerlink" href="#update-distances" title="Permalink to this headline">¶</a></h3>
+<p>Use a loop to iterate through the <code class="docutils literal notranslate"><span class="pre">robots</span></code> list. For each object, assign a
+random value to the <code class="docutils literal notranslate"><span class="pre">distance</span></code> property, from <code class="docutils literal notranslate"><span class="pre">1000</span></code> to <code class="docutils literal notranslate"><span class="pre">3000</span></code> steps.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#add in main</span>
+<span class="k">for</span> <span class="n">robot</span> <span class="ow">in</span> <span class="n">robots</span><span class="p">:</span>
+   <span class="n">robot</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<p><a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#chp13partcreateobjects"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="part-3-find-oldest-robot">
+<span id="chp13part3"></span><h3>Part 3: Find Oldest Robot<a class="headerlink" href="#part-3-find-oldest-robot" title="Permalink to this headline">¶</a></h3>
+<p>Between the class and <code class="docutils literal notranslate"><span class="pre">main()</span></code>, define a function called <code class="docutils literal notranslate"><span class="pre">oldest_robot</span></code>. It
+should:</p>
+<ol class="arabic" start="2">
+<li><p class="first">Use a loop to iterate through the list.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">oldest_robot</span><span class="p">(</span><span class="n">robot_list</span><span class="p">):</span>
+   <span class="n">robot_year</span> <span class="o">=</span> <span class="p">[]</span>
+   <span class="k">for</span> <span class="n">robot</span> <span class="ow">in</span> <span class="n">robot_list</span><span class="p">:</span>
+      <span class="n">robot_born</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">year</span>
+      <span class="n">robot_year</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">robot_born</span><span class="p">)</span>
+
+   <span class="c1">#index value of oldest robot in robot_list</span>
+   <span class="n">oldest</span> <span class="o">=</span> <span class="n">robot_year</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">robot_year</span><span class="p">))</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p class="first">If two robots have the same <code class="docutils literal notranslate"><span class="pre">year</span></code> value, then the one with the largest
+<code class="docutils literal notranslate"><span class="pre">distance</span></code> will be older.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span>   <span class="c1">#year oldest robot was made</span>
+   <span class="n">oldest_robot_year</span> <span class="o">=</span> <span class="n">robot_year</span><span class="p">[</span><span class="n">oldest</span><span class="p">]</span>
+
+   <span class="c1">#checking to see if more then one robot born in oldest_robot_year</span>
+   <span class="n">same_year</span> <span class="o">=</span> <span class="n">robot_year</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">oldest_robot_year</span><span class="p">)</span>
+
+   <span class="c1">#more then one robot born in oldest year</span>
+   <span class="k">if</span> <span class="n">same_year</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="c1">#distance in steps of oldest robot</span>
+      <span class="n">oldest_robot_distance</span> <span class="o">=</span> <span class="n">robot_list</span><span class="p">[</span><span class="n">oldest</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span>
+
+      <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">robot_year</span><span class="p">)):</span>
+         <span class="n">year</span> <span class="o">=</span> <span class="n">robot_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">year</span>
+         <span class="k">if</span> <span class="n">year</span> <span class="o">==</span> <span class="n">oldest_robot_year</span><span class="p">:</span>
+         <span class="k">if</span> <span class="n">robot_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span> <span class="o">&gt;</span> <span class="n">oldest_robot_distance</span><span class="p">:</span>
+            <span class="n">oldest_robot_distance</span> <span class="o">=</span> <span class="n">robot_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span>
+            <span class="n">oldest</span> <span class="o">=</span> <span class="n">index</span>
+
+   <span class="c1">#Return the index value for the oldest robot in the list.</span>
+   <span class="k">return</span> <span class="n">oldest</span>
+</pre></div>
+</td></tr></table></div>
+<p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call the <code class="docutils literal notranslate"><span class="pre">oldest_robot</span></code> function and use <code class="docutils literal notranslate"><span class="pre">robots</span></code> for the
+argument. Assign the returned index to a new variable.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#create variable and call function</span>
+<span class="n">index_oldest</span> <span class="o">=</span> <span class="n">oldest_robot</span><span class="p">(</span><span class="n">robots</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Print out a message describing the result:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="si">{</span><span class="n">robots</span><span class="p">[</span><span class="n">index_oldest</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is the oldest robot (made in </span><span class="si">{</span><span class="n">robots</span><span class="p">[</span><span class="n">index_oldest</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">,</span>
+ <span class="p">{</span><span class="n">robots</span><span class="p">[</span><span class="n">index_oldest</span><span class="p">]</span><span class="o">.</span><span class="n">distance</span><span class="p">}</span> <span class="n">steps</span><span class="p">)</span><span class="o">.</span>\<span class="n">n</span><span class="s2">&quot;)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#chp13partfindoldest"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+<div class="section" id="part-4-robot-races">
+<span id="chp13part4"></span><h2>Part 4: Robot Races<a class="headerlink" href="#part-4-robot-races" title="Permalink to this headline">¶</a></h2>
+<p>Now it’s time for the robots to compete against each other! Define the
+<code class="docutils literal notranslate"><span class="pre">robot_race</span></code> function that takes a list of robots as a parameter.</p>
+<p>Within the function:</p>
+<ol class="arabic">
+<li><p class="first">Each robot takes a turn running a race.</p>
+</li>
+<li><p class="first">A robot runs the race by calling its <code class="docutils literal notranslate"><span class="pre">move()</span></code> method several times.</p>
+</li>
+<li><p class="first">A robot is done with the race when it moves 30 steps or more.</p>
+</li>
+<li><p class="first">Create a new list to store how many turns it takes each robot to complete
+the race. Use the string: <code class="docutils literal notranslate"><span class="pre">'____</span> <span class="pre">took</span> <span class="pre">____</span> <span class="pre">turns</span> <span class="pre">to</span> <span class="pre">take</span> <span class="pre">30</span> <span class="pre">steps.'</span></code>
+Fill in the blanks with the robot’s name and race result.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#create empty list for results of each robot(part 4)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#loop thru robots(part 1)</span>
+<span class="k">for</span> <span class="n">robot</span> <span class="ow">in</span> <span class="n">robots</span><span class="p">:</span>
+   <span class="c1">#set variables</span>
+   <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="n">turns</span> <span class="o">=</span> <span class="mi">0</span>
+   <span class="c1">#keep taking turns until robot gets at least 30 steps(part 2-3)</span>
+   <span class="k">while</span> <span class="n">steps</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">:</span>
+      <span class="n">steps</span> <span class="o">+=</span> <span class="n">robot</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+      <span class="n">turns</span> <span class="o">+=</span> <span class="mi">1</span>
+   <span class="c1">#add string with robot results to results list(part 4)</span>
+   <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">robot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> took </span><span class="si">{</span><span class="n">turns</span><span class="si">}</span><span class="s2"> turns to take </span><span class="si">{</span><span class="n">steps</span><span class="si">}</span><span class="s2"> steps.&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Print the results to the console (one robot per line).</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#in main</span>
+<span class="c1">#create variable and call function</span>
+<span class="n">robot_race_results</span> <span class="o">=</span> <span class="n">robot_race</span><span class="p">(</span><span class="n">robots</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">robot_race_results</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#chp13partrobotraces"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter12.html"><span aria-hidden="true">&larr;</span> Chapter 12: Python Dictionaries</a></li>
+        
+        
+        <li class="next"><a href="../../index-full.html">Chapters <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter13.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

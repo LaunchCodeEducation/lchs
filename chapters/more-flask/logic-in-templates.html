@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.4. Adding Logic to Templates &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="22.5. Conditionals in Templates" href="template-conditionals.html" />
+    <link rel="prev" title="22.3. Chapter Practice" href="chapter-setup.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">22. </span>Refill the Flask</a></li>
+    <li class="active"><span class="section-number">22.4. </span>Adding Logic to Templates</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="adding-logic-to-templates">
+<h1><span class="section-number">22.4. </span>Adding Logic to Templates<a class="headerlink" href="#adding-logic-to-templates" title="Permalink to this headline">¶</a></h1>
+<p>Imagine we want to display the top three pet names for a particular year. We
+could easily create a list in Python to store these names, then pass that data
+to a template.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>Yes, we can sends lists to our HTML template! Dictionaries and objects are
+allowed as well.</p>
+<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/popular_pet_names&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">pet_names</span><span class="p">():</span>
+   <span class="n">year</span> <span class="o">=</span> <span class="mi">2020</span>
+   <span class="n">dogs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bella&#39;</span><span class="p">,</span> <span class="s1">&#39;Max&#39;</span><span class="p">,</span> <span class="s1">&#39;Luna&#39;</span><span class="p">]</span>
+   <span class="n">cats</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;Luna&#39;</span><span class="p">,</span> <span class="s1">&#39;Bella&#39;</span><span class="p">,</span> <span class="s1">&#39;Oliver&#39;</span><span class="p">]</span>
+   <span class="n">birds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Kiwi&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Sunny&#39;</span><span class="p">]</span>
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="n">year</span><span class="p">,</span> <span class="n">dogs</span> <span class="o">=</span> <span class="n">dogs</span><span class="p">,</span> <span class="n">cats</span> <span class="o">=</span> <span class="n">cats</span><span class="p">,</span> <span class="n">birds</span> <span class="o">=</span> <span class="n">birds</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>The template code might look something like this:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Top Pet Names of {{year}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dog[0]}} / {{cat[0]}} / {{bird[0]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dog[1]}} / {{cat[1]}} / {{bird[1]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dog[2]}} / {{cat[2]}} / {{bird[2]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>While tedious, it doesn’t take that long to type the HTML for a list with only
+three rows.</p>
+<p>Now imagine we want to extend the list to the top 10, 20, 100, or 200 pet
+names. Typing the HTML for <em>that</em> task doesn’t sound fun at all! Also, we would
+probably make several mistakes, so we should plan for some debugging time.</p>
+<p>Fortunately, there is a better way.</p>
+<div class="section" id="loops-in-templates">
+<h2><span class="section-number">22.4.1. </span>Loops in Templates<a class="headerlink" href="#loops-in-templates" title="Permalink to this headline">¶</a></h2>
+<p>For now, let’s just focus on the names for the dogs. With Python, we can easily
+add or remove names to the <code class="docutils literal notranslate"><span class="pre">dogs</span></code> list. If we want to print these to the
+console, we use a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dog</span> <span class="ow">in</span> <span class="n">dogs</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>Jinja3 allows us to do something similar inside a webpage. The general syntax
+for a loop is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{% for item in collection_name %}
+   {{item}}
+{% endfor %}
+</pre></div>
+</div>
+<p>The symbols <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">%}</span></code> surround code statements, and they show where the loop
+begins and ends. Each time the loop repeats, <code class="docutils literal notranslate"><span class="pre">item</span></code> takes the value of the
+next element in <code class="docutils literal notranslate"><span class="pre">collection_name</span></code>. The code does NOT appear on the webpage,
+and the value for <code class="docutils literal notranslate"><span class="pre">item</span></code> gets inserted for the placeholder.</p>
+<p>For the pet name template, the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop would look like this. Note how line
+3 looks just like the Python syntax, only without the ending colon, <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Top Dog Names of {{year}}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+   {% for dog in dogs %}
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dog}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   {% endfor %}
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Set up this way, the Jinja3 engine creates one <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;&lt;/li&gt;</span></code> element for each
+entry in <code class="docutils literal notranslate"><span class="pre">dogs</span></code>. If we use our Python function to add or remove names, the
+template responds by resizing the list in the browser.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">The purpose of loops in Jinja3 is <em>for display only</em>. They are NOT used to
+perform calculations or process data. That type of logic belongs in our
+Python code.</p>
+</div>
+<p>Loops allow us to automatically create multiple HTML elements on a page. We
+provide the tags, attributes, and placeholders for a single entry. The
+iteration copies that format and inserts different values each time the loop
+repeats.</p>
+<div class="section" id="using-index-values">
+<h3><span class="section-number">22.4.1.1. </span>Using Index Values<a class="headerlink" href="#using-index-values" title="Permalink to this headline">¶</a></h3>
+<p>If we want to loop through a collection by index instead of by item, the syntax
+for Python is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">collection</span><span class="p">)):</span>
+</pre></div>
+</div>
+<p>For Jinja3, the syntax replaces the <code class="docutils literal notranslate"><span class="pre">len</span></code> function with <code class="docutils literal notranslate"><span class="pre">|length</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% for index in range(collection|length) %}
+</pre></div>
+</div>
+<p>In both cases, <code class="docutils literal notranslate"><span class="pre">index</span></code> takes the values <code class="docutils literal notranslate"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2...</span></code></p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p>We can use index values to complete our pet name list.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Top Pet Names of {{year}} (Dogs / Cats / Birds)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+   {% for index in range(dogs|length) %}
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dogs[index]}} / {{cats[index]}} / {{birds[index]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   {% endfor %}
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Even if the lists for <code class="docutils literal notranslate"><span class="pre">dogs</span></code>, <code class="docutils literal notranslate"><span class="pre">cats</span></code>, and <code class="docutils literal notranslate"><span class="pre">birds</span></code> are not the same
+length, Jinja3 won’t throw an <em>index out of range</em> error. Instead, the
+placeholders for the missing values show up as empty spots on the page.</p>
+<div class="last figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/animal-name-list.png"><img alt="Heading and a list showing the top 3 pet names for dogs, cats, and birds (2020)." src="../../_images/animal-name-list.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">The 5th most popular bird name of 2020 was “Chicken”.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<p>These 6 lines of code only produce 4 lines of text on the webpage. However,
+they would add more if we expand the list of pet names.</p>
+</div>
+<div class="section" id="placement-matters">
+<h3><span class="section-number">22.4.1.2. </span>Placement Matters<a class="headerlink" href="#placement-matters" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for...</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code> repeat every element placed between them.
+A small shift in the code can make a big difference in how the page renders.
+For example, let’s bring the <code class="docutils literal notranslate"><span class="pre">&lt;ol&gt;</span></code> tags inside the loop.</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Top Pet Names of {{year}} (Dogs / Cats / Birds)<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+{% for index in range(dogs|length) %}
+   <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{dogs[index]}} / {{cats[index]}} / {{birds[index]}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+{% endfor %}
+</pre></div>
+</td></tr></table></div>
+<p>Instead of one list with three different entries, this version of the code
+produces three separate lists, each with only one element.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/repeat-ol.png"><img alt="Three lists, each with a single item labeled &quot;1&quot;." src="../../_images/repeat-ol.png" style="width: 60%;" /></a>
+</div>
+<p>What do you think would happen if we moved the <code class="docutils literal notranslate"><span class="pre">h1</span></code> element inside the loop
+as well?</p>
+</div>
+</div>
+<div class="section" id="try-it">
+<h2><span class="section-number">22.4.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
+<p>Loops really come in handy whenever we need to build checkbox or radio inputs!
+Instead of having to code every single element, we can set up the template to
+build the form automatically.</p>
+<ol class="arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, paste in this starter code:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">checkbox_form</span><span class="p">():</span>
+
+   <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;checkbox_form.html&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+   <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">On line 8, define a <code class="docutils literal notranslate"><span class="pre">pizza_toppings</span></code> variable. Assign it a list that
+contains at least five options. (It’s OK to have pineapple and pepperoni in
+the same list!)</p>
+</li>
+<li><p class="first">Inside <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>, pass the list of toppings to the HTML file.</p>
+</li>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">checkbox_form.html</span></code> in the workspace. Paste in this starter code:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Checkbox Logic<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Checkbox Logic<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Select Your Pizza Toppings<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+
+         <span class="c">&lt;!-- Your form code goes here. --&gt;</span>
+
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and make sure <code class="docutils literal notranslate"><span class="pre">checkbox_form</span></code> renders. Add a
+<code class="docutils literal notranslate"><span class="pre">{{pizza_toppings}}</span></code> placeholder to the page just to make sure your list
+is being sent to the template. (You can remove the placeholder after that).</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/pizza-form-start.png"><img alt="A webpage with a heading and a pizza toppings list." src="../../_images/pizza-form-start.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">Successfully sending a Python list to the webpage.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p class="first">On line 14, add a <code class="docutils literal notranslate"><span class="pre">label</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> element for one checkbox. Include
+a <code class="docutils literal notranslate"><span class="pre">{{topping}}</span></code> placeholder for the label text and the <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;toppings&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{topping}}&quot;</span><span class="p">/&gt;</span> {{topping}}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">On lines 13 and 15, add the statements
+<code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">topping</span> <span class="pre">in</span> <span class="pre">pizza_toppings</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code>. Save your work
+and refresh the page in your browser.</p>
+</li>
+<li><p class="first"><em>Buona pizza</em>!</p>
+<div class="figure align-default" id="id3">
+<img alt="A form with checkboxes to select pizza toppings." src="../../_images/pizza-form-mid.png" />
+<p class="caption"><span class="caption-text">The hex code for one pizza crust color is <code class="docutils literal notranslate"><span class="pre">#d79914</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+<div class="section" id="bonus-try-it">
+<h3><span class="section-number">22.4.2.1. </span>Bonus Try It!<a class="headerlink" href="#bonus-try-it" title="Permalink to this headline">¶</a></h3>
+<p>Convert the form to a radio button group!</p>
+<ol class="arabic">
+<li><p class="first">Instead of using <code class="docutils literal notranslate"><span class="pre">type=&quot;checkbox&quot;</span></code> inside the input tag, replace it with a
+placeholder. In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, use <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> to send the string
+<code class="docutils literal notranslate"><span class="pre">'radio'</span></code> to the template. Switch the inputs back by sending
+<code class="docutils literal notranslate"><span class="pre">'checkbox'</span></code>.</p>
+</li>
+<li><p class="first">Be sure to update the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">h1</span></code> as well.</p>
+</li>
+<li><p class="first">Can you make this happen?</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/pizza-form-final.gif"><img alt="A form that can switch dynamically between radio and checkbox inputs." src="../../_images/pizza-form-final.gif" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-text">Adding a loop to a template allows us to make dynamic changes to the structure of the page.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">22.4.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<p>The following questions refer to this code sample:</p>
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>My Pets<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{pet}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Assume that we define a <code class="docutils literal notranslate"><span class="pre">pets</span></code> list that contains 4 animals.</p>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">pet</span> <span class="pre">in</span> <span class="pre">pets</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code> around the <code class="docutils literal notranslate"><span class="pre">&lt;li&gt;</span></code> tag
+produces:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 unordered lists</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 4 list items</li>
+   <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings each with 4 list items</li>
+</ol>
+<p id="Q1"></p></div></div>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Moving <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">pet</span> <span class="pre">in</span> <span class="pre">pets</span> <span class="pre">%}</span></code> and <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code> above and below the
+<code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> tags produces:</p>
+<div class="last"><ol type="a">
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1 heading and 4 unordered lists with 4 pets each</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 4 headings and 4 unordered lists with 4 pets each</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1 heading and 4 unordered lists with 1 pet each</li>
+   <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 4 headings and 4 unordered lists with 1 pet each</li>
+</ol>
+<p id="Q2"></p></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter-setup.html"><span aria-hidden="true">&larr;</span> <span class="section-number">22.3. </span>Chapter Practice</a></li>
+        
+        
+        <li class="next"><a href="template-conditionals.html"><span class="section-number">22.5. </span>Conditionals in Templates <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/more-flask/logic-in-templates.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

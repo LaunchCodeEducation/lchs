@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19.4. Requests &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="19.5. Responses" href="http-responses.html" />
+    <link rel="prev" title="19.3. HTTP At a Glance" href="http-at-a-glance.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">19. </span>HTTP and the Internet</a></li>
+    <li class="active"><span class="section-number">19.4. </span>Requests</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="requests">
+<span id="http-requests"></span><h1><span class="section-number">19.4. </span>Requests<a class="headerlink" href="#requests" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">All HTTP requests must follow the structure described by the
+<a class="reference external" href="https://www.w3.org/" target="_blank">World Wide Web Consortium (W3C)<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>. Let’s take a look at
+the most important and most commonly used parts of this structure.</p>
+<p>In general, an HTTP request looks like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>GET /blog/ HTTP/1.1
+Host: www.launchcode.org
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:67.0) Gecko/20100101 Firefox/82.0.2
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+DNT: 1
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+Request Body
+</pre></div>
+</div>
+<p>The structure has these components:</p>
+<ol class="arabic simple" id="index-1">
+<li><strong>Request line:</strong> The first line is the request line. It includes the
+<strong>request method</strong>, the path from the URL, and the HTTP version being used.</li>
+<li><strong>Request headers:</strong> From line 2 until the first blank line, the <em>headers</em>
+consist of a series of key-value pairs, one per line.</li>
+<li><strong>Blank line:</strong> This marks the end of the request headers.</li>
+<li><strong>Request body (Optional):</strong> Below the blank line, the request body takes up
+the remainder of the HTTP request.</li>
+</ol>
+<div class="section" id="request-methods">
+<h2><span class="section-number">19.4.1. </span>Request Methods<a class="headerlink" href="#request-methods" title="Permalink to this headline">¶</a></h2>
+<p>In the request line, we already discussed the role the <em>path</em> plays in the URL.
+However, the first part of this line is new to us.</p>
+<p>The <em>request method</em> identifies the action that must be done with the requested
+data. HTTP defines <a class="reference external" href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods" target="_blank">8 methods<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+but we only need to pay attention to two of them: <code class="docutils literal notranslate"><span class="pre">GET</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p>
+<div class="section" id="the-get-method">
+<h3><span class="section-number">19.4.1.1. </span>The <code class="docutils literal notranslate"><span class="pre">GET</span></code> Method<a class="headerlink" href="#the-get-method" title="Permalink to this headline">¶</a></h3>
+<p id="index-2">The <code class="docutils literal notranslate"><span class="pre">GET</span></code> method tells the server that we only want to <em>retrieve</em> data. This
+is the most commonly used method. It is used to request HTML pages, CSS and
+JavaScript files, and images. When we click on a link in a web page, we trigger
+a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request for the linked page.</p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests usually do not have a body, since they just <em>ask</em> for
+information. We don’t need to provide commands to change that data in any way.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests are usually used for:</p>
+<ol class="last arabic simple">
+<li>Loading a page after typing its URL in the browser’s address bar.</li>
+<li>Conducting a search via a search engine.</li>
+<li>Loading a page after clicking on a link.</li>
+<li>Refreshing a webpage.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="the-post-method">
+<h3><span class="section-number">19.4.1.2. </span>The <code class="docutils literal notranslate"><span class="pre">POST</span></code> Method<a class="headerlink" href="#the-post-method" title="Permalink to this headline">¶</a></h3>
+<p id="index-3">Using the <code class="docutils literal notranslate"><span class="pre">POST</span></code> method tells the server that we want to <em>add or modify</em> the
+data on the server. As we will learn in the next chapter, <code class="docutils literal notranslate"><span class="pre">POST</span></code> is used when
+submitting a form.</p>
+<p><code class="docutils literal notranslate"><span class="pre">POST</span></code> requests usually have a body. It contains data that the server will
+process and/or store in some fashion.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p><code class="docutils literal notranslate"><span class="pre">POST</span></code> requests are used for:</p>
+<ol class="last arabic simple">
+<li>Logging into a web site.</li>
+<li>Sending an email using an online service.</li>
+<li>Making an online purchase.</li>
+<li>Providing information through an electronic form.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="headers">
+<h2><span class="section-number">19.4.2. </span>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
+<p>There are <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank">lots of request headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
+but only a few will be useful to us.</p>
+<table border="1" class="docutils align-default" id="id1">
+<caption><span class="caption-text">Common HTTP Request Headers</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header</th>
+<th class="head">Purpose</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Host</span></code></td>
+<td>The domain name or IP address for the server receiving the request.</td>
+<td><code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">User-Agent</span></code></td>
+<td>Information about the client (usually a browser) making the request. The
+example is for a version of Firefox on a Mac.</td>
+<td><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10.15;</span> <span class="pre">rv:67.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/82.0.2</span></code></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Accept</span></code></td>
+<td>The types of data that the client requires in the response.</td>
+<td><code class="docutils literal notranslate"><span class="pre">text/html,</span> <span class="pre">image/jpeg</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></td>
+<td>The type of data included in the request body. Usually only used for
+<code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</td>
+<td><code class="docutils literal notranslate"><span class="pre">application/json,</span> <span class="pre">application/xml</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="body">
+<h2><span class="section-number">19.4.3. </span>Body<a class="headerlink" href="#body" title="Permalink to this headline">¶</a></h2>
+<p>The optional request body can contain any kind of data. For example, when
+signing into a web site, the body will contain a username and password.</p>
+<p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">GET</span></code> requests generally do <em>not</em> have a body.</p>
+</div>
+<div class="section" id="check-your-understanding">
+<h2><span class="section-number">19.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-question admonition">
+<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p>Which type of method (<code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>) should be used for each of the
+following actions. Click on each option to reveal the correct answer.</p>
+<div class="last"><ol type="a">
+   <li onclick="revealAnswer('resultA', 'POST')">Making a purchase from Amazon. <span id="resultA"></span></li>
+   <li onclick="revealAnswer('resultB', 'POST')">Logging into a gmail account. <span id="resultB"></span></li>
+   <li onclick="revealAnswer('resultC', 'GET')">Looking up (then reading) an NPR article. <span id="resultC"></span></li>
+   <li onclick="revealAnswer('resultD', 'GET')">Streaming a movie trailer on YouTube. <span id="resultD"></span></li>
+   <li onclick="revealAnswer('resultE', 'GET')">Clicking a link in a Wikipedia page. <span id="resultE"></span></li>
+   <li onclick="revealAnswer('resultF', 'POST')">Submitting an online assignment to your teacher. <span id="resultF"></span></li>
+</ol></div></div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="http-at-a-glance.html"><span aria-hidden="true">&larr;</span> <span class="section-number">19.3. </span>HTTP At a Glance</a></li>
+        
+        
+        <li class="next"><a href="http-responses.html"><span class="section-number">19.5. </span>Responses <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/http/http-requests.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

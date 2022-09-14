@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.5. Statements and Expressions &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.6. Operators" href="operators.html" />
+    <link rel="prev" title="4.4. More on Variables" href="more-on-variables.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">4. </span>Data and Variables</a></li>
+    <li class="active"><span class="section-number">4.5. </span>Statements and Expressions</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="statements-and-expressions">
+<span id="expressions"></span><h1><span class="section-number">4.5. </span>Statements and Expressions<a class="headerlink" href="#statements-and-expressions" title="Permalink to this headline">¶</a></h1>
+<p id="index-0">A <strong>statement</strong> is an instruction that the Python interpreter can run. So far,
+we have used print statements and assignment statements.</p>
+<p>An <strong>expression</strong> is a combination of values, variables, operators, and calls
+to functions. Think of an expression as a formula made up of multiple parts.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># These are statements:</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+
+<span class="c1"># This statement contains an expression:</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+</td></tr></table></div>
+<p>In line 6, before Python can assign a value to <code class="docutils literal notranslate"><span class="pre">total</span></code>, the expression
+<code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> must be <em>evaluated</em>. This means Python figures out the result of the
+calculation <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code>, and then <em>returns</em> that value to the statement. The variable
+<code class="docutils literal notranslate"><span class="pre">total</span></code> does NOT store <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code>. Instead, it stores the result, <code class="docutils literal notranslate"><span class="pre">7</span></code>.</p>
+<p id="index-1">Every expression produces a value, known as the <strong>return value</strong>. We say that
+an expression <em>returns a value</em> when it runs.</p>
+<p>When you print an expression in Python, the interpreter evaluates the
+expression and displays the result.</p>
+<div class="admonition-example admonition">
+<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p><strong>Console Output</strong></p>
+<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>5
+Hello, World!
+</pre></div>
+</div>
+</div>
+<p>Line 1 does NOT print <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code>. Instead, it prints the <em>result</em> of calculating
+<code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code>, so we see <code class="docutils literal notranslate"><span class="pre">5</span></code> in the console. The expression <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">3</span></code> <em>returns</em> the
+value <code class="docutils literal notranslate"><span class="pre">5</span></code>. Think of this as the print argument <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span></code> getting evaluated as <code class="docutils literal notranslate"><span class="pre">(5)</span></code>.</p>
+<p>The statement in line 4 also has an expression. The variable <code class="docutils literal notranslate"><span class="pre">message</span></code> holds
+a string. <em>Evaluating</em> the variable <em>returns</em> that string, so <code class="docutils literal notranslate"><span class="pre">print(message)</span></code>
+becomes <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code>.</p>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="more-on-variables.html"><span aria-hidden="true">&larr;</span> <span class="section-number">4.4. </span>More on Variables</a></li>
+        
+        
+        <li class="next"><a href="operators.html"><span class="section-number">4.6. </span>Operators <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/data-and-variables/expressions-and-statements.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 9: Errors and Debugging &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 10: What’s Your Function" href="chapter10.html" />
+    <link rel="prev" title="Chapter 8: Lists Keep Things In Order" href="chapter08.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html">Solutions To Chapter Exercises</a></li>
+    <li class="active">Chapter 9: Errors and Debugging</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="chapter-9-errors-and-debugging">
+<h1>Chapter 9: Errors and Debugging<a class="headerlink" href="#chapter-9-errors-and-debugging" title="Permalink to this headline">¶</a></h1>
+<p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/errors-and-debugging/exercises.html#errors-and-debugging-exercises"><span class="std std-ref">exercises</span></a>.
+However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
+<blockquote>
+<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div class="section" id="chapter-sandbox">
+<h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
+<p>Use the editor below to test out any of the solutions!</p>
+<iframe src="https://trinket.io/embed/python3/0f03fdcb76" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
+<div class="section" id="solutions">
+<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-and-fix-syntax-errors">
+<span id="chp9part1"></span><h3>Find and Fix Syntax Errors<a class="headerlink" href="#find-and-fix-syntax-errors" title="Permalink to this headline">¶</a></h3>
+<p>The following code sample contains 3 syntax errors.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+<span class="n">alphabet</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+<span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="s2">&quot;Enter an index value: &quot;</span><span class="p">))</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">value</span><span class="o">%</span><span class="mi">26</span>
+
+<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">):</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter at index </span><span class="si">{0}</span><span class="s2"> (</span><span class="si">{1}</span><span class="s2">) is &#39;</span><span class="si">{2}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter at index </span><span class="si">{0}</span><span class="s2"> is &#39;</span><span class="si">{1}</span><span class="s2">&#39;.&quot;</span><span class="nb">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Before making any changes, run the code as-is to generate the first error
+message.</p>
+</li>
+<li><p class="first">Use the error message to fix the first bug. Do NOT change anything in the
+code unless it involves fixing the first bug.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error Message One</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">File &quot;main.py&quot;, line 3</span>
+<span class="sd">    value = int(input&quot;Enter an index value: &quot;))</span>
+<span class="sd">                    ^</span>
+<span class="sd">SyntaxError: invalid syntax</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Original Code from line 3 is missing a ( after the input keyword.</span>
+<span class="c1"># Note the error gives you the line and puts a little ^ near the error</span>
+
+<span class="c1">#Fixed Code from line 3</span>
+<span class="c1">#value = int(input(&quot;Enter an index value: &quot;))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">After changing the code, run the program again. If there is another bug in
+the program, you will see a different error message.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error Message Two</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">File &quot;main.py&quot;, line 6</span>
+<span class="sd">    if value &gt; = len(alphabet):</span>
+<span class="sd">            ^</span>
+<span class="sd">SyntaxError: invalid syntax</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Original Code from line 6 has an extra space between &gt; and =</span>
+
+<span class="c1"># Fixed Code from line 6</span>
+<span class="c1">#if value &gt;= len(alphabet):</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Repeat steps 2 and 3 until you fix all of the bugs and the program runs
+successfully.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Working Program Below, All bugs fixed</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="n">alphabet</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an index value: &quot;</span><span class="p">))</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">value</span><span class="o">%</span><span class="mi">26</span>
+
+<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter at index </span><span class="si">{0}</span><span class="s2"> (</span><span class="si">{1}</span><span class="s2">) is &#39;</span><span class="si">{2}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter at index </span><span class="si">{0}</span><span class="s2"> is &#39;</span><span class="si">{1}</span><span class="s2">&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">alphabet</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/errors-and-debugging/exercises.html#errors-and-debugging-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="find-and-fix-runtime-errors">
+<span id="chp9part2"></span><h3>Find and Fix Runtime Errors<a class="headerlink" href="#find-and-fix-runtime-errors" title="Permalink to this headline">¶</a></h3>
+<p>The following code sample contains 3 runtime errors.</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a school-appropriate word: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The last letter in &#39;</span><span class="si">{0}</span><span class="s2">&#39; is &#39;</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)]))</span>
+
+<span class="n">first_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a whole number: &quot;</span><span class="p">))</span>
+<span class="n">second_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another whole number: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For </span><span class="si">{</span><span class="n">first_num</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">second_num</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Sum = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">+</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Difference = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">-</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Product = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">*</span> <span class="n">secnod_num</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">second_num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Quotient = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">/</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Quotient = undefined (cannot divide by 0)&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Before making any changes, run the code as-is to generate the first error
+message.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Error 1</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Traceback (most recent call last):</span>
+<span class="sd">File &quot;main.py&quot;, line 2, in &lt;module&gt;</span>
+<span class="sd">    print(&quot;The last letter in &#39;{0}&#39; is &#39;{1}&#39;&quot;.format(word, word[len(word)]))</span>
+<span class="sd">IndexError: string index out of range</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1">#Original Code on line 2, remember index starts at 0 not 1 so len(word) would return a value + 1</span>
+
+<span class="c1">#Fixed Code:</span>
+<span class="c1">#print(&quot;The last letter in &#39;{0}&#39; is &#39;{1}&#39;&quot;.format(word, word[len(word) - 1]))</span>
+
+<span class="c1">#or alternatively</span>
+
+<span class="c1">#remember a -1 index takes us to the end of a string</span>
+<span class="c1">#print(&quot;The last letter in &#39;{0}&#39; is &#39;{1}&#39;&quot;.format(word, word[-1]))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Follow the same process you used above to fix the runtime errors. Note that
+syntax highlighting does NOT show all possible runtime errors.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Error 2</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Traceback (most recent call last):</span>
+<span class="sd">File &quot;main.py&quot;, line 8, in &lt;module&gt;</span>
+<span class="sd">    print(&quot;\tSum = {0}&quot;.format(first_num + second_num))</span>
+<span class="sd">TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1">#Original Code on line 8</span>
+<span class="c1">#print(&quot;\tSum = {0}&quot;.format(first_num + second_num))</span>
+<span class="c1">#Which looks correct - reread error code and the error is type int and str, look up at our variables</span>
+
+<span class="c1">#Line 5 code is the problem. We need to change the data type to int.</span>
+
+<span class="c1">#Fixed Code:</span>
+<span class="c1">#second_num = int(input(&quot;Enter another whole number: &quot;))</span>
+
+<span class="c1">#Hint for Error 3: check your spelling!</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Working Program Below, All bugs fixed.</span>
+<span class="n">word</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a school-appropriate word: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The last letter in &#39;</span><span class="si">{0}</span><span class="s2">&#39; is &#39;</span><span class="si">{1}</span><span class="s2">&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">word</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">first_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a whole number: &quot;</span><span class="p">))</span>
+<span class="n">second_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another whole number: &quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For </span><span class="si">{</span><span class="n">first_num</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">second_num</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Sum = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">+</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Difference = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">-</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Product = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">*</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">second_num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Quotient = </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_num</span> <span class="o">/</span> <span class="n">second_num</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Quotient = undefined (cannot divide by 0)&quot;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><a class="reference internal" href="../../chapters/errors-and-debugging/exercises.html#errors-and-debugging-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+<div class="section" id="solve-logic-errors">
+<span id="chp9part3"></span><h3>Solve Logic Errors<a class="headerlink" href="#solve-logic-errors" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">The following code contains two logic errors.  When given a student’s score
+on an exam, the program <em>should</em> convert the points earned into a
+percentage (points earned / points possible * 100). Find and fix the errors
+so that the program gives the correct result.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#Original Code with bugs</span>
+<span class="n">points_earned</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">points_possible</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">percentage</span> <span class="o">=</span> <span class="n">points_possible</span><span class="o">/</span><span class="n">points_earned</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The student earned </span><span class="si">{</span><span class="n">points_earned</span><span class="si">}</span><span class="s2"> points out of </span><span class="si">{</span><span class="n">points_possible</span><span class="si">}</span><span class="s2">, or </span><span class="si">{</span><span class="n">percentage</span><span class="si">}</span><span class="s2">%.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Here are some test cases:</span>
+<span class="c1"># Earning 8 out of 10 possible points = 80.0%.</span>
+<span class="c1"># 11 of of 15 is 73.33333333333333%.</span>
+<span class="c1"># 23.4 out of 25 93.6%.</span>
+
+<span class="c1"># First, run the program as is. Note the output:</span>
+
+<span class="sd">&quot;&quot;&quot;The student earned 8 points out of 10, or 12.5%.&quot;&quot;&quot;</span>
+
+<span class="c1"># Look at line 5 and see that variables are reversed should be points_earned/points_possible.</span>
+<span class="c1"># Check your code by running it, did you find the second logic error?</span>
+<span class="c1"># Percentage would be *100 not *10, should be 8/10 * 100</span>
+
+<span class="c1">#Fixed code: percentage = points_earned/points_possible * 100</span>
+
+<span class="c1">#Next test out more examples (line 10 and 11) to see if program still works.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">The next program should convert a student’s percentage into a letter grade.
+The code follows a simple 10-point scale and allows for decimal results:
+A: 100% - 90%, B: 89 - 80, C: 79 - 70, D: 69 - 60, F: Any score under 60%.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;The student&#39;s score of </span><span class="si">{0}% i</span><span class="s2">s a(n) &#39;</span><span class="si">{1}</span><span class="s2">&#39;.&quot;</span>
+
+<span class="n">score_percent</span> <span class="o">=</span> <span class="mf">93.5</span>
+
+<span class="k">if</span> <span class="n">score_percent</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;O&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;E&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&lt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;T&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score_percent</span><span class="p">,</span> <span class="n">letter_grade</span><span class="p">))</span>
+
+<span class="c1">#Some of the things to notice in the code above:</span>
+<span class="c1">#The wrong letter grades are assigned</span>
+<span class="c1">#The score logic also jumps around 90 to 70 to 80 etc, this could be problematic.</span>
+<span class="c1">#What happens when testing say 83 if we just fix the letter grade assigned and not order.</span>
+<span class="c1">#Also &gt; is not including the 90, 70, 80, etc.</span>
+<span class="c1">#Line 54 is using &lt;= which needs to be either switched to &lt; or &gt;=.</span>
+<span class="c1">#Does it make a difference if you use &lt; 60 and assign F and the else statement returns D? Test it out!</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p>One possible solution:</p>
+<blockquote>
+<div><div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">score_percent</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+<span class="k">elif</span> <span class="n">score_percent</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">letter_grade</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">The last code sample checks if a username is valid, but it’s not working yet.
+Add <code class="docutils literal notranslate"><span class="pre">print</span></code> statements as directed to find and fix the logic errors.</p>
+<p><strong>Username rules</strong>:</p>
+<ol class="loweralpha simple">
+<li>Must be 5 - 10 characters long.</li>
+<li>Must only contain letters and numbers.</li>
+<li>Must contain at least 1 digit.</li>
+</ol>
+<p><strong>Test names</strong>:</p>
+<ol class="loweralpha simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;R2D2&quot;</span></code> should be invalid (too short).</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;CoderGirl&quot;</span></code> should be invalid (no number).</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;rut*baga8&quot;</span></code> should be invalid (illegal symbol).</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;This1IsTooLong&quot;</span></code> should be invalid (too long).</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;High5&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;pyth0n&quot;</span></code> are both valid (that’s a zero in place of
+the “o”).</li>
+</ol>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#One possible solution:</span>
+
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;CoderGirl&#39;</span>
+<span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">has_digit</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Add print statements as directed to help find and fix the logic error.</span>
+
+<span class="c1"># Check length</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1">#check logic of above if statement</span>
+<span class="c1">#print(is_valid)</span>
+
+<span class="c1"># Loop to check the characters in username.</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">username</span><span class="p">:</span>
+    <span class="c1"># Check for a digit (0-9).</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">:</span>
+        <span class="n">has_digit</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="c1"># Check for non-letters.</span>
+    <span class="k">elif</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_letters</span><span class="p">:</span>
+        <span class="n">is_valid</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1">#else:</span>
+        <span class="c1">#is_valid = True</span>
+    <span class="c1">#to check logic of this loop</span>
+    <span class="c1">#print(char, is_valid, has_digit)</span>
+
+<span class="k">if</span> <span class="n">is_valid</span> <span class="ow">and</span> <span class="n">has_digit</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39; is a valid username.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">((</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s2">&#39; is invalid.&quot;</span><span class="p">))</span>
+
+<span class="c1">#Part 3-1</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On line 13, add print(is_valid) to check if the conditional on line 11 correctly assigns True and</span>
+<span class="sd">False based on the length of the username. Be sure to run the program with all four test names.</span>
+<span class="sd">R2D2 and This1IsTooLong should return False, while CoderGirl and rut*baga8 should return True.</span>
+
+<span class="sd">Is the conditional on line 11 doing its job correctly? YES</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">#Part 3-3 and 3-4</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On line 26, add print(char, is_valid, has_digit). Make sure to indent the statement the same amount</span>
+<span class="sd">as the else on line 23.</span>
+
+<span class="sd">Run the program again with all 4 test names. Note how the values of is_valid and has_digit change</span>
+<span class="sd">each time the loop repeats. Use the output to find and fix the logic error in the loop.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># The else statement line 23 seems redundant and is changing is_valid to True when its not.</span>
+<span class="c1"># We just need to check for if char has a digit (change has_digit to True),</span>
+<span class="c1"># and if it has a strange character (change is_valid to False).</span>
+<span class="c1"># Got rid of else statement.</span>
+<span class="c1"># Run program to check that all names return correct answer.</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+</ol>
+<p><em>Bonus fix</em>: The loop runs after the length check passes <em>or</em> fails. How can we make it so that the
+loop runs only <em>if</em> the length test passes? Try nesting the for loop (lines 17-23) under the first if statement checking for length (lines 11-12).</p>
+<p><a class="reference internal" href="../../chapters/errors-and-debugging/exercises.html#errors-and-debugging-exercises"><span class="std std-ref">Back to the exercises</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="chapter08.html"><span aria-hidden="true">&larr;</span> Chapter 8: Lists Keep Things In Order</a></li>
+        
+        
+        <li class="next"><a href="chapter10.html">Chapter 10: What’s Your Function <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/appendices/exercise-solutions/chapter09.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

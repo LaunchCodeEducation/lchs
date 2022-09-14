@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>24.4. SQLite &#8212; LaunchCode&#39;s LCHS  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/site.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="24.5. Database Practice" href="db-practice.html" />
+    <link rel="prev" title="24.3. Database Operations" href="crud.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+
+  </head><body class="body-bc">
+
+<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <div class="navbar-header">
+       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+       </a>
+       <span class="navbar-text navbar-version pull-left"><b></b></span>
+     </div>
+
+       <div class="collapse navbar-collapse nav-collapse">
+         <ul class="nav navbar-nav">
+           
+           
+             
+           
+           
+           
+           
+           
+         </ul>
+
+         
+           
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+         
+       </div>
+   </div>
+ </div>
+
+<ol class="breadcrumb container">
+    <li><a href="../../index.html">Contents</a></li>
+    <li><a href="index.html"><span class="section-number">24. </span>Databases</a></li>
+    <li class="active"><span class="section-number">24.4. </span>SQLite</li>
+</ol>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 content " role="main">
+
+    
+  <div class="section" id="sqlite">
+<h1><span class="section-number">24.4. </span>SQLite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h1>
+<p>For this course, we are not going to create or access a large-scale database.
+Instead, we will mimic the behavior of a database by creating a file in our
+project directory. This file will contain all the necessary tables, and we will
+use it to store and access information.</p>
+<p id="index-0">The queries we use with the database must be written in SQL. There are
+different versions of SQL used across the coding community, but we will focus
+on one called <strong>SQLite</strong> (pronounced <em>sequel light</em>). It provides a smaller,
+less complicated introduction to working with databases.</p>
+<p>Python comes with a module specifically designed around SQLite. Let’s begin by
+importing it and connecting to a practice database!</p>
+<div class="section" id="setup">
+<h2><span class="section-number">24.4.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Launch Visual Studio Code. From the <em>File</em> menu, open your
+<code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p>
+</li>
+<li><p class="first">Create a new folder called <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>. Make sure you keep it
+outside of any existing project or Git repository.</p>
+</li>
+<li><p class="first">From the <em>File</em> menu, open <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>.</p>
+</li>
+<li><p class="first">In the terminal, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize the project as a new Git
+repository.</p>
+</li>
+<li><p class="first">Create a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file and open it in the workspace.</p>
+</li>
+<li><p class="first">On line 1, import the SQLite module:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> contains all the methods and tools we need to create and
+maintain a local database.</p>
+</li>
+</ol>
+<p>That’s it! We are now ready to dive into our first database!</p>
+</div>
+<div class="section" id="create-a-database">
+<span id="connect-to-db"></span><h2><span class="section-number">24.4.2. </span>Create a Database<a class="headerlink" href="#create-a-database" title="Permalink to this headline">¶</a></h2>
+<p id="index-1">To interact with a database, we must do three things inside our Python code:</p>
+<ol class="arabic simple">
+<li>Create the database.</li>
+<li>Define a <strong>connection object</strong> that links our program to the database.</li>
+<li>Define a <strong>cursor object</strong> that will execute our SQL commands.</li>
+</ol>
+<p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the following statements:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">database</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;practice.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<p>Line 3 creates the <code class="docutils literal notranslate"><span class="pre">database</span></code> object and assigns it the properties and
+methods we need to interact with our database.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.connect()</span></code> method links our program to a database called
+<code class="docutils literal notranslate"><span class="pre">practice.db</span></code>. If this file does not exist in our project folder, Python
+creates it for us.  (Thanks, Python!)</p>
+<p>Line 4 defines the <code class="docutils literal notranslate"><span class="pre">cursor</span></code> object. We will use this object to run SQL
+commands and perform CRUD operations.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We can use any variable name we want for the connection object, but popular
+choices include <code class="docutils literal notranslate"><span class="pre">conn</span></code>, <code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">database</span></code>, and <code class="docutils literal notranslate"><span class="pre">db</span></code>.</p>
+<p class="last">Similarly, we can name the cursor object whatever we want, as long as our
+choice follows proper Python naming conventions.</p>
+</div>
+<p>Go ahead and run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Notice that <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> appears in the file
+tree!</p>
+<div class="figure align-default" id="id1">
+<img alt="File tree showing main.py and practice.db." src="../../_images/new-db.png" />
+<p class="caption"><span class="caption-text">We now have a database inside our project directory.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Opening <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> in the workspace shows an empty file. This isn’t
+surprising, since we just created it. However, our database now exists and is
+ready to receive some information.</p>
+<div class="admonition-tip admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">Take a moment to save and commit your changes!</p>
+</div>
+</div>
+<div class="section" id="add-a-new-table">
+<h2><span class="section-number">24.4.3. </span>Add a New Table<a class="headerlink" href="#add-a-new-table" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to add a table to our database. We will do this with the
+<code class="docutils literal notranslate"><span class="pre">cursor</span></code> object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">cursor</span></code> uses a special method to run SQL commands. The general syntax is:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sql_query</span></code> must be a string or a string variable. What we put in that string
+depends on the action we want to perform. When we call the <code class="docutils literal notranslate"><span class="pre">.execute()</span></code>
+method, it converts the string into the SQL language and runs the command.</p>
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> to create a table called <code class="docutils literal notranslate"><span class="pre">students</span></code> in
+<code class="docutils literal notranslate"><span class="pre">practice.db</span></code>. The table will hold student names and their graduation year.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code> define a variable to hold the SQL command. Be sure to type
+the string <em>exactly</em> as shown below.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
+
+<span class="n">database</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;practice.db&#39;</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">database</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Reading the string in line 6 describes what we want the query to do. It
+should create a table called <code class="docutils literal notranslate"><span class="pre">students</span></code>, which has three columns. These
+will store a student’s last name, first name, and graduation year.</p>
+<p>Python and the SQL language sometimes use different names for the same data
+type. Notice that <code class="docutils literal notranslate"><span class="pre">last_name</span></code> and <code class="docutils literal notranslate"><span class="pre">first_name</span></code> are both set as <code class="docutils literal notranslate"><span class="pre">TEXT</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">str</span></code>, but they mean the same thing. <code class="docutils literal notranslate"><span class="pre">grad_year</span></code> is set as an
+integer.</p>
+<p>A deep dive into all the SQL data types is beyond the scope of this course.
+We focus on only a few, and we will pick them up as needed.</p>
+</li>
+<li><p class="first">Once you assign the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string, the next step is to make it
+happen! Add one more statement to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, then save.</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;CREATE TABLE students (last_name TEXT, first_name TEXT, grad_year INT)&quot;</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_query</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, aaannnnnddd… nothing seems to happen! However, as long as
+no error message appears, your code ran just fine. Checking the file tree
+shows that changes did take place in both <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and <code class="docutils literal notranslate"><span class="pre">practice.db</span></code>.</p>
+<div class="figure align-default" id="id2">
+<img alt="File tree highlighting changes in main.py and practice.db after adding a table." src="../../_images/new-table.png" />
+<p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">M</span></code> stands for “Modified”, and it indicates which files were changed.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ol>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> in the workspace. You might see a message telling you
+that VS Code cannot display the contents of the file.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/view-db-1.png"><img alt="Message asking if we really want to open the .db file." src="../../_images/view-db-1.png" style="width: 80%;" /></a>
+</div>
+<p>Click <em>open it anyway</em> to show mostly unreadable text.</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/view-db-2.png"><img alt="Showing unreadable content that exists in the practice.db file." src="../../_images/view-db-2.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-text">VS Code can’t render a clean view of the database (yet).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>While this doesn’t seem useful at first, it DOES prove that the <code class="docutils literal notranslate"><span class="pre">.execute</span></code>
+statement changed the <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> file. On the next page, we will install
+an extension in VS Code that lets us view the contents of a database.</p>
+</div>
+<div class="section" id="table-creation-error">
+<h2><span class="section-number">24.4.4. </span>Table Creation Error<a class="headerlink" href="#table-creation-error" title="Permalink to this headline">¶</a></h2>
+<p>If you haven’t already done so, run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> again. You will receive an
+error message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+File <span class="s2">&quot;main.py&quot;</span>, line <span class="m">8</span>, <span class="k">in</span> &lt;module&gt;
+   cursor.execute<span class="o">(</span>sql_query<span class="o">)</span>
+sqlite3.OperationalError: table students already exists
+</pre></div>
+</div>
+<p>The last line tells us why the program crashed. The <code class="docutils literal notranslate"><span class="pre">students</span></code> table already
+exists in the database. Running the <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> command a second time does
+NOT overwrite the original table. <em>This is a nice safety feature</em>. We want to
+protect the database against accidental deletions. However, we also want to
+rerun our code.</p>
+<p>When we run our program, we want to create the <code class="docutils literal notranslate"><span class="pre">students</span></code> table if it isn’t
+in the database, but ignore the command if the table is already present.
+Fortunately, we can modify the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string to deal with this.</p>
+<div class="admonition-try-it admonition">
+<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="last arabic">
+<li><p class="first">Update <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> like this:</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;CREATE TABLE IF NOT EXISTS students (last_name TEXT, first_name TEXT, grad_year INT)&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</li>
+<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span></code> syntax works like the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> keywords in
+Python.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;Rutabagas&#39;</span>  <span class="c1"># Returns False, because &#39;a&#39; is in &#39;Rutabagas&#39;</span>
+<span class="mi">42</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>    <span class="c1"># Returns True, because the list is missing 42</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span> <span class="pre">students</span></code> checks to see if the a table called
+<code class="docutils literal notranslate"><span class="pre">students</span></code> is NOT in the database. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the table is added. If
+<code class="docutils literal notranslate"><span class="pre">False</span></code> the command is ignored.</p>
+</li>
+<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> again. You should not see an error message.</p>
+</li>
+</ol>
+</div>
+<p>On the next page, we will add some rows to the <code class="docutils literal notranslate"><span class="pre">students</span></code> table and then
+practice retrieving that data.</p>
+<p>Be sure to save and commit your work before moving on!</p>
+</div>
+</div>
+
+
+
+    
+    <nav aria-label="Next and Previous Pages">
+      <ul class="pager">
+        
+        <li class="previous"><a href="crud.html"><span aria-hidden="true">&larr;</span> <span class="section-number">24.3. </span>Database Operations</a></li>
+        
+        
+        <li class="next"><a href="db-practice.html"><span class="section-number">24.5. </span>Database Practice <span aria-hidden="true">&rarr;</span></a></li>
+        
+      </ul>
+    </nav>
+    
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+<div id="sourcelink">
+  <a href="../../_sources/chapters/databases/sqlite.rst.txt"
+     rel="nofollow">Page Source</a>
+</div>
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
