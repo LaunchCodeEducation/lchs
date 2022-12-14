@@ -102,26 +102,26 @@ attractive page is a key part of this. Here are a few tips to keep in mind when
 coding a form. None of these items are <em>required</em>, but each one improves a
 user’s experience with our work.</p>
 <ol class="arabic simple">
-<li>Include a short heading that identifies the purpose of the form.</li>
-<li>Place only one input element on each line of the form. Vertically stacked
-fields are easier to navigate than side-by-side ones.</li>
-<li>For text inputs, try to keep the width of the boxes the same. Also, have the
-fields line up with each other.</li>
-<li>The part of the page that belongs to the form should be clear. Use shading
-or a border to separate the form from the other content on the page.</li>
-<li>Break longer forms into multiple sections. Each section should deal with
+<li><p>Include a short heading that identifies the purpose of the form.</p></li>
+<li><p>Place only one input element on each line of the form. Vertically stacked
+fields are easier to navigate than side-by-side ones.</p></li>
+<li><p>For text inputs, try to keep the width of the boxes the same. Also, have the
+fields line up with each other.</p></li>
+<li><p>The part of the page that belongs to the form should be clear. Use shading
+or a border to separate the form from the other content on the page.</p></li>
+<li><p>Break longer forms into multiple sections. Each section should deal with
 related information. For example, name and email would go in one section,
-while options for a lunch order would go in another.</li>
-<li>The user shouldn’t need to zoom in. Keep the font size large enough to
+while options for a lunch order would go in another.</p></li>
+<li><p>The user shouldn’t need to zoom in. Keep the font size large enough to
 easily read. (<em>Hint</em>: If your parent or teacher needs to squint and lean
-closer to the screen, bump up your font size).</li>
+closer to the screen, bump up your font size).</p></li>
 </ol>
 <p>Fortunately, we can meet these guidelines by applying some CSS style rules!</p>
 <div class="section" id="add-css">
 <h2><span class="section-number">20.9.1. </span>Add CSS<a class="headerlink" href="#add-css" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">One thing to keep in mind as we style our forms is that <code class="docutils literal notranslate"><span class="pre">label</span></code>,
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>One thing to keep in mind as we style our forms is that <code class="docutils literal notranslate"><span class="pre">label</span></code>,
 <code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">select</span></code>, <code class="docutils literal notranslate"><span class="pre">textarea</span></code>, and <code class="docutils literal notranslate"><span class="pre">button</span></code> are all
 <a class="reference internal" href="../html/tags.html#block-vs-inline-elements"><span class="std std-ref">inline elements</span></a>. Even if we put them on
 separate lines in our HTML code, they will appear in the same line of our
@@ -156,11 +156,10 @@ with the <strong>margin</strong> property. <em>Margin</em> sets the amount of wh
 surrounds an element. The larger its value, the more spaced out two neighboring
 elements will be.</p>
 <ol class="arabic">
-<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> tab in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">margin</span></code>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> tab in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">margin</span></code>
 property is assigned inside the element selector. Experiment with changing
-the number of pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>) assigned.</p>
-</li>
-<li><p class="first">What happens to the form if you add a <code class="docutils literal notranslate"><span class="pre">label</span></code> selector that also
+the number of pixels (<code class="docutils literal notranslate"><span class="pre">px</span></code>) assigned.</p></li>
+<li><p>What happens to the form if you add a <code class="docutils literal notranslate"><span class="pre">label</span></code> selector that also
 includes a <code class="docutils literal notranslate"><span class="pre">margin</span></code> value?</p>
 <iframe src="https://trinket.io/embed/html/728e86b6f9" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
 </ol>
@@ -174,18 +173,17 @@ browser to see how it looks.</p>
 assigned can be in pixels or a percentage. Using a percentage is recommended,
 since this changes the field size to always fit within a given space.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Resize your browser window to see how these two fields respond:</p>
 <input style="width:50%" type="text" placeholder="Width set to 50%."/><br><br>
-<input style="width:600px" type="text" placeholder="Width set to 600 pixels."/><p class="last">Note that the input field set at <code class="docutils literal notranslate"><span class="pre">50%</span></code> <em>always</em> stretches halfway across
+<input style="width:600px" type="text" placeholder="Width set to 600 pixels."/><p>Note that the input field set at <code class="docutils literal notranslate"><span class="pre">50%</span></code> <em>always</em> stretches halfway across
 this Example box, no matter how small we make the window. The <code class="docutils literal notranslate"><span class="pre">600px</span></code> box
 remains the same size.</p>
 </div>
 <ol class="arabic">
-<li><p class="first">In the editor above, add a <code class="docutils literal notranslate"><span class="pre">width</span></code> property to the <code class="docutils literal notranslate"><span class="pre">input</span></code> selector.
-Experiment by assigning different <code class="docutils literal notranslate"><span class="pre">px</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code> values to the property.</p>
-</li>
-<li><p class="first">What about the <code class="docutils literal notranslate"><span class="pre">type=&quot;number&quot;</span></code> input? That field doesn’t need to be as
+<li><p>In the editor above, add a <code class="docutils literal notranslate"><span class="pre">width</span></code> property to the <code class="docutils literal notranslate"><span class="pre">input</span></code> selector.
+Experiment by assigning different <code class="docutils literal notranslate"><span class="pre">px</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code> values to the property.</p></li>
+<li><p>What about the <code class="docutils literal notranslate"><span class="pre">type=&quot;number&quot;</span></code> input? That field doesn’t need to be as
 large as the others. With CSS we can either add a <em>class</em> to set the width,
 or we can try out a new technique. Add this to the CSS code in the editor:</p>
 <div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">number</span><span class="o">]</span> <span class="p">{</span>
@@ -248,12 +246,12 @@ combine the two branches. Resolve any merge conflicts.</p>
 <p>The following websites provide more detailed information about styling forms
 with CSS:</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/" target="_blank">How to style forms with CSS: A beginner’s guide<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://www.w3schools.com/css/css_form.asp" target="_blank">W3Schools CSS Forms<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li>Dive deep with the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms" target="_blank">MDN documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li><a class="reference external" href="https://getbootstrap.com/docs/4.5/components/forms/" target="_blank">Bootstrap Form Styles<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+<li><p><a class="reference external" href="https://blog.logrocket.com/how-to-style-forms-with-css-a-beginners-guide/" target="_blank">How to style forms with CSS: A beginner’s guide<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://www.w3schools.com/css/css_form.asp" target="_blank">W3Schools CSS Forms<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p>Dive deep with the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms" target="_blank">MDN documentation<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
+<li><p><a class="reference external" href="https://getbootstrap.com/docs/4.5/components/forms/" target="_blank">Bootstrap Form Styles<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 (Review the <a class="reference internal" href="../css/bootstrap.html#bootstrap-classes"><span class="std std-ref">Bootstrap</span></a> section in the CSS chapter
-if necessary).</li>
+if necessary).</p></li>
 </ol>
 </div>
 </div>

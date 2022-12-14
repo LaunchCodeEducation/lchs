@@ -96,8 +96,8 @@ are definite differences between the two.</p>
 <p>We could code separate <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> and <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> classes, but notice how each
 one repeats some of the same code:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -184,8 +184,8 @@ parent.</p>
 <p>First, we want to define the parent class called <code class="docutils literal notranslate"><span class="pre">Car</span></code>. It holds the
 properties and one method that <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> and <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> share.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -220,7 +220,7 @@ contained in <code class="docutils literal notranslate"><span class="pre">Car</s
 <code class="docutils literal notranslate"><span class="pre">ChildClassName</span></code> to all of the code the parent contains.</p>
 <p>Let’s start with <code class="docutils literal notranslate"><span class="pre">EVCar</span></code>, and for now we will only add one new method:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The following program creates one <code class="docutils literal notranslate"><span class="pre">Car</span></code> object and one <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> object.
 Notice that the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> class does not include an <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -281,7 +281,7 @@ Notice that the <code class="docutils literal notranslate"><span class="pre">EVC
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Car&#39;&gt; &lt;class &#39;__main__.EVCar&#39;&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Car&#39;&gt; &lt;class &#39;__main__.EVCar&#39;&gt;
 Saturn Beep!
 Tesla Beep!
 Fully charged!
@@ -292,38 +292,39 @@ AttributeError: &#39;Car&#39; object has no attribute &#39;recharge&#39;
 </div>
 </div>
 <ol class="arabic simple">
-<li>Lines 17 and 18 call the two classes and create the <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">EVCar</span></code>
+<li><p>Lines 17 and 18 call the two classes and create the <code class="docutils literal notranslate"><span class="pre">Car</span></code> and <code class="docutils literal notranslate"><span class="pre">EVCar</span></code>
 objects. Note that both statements include the same number and types of
-arguments.</li>
-<li>Line 20 shows us that <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> are different data types.</li>
-<li>Line 21 prints the <code class="docutils literal notranslate"><span class="pre">make</span></code> property and calls the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code> method for
-the <code class="docutils literal notranslate"><span class="pre">Car</span></code> object.</li>
-<li>Line 22 shows us that even without its own <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, properties
+arguments.</p></li>
+<li><p>Line 20 shows us that <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> are different data types.</p></li>
+<li><p>Line 21 prints the <code class="docutils literal notranslate"><span class="pre">make</span></code> property and calls the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code> method for
+the <code class="docutils literal notranslate"><span class="pre">Car</span></code> object.</p></li>
+<li><p>Line 22 shows us that even without its own <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method, properties
 were assigned to the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> object. <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> can also call the
-<code class="docutils literal notranslate"><span class="pre">Car</span></code> method <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>!</li>
-<li>Lines 24 and 25 show us that <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> can call the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> method
-<code class="docutils literal notranslate"><span class="pre">recharge</span></code>, but <code class="docutils literal notranslate"><span class="pre">my_car</span></code> cannot.</li>
+<code class="docutils literal notranslate"><span class="pre">Car</span></code> method <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>!</p></li>
+<li><p>Lines 24 and 25 show us that <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> can call the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> method
+<code class="docutils literal notranslate"><span class="pre">recharge</span></code>, but <code class="docutils literal notranslate"><span class="pre">my_car</span></code> cannot.</p></li>
 </ol>
 <p>This is what inheritance does! It allows a subclass to use the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and
 other methods defined in the parent class.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>In the editor below:</p>
 <ol class="arabic simple">
-<li>Add the <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> child class to the program. It should inherit from the
-<code class="docutils literal notranslate"><span class="pre">Car</span></code> parent class.</li>
-<li>Add a simple <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method that returns the string <code class="docutils literal notranslate"><span class="pre">'Tank</span> <span class="pre">full'</span></code>.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, test your new class:<ol class="loweralpha">
-<li>Create a <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> object and print its data type.</li>
-<li>Print one or more of its properties, and call the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>
-method.</li>
-<li>Call the <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method and print the returned string.</li>
-<li>Verify that the <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> objects cannot call the
-<code class="docutils literal notranslate"><span class="pre">refuel()</span></code> method.</li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> child class to the program. It should inherit from the
+<code class="docutils literal notranslate"><span class="pre">Car</span></code> parent class.</p></li>
+<li><p>Add a simple <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method that returns the string <code class="docutils literal notranslate"><span class="pre">'Tank</span> <span class="pre">full'</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, test your new class:</p>
+<ol class="loweralpha simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> object and print its data type.</p></li>
+<li><p>Print one or more of its properties, and call the <code class="docutils literal notranslate"><span class="pre">honk_horn</span></code>
+method.</p></li>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">refuel</span></code> method and print the returned string.</p></li>
+<li><p>Verify that the <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> objects cannot call the
+<code class="docutils literal notranslate"><span class="pre">refuel()</span></code> method.</p></li>
 </ol>
 </li>
 </ol>
-<div class="last"><iframe src="https://trinket.io/embed/python/d77c290132" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<iframe src="https://trinket.io/embed/python/d77c290132" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
 </div>
 <div class="section" id="similar-but-different">
 <h2>Similar, but Different<a class="headerlink" href="#similar-but-different" title="Permalink to this headline">¶</a></h2>

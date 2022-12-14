@@ -89,18 +89,17 @@
 <p>Here’s the code for a simple <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. Run the program first to make sure it
 works. Then make one of these changes, and run the program again:</p>
 <ol class="arabic">
-<li><p class="first">Remove or comment out <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p>
-</li>
-<li><p class="first">Replace the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator with <code class="docutils literal notranslate"><span class="pre">-=</span></code>.</p>
+<li><p>Remove or comment out <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p></li>
+<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator with <code class="docutils literal notranslate"><span class="pre">-=</span></code>.</p>
 <iframe height="400px" width="100%" src="https://repl.it/@launchcode/LCHS-Infinite-While-Loop?lite=true" scrolling="no" frameborder="yes" allowtransparency="true"></iframe></li>
 </ol>
 <p>Yikes! What happened? The program just keeps running!</p>
 <p id="index-0">This is an example of an <strong>infinite loop</strong>, which is a set of code that repeats
 forever.</p>
 <ol class="arabic simple">
-<li>By removing <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+=</span> <span class="pre">1</span></code> from the loop body, the value of <code class="docutils literal notranslate"><span class="pre">num</span></code> remains 0.</li>
-<li>By changing the operator to <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">-=</span> <span class="pre">1</span></code>, the value of the variable
-decreases every iteration.</li>
+<li><p>By removing <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">+=</span> <span class="pre">1</span></code> from the loop body, the value of <code class="docutils literal notranslate"><span class="pre">num</span></code> remains 0.</p></li>
+<li><p>By changing the operator to <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">-=</span> <span class="pre">1</span></code>, the value of the variable
+decreases every iteration.</p></li>
 </ol>
 <p>By making either of these changes, the expression <code class="docutils literal notranslate"><span class="pre">num</span> <span class="pre">&lt;</span> <span class="pre">21</span></code> will ALWAYS
 return <code class="docutils literal notranslate"><span class="pre">True</span></code>, so the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop will NEVER stop.</p>
@@ -110,14 +109,14 @@ return <code class="docutils literal notranslate"><span class="pre">True</span><
 accidentally creates one from time to time. Consider it a rite of
 passage—when you launch your first, welcome to the club.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">When this happens to you, holding down <code class="docutils literal notranslate"><span class="pre">control-c</span></code> will usually force your
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>When this happens to you, holding down <code class="docutils literal notranslate"><span class="pre">control-c</span></code> will usually force your
 program to stop.</p>
 </div>
 <p>Infinite loops are usually created from small typos or missing statements.
 These mistakes set up a situation where the ending condition cannot be reached.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Here’s another infinite while loop. The program is supposed to print a
 decreasing total until that total reaches 0.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -133,18 +132,18 @@ decreasing total until that total reaches 0.</p>
    <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">In this case, the update statement is correct (line 5), but the error occurs
+<p>In this case, the update statement is correct (line 5), but the error occurs
 in line 4. Instead of using <code class="docutils literal notranslate"><span class="pre">total</span></code> in the boolean expression, we used
 <code class="docutils literal notranslate"><span class="pre">start_value</span></code>, which never gets updated in the loop.</p>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Here’s an example of an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in Python:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># NOPE! Nothing to see here!</span>
 </pre></div>
 </td></tr></table></div>
 <p>Well. That’s nice.</p>
-<p class="last">Although it <em>is</em> possible to create an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in Python, you
+<p>Although it <em>is</em> possible to create an infinite <code class="docutils literal notranslate"><span class="pre">for</span></code> loop in Python, you
 need to be very deliberate and think very hard about how to make it happen.
 You are unlikely to create one by accident.</p>
 </div>
@@ -161,7 +160,7 @@ made one the address of its California campus.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">6.9.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>The following code contains an infinite loop. Which is the BEST explanation
 for why the loop does not end?</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -181,12 +180,12 @@ for why the loop does not end?</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">num</strong> starts at 10 and increases by 1 each time through the loop, so it will always be positive.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">answer</strong> starts at 1 and increases by <strong style="color:#419f6a">num</strong> each time, so it will always be positive.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> You cannot compare <strong style="color:#419f6a">num</strong> to 0 in a <strong style="color:#419f6a">while</strong> loop. You must compare it to another variable.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

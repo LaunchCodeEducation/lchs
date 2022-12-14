@@ -93,11 +93,11 @@ these documents are written in a language called <strong>HTML</strong>, which st
 <em>hyperlinks</em>) to other text.</p>
 <p>HTML documents are made up of:</p>
 <ol class="arabic simple">
-<li><em>Text</em> - The words we see on a page.</li>
-<li><em>Links</em> to other pages.</li>
-<li><strong>Markup</strong> - Determines what the text looks like and how that text and other
-content is arranged on the page.</li>
-<li><em>References</em> to other documents - Videos, images, code editors, etc.</li>
+<li><p><em>Text</em> - The words we see on a page.</p></li>
+<li><p><em>Links</em> to other pages.</p></li>
+<li><p><strong>Markup</strong> - Determines what the text looks like and how that text and other
+content is arranged on the page.</p></li>
+<li><p><em>References</em> to other documents - Videos, images, code editors, etc.</p></li>
 </ol>
 <p>HTML code does not execute logic or perform calculations like Python. There are
 no <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statements, or functions. Instead, HTML is an
@@ -113,12 +113,12 @@ of a web page.</p>
 In this chapter, we focus on headings, paragraphs, images, and more.</p>
 <p>When a programmer creates a web page, they break the content down by type:</p>
 <ol class="arabic simple">
-<li>What text needs to be on the page, and how will it be organized?</li>
-<li>Are there any images/figures/videos?</li>
-<li>How many links?</li>
-<li>Will there be a form to fill out?</li>
-<li>Will there be a menu or a navigation bar?</li>
-<li>etc.</li>
+<li><p>What text needs to be on the page, and how will it be organized?</p></li>
+<li><p>Are there any images/figures/videos?</p></li>
+<li><p>How many links?</p></li>
+<li><p>Will there be a form to fill out?</p></li>
+<li><p>Will there be a menu or a navigation bar?</p></li>
+<li><p>etc.</p></li>
 </ol>
 <p>The next step for many developers is to sketch the layout for the page on paper
 or in a drawing app. They highlight what each item is, where it belongs on the
@@ -139,19 +139,19 @@ for example, to align a figure caption with the image it describes.</p>
 Most elements include a <em>start tag</em> and an <em>end tag</em>, with content in between.</p>
 <p>Every tag has the following structure:</p>
 <ol class="arabic simple">
-<li>Begin with the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> symbol and end with the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol.</li>
-<li>The tag name goes inside the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, and it indicates the element type.</li>
-<li>Start tags and end tags share the same structure. However, end tags (also
-called <em>closing tags</em>) include the <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol after the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> bracket.</li>
-<li>Start tags may include extra content that affects the element’s appearance.</li>
+<li><p>Begin with the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> symbol and end with the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbol.</p></li>
+<li><p>The tag name goes inside the <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, and it indicates the element type.</p></li>
+<li><p>Start tags and end tags share the same structure. However, end tags (also
+called <em>closing tags</em>) include the <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol after the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> bracket.</p></li>
+<li><p>Start tags may include extra content that affects the element’s appearance.</p></li>
 </ol>
 <p>The general syntax for an HTML element is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;element type&gt;content&lt;/element type&gt;
 </pre></div>
 </div>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Tags surround the content within the element. If you forget the ending tag,
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Tags surround the content within the element. If you forget the ending tag,
 some HTML elements will still display correctly, but not all. To avoid
 unexpected results or errors, always include both tags!</p>
 </div>
@@ -161,30 +161,25 @@ unexpected results or errors, always include both tags!</p>
 <p>The editor below provides a practice HTML document (note the <code class="docutils literal notranslate"><span class="pre">.html</span></code> at the
 end of the filename).</p>
 <ol class="arabic">
-<li><p class="first">Notice that the plain text <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> in the editor shows up as plain
+<li><p>Notice that the plain text <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> in the editor shows up as plain
 text on the “webpage” to the right. No quotes are needed around the words.
-Try adding some to see what happens.</p>
-</li>
-<li><p class="first">On line 2, add the statement <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;Hello!&lt;/h1&gt;</span></code>. How does this affect the
+Try adding some to see what happens.</p></li>
+<li><p>On line 2, add the statement <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;Hello!&lt;/h1&gt;</span></code>. How does this affect the
 appearance of the text in the right panel?</p>
 <p><code class="docutils literal notranslate"><span class="pre">h1</span></code> the name for a <em>heading</em> element, and the number indicates the size
 of the text.</p>
 </li>
-<li><p class="first">Try changing the number after <code class="docutils literal notranslate"><span class="pre">h</span></code>! Allowed values range from 1 - 6.</p>
-</li>
-<li><p class="first">Try making the mistakes <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;Hello!&lt;/h4&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;Hello!&lt;/h2&gt;</span></code>. How
+<li><p>Try changing the number after <code class="docutils literal notranslate"><span class="pre">h</span></code>! Allowed values range from 1 - 6.</p></li>
+<li><p>Try making the mistakes <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;Hello!&lt;/h4&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h4&gt;Hello!&lt;/h2&gt;</span></code>. How
 does each one affect the text? Hover over red <em>X</em> in the editor to read the
 error messages.</p>
 <iframe src="https://trinket.io/embed/html/18c0e4c318?runMode=autorun" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
-<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;&lt;/strong&gt;</span></code> tags around the <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> text. What
-does <code class="docutils literal notranslate"><span class="pre">strong</span></code> do?</p>
-</li>
-<li><p class="first">Replace each <code class="docutils literal notranslate"><span class="pre">strong</span></code> with <code class="docutils literal notranslate"><span class="pre">em</span></code>. What happens?</p>
-</li>
-<li><p class="first">Here is one example of nested elements:
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">&lt;strong&gt;&lt;/strong&gt;</span></code> tags around the <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">web!</span></code> text. What
+does <code class="docutils literal notranslate"><span class="pre">strong</span></code> do?</p></li>
+<li><p>Replace each <code class="docutils literal notranslate"><span class="pre">strong</span></code> with <code class="docutils literal notranslate"><span class="pre">em</span></code>. What happens?</p></li>
+<li><p>Here is one example of nested elements:
 <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;Nested</span> <span class="pre">element</span> <span class="pre">&lt;em&gt;here&lt;/em&gt;&lt;/h3&gt;</span></code>. Paste the statement into the
-editor to see what it does.</p>
-</li>
+editor to see what it does.</p></li>
 </ol>
 </div>
 <div class="section" id="whitespace">
@@ -226,33 +221,33 @@ appear on separate lines of a web page.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">14.2.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What does HTML stand for?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Happy Tickles Make Laughter</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Hypertext Markup Language</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hypertext Mockup Language</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Hyperlink Markup Layout</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>In HTML, ending tags are optional.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following is an example of an HTML element?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> h1</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> &lt;/em&gt;</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Hello!</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> &lt;h2&gt;Hello!&lt;/h2&gt;</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 </div>
 </div>
 

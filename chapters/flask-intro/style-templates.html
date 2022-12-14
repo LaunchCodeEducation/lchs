@@ -107,7 +107,7 @@ clips, and JavaScript code.</p>
 <p>In our Flask project, the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder holds all of the <code class="docutils literal notranslate"><span class="pre">.html</span></code> files
 for our website. We need to create a similar directory for our static files.</p>
 <ol class="arabic">
-<li><p class="first">In Visual Studio Code, use the terminal panel (or the buttons in the File
+<li><p>In Visual Studio Code, use the terminal panel (or the buttons in the File
 Explorer pane) to create a new directory called <code class="docutils literal notranslate"><span class="pre">static</span></code>. The folder
 should be at the same level as <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code>.</p>
 <div class="figure align-default" id="id2">
@@ -115,13 +115,10 @@ should be at the same level as <code class="docutils literal notranslate"><span 
 <p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">static</span></code> folder in the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code> project tree.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder, create a new file called <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
-</li>
-<li><p class="first">Find the CSS code you used in the <a class="reference internal" href="../forms/form-style.html#style-forms"><span class="std std-ref">last chapter</span></a> to
-style your form. Copy and paste that code into <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p>
-</li>
-<li><p class="first">Save and commit your work.</p>
-</li>
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder, create a new file called <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p></li>
+<li><p>Find the CSS code you used in the <a class="reference internal" href="../forms/form-style.html#style-forms"><span class="std std-ref">last chapter</span></a> to
+style your form. Copy and paste that code into <code class="docutils literal notranslate"><span class="pre">style.css</span></code>.</p></li>
+<li><p>Save and commit your work.</p></li>
 </ol>
 <div class="section" id="link-to-the-stylesheet">
 <span id="link-stylesheet-flask"></span><h3><span class="section-number">21.8.1.1. </span>Link to the Stylesheet<a class="headerlink" href="#link-to-the-stylesheet" title="Permalink to this headline">¶</a></h3>
@@ -140,18 +137,18 @@ for this is:</p>
 </div>
 <p>Note the following:</p>
 <ol class="arabic simple">
-<li>The double curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code> act as a placeholder in our HTML file.</li>
-<li>Instead of a variable name, we call the <code class="docutils literal notranslate"><span class="pre">url_for()</span></code> function. As its name
+<li><p>The double curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code> act as a placeholder in our HTML file.</p></li>
+<li><p>Instead of a variable name, we call the <code class="docutils literal notranslate"><span class="pre">url_for()</span></code> function. As its name
 implies, it finds the URL for the selected file. The <code class="docutils literal notranslate"><span class="pre">'static'</span></code> and
-<code class="docutils literal notranslate"><span class="pre">filename</span></code> arguments indicate the directory and file we want.</li>
-<li><code class="docutils literal notranslate"><span class="pre">url_for()</span></code> returns the path for the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. When the browser
+<code class="docutils literal notranslate"><span class="pre">filename</span></code> arguments indicate the directory and file we want.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url_for()</span></code> returns the path for the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. When the browser
 renders the HTML template, that path gets assigned to <code class="docutils literal notranslate"><span class="pre">href</span></code> instead of
-the placeholder.</li>
+the placeholder.</p></li>
 </ol>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">head</span></code> element in <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code> to link to your
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">head</span></code> element in <code class="docutils literal notranslate"><span class="pre">favorite_form.html</span></code> to link to your
 stylesheet.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
 4
@@ -167,14 +164,11 @@ stylesheet.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the changes, then launch the application.</p>
-</li>
-<li><p class="first">Navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code> to see if your CSS styles were
-applied to the form.</p>
-</li>
-<li><p class="first">Tweak your HTML and CSS code as necessary to get the form to look the way
-you want.</p>
-</li>
+<li><p>Save the changes, then launch the application.</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code> to see if your CSS styles were
+applied to the form.</p></li>
+<li><p>Tweak your HTML and CSS code as necessary to get the form to look the way
+you want.</p></li>
 </ol>
 </div>
 </div>
@@ -194,11 +188,11 @@ see our new styles.</p>
 <h2><span class="section-number">21.8.3. </span>Style Another Template<a class="headerlink" href="#style-another-template" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">form_results.html</span></code> template also contains plain HTML.</p>
 <ol class="arabic simple">
-<li>Add a <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> to the same stylesheet you used for your form.</li>
-<li>Navigate to the form in your browser. Fill in the fields and click <em>Submit</em>.</li>
-<li>Once on the results page, check to make sure your style rules were applied.</li>
-<li>If necessary, adjust your HTML and CSS code. Try to refine the appearance of
-the results page WITHOUT altering the look of the form.</li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> to the same stylesheet you used for your form.</p></li>
+<li><p>Navigate to the form in your browser. Fill in the fields and click <em>Submit</em>.</p></li>
+<li><p>Once on the results page, check to make sure your style rules were applied.</p></li>
+<li><p>If necessary, adjust your HTML and CSS code. Try to refine the appearance of
+the results page WITHOUT altering the look of the form.</p></li>
 </ol>
 </div>
 <div class="section" id="video-summary">

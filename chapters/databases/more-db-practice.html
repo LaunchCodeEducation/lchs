@@ -94,7 +94,7 @@ several entries in that table. Now we will learn how to modify the stored data.<
 entries in a table. Code along with the following video to practice this
 technique.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The video shows a new column in the <code class="docutils literal notranslate"><span class="pre">students</span></code> table. Here’s how to add
 that column and fill it with <code class="docutils literal notranslate"><span class="pre">'Yes'</span></code> strings:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
@@ -114,32 +114,28 @@ that column and fill it with <code class="docutils literal notranslate"><span cl
 <span class="n">database</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">After running this code, your <code class="docutils literal notranslate"><span class="pre">students</span></code> table should match the one shown
+<p>After running this code, your <code class="docutils literal notranslate"><span class="pre">students</span></code> table should match the one shown
 at the beginning of the video.</p>
 </div>
 <section class="vid_box">
    <iframe class="vid" src="https://www.youtube.com/embed/piXiY9j64I4" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section><p><strong>Key points</strong>:</p>
 <ol class="arabic">
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query uses the <code class="docutils literal notranslate"><span class="pre">SET</span></code> keyword to identify one or more
-columns to change.</p>
-</li>
-<li><p class="first">To identify which rows to change, the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query should also include a
+<li><p>The <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query uses the <code class="docutils literal notranslate"><span class="pre">SET</span></code> keyword to identify one or more
+columns to change.</p></li>
+<li><p>To identify which rows to change, the <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query should also include a
 <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> condition. If we leave out the condition, then <em>every</em> row in the
-table will be modified.</p>
-</li>
-<li><p class="first">Combining <code class="docutils literal notranslate"><span class="pre">SET</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> identifies which cell(s) in the table to
+table will be modified.</p></li>
+<li><p>Combining <code class="docutils literal notranslate"><span class="pre">SET</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> identifies which cell(s) in the table to
 change.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/table-update.png"><img alt="Showing how SET and WHERE cross in a table to identify the cell(s) to change." src="../../_images/table-update.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">Each cell in the table has a (column, row) position.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">After running the query, use the <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> method to confirm the
-changes.</p>
-</li>
-<li><p class="first">After we commit an <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query, there is no quick <em>Undo</em> option!</p>
-</li>
+<li><p>After running the query, use the <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> method to confirm the
+changes.</p></li>
+<li><p>After we commit an <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> query, there is no quick <em>Undo</em> option!</p></li>
 </ol>
 <p><strong>Sample code</strong>:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -170,12 +166,12 @@ Also learn how to delete an entire table from the database.</p>
    <iframe class="vid" src="https://www.youtube.com/embed/CDVGJWiDQI8" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section><p><strong>Key points</strong>:</p>
 <ol class="arabic simple">
-<li>The <a class="reference internal" href="crud.html#sql-delete-syntax"><span class="std std-ref">DELETE FROM</span></a> query removes selected rows from
-a table.</li>
-<li>Add a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause to identify which rows should be deleted.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> query removes an entire table from the database. ALL the
-row and column information will be deleted.</li>
-<li><em>There is NO undo option</em> for a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> or <code class="docutils literal notranslate"><span class="pre">DROP</span></code> query.</li>
+<li><p>The <a class="reference internal" href="crud.html#sql-delete-syntax"><span class="std std-ref">DELETE FROM</span></a> query removes selected rows from
+a table.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause to identify which rows should be deleted.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code> query removes an entire table from the database. ALL the
+row and column information will be deleted.</p></li>
+<li><p><em>There is NO undo option</em> for a <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> or <code class="docutils literal notranslate"><span class="pre">DROP</span></code> query.</p></li>
 </ol>
 <p><strong>Sample code</strong>:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -209,41 +205,41 @@ row and column information will be deleted.</li>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.6.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we have a table called <code class="docutils literal notranslate"><span class="pre">books</span></code> stored in our database. The table
 includes columns for <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">publish_date</span></code>, and <code class="docutils literal notranslate"><span class="pre">category</span></code>.
 Which SQL query returns the titles for all non-fiction books published
 after 2019?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT title, category FROM books WHERE publish_date > 2019</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT publish_date > 2019 FROM books WHERE category = 'non-fiction'</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> SELECT books, title WHERE publish_date > 2019 AND category = 'non-fiction'</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> SELECT title FROM books WHERE publish_date > 2019 AND category = 'non-fiction'</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What should you do if you accidentally <code class="docutils literal notranslate"><span class="pre">DROP</span></code> a table from your database
 or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> the wrong row from a table?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Accept that the data is gone and learn from your mistake.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Cry.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Blame someone else.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use <em>Control-z</em> to undo the mistake.</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>To <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> an entry in a table, the SQL query should specify a row and a
 column. Which keyword identifies the rows to change, and which keyword
 identifies the columns?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> SET identifies the rows. WHERE identifies the columns.</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> SET identifies the columns. WHERE identifies the rows.</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the rows. SET identifies the columns.</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> FROM identifies the columns. WHERE identifies the rows.</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 </div>
 </div>
 

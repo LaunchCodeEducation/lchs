@@ -100,14 +100,14 @@ good choices to put in the module, but something like
 <code class="docutils literal notranslate"><span class="pre">calculate_average_grade</span></code> definitely does NOT belong.</p>
 <p>The next step is to open a new file in our code editor and give it a name that:</p>
 <ol class="arabic simple">
-<li>begins with a letter and contains only lowercase letters,</li>
-<li>is as short as possible but still descriptive,</li>
-<li>separates words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>,</li>
-<li>ends with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code>).</li>
+<li><p>begins with a letter and contains only lowercase letters,</p></li>
+<li><p>is as short as possible but still descriptive,</p></li>
+<li><p>separates words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>,</p></li>
+<li><p>ends with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code> (for example, <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code>).</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension tells a code editor that the contents of the file
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension tells a code editor that the contents of the file
 follow the Python programming syntax.</p>
 </div>
 <p>Finally, we add the functions and values we want in the module. We code these
@@ -128,7 +128,7 @@ module.</p>
 <p>You probably noticed that every time we use a turtle in an example or exercise,
 we include a set of statements that define properties for that turtle:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Count the number of “prep” steps we need before our turtle draws its first
 line:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -150,7 +150,7 @@ line:</p>
 <span class="n">bob</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">75</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">Line 3 creates the new turtle object, called <code class="docutils literal notranslate"><span class="pre">bob</span></code>. Lines 4 - 7 set the
+<p>Line 3 creates the new turtle object, called <code class="docutils literal notranslate"><span class="pre">bob</span></code>. Lines 4 - 7 set the
 properties, and line 9 finally draws something on the screen.</p>
 </div>
 <p>It takes one line of code to set each of the properties for a turtle. If we
@@ -158,11 +158,11 @@ need to define multiple turtles, this gets tedious really fast.</p>
 <p>We can help ourselves by moving the setup code into a pair of functions, and
 then calling those functions for each new turtle:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>By including some default values, we can call the <code class="docutils literal notranslate"><span class="pre">create_new_turtle</span></code>
 function with no arguments, with values for some of the properties, or
 with arguments for each property.</p>
-<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -205,20 +205,20 @@ drawn on the screen. The second file is currently empty, but it will eventually
 hold all of the setup steps to get each turtle ready.</p>
 <p>Follow these instructions to create the <code class="docutils literal notranslate"><span class="pre">turtle_prep</span></code> module:</p>
 <ol class="arabic simple">
-<li>Run the program as-is to see how it works.</li>
-<li>Click on the <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code> tab to access the editor for that file.
-(The workspace should be empty).</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. <em>REMOVE</em> lines 1 - 12 from <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and paste them
-into <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code>.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle_prep</span></code> on line 1.</li>
-<li>Use dot notation to update <code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">create_new_turtle()</span></code> to
-<code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">turtle_prep.create_new_turtle()</span></code>. Do the same for <code class="docutils literal notranslate"><span class="pre">lin</span></code>.</li>
-<li>Click <em>Run</em> to verify that the program still works.</li>
-<li>Change the arguments in the <code class="docutils literal notranslate"><span class="pre">create_new_turtle</span></code> function calls to see how
-that affects the drawing.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, call the <code class="docutils literal notranslate"><span class="pre">set_turtle_properties</span></code> function to change the
+<li><p>Run the program as-is to see how it works.</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code> tab to access the editor for that file.
+(The workspace should be empty).</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. <em>REMOVE</em> lines 1 - 12 from <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and paste them
+into <code class="docutils literal notranslate"><span class="pre">turtle_prep.py</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle_prep</span></code> on line 1.</p></li>
+<li><p>Use dot notation to update <code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">create_new_turtle()</span></code> to
+<code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">turtle_prep.create_new_turtle()</span></code>. Do the same for <code class="docutils literal notranslate"><span class="pre">lin</span></code>.</p></li>
+<li><p>Click <em>Run</em> to verify that the program still works.</p></li>
+<li><p>Change the arguments in the <code class="docutils literal notranslate"><span class="pre">create_new_turtle</span></code> function calls to see how
+that affects the drawing.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, call the <code class="docutils literal notranslate"><span class="pre">set_turtle_properties</span></code> function to change the
 properties of the turtles after they draw the circles. Add a new line or
-shape to check your work.</li>
+shape to check your work.</p></li>
 </ol>
 <iframe src="https://trinket.io/embed/python/02c9ec9aef" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>Cool, we now have a set of code that we can pull into future turtle projects!</p>
 </div>
@@ -251,15 +251,15 @@ tabs. Name the new file <code class="docutils literal notranslate"><span class="
 <p class="caption"><span class="caption-text">New File button.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
-<li>Open the <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code> tab and enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> on line 1.</li>
-<li>Paste in copies of the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code>, <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code>, and
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">turtle_shapes.py</span></code> tab and enter <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> on line 1.</p></li>
+<li><p>Paste in copies of the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code>, <code class="docutils literal notranslate"><span class="pre">draw_polygon</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">draw_sprite</span></code> functions you created in the
 <a class="reference internal" href="../functions/exercises.html#functions-turtle-exercises"><span class="std std-ref">last chapter</span></a>. Be sure to include only
-the function code and NOT any turtle drawing commands.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code> module.</li>
-<li>Instead of the circle, have <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw a different shape. Use dot notation
+the function code and NOT any turtle drawing commands.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code> module.</p></li>
+<li><p>Instead of the circle, have <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw a different shape. Use dot notation
 to call one of the functions from <code class="docutils literal notranslate"><span class="pre">turtle_shapes</span></code>. Make sure you include
-the required arguments in the proper order.</li>
+the required arguments in the proper order.</p></li>
 </ol>
 </div>
 </div>

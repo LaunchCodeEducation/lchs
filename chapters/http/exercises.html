@@ -107,21 +107,21 @@ the browser displays the page.</p>
 <div class="section" id="try-it">
 <h3><span class="section-number">19.6.1.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The images below were taken from Firefox. Other browsers will show similar
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The images below were taken from Firefox. Other browsers will show similar
 results, but slight differences should be expected.</p>
 </div>
 <p>Make sure you are in the <code class="docutils literal notranslate"><span class="pre">HTTP</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">browser</span></code> tab, then do the following:</p>
 <ol class="arabic">
-<li><p class="first">Open your browser’s developer tools and select the <em>Network</em> tab.</p>
+<li><p>Open your browser’s developer tools and select the <em>Network</em> tab.</p>
 <ol class="loweralpha">
-<li><p class="first"><em>Method 1</em>: Firefox has a <em>Tools</em> menu. Select <em>Web Developer</em> and
+<li><p><em>Method 1</em>: Firefox has a <em>Tools</em> menu. Select <em>Web Developer</em> and
 <em>Network</em> from the options.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/open-dev-tools.png"><img alt="Use the menu to open Firefox's developer tools (Network option)." src="../../_images/open-dev-tools.png" style="height: 300px;" /></a>
 </div>
 </li>
-<li><p class="first"><em>Method 2</em>: Right click inside the page and select <em>Inspect Element</em>. In
+<li><p><em>Method 2</em>: Right click inside the page and select <em>Inspect Element</em>. In
 the panel that opens, click the <em>Network</em> tab.</p>
 <div class="figure align-default">
 <img alt="Right click on a page to open the developer tools (Inspect option)." src="../../_images/open-dev-alt.png" />
@@ -129,23 +129,20 @@ the panel that opens, click the <em>Network</em> tab.</p>
 </li>
 </ol>
 </li>
-<li><p class="first">The <em>Network</em> pane displays all the HTTP requests and responses that occur
+<li><p>The <em>Network</em> pane displays all the HTTP requests and responses that occur
 when loading a page. However, it only works if it is open during the
-request. To see some data appear in this panel, refresh the page.</p>
-</li>
-<li><p class="first">Now you’ll see something like this:</p>
+request. To see some data appear in this panel, refresh the page.</p></li>
+<li><p>Now you’ll see something like this:</p>
 <div class="figure align-default" id="id2">
 <img alt="Firefox's developer tools, with several requests in the Network pane." src="../../_images/network-tab.png" />
 <p class="caption"><span class="caption-text">The Network panel, showing four requests/responses.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Each entry gives information about a single HTTP request. The entries appear
-in the order in which the requests are made as the page loads.</p>
-</li>
-<li><p class="first">Note the response codes that appear on the left side of each entry. Hover
-over one of these to see some status information about the request.</p>
-</li>
-<li><p class="first">Click on one of the <code class="docutils literal notranslate"><span class="pre">200</span></code> entries. This opens up more details about the
+<li><p>Each entry gives information about a single HTTP request. The entries appear
+in the order in which the requests are made as the page loads.</p></li>
+<li><p>Note the response codes that appear on the left side of each entry. Hover
+over one of these to see some status information about the request.</p></li>
+<li><p>Click on one of the <code class="docutils literal notranslate"><span class="pre">200</span></code> entries. This opens up more details about the
 request and the response.</p>
 <div class="figure align-default">
 <img alt="The details of an HTTP request, viewed in the Network pane." src="../../_images/network-tab-details.png" />
@@ -154,21 +151,19 @@ request and the response.</p>
 request headers. We can even view the response body by clicking on the
 <em>Response</em> label.</p>
 </li>
-<li><p class="first">In the HTML code, change the <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> element in line 7 to:</p>
+<li><p>In the HTML code, change the <code class="docutils literal notranslate"><span class="pre">&lt;link&gt;</span></code> element in line 7 to:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;rutabaga.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Reload the page. What happens to the styling? Check the <em>Network</em> panel
+<li><p>Reload the page. What happens to the styling? Check the <em>Network</em> panel
 again. Notice that a new <code class="docutils literal notranslate"><span class="pre">404</span></code> error appears in the list. The browser
 requested the <code class="docutils literal notranslate"><span class="pre">rutabaga.css</span></code> file from the server, but no matching title
 is stored there. With no external CSS found, the HTML page keeps the default
-style properties.</p>
-</li>
-<li><p class="first">Fix the name mismatch for the style sheet, then create a new mismatch with
+style properties.</p></li>
+<li><p>Fix the name mismatch for the style sheet, then create a new mismatch with
 the image name. What happens to the appearance of the webpage and the
-results shown in the <em>Network</em> panel?</p>
-</li>
+results shown in the <em>Network</em> panel?</p></li>
 </ol>
 </div>
 </div>
@@ -179,14 +174,14 @@ involves more than one HTTP request. Each resource within the page (like the
 image and CSS file) requires a separate request.</p>
 <p>Let’s examine the flow of loading this page, which used a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p>
 <ol class="arabic simple">
-<li>The browser requests the page from the server.</li>
-<li>The browser receives a response containing the HTML page.</li>
-<li>The browser issues a <em>new</em> HTTP request for the external CSS file.</li>
-<li>Similarly, a separate HTTP request is made for the <code class="docutils literal notranslate"><span class="pre">hello-http.png</span></code> image.</li>
-<li>As each new response is received, the browser processes the data or media
+<li><p>The browser requests the page from the server.</p></li>
+<li><p>The browser receives a response containing the HTML page.</p></li>
+<li><p>The browser issues a <em>new</em> HTTP request for the external CSS file.</p></li>
+<li><p>Similarly, a separate HTTP request is made for the <code class="docutils literal notranslate"><span class="pre">hello-http.png</span></code> image.</p></li>
+<li><p>As each new response is received, the browser processes the data or media
 and updates the page. In this case, it executes the HTML code before
 requesting and applying the CSS. Finally, it requests and then displays the
-image.</li>
+image.</p></li>
 </ol>
 <p>This flow explains why we sometimes load a webpage and see the content update
 over a few seconds (or longer). In these cases, the HTTP requests for larger
@@ -207,21 +202,21 @@ images, videos, buttons, links, areas that respond to your actions, etc.</p>
 <p>Open the <em>Network</em> tab and see just how many requests/responses are necessary
 to make your chosen webpage work.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Stuck choosing a good website? Try one of these options:</p>
-<ol class="last arabic simple">
-<li><a class="reference external" href="https://www.launchcode.org/" target="_blank">LaunchCode home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://www.nasa.gov/specials/artemis/" target="_blank">NASA’s Artemis page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, or its <a class="reference external" href="https://www.nasa.gov/" target="_blank">home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://education.launchcode.org/lchs/chapters/functions/function-output.html" target="_blank">LCHS Function Output page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.launchcode.org/" target="_blank">LaunchCode home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://www.nasa.gov/specials/artemis/" target="_blank">NASA’s Artemis page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>, or its <a class="reference external" href="https://www.nasa.gov/" target="_blank">home page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://education.launchcode.org/lchs/chapters/functions/function-output.html" target="_blank">LCHS Function Output page<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ol>
 </div>
 <ol class="arabic simple">
-<li>How many requests were required to load the page?</li>
-<li>Try finding a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, then check what’s in the request body and
-the response body.</li>
-<li>Try finding a <code class="docutils literal notranslate"><span class="pre">401</span></code> or <code class="docutils literal notranslate"><span class="pre">403</span></code> error. What does the code mean?</li>
-<li>Do you see any request types <em>besides</em> <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>? (These are
-possible, but you might not see them for all pages).</li>
+<li><p>How many requests were required to load the page?</p></li>
+<li><p>Try finding a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, then check what’s in the request body and
+the response body.</p></li>
+<li><p>Try finding a <code class="docutils literal notranslate"><span class="pre">401</span></code> or <code class="docutils literal notranslate"><span class="pre">403</span></code> error. What does the code mean?</p></li>
+<li><p>Do you see any request types <em>besides</em> <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>? (These are
+possible, but you might not see them for all pages).</p></li>
 </ol>
 </div>
 <div class="section" id="check-your-understanding">
@@ -230,26 +225,26 @@ possible, but you might not see them for all pages).</li>
 the request for the image. Use the information there to answer the following
 questions.</p>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the approximate size of the image?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 98 kB</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 200 kB</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 404 kB</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Unknown</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Check the <em>Request</em> and <em>Response</em> tabs. What are the dimensions for the
 image?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 200 x 200</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 800 x 600</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> 1248 x 266</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 1440 x 900</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

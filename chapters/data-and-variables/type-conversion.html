@@ -97,10 +97,10 @@ will try to convert whatever is in the <code class="docutils literal notranslate
 into whole number. Instead of <em>rounding</em> a decimal value, <code class="docutils literal notranslate"><span class="pre">int()</span></code> <em>discards</em>
 the decimal portion of the number.</p>
 <div class="admonition-example admonition" id="index-2">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s see <code class="docutils literal notranslate"><span class="pre">int()</span></code> in action. Run the following code and note how <code class="docutils literal notranslate"><span class="pre">int()</span></code>
 changes the decimal values.</p>
-<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-int?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe><p class="last">New vocabulary! <strong>Truncate</strong>: Remove the decimal part of a number WITHOUT rounding.</p>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-int?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe><p>New vocabulary! <strong>Truncate</strong>: Remove the decimal part of a number WITHOUT rounding.</p>
 </div>
 <p>What happens if we try to convert a string to an integer, but the string is not
 actually a whole number? Add the following code to the editor above, then run
@@ -118,35 +118,35 @@ then rerun the program. You should see the integers <code class="docutils litera
 <p>Remember that when we print a string, the quotes are removed. However, if we
 use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function, we can see the data type.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s see <code class="docutils literal notranslate"><span class="pre">float()</span></code> and <code class="docutils literal notranslate"><span class="pre">str()</span></code> in action.</p>
-<div class="last"><iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-float-and-str?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe></div></div>
+<iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Type-Conversion-float-and-str?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true"></iframe></div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.2.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What value is printed when the following statement runs?</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">int</span><span class="p">(</span><span class="mf">53.785</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is printed. An error is generated.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 53.785</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 54</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 53</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following generates an error message when passed to
 <code class="docutils literal notranslate"><span class="pre">float()</span></code>? Feel free to try running each of the options.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> '3'</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> 18</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> '3 3'</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> '12.38'</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

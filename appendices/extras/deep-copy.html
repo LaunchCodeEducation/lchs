@@ -100,7 +100,7 @@ independent clone, but the process is a little more involved.</p>
 <p>Let’s begin by reviewing how a simple assignment statement operates on an
 object.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Line 11 creates a new object of type <code class="docutils literal notranslate"><span class="pre">Student</span></code>, and line 12 creates a new
 <em>label</em> for the same object. <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code> point to the
 same memory location.</p>
@@ -161,14 +161,14 @@ AttributeError: &#39;Student&#39; object has no attribute &#39;copy&#39;
 <p>The change we make to the <code class="docutils literal notranslate"><span class="pre">id</span></code> property on line 14 shows up when print
 both <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code>. They are the same object, so changes
 made with one label show up when we use the other.</p>
-<p class="last">Note that line 20 throws an error. While list and dictionary objects both
+<p>Note that line 20 throws an error. While list and dictionary objects both
 have defined <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> methods, our <code class="docutils literal notranslate"><span class="pre">Student</span></code> object type does not.</p>
 </div>
 <p>Fortunately, we do not need to add a method to our <code class="docutils literal notranslate"><span class="pre">Student</span></code> class to copy
 the objects. Python comes with a module, called <code class="docutils literal notranslate"><span class="pre">copy</span></code>, that contains the
 functions we need.</p>
 <div class="admonition-try-it admonition" id="copy-deepcopy-try-it">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>In the editor below, note that we import one function from the <code class="docutils literal notranslate"><span class="pre">copy</span></code>
 module. Not surprisingly, it’s called <code class="docutils literal notranslate"><span class="pre">copy</span></code>.</p>
 <p>The general syntax is:</p>
@@ -177,19 +177,17 @@ module. Not surprisingly, it’s called <code class="docutils literal notranslat
 </pre></div>
 </div>
 <ol class="arabic">
-<li><p class="first">Run the program as-is first to verify that <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and
+<li><p>Run the program as-is first to verify that <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and
 <code class="docutils literal notranslate"><span class="pre">student_2</span></code> are the same object. Note the output from the three
-<code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</p>
-</li>
-<li><p class="first">Replace line 14 with the statement <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">copy(student_1)</span></code>.</p>
-</li>
-<li><p class="first">Rerun the program and note the change in the output. With the updated
+<code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</p></li>
+<li><p>Replace line 14 with the statement <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">copy(student_1)</span></code>.</p></li>
+<li><p>Rerun the program and note the change in the output. With the updated
 code, <code class="docutils literal notranslate"><span class="pre">student_1</span></code> and <code class="docutils literal notranslate"><span class="pre">student_2</span></code> now represent different objects.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">student_1</span> <span class="pre">is</span> <span class="pre">student_2</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> even when all
 of their property values match.</p>
 </li>
 </ol>
-<div class="last"><iframe src="https://trinket.io/embed/python3/d235980037" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<iframe src="https://trinket.io/embed/python3/d235980037" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
 <p>While convenient, the <code class="docutils literal notranslate"><span class="pre">copy()</span></code> function is not the full story. It produces
 what programmers call a <em>shallow copy</em> of an object. We will see what this
 means in the next section.</p>
@@ -200,7 +198,7 @@ means in the next section.</p>
 some of the data in the new and old objects might still be linked. We can see
 this in the following example.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Once again, we create the <code class="docutils literal notranslate"><span class="pre">student_1</span></code> object from the <code class="docutils literal notranslate"><span class="pre">Student</span></code> class
 and clone it with <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">copy(student_1)</span></code>.</p>
 <p>Let’s see what happens when we try changing one value in the list assigned
@@ -235,7 +233,7 @@ to the <code class="docutils literal notranslate"><span class="pre">scores</span
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>student_1 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 1234, &#39;scores&#39;: [100, 75, 93]}
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>student_1 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 1234, &#39;scores&#39;: [100, 75, 93]}
 student_2 = {&#39;name&#39;: &#39;Maria&#39;, &#39;id&#39;: 7890, &#39;scores&#39;: [100, 75, 93]}
 </pre></div>
 </div>
@@ -269,14 +267,14 @@ values.</p>
 </pre></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>In the <a class="reference internal" href="#copy-deepcopy-try-it"><span class="std std-ref">editor above</span></a>:</p>
-<ol class="last arabic simple">
-<li>Replace line 1 with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">copy</span> <span class="pre">import</span> <span class="pre">copy,</span> <span class="pre">deepcopy</span></code>.</li>
-<li>Replace line 14 with <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">deepcopy(student_1)</span></code>.</li>
-<li>Add <code class="docutils literal notranslate"><span class="pre">student_2.scores[0]</span> <span class="pre">=</span> <span class="pre">100</span></code> before the final <code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</li>
-<li>Rerun the program to verify that changing the <code class="docutils literal notranslate"><span class="pre">scores</span></code> values for
-<code class="docutils literal notranslate"><span class="pre">student_2</span></code> no longer affects <code class="docutils literal notranslate"><span class="pre">scores</span></code> for <code class="docutils literal notranslate"><span class="pre">student_1</span></code>.</li>
+<ol class="arabic simple">
+<li><p>Replace line 1 with <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">copy</span> <span class="pre">import</span> <span class="pre">copy,</span> <span class="pre">deepcopy</span></code>.</p></li>
+<li><p>Replace line 14 with <code class="docutils literal notranslate"><span class="pre">student_2</span> <span class="pre">=</span> <span class="pre">deepcopy(student_1)</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">student_2.scores[0]</span> <span class="pre">=</span> <span class="pre">100</span></code> before the final <code class="docutils literal notranslate"><span class="pre">print</span></code> statements.</p></li>
+<li><p>Rerun the program to verify that changing the <code class="docutils literal notranslate"><span class="pre">scores</span></code> values for
+<code class="docutils literal notranslate"><span class="pre">student_2</span></code> no longer affects <code class="docutils literal notranslate"><span class="pre">scores</span></code> for <code class="docutils literal notranslate"><span class="pre">student_1</span></code>.</p></li>
 </ol>
 </div>
 </div>

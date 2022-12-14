@@ -104,12 +104,12 @@ collected from a form. In this case, data moves from the client to the server.</
 <em>Submit</em>, <em>OK</em>, or <em>Login</em>. Regardless of the label, we call this a <code class="docutils literal notranslate"><span class="pre">submit</span></code>
 button. We add it to our forms one of two ways:</p>
 <ol class="arabic simple">
-<li>Using a separate <code class="docutils literal notranslate"><span class="pre">input</span></code> element with the <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code> attribute.</li>
-<li>Using a <code class="docutils literal notranslate"><span class="pre">button</span></code> element.</li>
+<li><p>Using a separate <code class="docutils literal notranslate"><span class="pre">input</span></code> element with the <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code> attribute.</p></li>
+<li><p>Using a <code class="docutils literal notranslate"><span class="pre">button</span></code> element.</p></li>
 </ol>
 <p>Each of these methods is shown in the box below.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Here is our basic form again, but this time we added two buttons inside the
 element.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
@@ -140,21 +140,21 @@ with the label we want.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element has no default value. The text we put between the
 tags appears inside. If we leave this out, an empty button appears with
 the form.</p>
-<p class="last">We only need one button in our form, but we used both here just to see the
+<p>We only need one button in our form, but we used both here just to see the
 HTML code for each option. Note that without the <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> element on line
 18, the two buttons would appear side by side.</p>
 </div>
 <div class="section" id="try-it">
 <h3><span class="section-number">20.2.1.1. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>In Visual Studio Code, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file that contains your form.</li>
-<li>Select one of the button options and add the new element to your HTML code.
+<li><p>In Visual Studio Code, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file that contains your form.</p></li>
+<li><p>Select one of the button options and add the new element to your HTML code.
 Make the text inside the button say something other than <code class="docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Query</span></code> or
-<code class="docutils literal notranslate"><span class="pre">Login</span></code>.</li>
-<li>Save your work.</li>
-<li>Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in your browser.</li>
-<li>Type something into each input field, then click the button. Pay attention
-to what happens inside the address bar of your browser.</li>
+<code class="docutils literal notranslate"><span class="pre">Login</span></code>.</p></li>
+<li><p>Save your work.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file in your browser.</p></li>
+<li><p>Type something into each input field, then click the button. Pay attention
+to what happens inside the address bar of your browser.</p></li>
 </ol>
 <p>Did you catch the change? Try it again, but this time enter <code class="docutils literal notranslate"><span class="pre">Bob</span></code> for the
 username and <code class="docutils literal notranslate"><span class="pre">Python</span></code> for the team.</p>
@@ -189,9 +189,9 @@ parameters. The first indicates that <code class="docutils literal notranslate">
 <code class="docutils literal notranslate"><span class="pre">username</span></code> input. The second shows us that <code class="docutils literal notranslate"><span class="pre">Python</span></code> was entered in the
 <code class="docutils literal notranslate"><span class="pre">team</span></code> field.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Since spaces are not allowed in URLs, the browser replaces them with <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
-<p class="last">Try it! Submit the form again, but type several words into one of the input
+<p>Try it! Submit the form again, but type several words into one of the input
 boxes.</p>
 </div>
 <div class="section" id="key-value-pairs">
@@ -200,7 +200,7 @@ boxes.</p>
 <em>keys</em> match the <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes used in the <code class="docutils literal notranslate"><span class="pre">input</span></code> tags. The <em>values</em>
 match the data entered into each box of the form.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s take a close look at the HTML code for our form as well as the query
 string from the URL.</p>
 <p><strong>HTML Code:</strong></p>
@@ -216,7 +216,7 @@ string from the URL.</p>
 <p>Line 14 in the HTML gives us the first <em>key</em> in the query string,
 <code class="docutils literal notranslate"><span class="pre">username</span></code>. The <em>value</em> assigned to that key is whatever we typed into
 that input box (<code class="docutils literal notranslate"><span class="pre">Bob</span></code>, in this case).</p>
-<p class="last">The second key, <code class="docutils literal notranslate"><span class="pre">team</span></code>, comes from the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute in line 15. The
+<p>The second key, <code class="docutils literal notranslate"><span class="pre">team</span></code>, comes from the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute in line 15. The
 second value is <code class="docutils literal notranslate"><span class="pre">Python</span></code>, or whatever else we typed into the field before
 submitting the form.</p>
 </div>
@@ -236,12 +236,11 @@ super-secret code to appear on the webpage for anyone to see.</p>
 <p>Fortunately, the most recent versions of HTML include a special input type to
 deal with this exact situation.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">Return to your form in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Save and commit your work before
-moving on.</p>
-</li>
-<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">form</span></code> element to include only one input field and a single
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>Return to your form in <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Save and commit your work before
+moving on.</p></li>
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">form</span></code> element to include only one input field and a single
 button:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
 14
@@ -257,21 +256,18 @@ button:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save your work, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser.</p>
-</li>
-<li><p class="first">Note that anything you type into the input appears as plain text. This is
+<li><p>Save your work, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser.</p></li>
+<li><p>Note that anything you type into the input appears as plain text. This is
 NEVER a good idea when dealing with passwords. To fix this, change the
-<code class="docutils literal notranslate"><span class="pre">type=&quot;text&quot;</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code>.</p>
-</li>
-<li><p class="first">Save the change, then refresh the page in your browser. Now what do you
+<code class="docutils literal notranslate"><span class="pre">type=&quot;text&quot;</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code>.</p></li>
+<li><p>Save the change, then refresh the page in your browser. Now what do you
 see as you type in the input box?</p>
 <form>
    <label for="pass-code">Password: </label>
    <input id="pass-code" name="login" type="password"/>
 </form></li>
-<li><p class="first">By changing the <code class="docutils literal notranslate"><span class="pre">type</span></code> in the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag, we hide what the user
-enters in the field!</p>
-</li>
+<li><p>By changing the <code class="docutils literal notranslate"><span class="pre">type</span></code> in the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag, we hide what the user
+enters in the field!</p></li>
 </ol>
 </div>
 <p><em>HOWEVER</em>…</p>
@@ -294,24 +290,24 @@ request. Unlike <code class="docutils literal notranslate"><span class="pre">GET
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.2.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What must be added to a <code class="docutils literal notranslate"><span class="pre">form</span></code> element in order to submit the collected
 data?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A <code class="pre">name</code> attribute.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> A button.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> An <code class="pre">action</code> attribute.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A POST request.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>By default, are HTTP forms submitted as <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">GET</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">POST</code></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

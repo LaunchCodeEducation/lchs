@@ -88,7 +88,8 @@
 <h1><span class="section-number">13.1. </span>What are Objects<a class="headerlink" href="#what-are-objects" title="Permalink to this headline">¶</a></h1>
 <p>A quick search of the web returns this fact:</p>
 <blockquote>
-<div>Python is an Object-Oriented Programming language.</div></blockquote>
+<div><p>Python is an Object-Oriented Programming language.</p>
+</div></blockquote>
 <p>Object-oriented programming (OOP) is a software design model that focuses on
 the capabilities of <em>object types</em> instead of on things like individual
 functions, loops, logic, etc. In this book, we won’t get into the principles
@@ -99,10 +100,10 @@ list objects, etc. However, we never explained what objects represent in
 Python.</p>
 <p>As a first step, let’s review some vocabulary:</p>
 <ol class="arabic simple">
-<li>A <em>value</em> is a specific piece of data, like the integer <code class="docutils literal notranslate"><span class="pre">3</span></code>, the string
-<code class="docutils literal notranslate"><span class="pre">'hello'</span></code>, or the list <code class="docutils literal notranslate"><span class="pre">[33,</span> <span class="pre">45.2,</span> <span class="pre">8]</span></code>.</li>
-<li>A <em>function</em> is a defined, reusable block of code that performs a single,
-small task.</li>
+<li><p>A <em>value</em> is a specific piece of data, like the integer <code class="docutils literal notranslate"><span class="pre">3</span></code>, the string
+<code class="docutils literal notranslate"><span class="pre">'hello'</span></code>, or the list <code class="docutils literal notranslate"><span class="pre">[33,</span> <span class="pre">45.2,</span> <span class="pre">8]</span></code>.</p></li>
+<li><p>A <em>function</em> is a defined, reusable block of code that performs a single,
+small task.</p></li>
 </ol>
 <p>We assign values to variables so we can use the data later in our program. We
 define and call functions to do something with data or perform actions on it.
@@ -114,12 +115,12 @@ to each other.</p>
 <p id="index-1">The data assigned to an object is called its <strong>properties</strong>. The actions an
 object can perform are called its <strong>methods</strong>.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Think of an object like a smart phone.</p>
 <p>The <em>properties</em> of an object give us information about it. For a phone,
 this data includes things like brand, size, mass, color, amount of memory,
 etc.</p>
-<p class="last">The <em>methods</em> of an object determine what it can <em>do</em>. For a phone, this
+<p>The <em>methods</em> of an object determine what it can <em>do</em>. For a phone, this
 would be the apps it contains. These allow the object to do things like take
 photos, send text messages, pay a bill, or even make a voice call.</p>
 </div>
@@ -158,7 +159,7 @@ itself.</p>
 throws an error message. Similarly, the <code class="docutils literal notranslate"><span class="pre">.forward()</span></code> method only works with
 turtle objects.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;an&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">]</span>
@@ -172,7 +173,7 @@ turtle objects.</p>
 AttributeError: &#39;list&#39; object has no attribute &#39;upper&#39;
 </pre></div>
 </div>
-<p class="last">Even though each element in <code class="docutils literal notranslate"><span class="pre">words</span></code> is a string, the list itself is NOT a
+<p>Even though each element in <code class="docutils literal notranslate"><span class="pre">words</span></code> is a string, the list itself is NOT a
 string object.</p>
 </div>
 <p>Objects help us by keeping related code in one place. For example, the method
@@ -186,18 +187,18 @@ related to elephants belongs somewhere else in our program.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">13.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we create an object of type <code class="docutils literal notranslate"><span class="pre">rabbit</span></code> in our code. Which of the
 following are <em>properties</em> for this kind of object, and which ones are
 <em>methods</em>? (Answer in your head before clicking each option).</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li onclick="revealBinaryAnswer('A', true)">size <span id="A"></span></li>
    <li onclick="revealBinaryAnswer('B', false)">chew_flowers <span id="B"></span></li>
    <li onclick="revealBinaryAnswer('C', false)">invade_garden <span id="C"></span></li>
    <li onclick="revealBinaryAnswer('D', true)">age <span id="D"></span></li>
    <li onclick="revealBinaryAnswer('E', false)">run <span id="E"></span></li>
    <li onclick="revealBinaryAnswer('F', true)">color <span id="F"></span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

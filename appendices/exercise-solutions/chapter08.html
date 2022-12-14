@@ -89,7 +89,8 @@
 <p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/lists/exercises.html#lists-exercises"><span class="std std-ref">exercises</span></a>.
 However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
 <blockquote>
-<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div><p>A suggested solution is ONE way to solve the problem, not the ONLY way.</p>
+</div></blockquote>
 <div class="section" id="chapter-sandbox">
 <h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
 <p>Use the editor below to test out any of the solutions!</p>
@@ -99,7 +100,7 @@ However, there are usually OTHER ways to accomplish the same thing. This is OK!<
 <div class="section" id="part-one-adding-and-removing-items">
 <h3>Part One: Adding and Removing Items<a class="headerlink" href="#part-one-adding-and-removing-items" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Create a list called <code class="docutils literal notranslate"><span class="pre">adding_practice</span></code> with a single entry: <code class="docutils literal notranslate"><span class="pre">273.15</span></code>.
+<li><p>Create a list called <code class="docutils literal notranslate"><span class="pre">adding_practice</span></code> with a single entry: <code class="docutils literal notranslate"><span class="pre">273.15</span></code>.
 Use the <code class="docutils literal notranslate"><span class="pre">append</span></code> method to add the following elements to the list one at a
 time. Print the list after each step to confirm the changes.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -118,13 +119,13 @@ time. Print the list after each step to confirm the changes.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Use <a class="reference internal" href="../../chapters/lists/lists-are-like-strings.html#concatenating-lists"><span class="std std-ref">concatenation</span></a> to add these three items to
+<li><p>Use <a class="reference internal" href="../../chapters/lists/lists-are-like-strings.html#concatenating-lists"><span class="std std-ref">concatenation</span></a> to add these three items to
 the list all at once: <code class="docutils literal notranslate"><span class="pre">[False,</span> <span class="pre">-4.6,</span> <span class="pre">'87']</span></code>.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">adding_practice</span> <span class="o">+=</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.6</span><span class="p">,</span> <span class="s1">&#39;87&#39;</span><span class="p">]</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, and <code class="docutils literal notranslate"><span class="pre">remove</span></code> are used to add or remove
+<li><p><code class="docutils literal notranslate"><span class="pre">append</span></code>, <code class="docutils literal notranslate"><span class="pre">insert</span></code>, <code class="docutils literal notranslate"><span class="pre">pop</span></code>, and <code class="docutils literal notranslate"><span class="pre">remove</span></code> are used to add or remove
 elements from a list. <em>Bracket notation</em> can be used to modify any element
 within a list. Starting with the <code class="docutils literal notranslate"><span class="pre">cargo_hold</span></code> list write statements to do the following:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -197,7 +198,7 @@ within a list. Starting with the <code class="docutils literal notranslate"><spa
 <div class="section" id="part-two-slices-methods">
 <span id="chp8part2"></span><h3>Part Two: Slices &amp; Methods<a class="headerlink" href="#part-two-slices-methods" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Using the slice syntax <code class="docutils literal notranslate"><span class="pre">list_name[start</span> <span class="pre">:</span> <span class="pre">end]</span></code> you can either insert,
+<li><p>Using the slice syntax <code class="docutils literal notranslate"><span class="pre">list_name[start</span> <span class="pre">:</span> <span class="pre">end]</span></code> you can either insert,
 replace, or remove items from a list.</p>
 <p>Use slices to make the following changes to the final <code class="docutils literal notranslate"><span class="pre">cargo_hold</span></code> list
 from part 1. Be sure to print the list after each step to confirm your
@@ -236,7 +237,7 @@ work.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Some methods—like <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">pop</span></code>—alter the original list,
+<li><p>Some methods—like <code class="docutils literal notranslate"><span class="pre">append</span></code> and <code class="docutils literal notranslate"><span class="pre">pop</span></code>—alter the original list,
 while others do not. Use the lists</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">supplies_1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;duct tape&#39;</span><span class="p">,</span> <span class="s1">&#39;gum&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">6.022e23</span><span class="p">]</span>
 <span class="n">supplies_2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;orange drink&#39;</span><span class="p">,</span> <span class="s1">&#39;nerf toys&#39;</span><span class="p">,</span> <span class="s1">&#39;camera&#39;</span><span class="p">,</span> <span class="s1">&#39;42&#39;</span><span class="p">,</span> <span class="s1">&#39;Rutabaga&#39;</span><span class="p">]</span>
@@ -280,7 +281,7 @@ changes the original list.</p>
 <div class="section" id="part-three-split-list-and-join">
 <span id="chp8part3"></span><h3>Part Three: Split, List, and Join<a class="headerlink" href="#part-three-split-list-and-join" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">split</span></code> method converts a string into a list, while the <code class="docutils literal notranslate"><span class="pre">join</span></code>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">split</span></code> method converts a string into a list, while the <code class="docutils literal notranslate"><span class="pre">join</span></code>
 method does the opposite.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -332,7 +333,7 @@ method does the opposite.</p>
 <div class="section" id="part-four-multi-dimensional-lists">
 <span id="chp8part4"></span><h3>Part Four: Multi-dimensional Lists<a class="headerlink" href="#part-four-multi-dimensional-lists" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Lists can hold different data types, even other lists! A
+<li><p>Lists can hold different data types, even other lists! A
 <em>multi-dimensional list</em> is one with entries that are also lists.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -384,7 +385,7 @@ method does the opposite.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>OPTIONAL</strong>: <code class="docutils literal notranslate"><span class="pre">table</span></code> is an example of a <em>2-dimensional list</em>. The first
+<li><p><strong>OPTIONAL</strong>: <code class="docutils literal notranslate"><span class="pre">table</span></code> is an example of a <em>2-dimensional list</em>. The first
 “level” contains the element lists, and the second level holds the
 name/symbol/mass values.</p>
 <p>Now create a 3-dimensional list. A good mental model is to think of a filing

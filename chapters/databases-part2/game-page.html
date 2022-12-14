@@ -115,29 +115,31 @@ page:</p>
 <div class="section" id="video-summary">
 <h2><span class="section-number">25.4.2. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The game board looks just like the one on the home page. However, this one
-has active buttons, and it is included inside a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;&lt;/form&gt;</span></code> element.</li>
-<li>Paste in the same table code from <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Change the attributes in
-the <code class="docutils literal notranslate"><span class="pre">button</span></code> elements to:<ol class="loweralpha">
-<li>Make them active,</li>
-<li>Give each one the same <code class="docutils literal notranslate"><span class="pre">name</span></code>,</li>
-<li>Set <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code>,</li>
-<li>Use a placeholder to assign a <code class="docutils literal notranslate"><span class="pre">value</span></code> that matches the cell coordinates
-(A10, B4, C7, etc.).</li>
+<li><p>The game board looks just like the one on the home page. However, this one
+has active buttons, and it is included inside a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;&lt;/form&gt;</span></code> element.</p></li>
+<li><p>Paste in the same table code from <code class="docutils literal notranslate"><span class="pre">index.html</span></code>. Change the attributes in
+the <code class="docutils literal notranslate"><span class="pre">button</span></code> elements to:</p>
+<ol class="loweralpha simple">
+<li><p>Make them active,</p></li>
+<li><p>Give each one the same <code class="docutils literal notranslate"><span class="pre">name</span></code>,</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">type=&quot;submit&quot;</span></code>,</p></li>
+<li><p>Use a placeholder to assign a <code class="docutils literal notranslate"><span class="pre">value</span></code> that matches the cell coordinates
+(A10, B4, C7, etc.).</p></li>
 </ol>
 </li>
-<li>Inside the same form, add a <em>Flag Mine</em> checkbox above the game board, and
-center it.</li>
-<li>In the <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;&lt;/header&gt;</span></code> element, add the <em>New Game</em> button.<ol class="loweralpha">
-<li>Style the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> with the <code class="docutils literal notranslate"><span class="pre">menu</span></code> class.</li>
-<li>Give it the same <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> as the buttons in the table.</li>
-<li>Set the <code class="docutils literal notranslate"><span class="pre">value</span></code> to be the empty string.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">form</span></code> attribute to match the button to the
-<code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">id=&quot;game-board&quot;</span> <span class="pre">...&gt;</span></code> element.</li>
+<li><p>Inside the same form, add a <em>Flag Mine</em> checkbox above the game board, and
+center it.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">&lt;header&gt;&lt;/header&gt;</span></code> element, add the <em>New Game</em> button.</p>
+<ol class="loweralpha simple">
+<li><p>Style the <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> with the <code class="docutils literal notranslate"><span class="pre">menu</span></code> class.</p></li>
+<li><p>Give it the same <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> as the buttons in the table.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">value</span></code> to be the empty string.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">form</span></code> attribute to match the button to the
+<code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">id=&quot;game-board&quot;</span> <span class="pre">...&gt;</span></code> element.</p></li>
 </ol>
 </li>
-<li>As we add more code to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we will need to update the HTML and
-styling for the cells in the table.</li>
+<li><p>As we add more code to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we will need to update the HTML and
+styling for the cells in the table.</p></li>
 </ol>
 </div>
 </div>

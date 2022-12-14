@@ -89,8 +89,8 @@
 <p>Now that we can set and access a Flask session, let’s collect entries from the
 form and add the items to our list.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">In the code blocks below, the generic <code class="docutils literal notranslate"><span class="pre">list_name</span></code> has been replaced with
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In the code blocks below, the generic <code class="docutils literal notranslate"><span class="pre">list_name</span></code> has been replaced with
 <code class="docutils literal notranslate"><span class="pre">groceries</span></code>. Feel free to use a different variable name to better describe
 the elements in your own list.</p>
 </div>
@@ -121,12 +121,12 @@ block of 4 statements:</p>
 </td></tr></table></div>
 <p><strong>Code breakdown</strong>:</p>
 <ol class="arabic simple">
-<li><strong>Line 10</strong>: Requests the entry submitted from the web form and assigns the
-string to <code class="docutils literal notranslate"><span class="pre">new_item</span></code>.</li>
-<li><strong>Line 11</strong>: Retrieves the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> list stored in <code class="docutils literal notranslate"><span class="pre">session</span></code> and
-assigns it to <code class="docutils literal notranslate"><span class="pre">current_list</span></code>.</li>
-<li><strong>Line 12</strong>: Appends <code class="docutils literal notranslate"><span class="pre">new_item</span></code> to the end of <code class="docutils literal notranslate"><span class="pre">current_list</span></code>.</li>
-<li><strong>Line 13</strong>: Reassigns <code class="docutils literal notranslate"><span class="pre">current_list</span></code> to the session.</li>
+<li><p><strong>Line 10</strong>: Requests the entry submitted from the web form and assigns the
+string to <code class="docutils literal notranslate"><span class="pre">new_item</span></code>.</p></li>
+<li><p><strong>Line 11</strong>: Retrieves the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> list stored in <code class="docutils literal notranslate"><span class="pre">session</span></code> and
+assigns it to <code class="docutils literal notranslate"><span class="pre">current_list</span></code>.</p></li>
+<li><p><strong>Line 12</strong>: Appends <code class="docutils literal notranslate"><span class="pre">new_item</span></code> to the end of <code class="docutils literal notranslate"><span class="pre">current_list</span></code>.</p></li>
+<li><p><strong>Line 13</strong>: Reassigns <code class="docutils literal notranslate"><span class="pre">current_list</span></code> to the session.</p></li>
 </ol>
 <p>Since <code class="docutils literal notranslate"><span class="pre">groceries</span></code> is already a key in <code class="docutils literal notranslate"><span class="pre">session</span></code>, line 13 replaces its old
 value with the updated list.</p>
@@ -140,14 +140,12 @@ multiple times. While this behavior isn’t wrong, it doesn’t fit with the ide
 of a grocery list.</p>
 <p>Modify your code to prevent repeats from happening.</p>
 <ol class="arabic">
-<li><p class="first">Add a conditional to check if <code class="docutils literal notranslate"><span class="pre">new_item</span></code> is already present in
-<code class="docutils literal notranslate"><span class="pre">current_list</span></code>. If so, don’t add it again. If not, append it to the list.</p>
-</li>
-<li><p class="first">To prevent issues with case (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Apples&quot;</span></code> vs. <code class="docutils literal notranslate"><span class="pre">&quot;apples&quot;</span></code>), add a
+<li><p>Add a conditional to check if <code class="docutils literal notranslate"><span class="pre">new_item</span></code> is already present in
+<code class="docutils literal notranslate"><span class="pre">current_list</span></code>. If so, don’t add it again. If not, append it to the list.</p></li>
+<li><p>To prevent issues with case (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Apples&quot;</span></code> vs. <code class="docutils literal notranslate"><span class="pre">&quot;apples&quot;</span></code>), add a
 string method to the form request on line 10. <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>, <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>,
-<code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.title()</span></code> all work well.</p>
-</li>
-<li><p class="first">Your code will look something like this:</p>
+<code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>, and <code class="docutils literal notranslate"><span class="pre">.title()</span></code> all work well.</p></li>
+<li><p>Your code will look something like this:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>10
 11
 12
@@ -160,8 +158,7 @@ string method to the form request on line 10. <code class="docutils literal notr
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save your changes, then test your application.</p>
-</li>
+<li><p>Save your changes, then test your application.</p></li>
 </ol>
 </div>
 <div class="section" id="fix-the-logic-error">
@@ -174,8 +171,8 @@ function saves an empty list to the <code class="docutils literal notranslate"><
 <p>While this is fine the first time we visit the page, it doesn’t help if we have
 existing data.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p class="last">In the application tab, click in the address bar and tap <em>Enter</em>. This sends
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In the application tab, click in the address bar and tap <em>Enter</em>. This sends
 a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server. Notice that any list items displayed on the
 page disappear!</p>
 </div>
@@ -186,7 +183,7 @@ see if it already exists in <code class="docutils literal notranslate"><span cla
 session yet, then we should add it and assign the empty list. If <code class="docutils literal notranslate"><span class="pre">groceries</span></code>
 is currently a key in <code class="docutils literal notranslate"><span class="pre">session</span></code>, then we keep it as-is.</p>
 <ol class="arabic">
-<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause in the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function as follows:</p>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause in the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function as follows:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
  8
  9
@@ -211,20 +208,20 @@ is currently a key in <code class="docutils literal notranslate"><span class="pr
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">When the browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause runs.</p>
+<li><p>When the browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause runs.</p>
 <ol class="loweralpha simple">
-<li>Line 16 checks if the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> key does NOT exist in the <code class="docutils literal notranslate"><span class="pre">session</span></code>
-object.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the program creates the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> key and assigns
-it an empty list.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the code makes no changes to the existing data.</li>
+<li><p>Line 16 checks if the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> key does NOT exist in the <code class="docutils literal notranslate"><span class="pre">session</span></code>
+object.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the program creates the <code class="docutils literal notranslate"><span class="pre">groceries</span></code> key and assigns
+it an empty list.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the code makes no changes to the existing data.</p></li>
 </ol>
 </li>
-<li><p class="first">Test your program by adding a few items to the list. Then try:</p>
+<li><p>Test your program by adding a few items to the list. Then try:</p>
 <ol class="loweralpha simple">
-<li>Loading the page from the address bar.</li>
-<li>Opening the application in a new tab.</li>
-<li>Stopping and restarting <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</li>
+<li><p>Loading the page from the address bar.</p></li>
+<li><p>Opening the application in a new tab.</p></li>
+<li><p>Stopping and restarting <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p></li>
 </ol>
 <p>In each case, the contents of your list should persist.</p>
 </li>
@@ -241,12 +238,12 @@ computer!</p>
 <p>While we cannot remove a session file, we can clear some or all of the data
 stored in it. There two methods we can use to remove data from a session.</p>
 <ol class="arabic">
-<li><p class="first">To remove ALL key/value pairs from a session, the syntax is:</p>
+<li><p>To remove ALL key/value pairs from a session, the syntax is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">To remove a single key/value pair from a session, the syntax is:</p>
+<li><p>To remove a single key/value pair from a session, the syntax is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -269,7 +266,7 @@ Otherwise, nothing happens.</p>
 <p>Let’s update the conditional on line 12 to either add a new item to the list or
 delete an existing element.</p>
 <ol class="arabic">
-<li><p class="first">Add an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause to delete an entry from the list. If the user submits
+<li><p>Add an <code class="docutils literal notranslate"><span class="pre">else</span></code> clause to delete an entry from the list. If the user submits
 an item that already exists, it is removed from the collection.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
 13
@@ -281,9 +278,8 @@ an item that already exists, it is removed from the collection.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Test your code by adding then removing several items. Be sure to check that
-the form submissions are case-insensitive.</p>
-</li>
+<li><p>Test your code by adding then removing several items. Be sure to check that
+the form submissions are case-insensitive.</p></li>
 </ol>
 <p>When done, your application should behave something like this:</p>
 <div class="figure align-default">
@@ -299,16 +295,13 @@ polished.</p>
 <p>These tasks don’t teach you anything new about sessions, but they do provide a
 good review of older skills.</p>
 <ol class="arabic">
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> method to alphabetize your list. Experiment with using
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> method to alphabetize your list. Experiment with using
 <code class="docutils literal notranslate"><span class="pre">session['groceries'].sort()</span></code> vs. <code class="docutils literal notranslate"><span class="pre">current_list.sort()</span></code>. Is there a
-difference?</p>
-</li>
-<li><p class="first">Use CSS to make the page look nice.</p>
-</li>
-<li><p class="first">After an item is added to the list, display a message for the user.
-Something like, <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">just</span> <span class="pre">added</span> <span class="pre">___</span></code>.</p>
-</li>
-<li><p class="first">Instead of an unordered list, use a checkbox form to display the items. When
+difference?</p></li>
+<li><p>Use CSS to make the page look nice.</p></li>
+<li><p>After an item is added to the list, display a message for the user.
+Something like, <code class="docutils literal notranslate"><span class="pre">You</span> <span class="pre">just</span> <span class="pre">added</span> <span class="pre">___</span></code>.</p></li>
+<li><p>Instead of an unordered list, use a checkbox form to display the items. When
 submitted, any items checked in the form will be removed from the list.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/checkbox-remove.png"><img alt="Checkbox form allowing users to remove multiple items at once." src="../../_images/checkbox-remove.png" style="width: 40%;" /></a>
@@ -317,10 +310,10 @@ submitted, any items checked in the form will be removed from the list.</p>
 </li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Checkout the <code class="docutils literal notranslate"><span class="pre">final-code</span></code> branch of the repository to examine one possible
 solution for the checkbox form.</p>
-<p class="last">Also, the <code class="docutils literal notranslate"><span class="pre">buttons</span></code> branch in the repo shows one way to retrieve data from
+<p>Also, the <code class="docutils literal notranslate"><span class="pre">buttons</span></code> branch in the repo shows one way to retrieve data from
 a <code class="docutils literal notranslate"><span class="pre">&lt;button&gt;</span></code> element rather than an input box.</p>
 </div>
 </div>

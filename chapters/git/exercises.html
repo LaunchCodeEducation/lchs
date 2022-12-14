@@ -90,19 +90,15 @@
 <h2><span class="section-number">18.8.1. </span>Part A: Working with a Local Repository<a class="headerlink" href="#part-a-working-with-a-local-repository" title="Permalink to this headline">¶</a></h2>
 <p>Use your terminal powers to move through these Git exercises.</p>
 <ol class="arabic">
-<li><p class="first">Launch Visual Studio Code and open the terminal pane.</p>
-</li>
-<li><p class="first">In your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder, make a new directory called
-<code class="docutils literal notranslate"><span class="pre">Git-Exercises</span></code>. Next, go to <em>File –&gt; Open</em> and select this new folder.</p>
-</li>
-<li><p class="first">In the terminal, make sure that you are in the <code class="docutils literal notranslate"><span class="pre">Git-Exercises</span></code> directory.
+<li><p>Launch Visual Studio Code and open the terminal pane.</p></li>
+<li><p>In your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder, make a new directory called
+<code class="docutils literal notranslate"><span class="pre">Git-Exercises</span></code>. Next, go to <em>File –&gt; Open</em> and select this new folder.</p></li>
+<li><p>In the terminal, make sure that you are in the <code class="docutils literal notranslate"><span class="pre">Git-Exercises</span></code> directory.
 Initialize it as a new repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>. If you wish,
-<a class="reference internal" href="branches.html#change-branch-name"><span class="std std-ref">change the name of the default branch</span></a> to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
-</li>
-<li><p class="first">Add two files to the directory: <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. Use the
-<code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code> commands to commit the changes to the repository.</p>
-</li>
-<li><p class="first">Paste in this boilerplate HTML code into <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, then commit again.</p>
+<a class="reference internal" href="branches.html#change-branch-name"><span class="std std-ref">change the name of the default branch</span></a> to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>Add two files to the directory: <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. Use the
+<code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code> commands to commit the changes to the repository.</p></li>
+<li><p>Paste in this boilerplate HTML code into <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, then commit again.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -129,15 +125,13 @@ Initialize it as a new repository with <code class="docutils literal notranslate
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to create a new branch called <code class="docutils literal notranslate"><span class="pre">html-code</span></code>. While
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to create a new branch called <code class="docutils literal notranslate"><span class="pre">html-code</span></code>. While
 in that branch, add at least 5 new elements to the HTML file. Save and
-commit your changes.</p>
-</li>
-<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Use <code class="docutils literal notranslate"><span class="pre">checkout</span></code> again to create a third branch called
+commit your changes.</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Use <code class="docutils literal notranslate"><span class="pre">checkout</span></code> again to create a third branch called
 <code class="docutils literal notranslate"><span class="pre">css-styles</span></code>. While in this new branch, open the CSS file and add style
 rules for at least three different elements. Also, include at least one
-<a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">class selector</span></a>. Save and commit your changes.</p>
-</li>
+<a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">class selector</span></a>. Save and commit your changes.</p></li>
 </ol>
 <p>You should have 3 branches in your repository now:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch
@@ -153,22 +147,22 @@ rules for at least three different elements. Also, include at least one
 and <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> do not have the updated HTML. You will fix this with two
 merges.</p>
 <ol class="arabic simple">
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command pull in the changes
-from <code class="docutils literal notranslate"><span class="pre">html-code</span></code>.</li>
-<li>Check inside <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> in the terminal to confirm
-that <code class="docutils literal notranslate"><span class="pre">main</span></code> contains the commits you made in the other branch.</li>
-<li>Repeat steps 1 and 2 for the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch.</li>
-<li>Can you merge the same two branches again? Find out by moving into the
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command pull in the changes
+from <code class="docutils literal notranslate"><span class="pre">html-code</span></code>.</p></li>
+<li><p>Check inside <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> in the terminal to confirm
+that <code class="docutils literal notranslate"><span class="pre">main</span></code> contains the commits you made in the other branch.</p></li>
+<li><p>Repeat steps 1 and 2 for the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch.</p></li>
+<li><p>Can you merge the same two branches again? Find out by moving into the
 <code class="docutils literal notranslate"><span class="pre">html-code</span></code> branch and adding more code and commits. Then try merging the
-branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>. Does it work?</li>
+branch into <code class="docutils literal notranslate"><span class="pre">main</span></code>. Does it work?</p></li>
 </ol>
 <p>Properly done, at the end of these steps, the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch will hold the
 complete code for the project. The HTML and CSS branches will only hold parts.</p>
 <p><em>Bonus</em>: Try merging <code class="docutils literal notranslate"><span class="pre">main</span></code> into the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch. Is this
 allowed?</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Remember that you can view your webpage by
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Remember that you can view your webpage by
 <a class="reference internal" href="../local-dev/vscode-html-css.html#view-local-html"><span class="std std-ref">opening the local HTML file</span></a> in your browser.</p>
 </div>
 </div>
@@ -179,36 +173,38 @@ conflicts! Avoiding them is preferred, but some will sneak in anyway.</p>
 <p>Right now, the <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branches have the same code in the
 <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. Time to bring in some conflicts…</p>
 <ol class="arabic simple">
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Open the CSS file and make the following changes:<ol class="loweralpha">
-<li>In one of your existing element selectors, change the <code class="docutils literal notranslate"><span class="pre">color</span></code> property
-for the text.</li>
-<li>Add another class selector and assign it some property values.</li>
-<li>Add an <a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">id selector</span></a> and assign it some property
-values.</li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code>. Open the CSS file and make the following changes:</p>
+<ol class="loweralpha simple">
+<li><p>In one of your existing element selectors, change the <code class="docutils literal notranslate"><span class="pre">color</span></code> property
+for the text.</p></li>
+<li><p>Add another class selector and assign it some property values.</p></li>
+<li><p>Add an <a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">id selector</span></a> and assign it some property
+values.</p></li>
 </ol>
 </li>
-<li>Save and commit your changes.</li>
-<li>Move into the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch and make the following changes:<ol class="loweralpha">
-<li>In the SAME element selector you changed in <code class="docutils literal notranslate"><span class="pre">main</span></code>, choose a
-different <code class="docutils literal notranslate"><span class="pre">color</span></code> for the text.</li>
-<li>Add another class selector. Give it the same name as in <code class="docutils literal notranslate"><span class="pre">main</span></code>. For
-the properties, keep the first one the same but change the other(s).</li>
-<li>Add an <a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">id selector</span></a> and assign it some property
+<li><p>Save and commit your changes.</p></li>
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch and make the following changes:</p>
+<ol class="loweralpha simple">
+<li><p>In the SAME element selector you changed in <code class="docutils literal notranslate"><span class="pre">main</span></code>, choose a
+different <code class="docutils literal notranslate"><span class="pre">color</span></code> for the text.</p></li>
+<li><p>Add another class selector. Give it the same name as in <code class="docutils literal notranslate"><span class="pre">main</span></code>. For
+the properties, keep the first one the same but change the other(s).</p></li>
+<li><p>Add an <a class="reference internal" href="../css/structure.html#css-selectors"><span class="std std-ref">id selector</span></a> and assign it some property
 values. Give this selector a different name than the one defined in
-<code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
 </ol>
 </li>
-<li>Save and commit your changes.</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and try merging in the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch. Spoiler
-alert! There will be some merge conflicts.</li>
+<li><p>Save and commit your changes.</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and try merging in the <code class="docutils literal notranslate"><span class="pre">css-styles</span></code> branch. Spoiler
+alert! There will be some merge conflicts.</p></li>
 </ol>
 <p>As you resolve the conflicts, consider the following:</p>
 <ol class="arabic simple">
-<li>Which changes from parts a - c resulted in conflicts?</li>
-<li>For which conflict would the option to <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Both</span> <span class="pre">Changes</span></code> be a good
-choice?</li>
-<li>When does changing the same file in two different branches result in a
-conflict?</li>
+<li><p>Which changes from parts a - c resulted in conflicts?</p></li>
+<li><p>For which conflict would the option to <code class="docutils literal notranslate"><span class="pre">Accept</span> <span class="pre">Both</span> <span class="pre">Changes</span></code> be a good
+choice?</p></li>
+<li><p>When does changing the same file in two different branches result in a
+conflict?</p></li>
 </ol>
 <p>Don’t forget to commit again!</p>
 </div>
@@ -222,11 +218,11 @@ create a free account. Depending on your school and your course, you might use
 a different service to create and share remote repositories.</p>
 <p>If you will be using GitHub, create your account by following these steps:</p>
 <ol class="arabic simple">
-<li>Navigate to GitHub’s site using the link above.</li>
-<li>Click the <em>Sign Up</em> button and follow the on-screen directions.</li>
-<li>Create a <em>Personal Access Token</em> (see below).</li>
-<li>Once you have an account and a personal access token, you are ready to store
-your remote work!</li>
+<li><p>Navigate to GitHub’s site using the link above.</p></li>
+<li><p>Click the <em>Sign Up</em> button and follow the on-screen directions.</p></li>
+<li><p>Create a <em>Personal Access Token</em> (see below).</p></li>
+<li><p>Once you have an account and a personal access token, you are ready to store
+your remote work!</p></li>
 </ol>
 <div class="section" id="create-a-personal-access-token-pat">
 <h3><span class="section-number">18.8.2.1. </span>Create a Personal Access Token (PAT)<a class="headerlink" href="#create-a-personal-access-token-pat" title="Permalink to this headline">¶</a></h3>
@@ -236,7 +232,7 @@ secure than a username/password verification.</p>
 <p>After you create your PAT, you will use it anytime you interact with GitHub
 from the terminal.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>In the terminal, interactions between your computer and GitHub might look
 something like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin main
@@ -244,7 +240,7 @@ Username: your_username
 Password: your_token
 </pre></div>
 </div>
-<p class="last">The bottom two lines will prompt you to enter your GitHub username and
+<p>The bottom two lines will prompt you to enter your GitHub username and
 personal access token.</p>
 </div>
 <p>Some users question the need for a PAT, since it looks like another password
@@ -258,19 +254,19 @@ carefully follow steps 1 - 9 for
 <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token" target="_blank">Creating a Token<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 <p><strong>Tips</strong>:</p>
 <ol class="arabic">
-<li><p class="first">The checkboxes in step 7 select what you’re allowed to do from the terminal.
+<li><p>The checkboxes in step 7 select what you’re allowed to do from the terminal.
 For now, just choose the <em>repo</em> option.</p>
 <p>There’s no harm in selecting more options, but you won’t need any of them
 for this course.</p>
 </li>
-<li><p class="first">After you generate your PAT in step 8, <em>copy and save it somewhere safe</em>!
+<li><p>After you generate your PAT in step 8, <em>copy and save it somewhere safe</em>!
 Your new PAT will NOT be an easy-to-remember sequence of characters (that’s
 the whole point). Record it somewhere.</p>
 <p>If you use a password manager, that’s a perfect place to keep your PAT.
 If you use an unsecured spreadsheet or a folded piece of paper, you want to
 break that habit now.</p>
 </li>
-<li><p class="first">If you expect to frequently push and pull from a repository during class,
+<li><p>If you expect to frequently push and pull from a repository during class,
 you can save your PAT in memory for a short time. Run the command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git config credential.helper <span class="s1">&#39;cache --timeout=3600&#39;</span>
 </pre></div>

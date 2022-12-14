@@ -88,8 +88,8 @@
 <h1><span class="section-number">4.1. </span>Values and Data Types<a class="headerlink" href="#values-and-data-types" title="Permalink to this headline">¶</a></h1>
 <p>Programs are made up of two main things:</p>
 <ol class="arabic simple">
-<li>Data</li>
-<li>Operations that do stuff with the data</li>
+<li><p>Data</p></li>
+<li><p>Operations that do stuff with the data</p></li>
 </ol>
 <p id="index-0">Let’s start by looking at <strong>data</strong>, which is any piece of information stored in
 a program. The most basic unit of data is called a <em>value</em>.</p>
@@ -98,18 +98,18 @@ examples are <code class="docutils literal notranslate"><span class="pre">5</spa
 <p id="index-1">Each value is an example of a <strong>data type</strong>. We will use many different data
 types in this course, but here are your first three:</p>
 <ol class="arabic simple">
-<li><strong>string</strong> - One or more characters enclosed in quotes, such as
+<li><p><strong>string</strong> - One or more characters enclosed in quotes, such as
 <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World&quot;</span></code>. In Python, strings can be enclosed in single quotes or
-double quotes, so <code class="docutils literal notranslate"><span class="pre">'A'</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> both count as strings.</li>
-<li><strong>int</strong> - Stands for <em>integer</em>, which is a whole number like <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">-23</span></code>,
-and <code class="docutils literal notranslate"><span class="pre">42</span></code>.</li>
-<li><strong>float</strong> - Any number with a decimal like <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.01</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">3.0</span></code>.</li>
+double quotes, so <code class="docutils literal notranslate"><span class="pre">'A'</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> both count as strings.</p></li>
+<li><p><strong>int</strong> - Stands for <em>integer</em>, which is a whole number like <code class="docutils literal notranslate"><span class="pre">4</span></code>, <code class="docutils literal notranslate"><span class="pre">-23</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p></li>
+<li><p><strong>float</strong> - Any number with a decimal like <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.01</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">3.0</span></code>.</p></li>
 </ol>
 <p id="index-2">If you are not sure of the data type for a value, Python has the <code class="docutils literal notranslate"><span class="pre">type()</span></code>
 function to let us know!</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">))</span>
@@ -118,7 +118,7 @@ function to let us know!</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
 &lt;class &#39;int&#39;&gt;
 &lt;class &#39;float&#39;&gt;
 </pre></div>
@@ -131,23 +131,23 @@ are <code class="docutils literal notranslate"><span class="pre">int</span></cod
 <div class="section" id="more-on-strings">
 <h2><span class="section-number">4.1.1. </span>More On Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">What about values like <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>? They look like numbers, but
+<li><p>What about values like <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>? They look like numbers, but
 they are in quotation marks like strings.</p>
 <p>Run the following code to find out.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-type-function?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe><p class="last">What is the data type of the values <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>?</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-type-function?lite=true" scrolling="no" frameborder="no" allowtransparency="true"></iframe><p>What is the data type of the values <code class="docutils literal notranslate"><span class="pre">&quot;17&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;3.2&quot;</span></code>?</p>
 </div>
 </li>
 </ol>
 <ol class="arabic" id="quote-reminder">
-<li><p class="first">In Python we can use either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) for
+<li><p>In Python we can use either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) for
 strings. <em>Triple</em> quotes (<code class="docutils literal notranslate"><span class="pre">'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>) can be used for multi-line
 strings.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Add the following lines to the code editor above, then run the program again.</p>
-<div class="last highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
+<div class="highlight-js notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
 4
 5
 6
@@ -160,22 +160,19 @@ strings.</p>
 </td></tr></table></div>
 </div>
 </li>
-<li><p class="first">Double-quoted strings can contain single quotes inside them, like
-<code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>.</p>
-</li>
-<li><p class="first">Single-quoted strings can have double quotes inside them, like
-<code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">&quot;Ni!&quot;'</span></code>.</p>
-</li>
-<li><p class="first">Python doesn’t care whether you use single or double quotes around strings,
-since the quote marks are not stored as part of the value.</p>
-</li>
+<li><p>Double-quoted strings can contain single quotes inside them, like
+<code class="docutils literal notranslate"><span class="pre">&quot;Bruce's</span> <span class="pre">beard&quot;</span></code>.</p></li>
+<li><p>Single-quoted strings can have double quotes inside them, like
+<code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">knights</span> <span class="pre">who</span> <span class="pre">say</span> <span class="pre">&quot;Ni!&quot;'</span></code>.</p></li>
+<li><p>Python doesn’t care whether you use single or double quotes around strings,
+since the quote marks are not stored as part of the value.</p></li>
 </ol>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>If a string contains a single quote (such as <code class="docutils literal notranslate"><span class="pre">Bruce's</span> <span class="pre">beard</span></code>), then
 surrounding it with single quotes gives unexpected results.</p>
 <p>Try running the following piece of code:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>print(&#39;Bruce&#39;s beard&#39;)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(&#39;Bruce&#39;s beard&#39;)
 </pre></div>
 </div>
 </div>
@@ -186,14 +183,14 @@ surrounding it with single quotes gives unexpected results.</p>
 <code class="docutils literal notranslate"><span class="pre">42,000</span></code>. However, this is NOT allowed for the <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> data
 types in Python.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">42000</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span><span class="mi">000</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42000
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>42000
 42 0
 </pre></div>
 </div>
@@ -203,14 +200,14 @@ types in Python.</p>
 <a class="reference internal" href="../how-to-code/print-function.html#print-function"><span class="std std-ref">print function</span></a> section, <code class="docutils literal notranslate"><span class="pre">print</span></code> can display any
 number of values as long as you separate them by commas.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mf">4.35</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>42 17 56 34 11 4.35 32
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>42 17 56 34 11 4.35 32
 3.4 hello 45
 </pre></div>
 </div>
@@ -223,17 +220,17 @@ not intend.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">4.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Identify the data type for each of the following values. Click on each option
 to reveal the answer.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li onclick="revealAnswer('resultA', 'str')">'Python' <span id="resultA"></span></li>
    <li onclick="revealAnswer('resultB', 'float')">12.75 <span id="resultB"></span></li>
    <li onclick="revealAnswer('resultC', 'str')">"42" <span id="resultC"></span></li>
    <li onclick="revealAnswer('resultD', 'str')">"""&^%$""" <span id="resultD"></span></li>
    <li onclick="revealAnswer('resultE', 'int')">3 <span id="resultE"></span></li>
    <li onclick="revealAnswer('resultF', 'float')">0.55 <span id="resultF"></span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

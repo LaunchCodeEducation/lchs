@@ -96,11 +96,11 @@ GitHub repository.</p>
 repository. This assignment extends those ideas.</p>
 <p>You will practice:</p>
 <ol class="arabic simple">
-<li>Forking and cloning a repository from GitHub.</li>
-<li>Adding partners to a shared GitHub Project.</li>
-<li>Quickly trading code in <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pull</span></code> cycles.</li>
-<li>Merging two branches in GitHub.</li>
-<li>Resolving merge conflicts (which are not as scary as they sound).</li>
+<li><p>Forking and cloning a repository from GitHub.</p></li>
+<li><p>Adding partners to a shared GitHub Project.</p></li>
+<li><p>Quickly trading code in <code class="docutils literal notranslate"><span class="pre">push</span></code> and <code class="docutils literal notranslate"><span class="pre">pull</span></code> cycles.</p></li>
+<li><p>Merging two branches in GitHub.</p></li>
+<li><p>Resolving merge conflicts (which are not as scary as they sound).</p></li>
 </ol>
 <div class="section" id="the-story">
 <h2>The Story<a class="headerlink" href="#the-story" title="Permalink to this headline">¶</a></h2>
@@ -111,8 +111,8 @@ Between the two of you, choose who will be the <strong>Pilot</strong> and who wi
 partner is doing. The steps in this activity mimic a real-world Git workflow
 for a shared project.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">You will be working with branches. It’s very likely your team will
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>You will be working with branches. It’s very likely your team will
 accidentally add code to the wrong branch. When this happens, refer to the
 <a class="reference internal" href="../chapters/git/git-tips.html#git-stash"><span class="std std-ref">git stash</span></a> notes to move your changes to the correct
 place.</p>
@@ -124,21 +124,19 @@ place.</p>
 <strong>Base</strong> will git things rolling. However, the <strong>Pilot</strong> should definitely be
 looking over Base’s shoulder.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Base</strong>: In a web browser, click the link to this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS-Communication-Log-starter" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
-It contains the starter code needed for the assignment.</p>
-</li>
-<li><p class="first"><strong>Base</strong>: In the upper right corner of the page, click the <em>Fork</em> button.
+<li><p><strong>Base</strong>: In a web browser, click the link to this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS-Communication-Log-starter" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+It contains the starter code needed for the assignment.</p></li>
+<li><p><strong>Base</strong>: In the upper right corner of the page, click the <em>Fork</em> button.
 This adds a copy of the repository to your own GitHub account.</p>
 <div class="figure align-default">
 <img alt="The GitHub Fork button." src="../_images/fork-button.png" />
 </div>
 </li>
-<li><p class="first"><strong>Base</strong>: Return to <em>your</em> GitHub home page and check for the
+<li><p><strong>Base</strong>: Return to <em>your</em> GitHub home page and check for the
 <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo. Click on its name to view it. The URL will look
 something like
 <code class="docutils literal notranslate"><span class="pre">https://github.com/your-username/LCHS-Communication-Log-starter</span></code>. The
-<code class="docutils literal notranslate"><span class="pre">your-username</span></code> part of the address will show your GitHub name.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">your-username</span></code> part of the address will show your GitHub name.</p></li>
 </ol>
 <p><strong>Pilot</strong>: Thanks for sitting by patiently!</p>
 <div class="section" id="clone-the-project-from-github">
@@ -146,7 +144,7 @@ something like
 <p><strong>Base</strong> now has a copy of the repository in their GitHub account. The next
 step is for each team member to <em>clone</em> that repo onto their personal device.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Pilot and Base</strong>: Open Visual Studio code. Use terminal commands to
+<li><p><strong>Pilot and Base</strong>: Open Visual Studio code. Use terminal commands to
 navigate into your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory. Use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to confirm your
 location.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pwd
@@ -154,7 +152,7 @@ location.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Pilot and Base</strong>: In a browser, navigate to Base’s copy of the repo (see
+<li><p><strong>Pilot and Base</strong>: In a browser, navigate to Base’s copy of the repo (see
 step 3 above). Click on the green <em>Code</em> button. Select the <code class="docutils literal notranslate"><span class="pre">HTTPS</span></code>
 option, then click the <em>Copy</em> button.</p>
 <div class="figure align-default" id="id1">
@@ -162,10 +160,9 @@ option, then click the <em>Copy</em> button.</p>
 <p class="caption"><span class="caption-text">Clone a repository from GitHub.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Pilot and Base</strong>: In the terminal pane of VS Code, enter the
+<li><p><strong>Pilot and Base</strong>: In the terminal pane of VS Code, enter the
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">URL</span></code> command. Replace <code class="docutils literal notranslate"><span class="pre">URL</span></code> with the address you copied from
-GitHub.</p>
-</li>
+GitHub.</p></li>
 </ol>
 </div>
 <div class="section" id="add-a-partner-to-the-repository">
@@ -174,14 +171,14 @@ GitHub.</p>
 <strong>Base</strong> can make changes to what is stored on GitHub. To fix this, one more
 setup action is necessary.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Base</strong>: In your web browser, go to your <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo. Click
+<li><p><strong>Base</strong>: In your web browser, go to your <code class="docutils literal notranslate"><span class="pre">communication-log</span></code> repo. Click
 the <em>Settings</em> button then select the <em>Manage Access</em> option.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../_images/manage-access.png"><img alt="Click &quot;Settings&quot; and &quot;Manage Access&quot; to let other users modify the repo." src="../_images/manage-access.png" style="width: 60%;" /></a>
 <p class="caption"><span class="caption-text">Manage access to your repo.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Base</strong>: Click on the green <em>Invite teams or people</em> button. Enter your
+<li><p><strong>Base</strong>: Click on the green <em>Invite teams or people</em> button. Enter your
 partner’s GitHub username and grant them the proper level of access.
 <code class="docutils literal notranslate"><span class="pre">Admin</span></code> gives them the ability to delete the repo from your account at any
 time. The <code class="docutils literal notranslate"><span class="pre">Write</span></code> and <code class="docutils literal notranslate"><span class="pre">Maintain</span></code> roles allow them to edit the repo but
@@ -192,13 +189,12 @@ not delete it.</p>
 <p class="caption"><span class="caption-text">Choose who else can modify your GitHub repo.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: You should receive an email invitation to join this repository.
-View and accept the invitation.</p>
-</li>
+<li><p><strong>Pilot</strong>: You should receive an email invitation to join this repository.
+View and accept the invitation.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last"><strong>Pilot</strong>: If you don’t see the email, check your Spam folder. If you still
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p><strong>Pilot</strong>: If you don’t see the email, check your Spam folder. If you still
 don’t have the email, login to your GitHub account. Visit the URL for Base’s
 copy of the repo. You should see an invite notification at the top of the
 page.</p>
@@ -212,11 +208,10 @@ main part of the assignment.</p>
 <p>In this part, you and your partner will take turns adding commits to the shared
 code. Follow the steps carefully, and try not to get ahead of each other.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Base</strong>: In Visual Studio Code, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file from the
+<li><p><strong>Base</strong>: In Visual Studio Code, open the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file from the
 repository. Replace <code class="docutils literal notranslate"><span class="pre">Enter</span> <span class="pre">the</span> <span class="pre">first</span> <span class="pre">communication</span> <span class="pre">line</span> <span class="pre">here</span></code> with a short
-greeting to your Pilot.</p>
-</li>
-<li><p class="first"><strong>Base</strong>: Save and commit your change with the usual <code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code>
+greeting to your Pilot.</p></li>
+<li><p><strong>Base</strong>: Save and commit your change with the usual <code class="docutils literal notranslate"><span class="pre">status/add/commit</span></code>
 process. Next, send your commit up to GitHub with the command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
 </pre></div>
@@ -224,36 +219,34 @@ process. Next, send your commit up to GitHub with the command:</p>
 </li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Remember that you can <a class="reference internal" href="../chapters/local-dev/vscode-html-css.html#view-local-html"><span class="std std-ref">open a local HTML file in your browser</span></a>.
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Remember that you can <a class="reference internal" href="../chapters/local-dev/vscode-html-css.html#view-local-html"><span class="std std-ref">open a local HTML file in your browser</span></a>.
 If you do this with <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, then you can track your progress by
 refreshing the page after each change.</p>
 </div>
 <div class="section" id="pull-base-s-line-and-add-another-line">
 <h3>Pull Base’s Line and Add Another Line<a class="headerlink" href="#pull-base-s-line-and-add-another-line" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first"><strong>Pilot</strong>: In Visual Studio Code, open your local version of <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.
-Notice you don’t have the new line of code that Base just added.</p>
-</li>
-<li><p class="first"><strong>Pilot</strong>: In the terminal, enter this command to pull down the new code
+<li><p><strong>Pilot</strong>: In Visual Studio Code, open your local version of <code class="docutils literal notranslate"><span class="pre">index.html</span></code>.
+Notice you don’t have the new line of code that Base just added.</p></li>
+<li><p><strong>Pilot</strong>: In the terminal, enter this command to pull down the new code
 from GitHub:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin main
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: In VS Code, you should now see Base’s greeting! Respond to this
+<li><p><strong>Pilot</strong>: In VS Code, you should now see Base’s greeting! Respond to this
 by adding a new HTML element and some text. Save, commit, and push your
-changes up to GitHub.</p>
-</li>
+changes up to GitHub.</p></li>
 </ol>
 </div>
 <div class="section" id="pull-pilot-s-line-and-add-another">
 <h3>Pull Pilot’s Line and Add Another<a class="headerlink" href="#pull-pilot-s-line-and-add-another" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><strong>Base</strong>: Notice that <em>you</em> can’t see what Pilot added yet. Fix this by
-entering <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code> in the terminal.</li>
-<li><strong>Base</strong>: Now add a third line to the log. Save, commit, and push your
-change up to GitHub.</li>
+<li><p><strong>Base</strong>: Notice that <em>you</em> can’t see what Pilot added yet. Fix this by
+entering <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">main</span></code> in the terminal.</p></li>
+<li><p><strong>Base</strong>: Now add a third line to the log. Save, commit, and push your
+change up to GitHub.</p></li>
 </ol>
 </div>
 </div>
@@ -262,8 +255,8 @@ change up to GitHub.</li>
 <p><strong>Pilot and Base</strong>: You can both play with this for a while! Repeat the cycle a
 few more times to add to your story.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">The story can go anywhere! Be creative, and try to make each other laugh. If
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>The story can go anywhere! Be creative, and try to make each other laugh. If
 possible, keep your new lines secret from your partner. That way, the
 <code class="docutils literal notranslate"><span class="pre">pull</span></code> result will be a surprise.</p>
 </div>
@@ -275,7 +268,7 @@ professional developers don’t sit around waiting for their teammates to commit
 and push a change before starting their own work. Fortunately, Git branches
 allow partners to work on a project at the same time and at their own pace.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Pilot</strong>: While Base is working on the next part of the story, use the
+<li><p><strong>Pilot</strong>: While Base is working on the next part of the story, use the
 terminal to create a new branch called <code class="docutils literal notranslate"><span class="pre">open-mic</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout -b open-mic
 Switched to a new branch &#39;open-mic&#39;
@@ -285,7 +278,7 @@ $ git branch
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: In VS Code, open <code class="docutils literal notranslate"><span class="pre">style.css</span></code> and add the following rule:</p>
+<li><p><strong>Pilot</strong>: In VS Code, open <code class="docutils literal notranslate"><span class="pre">style.css</span></code> and add the following rule:</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -296,39 +289,38 @@ $ git branch
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: Save and commit your changes. Next, push the new branch up to
+<li><p><strong>Pilot</strong>: Save and commit your changes. Next, push the new branch up to
 GitHub with the command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin open-mic
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Base</strong>: To pull down the new <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch, enter the command:</p>
+<li><p><strong>Base</strong>: To pull down the new <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch, enter the command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git pull origin open-mic
 </pre></div>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you don’t know the name of the new branch, then just enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you don’t know the name of the new branch, then just enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.
 This will pull down <em>all</em> new branches and show you a list of the options.</p>
 </div>
 </li>
-<li><p class="first"><strong>Pilot and Base</strong>: If you haven’t already done so, open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in
-a browser to see what it looks like.</p>
-</li>
+<li><p><strong>Pilot and Base</strong>: If you haven’t already done so, open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in
+a browser to see what it looks like.</p></li>
 </ol>
 <p>Great progress! Now let’s figure out how to merge two branches in GitHub.</p>
 </div>
 <div class="section" id="part-e-create-a-pull-request-in-github">
 <h2>Part E: Create a Pull Request In GitHub<a class="headerlink" href="#part-e-create-a-pull-request-in-github" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first"><strong>Pilot and Base</strong>: In a browser, navigate to the shared GitHub project
+<li><p><strong>Pilot and Base</strong>: In a browser, navigate to the shared GitHub project
 page. Click on the dropdown menu just above the list of files to show a list
 of the branches. Select <em>open-mic</em>.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/branches-dropdown.png"><img alt="GitHub dropdown menu showing available branches." src="../_images/branches-dropdown.png" style="width: 60%;" /></a>
 </div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: After selecting the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch, click the <em>Pull request</em>
+<li><p><strong>Pilot</strong>: After selecting the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch, click the <em>Pull request</em>
 button.</p>
 <div class="figure align-default">
 <img alt="GitHub pull request button." src="../_images/pull-request-button.png" />
@@ -337,7 +329,7 @@ button.</p>
 <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Add some text in the description box to let <strong>Base</strong> know
 what you did and why.</p>
 </li>
-<li><p class="first"><strong>Pilot</strong>: The branch selected in the <em>base</em> dropdown is the one you want to
+<li><p><strong>Pilot</strong>: The branch selected in the <em>base</em> dropdown is the one you want to
 merge <em>into</em>, while the branch in the <em>compare</em> dropdown is the one you want
 to merge <em>from</em>.</p>
 <div class="figure align-default" id="id4">
@@ -345,22 +337,21 @@ to merge <em>from</em>.</p>
 <p class="caption"><span class="caption-text">Open a PR in GitHub.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Pilot</strong>: Once everything looks good, click the <em>Create pull request</em>
-button.</p>
-</li>
+<li><p><strong>Pilot</strong>: Once everything looks good, click the <em>Create pull request</em>
+button.</p></li>
 </ol>
 <div class="section" id="merge-the-pull-request">
 <h3>Merge the Pull Request<a class="headerlink" href="#merge-the-pull-request" title="Permalink to this headline">¶</a></h3>
 <p><strong>Pilot</strong> opened a new Pull Request. Now, <strong>Base</strong> will take care of it!</p>
 <ol class="arabic">
-<li><p class="first"><strong>Base</strong>: In your browser, return to your repo in GitHub. Click on the
+<li><p><strong>Base</strong>: In your browser, return to your repo in GitHub. Click on the
 <em>Pull Requests</em> button. Next, click on the title for the one and only PR.</p>
 <div class="figure align-default" id="id5">
 <img alt="Review the PR details." src="../_images/check-pr-info.png" />
 <p class="caption"><span class="caption-text">Click to review the details of the pull request.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Base</strong>: The page that opens shows the history of all the commits made to
+<li><p><strong>Base</strong>: The page that opens shows the history of all the commits made to
 the <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> branch. When ready, click the green <em>Merge Pull Request</em>
 button, followed by <em>Confirm Merge</em>.</p>
 <div class="figure align-default" id="id6">
@@ -373,7 +364,7 @@ button, followed by <em>Confirm Merge</em>.</p>
 <p class="caption"><span class="caption-text">Nice! Another successful merge of remote branches.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first"><strong>Pilot and Base</strong>: The changes from <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> are now in the <code class="docutils literal notranslate"><span class="pre">main</span></code>
+<li><p><strong>Pilot and Base</strong>: The changes from <code class="docutils literal notranslate"><span class="pre">open-mic</span></code> are now in the <code class="docutils literal notranslate"><span class="pre">main</span></code>
 branch, but only on GitHub. You need to pull the updates to your <code class="docutils literal notranslate"><span class="pre">main</span></code>
 branch.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git checkout main
@@ -397,9 +388,8 @@ prevents Git from being able to automatically finish a merge.</p>
 deal with them locally in the <a class="reference internal" href="../chapters/git/merge.html#local-merge-conflict"><span class="std std-ref">Git chapter</span></a>. Now,
 you will set up a conflict with the remote repository.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Pilot</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
-</li>
-<li><p class="first"><strong>Pilot</strong>: Change the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. The HTML is looking pretty plain,
+<li><p><strong>Pilot</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p><strong>Pilot</strong>: Change the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. The HTML is looking pretty plain,
 so spice up the <code class="docutils literal notranslate"><span class="pre">body</span></code> style rule to look like this:</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -422,7 +412,7 @@ so spice up the <code class="docutils literal notranslate"><span class="pre">bod
 <p class="caption"><span class="caption-text">Satisfying!</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Save and commit the changes, then push them up to GitHub.</p>
+<li><p>Save and commit the changes, then push them up to GitHub.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git push origin main
 </pre></div>
 </div>
@@ -430,9 +420,8 @@ so spice up the <code class="docutils literal notranslate"><span class="pre">bod
 </ol>
 <p>Meanwhile…</p>
 <ol class="arabic">
-<li><p class="first"><strong>Base</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
-</li>
-<li><p class="first"><strong>Base</strong>: In your local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file, change the <code class="docutils literal notranslate"><span class="pre">body</span></code> rule to look
+<li><p><strong>Base</strong>: In VS Code, switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p><strong>Base</strong>: In your local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file, change the <code class="docutils literal notranslate"><span class="pre">body</span></code> rule to look
 like this:</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -454,8 +443,7 @@ like this:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>Base</strong>: Save and commit your changes to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
-</li>
+<li><p><strong>Base</strong>: Save and commit your changes to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
 </ol>
 <div class="section" id="fix-the-merge-conflicts">
 <h3>Fix the Merge Conflicts<a class="headerlink" href="#fix-the-merge-conflicts" title="Permalink to this headline">¶</a></h3>
@@ -499,12 +487,12 @@ pull down the new <code class="docutils literal notranslate"><span class="pre">m
 <h3>More Merge Conflicts!<a class="headerlink" href="#more-merge-conflicts" title="Permalink to this headline">¶</a></h3>
 <p>Turn the tables so <strong>Pilot</strong> can practice resolving a merge conflict.</p>
 <ol class="arabic simple">
-<li><strong>Base and Pilot</strong>: Decide which file and lines of code you will both
-change. Make <em>different</em> changes in those places.</li>
-<li><strong>Base</strong>: Save, commit, and push your changes up to GitHub.</li>
-<li><strong>Pilot</strong>: Try to pull down the changes, and notice that there are merge
-conflicts. Resolve them, then save, commit, and push the result.</li>
-<li><strong>Base</strong>: Pull down the final, resolved code.</li>
+<li><p><strong>Base and Pilot</strong>: Decide which file and lines of code you will both
+change. Make <em>different</em> changes in those places.</p></li>
+<li><p><strong>Base</strong>: Save, commit, and push your changes up to GitHub.</p></li>
+<li><p><strong>Pilot</strong>: Try to pull down the changes, and notice that there are merge
+conflicts. Resolve them, then save, commit, and push the result.</p></li>
+<li><p><strong>Base</strong>: Pull down the final, resolved code.</p></li>
 </ol>
 </div>
 </div>

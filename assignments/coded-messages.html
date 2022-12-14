@@ -97,25 +97,25 @@ will see unreadable content.</p>
 into coded ones. Your program will also decode messages to produce readable
 text.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If your teacher added you to a <a class="reference internal" href="../appendices/classrooms/replit-classroom.html#replit-classroom-assignments"><span class="std std-ref">repl.it classroom</span></a>
 or a <a class="reference internal" href="../appendices/classrooms/trinket-classroom.html#trinket-course-assignments"><span class="std std-ref">Trinket course</span></a>, complete Assignment
 #2 there.</p>
 <p>If you are NOT enrolled in a repl.it classroom or Trinket course, you can
 find a copy of the starter code here:</p>
-<ol class="last arabic simple">
-<li><a class="reference external" href="https://repl.it/&#64;launchcode/LCHS-Assignment-2-starter-code" target="_blank">repl.it starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
-<li><a class="reference external" href="https://trinket.io/python/e9285d089f?showInstructions=true" target="_blank">Trinket starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></li>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://repl.it/&#64;launchcode/LCHS-Assignment-2-starter-code" target="_blank">repl.it starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
+<li><p><a class="reference external" href="https://trinket.io/python/e9285d089f?showInstructions=true" target="_blank">Trinket starter code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p></li>
 </ol>
 </div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>By the end of this assignment, your program will:</p>
 <ol class="arabic simple">
-<li>Prompt the user for a message and a shift value.</li>
-<li>Ask the user to either <em>encrypt</em> or <em>translate</em> the message.</li>
-<li>Convert the user’s plain text message to a coded one (or vice versa).</li>
-<li>Display the original message and the changed one.</li>
+<li><p>Prompt the user for a message and a shift value.</p></li>
+<li><p>Ask the user to either <em>encrypt</em> or <em>translate</em> the message.</p></li>
+<li><p>Convert the user’s plain text message to a coded one (or vice versa).</p></li>
+<li><p>Display the original message and the changed one.</p></li>
 </ol>
 </div>
 <div class="section" id="part-1-simple-letter-shift">
@@ -133,170 +133,161 @@ the alphabet compared to the originals.</p>
 <div class="section" id="the-alphabet-position-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> Function<a class="headerlink" href="#the-alphabet-position-function" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Define a function called <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> with one parameter. The
-parameter receives a string containing a single letter.</p>
-</li>
-<li><p class="first">The function returns the <em>index</em> of that letter within the alphabet.</p>
-</li>
-<li><p class="first">The function should be case-insensitive. Capital and lowercase letters
+<li><p>Define a function called <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> with one parameter. The
+parameter receives a string containing a single letter.</p></li>
+<li><p>The function returns the <em>index</em> of that letter within the alphabet.</p></li>
+<li><p>The function should be case-insensitive. Capital and lowercase letters
 return the same result.</p>
-<table border="1" class="docutils align-default" id="id2">
+<table class="docutils align-default" id="id2">
 <caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><code class="docutils literal notranslate"><span class="pre">letter</span></code></th>
-<th class="head">Return Value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">letter</span></code></p></th>
+<th class="head"><p>Return Value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>a or A</td>
-<td>0</td>
+<tbody>
+<tr class="row-even"><td><p>a or A</p></td>
+<td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td>d or D</td>
-<td>3</td>
+<tr class="row-odd"><td><p>d or D</p></td>
+<td><p>3</p></td>
 </tr>
-<tr class="row-even"><td>z or Z</td>
-<td>25</td>
+<tr class="row-even"><td><p>z or Z</p></td>
+<td><p>25</p></td>
 </tr>
 </tbody>
 </table>
 </li>
-<li><p class="first"><em>Don’t forget to test your function!</em> In the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, call
+<li><p><em>Don’t forget to test your function!</em> In the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, call
 <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> and send in different letters as arguments. Be sure to
-print the returned result to check your code.</p>
-</li>
+print the returned result to check your code.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<ol class="last arabic simple">
-<li>You can assume the argument sent to the function will be a single letter.
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<ol class="arabic simple">
+<li><p>You can assume the argument sent to the function will be a single letter.
 Do not worry about what to do with longer strings or non-letter
-characters.</li>
-<li><code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> should NOT print anything. It needs to return a
-value instead.</li>
+characters.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> should NOT print anything. It needs to return a
+value instead.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="the-shift-character-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">shift_character</span></code> Function<a class="headerlink" href="#the-shift-character-function" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Define the function <code class="docutils literal notranslate"><span class="pre">shift_character(char,</span> <span class="pre">shift)</span></code> with two parameters.
+<li><p>Define the function <code class="docutils literal notranslate"><span class="pre">shift_character(char,</span> <span class="pre">shift)</span></code> with two parameters.
 <code class="docutils literal notranslate"><span class="pre">char</span></code> accepts a character (a string of length 1) and <code class="docutils literal notranslate"><span class="pre">shift</span></code> accepts an
-integer value.</p>
-</li>
-<li><p class="first">If <code class="docutils literal notranslate"><span class="pre">char</span></code> is a letter, the function returns a different one. The new
-letter will be <code class="docutils literal notranslate"><span class="pre">shift</span></code> places to the right in the alphabet.</p>
-</li>
-<li><p class="first">The case of the original letter and the returned value should match. For
-example, <code class="docutils literal notranslate"><span class="pre">shift_character(&quot;A&quot;,</span> <span class="pre">1)</span></code> returns <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>.</p>
-</li>
-<li><p class="first">If <code class="docutils literal notranslate"><span class="pre">char</span></code> is NOT a letter, then the function returns the same character.</p>
-<table border="1" class="docutils align-default" id="id3">
+integer value.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">char</span></code> is a letter, the function returns a different one. The new
+letter will be <code class="docutils literal notranslate"><span class="pre">shift</span></code> places to the right in the alphabet.</p></li>
+<li><p>The case of the original letter and the returned value should match. For
+example, <code class="docutils literal notranslate"><span class="pre">shift_character(&quot;A&quot;,</span> <span class="pre">1)</span></code> returns <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">char</span></code> is NOT a letter, then the function returns the same character.</p>
+<table class="docutils align-default" id="id3">
 <caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><code class="docutils literal notranslate"><span class="pre">char</span></code></th>
-<th class="head"><code class="docutils literal notranslate"><span class="pre">shift</span></code></th>
-<th class="head">Return Value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">char</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">shift</span></code></p></th>
+<th class="head"><p>Return Value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>a</td>
-<td>13</td>
-<td>n</td>
+<tbody>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>13</p></td>
+<td><p>n</p></td>
 </tr>
-<tr class="row-odd"><td>D</td>
-<td>4</td>
-<td>H</td>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>4</p></td>
+<td><p>H</p></td>
 </tr>
-<tr class="row-even"><td>z</td>
-<td>3</td>
-<td>c</td>
+<tr class="row-even"><td><p>z</p></td>
+<td><p>3</p></td>
+<td><p>c</p></td>
 </tr>
-<tr class="row-odd"><td>J</td>
-<td>30</td>
-<td>N</td>
+<tr class="row-odd"><td><p>J</p></td>
+<td><p>30</p></td>
+<td><p>N</p></td>
 </tr>
-<tr class="row-even"><td>?, 6, &amp;, etc.</td>
-<td>(any integer)</td>
-<td>?, 6, &amp;, etc. (no change for non-letter characters)</td>
+<tr class="row-even"><td><p>?, 6, &amp;, etc.</p></td>
+<td><p>(any integer)</p></td>
+<td><p>?, 6, &amp;, etc. (no change for non-letter characters)</p></td>
 </tr>
 </tbody>
 </table>
 </li>
-<li><p class="first"><em>Test your function!</em> In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">shift_character</span></code> and send in
+<li><p><em>Test your function!</em> In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">shift_character</span></code> and send in
 different characters and shift values. Be sure to print the letter returned
-to make sure your code works properly before moving on.</p>
-</li>
+to make sure your code works properly before moving on.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<ol class="last arabic simple">
-<li>You should make use of your <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> function! Thinking in
-terms of index values helps.</li>
-<li>Notice in the Sample Results table that the function wraps around when it
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<ol class="arabic simple">
+<li><p>You should make use of your <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> function! Thinking in
+terms of index values helps.</p></li>
+<li><p>Notice in the Sample Results table that the function wraps around when it
 reaches the end of the alphabet. If a shift moves the program past the
 letter <code class="docutils literal notranslate"><span class="pre">'z'</span></code> (index value <code class="docutils literal notranslate"><span class="pre">25</span></code>), it moves back to the start of the
-alphabet and continues counting with <code class="docutils literal notranslate"><span class="pre">'a'</span></code> (index value <code class="docutils literal notranslate"><span class="pre">0</span></code>).</li>
-<li>The <a class="reference internal" href="../chapters/data-and-variables/operators.html#modulo"><span class="std std-ref">modulus operator</span></a> will be a BIG help here to keep the
-index values in the range <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">-</span> <span class="pre">25</span></code>.</li>
+alphabet and continues counting with <code class="docutils literal notranslate"><span class="pre">'a'</span></code> (index value <code class="docutils literal notranslate"><span class="pre">0</span></code>).</p></li>
+<li><p>The <a class="reference internal" href="../chapters/data-and-variables/operators.html#modulo"><span class="std std-ref">modulus operator</span></a> will be a BIG help here to keep the
+index values in the range <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">-</span> <span class="pre">25</span></code>.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="the-build-code-dict-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> Function<a class="headerlink" href="#the-build-code-dict-function" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Define the function <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> that takes one parameter (an
-integer).</p>
-</li>
-<li><p class="first">The function will build and return a dictionary. Each of the keys will be a
+<li><p>Define the function <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> that takes one parameter (an
+integer).</p></li>
+<li><p>The function will build and return a dictionary. Each of the keys will be a
 letter from the alphabet. Each of the values will also be a letter, but
 shifted to the right a certain number of places. How many places? That
 depends on the integer sent to the function.</p>
 <p><em>Hints</em>: The accumulator pattern strikes again! Also, think about calling
 the <code class="docutils literal notranslate"><span class="pre">shift_character</span></code> function to keep your code DRY.</p>
 </li>
-<li><p class="first">The returned dictionary should include keys for BOTH lower and uppercase
-letters.</p>
-</li>
-<li><p class="first"><em>Test your function!</em> In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> and send in
+<li><p>The returned dictionary should include keys for BOTH lower and uppercase
+letters.</p></li>
+<li><p><em>Test your function!</em> In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, call <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> and send in
 different integer values. Be sure to print the returned dictionary to check
 the results.</p>
-<table border="1" class="docutils align-default" id="id4">
+<table class="docutils align-default" id="id4">
 <caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Function Call</th>
-<th class="head">Returned Dictionary</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function Call</p></th>
+<th class="head"><p>Returned Dictionary</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">build_code_dict(1)</span></code></td>
-<td>{‘a’: ‘b’, ‘b’: ‘c’, ‘c’: ‘d’, ‘d’: ‘e’, ‘e’: ‘f’, ‘f’: ‘g’, ‘g’: ‘h’, ‘h’: ‘i’, ‘i’: ‘j’, ‘j’: ‘k’, ‘k’: ‘l’, ‘l’: ‘m’, ‘m’: ‘n’, ‘n’: ‘o’, ‘o’: ‘p’, ‘p’: ‘q’, ‘q’: ‘r’, ‘r’: ‘s’, ‘s’: ‘t’, ‘t’: ‘u’, ‘u’: ‘v’, ‘v’: ‘w’, ‘w’: ‘x’, ‘x’: ‘y’, ‘y’: ‘z’, ‘z’: ‘a’, ‘A’: ‘B’, ‘B’: ‘C’, ‘C’: ‘D’, ‘D’: ‘E’, ‘E’: ‘F’, ‘F’: ‘G’, ‘G’: ‘H’, ‘H’: ‘I’, ‘I’: ‘J’, ‘J’: ‘K’, ‘K’: ‘L’, ‘L’: ‘M’, ‘M’: ‘N’, ‘N’: ‘O’, ‘O’: ‘P’, ‘P’: ‘Q’, ‘Q’: ‘R’, ‘R’: ‘S’, ‘S’: ‘T’, ‘T’: ‘U’, ‘U’: ‘V’, ‘V’: ‘W’, ‘W’: ‘X’, ‘X’: ‘Y’, ‘Y’: ‘Z’, ‘Z’: ‘A’}</td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">build_code_dict(1)</span></code></p></td>
+<td><p>{‘a’: ‘b’, ‘b’: ‘c’, ‘c’: ‘d’, ‘d’: ‘e’, ‘e’: ‘f’, ‘f’: ‘g’, ‘g’: ‘h’, ‘h’: ‘i’, ‘i’: ‘j’, ‘j’: ‘k’, ‘k’: ‘l’, ‘l’: ‘m’, ‘m’: ‘n’, ‘n’: ‘o’, ‘o’: ‘p’, ‘p’: ‘q’, ‘q’: ‘r’, ‘r’: ‘s’, ‘s’: ‘t’, ‘t’: ‘u’, ‘u’: ‘v’, ‘v’: ‘w’, ‘w’: ‘x’, ‘x’: ‘y’, ‘y’: ‘z’, ‘z’: ‘a’, ‘A’: ‘B’, ‘B’: ‘C’, ‘C’: ‘D’, ‘D’: ‘E’, ‘E’: ‘F’, ‘F’: ‘G’, ‘G’: ‘H’, ‘H’: ‘I’, ‘I’: ‘J’, ‘J’: ‘K’, ‘K’: ‘L’, ‘L’: ‘M’, ‘M’: ‘N’, ‘N’: ‘O’, ‘O’: ‘P’, ‘P’: ‘Q’, ‘Q’: ‘R’, ‘R’: ‘S’, ‘S’: ‘T’, ‘T’: ‘U’, ‘U’: ‘V’, ‘V’: ‘W’, ‘W’: ‘X’, ‘X’: ‘Y’, ‘Y’: ‘Z’, ‘Z’: ‘A’}</p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">build_code_dict(10)</span></code></td>
-<td>{‘a’: ‘k’, ‘b’: ‘l’, ‘c’: ‘m’, ‘d’: ‘n’, ‘e’: ‘o’, ‘f’: ‘p’, ‘g’: ‘q’, ‘h’: ‘r’, ‘i’: ‘s’, ‘j’: ‘t’, ‘k’: ‘u’, ‘l’: ‘v’, ‘m’: ‘w’, ‘n’: ‘x’, ‘o’: ‘y’, ‘p’: ‘z’, ‘q’: ‘a’, ‘r’: ‘b’, ‘s’: ‘c’, ‘t’: ‘d’, ‘u’: ‘e’, ‘v’: ‘f’, ‘w’: ‘g’, ‘x’: ‘h’, ‘y’: ‘i’, ‘z’: ‘j’, ‘A’: ‘K’, ‘B’: ‘L’, ‘C’: ‘M’, ‘D’: ‘N’, ‘E’: ‘O’, ‘F’: ‘P’, ‘G’: ‘Q’, ‘H’: ‘R’, ‘I’: ‘S’, ‘J’: ‘T’, ‘K’: ‘U’, ‘L’: ‘V’, ‘M’: ‘W’, ‘N’: ‘X’, ‘O’: ‘Y’, ‘P’: ‘Z’, ‘Q’: ‘A’, ‘R’: ‘B’, ‘S’: ‘C’, ‘T’: ‘D’, ‘U’: ‘E’, ‘V’: ‘F’, ‘W’: ‘G’, ‘X’: ‘H’, ‘Y’: ‘I’, ‘Z’: ‘J’}</td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">build_code_dict(10)</span></code></p></td>
+<td><p>{‘a’: ‘k’, ‘b’: ‘l’, ‘c’: ‘m’, ‘d’: ‘n’, ‘e’: ‘o’, ‘f’: ‘p’, ‘g’: ‘q’, ‘h’: ‘r’, ‘i’: ‘s’, ‘j’: ‘t’, ‘k’: ‘u’, ‘l’: ‘v’, ‘m’: ‘w’, ‘n’: ‘x’, ‘o’: ‘y’, ‘p’: ‘z’, ‘q’: ‘a’, ‘r’: ‘b’, ‘s’: ‘c’, ‘t’: ‘d’, ‘u’: ‘e’, ‘v’: ‘f’, ‘w’: ‘g’, ‘x’: ‘h’, ‘y’: ‘i’, ‘z’: ‘j’, ‘A’: ‘K’, ‘B’: ‘L’, ‘C’: ‘M’, ‘D’: ‘N’, ‘E’: ‘O’, ‘F’: ‘P’, ‘G’: ‘Q’, ‘H’: ‘R’, ‘I’: ‘S’, ‘J’: ‘T’, ‘K’: ‘U’, ‘L’: ‘V’, ‘M’: ‘W’, ‘N’: ‘X’, ‘O’: ‘Y’, ‘P’: ‘Z’, ‘Q’: ‘A’, ‘R’: ‘B’, ‘S’: ‘C’, ‘T’: ‘D’, ‘U’: ‘E’, ‘V’: ‘F’, ‘W’: ‘G’, ‘X’: ‘H’, ‘Y’: ‘I’, ‘Z’: ‘J’}</p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">build_code_dict(33)</span></code></td>
-<td>{‘a’: ‘h’, ‘b’: ‘i’, ‘c’: ‘j’, ‘d’: ‘k’, ‘e’: ‘l’, ‘f’: ‘m’, ‘g’: ‘n’, ‘h’: ‘o’, ‘i’: ‘p’, ‘j’: ‘q’, ‘k’: ‘r’, ‘l’: ‘s’, ‘m’: ‘t’, ‘n’: ‘u’, ‘o’: ‘v’, ‘p’: ‘w’, ‘q’: ‘x’, ‘r’: ‘y’, ‘s’: ‘z’, ‘t’: ‘a’, ‘u’: ‘b’, ‘v’: ‘c’, ‘w’: ‘d’, ‘x’: ‘e’, ‘y’: ‘f’, ‘z’: ‘g’, ‘A’: ‘H’, ‘B’: ‘I’, ‘C’: ‘J’, ‘D’: ‘K’, ‘E’: ‘L’, ‘F’: ‘M’, ‘G’: ‘N’, ‘H’: ‘O’, ‘I’: ‘P’, ‘J’: ‘Q’, ‘K’: ‘R’, ‘L’: ‘S’, ‘M’: ‘T’, ‘N’: ‘U’, ‘O’: ‘V’, ‘P’: ‘W’, ‘Q’: ‘X’, ‘R’: ‘Y’, ‘S’: ‘Z’, ‘T’: ‘A’, ‘U’: ‘B’, ‘V’: ‘C’, ‘W’: ‘D’, ‘X’: ‘E’, ‘Y’: ‘F’, ‘Z’: ‘G’}</td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">build_code_dict(33)</span></code></p></td>
+<td><p>{‘a’: ‘h’, ‘b’: ‘i’, ‘c’: ‘j’, ‘d’: ‘k’, ‘e’: ‘l’, ‘f’: ‘m’, ‘g’: ‘n’, ‘h’: ‘o’, ‘i’: ‘p’, ‘j’: ‘q’, ‘k’: ‘r’, ‘l’: ‘s’, ‘m’: ‘t’, ‘n’: ‘u’, ‘o’: ‘v’, ‘p’: ‘w’, ‘q’: ‘x’, ‘r’: ‘y’, ‘s’: ‘z’, ‘t’: ‘a’, ‘u’: ‘b’, ‘v’: ‘c’, ‘w’: ‘d’, ‘x’: ‘e’, ‘y’: ‘f’, ‘z’: ‘g’, ‘A’: ‘H’, ‘B’: ‘I’, ‘C’: ‘J’, ‘D’: ‘K’, ‘E’: ‘L’, ‘F’: ‘M’, ‘G’: ‘N’, ‘H’: ‘O’, ‘I’: ‘P’, ‘J’: ‘Q’, ‘K’: ‘R’, ‘L’: ‘S’, ‘M’: ‘T’, ‘N’: ‘U’, ‘O’: ‘V’, ‘P’: ‘W’, ‘Q’: ‘X’, ‘R’: ‘Y’, ‘S’: ‘Z’, ‘T’: ‘A’, ‘U’: ‘B’, ‘V’: ‘C’, ‘W’: ‘D’, ‘X’: ‘E’, ‘Y’: ‘F’, ‘Z’: ‘G’}</p></td>
 </tr>
 </tbody>
 </table>
 </li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Remember that dictionaries are <em>unordered</em> collections. The key/value pairs
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember that dictionaries are <em>unordered</em> collections. The key/value pairs
 in your results might be in a different order than the examples, and that is
 OK.</p>
 </div>
@@ -310,23 +301,24 @@ to test those functions.</p>
 <div class="section" id="the-encrypt-with-shift-function">
 <h3>The <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code> Function<a class="headerlink" href="#the-encrypt-with-shift-function" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Define the function <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift(text,</span> <span class="pre">shift)</span></code>. The <code class="docutils literal notranslate"><span class="pre">text</span></code>
+<li><p>Define the function <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift(text,</span> <span class="pre">shift)</span></code>. The <code class="docutils literal notranslate"><span class="pre">text</span></code>
 parameter accepts a string and <code class="docutils literal notranslate"><span class="pre">shift</span></code> accepts an integer. <code class="docutils literal notranslate"><span class="pre">text</span></code> will
 be the message to convert to code, and <code class="docutils literal notranslate"><span class="pre">shift</span></code> will be the number of
-spaces to shift each letter in the alphabet.</li>
-<li>Just in case no <code class="docutils literal notranslate"><span class="pre">shift</span></code> value gets sent to the function, set its default
-value to be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
-<li>Inside the function, call <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> and use <code class="docutils literal notranslate"><span class="pre">shift</span></code> as the
-argument. Assign the returned dictionary to a variable.</li>
-<li>Use the accumulator pattern to build up the coded message.<ol class="loweralpha">
-<li>Define a variable to hold the coded message.</li>
-<li>Loop through each character in <code class="docutils literal notranslate"><span class="pre">text</span></code>.</li>
-<li>If the character is a <em>key</em> in the code dictionary, add its <em>value</em> to
+spaces to shift each letter in the alphabet.</p></li>
+<li><p>Just in case no <code class="docutils literal notranslate"><span class="pre">shift</span></code> value gets sent to the function, set its default
+value to be <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>Inside the function, call <code class="docutils literal notranslate"><span class="pre">build_code_dict</span></code> and use <code class="docutils literal notranslate"><span class="pre">shift</span></code> as the
+argument. Assign the returned dictionary to a variable.</p></li>
+<li><p>Use the accumulator pattern to build up the coded message.</p>
+<ol class="loweralpha simple">
+<li><p>Define a variable to hold the coded message.</p></li>
+<li><p>Loop through each character in <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p></li>
+<li><p>If the character is a <em>key</em> in the code dictionary, add its <em>value</em> to
 the coded message. If the character is NOT a key in the dictionary,
-add the original character to the message.</li>
+add the original character to the message.</p></li>
 </ol>
 </li>
-<li>Return the final, coded message.</li>
+<li><p>Return the final, coded message.</p></li>
 </ol>
 </div>
 <div class="section" id="the-decrypt-function">
@@ -335,15 +327,16 @@ add the original character to the message.</li>
 letters to the <em>right</em> in the alphabet. To translate a coded message back into
 clear text, you must shift the letters to the <em>left</em> the same number of steps.</p>
 <ol class="arabic simple">
-<li>Define a <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function that takes a coded message and a shift value
-as the parameters.</li>
-<li>The function returns the translated message.</li>
-<li>Make this happen.</li>
-<li><em>Hints</em>:<ol class="loweralpha">
-<li>There’s no rule that says shift values have to be positive.</li>
-<li>Remember that functions can call other functions.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function can be completed with only a small number of
-statements.</li>
+<li><p>Define a <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function that takes a coded message and a shift value
+as the parameters.</p></li>
+<li><p>The function returns the translated message.</p></li>
+<li><p>Make this happen.</p></li>
+<li><p><em>Hints</em>:</p>
+<ol class="loweralpha simple">
+<li><p>There’s no rule that says shift values have to be positive.</p></li>
+<li><p>Remember that functions can call other functions.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function can be completed with only a small number of
+statements.</p></li>
 </ol>
 </li>
 </ol>
@@ -351,51 +344,51 @@ statements.</li>
 <div class="section" id="test-your-functions">
 <h3>Test Your Functions!<a class="headerlink" href="#test-your-functions" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, define the <code class="docutils literal notranslate"><span class="pre">message</span></code> and <code class="docutils literal notranslate"><span class="pre">shift_by</span></code> variables. Assign
-values to each one.</li>
-<li>Call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code> function and use the two variables as the
-arguments. Assign the returned (coded) message to another variable.</li>
-<li>Print the coded message.</li>
-<li>Call the <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function and send in the coded message and <code class="docutils literal notranslate"><span class="pre">shift_by</span></code>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, define the <code class="docutils literal notranslate"><span class="pre">message</span></code> and <code class="docutils literal notranslate"><span class="pre">shift_by</span></code> variables. Assign
+values to each one.</p></li>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code> function and use the two variables as the
+arguments. Assign the returned (coded) message to another variable.</p></li>
+<li><p>Print the coded message.</p></li>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">decrypt</span></code> function and send in the coded message and <code class="docutils literal notranslate"><span class="pre">shift_by</span></code>
 as the arguments. Assign the returned (translated) message to another
-variable.</li>
-<li>Print the translated message.</li>
+variable.</p></li>
+<li><p>Print the translated message.</p></li>
 </ol>
-<table border="1" class="docutils align-default" id="id5">
+<table class="docutils align-default" id="id5">
 <caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Message</th>
-<th class="head">Function</th>
-<th class="head">Shift</th>
-<th class="head">Returned Message</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Shift</p></th>
+<th class="head"><p>Returned Message</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>LaunchCode</td>
-<td><code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code></td>
-<td>13</td>
-<td>YnhapuPbqr</td>
+<tbody>
+<tr class="row-even"><td><p>LaunchCode</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code></p></td>
+<td><p>13</p></td>
+<td><p>YnhapuPbqr</p></td>
 </tr>
-<tr class="row-odd"><td>Hello, World!</td>
-<td><code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code></td>
-<td>5</td>
-<td>Mjqqt, Btwqi!</td>
+<tr class="row-odd"><td><p>Hello, World!</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">encrypt_with_shift</span></code></p></td>
+<td><p>5</p></td>
+<td><p>Mjqqt, Btwqi!</p></td>
 </tr>
-<tr class="row-even"><td>Ktocji MJXFN!</td>
-<td><code class="docutils literal notranslate"><span class="pre">decrypt</span></code></td>
-<td>21</td>
-<td>Python ROCKS!</td>
+<tr class="row-even"><td><p>Ktocji MJXFN!</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">decrypt</span></code></p></td>
+<td><p>21</p></td>
+<td><p>Python ROCKS!</p></td>
 </tr>
-<tr class="row-odd"><td>Hsz dljd T’x yze l nzopc? Hlens xp aczgp espx hczyr!</td>
-<td><code class="docutils literal notranslate"><span class="pre">decrypt</span></code></td>
-<td>11</td>
-<td>Who says I’m not a coder? Watch me prove them wrong!</td>
+<tr class="row-odd"><td><p>Hsz dljd T’x yze l nzopc? Hlens xp aczgp espx hczyr!</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">decrypt</span></code></p></td>
+<td><p>11</p></td>
+<td><p>Who says I’m not a coder? Watch me prove them wrong!</p></td>
 </tr>
 </tbody>
 </table>
@@ -405,10 +398,10 @@ variable.</li>
 <h2>Part 3: Add User Input<a class="headerlink" href="#part-3-add-user-input" title="Permalink to this headline">¶</a></h2>
 <p>The next step is to make your program interactive.</p>
 <ol class="arabic simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, code some <code class="docutils literal notranslate"><span class="pre">input</span></code> statements so the user can enter a
-message and a shift value.</li>
-<li>Ask the user to choose to <em>encrypt</em> or <em>translate</em> the message.</li>
-<li>Print the original message and the result.</li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, code some <code class="docutils literal notranslate"><span class="pre">input</span></code> statements so the user can enter a
+message and a shift value.</p></li>
+<li><p>Ask the user to choose to <em>encrypt</em> or <em>translate</em> the message.</p></li>
+<li><p>Print the original message and the result.</p></li>
 </ol>
 </div>
 <div class="section" id="part-4-create-a-module">
@@ -416,15 +409,15 @@ message and a shift value.</li>
 <p>The <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> and <code class="docutils literal notranslate"><span class="pre">shift_character</span></code> functions might be useful
 for other programs. Move them into a module!</p>
 <ol class="arabic simple">
-<li>Create a new file in your project. Remember to add <code class="docutils literal notranslate"><span class="pre">.py</span></code> to the end of the
-filename.</li>
-<li>Cut and paste the two functions into the new file. <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> and
-<code class="docutils literal notranslate"><span class="pre">shift_character</span></code> should no longer appear in the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file!</li>
-<li>Try running your program. It should NOT work! Read the error message
-carefully.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code> import the required function from the module, then run your
+<li><p>Create a new file in your project. Remember to add <code class="docutils literal notranslate"><span class="pre">.py</span></code> to the end of the
+filename.</p></li>
+<li><p>Cut and paste the two functions into the new file. <code class="docutils literal notranslate"><span class="pre">alphabet_position</span></code> and
+<code class="docutils literal notranslate"><span class="pre">shift_character</span></code> should no longer appear in the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file!</p></li>
+<li><p>Try running your program. It should NOT work! Read the error message
+carefully.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code> import the required function from the module, then run your
 program again. Use any error messages to guide you as you get your code
-working again.</li>
+working again.</p></li>
 </ol>
 </div>
 <div class="section" id="sample-output">
@@ -474,14 +467,14 @@ result so you can spot the correct translation.</p>
 <h2>Final Checks<a class="headerlink" href="#final-checks" title="Permalink to this headline">¶</a></h2>
 <p>Before submitting your assignment, make sure your program:</p>
 <ol class="arabic simple">
-<li>Works.</li>
-<li>Only displays the expected output and NOT any of the function test results.</li>
-<li>Contains no loose code statements (statements placed outside of any
-function).</li>
-<li>Includes enough comments to describe to a non-coder what each part of the
-program does.</li>
-<li>Survives unexpected inputs (e.g. if the user enters a letter instead of a
-number when asked for a shift value).</li>
+<li><p>Works.</p></li>
+<li><p>Only displays the expected output and NOT any of the function test results.</p></li>
+<li><p>Contains no loose code statements (statements placed outside of any
+function).</p></li>
+<li><p>Includes enough comments to describe to a non-coder what each part of the
+program does.</p></li>
+<li><p>Survives unexpected inputs (e.g. if the user enters a letter instead of a
+number when asked for a shift value).</p></li>
 </ol>
 </div>
 </div>

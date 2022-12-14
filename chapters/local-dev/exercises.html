@@ -97,14 +97,12 @@ exercises, you will use your Python skills to make one!</p>
 <div class="section" id="setup">
 <h2><span class="section-number">17.8.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Open Visual Studio Code and create a new directory. Also, create an empty
+<li><p>Open Visual Studio Code and create a new directory. Also, create an empty
 <code class="docutils literal notranslate"><span class="pre">.py</span></code> file for your program. Be sure to follow the proper Python naming
-conventions.</p>
-</li>
-<li><p class="first">In your new file, start by adding <code class="docutils literal notranslate"><span class="pre">import</span></code> statements for the <a class="reference internal" href="../modules/random-module.html#random-module"><span class="std std-ref">random</span></a>
-and <a class="reference internal" href="../strings/string-module.html#string-module"><span class="std std-ref">string</span></a> modules.</p>
-</li>
-<li><p class="first">This program might be used as a module later, so you need to set up your
+conventions.</p></li>
+<li><p>In your new file, start by adding <code class="docutils literal notranslate"><span class="pre">import</span></code> statements for the <a class="reference internal" href="../modules/random-module.html#random-module"><span class="std std-ref">random</span></a>
+and <a class="reference internal" href="../strings/string-module.html#string-module"><span class="std std-ref">string</span></a> modules.</p></li>
+<li><p>This program might be used as a module later, so you need to set up your
 <code class="docutils literal notranslate"><span class="pre">main()</span></code> function as described in the <a class="reference internal" href="../modules/more-on-main.html#more-about-main"><span class="std std-ref">More About main()</span></a>
 section.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -122,17 +120,17 @@ section.</p>
 <h2><span class="section-number">17.8.2. </span>Part A: Choose a Length<a class="headerlink" href="#part-a-choose-a-length" title="Permalink to this headline">¶</a></h2>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> that does the following:</p>
 <ol class="arabic simple">
-<li>Prompts the user to choose a length for their new password. Acceptable
-values range from 8 - 30 characters.</li>
-<li>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to validate the user’s entry. If an entry is invalid,
-the loop should print an error message and reprompt the user for the length.</li>
-<li>Returns an integer for the password length.</li>
+<li><p>Prompts the user to choose a length for their new password. Acceptable
+values range from 8 - 30 characters.</p></li>
+<li><p>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to validate the user’s entry. If an entry is invalid,
+the loop should print an error message and reprompt the user for the length.</p></li>
+<li><p>Returns an integer for the password length.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Be sure to test your function! In <code class="docutils literal notranslate"><span class="pre">main()</span></code> call <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> and print
 the value returned by the function.</p>
-<p class="last">Try entering invalid options like <code class="docutils literal notranslate"><span class="pre">abc</span></code>, <code class="docutils literal notranslate"><span class="pre">33</span></code>, <code class="docutils literal notranslate"><span class="pre">-2</span></code>, and <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>.
+<p>Try entering invalid options like <code class="docutils literal notranslate"><span class="pre">abc</span></code>, <code class="docutils literal notranslate"><span class="pre">33</span></code>, <code class="docutils literal notranslate"><span class="pre">-2</span></code>, and <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>.
 Also, check to make sure the edge values <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">30</span></code> both work.</p>
 </div>
 <p><strong>Sample Output</strong></p>
@@ -150,11 +148,11 @@ Returned value = 10
 <h2><span class="section-number">17.8.3. </span>Part B: Include Special Characters?<a class="headerlink" href="#part-b-include-special-characters" title="Permalink to this headline">¶</a></h2>
 <p>Write a boolean function called <code class="docutils literal notranslate"><span class="pre">includes_special()</span></code> that does the following:</p>
 <ol class="arabic simple">
-<li>Asks if the user wants to include special characters in the new password.
-Special characters include symbols like <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, etc.</li>
-<li>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to accept only <code class="docutils literal notranslate"><span class="pre">yes/no</span></code> or <code class="docutils literal notranslate"><span class="pre">Y/N</span></code> answers. These
-options should be case-insensitive.</li>
-<li>Returns the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on the user’s choice.</li>
+<li><p>Asks if the user wants to include special characters in the new password.
+Special characters include symbols like <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">}</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, etc.</p></li>
+<li><p>Uses a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to accept only <code class="docutils literal notranslate"><span class="pre">yes/no</span></code> or <code class="docutils literal notranslate"><span class="pre">Y/N</span></code> answers. These
+options should be case-insensitive.</p></li>
+<li><p>Returns the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on the user’s choice.</p></li>
 </ol>
 <p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code> call and test <code class="docutils literal notranslate"><span class="pre">includes_special()</span></code>.</p>
 <p><strong>Sample Output</strong></p>
@@ -172,15 +170,16 @@ Returned value = True
 <h2><span class="section-number">17.8.4. </span>Part C: Generate New Password<a class="headerlink" href="#part-c-generate-new-password" title="Permalink to this headline">¶</a></h2>
 <p>Write a function called <code class="docutils literal notranslate"><span class="pre">make_password()</span></code> that does the following:</p>
 <ol class="arabic simple">
-<li>Calls the <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> and <code class="docutils literal notranslate"><span class="pre">includes_special</span></code> functions.</li>
-<li>Defines a <code class="docutils literal notranslate"><span class="pre">characters</span></code> variable that:<ol class="loweralpha">
-<li>Combines <code class="docutils literal notranslate"><span class="pre">string.ascii_letters</span></code> and <code class="docutils literal notranslate"><span class="pre">string.digits</span></code> (to get all upper
-and lowercase letters, plus the digits <code class="docutils literal notranslate"><span class="pre">0-9</span></code>).</li>
-<li>Includes <code class="docutils literal notranslate"><span class="pre">string.punctuation</span></code> if the user wants special characters.</li>
+<li><p>Calls the <code class="docutils literal notranslate"><span class="pre">pw_length</span></code> and <code class="docutils literal notranslate"><span class="pre">includes_special</span></code> functions.</p></li>
+<li><p>Defines a <code class="docutils literal notranslate"><span class="pre">characters</span></code> variable that:</p>
+<ol class="loweralpha simple">
+<li><p>Combines <code class="docutils literal notranslate"><span class="pre">string.ascii_letters</span></code> and <code class="docutils literal notranslate"><span class="pre">string.digits</span></code> (to get all upper
+and lowercase letters, plus the digits <code class="docutils literal notranslate"><span class="pre">0-9</span></code>).</p></li>
+<li><p>Includes <code class="docutils literal notranslate"><span class="pre">string.punctuation</span></code> if the user wants special characters.</p></li>
 </ol>
 </li>
-<li>Builds a new password by randomly choosing from the <code class="docutils literal notranslate"><span class="pre">characters</span></code> string.</li>
-<li>Returns the new password.</li>
+<li><p>Builds a new password by randomly choosing from the <code class="docutils literal notranslate"><span class="pre">characters</span></code> string.</p></li>
+<li><p>Returns the new password.</p></li>
 </ol>
 <p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code> remove (or comment out) any function calls and <code class="docutils literal notranslate"><span class="pre">print</span></code>
 statements you used to test Parts A and B.</p>
@@ -199,20 +198,20 @@ Your new password is: Sd&quot;A%OO0nSzU?52
 <h2><span class="section-number">17.8.5. </span>Part D: Add a <code class="docutils literal notranslate"><span class="pre">Login</span></code> Class<a class="headerlink" href="#part-d-add-a-login-class" title="Permalink to this headline">¶</a></h2>
 <p>Below the <code class="docutils literal notranslate"><span class="pre">import</span></code> statements, define a <code class="docutils literal notranslate"><span class="pre">Login</span></code> class.</p>
 <ol class="arabic simple">
-<li>Use the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method to initialize properties for a site name, a
-username, and a password.</li>
-<li>Define a method called <code class="docutils literal notranslate"><span class="pre">change_password</span></code> that calls the <code class="docutils literal notranslate"><span class="pre">make_password</span></code>
-function and updates the password property.</li>
-<li>Define a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that displays the login information in a clean
-way.</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method to initialize properties for a site name, a
+username, and a password.</p></li>
+<li><p>Define a method called <code class="docutils literal notranslate"><span class="pre">change_password</span></code> that calls the <code class="docutils literal notranslate"><span class="pre">make_password</span></code>
+function and updates the password property.</p></li>
+<li><p>Define a <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that displays the login information in a clean
+way.</p></li>
 </ol>
 <p>Test your class by creating a new <code class="docutils literal notranslate"><span class="pre">Login</span></code> object (you will need to prompt for
 the site and username).</p>
 <p>Be sure to print the object to the console before and after calling the
 <code class="docutils literal notranslate"><span class="pre">change_password</span></code> method.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">It NOT a good idea to print passwords to the screen or save them without
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>It NOT a good idea to print passwords to the screen or save them without
 encrypting them! You are just doing it here to test your code.</p>
 </div>
 <p><strong>Sample Output</strong></p>

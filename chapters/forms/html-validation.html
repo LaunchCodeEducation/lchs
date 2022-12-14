@@ -98,7 +98,7 @@ more of the input fields. It flags any input that returns the empty string
 <p><code class="docutils literal notranslate"><span class="pre">required</span></code> lets us place an emphasis on the most important information we
 need to collect from a form.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Student</span> <span class="pre">ID</span></code> fields are necessary, but <code class="docutils literal notranslate"><span class="pre">Favorite</span> <span class="pre">Color</span></code>
 can be left blank.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -108,14 +108,14 @@ can be left blank.</p>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav_color&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last figure align-default" id="id1">
+<div class="figure align-default" id="id1">
 <img alt="The empty Name and Student ID fields are flagged with a red border." src="../../_images/required-field.png" />
 <p class="caption"><span class="caption-text">After trying to submit the form, red borders flag the empty, <code class="docutils literal notranslate"><span class="pre">required</span></code> fields.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute also works for non-text inputs as well.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Radio buttons</strong>: Only <em>one</em> <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute is needed for the
+<li><p><strong>Radio buttons</strong>: Only <em>one</em> <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute is needed for the
 group. This group consists of all <code class="docutils literal notranslate"><span class="pre">input</span></code> elements that share the same
 <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -126,7 +126,7 @@ group. This group consists of all <code class="docutils literal notranslate"><sp
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>Select element</strong>: Place the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code>
+<li><p><strong>Select element</strong>: Place the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;select&gt;</span></code>
 tag. Also, one of the <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags must include <code class="docutils literal notranslate"><span class="pre">selected</span></code> and assign
 the empty string to the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -141,11 +141,10 @@ the empty string to the <code class="docutils literal notranslate"><span class="
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>Checkboxes</strong>: If we need the user to click a <em>specific</em> checkbox, then the
+<li><p><strong>Checkboxes</strong>: If we need the user to click a <em>specific</em> checkbox, then the
 <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute works well. This would be something like those
 <em>I agree to the terms and conditions</em> statements we need to click before
-installing new software or creating an online account.</p>
-</li>
+installing new software or creating an online account.</p></li>
 </ol>
 <p>Note that HTML5 currently does NOT support using <code class="docutils literal notranslate"><span class="pre">required</span></code> on a <em>group</em> of
 checkboxes, even if they share the same <code class="docutils literal notranslate"><span class="pre">name</span></code>. If we want to make sure the
@@ -163,26 +162,26 @@ strong webpages. We will study server-side validation in the next few chapters.<
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.8.1. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>When should we include form validation in our code?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the user enters a password.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the user needs to provide required data.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime the data in an input field needs to follow a specific format.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Anytime we build a form.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> All of the above.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>A user fills out a form with their login information and clicks <em>Submit</em>.
 They receive an error message pointing out that they entered an incorrect
 password for their account. This is an example of:</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> client-side validation</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> sever-side validation</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

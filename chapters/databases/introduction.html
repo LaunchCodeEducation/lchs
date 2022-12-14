@@ -110,27 +110,27 @@ diagram below shows how a database fits in with the server and a browser.</p>
 <p>The figure splits the task of running a website into three large pieces. Let’s
 take a look at the different sections.</p>
 <ol class="arabic simple">
-<li>A user launches their browser and navigates to a website. They send HTTP
+<li><p>A user launches their browser and navigates to a website. They send HTTP
 requests to the web server, and their browser displays the responses on the
-screen. The user can only interact with the server.</li>
-<li>The database only interacts with a special program built to manage data. The
+screen. The user can only interact with the server.</p></li>
+<li><p>The database only interacts with a special program built to manage data. The
 code accesses the database and creates new entries, reads information,
 updates exiting data, or deletes content that is no longer needed. The
-program does NOT communicate directly with visitors to the website.</li>
-<li>A <em>control</em> program sits in between. It receives HTTP requests and sends
+program does NOT communicate directly with visitors to the website.</p></li>
+<li><p>A <em>control</em> program sits in between. It receives HTTP requests and sends
 back the responses. The code manages the web server, makes decisions, sends
 data to the browser, and interacts with the data management program. The
 control provides a useful middle step. It analyzes HTTP requests and filters
 out anything that might corrupt the database or access it without
-permission.</li>
+permission.</p></li>
 </ol>
 <p>In the Flask applications we’ve built so far, <code class="docutils literal notranslate"><span class="pre">main.py</span></code> serves as the
 control.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>News stories pop up frequently about hackers stealing information or
 companies accidentally posting their customers’ data online.</p>
-<p class="last">When you attach a database to your web application, you MUST take steps to
+<p>When you attach a database to your web application, you MUST take steps to
 protect the information. Visitors to your website should never have direct
 access to where you store sensitive data.</p>
 </div>
@@ -145,17 +145,17 @@ structure when they set up their databases. To interact with this structure,
 programmers use a tool called <strong>SQL</strong>, which stands for <em>Structured Query
 Language</em>.</p>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
 <p>Are you a Marvel or DC person? How about Hufflepuff vs. Ravenclaw?</p>
 <p>People pronounce <code class="docutils literal notranslate"><span class="pre">SQL</span></code> one of two ways, either like the word “sequel” or
 by sounding out each letter, “ess-que-ell”. Both ways are acceptable, but
 some programmers hold strong opinions about which one to use. Here’s a handy
 cheat sheet to keep you out of trouble:</p>
 <ol class="arabic simple">
-<li><strong>Pronounced “SQL”</strong>: Yep! 🙂</li>
-<li><strong>Pronounced “SQL”</strong>: Nope! 😡</li>
+<li><p><strong>Pronounced “SQL”</strong>: Yep! 🙂</p></li>
+<li><p><strong>Pronounced “SQL”</strong>: Nope! 😡</p></li>
 </ol>
-<p class="last">Really, it doesn’t matter! 😉</p>
+<p>Really, it doesn’t matter! 😉</p>
 </div>
 <p>Learning how to use SQL is a complete course by itself. Fortunately, Python
 provides us with some shortcuts. We will import the necessary module and
@@ -166,25 +166,25 @@ provides one.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.1.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Visitors to a website interact with which of the following? Select ALL that
 apply.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "a" onclick="highlight('a', true)">The web server</span></li>
    <li><span id = "b" onclick="highlight('b', true)">The control program</span></li>
    <li><span id = "c" onclick="highlight('c', false)">The data management program</span></li>
    <li><span id = "d" onclick="highlight('d', false)">The database</span></li>
-</ol></div></div>
+</ol></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>How long does information remain on a database?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until the user quits their browser.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until the user clears their sessions/cookies.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> For 24 hours.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Until the developer decides to delete it.</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

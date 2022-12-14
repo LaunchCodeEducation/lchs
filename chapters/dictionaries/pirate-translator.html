@@ -133,41 +133,42 @@ the value for that key, which is the Spanish translation.</p>
 <p>That’s it! Our word translator is limited only by the size and accuracy of the
 dictionary.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Add key/value pairs to the <code class="docutils literal notranslate"><span class="pre">translate</span></code> dictionary! Feel free to use words
 from any two languages you want, but you must be able to type in the starting
 words with the letters on your keyboard.</p>
 <ol class="arabic simple">
-<li>The keys in the dictionary should be in the language that the user
-enters.</li>
-<li>The values will be in the other language.</li>
-<li>Use Google translate if you need help finding word pairs.</li>
+<li><p>The keys in the dictionary should be in the language that the user
+enters.</p></li>
+<li><p>The values will be in the other language.</p></li>
+<li><p>Use Google translate if you need help finding word pairs.</p></li>
 </ol>
-<div class="last"><iframe src="https://trinket.io/embed/python3/1aa8392d55" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<iframe src="https://trinket.io/embed/python3/1aa8392d55" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
 <p>Walking through the code:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">keep_going</span> <span class="pre">=</span> <span class="pre">True</span></code> keeps the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop running until the user tells
-the program to stop.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">word_to_change</span></code> input statement prompts the user for the word to
-translate.</li>
-<li><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">word_to_change</span> <span class="pre">in</span> <span class="pre">translate</span></code> checks to see if the entered word is one
-of the keys in the dictionary.<ol class="loweralpha">
-<li>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, then <code class="docutils literal notranslate"><span class="pre">print(translate[word_to_change])</span></code> displays the value
-for the key.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, then the user sees a message telling them that their word
-is missing from the dictionary.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">keep_going</span> <span class="pre">=</span> <span class="pre">True</span></code> keeps the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop running until the user tells
+the program to stop.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">word_to_change</span></code> input statement prompts the user for the word to
+translate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">word_to_change</span> <span class="pre">in</span> <span class="pre">translate</span></code> checks to see if the entered word is one
+of the keys in the dictionary.</p>
+<ol class="loweralpha simple">
+<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, then <code class="docutils literal notranslate"><span class="pre">print(translate[word_to_change])</span></code> displays the value
+for the key.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, then the user sees a message telling them that their word
+is missing from the dictionary.</p></li>
 </ol>
 </li>
-<li>The <code class="docutils literal notranslate"><span class="pre">repeat</span></code> input statement asks the user if they would like to keep
+<li><p>The <code class="docutils literal notranslate"><span class="pre">repeat</span></code> input statement asks the user if they would like to keep
 going. Any entry that does NOT start with <code class="docutils literal notranslate"><span class="pre">'y'</span></code>
 (<code class="docutils literal notranslate"><span class="pre">repeat[0].lower()</span> <span class="pre">!=</span> <span class="pre">'y'</span></code>) sets <code class="docutils literal notranslate"><span class="pre">keep_going</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>, and the
-program ends.</li>
+program ends.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>We <em>could</em> build the translation app with lists, but that code would be less
 efficient and more likely to have bugs.</p>
-<p class="last">Explain why.</p>
+<p>Explain why.</p>
 </div>
 </div>
 <div class="section" id="talk-like-a-pirate">
@@ -182,28 +183,27 @@ the program. You can also see the steps by clicking the <em>Instructions</em> ta
 the editor.</p>
 <iframe src="https://trinket.io/embed/python3/33642cab22" width="100%" height="500" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p><strong>Instructions:</strong></p>
 <ol class="arabic">
-<li><p class="first">Note that the English-to-pirate dictionary is defined in the
+<li><p>Note that the English-to-pirate dictionary is defined in the
 <code class="docutils literal notranslate"><span class="pre">translate.py</span></code> module.</p>
 <ol class="loweralpha simple">
-<li>Placing it here is an excellent idea, because we can keep multiple
+<li><p>Placing it here is an excellent idea, because we can keep multiple
 dictionaries in <code class="docutils literal notranslate"><span class="pre">translate.py</span></code> and then import only the ones we want
-into different programs.</li>
-<li>Changes made to a dictionary in <code class="docutils literal notranslate"><span class="pre">translate.py</span></code> get applied to all
-programs that import it.</li>
-<li>Feel free to add, remove, or edit the key/value pairs in
-<code class="docutils literal notranslate"><span class="pre">eng_to_pirate</span></code>!</li>
+into different programs.</p></li>
+<li><p>Changes made to a dictionary in <code class="docutils literal notranslate"><span class="pre">translate.py</span></code> get applied to all
+programs that import it.</p></li>
+<li><p>Feel free to add, remove, or edit the key/value pairs in
+<code class="docutils literal notranslate"><span class="pre">eng_to_pirate</span></code>!</p></li>
 </ol>
 </li>
-<li><p class="first">Line 3 assigns the string we want to translate to the <code class="docutils literal notranslate"><span class="pre">text</span></code> variable, and
+<li><p>Line 3 assigns the string we want to translate to the <code class="docutils literal notranslate"><span class="pre">text</span></code> variable, and
 line 4 splits <code class="docutils literal notranslate"><span class="pre">text</span></code> into a list of separate words. Line 6 defines an
-empty list to hold the words that go into the translated string.</p>
-</li>
-<li><p class="first">On line 7, set up a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the list of words:</p>
+empty list to hold the words that go into the translated string.</p></li>
+<li><p>On line 7, set up a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to iterate through the list of words:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">eng_words</span><span class="p">:</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Now set up a conditional to check if <code class="docutils literal notranslate"><span class="pre">word</span></code> is a key in the
+<li><p>Now set up a conditional to check if <code class="docutils literal notranslate"><span class="pre">word</span></code> is a key in the
 <code class="docutils literal notranslate"><span class="pre">eng_to_pirate</span></code> dictionary. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, append the <em>value</em> for the key
 to the <code class="docutils literal notranslate"><span class="pre">new_words</span></code> list. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, append the original word.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
@@ -216,7 +216,7 @@ to the <code class="docutils literal notranslate"><span class="pre">new_words</s
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">After the loop is done, join the elements from the <code class="docutils literal notranslate"><span class="pre">new_words</span></code> list into
+<li><p>After the loop is done, join the elements from the <code class="docutils literal notranslate"><span class="pre">new_words</span></code> list into
 a new string, then print the result.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
 14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">new_text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_words</span><span class="p">)</span>
@@ -224,7 +224,7 @@ a new string, then print the result.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Now run the program, fixing any syntax, runtime, or logic errors. Properly
+<li><p>Now run the program, fixing any syntax, runtime, or logic errors. Properly
 done, the output should look like:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>If ye be interested in tales with happy endings, ye would be better off reading some other book.
 </pre></div>
@@ -234,8 +234,8 @@ done, the output should look like:</p>
 <p>Nice! Feel free to change the value of <code class="docutils literal notranslate"><span class="pre">text</span></code> to try out different
 translations.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Right now, our translation program does NOT consider case or punctuation.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Right now, our translation program does NOT consider case or punctuation.
 We will fix this in the sections below.</p>
 </div>
 <div class="section" id="consider-case">
@@ -245,7 +245,7 @@ it leaves the capitalized word alone. All of the keys in <code class="docutils l
 lowercase strings, so <code class="docutils literal notranslate"><span class="pre">You</span></code> isn’t found.</p>
 <p>Let’s add some logic to deal with capitalized words:</p>
 <ol class="arabic">
-<li><p class="first">Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to search for <code class="docutils literal notranslate"><span class="pre">word</span></code> in lowercase. Note that
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to search for <code class="docutils literal notranslate"><span class="pre">word</span></code> in lowercase. Note that
 we also need to update the first <code class="docutils literal notranslate"><span class="pre">append</span></code> statement:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>8
 9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">eng_to_pirate</span><span class="p">:</span>
@@ -253,11 +253,10 @@ we also need to update the first <code class="docutils literal notranslate"><spa
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Run the program again, and note that <code class="docutils literal notranslate"><span class="pre">You</span></code> gets changed to <code class="docutils literal notranslate"><span class="pre">ye</span></code>.
+<li><p>Run the program again, and note that <code class="docutils literal notranslate"><span class="pre">You</span></code> gets changed to <code class="docutils literal notranslate"><span class="pre">ye</span></code>.
 This is better, but not quite complete. The next fix is to replace
-capitalized words with capitalized translations.</p>
-</li>
-<li><p class="first">Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement one more time to also check if <code class="docutils literal notranslate"><span class="pre">word</span></code> starts
+capitalized words with capitalized translations.</p></li>
+<li><p>Change the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement one more time to also check if <code class="docutils literal notranslate"><span class="pre">word</span></code> starts
 with a capital letter. If <code class="docutils literal notranslate"><span class="pre">True</span></code> we can retrieve the translated word and
 then apply another string method to capitalize it.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
@@ -268,11 +267,10 @@ then apply another string method to capitalize it.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Run the program again. Woo, hoo! <code class="docutils literal notranslate"><span class="pre">You</span></code> translates to <code class="docutils literal notranslate"><span class="pre">Ye</span></code>! But wait,
+<li><p>Run the program again. Woo, hoo! <code class="docutils literal notranslate"><span class="pre">You</span></code> translates to <code class="docutils literal notranslate"><span class="pre">Ye</span></code>! But wait,
 now nothing else in <code class="docutils literal notranslate"><span class="pre">text</span></code> gets converted! The way the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement
-works now, only capitalized English words get changed.</p>
-</li>
-<li><p class="first">To fix this, add an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement to bring back the original check and
+works now, only capitalized English words get changed.</p></li>
+<li><p>To fix this, add an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement to bring back the original check and
 translation statements:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
 12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">eng_to_pirate</span><span class="p">:</span>
@@ -334,16 +332,16 @@ paste this into your code above:</p>
 <p>Try entering different phrases for <code class="docutils literal notranslate"><span class="pre">text</span></code> to check that the punctuation and
 capitalization code works.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
-<ol class="last arabic">
-<li><p class="first"><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Stop!</span> <span class="pre">Go</span> <span class="pre">Meet</span> <span class="pre">The</span> <span class="pre">Principal</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">cafeteria.&quot;</span></code></p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<ol class="arabic">
+<li><p><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Stop!</span> <span class="pre">Go</span> <span class="pre">Meet</span> <span class="pre">The</span> <span class="pre">Principal</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">cafeteria.&quot;</span></code></p>
 <p><strong>Translation:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Avast!</span> <span class="pre">Go</span> <span class="pre">Meet</span> <span class="pre">Th'</span> <span class="pre">Scallywag</span> <span class="pre">in</span> <span class="pre">th'</span> <span class="pre">swill</span> <span class="pre">dungeon.&quot;</span></code></p>
 </li>
-<li><p class="first"><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Put</span> <span class="pre">away</span> <span class="pre">your</span> <span class="pre">phone</span> <span class="pre">and</span> <span class="pre">focus</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">computer!&quot;</span></code></p>
+<li><p><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Put</span> <span class="pre">away</span> <span class="pre">your</span> <span class="pre">phone</span> <span class="pre">and</span> <span class="pre">focus</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">computer!&quot;</span></code></p>
 <p><strong>Translation:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Put</span> <span class="pre">away</span> <span class="pre">yer</span> <span class="pre">cursed</span> <span class="pre">device</span> <span class="pre">and</span> <span class="pre">focus</span> <span class="pre">on</span> <span class="pre">th'</span> <span class="pre">magic</span>
 <span class="pre">box!&quot;</span></code></p>
 </li>
-<li><p class="first"><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Listen</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">teacher.&quot;</span></code></p>
+<li><p><strong>Text:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Listen</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">teacher.&quot;</span></code></p>
 <p><strong>Translation:</strong> <code class="docutils literal notranslate"><span class="pre">&quot;Listen</span> <span class="pre">ta</span> <span class="pre">yer</span> <span class="pre">wise</span> <span class="pre">sage.&quot;</span></code></p>
 </li>
 </ol>

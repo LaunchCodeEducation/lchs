@@ -96,11 +96,11 @@ of HTML:</p>
 <p>While this works fine, the syntax becomes tedious when we want to style
 multiple elements the same way.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s say we want every heading on our webpage to show blue text and be
 centered on the page. Using inline styling, the HTML might look something
 like:</p>
-<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -143,16 +143,16 @@ most common.</p>
 <span id="id1"></span><h3><span class="section-number">15.2.1.1. </span>CSS Selectors<a class="headerlink" href="#css-selectors" title="Permalink to this headline">¶</a></h3>
 <p id="index-2">CSS has three different selectors that we can use to make our style choices.</p>
 <ol class="arabic simple">
-<li><strong>Element selector</strong>: <em>Element</em> refers to an HTML tag name. For example, if
+<li><p><strong>Element selector</strong>: <em>Element</em> refers to an HTML tag name. For example, if
 we use the selector <code class="docutils literal notranslate"><span class="pre">p</span></code>, then the styling we define applies to all
-paragraph elements on the webpage.</li>
-<li><strong>Class selector</strong>: A <em>class</em> is a group of different HTML elements (like
+paragraph elements on the webpage.</p></li>
+<li><p><strong>Class selector</strong>: A <em>class</em> is a group of different HTML elements (like
 <code class="docutils literal notranslate"><span class="pre">p</span></code> and <code class="docutils literal notranslate"><span class="pre">section</span></code>) that need the same styling. The class name is
 determined by the programmer. Like variable names, a class name should be
-descriptive.</li>
-<li><strong>ID selector</strong>: An <em>id</em> is a specific identification given to a single
+descriptive.</p></li>
+<li><p><strong>ID selector</strong>: An <em>id</em> is a specific identification given to a single
 element in an HTML file. For example, if we want only one paragraph on our
-webpage to be bright pink, then we can assign it an <code class="docutils literal notranslate"><span class="pre">id</span></code>.</li>
+webpage to be bright pink, then we can assign it an <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="declaration-blocks">
@@ -161,7 +161,7 @@ webpage to be bright pink, then we can assign it an <code class="docutils litera
 property names. Each line in the block sets one property value, and the block
 as a whole defines the style for the selector.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>The syntax for a declaration block looks something like this:</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -175,7 +175,7 @@ as a whole defines the style for the selector.</p>
 </pre></div>
 </td></tr></table></div>
 <p>For centered, blue <code class="docutils literal notranslate"><span class="pre">h2</span></code> elements, the CSS would be:</p>
-<div class="last highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">h2</span> <span class="p">{</span>
@@ -268,13 +268,13 @@ other tags, the text in those elements remains the default color (black).</p>
 <p>In CSS, the <code class="docutils literal notranslate"><span class="pre">id</span></code> selector begins with the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by the name
 that we choose to give that one element.</p>
 <div class="admonition-fun-fact admonition">
-<p class="first admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
+<p class="admonition-title"><i class="fas fa-rocket" aria-hidden="true"></i>Fun Fact</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">#</span></code> has several names/meanings.</p>
-<ol class="last arabic simple">
-<li><em>Number</em>, as in <code class="docutils literal notranslate"><span class="pre">#2</span> <span class="pre">pencil</span></code> (number 2 pencil).</li>
-<li><em>Pound weight</em>, as in <code class="docutils literal notranslate"><span class="pre">77#</span></code> (77 pounds).</li>
-<li><em>Pound</em>, when referencing the button on a telephone keypad.</li>
-<li><em>Hashtag</em>, for most appearances after 2006.</li>
+<ol class="arabic simple">
+<li><p><em>Number</em>, as in <code class="docutils literal notranslate"><span class="pre">#2</span> <span class="pre">pencil</span></code> (number 2 pencil).</p></li>
+<li><p><em>Pound weight</em>, as in <code class="docutils literal notranslate"><span class="pre">77#</span></code> (77 pounds).</p></li>
+<li><p><em>Pound</em>, when referencing the button on a telephone keypad.</p></li>
+<li><p><em>Hashtag</em>, for most appearances after 2006.</p></li>
 </ol>
 </div>
 </div>
@@ -295,47 +295,46 @@ learn about how to link these together on the next page. For now, just
 recognize that changes you make to the <code class="docutils literal notranslate"><span class="pre">css</span></code> file will change the styling
 applied to the HTML elements.</p>
 <iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Initial-CSS-Practice?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="arabic">
-<li><p class="first">Click on the file icon on the left side of the editor to switch between the
+<li><p>Click on the file icon on the left side of the editor to switch between the
 <code class="docutils literal notranslate"><span class="pre">.html</span></code> and <code class="docutils literal notranslate"><span class="pre">.css</span></code> files. Flip back and forth between the two as you
 work with the code.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>After making a change in either file, click on the <em>Run</em> button to update
 the webpage.</p>
-<p class="last">Click the <em>Open in a New Tab</em> button in the output panel to see the whole
+<p>Click the <em>Open in a New Tab</em> button in the output panel to see the whole
 webpage. You can refresh this tab at any time to update the view.</p>
 </div>
 </li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">css</span></code> file already contains the styling information for the <code class="docutils literal notranslate"><span class="pre">h1</span></code>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">css</span></code> file already contains the styling information for the <code class="docutils literal notranslate"><span class="pre">h1</span></code>
 element. Using this as a model, add an <code class="docutils literal notranslate"><span class="pre">h2</span></code> selector and assign only two
 property values in the declaration block:</p>
 <ol class="loweralpha simple">
-<li>Set the text color to <code class="docutils literal notranslate"><span class="pre">blue</span></code>.</li>
-<li>Set the property <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code> to <code class="docutils literal notranslate"><span class="pre">underline</span></code>.</li>
-<li>Click <em>Run</em> and notice how all of the <code class="docutils literal notranslate"><span class="pre">h2</span></code> headings change.</li>
+<li><p>Set the text color to <code class="docutils literal notranslate"><span class="pre">blue</span></code>.</p></li>
+<li><p>Set the property <code class="docutils literal notranslate"><span class="pre">text-decoration</span></code> to <code class="docutils literal notranslate"><span class="pre">underline</span></code>.</p></li>
+<li><p>Click <em>Run</em> and notice how all of the <code class="docutils literal notranslate"><span class="pre">h2</span></code> headings change.</p></li>
 </ol>
 </li>
-<li><p class="first">In the HTML file, two of the elements include the attribute
+<li><p>In the HTML file, two of the elements include the attribute
 <code class="docutils literal notranslate"><span class="pre">class=&quot;gray-background&quot;</span></code>. However, this class name does not exist in the
 <code class="docutils literal notranslate"><span class="pre">css</span></code> file yet!</p>
 <ol class="loweralpha simple">
-<li>In the <code class="docutils literal notranslate"><span class="pre">css</span></code> file, add the <code class="docutils literal notranslate"><span class="pre">.gray-background</span></code> selector.</li>
-<li>Inside the declaration block, set the <code class="docutils literal notranslate"><span class="pre">background-color</span></code> property to
-<code class="docutils literal notranslate"><span class="pre">lightgray</span></code>.</li>
-<li>Set the <code class="docutils literal notranslate"><span class="pre">text-align</span></code> property to <code class="docutils literal notranslate"><span class="pre">center</span></code>.</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">css</span></code> file, add the <code class="docutils literal notranslate"><span class="pre">.gray-background</span></code> selector.</p></li>
+<li><p>Inside the declaration block, set the <code class="docutils literal notranslate"><span class="pre">background-color</span></code> property to
+<code class="docutils literal notranslate"><span class="pre">lightgray</span></code>.</p></li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">text-align</span></code> property to <code class="docutils literal notranslate"><span class="pre">center</span></code>.</p></li>
 </ol>
 </li>
-<li><p class="first">The styling for the <code class="docutils literal notranslate"><span class="pre">id</span></code> called <code class="docutils literal notranslate"><span class="pre">main-article</span></code> is defined in the <code class="docutils literal notranslate"><span class="pre">css</span></code>
+<li><p>The styling for the <code class="docutils literal notranslate"><span class="pre">id</span></code> called <code class="docutils literal notranslate"><span class="pre">main-article</span></code> is defined in the <code class="docutils literal notranslate"><span class="pre">css</span></code>
 file. However, none of the elements in the HTML file use it.</p>
 <ol class="loweralpha">
-<li><p class="first">Select one element in the HTML file and add the attribute
+<li><p>Select one element in the HTML file and add the attribute
 <code class="docutils literal notranslate"><span class="pre">id=&quot;main-article&quot;</span></code> inside its starting tag. How does the webpage
-change?</p>
-</li>
-<li><p class="first">Try moving the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute to different elements in the HTML file.</p>
+change?</p></li>
+<li><p>Try moving the <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute to different elements in the HTML file.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Only ONE element in an HTML file receives a particular <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Only ONE element in an HTML file receives a particular <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
 </div>
 </li>
 </ol>
@@ -345,16 +344,16 @@ change?</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">15.2.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following correctly sets the text color inside a declaration
 block?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> color: green;</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color: "red";</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color = blue;</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> color = "orange";</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

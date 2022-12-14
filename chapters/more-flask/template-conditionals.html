@@ -126,10 +126,10 @@ page design.</p>
 three code blocks will appear on the page. The HTML in each part can be any
 length and include any number of elements.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>A conditional determines if content is <em>added or removed</em> from a page. This
 is different from deciding if content should be <em>displayed or hidden</em>.</p>
-<p class="last"><em>Hidden</em> content still occupies space on a page and requires some amount of
+<p><em>Hidden</em> content still occupies space on a page and requires some amount of
 memory. <em>Removed</em> content is absent from the page, requiring neither space
 nor memory. This is an important point to consider when dealing with things
 like images or videos.</p>
@@ -145,7 +145,7 @@ below or next to the form.</p>
 <p class="caption"><span class="caption-text">When the page first loads, the <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">Choices</span></code> heading and list should not appear.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic">
-<li><p class="first">Begin with the Python code. Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and add statements to collect
+<li><p>Begin with the Python code. Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and add statements to collect
 the user’s toppings and save them to a list.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 6
  7
@@ -169,19 +169,19 @@ the user’s toppings and save them to a list.</p>
 </pre></div>
 </td></tr></table></div>
 <ol class="loweralpha simple">
-<li>Note the new syntax in line 9. Since the <code class="docutils literal notranslate"><span class="pre">toppings</span></code> input is a set
+<li><p>Note the new syntax in line 9. Since the <code class="docutils literal notranslate"><span class="pre">toppings</span></code> input is a set
 of checkboxes, it is very likely that the user will select more than one
 option. The command <code class="docutils literal notranslate"><span class="pre">request.form.getlist('toppings')</span></code> collects the
 value from every checked box and adds it as an entry in the
-<code class="docutils literal notranslate"><span class="pre">choices</span></code> list.</li>
-<li>When the page first loads, it does so in response to a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.
+<code class="docutils literal notranslate"><span class="pre">choices</span></code> list.</p></li>
+<li><p>When the page first loads, it does so in response to a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.
 In this case, the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause runs, and <code class="docutils literal notranslate"><span class="pre">choices</span></code> is assigned an
-empty list.</li>
-<li>Line 13 is outside of the <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block, so it executes for both
-<code class="docutils literal notranslate"><span class="pre">GET</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</li>
+empty list.</p></li>
+<li><p>Line 13 is outside of the <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block, so it executes for both
+<code class="docutils literal notranslate"><span class="pre">GET</span></code> and <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</p></li>
 </ol>
 </li>
-<li><p class="first">Return to <code class="docutils literal notranslate"><span class="pre">checkbox_form.html</span></code>. Right after the form, add a new section to
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">checkbox_form.html</span></code>. Right after the form, add a new section to
 display the user’s topping choices.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
 22
@@ -201,17 +201,16 @@ display the user’s topping choices.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save your work, then run the Flask application. Test the form to make sure
+<li><p>Save your work, then run the Flask application. Test the form to make sure
 the submission process works. Note how the <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">Choices</span></code> heading always
-shows up on the page.</p>
-</li>
+shows up on the page.</p></li>
 </ol>
 <div class="section" id="add-the-conditional">
 <h3><span class="section-number">22.5.2.1. </span>Add the Conditional<a class="headerlink" href="#add-the-conditional" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">Choices</span></code> heading and list should only appear <em>after</em> the user
 submits the form. Make this happen by adding a conditional to the template!</p>
 <ol class="arabic">
-<li><p class="first">Just above the <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> tag, add the statement
+<li><p>Just above the <code class="docutils literal notranslate"><span class="pre">&lt;section&gt;</span></code> tag, add the statement
 <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">choices|length</span> <span class="pre">&gt;</span> <span class="pre">0</span> <span class="pre">%}</span></code>. Just after the <code class="docutils literal notranslate"><span class="pre">&lt;/section&gt;</span></code> closing tag,
 finish the conditional with <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">endif</span> <span class="pre">%}</span></code>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>21
@@ -236,11 +235,10 @@ finish the conditional with <code class="docutils literal notranslate"><span cla
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save, then reload the page. Try submitting the form with one or more boxes
+<li><p>Save, then reload the page. Try submitting the form with one or more boxes
 checked. Also, submit the form with nothing selected. You should see the
-heading and list appear, update, or disappear from the screen.</p>
-</li>
-<li><p class="first">You can also <em>nest</em> conditionals inside each other. Use this to display
+heading and list appear, update, or disappear from the screen.</p></li>
+<li><p>You can also <em>nest</em> conditionals inside each other. Use this to display
 a different message if the user goes overboard with their number of
 toppings. Modify your code as follows:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>20
@@ -273,13 +271,11 @@ toppings. Modify your code as follows:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Line 23 checks if the user made a reasonable number of topping choices. If
+<li><p>Line 23 checks if the user made a reasonable number of topping choices. If
 they select more than 4, the page displays a warning message instead of the
-list.</p>
-</li>
-<li><p class="first">If <code class="docutils literal notranslate"><span class="pre">choices|length</span> <span class="pre">&gt;</span> <span class="pre">4</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code>, the <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">Choices</span></code> list
-appears as expected (lines 26 - 30).</p>
-</li>
+list.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">choices|length</span> <span class="pre">&gt;</span> <span class="pre">4</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code>, the <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">Choices</span></code> list
+appears as expected (lines 26 - 30).</p></li>
 </ol>
 <p>Take a moment to save and commit your work.</p>
 </div>
@@ -319,42 +315,42 @@ appears as expected (lines 26 - 30).</p>
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we define a <code class="docutils literal notranslate"><span class="pre">homework</span></code> list to hold the tasks due next class. The
 heading should always appear on the webpage. Below that, we want to show our
 tasks. If the <code class="docutils literal notranslate"><span class="pre">homework</span></code> list is empty, the paragraph text should appear
 instead.</p>
 <p>Where should we put the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code> statement to make this happen?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On line 2</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> On line 4</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On line 6</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On line 10</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> On line 12</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For the same code sample, where should we put the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">else</span> <span class="pre">%}</span></code> statement?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On line 4</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On line 6</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On line 10</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> On line 12</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> On line 14</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For the same code sample, which of the following shows the correct syntax for
 the <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">%}</span></code> statement? Select ALL of the options that will work.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li onclick="revealAnswer('resultA', 'Yep!')"><code class="pre">{% if homework|length > 0 %}</code> <span id="resultA"></span></li>
    <li onclick="revealAnswer('resultB', 'Nope!')"><code class="pre">{% if homework|length >= 0 %}</code> <span id="resultB"></span></li>
    <li onclick="revealAnswer('resultC', 'Yep!')"><code class="pre">{% if homework|length != 0 %}</code> <span id="resultC"></span></li>
    <li onclick="revealAnswer('resultD', 'Nope!')"><code class="pre">{% if len(homework) > 0 %}</code> <span id="resultD"></span></li>
    <li onclick="revealAnswer('resultE', 'Yep!')"><code class="pre">{% if homework %}</code> <span id="resultE"></span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

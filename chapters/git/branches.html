@@ -136,7 +136,7 @@ Changes not staged <span class="k">for</span> commit:
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-note admonition" id="change-branch-name">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>When we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to start a new repo, part of the process creates a
 single, default branch. For all of the examples in this book, we refer to
 this branch as <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
@@ -145,7 +145,7 @@ than <code class="docutils literal notranslate"><span class="pre">main</span></c
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git branch -m old-branch-name main
 </pre></div>
 </div>
-<p class="last">In this case, <code class="docutils literal notranslate"><span class="pre">old-branch-name</span></code> becomes <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">old-branch-name</span></code> becomes <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 </div>
 <p>Many programmers consider <code class="docutils literal notranslate"><span class="pre">main</span></code> like the trunk of a tree. They use it to
 store and track the central, working part of their code. They use other
@@ -155,16 +155,16 @@ branches to experiment with new features and split up work between partners.</p>
 <p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">main</span></code> contains the central, working code for the project. Branches 1 &amp; 2 contain separate copies of the main code.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Working on a new piece for your project? Do it in a different branch! That
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Working on a new piece for your project? Do it in a different branch! That
 way your commits won’t interfere with the working copy of your program.</p>
 </div>
 <p>To see a list of all the active branches in a project, enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> in
 the terminal.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Open VS Code and navigate into the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> directory.</p>
-<div class="last highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git branch
 * main
 </pre></div>
@@ -182,9 +182,9 @@ another.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-b</span></code> creates a new branch called <code class="docutils literal notranslate"><span class="pre">branch-name</span></code>, and <code class="docutils literal notranslate"><span class="pre">checkout</span></code> switches
 us into that branch.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">In VS Code, enter the following commands in the terminal pane. Feel free
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>In VS Code, enter the following commands in the terminal pane. Feel free
 to think up your own name for the new branch, but it cannot contain any
 spaces.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout -b hello-branch
@@ -198,14 +198,12 @@ $ git branch
 highlighted with a <code class="docutils literal notranslate"><span class="pre">*</span></code>. The name might also appear in a different
 color.</p>
 </li>
-<li><p class="first">Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> into the terminal. Notice that the repo history is the
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> into the terminal. Notice that the repo history is the
 same as before. When we created <code class="docutils literal notranslate"><span class="pre">hello-branch</span></code>, we split it off of
-<code class="docutils literal notranslate"><span class="pre">main</span></code> and made a copy of all its code.</p>
-</li>
-<li><p class="first">Add a new file to <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> called <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code>. Inside this
-Python file, add statements to print a simple, polite greeting.</p>
-</li>
-<li><p class="first">Save and commit your changes. The terminal output will look something
+<code class="docutils literal notranslate"><span class="pre">main</span></code> and made a copy of all its code.</p></li>
+<li><p>Add a new file to <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> called <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code>. Inside this
+Python file, add statements to print a simple, polite greeting.</p></li>
+<li><p>Save and commit your changes. The terminal output will look something
 like:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch hello-branch
@@ -223,9 +221,8 @@ create mode 100644 greeting.py
 <p>Just like before, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> identifies our current branch
 (<code class="docutils literal notranslate"><span class="pre">hello-branch</span></code>), and it lists the files that contain changes.</p>
 </li>
-<li><p class="first">Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again and notice that there is a new entry at the top
-of the output.</p>
-</li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> again and notice that there is a new entry at the top
+of the output.</p></li>
 </ol>
 </div>
 <p>OK. We created a new branch, added a file, put in some code, and committed all
@@ -253,16 +250,16 @@ terminal to see the file and its code reappear.</p>
 changes, the two branches no longer match. By flipping back and forth between
 them, we call up different versions of our project.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic simple">
-<li>Return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repository.</li>
-<li>Create a new branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
-<li>In the new branch, add some comments to <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>.</li>
-<li>Save the changes in VS Code, then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to commit the changes to the repository.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to see the list of branches in the repo.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch between the branches. Notice how the file
-tree and code both update.</li>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic simple">
+<li><p>Return to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repository.</p></li>
+<li><p>Create a new branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>In the new branch, add some comments to <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>.</p></li>
+<li><p>Save the changes in VS Code, then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to commit the changes to the repository.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to see the list of branches in the repo.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> to switch between the branches. Notice how the file
+tree and code both update.</p></li>
 </ol>
 </div>
 <div class="section" id="uncommitted-work">
@@ -271,10 +268,10 @@ tree and code both update.</li>
 the process if the current branch contains uncommitted work. Even if we saved
 our code in the editor, Git will return an error message.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Assume we make some changes in <code class="docutils literal notranslate"><span class="pre">hello-branch</span></code> and then try moving back
 to <code class="docutils literal notranslate"><span class="pre">main</span></code>. We will receive an error message that looks something like:</p>
-<div class="last highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout main
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout main
    error: Your <span class="nb">local</span> changes to the following files would be overwritten by checkout:
 
       greeting.py
@@ -292,26 +289,26 @@ our work by forcing us to make a commit before switching branches.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">18.4.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is a reason for creating a branch in Git?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To split work between team members.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To try out a new feature before adding it to the main program.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> To keep the commit history clear and reliable.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> All of the above.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Do you think we can create a branch off of a branch, like this?</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/branches-cc.png"><img alt="A two-level branch: Branch 1 splits off of main, and brach 2 splits off of branch 1." src="../../_images/branches-cc.png" style="width: 60%;" /></a>
 </div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Yes we can, but we should really keep branches only one layer deep.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> No.</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

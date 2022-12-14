@@ -90,27 +90,25 @@
 features. You can browse the options below for ideas, but there are plenty of
 other directions you can follow.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Before you start making changes to the game, be sure to create a new Git
 branch!</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b new-branch-name
 </pre></div>
 </div>
-<p class="last">This way, you preserve a working copy of your project. If your new idea ends
+<p>This way, you preserve a working copy of your project. If your new idea ends
 in disaster, you can always make a fresh start from the working application.</p>
 </div>
 <div class="section" id="appearance-options">
 <h2><span class="section-number">25.8.1. </span>Appearance Options<a class="headerlink" href="#appearance-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">The styling for the home and game page is pretty minimal. Change the look
+<li><p>The styling for the home and game page is pretty minimal. Change the look
 of the website by updating the rules inside the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file.
 Alternatively, import the <a class="reference external" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">Bootstrap<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-library and play around with different <code class="docutils literal notranslate"><span class="pre">class</span></code> values.</p>
-</li>
-<li><p class="first">Currently, the application doesn’t tell the user how to play Minesweeper.
-Include some instructions to fix this.</p>
-</li>
-<li><p class="first">Automatically resize the table to fit different screens. Scrolling is
+library and play around with different <code class="docutils literal notranslate"><span class="pre">class</span></code> values.</p></li>
+<li><p>Currently, the application doesn’t tell the user how to play Minesweeper.
+Include some instructions to fix this.</p></li>
+<li><p>Automatically resize the table to fit different screens. Scrolling is
 distracting for this type of game! To test resizing behavior, click and drag
 the bottom corer of your browser window. You want the content to grow and
 shrink to keep all the rows, columns, and text in view.</p>
@@ -125,34 +123,34 @@ resize to fit in the available space.</span><a class="headerlink" href="#id1" ti
 <div class="section" id="gameplay-options">
 <h2><span class="section-number">25.8.2. </span>Gameplay Options<a class="headerlink" href="#gameplay-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Currently, the game board is set as a 10x10 grid. Try refactoring your code
+<li><p>Currently, the game board is set as a 10x10 grid. Try refactoring your code
 to work with different table layouts. Can you give the player a choice for
-the board they want to use?</li>
-<li>How can you tell if your Minesweeper performance improved? By adding a
+the board they want to use?</p></li>
+<li><p>How can you tell if your Minesweeper performance improved? By adding a
 timer, of course! Research different Python modules and/or functions to
-track how long it takes to win a game.</li>
-<li>Add more server-side validation for the <em>Main Menu</em> input. Currently, there
-is no check for mine numbers that fall outside of the 5 - 25 range.</li>
-<li>Entering the URL for the game board <em>before</em> visiting the home page throws
+track how long it takes to win a game.</p></li>
+<li><p>Add more server-side validation for the <em>Main Menu</em> input. Currently, there
+is no check for mine numbers that fall outside of the 5 - 25 range.</p></li>
+<li><p>Entering the URL for the game board <em>before</em> visiting the home page throws
 an error. Smooth over this rough patch by checking if <code class="docutils literal notranslate"><span class="pre">num_mines</span></code> is in
-the session.</li>
-<li>When a game is in progress, clicking the <em>Back</em> button in the browser causes
-problems. Explore what goes wrong, then try to code a solution.</li>
+the session.</p></li>
+<li><p>When a game is in progress, clicking the <em>Back</em> button in the browser causes
+problems. Explore what goes wrong, then try to code a solution.</p></li>
 </ol>
 </div>
 <div class="section" id="database-options">
 <h2><span class="section-number">25.8.3. </span>Database Options<a class="headerlink" href="#database-options" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">How about adding a <em>Save Game</em> feature? A player might want to leave their
+<li><p>How about adding a <em>Save Game</em> feature? A player might want to leave their
 current game and come back later.</p>
 <ol class="loweralpha simple">
-<li>Try storing all of the session data to a new table in the database, then
-practice retrieving it.</li>
-<li>Include a <em>Save</em> button on the game page, and add a <em>Resume</em> button to
-the main menu.</li>
+<li><p>Try storing all of the session data to a new table in the database, then
+practice retrieving it.</p></li>
+<li><p>Include a <em>Save</em> button on the game page, and add a <em>Resume</em> button to
+the main menu.</p></li>
 </ol>
 </li>
-<li><p class="first">Save a player’s name (or initials) plus their win/loss data. Maybe you can
+<li><p>Save a player’s name (or initials) plus their win/loss data. Maybe you can
 display some type of <em>High Scores</em> list.</p>
 <div class="figure align-default" id="id2">
 <img alt="An high scores list from an arcade game." src="../../_images/high-scores.png" />

@@ -89,9 +89,9 @@
 <p>In the earlier chapters, whenever we used Python turtles, we simply opened up a
 repl.it or Trinket editor and happily started to code.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Click <em>Run</em> to watch a turtle do a random walk!</p>
-<div class="last"><iframe src="https://trinket.io/embed/python/e497db234d?runOption=run" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div></div>
+<iframe src="https://trinket.io/embed/python/e497db234d?runOption=run" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
 <p>Each of the online editors performs some tasks behind the scenes to display the
 turtle graphics. To do the same thing locally, we need to include a couple of
 extra steps.</p>
@@ -154,8 +154,8 @@ the statement <code class="docutils literal notranslate"><span class="pre">windo
 <p>Two other <code class="docutils literal notranslate"><span class="pre">Screen</span></code> methods are outlined in the <a class="reference internal" href="../../appendices/turtles/index.html#turtle-guide"><span class="std std-ref">Python Turtles</span></a>
 appendix:</p>
 <ol class="arabic simple">
-<li>Setting the <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-setup"><span class="std std-ref">window size</span></a>.</li>
-<li>Setting a <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-background-color"><span class="std std-ref">background color</span></a>.</li>
+<li><p>Setting the <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-setup"><span class="std std-ref">window size</span></a>.</p></li>
+<li><p>Setting a <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#screen-background-color"><span class="std std-ref">background color</span></a>.</p></li>
 </ol>
 <p>In addition, the <a class="reference external" href="https://docs.python.org/3/library/turtle.html#methods-of-turtlescreen-screen" target="_blank">Python website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 provides a complete list and explanation of <code class="docutils literal notranslate"><span class="pre">Screen</span></code> methods.</p>
@@ -210,40 +210,40 @@ provides a complete list and explanation of <code class="docutils literal notran
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic simple">
-<li>Run the code as-is to see how the program behaves.</li>
-<li>Create a <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object and use it to keep the drawing space open until
-you click in the window.</li>
-<li>Add a title to the drawing window.</li>
-<li>Change the width of the drawing space. For your device, how wide can you
-make the screen?</li>
-<li>Change the height of the drawing space. For your device, how tall can you
-make the screen?</li>
-<li>Resize of the window to be 400 pixels wide and 500 pixels tall.</li>
-<li>Change the background color of the window.</li>
-<li>Change the movement commands to make <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw something else. Can
-<code class="docutils literal notranslate"><span class="pre">bob</span></code> run off the edge of the screen?</li>
-<li><em>Bonus</em>: Explore how to use the <a class="reference external" href="https://docs.python.org/3/library/turtle.html#turtle-methods" target="_blank">xcor() and ycor()<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+<li><p>Run the code as-is to see how the program behaves.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">Screen</span></code> object and use it to keep the drawing space open until
+you click in the window.</p></li>
+<li><p>Add a title to the drawing window.</p></li>
+<li><p>Change the width of the drawing space. For your device, how wide can you
+make the screen?</p></li>
+<li><p>Change the height of the drawing space. For your device, how tall can you
+make the screen?</p></li>
+<li><p>Resize of the window to be 400 pixels wide and 500 pixels tall.</p></li>
+<li><p>Change the background color of the window.</p></li>
+<li><p>Change the movement commands to make <code class="docutils literal notranslate"><span class="pre">bob</span></code> draw something else. Can
+<code class="docutils literal notranslate"><span class="pre">bob</span></code> run off the edge of the screen?</p></li>
+<li><p><em>Bonus</em>: Explore how to use the <a class="reference external" href="https://docs.python.org/3/library/turtle.html#turtle-methods" target="_blank">xcor() and ycor()<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 methods. Add a conditional to turn <code class="docutils literal notranslate"><span class="pre">bob</span></code> around when the object gets too
 close to one edge of the screen. Can you make the turtle bounce back and
-forth several times between the edges of the screen?</li>
+forth several times between the edges of the screen?</p></li>
 </ol>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Bouncing Turtle Object</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 1</th>
-<th class="head"><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 10</th>
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 1</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">bob</span></code>, Level 10</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last figure align-default">
+<tbody>
+<tr class="row-even"><td><div class="figure align-default">
 <img alt="Turtle object moving back and forth across the drawing space." src="../../_images/turtle-bounce.gif" />
 </div>
 </td>
-<td><div class="first last figure align-default">
+<td><div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/bob-advanced-bounce.png"><img alt="Turtle object bounces off all four screen edges." src="../../_images/bob-advanced-bounce.png" style="width: 80%;" /></a>
 </div>
 </td>

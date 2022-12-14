@@ -98,22 +98,22 @@ characters from a string.</p>
 <p>Run the following program to see how this works:</p>
 <iframe height="500px" width="100%" src="https://repl.it/@launchcode/LCHS-Loop-Through-A-String?lite=true" scrolling="no" frameborder="yes"></iframe><p>Some points to notice:</p>
 <ol class="arabic simple">
-<li>In the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement, a string (or a variable containing a string)
-replaces <code class="docutils literal notranslate"><span class="pre">range</span></code>.</li>
-<li>The first time the loop runs, the loop variable gets assigned the first
-character in the string (<code class="docutils literal notranslate"><span class="pre">character</span> <span class="pre">=</span> <span class="pre">'H'</span></code> or <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">=</span> <span class="pre">'T'</span></code>).</li>
-<li>Each time the loop repeats, the variable holds the next character in the
-string.</li>
-<li>Unlike <code class="docutils literal notranslate"><span class="pre">range(n)</span></code>, which does NOT assign the value of <code class="docutils literal notranslate"><span class="pre">n</span></code> to the loop
-variable, the last character in the string IS used.</li>
-<li>Once Python reaches the end of the string, the loop ends.</li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement, a string (or a variable containing a string)
+replaces <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p></li>
+<li><p>The first time the loop runs, the loop variable gets assigned the first
+character in the string (<code class="docutils literal notranslate"><span class="pre">character</span> <span class="pre">=</span> <span class="pre">'H'</span></code> or <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">=</span> <span class="pre">'T'</span></code>).</p></li>
+<li><p>Each time the loop repeats, the variable holds the next character in the
+string.</p></li>
+<li><p>Unlike <code class="docutils literal notranslate"><span class="pre">range(n)</span></code>, which does NOT assign the value of <code class="docutils literal notranslate"><span class="pre">n</span></code> to the loop
+variable, the last character in the string IS used.</p></li>
+<li><p>Once Python reaches the end of the string, the loop ends.</p></li>
 </ol>
 </div>
 <div class="section" id="characters-another-way">
 <h2><span class="section-number">6.5.2. </span>Characters Another Way<a class="headerlink" href="#characters-another-way" title="Permalink to this headline">¶</a></h2>
 <p>Take a look at the following code and its output:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -128,7 +128,7 @@ variable, the last character in the string IS used.</li>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Python
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Python
 P
 y
 n
@@ -148,52 +148,53 @@ is a number that tells us the location of a character in the string.</p>
 </div>
 <p>Indexes provide a different way to loop through a string:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <iframe height="450px" width="100%" src="https://repl.it/@launchcode/LCHS-Loop-Through-String-Indexes?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true"></iframe><p>Some items to note:</p>
-<ol class="last arabic simple">
-<li>By using <code class="docutils literal notranslate"><span class="pre">range(6)</span></code>, the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable takes values from 0 - 5.</li>
-<li><code class="docutils literal notranslate"><span class="pre">word[index]</span></code> refers to the character in the string at position <code class="docutils literal notranslate"><span class="pre">index</span></code>.</li>
-<li>As written, the loop only displays characters up to index 5.<ul>
-<li>Try replacing the string with a longer one.</li>
+<ol class="arabic simple">
+<li><p>By using <code class="docutils literal notranslate"><span class="pre">range(6)</span></code>, the <code class="docutils literal notranslate"><span class="pre">index</span></code> variable takes values from 0 - 5.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">word[index]</span></code> refers to the character in the string at position <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p></li>
+<li><p>As written, the loop only displays characters up to index 5.</p>
+<ul class="simple">
+<li><p>Try replacing the string with a longer one.</p></li>
 </ul>
 </li>
-<li>If we replace the string with a shorter one, we get an error! For
-<code class="docutils literal notranslate"><span class="pre">word[5]</span></code> to work, there must be a character at index 5.</li>
-<li>To prevent “index out of range” errors in this loop, we should NOT use
-a specific number inside <code class="docutils literal notranslate"><span class="pre">range</span></code>.</li>
-<li>Replace <code class="docutils literal notranslate"><span class="pre">range(6)</span></code> with <code class="docutils literal notranslate"><span class="pre">range(len(word))</span></code>. <code class="docutils literal notranslate"><span class="pre">len(word)</span></code> always returns
+<li><p>If we replace the string with a shorter one, we get an error! For
+<code class="docutils literal notranslate"><span class="pre">word[5]</span></code> to work, there must be a character at index 5.</p></li>
+<li><p>To prevent “index out of range” errors in this loop, we should NOT use
+a specific number inside <code class="docutils literal notranslate"><span class="pre">range</span></code>.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">range(6)</span></code> with <code class="docutils literal notranslate"><span class="pre">range(len(word))</span></code>. <code class="docutils literal notranslate"><span class="pre">len(word)</span></code> always returns
 the length of the current string, so changing that string will not break the
-loop.</li>
+loop.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">6.5.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'Code</span> <span class="pre">for</span> <span class="pre">fun'</span></code>, then <code class="docutils literal notranslate"><span class="pre">phrase[2]</span></code> evaluates to:</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"o"</strong></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">"d"</strong></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"for"</strong></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"fun"</strong></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What will be printed in the THIRD iteration of the loop:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;ABCDEFGHIJ&#39;</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"ABC"</strong></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"B"</strong></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <strong style="color:#419f6a">"C"</strong></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <strong style="color:#419f6a">"D"</strong></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

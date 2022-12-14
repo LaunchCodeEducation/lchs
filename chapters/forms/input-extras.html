@@ -108,22 +108,22 @@ temporary text inside an input field. Once the user starts typing, the
 placeholder is immediately replaced by their entry. If the user clicks <em>Submit</em>
 without typing anything at all, then the empty string is sent to the server.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Compare the behavior of the <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> attributes.</p>
-<iframe src="https://trinket.io/embed/html/15f7093b7b" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><ol class="last arabic simple">
-<li>Type a response into each of the fields in the top half of the form. How
-does the default text behave?</li>
-<li>Type a response into each of the bottom two fields. How does the behavior
-of <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> text differ from <code class="docutils literal notranslate"><span class="pre">value</span></code> text?</li>
-<li>Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form. Save and commit your work, then
-switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</li>
-<li>Update the form to include an input that uses <code class="docutils literal notranslate"><span class="pre">value</span></code> to add some
+<iframe src="https://trinket.io/embed/html/15f7093b7b" width="100%" height="450" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><ol class="arabic simple">
+<li><p>Type a response into each of the fields in the top half of the form. How
+does the default text behave?</p></li>
+<li><p>Type a response into each of the bottom two fields. How does the behavior
+of <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> text differ from <code class="docutils literal notranslate"><span class="pre">value</span></code> text?</p></li>
+<li><p>Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form. Save and commit your work, then
+switch back to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p></li>
+<li><p>Update the form to include an input that uses <code class="docutils literal notranslate"><span class="pre">value</span></code> to add some
 default text. Also include another input field that uses the
-<code class="docutils literal notranslate"><span class="pre">placeholder</span></code> attribute instead.</li>
-<li>Save the changes, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser. Submit the
+<code class="docutils literal notranslate"><span class="pre">placeholder</span></code> attribute instead.</p></li>
+<li><p>Save the changes, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser. Submit the
 form to the parrot server. Do this once with and once without changing
 the text inside the input fields. Note how the key/value pairs get
-assigned in each case.</li>
+assigned in each case.</p></li>
 </ol>
 </div>
 </div>
@@ -141,7 +141,7 @@ the syntax is:</p>
 <p>No other attributes are required. However, if we want the button to say
 something other than <code class="docutils literal notranslate"><span class="pre">Reset</span></code>, we can include a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Type some data into the form below, then clear your entries with the
 button.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -163,7 +163,7 @@ button.</p>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><form method="POST">
+<form method="POST">
    <label>Username:
       <input type="text" name="user" placeholder="Enter your username."/>
    </label><br>
@@ -171,21 +171,21 @@ button.</p>
       <input type="password" name="pass" placeholder="Enter your password"/>
    </label><br>
    <input type="reset" value="Clear Form"/>
-</form></div></div>
+</form></div>
 <p>Reset buttons only clear the inputs within the same form. If we have two
 or more <code class="docutils literal notranslate"><span class="pre">form</span></code> elements on a page, each one needs its own button.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">reset</span></code> type also works on radio buttons and select inputs! This gives us
 another way to help the users avoid getting stuck with an unwanted selection.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
-<li>Return to the <code class="docutils literal notranslate"><span class="pre">checkbox</span></code>, <code class="docutils literal notranslate"><span class="pre">radio</span></code>, and <code class="docutils literal notranslate"><span class="pre">select</span></code> branches in your
-repository.</li>
-<li>In each form, add a <code class="docutils literal notranslate"><span class="pre">reset</span></code> input.</li>
-<li>Save the changes, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser to try out the
-buttons!</li>
+<li><p>Return to the <code class="docutils literal notranslate"><span class="pre">checkbox</span></code>, <code class="docutils literal notranslate"><span class="pre">radio</span></code>, and <code class="docutils literal notranslate"><span class="pre">select</span></code> branches in your
+repository.</p></li>
+<li><p>In each form, add a <code class="docutils literal notranslate"><span class="pre">reset</span></code> input.</p></li>
+<li><p>Save the changes, then open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in your browser to try out the
+buttons!</p></li>
 </ol>
-<div class="last"><form method="POST">
+<form method="POST">
    <table>
       <tr>
          <td style="padding:10px">
@@ -209,7 +209,7 @@ buttons!</li>
       </tr>
    </table>
    <input type="reset"/>
-</form></div></div>
+</form></div>
 </div>
 <div class="section" id="enable-disable-input-fields">
 <h2><span class="section-number">20.7.3. </span>Enable/Disable Input Fields<a class="headerlink" href="#enable-disable-input-fields" title="Permalink to this headline">¶</a></h2>
@@ -221,16 +221,16 @@ inside the <code class="docutils literal notranslate"><span class="pre">&lt;inpu
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">disabled</span></code> tag works with any type of input, including buttons.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Try clicking on each active vs. disabled input field.</p>
-<div class="last"><form method="POST">
+<form method="POST">
    <label>Active text input: <input type="text" value="Active"/></label><br>
    <label>Disabled text input: <input type="text" value="Disabled" disabled/></label><br>
    <label><input type="checkbox" name="color"/> Red (active)</label><br>
    <label><input type="checkbox" name="color" disabled/> Green (disabled)</label><br>
    <input type="reset" value="Clear (active)"/>
    <input type="reset" value="Clear (disabled)" disabled/>
-</form></div></div>
+</form></div>
 <div class="section" id="default-selections">
 <h3><span class="section-number">20.7.3.1. </span>Default Selections<a class="headerlink" href="#default-selections" title="Permalink to this headline">¶</a></h3>
 <p>With checkboxes, radio buttons, and select menus, we can automatically select
@@ -244,21 +244,21 @@ inside the <code class="docutils literal notranslate"><span class="pre">&lt;opti
 </pre></div>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">For radio groups and select menus, it’s a good idea to set a default
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>For radio groups and select menus, it’s a good idea to set a default
 option when the page first loads.</p>
 </div>
 </div>
 <div class="section" id="try-it">
 <h3><span class="section-number">20.7.3.2. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form. Experiment with disabling some of the
-input fields, the <em>Submit</em> button, or the <em>Reset</em> button.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">checked</span></code> attribute to pre-select one option in your checkbox and
-radio forms.</li>
-<li>Try adding <code class="docutils literal notranslate"><span class="pre">checked</span></code> to multiple options in the checkbox group.</li>
-<li>What happens if you add <code class="docutils literal notranslate"><span class="pre">checked</span></code> to more than one radio input in a
-group?</li>
+<li><p>Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form. Experiment with disabling some of the
+input fields, the <em>Submit</em> button, or the <em>Reset</em> button.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">checked</span></code> attribute to pre-select one option in your checkbox and
+radio forms.</p></li>
+<li><p>Try adding <code class="docutils literal notranslate"><span class="pre">checked</span></code> to multiple options in the checkbox group.</p></li>
+<li><p>What happens if you add <code class="docutils literal notranslate"><span class="pre">checked</span></code> to more than one radio input in a
+group?</p></li>
 </ol>
 </div>
 </div>

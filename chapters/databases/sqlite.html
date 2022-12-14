@@ -99,20 +99,15 @@ importing it and connecting to a practice database!</p>
 <div class="section" id="setup">
 <h2><span class="section-number">24.4.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Launch Visual Studio Code. From the <em>File</em> menu, open your
-<code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p>
-</li>
-<li><p class="first">Create a new folder called <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>. Make sure you keep it
-outside of any existing project or Git repository.</p>
-</li>
-<li><p class="first">From the <em>File</em> menu, open <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>.</p>
-</li>
-<li><p class="first">In the terminal, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize the project as a new Git
-repository.</p>
-</li>
-<li><p class="first">Create a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file and open it in the workspace.</p>
-</li>
-<li><p class="first">On line 1, import the SQLite module:</p>
+<li><p>Launch Visual Studio Code. From the <em>File</em> menu, open your
+<code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p></li>
+<li><p>Create a new folder called <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>. Make sure you keep it
+outside of any existing project or Git repository.</p></li>
+<li><p>From the <em>File</em> menu, open <code class="docutils literal notranslate"><span class="pre">database_practice</span></code>.</p></li>
+<li><p>In the terminal, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> to initialize the project as a new Git
+repository.</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file and open it in the workspace.</p></li>
+<li><p>On line 1, import the SQLite module:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 </pre></div>
 </td></tr></table></div>
@@ -126,9 +121,9 @@ maintain a local database.</p>
 <span id="connect-to-db"></span><h2><span class="section-number">24.4.2. </span>Create a Database<a class="headerlink" href="#create-a-database" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">To interact with a database, we must do three things inside our Python code:</p>
 <ol class="arabic simple">
-<li>Create the database.</li>
-<li>Define a <strong>connection object</strong> that links our program to the database.</li>
-<li>Define a <strong>cursor object</strong> that will execute our SQL commands.</li>
+<li><p>Create the database.</p></li>
+<li><p>Define a <strong>connection object</strong> that links our program to the database.</p></li>
+<li><p>Define a <strong>cursor object</strong> that will execute our SQL commands.</p></li>
 </ol>
 <p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the following statements:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -148,10 +143,10 @@ creates it for us.  (Thanks, Python!)</p>
 <p>Line 4 defines the <code class="docutils literal notranslate"><span class="pre">cursor</span></code> object. We will use this object to run SQL
 commands and perform CRUD operations.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>We can use any variable name we want for the connection object, but popular
 choices include <code class="docutils literal notranslate"><span class="pre">conn</span></code>, <code class="docutils literal notranslate"><span class="pre">connection</span></code>, <code class="docutils literal notranslate"><span class="pre">database</span></code>, and <code class="docutils literal notranslate"><span class="pre">db</span></code>.</p>
-<p class="last">Similarly, we can name the cursor object whatever we want, as long as our
+<p>Similarly, we can name the cursor object whatever we want, as long as our
 choice follows proper Python naming conventions.</p>
 </div>
 <p>Go ahead and run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Notice that <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> appears in the file
@@ -164,8 +159,8 @@ tree!</p>
 surprising, since we just created it. However, our database now exists and is
 ready to receive some information.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Take a moment to save and commit your changes!</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Take a moment to save and commit your changes!</p>
 </div>
 </div>
 <div class="section" id="add-a-new-table">
@@ -182,9 +177,9 @@ method, it converts the string into the SQL language and runs the command.</p>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> to create a table called <code class="docutils literal notranslate"><span class="pre">students</span></code> in
 <code class="docutils literal notranslate"><span class="pre">practice.db</span></code>. The table will hold student names and their graduation year.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code> define a variable to hold the SQL command. Be sure to type
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code> define a variable to hold the SQL command. Be sure to type
 the string <em>exactly</em> as shown below.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -209,7 +204,7 @@ integer.</p>
 <p>A deep dive into all the SQL data types is beyond the scope of this course.
 We focus on only a few, and we will pick them up as needed.</p>
 </li>
-<li><p class="first">Once you assign the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string, the next step is to make it
+<li><p>Once you assign the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string, the next step is to make it
 happen! Add one more statement to <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, then save.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
 7
@@ -219,7 +214,7 @@ happen! Add one more statement to <code class="docutils literal notranslate"><sp
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, aaannnnnddd… nothing seems to happen! However, as long as
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, aaannnnnddd… nothing seems to happen! However, as long as
 no error message appears, your code ran just fine. Checking the file tree
 shows that changes did take place in both <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and <code class="docutils literal notranslate"><span class="pre">practice.db</span></code>.</p>
 <div class="figure align-default" id="id2">
@@ -262,26 +257,24 @@ rerun our code.</p>
 in the database, but ignore the command if the table is already present.
 Fortunately, we can modify the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string to deal with this.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">Update <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> like this:</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> like this:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;CREATE TABLE IF NOT EXISTS students (last_name TEXT, first_name TEXT, grad_year INT)&quot;</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span></code> syntax works like the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> keywords in
+<li><p>The <code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span></code> syntax works like the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> keywords in
 Python.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;Rutabagas&#39;</span>  <span class="c1"># Returns False, because &#39;a&#39; is in &#39;Rutabagas&#39;</span>
 <span class="mi">42</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>    <span class="c1"># Returns True, because the list is missing 42</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span> <span class="pre">students</span></code> checks to see if the a table called
+<li><p><code class="docutils literal notranslate"><span class="pre">IF</span> <span class="pre">NOT</span> <span class="pre">EXISTS</span> <span class="pre">students</span></code> checks to see if the a table called
 <code class="docutils literal notranslate"><span class="pre">students</span></code> is NOT in the database. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the table is added. If
-<code class="docutils literal notranslate"><span class="pre">False</span></code> the command is ignored.</p>
-</li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> again. You should not see an error message.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">False</span></code> the command is ignored.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> again. You should not see an error message.</p></li>
 </ol>
 </div>
 <p>On the next page, we will add some rows to the <code class="docutils literal notranslate"><span class="pre">students</span></code> table and then

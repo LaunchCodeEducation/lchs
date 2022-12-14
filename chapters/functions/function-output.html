@@ -127,7 +127,7 @@ type (<code class="docutils literal notranslate"><span class="pre">float</span><
 For example, <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">num</span></code> returns whatever value has been assigned to
 <code class="docutils literal notranslate"><span class="pre">num</span></code>, while <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">num</span> <span class="pre">&gt;=</span> <span class="pre">20</span></code> sends back either <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>This function has a single parameter, <code class="docutils literal notranslate"><span class="pre">an_int</span></code>, which is expected to be
 a positive integer. It returns the sum of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">an_int</span></code>.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -153,23 +153,23 @@ a positive integer. It returns the sum of <code class="docutils literal notransl
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
-<p class="last">Notice that the function <code class="docutils literal notranslate"><span class="pre">sum_one_to_n</span></code> contains no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements!</p>
+<p>Notice that the function <code class="docutils literal notranslate"><span class="pre">sum_one_to_n</span></code> contains no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements!</p>
 </div>
 <p>Let’s take a look at the order of events after we call the function:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">sum_one_to_n(3)</span></code> calls the function and sends it the argument <code class="docutils literal notranslate"><span class="pre">3</span></code>.</li>
-<li>Python assigns the argument to the parameter (<code class="docutils literal notranslate"><span class="pre">an_int</span> <span class="pre">=</span> <span class="pre">3</span></code>) and then
+<li><p><code class="docutils literal notranslate"><span class="pre">sum_one_to_n(3)</span></code> calls the function and sends it the argument <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+<li><p>Python assigns the argument to the parameter (<code class="docutils literal notranslate"><span class="pre">an_int</span> <span class="pre">=</span> <span class="pre">3</span></code>) and then
 runs the function body. <code class="docutils literal notranslate"><span class="pre">total</span></code> stores the result from the accumulator
-pattern.</li>
-<li>Line 6 <em>returns</em> the value of <code class="docutils literal notranslate"><span class="pre">total</span></code> back to the main program.</li>
-<li>Line 8 assigns the answer returned by the function to the variable
-<code class="docutils literal notranslate"><span class="pre">result</span></code>.</li>
-<li>The output we see comes from the final line of the program, which prints the
-value of <code class="docutils literal notranslate"><span class="pre">result</span></code>.</li>
+pattern.</p></li>
+<li><p>Line 6 <em>returns</em> the value of <code class="docutils literal notranslate"><span class="pre">total</span></code> back to the main program.</p></li>
+<li><p>Line 8 assigns the answer returned by the function to the variable
+<code class="docutils literal notranslate"><span class="pre">result</span></code>.</p></li>
+<li><p>The output we see comes from the final line of the program, which prints the
+value of <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">A <code class="docutils literal notranslate"><span class="pre">return</span></code> statement does not print anything. If we want to see the value
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">return</span></code> statement does not print anything. If we want to see the value
 returned by a function, then we must print it AFTER calling the function.</p>
 </div>
 </div>
@@ -178,8 +178,8 @@ returned by a function, then we must print it AFTER calling the function.</p>
 <p>Not every function needs to return a value. For example, we can define the
 <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function for a turtle as follows:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -215,7 +215,7 @@ every function.</p>
 follows in the function body. We must be careful to use <code class="docutils literal notranslate"><span class="pre">return</span></code> only when
 the work of the function is done.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">print</span></code> statements in this function never execute, since the function
 returns before either one is reached.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -239,19 +239,19 @@ returns before either one is reached.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I&#39;m done!
 </pre></div>
 </div>
-<p class="last">Written this way, the function behaves as if lines 3 - 5 do not exist!</p>
+<p>Written this way, the function behaves as if lines 3 - 5 do not exist!</p>
 </div>
 <p>We can use the fact that <code class="docutils literal notranslate"><span class="pre">return</span></code> ends a function to force it to stop at a
 specific point.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>This function adds up the integers <code class="docutils literal notranslate"><span class="pre">0...n</span></code>. However, if we send in an argument
 that is not a positive integer, the function sends back an error message.</p>
 <iframe src="https://trinket.io/embed/python/14412b9424?runOption=run" width="100%" height="350" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><p>On line 12, try replacing the argument in the function call with:</p>
-<ol class="last arabic simple">
-<li>a negative number,</li>
-<li>a decimal value,</li>
-<li>a string (like <code class="docutils literal notranslate"><span class="pre">'abc'</span></code>).</li>
+<ol class="arabic simple">
+<li><p>a negative number,</p></li>
+<li><p>a decimal value,</p></li>
+<li><p>a string (like <code class="docutils literal notranslate"><span class="pre">'abc'</span></code>).</p></li>
 </ol>
 </div>
 <p>Consider what happens if we call the <code class="docutils literal notranslate"><span class="pre">sum_one_to_n()</span></code> function and use the
@@ -262,34 +262,27 @@ In this case, the <code class="docutils literal notranslate"><span class="pre">f
 <div class="section" id="try-it">
 <h2><span class="section-number">10.5.3. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">In the editor below, define a function called <code class="docutils literal notranslate"><span class="pre">double_value</span></code>, which takes
-a single parameter called <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
-</li>
-<li><p class="first">Inside the function, add the statement <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">value*2</span></code>. Don’t forget to
-indent!</p>
-</li>
-<li><p class="first">Run your program to check for error messages. If any occur, fix the bugs and
+<li><p>In the editor below, define a function called <code class="docutils literal notranslate"><span class="pre">double_value</span></code>, which takes
+a single parameter called <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p></li>
+<li><p>Inside the function, add the statement <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">value*2</span></code>. Don’t forget to
+indent!</p></li>
+<li><p>Run your program to check for error messages. If any occur, fix the bugs and
 try again. Properly done, NOTHING shows up in the console! The code contains
-no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements yet.</p>
-</li>
-<li><p class="first">Below the function, define a new variable and assign it to <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>.</p>
-</li>
-<li><p class="first">Finally, print the value of your new variable.</p>
-</li>
-<li><p class="first">Run your program to check your work. For <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>, the printed
+no <code class="docutils literal notranslate"><span class="pre">print</span></code> statements yet.</p></li>
+<li><p>Below the function, define a new variable and assign it to <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>.</p></li>
+<li><p>Finally, print the value of your new variable.</p></li>
+<li><p>Run your program to check your work. For <code class="docutils literal notranslate"><span class="pre">double_value(4)</span></code>, the printed
 result should be <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
 <iframe src="https://trinket.io/embed/python/c96a6ba9a4?runOption=run" width="100%" height="300" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
-<li><p class="first">What happens if you send in a string instead of a number?</p>
-</li>
-<li><p class="first">Assign a value to a variable, then call the function with the variable as
-the argument (e.g. <code class="docutils literal notranslate"><span class="pre">double_value(variable_name)</span></code>).</p>
-</li>
+<li><p>What happens if you send in a string instead of a number?</p></li>
+<li><p>Assign a value to a variable, then call the function with the variable as
+the argument (e.g. <code class="docutils literal notranslate"><span class="pre">double_value(variable_name)</span></code>).</p></li>
 </ol>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">10.5.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What does the following code output?</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -310,15 +303,15 @@ the argument (e.g. <code class="docutils literal notranslate"><span class="pre">
 <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 4</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 6</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> 8</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> 10</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What does the following function <em>return</em>?</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -335,26 +328,26 @@ the argument (e.g. <code class="docutils literal notranslate"><span class="pre">
 <span class="n">message</span> <span class="o">=</span> <span class="n">say_hello</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, World!</span></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">Hello, 5!</span></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">Invalid entry.</span></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Nothing is returned by the function</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Three of the following functions should include a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement,
 while the others do not need one. Pick the functions that <em>require</em> a
 <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "A1" onclick="highlight('A1', true)">calculate_area</span></li>
    <li><span id = "B1" onclick="highlight('B1', false)">draw_polygon</span></li>
    <li><span id = "C1" onclick="highlight('C1', false)">print_names</span></li>
    <li><span id = "D1" onclick="highlight('D1', true)">find_average_score</span></li>
    <li><span id = "E1" onclick="highlight('E1', false)">change_screen_color</span></li>
    <li><span id = "F1" onclick="highlight('F1', true)">create_sorted_string</span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

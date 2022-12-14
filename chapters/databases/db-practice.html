@@ -95,13 +95,13 @@ access and view that data from our Python program.</p>
    <iframe class="vid" src="https://www.youtube.com/embed/n8oA_2aavAQ" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section><p><strong>Key points</strong>:</p>
 <ol class="arabic simple">
-<li>Use the <a class="reference internal" href="crud.html#sql-insert-syntax"><span class="std std-ref">INSERT INTO</span></a> query to add a new row.</li>
-<li>Notice the <code class="docutils literal notranslate"><span class="pre">(?,</span> <span class="pre">?,</span> <span class="pre">?)</span></code> at the end of the query string. The question marks
-serve as placeholders for the values we want to save in the new row.</li>
-<li>We indicate those values with arguments inside the <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> method.</li>
-<li>Note that we do not need to include a <em>primary key</em> value when we add a row.
-This process is automatic with SQLite.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> method to finish the process.</li>
+<li><p>Use the <a class="reference internal" href="crud.html#sql-insert-syntax"><span class="std std-ref">INSERT INTO</span></a> query to add a new row.</p></li>
+<li><p>Notice the <code class="docutils literal notranslate"><span class="pre">(?,</span> <span class="pre">?,</span> <span class="pre">?)</span></code> at the end of the query string. The question marks
+serve as placeholders for the values we want to save in the new row.</p></li>
+<li><p>We indicate those values with arguments inside the <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> method.</p></li>
+<li><p>Note that we do not need to include a <em>primary key</em> value when we add a row.
+This process is automatic with SQLite.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> method to finish the process.</p></li>
 </ol>
 <p><strong>Final code from the video</strong>:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -151,14 +151,14 @@ Visual Studio Code. Follow along with this video to make the update:</p>
    <iframe class="vid" src="https://www.youtube.com/embed/0rlBCHWAemk" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section><p><strong>Summary</strong>:</p>
 <ol class="arabic">
-<li><p class="first">Click the extensions button in VS Code. Enter <code class="docutils literal notranslate"><span class="pre">SQLite</span></code> in the search bar,
+<li><p>Click the extensions button in VS Code. Enter <code class="docutils literal notranslate"><span class="pre">SQLite</span></code> in the search bar,
 then select and install the extension by <code class="docutils literal notranslate"><span class="pre">alexcvzz</span></code>.</p>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/sqlite-extension.png"><img alt="The extensions tab, search bar, and extension info for SQLite by alexcvzz." src="../../_images/sqlite-extension.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">It only takes about 3 clicks to install the SQLite extension.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Return to the file tree. Right-click on <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> and select
+<li><p>Return to the file tree. Right-click on <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> and select
 <em>Open Database</em>. At the bottom-left of the VS Code workspace, open the
 <em>SQLITE EXPLORER</em> tab. Expand <code class="docutils literal notranslate"><span class="pre">practice.db</span></code>, then click on the <em>Play</em>
 button next to the <code class="docutils literal notranslate"><span class="pre">students</span></code> table.</p>
@@ -182,16 +182,16 @@ in lines 6 - 15.</p>
    <iframe class="vid" src="https://www.youtube.com/embed/CPHPjP-CRnA" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section><p><strong>Key points</strong>:</p>
 <ol class="arabic simple">
-<li>Use the <a class="reference internal" href="crud.html#sql-select-syntax"><span class="std std-ref">SELECT query</span></a> to read specific columns from
-a table.</li>
-<li>The query returns a <em>cursor object</em>, which can be assigned to a variable.</li>
-<li>The order of the columns in the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement determines the order of
-the data in the results.</li>
-<li>By default, <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> returns data from <em>all</em> rows in the table. Adding the
+<li><p>Use the <a class="reference internal" href="crud.html#sql-select-syntax"><span class="std std-ref">SELECT query</span></a> to read specific columns from
+a table.</p></li>
+<li><p>The query returns a <em>cursor object</em>, which can be assigned to a variable.</p></li>
+<li><p>The order of the columns in the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement determines the order of
+the data in the results.</p></li>
+<li><p>By default, <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> returns data from <em>all</em> rows in the table. Adding the
 <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> keyword to the query lets us filter the results. <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> acts
-like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</li>
-<li>Use the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function to change the cursor object to a list. This
-allows us to easily manipulate the returned data.</li>
+like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function to change the cursor object to a list. This
+allows us to easily manipulate the returned data.</p></li>
 </ol>
 <p><strong>Sample code</strong>:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -233,26 +233,26 @@ allows us to easily manipulate the returned data.</li>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.5.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which SQL keyword adds new rows to a table?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">SELECT</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">UPDATE</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">INSERT</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">CREATE</code></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which SQL query shows the shortcut for returning data from <em>all</em> columns of
 a table?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">SELECT * FROM table_name</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">SELECT all FROM table_name</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">SELECT columns FROM table_name</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">SELECT FROM table_name</code></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

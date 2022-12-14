@@ -101,22 +101,20 @@ click <em>Run</em>.</p>
 <a class="reference internal" href="exercises.html#flask-repo"><span class="std std-ref">chapter exercises</span></a>, you also got access to the starter code
 for this project.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you didn’t clone the repository, do that now. Return to the exercises
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you didn’t clone the repository, do that now. Return to the exercises
 and follow the Git instructions in the <em>Setup</em> section.</p>
 </div>
 <p>The starter code is located in a different branch in the repository.</p>
 <ol class="arabic">
-<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">lchs_flask_into</span></code> folder in Visual Studio Code.</p>
-</li>
-<li><p class="first">Save and commit any work you have from the exercises.</p>
-</li>
-<li><p class="first">In the terminal, checkout the project branch:</p>
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">lchs_flask_into</span></code> folder in Visual Studio Code.</p></li>
+<li><p>Save and commit any work you have from the exercises.</p></li>
+<li><p>In the terminal, checkout the project branch:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git checkout caesar-project
 </pre></div>
 </div>
 </li>
-<li><p class="first">The file tree will change, but don’t worry! All your old work is saved in
+<li><p>The file tree will change, but don’t worry! All your old work is saved in
 your local repository. It’s just in a different branch. The new file
 structure looks like this:</p>
 <div class="figure align-default" id="id2">
@@ -130,51 +128,44 @@ structure looks like this:</p>
 <p>You have a couple of different ways to move your form from Part 1 into this
 Flask project.</p>
 <ol class="arabic">
-<li><p class="first">On your device, locate the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file you created for Part 1.</p>
-</li>
-<li><p class="first">To transfer the CSS code to your new project EITHER:</p>
+<li><p>On your device, locate the <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file you created for Part 1.</p></li>
+<li><p>To transfer the CSS code to your new project EITHER:</p>
 <ol class="loweralpha">
-<li><p class="first">Drag-and-drop your old file into the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder. A dialog box
+<li><p>Drag-and-drop your old file into the <code class="docutils literal notranslate"><span class="pre">static</span></code> folder. A dialog box
 might pop up and ask if you really want to do this. Agree.</p>
 <p><em>OR</em></p>
 </li>
-<li><p class="first">Copy your old code and paste it into the empty <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. You now
+<li><p>Copy your old code and paste it into the empty <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file. You now
 have two copies of the same code on your machine. This isn’t really DRY,
-but we won’t judge (much).</p>
-</li>
+but we won’t judge (much).</p></li>
 </ol>
 </li>
-<li><p class="first">Follow a similar process to move your old HTML code into the
-<code class="docutils literal notranslate"><span class="pre">user_message</span></code> file.</p>
-</li>
-<li><p class="first">Once the two files are in place, launch the <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code> program. Open
+<li><p>Follow a similar process to move your old HTML code into the
+<code class="docutils literal notranslate"><span class="pre">user_message</span></code> file.</p></li>
+<li><p>Once the two files are in place, launch the <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code> program. Open
 your browser and navigate to the form page.</p>
 <ol class="loweralpha simple">
-<li>If you used a different name for your <code class="docutils literal notranslate"><span class="pre">.html</span></code> file, update the
-<code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function in the Python code.</li>
-<li>Remember to use <code class="docutils literal notranslate"><span class="pre">url_for</span></code> in your template to link it to the
-stylesheet.</li>
+<li><p>If you used a different name for your <code class="docutils literal notranslate"><span class="pre">.html</span></code> file, update the
+<code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function in the Python code.</p></li>
+<li><p>Remember to use <code class="docutils literal notranslate"><span class="pre">url_for</span></code> in your template to link it to the
+stylesheet.</p></li>
 </ol>
 </li>
-<li><p class="first">When your form renders properly, save and commit your setup.</p>
-</li>
+<li><p>When your form renders properly, save and commit your setup.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="part-b-update-the-form-page">
 <h2><span class="section-number">21.10.2. </span>Part B: Update the Form Page<a class="headerlink" href="#part-b-update-the-form-page" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes in the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. When
-you submit the form, send the data to the <code class="docutils literal notranslate"><span class="pre">/user_message</span></code> route.</p>
-</li>
-<li><p class="first">Add a section underneath the form to display the message the user submits
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes in the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. When
+you submit the form, send the data to the <code class="docutils literal notranslate"><span class="pre">/user_message</span></code> route.</p></li>
+<li><p>Add a section underneath the form to display the message the user submits
 and the coded result. Use placeholders where you want the text to appear
-on the page.</p>
-</li>
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>, add variables for the plain and coded message. Pass
-their values to the template using <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>.</p>
-</li>
-<li><p class="first">Refresh the page to make sure the data moves correctly from your Python code
+on the page.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>, add variables for the plain and coded message. Pass
+their values to the template using <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>.</p></li>
+<li><p>Refresh the page to make sure the data moves correctly from your Python code
 to the template.</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/form-with-message.png"><img alt="The Caesar Cipher form, with space underneath for displaying messages." src="../../_images/form-with-message.png" style="width: 60%;" /></a>
@@ -186,24 +177,25 @@ to the template.</p>
 <h3><span class="section-number">21.10.2.1. </span>Collect and Display Message<a class="headerlink" href="#collect-and-display-message" title="Permalink to this headline">¶</a></h3>
 <p>Return to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>.</p>
 <ol class="arabic simple">
-<li>Update the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/user_message')</span></code> handler to accept both <code class="docutils literal notranslate"><span class="pre">GET</span></code>
-and <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</li>
-<li>Using the <a class="reference internal" href="exercises.html#flask-check-method"><span class="std std-ref">hex code exercise</span></a> as an example, add
-a conditional to check the type of request made when the page loads.</li>
-<li>If <code class="docutils literal notranslate"><span class="pre">POST</span></code>:<ol class="loweralpha">
-<li>Collect data from all 3 of the input fields on the form. This will
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/user_message')</span></code> handler to accept both <code class="docutils literal notranslate"><span class="pre">GET</span></code>
+and <code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</p></li>
+<li><p>Using the <a class="reference internal" href="exercises.html#flask-check-method"><span class="std std-ref">hex code exercise</span></a> as an example, add
+a conditional to check the type of request made when the page loads.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">POST</span></code>:</p>
+<ol class="loweralpha simple">
+<li><p>Collect data from all 3 of the input fields on the form. This will
 include the user’s message, the number of letters to shift, and whether
-to encrypt or decrypt the text.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">by</span></code> value is a number, but <em>Flask pulls the data in as a
-string</em>. You need to convert the value to <code class="docutils literal notranslate"><span class="pre">int</span></code>.</li>
-<li>For now, just send the user’s message back to the form page. It should
-appear below the form after submission.</li>
+to encrypt or decrypt the text.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">by</span></code> value is a number, but <em>Flask pulls the data in as a
+string</em>. You need to convert the value to <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
+<li><p>For now, just send the user’s message back to the form page. It should
+appear below the form after submission.</p></li>
 </ol>
 </li>
-<li>For a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, assign the empty string to the placeholder variables,
-then render the template.</li>
-<li>Use the form to submit a few test messages. Make sure they appear below the
-form.</li>
+<li><p>For a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request, assign the empty string to the placeholder variables,
+then render the template.</p></li>
+<li><p>Use the form to submit a few test messages. Make sure they appear below the
+form.</p></li>
 </ol>
 <p>Remember to save and commit your work before starting the next section.</p>
 </div>
@@ -215,16 +207,13 @@ a string and converts it into a coded message. Now it’s time to reuse that
 code! At the time, you were still using repl.it or Trinket to store your
 projects. Login to your account and locate your <code class="docutils literal notranslate"><span class="pre">Coded</span> <span class="pre">Messages</span></code> program.</p>
 <ol class="arabic">
-<li><p class="first">Copy the <code class="docutils literal notranslate"><span class="pre">alphabet_position()</span></code> function and paste it into the
-<code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code> file in Visual Studio Code.</p>
-</li>
-<li><p class="first">Do the same thing for the <code class="docutils literal notranslate"><span class="pre">shift_character()</span></code>, <code class="docutils literal notranslate"><span class="pre">build_code_dict()</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> functions.</p>
-</li>
-<li><p class="first">If your functions depend on any Python modules (like <code class="docutils literal notranslate"><span class="pre">string</span></code>), import
-those into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p>
-</li>
-<li><p class="first">Finally, return to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>. Add an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement for the
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">alphabet_position()</span></code> function and paste it into the
+<code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code> file in Visual Studio Code.</p></li>
+<li><p>Do the same thing for the <code class="docutils literal notranslate"><span class="pre">shift_character()</span></code>, <code class="docutils literal notranslate"><span class="pre">build_code_dict()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> functions.</p></li>
+<li><p>If your functions depend on any Python modules (like <code class="docutils literal notranslate"><span class="pre">string</span></code>), import
+those into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p></li>
+<li><p>Finally, return to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code>. Add an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement for the
 <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">encrypt</span> <span class="kn">import</span> <span class="n">encrypt_with_shift</span>
 </pre></div>
@@ -232,62 +221,62 @@ those into <code class="docutils literal notranslate"><span class="pre">encrypt.
 </li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If your teacher didn’t ask you to complete Assignment 2, never fear. You can
 find a scaled down version of the functions
 <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS-web-form-part-2" target="_blank">on GitHub<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
-<p class="last">Paste the posted code into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p>
+<p>Paste the posted code into <code class="docutils literal notranslate"><span class="pre">encrypt.py</span></code>.</p>
 </div>
 <div class="section" id="encrypt-the-message">
 <h3><span class="section-number">21.10.3.1. </span>Encrypt the Message<a class="headerlink" href="#encrypt-the-message" title="Permalink to this headline">¶</a></h3>
 <p>After all of the <code class="docutils literal notranslate"><span class="pre">request.form</span></code> statements execute, you should have the
 user’s message and the amount to shift each letter.</p>
 <ol class="arabic simple">
-<li>Call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function. Send the message text and shift
-value as arguments.</li>
-<li>The function returns a coded message. Assign this to a variable.</li>
-<li>Send the original text and the new message to the template.</li>
-<li>Save your work, then refresh the page in your browser.</li>
-<li>Test your code by submitting a simple message like <code class="docutils literal notranslate"><span class="pre">abc</span></code> and a shift
-value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. If <code class="docutils literal notranslate"><span class="pre">bcd</span></code> appears on the page, congratulations!</li>
-<li>Test your code with more complicated messages with MixED CasE, digits,
-symbols, etc.</li>
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function. Send the message text and shift
+value as arguments.</p></li>
+<li><p>The function returns a coded message. Assign this to a variable.</p></li>
+<li><p>Send the original text and the new message to the template.</p></li>
+<li><p>Save your work, then refresh the page in your browser.</p></li>
+<li><p>Test your code by submitting a simple message like <code class="docutils literal notranslate"><span class="pre">abc</span></code> and a shift
+value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. If <code class="docutils literal notranslate"><span class="pre">bcd</span></code> appears on the page, congratulations!</p></li>
+<li><p>Test your code with more complicated messages with MixED CasE, digits,
+symbols, etc.</p></li>
 </ol>
 </div>
 <div class="section" id="decrypt-message">
 <h3><span class="section-number">21.10.3.2. </span>Decrypt Message<a class="headerlink" href="#decrypt-message" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>If the user submits the form with the <code class="docutils literal notranslate"><span class="pre">Decrypt</span></code> radio button selected,
+<li><p>If the user submits the form with the <code class="docutils literal notranslate"><span class="pre">Decrypt</span></code> radio button selected,
 call the <code class="docutils literal notranslate"><span class="pre">encrypt_with_shift()</span></code> function like before. However, send in the
-<em>negative</em> of the shift value.</li>
-<li>Test your code again to make sure it correctly encrypts and decrypts
-messages using the Caesar Cipher.</li>
+<em>negative</em> of the shift value.</p></li>
+<li><p>Test your code again to make sure it correctly encrypts and decrypts
+messages using the Caesar Cipher.</p></li>
 </ol>
-<table border="1" class="docutils align-default" id="id4">
+<table class="docutils align-default" id="id4">
 <caption><span class="caption-text">Sample Results</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Message</th>
-<th class="head">Action</th>
-<th class="head">Shift</th>
-<th class="head">New Message</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Message</p></th>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Shift</p></th>
+<th class="head"><p>New Message</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Hello, World.</td>
-<td>Encrypt</td>
-<td>5</td>
-<td>Mjqqt, Btwqi.</td>
+<tbody>
+<tr class="row-even"><td><p>Hello, World.</p></td>
+<td><p>Encrypt</p></td>
+<td><p>5</p></td>
+<td><p>Mjqqt, Btwqi.</p></td>
 </tr>
-<tr class="row-odd"><td>Agvnf MJXFN!</td>
-<td>Decrypt</td>
-<td>21</td>
-<td>Flask ROCKS!</td>
+<tr class="row-odd"><td><p>Agvnf MJXFN!</p></td>
+<td><p>Decrypt</p></td>
+<td><p>21</p></td>
+<td><p>Flask ROCKS!</p></td>
 </tr>
 </tbody>
 </table>
@@ -302,9 +291,9 @@ specific enough to catch every error. It’s always a good idea to combine clien
 and server-side validation.</p>
 <p>Add code to <code class="docutils literal notranslate"><span class="pre">webcaesar.py</span></code> to catch the following errors:</p>
 <ol class="arabic simple">
-<li>The message contains no letters or is blank.</li>
-<li>The shift value is less than 1 or greater than 25.</li>
-<li>The message exceeds a maximum number of characters or words.</li>
+<li><p>The message contains no letters or is blank.</p></li>
+<li><p>The shift value is less than 1 or greater than 25.</p></li>
+<li><p>The message exceeds a maximum number of characters or words.</p></li>
 </ol>
 <p>For any error, your program should generate a message that tells the user
 exactly what went wrong. Add a placeholder to the HTML page to display the

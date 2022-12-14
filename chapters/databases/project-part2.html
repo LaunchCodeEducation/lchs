@@ -92,7 +92,7 @@ your Python code. Its job is to execute any query string it receives.</p>
 <div class="section" id="define-the-execute-query-function">
 <h2><span class="section-number">24.11.1. </span>Define the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> Function<a class="headerlink" href="#define-the-execute-query-function" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">BEFORE the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function, paste in this starter code for the
+<li><p>BEFORE the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function, paste in this starter code for the
 <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
  9
@@ -120,15 +120,15 @@ your Python code. Its job is to execute any query string it receives.</p>
 </pre></div>
 </td></tr></table></div>
 <ol class="loweralpha simple">
-<li>Line 8 defines the function with a single parameter. <code class="docutils literal notranslate"><span class="pre">query_string</span></code>
-receives the SQL queries created by the other functions.</li>
-<li>Lines 9 and 10 open a connection to the database and initialize the
-<code class="docutils literal notranslate"><span class="pre">db</span></code> and <code class="docutils literal notranslate"><span class="pre">cursor</span></code> objects.</li>
-<li>Line 15 closes the connection to the database after each SQL query.</li>
-<li>Lines 11 - 14 will contain the code to run the SQL queries.</li>
+<li><p>Line 8 defines the function with a single parameter. <code class="docutils literal notranslate"><span class="pre">query_string</span></code>
+receives the SQL queries created by the other functions.</p></li>
+<li><p>Lines 9 and 10 open a connection to the database and initialize the
+<code class="docutils literal notranslate"><span class="pre">db</span></code> and <code class="docutils literal notranslate"><span class="pre">cursor</span></code> objects.</p></li>
+<li><p>Line 15 closes the connection to the database after each SQL query.</p></li>
+<li><p>Lines 11 - 14 will contain the code to run the SQL queries.</p></li>
 </ol>
 </li>
-<li><p class="first">Note the condition in line 11. If the SQL query calls for a SELECT
+<li><p>Note the condition in line 11. If the SQL query calls for a SELECT
 operation, the function will return a list of results from the database.
 Update the code to assign those results to a variable, then return them.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
@@ -151,7 +151,7 @@ Update the code to assign those results to a variable, then return them.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">The INSERT, UPDATE, and DELETE queries all follow the same the pattern of
+<li><p>The INSERT, UPDATE, and DELETE queries all follow the same the pattern of
 execution. Add the following code to the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
  9
@@ -181,8 +181,8 @@ execution. Add the following code to the <code class="docutils literal notransla
 <p>The <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> code works, but it contains a rather large hole. You
 will find this when you run the test queries in the next section.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The code for displaying the query results is already part of <code class="docutils literal notranslate"><span class="pre">base.html</span></code>.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The code for displaying the query results is already part of <code class="docutils literal notranslate"><span class="pre">base.html</span></code>.
 Feel free to explore the Jinja2 logic in the template to see how it uses
 the data from <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> and the session cookie.</p>
 </div>
@@ -190,11 +190,11 @@ the data from <code class="docutils literal notranslate"><span class="pre">rende
 <h3><span class="section-number">24.11.1.1. </span>Don’t Expect Perfect Syntax<a class="headerlink" href="#don-t-expect-perfect-syntax" title="Permalink to this headline">¶</a></h3>
 <p>Launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, then run these two test cases:</p>
 <ol class="arabic simple">
-<li>From the home page, choose <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">movies</span></code>. Enter <code class="docutils literal notranslate"><span class="pre">*</span></code> in the
+<li><p>From the home page, choose <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> and <code class="docutils literal notranslate"><span class="pre">movies</span></code>. Enter <code class="docutils literal notranslate"><span class="pre">*</span></code> in the
 first box and leave the WHERE box empty. If your <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code>
-function works, you will see a table of data appear below the form.</li>
-<li>Submit the form again, but this time use a column name that does NOT appear
-in the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table. How does your program respond?</li>
+function works, you will see a table of data appear below the form.</p></li>
+<li><p>Submit the form again, but this time use a column name that does NOT appear
+in the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table. How does your program respond?</p></li>
 </ol>
 <p>Yikes! Hopefully, you saw your program crash.</p>
 <div class="figure align-default" id="id1">
@@ -216,7 +216,7 @@ While it is possible to check a SQL string before calling <code class="docutils 
 requires a rather large amount of code. Fortunately, there is a nifty shortcut
 we can use instead.</p>
 <ol class="arabic">
-<li><p class="first">Update the <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function as follows:</p>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function as follows:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
 12
 13
@@ -229,7 +229,7 @@ we can use instead.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li id="index-0"><p class="first">This demonstrates how to use a <strong>try/except</strong> block. Python <em>tries</em> to run
+<li id="index-0"><p>This demonstrates how to use a <strong>try/except</strong> block. Python <em>tries</em> to run
 the code on line 13. If <code class="docutils literal notranslate"><span class="pre">query_string</span></code> contains no mistakes,
 <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> runs fine, and <code class="docutils literal notranslate"><span class="pre">results</span></code> is assigned data from the table.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">query_string</span></code> is incorrect, <code class="docutils literal notranslate"><span class="pre">.execute()</span></code> throws an error. However,
@@ -238,10 +238,9 @@ there! The <code class="docutils literal notranslate"><span class="pre">try/exce
 providing a safe, alternative set of code. In this case, it assigns the
 <code class="docutils literal notranslate"><span class="pre">'error'</span></code> string to <code class="docutils literal notranslate"><span class="pre">results</span></code>.</p>
 </li>
-<li><p class="first">Cool! <code class="docutils literal notranslate"><span class="pre">try/except</span></code> saves you some time, since you don’t need to do a
-detailed check of the SQL string.</p>
-</li>
-<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">try/except</span></code> block to the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause as well:</p>
+<li><p>Cool! <code class="docutils literal notranslate"><span class="pre">try/except</span></code> saves you some time, since you don’t need to do a
+detailed check of the SQL string.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">try/except</span></code> block to the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause as well:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>16
 17
 18
@@ -268,7 +267,7 @@ detailed check of the SQL string.</p>
 <p>Test out the new <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function. Be sure to try valid and invalid
 entries in each form.</p>
 <ol class="arabic">
-<li><p class="first">From the home page, select <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> and <code class="docutils literal notranslate"><span class="pre">movies</span></code>. Enter <code class="docutils literal notranslate"><span class="pre">title</span></code> in the
+<li><p>From the home page, select <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> and <code class="docutils literal notranslate"><span class="pre">movies</span></code>. Enter <code class="docutils literal notranslate"><span class="pre">title</span></code> in the
 columns box. In the values box, enter the title of your favorite movie.
 IMPORTANT: Put quotes around the movie title.</p>
 <p>If your <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function works, <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">successfully</span> <span class="pre">executed!</span></code>
@@ -277,13 +276,11 @@ should appear below the form. If an error occurred, you will see the message
 <p>After a successful <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, view the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table in Visual Studio
 Code to confirm the new entry.</p>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table to make yourself the director of one of the
+<li><p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> the <code class="docutils literal notranslate"><span class="pre">movies</span></code> table to make yourself the director of one of the
 existing films. Once you see <code class="docutils literal notranslate"><span class="pre">Query</span> <span class="pre">successfully</span> <span class="pre">executed</span></code>, view the table
-in VS Code to confirm the change.</p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> a row from the <code class="docutils literal notranslate"><span class="pre">directors</span></code> table based on its <code class="docutils literal notranslate"><span class="pre">director_id</span></code>
-value. Follow this with a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query to confirm the change.</p>
-</li>
+in VS Code to confirm the change.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> a row from the <code class="docutils literal notranslate"><span class="pre">directors</span></code> table based on its <code class="docutils literal notranslate"><span class="pre">director_id</span></code>
+value. Follow this with a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query to confirm the change.</p></li>
 </ol>
 <p>Continue testing your application until you are comfortable with how it works.</p>
 </div>
@@ -300,11 +297,11 @@ names do NOT appear in the output.</p>
 the output. <code class="docutils literal notranslate"><span class="pre">base.html</span></code> already contains code to do this, but it’s missing
 some data.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Take a look near the middle of <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. The Jinja3 loop</p>
 <p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">column</span> <span class="pre">in</span> <span class="pre">session['selected_columns']</span> <span class="pre">%}</span></code></p>
 <p>creates a heading for each column name assigned to <code class="docutils literal notranslate"><span class="pre">selected_columns</span></code>.</p>
-<div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
+<div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
 24
 25
 26
@@ -325,9 +322,8 @@ some data.</p>
 <p>To display the column names, you need to assign a list to the
 <code class="docutils literal notranslate"><span class="pre">selected_columns</span></code> key in the session.</p>
 <ol class="arabic">
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">select_query()</span></code> function.</p>
-</li>
-<li><p class="first">Add a conditional just before calling <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code>:</p>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">select_query()</span></code> function.</p></li>
+<li><p>Add a conditional just before calling <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code>:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>55
 56
 57
@@ -382,11 +378,11 @@ feature.</p>
 to make it your own!</p>
 <p>Feel free to update your program by doing any or all of the following:</p>
 <ol class="arabic simple">
-<li>Add CSS styling to make the forms look nicer.</li>
-<li>Make the data collected from the forms entries case-insensitive.</li>
-<li>To confirm changes made to a table, automatically run a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query
-after <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</li>
-<li>Add more specific error messages based on what’s wrong with a SQL query.</li>
+<li><p>Add CSS styling to make the forms look nicer.</p></li>
+<li><p>Make the data collected from the forms entries case-insensitive.</p></li>
+<li><p>To confirm changes made to a table, automatically run a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query
+after <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, or <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>.</p></li>
+<li><p>Add more specific error messages based on what’s wrong with a SQL query.</p></li>
 </ol>
 </div>
 </div>

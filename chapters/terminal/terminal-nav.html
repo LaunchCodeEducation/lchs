@@ -102,8 +102,8 @@ Windows
 commands, <code class="docutils literal notranslate"><span class="pre">device_name</span></code> and <code class="docutils literal notranslate"><span class="pre">username</span></code> stay the same. However, <code class="docutils literal notranslate"><span class="pre">path</span></code> and
 <code class="docutils literal notranslate"><span class="pre">directory_name</span></code> change.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">In the remaining terminal examples, we will just display the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In the remaining terminal examples, we will just display the <code class="docutils literal notranslate"><span class="pre">$</span></code> symbol
 from the prompt.</p>
 </div>
 <div class="section" id="moving-between-directories">
@@ -116,7 +116,7 @@ from the prompt.</p>
 <p><code class="docutils literal notranslate"><span class="pre">new_directory</span></code> is the path for where we want to be. We do NOT need to
 indicate our current location.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s assume we want to move from our current location in the file tree
 (<code class="docutils literal notranslate"><span class="pre">Photos</span></code>) to <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>.</p>
 <div class="figure align-default">
@@ -134,7 +134,7 @@ $ <span class="nb">pwd</span>
 /MyLaptop/School/Chemistry
 </pre></div>
 </td></tr></table></div>
-<p class="last">In this case, we included <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to show our starting and ending locations.
+<p>In this case, we included <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to show our starting and ending locations.
 However, these commands were not necessary for the move.</p>
 </div>
 <div class="section" id="navigation-shortcuts">
@@ -142,7 +142,7 @@ However, these commands were not necessary for the move.</p>
 <p>When moving through a file tree, we often only need to move up or down one
 level. For quick changes like this, we don’t need to type out a full path.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>Let’s say we want to move up one level from <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> to <code class="docutils literal notranslate"><span class="pre">School</span></code>.
 Instead of typing out the entire absolute path, we can use a terminal
 shortcut!</p>
@@ -172,7 +172,7 @@ $ <span class="nb">pwd</span>
 /MyLaptop/School/LCHS
 </pre></div>
 </td></tr></table></div>
-<p class="last">The <code class="docutils literal notranslate"><span class="pre">.</span></code> represents the path to the current directory. In this case, it
+<p>The <code class="docutils literal notranslate"><span class="pre">.</span></code> represents the path to the current directory. In this case, it
 stands for <code class="docutils literal notranslate"><span class="pre">/MyLaptop/School</span></code>. The command on line 3 tells the terminal,
 <em>From the current directory, move into the LCHS subdirectory</em>.</p>
 </div>
@@ -202,30 +202,30 @@ results of our commands.</p>
 <img alt="File tree with &quot;Homework&quot; marked as the current directory and &quot;Misc Docs&quot; marked as the target." src="../../_images/file-tree-cc.png" />
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we start in the <code class="docutils literal notranslate"><span class="pre">Homework</span></code> directory. In the terminal, we execute
 the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cd ../..
 </pre></div>
 </div>
 <p>What is the path to our new location in the filesystem?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS/Homework</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School/LCHS</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop/School</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">/MyLaptop</span></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which TWO of the following terminal commands gets us from <code class="docutils literal notranslate"><span class="pre">Homework</span></code> to
 <code class="docutils literal notranslate"><span class="pre">Misc</span> <span class="pre">Docs</span></code>?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "A2" onclick="highlight('A2', true)">cd /MyLaptop/Desktop/MiscDocs</span></li>
    <li><span id = "B2" onclick="highlight('B2', false)">cd /LCHS/School/MyLaptop/Desktop/MiscDocs</span></li>
    <li><span id = "C2" onclick="highlight('C2', true)">cd ../../../Desktop/MiscDocs</span></li>
    <li><span id = "D2" onclick="highlight('D2', false)">cd ./Desktop/MiscDocs</span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

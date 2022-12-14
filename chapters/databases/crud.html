@@ -94,10 +94,10 @@ we will perform with it.</p>
 complex, depending on the task. We can fit each query’s purpose into one of
 four categories:</p>
 <ol class="arabic simple">
-<li>Create</li>
-<li>Read</li>
-<li>Update</li>
-<li>Delete</li>
+<li><p>Create</p></li>
+<li><p>Read</p></li>
+<li><p>Update</p></li>
+<li><p>Delete</p></li>
 </ol>
 <p>Taking the first letter from each category gives us the term <strong>CRUD</strong>. Let’s
 look at each type of operation in more detail.</p>
@@ -110,9 +110,9 @@ new table, a new row, or a new column.</p>
 <h3><span class="section-number">24.3.2.1. </span>Adding a Table<a class="headerlink" href="#adding-a-table" title="Permalink to this headline">¶</a></h3>
 <p>To add a new table to the database, the query must include the following:</p>
 <ol class="arabic simple">
-<li>A name for the table,</li>
-<li>A label for each column,</li>
-<li>The data type for each column.</li>
+<li><p>A name for the table,</p></li>
+<li><p>A label for each column,</p></li>
+<li><p>The data type for each column.</p></li>
 </ol>
 <p>We will worry about the exact syntax later, but the query looks something like
 this:</p>
@@ -127,9 +127,9 @@ ARE used to separate different name/type pairs inside the parentheses <code clas
 <span id="sql-insert-syntax"></span><h3><span class="section-number">24.3.2.2. </span>Adding a Row<a class="headerlink" href="#adding-a-row" title="Permalink to this headline">¶</a></h3>
 <p>Once we have a table ready to go, the query to add a new entry must include:</p>
 <ol class="arabic simple">
-<li>The name of the table,</li>
-<li>The name of one or more of columns in that table,</li>
-<li>A value for each of the selected columns.</li>
+<li><p>The name of the table,</p></li>
+<li><p>The name of one or more of columns in that table,</p></li>
+<li><p>A value for each of the selected columns.</p></li>
 </ol>
 <p>The general syntax to add a new row looks like this:</p>
 <div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="k">table_name</span> <span class="p">(</span><span class="n">column_1</span><span class="p">,</span> <span class="n">column_2</span><span class="p">,</span> <span class="p">...)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="n">value_1</span><span class="p">,</span> <span class="n">value_2</span><span class="p">,</span> <span class="p">...)</span>
@@ -142,9 +142,9 @@ the table. When we leave out values, those spots in the table remain empty.</p>
 <span id="add-table-column"></span><h3><span class="section-number">24.3.2.3. </span>Adding a Column<a class="headerlink" href="#adding-a-column" title="Permalink to this headline">¶</a></h3>
 <p>To add a column to an existing table, the query must include:</p>
 <ol class="arabic simple">
-<li>The name of the table,</li>
-<li>The name for the new column,</li>
-<li>The data type for the new column.</li>
+<li><p>The name of the table,</p></li>
+<li><p>The name for the new column,</p></li>
+<li><p>The data type for the new column.</p></li>
 </ol>
 <p>The general syntax looks like this:</p>
 <div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="k">table_name</span> <span class="k">ADD</span> <span class="k">COLUMN</span> <span class="k">column_name</span> <span class="n">data_type</span>
@@ -153,9 +153,9 @@ the table. When we leave out values, those spots in the table remain empty.</p>
 <p>When we create a new column in a table, we don’t need to fill it with any
 values. Existing rows in the table will add the new slot but keep it empty.</p>
 <div class="admonition-note admonition" id="index-2">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Empty spaces in a database are assigned a special value called <strong>NULL</strong>.</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">NULL</span></code> is NOT the same as an empty string, <code class="docutils literal notranslate"><span class="pre">0</span></code>, or <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
+<p><code class="docutils literal notranslate"><span class="pre">NULL</span></code> is NOT the same as an empty string, <code class="docutils literal notranslate"><span class="pre">0</span></code>, or <code class="docutils literal notranslate"><span class="pre">False</span></code>. <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
 is literally an empty space, and it indicates that a data value does not
 exist for that spot in the table.</p>
 </div>
@@ -165,8 +165,8 @@ exist for that spot in the table.</p>
 <span id="sql-select-syntax"></span><h2><span class="section-number">24.3.3. </span>Read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
 <p>To get information from a table, the query must include:</p>
 <ol class="arabic simple">
-<li>The table name,</li>
-<li>The name of one or more columns.</li>
+<li><p>The table name,</p></li>
+<li><p>The name of one or more columns.</p></li>
 </ol>
 <p>The query may also include a <em>condition</em> to help filter the results.</p>
 <p>The general syntax looks like this:</p>
@@ -182,10 +182,10 @@ exist for that spot in the table.</p>
 the next step is to start changing it!</p>
 <p>To modify a value in a table, the query must include:</p>
 <ol class="arabic simple">
-<li>The table name,</li>
-<li>The name of a column,</li>
-<li>The new value,</li>
-<li>A condition.</li>
+<li><p>The table name,</p></li>
+<li><p>The name of a column,</p></li>
+<li><p>The new value,</p></li>
+<li><p>A condition.</p></li>
 </ol>
 <p>The general syntax looks like this:</p>
 <div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="k">table_name</span>
@@ -197,8 +197,8 @@ the next step is to start changing it!</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> statement is optional, but we really want to include it! If we
 don’t, then EVERY value in that column will be changed to <code class="docutils literal notranslate"><span class="pre">new_value</span></code>.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">We must be very careful when we updating a table. There is no <em>Undo</em> command
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>We must be very careful when we updating a table. There is no <em>Undo</em> command
 if we make a mistake!</p>
 </div>
 </div>
@@ -211,8 +211,8 @@ we will see no gap where data used to be. Instead, we will see a new, shorter
 table.</p>
 <p>To delete a row from a table, the query must include:</p>
 <ol class="arabic simple">
-<li>The table name,</li>
-<li>A condition to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</li>
+<li><p>The table name,</p></li>
+<li><p>A condition to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ol>
 <p>The general syntax looks like this:</p>
 <div class="highlight-mysql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="k">table_name</span> <span class="k">WHERE</span> <span class="k">condition</span>
@@ -221,15 +221,15 @@ table.</p>
 <p>When the query runs, each row in the table is checked for the <code class="docutils literal notranslate"><span class="pre">condition</span></code>. If
 <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the row is removed from the table.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Deleting a row permanently removes it from the table, and there is no
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Deleting a row permanently removes it from the table, and there is no
 <em>Undo</em> option!</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.3.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Given this query:</p>
 <div class="highlight-mysql notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -239,34 +239,34 @@ table.</p>
 </pre></div>
 </td></tr></table></div>
 <p>What is the name of the table?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">event</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">events_master</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">month</code></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For the same query, what is the name of the column that holds the data we
 want?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">event</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">events_master</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">month</code></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What action will this query perform?</p>
 <div class="highlight-mysql notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">accounts</span> <span class="k">WHERE</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">16</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It removes the 'age' column from the 'accounts' table.</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> It removes rows 0 - 15 from the 'accounts' table.</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> It removes any row from 'accounts' that has a value less than 16 in the 'age' column.</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 </div>
 </div>
 

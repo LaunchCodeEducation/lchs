@@ -93,9 +93,9 @@ playing space. We need to build an HTML template for each page.</p>
 <p>Since both game pages use the same <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> element, we can put that common
 code into a base template:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Open <code class="docutils literal notranslate"><span class="pre">base.html</span></code> file to find this code:</p>
-<div class="last highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -133,15 +133,15 @@ code into a base template:</p>
 </div>
 <p>Note the following:</p>
 <ol class="arabic simple">
-<li>We link to a <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file in line 8. It contains some basic styling
+<li><p>We link to a <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file in line 8. It contains some basic styling
 rules for the game, and the tutorials won’t instruct you to change any of
 the settings. However, you absolutely CAN adjust the properties and values
-as you see fit! Don’t like the gray background on the board? Fix it!</li>
-<li>On line 13, the placeholder for the page title needs to be filled. Don’t
+as you see fit! Don’t like the gray background on the board? Fix it!</p></li>
+<li><p>On line 13, the placeholder for the page title needs to be filled. Don’t
 forget to <a class="reference internal" href="../flask-intro/form-template.html#template-placeholders"><span class="std std-ref">pass a value</span></a> to <code class="docutils literal notranslate"><span class="pre">page_title</span></code> from
-each <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function.</li>
-<li>Feel free to add extra elements to <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Remember that this
-content will appear on any template that extends from the base.</li>
+each <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function.</p></li>
+<li><p>Feel free to add extra elements to <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Remember that this
+content will appear on any template that extends from the base.</p></li>
 </ol>
 </div>
 <div class="section" id="build-index-html">
@@ -162,34 +162,35 @@ HTML template:</p>
 <div class="section" id="video-summary">
 <h2><span class="section-number">25.3.3. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Our focus is to set up the structure for the home page. We won’t worry about
-placing the mines or collecting data from the form.</li>
-<li>The home page includes a title, one small form (<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span></code>), an inactive
-copy of the game board, and a reserved space for game instructions.</li>
-<li>The form contains a single <code class="docutils literal notranslate"><span class="pre">input</span></code> field of type <code class="docutils literal notranslate"><span class="pre">number</span></code>. Other
+<li><p>Our focus is to set up the structure for the home page. We won’t worry about
+placing the mines or collecting data from the form.</p></li>
+<li><p>The home page includes a title, one small form (<code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span></code>), an inactive
+copy of the game board, and a reserved space for game instructions.</p></li>
+<li><p>The form contains a single <code class="docutils literal notranslate"><span class="pre">input</span></code> field of type <code class="docutils literal notranslate"><span class="pre">number</span></code>. Other
 attributes include <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> values to encourage the user to
 select a reasonable number of mines. Adding some <code class="docutils literal notranslate"><span class="pre">placeholder</span></code> text
-inside the input box helps with the UI/UX.</li>
-<li>Use a <code class="docutils literal notranslate"><span class="pre">table</span></code> element to build the rows and columns in the game board.<ol class="loweralpha">
-<li>Use one <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;&lt;/tr&gt;</span></code> element for each row in the table.</li>
-<li>Inside each row element, use <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tags for the individual
+inside the input box helps with the UI/UX.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">table</span></code> element to build the rows and columns in the game board.</p>
+<ol class="loweralpha simple">
+<li><p>Use one <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;&lt;/tr&gt;</span></code> element for each row in the table.</p></li>
+<li><p>Inside each row element, use <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tags for the individual
 cells. The number of cells in each row matches the number of columns we
-want in the table.</li>
-<li>Use one Jinja3 loop to display the column headings (1 - 10) at the top
-of the table.</li>
-<li>Use a nested pair of loops to display the row label or button in each
-individual cell.</li>
+want in the table.</p></li>
+<li><p>Use one Jinja3 loop to display the column headings (1 - 10) at the top
+of the table.</p></li>
+<li><p>Use a nested pair of loops to display the row label or button in each
+individual cell.</p></li>
 </ol>
 </li>
-<li>The text that appears on the board is stored in a session cookie. Column
+<li><p>The text that appears on the board is stored in a session cookie. Column
 headings can be accessed from a list assigned to the <code class="docutils literal notranslate"><span class="pre">session['columns']</span></code>
-key. Row data can be accessed from <code class="docutils literal notranslate"><span class="pre">session['rows']</span></code>.</li>
+key. Row data can be accessed from <code class="docutils literal notranslate"><span class="pre">session['rows']</span></code>.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Remember, you don’t have to keep the default styling! Feel free to
 modify your project’s CSS file to change the appearance of the page.</p>
-<p class="last">If you wish, you can also link to the <a class="reference external" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">Bootstrap CSS library<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+<p>If you wish, you can also link to the <a class="reference external" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/" target="_blank">Bootstrap CSS library<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 and use <a class="reference internal" href="../css/bootstrap.html#bootstrap-classes"><span class="std std-ref">their classes</span></a> to style your page.</p>
 </div>
 </div>

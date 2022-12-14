@@ -91,10 +91,10 @@ from start to finish.</p>
 <p>Now that you have some Flask experience, your team can move the game out of the
 console and into a browser!</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>On the left is the same console Rock-Paper-Scissors example from Assignment 3.
 The right hand side shows what it could look like in a browser as a Flask app.</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../_images/RPSLS.gif"><img alt="On left console version of rock paper scissors, on the right the flask version." src="../_images/RPSLS.gif" style="width: 80%;" /></a>
 </div>
 </div>
@@ -110,20 +110,21 @@ any old project or think up something completely new.</p>
 <span id="assignment6-requirements"></span><h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>Your Flask application must include each of the following:</p>
 <ol class="arabic simple">
-<li>A web form to collect user input.</li>
-<li>At least two HTML templates, one of which can be a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> file. These
+<li><p>A web form to collect user input.</p></li>
+<li><p>At least two HTML templates, one of which can be a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> file. These
 should include placeholders to display data that can change when the page
-reloads.</li>
-<li>CSS styling, either from a local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file or from
-<a class="reference internal" href="../chapters/css/bootstrap.html#bootstrap-classes"><span class="std std-ref">Bootstrap</span></a>.</li>
-<li>At least one Jinja3 loop or conditional within the template(s).</li>
-<li>Both <a class="reference internal" href="../chapters/flask-intro/validation.html#client-server-validation"><span class="std std-ref">client-side and server-side validation</span></a>.</li>
-<li>Python code that:<ol class="loweralpha">
-<li>Renders the required templates.</li>
-<li>Collects user input from the web form.</li>
-<li>Creates, accesses, modifies, or deletes data from a Flask <code class="docutils literal notranslate"><span class="pre">session</span></code>.</li>
-<li>Generates feedback messages for the user.</li>
-<li>Runs the game!</li>
+reloads.</p></li>
+<li><p>CSS styling, either from a local <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file or from
+<a class="reference internal" href="../chapters/css/bootstrap.html#bootstrap-classes"><span class="std std-ref">Bootstrap</span></a>.</p></li>
+<li><p>At least one Jinja3 loop or conditional within the template(s).</p></li>
+<li><p>Both <a class="reference internal" href="../chapters/flask-intro/validation.html#client-server-validation"><span class="std std-ref">client-side and server-side validation</span></a>.</p></li>
+<li><p>Python code that:</p>
+<ol class="loweralpha simple">
+<li><p>Renders the required templates.</p></li>
+<li><p>Collects user input from the web form.</p></li>
+<li><p>Creates, accesses, modifies, or deletes data from a Flask <code class="docutils literal notranslate"><span class="pre">session</span></code>.</p></li>
+<li><p>Generates feedback messages for the user.</p></li>
+<li><p>Runs the game!</p></li>
 </ol>
 </li>
 </ol>
@@ -135,40 +136,40 @@ is a bigger project, and your work will be much easier if you start with some
 thinking time.</p>
 <p><strong>If you want to recycle code from an earlier game</strong>:</p>
 <ol class="arabic simple">
-<li>Discuss what you want the game to look like in the browser. Make sketches
-for each of the planned webpages.</li>
-<li>Decide if you will use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template. If so, consider what HTML
-elements you want to put in that file.</li>
-<li>Examine your old Python code and determine what needs to be replaced. For
+<li><p>Discuss what you want the game to look like in the browser. Make sketches
+for each of the planned webpages.</p></li>
+<li><p>Decide if you will use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template. If so, consider what HTML
+elements you want to put in that file.</p></li>
+<li><p>Examine your old Python code and determine what needs to be replaced. For
 example, console games rely on <code class="docutils literal notranslate"><span class="pre">print</span></code> statements to display text. Flask
-applications send data to an HTML file instead.</li>
-<li>Identify which of your old functions can be used as-is. Importing them as a
-module will save you some time and effort.</li>
-<li>Decide which functions need to be refactored. Some might need to be replaced
+applications send data to an HTML file instead.</p></li>
+<li><p>Identify which of your old functions can be used as-is. Importing them as a
+module will save you some time and effort.</p></li>
+<li><p>Decide which functions need to be refactored. Some might need to be replaced
 completely, while others might require small modifications to render a
-template and/or collect data.</li>
+template and/or collect data.</p></li>
 </ol>
 <p><strong>If you want to create a new game</strong>:</p>
 <ol class="arabic simple">
-<li>Brainstorm! Describe to each other some game possibilities, then pick one.</li>
-<li>Write down the features you want your game to have.</li>
-<li>Start simple! From your features list, select only the most important ideas
+<li><p>Brainstorm! Describe to each other some game possibilities, then pick one.</p></li>
+<li><p>Write down the features you want your game to have.</p></li>
+<li><p>Start simple! From your features list, select only the most important ideas
 for your game. You have a limited amount of time, and you can always add
-more features later.</li>
-<li>Identify what information needs to be displayed in the browser (intro,
-forms, results, etc.).</li>
-<li>Make sketches for what your game will look like in the browser. How many
-templates will you need? Will you use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template?</li>
-<li>Create a general outline for the functions your application is going to
-need.</li>
+more features later.</p></li>
+<li><p>Identify what information needs to be displayed in the browser (intro,
+forms, results, etc.).</p></li>
+<li><p>Make sketches for what your game will look like in the browser. How many
+templates will you need? Will you use a <code class="docutils literal notranslate"><span class="pre">base.html</span></code> template?</p></li>
+<li><p>Create a general outline for the functions your application is going to
+need.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Regardless of whether you recycle old code or not, your Flask application
 is going to need multiple functions! Even if your app only renders one
 webpage, you should NOT cram all of the game logic in the same place.
 Remember, functions should be small and accomplish only one task.</p>
-<p class="last">Not every function in a Flask app has to render a template. It’s perfectly
+<p>Not every function in a Flask app has to render a template. It’s perfectly
 fine for a function to serve a supporting role instead.</p>
 </div>
 </div>
@@ -188,23 +189,23 @@ project!</p>
 <p>Begin coding your game by following the notes you made in Part 1. Here are some
 reminders about building larger projects:</p>
 <ol class="arabic simple">
-<li>Commit early and often.</li>
-<li>Start small. For example, what template needs to render when the player
-first loads the page? What should the page look like?</li>
-<li>Test that starter code to make sure it works. Save, commit, and push your
-changes to GitHub.</li>
-<li>Add one small, new thing to the program. IMPORTANT: Keep your code working!
+<li><p>Commit early and often.</p></li>
+<li><p>Start small. For example, what template needs to render when the player
+first loads the page? What should the page look like?</p></li>
+<li><p>Test that starter code to make sure it works. Save, commit, and push your
+changes to GitHub.</p></li>
+<li><p>Add one small, new thing to the program. IMPORTANT: Keep your code working!
 If the new feature breaks the program, find and fix the bugs before moving
-on.</li>
-<li>Save, commit, and push!</li>
-<li>Repeat this process for all of your planned features.</li>
+on.</p></li>
+<li><p>Save, commit, and push!</p></li>
+<li><p>Repeat this process for all of your planned features.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Remember, you can use Git to <a class="reference internal" href="../chapters/git/branches.html#branching-in-git"><span class="std std-ref">checkout a new branch</span></a>
 before you add a new feature to your game. That way, if your experiment
 crashes and burns, you can restore a working version of your code.</p>
-<p class="last">Also, working with branches saves time! One partner can focus on the webpage
+<p>Also, working with branches saves time! One partner can focus on the webpage
 design (HTML/CSS), and the other can checkout a different branch to focus on
 the game logic.</p>
 </div>
@@ -215,26 +216,27 @@ the game logic.</p>
 Now it’s time to challenge your game! The goal here is to find bugs by
 deliberately trying to break your program.</p>
 <ol class="arabic simple" id="index-0">
-<li>Start by checking the web form. Be brutal! Any errors you miss will
-eventually be found by visitors to your site.<ol class="loweralpha">
-<li>What happens when you submit an invalid entry?</li>
-<li>What happens when you refresh the page or reload it from the address bar?</li>
-<li>What if you try to submit duplicate entries?</li>
-<li>What if you submit HTML code?</li>
-<li>What if you use the browser tools to remove the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute
-from the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag and submit an empty response?</li>
+<li><p>Start by checking the web form. Be brutal! Any errors you miss will
+eventually be found by visitors to your site.</p>
+<ol class="loweralpha simple">
+<li><p>What happens when you submit an invalid entry?</p></li>
+<li><p>What happens when you refresh the page or reload it from the address bar?</p></li>
+<li><p>What if you try to submit duplicate entries?</p></li>
+<li><p>What if you submit HTML code?</p></li>
+<li><p>What if you use the browser tools to remove the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute
+from the <code class="docutils literal notranslate"><span class="pre">input</span></code> tag and submit an empty response?</p></li>
 </ol>
 </li>
-<li>Test <strong>edge cases</strong>, which are entries that fall at the ends of an accepted
-range (like <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code> in the range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">10</span></code>).</li>
-<li>If users must make a series of choices in the game, test every possible
-order and combination of those choices.</li>
-<li>Play the game like it’s the first time you’ve seen it. Don’t just run
-through the actions that you <em>know</em> work.</li>
-<li>Proofread the game instructions. Are they clear? How might users
-misinterpret them?</li>
-<li>Find one or more <strong>beta testers</strong>. These are people who had no other role
-in creating your game. Have them play, then ask them for their feedback.</li>
+<li><p>Test <strong>edge cases</strong>, which are entries that fall at the ends of an accepted
+range (like <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span></code> in the range <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">10</span></code>).</p></li>
+<li><p>If users must make a series of choices in the game, test every possible
+order and combination of those choices.</p></li>
+<li><p>Play the game like it’s the first time you’ve seen it. Don’t just run
+through the actions that you <em>know</em> work.</p></li>
+<li><p>Proofread the game instructions. Are they clear? How might users
+misinterpret them?</p></li>
+<li><p>Find one or more <strong>beta testers</strong>. These are people who had no other role
+in creating your game. Have them play, then ask them for their feedback.</p></li>
 </ol>
 </div>
 <div class="section" id="submitting-your-work">
@@ -243,12 +245,12 @@ in creating your game. Have them play, then ask them for their feedback.</li>
 demonstrating your project.</p>
 <p>Before you submit your application, be sure that it:</p>
 <ol class="arabic simple">
-<li>Works.</li>
-<li>Provides a good user interface (UI) and user experience (UX).</li>
-<li>Meets each of the <a class="reference internal" href="#assignment6-requirements"><span class="std std-ref">project requirements</span></a>.</li>
-<li>Survives invalid input.</li>
-<li>Includes enough comments in the code to describe what each part does.</li>
-<li>Is fun to play!</li>
+<li><p>Works.</p></li>
+<li><p>Provides a good user interface (UI) and user experience (UX).</p></li>
+<li><p>Meets each of the <a class="reference internal" href="#assignment6-requirements"><span class="std std-ref">project requirements</span></a>.</p></li>
+<li><p>Survives invalid input.</p></li>
+<li><p>Includes enough comments in the code to describe what each part does.</p></li>
+<li><p>Is fun to play!</p></li>
 </ol>
 <p>Your teacher will provide you with a detailed rubric for this assignment. This
 describes how each part of the project will be graded.</p>

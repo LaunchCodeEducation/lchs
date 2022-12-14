@@ -105,9 +105,9 @@ section, then we must be a little more careful with the <code class="docutils li
 <h2><span class="section-number">17.6.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>In VS Code, do the following:</p>
 <ol class="arabic simple">
-<li>Create a new directory called <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</li>
-<li>Inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a new file called <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</li>
-<li>Also in <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a file called <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code>.</li>
+<li><p>Create a new directory called <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</p></li>
+<li><p>Inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a new file called <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p></li>
+<li><p>Also in <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>, create a file called <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code>.</p></li>
 </ol>
 <p>Our file tree should look something like this:</p>
 <div class="figure align-default" id="id1">
@@ -209,11 +209,10 @@ directory as our main program. Fortunately, this is exactly what we did in the
 </div>
 <p>When we follow this structure, the <code class="docutils literal notranslate"><span class="pre">import</span></code> syntax is the same as before.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">On line 1 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">list_filler</span></code>.</p>
-</li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> to see the results.</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>On line 1 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">list_filler</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code> to see the results.</p>
 <p><strong>Sample Output:</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python main.py
 1) Numbers list = [22, 27, 33, 36, 40, 42, 45, 56, 66, 71]
@@ -224,14 +223,12 @@ directory as our main program. Fortunately, this is exactly what we did in the
 </pre></div>
 </div>
 </li>
-<li><p class="first">Note the use of <em>dot-notation</em> in line 9 of <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. The syntax
+<li><p>Note the use of <em>dot-notation</em> in line 9 of <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. The syntax
 <code class="docutils literal notranslate"><span class="pre">list_filler.unique_num_list</span></code> calls the <code class="docutils literal notranslate"><span class="pre">unique_num_list</span></code> function
-from the <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> module.</p>
-</li>
-<li><p class="first">Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to generate another five lists of random numbers. This
+from the <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> module.</p></li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to generate another five lists of random numbers. This
 time, however, use the <code class="docutils literal notranslate"><span class="pre">make_num_list</span></code> function, and only send in one
-argument.</p>
-</li>
+argument.</p></li>
 </ol>
 </div>
 <p>Think of any program as a set of smaller tasks joined together. Instead of
@@ -255,15 +252,15 @@ help keep the files organized. Let’s explore this with a simple example.</p>
 <p>In this case, <code class="docutils literal notranslate"><span class="pre">main.py</span></code> still sits in the <code class="docutils literal notranslate"><span class="pre">module_practice</span></code> directory.
 However, we moved <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> into the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> subfolder.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic simple">
-<li>In VS Code, use the <em>New Folder</em> button in the File Explorer to create
-the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</li>
-<li>Drag-and-drop the <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> file into the new folder.</li>
-<li>Run the program again and examine the error message.</li>
+<li><p>In VS Code, use the <em>New Folder</em> button in the File Explorer to create
+the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory inside <code class="docutils literal notranslate"><span class="pre">module_practice</span></code>.</p></li>
+<li><p>Drag-and-drop the <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> file into the new folder.</p></li>
+<li><p>Run the program again and examine the error message.</p></li>
 </ol>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
 File &quot;main.py&quot;, line 1, in &lt;module&gt;
    import list_filler
 ModuleNotFoundError: No module named &#39;list_filler&#39;
@@ -274,10 +271,10 @@ ModuleNotFoundError: No module named &#39;list_filler&#39;
 of steps to find the file. We won’t detail the entire process here. However,
 the short version is:</p>
 <ol class="arabic simple">
-<li>Check if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> is one of the standard Python modules. If so,
-import it (the locations of these modules are known).</li>
-<li>Check the current directory for <code class="docutils literal notranslate"><span class="pre">list_filler</span></code>. If found, import it.</li>
-<li>Throw an error if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> can’t be found.</li>
+<li><p>Check if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> is one of the standard Python modules. If so,
+import it (the locations of these modules are known).</p></li>
+<li><p>Check the current directory for <code class="docutils literal notranslate"><span class="pre">list_filler</span></code>. If found, import it.</p></li>
+<li><p>Throw an error if <code class="docutils literal notranslate"><span class="pre">list_filler</span></code> can’t be found.</p></li>
 </ol>
 <p>By moving <code class="docutils literal notranslate"><span class="pre">list_filler.py</span></code> into the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> directory, Python can no
 longer find the file to import it! This causes the <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code>.</p>
@@ -289,11 +286,11 @@ syntax is:</p>
 </div>
 <p>IMPORTANT: <code class="docutils literal notranslate"><span class="pre">directory_name</span></code> must be in the same folder as the main program.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, change line 1 to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">helpers</span> <span class="pre">import</span> <span class="pre">list_filler</span></code>.</li>
-<li>Run the program again.</li>
-<li>Ta da!</li>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, change line 1 to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">helpers</span> <span class="pre">import</span> <span class="pre">list_filler</span></code>.</p></li>
+<li><p>Run the program again.</p></li>
+<li><p>Ta da!</p></li>
 </ol>
 </div>
 <div class="section" id="other-import-details">
@@ -303,7 +300,7 @@ can extend the chain of directory names as far as necessary with our <code class
 levels from <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, we use dot-notation to include the different directory
 names.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s take a look at a three level file tree:</p>
 <div class="figure align-default" id="id4">
 <img alt="A three level file tree." src="../../_images/layers-deep.png" />
@@ -312,28 +309,28 @@ names.</p>
 <p>The indentation in the file tree gives us clues about how things are
 organized.</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">main.py</span></code> is in the folder <code class="docutils literal notranslate"><span class="pre">my_project</span></code> along with the <code class="docutils literal notranslate"><span class="pre">subdir1</span></code>
-directory.</li>
-<li><code class="docutils literal notranslate"><span class="pre">subdir1</span></code> contains the <code class="docutils literal notranslate"><span class="pre">grade_stats.py</span></code> file and the next subfolder,
-<code class="docutils literal notranslate"><span class="pre">subdir2</span></code>.</li>
-<li>Finally, we see that the <code class="docutils literal notranslate"><span class="pre">gradebook.py</span></code> file is buried deepest in this
-tree.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">main.py</span></code> is in the folder <code class="docutils literal notranslate"><span class="pre">my_project</span></code> along with the <code class="docutils literal notranslate"><span class="pre">subdir1</span></code>
+directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subdir1</span></code> contains the <code class="docutils literal notranslate"><span class="pre">grade_stats.py</span></code> file and the next subfolder,
+<code class="docutils literal notranslate"><span class="pre">subdir2</span></code>.</p></li>
+<li><p>Finally, we see that the <code class="docutils literal notranslate"><span class="pre">gradebook.py</span></code> file is buried deepest in this
+tree.</p></li>
 </ol>
 <p>To import the <code class="docutils literal notranslate"><span class="pre">gradebook</span></code> module, line 1 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> would be:</p>
-<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subdir1.subdir2</span> <span class="kn">import</span> <span class="n">gradebook</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subdir1.subdir2</span> <span class="kn">import</span> <span class="n">gradebook</span>
 </pre></div>
 </div>
 </div>
 <p>We can also import a specific function (or class) from a module stored in a
 subdirectory. In this case, we include the module name in our dot-notation.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Assume we only need the <code class="docutils literal notranslate"><span class="pre">average_grades</span></code> function from the <code class="docutils literal notranslate"><span class="pre">grade_stats</span></code>
 module. The syntax would be:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">subdir1.grade_stats</span> <span class="kn">import</span> <span class="n">average_grades</span>
 </pre></div>
 </div>
-<p class="last">This statement tells Python, <em>Look in the subdir1 directory and find the
+<p>This statement tells Python, <em>Look in the subdir1 directory and find the
 grade_stats file, then import the average_grades function</em>.</p>
 </div>
 </div>
@@ -351,9 +348,9 @@ programmer who might inherit our work.</p>
 <p>Whenever you create a module to support your program, follow these guidelines
 on where to store the file:</p>
 <ol class="arabic simple">
-<li><em>Put it in the same directory as the main program</em>!</li>
-<li>Put it in a subdirectory below the main program.</li>
-<li>See point 1.</li>
+<li><p><em>Put it in the same directory as the main program</em>!</p></li>
+<li><p>Put it in a subdirectory below the main program.</p></li>
+<li><p>See point 1.</p></li>
 </ol>
 </div>
 <div class="section" id="check-your-understanding">
@@ -363,28 +360,28 @@ on where to store the file:</p>
 <a class="reference internal image-reference" href="../../_images/local-import-cc.png"><img alt="File tree showing /MyLaptop/Project/Helpers/Data." src="../../_images/local-import-cc.png" style="width: 40%;" /></a>
 </div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which statement should we add to <code class="docutils literal notranslate"><span class="pre">seating.py</span></code> to import the <code class="docutils literal notranslate"><span class="pre">rosters.py</span></code>
 module?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">import rosters</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from seating import rosters</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from Mods import rosters</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">from Mods.Data import rosters</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">from Data import rosters</span></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What should we do if we want to import <code class="docutils literal notranslate"><span class="pre">grade_calcs.py</span></code> into
 <code class="docutils literal notranslate"><span class="pre">rosters.py</span></code>?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Move both files into the same directory.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Play around with the <span style="color:#419f6a; font-weight: bold">from ... import ...</span> syntax until we get the import to work.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Use Google to find out how to import from a parent directory.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Cry.</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

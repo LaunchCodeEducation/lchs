@@ -97,7 +97,7 @@ forth between our Python code and a Jinja2 template.</p>
 <h2><span class="section-number">23.1.1. </span>Problem With Guessing a Number<a class="headerlink" href="#problem-with-guessing-a-number" title="Permalink to this headline">¶</a></h2>
 <p>Let’s take a look at a function that asks a user to guess a secret number.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p><strong>The webpage</strong>:</p>
 <div class="figure align-default" id="id1">
 <img alt="Form asking the user to submit a number." src="../../_images/guess-the-number.png" />
@@ -137,11 +137,11 @@ forth between our Python code and a Jinja2 template.</p>
    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;guess_the_number.html&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li>Line 19 generates a random number and assigns the value to
-<code class="docutils literal notranslate"><span class="pre">magic_number</span></code>.</li>
-<li>Line 22 renders the <code class="docutils literal notranslate"><span class="pre">guess_the_number</span></code> template, which displays a form
-for the user.</li>
+<ol class="arabic simple">
+<li><p>Line 19 generates a random number and assigns the value to
+<code class="docutils literal notranslate"><span class="pre">magic_number</span></code>.</p></li>
+<li><p>Line 22 renders the <code class="docutils literal notranslate"><span class="pre">guess_the_number</span></code> template, which displays a form
+for the user.</p></li>
 </ol>
 </div>
 <p>Unfortunately, when we run the application and make a guess, the program
@@ -154,12 +154,12 @@ crashes when we click <em>Go!</em></p>
 <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> hasn’t been assigned a value. If we think about the flow of
 the program, this might seem odd at first.</p>
 <ol class="arabic simple">
-<li>The browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the <code class="docutils literal notranslate"><span class="pre">guess_the_number()</span></code> function.</li>
-<li>This triggers the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on line 18, and <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> is
-assigned a random number from 1 - 50.</li>
-<li>Line 22 renders the form in the browser, and the user submits their guess.</li>
-<li>The browser sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the function, and line 11 collects
-the user’s guess.</li>
+<li><p>The browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the <code class="docutils literal notranslate"><span class="pre">guess_the_number()</span></code> function.</p></li>
+<li><p>This triggers the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause on line 18, and <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> is
+assigned a random number from 1 - 50.</p></li>
+<li><p>Line 22 renders the form in the browser, and the user submits their guess.</p></li>
+<li><p>The browser sends a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to the function, and line 11 collects
+the user’s guess.</p></li>
 </ol>
 <p>Following these steps, it seems like <code class="docutils literal notranslate"><span class="pre">magic_number</span></code> should have a value.
 However, this is not the case. The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement on line 22 renders the

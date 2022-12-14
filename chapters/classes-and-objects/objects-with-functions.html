@@ -91,7 +91,7 @@ value. We did this in the <a class="reference internal" href="../functions/exerc
 when we passed a turtle object to the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> and <code class="docutils literal notranslate"><span class="pre">draw_sprite</span></code>
 functions.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -113,19 +113,19 @@ functions.</p>
 <span class="n">draw_square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic simple">
-<li>Line 8 creates a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object called <code class="docutils literal notranslate"><span class="pre">bob</span></code>.</li>
-<li>Line 10 calls the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function and passes <code class="docutils literal notranslate"><span class="pre">bob</span></code> and <code class="docutils literal notranslate"><span class="pre">40</span></code>
-as arguments.</li>
-<li>After the function call, control passes to the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function.
-In line 3, <code class="docutils literal notranslate"><span class="pre">turtle_name</span></code> gets assigned the <code class="docutils literal notranslate"><span class="pre">bob</span></code> object.</li>
-<li>The loop executes, and we see the turtle draw a square on the screen.</li>
+<ol class="arabic simple">
+<li><p>Line 8 creates a new <code class="docutils literal notranslate"><span class="pre">Turtle</span></code> object called <code class="docutils literal notranslate"><span class="pre">bob</span></code>.</p></li>
+<li><p>Line 10 calls the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function and passes <code class="docutils literal notranslate"><span class="pre">bob</span></code> and <code class="docutils literal notranslate"><span class="pre">40</span></code>
+as arguments.</p></li>
+<li><p>After the function call, control passes to the <code class="docutils literal notranslate"><span class="pre">draw_square</span></code> function.
+In line 3, <code class="docutils literal notranslate"><span class="pre">turtle_name</span></code> gets assigned the <code class="docutils literal notranslate"><span class="pre">bob</span></code> object.</p></li>
+<li><p>The loop executes, and we see the turtle draw a square on the screen.</p></li>
 </ol>
 </div>
 <p>We can also set up a function to create a new object and return it to the main
 program.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Assume we defined the same <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class we used on the
 <a class="reference internal" href="printing-objects.html#dog-class-complete"><span class="std std-ref">previous page</span></a>.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
@@ -153,18 +153,18 @@ program.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Name of dog: SF, Age of dog: 0 years
 </pre></div>
 </div>
-<ol class="last arabic simple">
-<li>Lines 20 and 21 create two new <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects.</li>
-<li>Line 22 calls the <code class="docutils literal notranslate"><span class="pre">make_puppy</span></code> function and sends it <code class="docutils literal notranslate"><span class="pre">dog_1</span></code> and
-<code class="docutils literal notranslate"><span class="pre">dog_2</span></code> as arguments.</li>
-<li>Line 14 assigns the objects to the parameters <code class="docutils literal notranslate"><span class="pre">parent_1</span></code> and
-<code class="docutils literal notranslate"><span class="pre">parent_2</span></code>.</li>
-<li>Line 15 combines the first letters of the parents’ names to make the
-string for <code class="docutils literal notranslate"><span class="pre">puppy_name</span></code>.</li>
-<li>Line 16 uses a boolean expression to decide if the puppy is cute.</li>
-<li>Line 18 creates and returns a new <code class="docutils literal notranslate"><span class="pre">Dog</span></code> object.</li>
-<li>Control returns to line 22, where the new object is assigned to
-<code class="docutils literal notranslate"><span class="pre">new_pet</span></code>.</li>
+<ol class="arabic simple">
+<li><p>Lines 20 and 21 create two new <code class="docutils literal notranslate"><span class="pre">Dog</span></code> objects.</p></li>
+<li><p>Line 22 calls the <code class="docutils literal notranslate"><span class="pre">make_puppy</span></code> function and sends it <code class="docutils literal notranslate"><span class="pre">dog_1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">dog_2</span></code> as arguments.</p></li>
+<li><p>Line 14 assigns the objects to the parameters <code class="docutils literal notranslate"><span class="pre">parent_1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">parent_2</span></code>.</p></li>
+<li><p>Line 15 combines the first letters of the parents’ names to make the
+string for <code class="docutils literal notranslate"><span class="pre">puppy_name</span></code>.</p></li>
+<li><p>Line 16 uses a boolean expression to decide if the puppy is cute.</p></li>
+<li><p>Line 18 creates and returns a new <code class="docutils literal notranslate"><span class="pre">Dog</span></code> object.</p></li>
+<li><p>Control returns to line 22, where the new object is assigned to
+<code class="docutils literal notranslate"><span class="pre">new_pet</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="object-scope">
@@ -182,24 +182,24 @@ points to the same set of data as <code class="docutils literal notranslate"><sp
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">13.9.2. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Given <code class="docutils literal notranslate"><span class="pre">bob</span> <span class="pre">=</span> <span class="pre">turtle.Turtle()</span></code>, which of the following shows the object
 <code class="docutils literal notranslate"><span class="pre">bob</span></code> used as an <em>argument</em>?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">draw_sprite(bob, 8, 40)</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">def draw_sprite(bob, num_legs, leg_length):</span></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">return bob</span></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which of the following shows the object <code class="docutils literal notranslate"><span class="pre">trtl_name</span></code> used as a <em>parameter</em>?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">draw_polygon(trtl_name, 8, 40)</span></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">def draw_polygon(trtl_name, num_sides, side_length):</span></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">return trtl_name</span></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

@@ -106,15 +106,15 @@ known average (3) and then print the result.</p>
 100. In line 24, we call <code class="docutils literal notranslate"><span class="pre">create_report</span></code> and send it the <code class="docutils literal notranslate"><span class="pre">pretend_scores</span></code>
 list so we can check the format of the returned string.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s see how well our program works. Run the code as-is and examine the
 output.</p>
 <iframe height="900px" width="100%" src="https://repl.it/@launchcode/Why-Use-Main?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>Wait… what? The output contains three lists that we don’t expect from our
 code we wrote in lines 20 - 24.</p>
-<ol class="last arabic simple">
-<li>Comment out lines 20 - 24, then re-run the program.</li>
-<li>Wait… what? The two <code class="docutils literal notranslate"><span class="pre">print</span></code> statements are commented out, but output
-still appears in the console!</li>
+<ol class="arabic simple">
+<li><p>Comment out lines 20 - 24, then re-run the program.</p></li>
+<li><p>Wait… what? The two <code class="docutils literal notranslate"><span class="pre">print</span></code> statements are commented out, but output
+still appears in the console!</p></li>
 </ol>
 </div>
 </div>
@@ -134,8 +134,9 @@ proper order, set up a required drawing space, etc.</p>
 <p>In this case, the loose code contains three <code class="docutils literal notranslate"><span class="pre">print</span></code> statements, and these
 create the unexpected output. This brings up a very important point:</p>
 <blockquote>
-<div>Loose statements ALWAYS run, even if none of the functions in the program
-get called.</div></blockquote>
+<div><p>Loose statements ALWAYS run, even if none of the functions in the program
+get called.</p>
+</div></blockquote>
 <p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, by running <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">random_lists</span></code> on line 1, the loose code in
 the module executes. This is why we see three lists appear in the console even
 if we remove all <code class="docutils literal notranslate"><span class="pre">print</span></code> commands in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
@@ -176,8 +177,8 @@ function:</p>
 the extra output disappears! Since the loose code from <code class="docutils literal notranslate"><span class="pre">random_lists</span></code> is now
 inside its own function, it will only run if we call <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p class="last">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">random_lists.main()</span></code> and re-run the
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add the statement <code class="docutils literal notranslate"><span class="pre">random_lists.main()</span></code> and re-run the
 program. The three extra lists should appear.</p>
 </div>
 <div class="section" id="add-main-to-main-py">
@@ -199,12 +200,12 @@ program. The three extra lists should appear.</p>
 <p>The following editor contains the updated code, with a <code class="docutils literal notranslate"><span class="pre">main()</span></code> function
 present in both files.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Most of the work happens inside the function, but we still need the last
 four lines of code to get things done. They perform the main job of the
 program (printing a score report).</p>
 <p>Run the program again to see how it behaves now:</p>
-<iframe height="700px" width="100%" src="https://repl.it/@launchcode/Why-Use-Main-step-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p class="last">Drat! Now NO output appears!</p>
+<iframe height="700px" width="100%" src="https://repl.it/@launchcode/Why-Use-Main-step-2?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p>Drat! Now NO output appears!</p>
 </div>
 <p>Since we placed the loose code into the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function, those statements
 will not run unless we <em>call</em> the function.</p>
@@ -243,16 +244,14 @@ function.</p>
 really, really, REALLY should. The reasons have everything to do with avoiding
 bugs from loose statements:</p>
 <ol class="arabic">
-<li><p class="first">Using <code class="docutils literal notranslate"><span class="pre">main()</span></code> prevents running unwanted code when we import a module.</p>
-</li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">main()</span></code> function helps organize our code by putting all of the setup
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">main()</span></code> prevents running unwanted code when we import a module.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">main()</span></code> function helps organize our code by putting all of the setup
 and control statements in one place. For example, in a turtle program,
 <code class="docutils literal notranslate"><span class="pre">main()</span></code> would be the place to define new turtles, set their properties,
-change the window appearance, and call drawing functions.</p>
-</li>
-<li><p class="first">Using <code class="docutils literal notranslate"><span class="pre">main()</span></code> helps prevent shadowing of variables.</p>
+change the window appearance, and call drawing functions.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">main()</span></code> helps prevent shadowing of variables.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>If we define a list variable in a loose statement, then every function in
 the program can access that list.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -311,7 +310,7 @@ an argument before the other function can act on it.</p>
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>File &quot;main.py&quot;, line 2, in add_item
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>File &quot;main.py&quot;, line 2, in add_item
    a_list.append(9)
 NameError: name &#39;a_list&#39; is not defined
 </pre></div>
@@ -323,24 +322,24 @@ NameError: name &#39;a_list&#39; is not defined
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">11.6.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">main()</span></code> function can ONLY be added to the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the purpose of the <code class="docutils literal notranslate"><span class="pre">main()</span></code> function? Select ALL that apply.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "A" onclick="highlight('A', true)">To tie up loose code statements.</span></li>
    <li><span id = "B" onclick="highlight('B', true)">To control the main tasks that a program performs.</span></li>
    <li><span id = "C" onclick="highlight('C', false)">To import modules.</span></li>
    <li><span id = "D" onclick="highlight('D', false)">To keep the program from running.</span></li>
    <li><span id = "E" onclick="highlight('E', true)">To complete any setup needed to get the program started.</span></li>
    <li><span id = "F" onclick="highlight('F', true)">To keep control statements from running if the code is imported as a module.</span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

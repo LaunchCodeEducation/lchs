@@ -93,14 +93,13 @@ to move through its history.</p>
 <div class="section" id="commit-to-num-guess-py-again">
 <h2><span class="section-number">18.3.1. </span>Commit to <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code> Again<a class="headerlink" href="#commit-to-num-guess-py-again" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Add some more statements to your code in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>. You don’t need
+<li><p>Add some more statements to your code in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>. You don’t need
 anything fancy. Any simple, working program that is different from what you
 committed before will work.</p>
 <p>Feel free to use the LCHS code <a class="reference external" href="https://repl.it/&#64;launchcode/Simple-number-guessing-game#main.py" target="_blank">here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to save a new
-commit to the repository.</p>
-</li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to save a new
+commit to the repository.</p></li>
 </ol>
 <p>You should now have at least three total commits in the repo.</p>
 </div>
@@ -110,10 +109,10 @@ commit to the repository.</p>
 command displays a record of every commit in the repository. The top entry is
 the most recent.</p>
 <div class="admonition-example admonition" id="git-log-example">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The log for the three entries in the <code class="docutils literal notranslate"><span class="pre">git_practice</span></code> repo will look
 something like this:</p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git log
 commit 39ab2d77c7813c67958e996961ddbca7a32b6762 (HEAD -&gt; main)
 Author: I. M. Great &lt;student@schoolname.edu&gt;
 Date:   Mon Oct 26 15:46:41 2020 -0500
@@ -135,21 +134,21 @@ Date:   Mon Oct 26 14:23:17 2020 -0500
 </div>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If the output reaches the bottom of the terminal pane before finishing, tap
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If the output reaches the bottom of the terminal pane before finishing, tap
 the space bar to display the next section of text. To stop the output and
 return to the command prompt, tap <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 </div>
 <p>Each entry in the log contains four items:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">commit</span></code> shows a 40-character long code. This provides the key that Git
-uses to organize the commits in the repository.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Author</span></code> indicates who made the commit. This becomes important when
-multiple coders work on the same project.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Date</span></code> indicates the day and time the commit was made.</li>
-<li>The indented line shows the comment saved with the commit. The more details
+<li><p><code class="docutils literal notranslate"><span class="pre">commit</span></code> shows a 40-character long code. This provides the key that Git
+uses to organize the commits in the repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Author</span></code> indicates who made the commit. This becomes important when
+multiple coders work on the same project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Date</span></code> indicates the day and time the commit was made.</p></li>
+<li><p>The indented line shows the comment saved with the commit. The more details
 we include in each comment, the easier it is to look through the log and
-know what changes were made between saves.</li>
+know what changes were made between saves.</p></li>
 </ol>
 </div>
 <div class="section" id="undo-changes-since-last-commit">
@@ -166,10 +165,10 @@ most recent version. This wipes away all of the changes made since that commit.
 We can then start with our old, working code and try something different.</p>
 <p>Let’s see how this works.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Restoring your most recent commit acts like a great big <em>Undo</em>.</p>
 <ol class="arabic">
-<li><p class="first">Add a few comment lines after the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in
+<li><p>Add a few comment lines after the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement in
 <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>. It doesn’t matter what you type, as long as you make
 an obvious change.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -184,9 +183,8 @@ an obvious change.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save your work in VS Code, but do NOT commit it.</p>
-</li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to verify that you have uncommitted changes in the
+<li><p>Save your work in VS Code, but do NOT commit it.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to verify that you have uncommitted changes in the
 file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch main
@@ -200,23 +198,23 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 </pre></div>
 </div>
 </li>
-<li><p class="first">Now enter the following command in the terminal. Pay close attention to
+<li><p>Now enter the following command in the terminal. Pay close attention to
 what happens to the comments you added in <code class="docutils literal notranslate"><span class="pre">num_guess.py</span></code>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git reset --hard HEAD
 </pre></div>
 </div>
 </li>
 </ol>
-<p class="last">Whoa, the added statements disappear!</p>
+<p>Whoa, the added statements disappear!</p>
 </div>
 <p><strong>Syntax review</strong>:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> moves us backwards through the commit history.</li>
-<li><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> identifies the commit to move to. Looking at the output from the
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> moves us backwards through the commit history.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HEAD</span></code> identifies the commit to move to. Looking at the output from the
 <a class="reference internal" href="#git-log-example"><span class="std std-ref">git log example</span></a>, we see that the first entry is
 labeled with <code class="docutils literal notranslate"><span class="pre">(HEAD</span> <span class="pre">-&gt;</span> <span class="pre">main)</span></code>. Think of <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> like a bookmark in the
-log.</li>
-<li><code class="docutils literal notranslate"><span class="pre">--hard</span></code> removes all changes made after the most recent commit.</li>
+log.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hard</span></code> removes all changes made after the most recent commit.</p></li>
 </ol>
 <div class="figure align-default">
 <img alt="The git reset command removes uncommitted changes from the files." src="../../_images/git-reset.gif" />

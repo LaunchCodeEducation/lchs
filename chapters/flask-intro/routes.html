@@ -103,8 +103,8 @@ things simple, Flask defaults to a port that is freely available on our machine
 passwords or other security features. For this course, we won’t change the
 default setting.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you need a quick review, we broke down the different parts of a web
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you need a quick review, we broke down the different parts of a web
 address in the <a class="reference internal" href="../http/web-addresses.html#web-addresses"><span class="std std-ref">HTTP chapter</span></a>.</p>
 </div>
 <p>When we open a tab in our browser and enter the address
@@ -124,8 +124,8 @@ corresponds to a specific URL. When the sever receives a request with that web
 address, it runs the function immediately below the decorator. In our simple
 Flask application, this is the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We use <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> in our code instead of
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> in our code instead of
 <code class="docutils literal notranslate"><span class="pre">&#64;app.route('127.0.0.1:5000')</span></code>. The <code class="docutils literal notranslate"><span class="pre">/</span></code> symbol is an abbreviation. It
 stands for the address of the server. Even if the IP address for the server
 changes, Flask will automatically use the proper URL.</p>
@@ -136,9 +136,9 @@ changes, Flask will automatically use the proper URL.</p>
 <p>As mentioned before, the <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> decorator links a specific URL to one
 Python function. The best way to see what this means is to do some live coding.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic">
-<li><p class="first">If your <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program is not currently running, launch it again
+<li><p>If your <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program is not currently running, launch it again
 from the terminal. Make sure you see the most recent content in your
 browser.</p>
 <div class="figure align-default" id="id2">
@@ -146,23 +146,22 @@ browser.</p>
 <p class="caption"><span class="caption-text">Where we left off on the last page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">In the address bar, change the URL to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code> and
+<li><p>In the address bar, change the URL to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code> and
 tap <em>Enter</em>. Note the <em>Not Found</em> error that appears. The message
 explains that the URL you entered isn’t recognized by the server.</p>
 <div class="figure align-default">
 <img alt="Not Found: The URL in the address bar is not recognized by the server." src="../../_images/page-not-found.png" />
 </div>
 </li>
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, change the decorator as follows:</p>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, change the decorator as follows:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the code, then refresh the page in your browser. Properly done, you
-should once again see the heading and button.</p>
-</li>
+<li><p>Save the code, then refresh the page in your browser. Properly done, you
+should once again see the heading and button.</p></li>
 </ol>
-<p class="last">Let’s think about what just happened.</p>
+<p>Let’s think about what just happened.</p>
 </div>
 <p>Recall that URLs can include a <em>path</em> as part of the address. The path consists
 of one or more names separated by <code class="docutils literal notranslate"><span class="pre">/</span></code>. The URL
@@ -179,8 +178,8 @@ decorator. Since it doesn’t find one, it returns the <em>Not Found</em> error 
 <p>By changing <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> to <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/hello')</span></code>, we fixed the
 mismatch. However, this came with a cost.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p class="last">Return to your browser and enter <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> in the address
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Return to your browser and enter <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> in the address
 bar. What happens?</p>
 </div>
 <p>Navigating to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> triggers the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code>
@@ -238,9 +237,9 @@ Next, use <code class="docutils literal notranslate"><span class="pre">git</span
 <code class="docutils literal notranslate"><span class="pre">/hello</span></code> path at the end of the URL. However, we can easily assign more than
 one address to the same function.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic">
-<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> decorator before the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function:</p>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/')</span></code> decorator before the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
  8
  9
@@ -251,22 +250,19 @@ one address to the same function.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the code, then launch the program.</p>
-</li>
-<li><p class="first">Confirm that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
-produce no errors when entered in the address bar.</p>
-</li>
+<li><p>Save the code, then launch the program.</p></li>
+<li><p>Confirm that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
+produce no errors when entered in the address bar.</p></li>
 </ol>
-<p class="last"><strong>Key idea</strong>: Multiple URLs can trigger the same Python function.</p>
+<p><strong>Key idea</strong>: Multiple URLs can trigger the same Python function.</p>
 </div>
 <p>Now let’s add another function to our Python code.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <ol class="arabic">
-<li><p class="first">Open up some space between the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">app.run()</span></code>
-conditional.</p>
-</li>
-<li><p class="first">Add this new decorator and function:</p>
+<li><p>Open up some space between the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function and the <code class="docutils literal notranslate"><span class="pre">app.run()</span></code>
+conditional.</p></li>
+<li><p>Add this new decorator and function:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>17
 18
 19
@@ -283,16 +279,13 @@ conditional.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the code, then refresh the page in the browser.</p>
-</li>
-<li><p class="first">Type <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/goodbye</span></code> into the address bar. Do you see
-the new message?</p>
-</li>
-<li><p class="first">Verify that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
-show the original content.</p>
-</li>
+<li><p>Save the code, then refresh the page in the browser.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/goodbye</span></code> into the address bar. Do you see
+the new message?</p></li>
+<li><p>Verify that <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code> and <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hello</span></code>
+show the original content.</p></li>
 </ol>
-<p class="last"><strong>Key idea</strong>: We can control a multi-page website by adding different
+<p><strong>Key idea</strong>: We can control a multi-page website by adding different
 functions and routes to the Python program.</p>
 </div>
 <p>Nice! We just created a two-page website that responds to three different URLs.
@@ -303,26 +296,26 @@ learn a better way to flip between pages.</p>
 <div class="section" id="more-practice">
 <h2><span class="section-number">21.4.4. </span>More Practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Remember that the server and your application are both running locally. Only
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember that the server and your application are both running locally. Only
 <em>you</em> can see your live webpage.</p>
 </div>
 <ol class="arabic simple">
-<li>First, save and commit your work.</li>
-<li>Code a third function in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. It should return a different string
-compared to the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> and <code class="docutils literal notranslate"><span class="pre">goodbye()</span></code> functions.</li>
-<li>Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/third_page')</span></code> decorator before your new function.</li>
-<li>Save the code, then refresh the page in your browser. Enter
+<li><p>First, save and commit your work.</p></li>
+<li><p>Code a third function in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. It should return a different string
+compared to the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> and <code class="docutils literal notranslate"><span class="pre">goodbye()</span></code> functions.</p></li>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/third_page')</span></code> decorator before your new function.</p></li>
+<li><p>Save the code, then refresh the page in your browser. Enter
 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/third_page</span></code> in the address bar to make sure your
-changes work.</li>
-<li>Flip between the three pages in your website by changing the URL.</li>
+changes work.</p></li>
+<li><p>Flip between the three pages in your website by changing the URL.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>You will often see that the argument inside <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> matches the
 name of the function below it (e.g. <code class="docutils literal notranslate"><span class="pre">&#64;app.route('/hello')</span></code> placed just
 above <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">hello():</span></code>).</p>
-<p class="last">Matching the path and function names is NOT required, but doing so helps you
+<p>Matching the path and function names is NOT required, but doing so helps you
 organize your code. For example, looking at the path in a URL tells you
 which function controls its content.</p>
 </div>
@@ -330,7 +323,7 @@ which function controls its content.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">21.4.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Assume we modify the functions in our program:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
  8
@@ -357,14 +350,14 @@ which function controls its content.</p>
 </td></tr></table></div>
 <p>In the browser, we enter the URL <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hi/status/bye</span></code>.
 Which function will run in response?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">hi()</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">status()</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">bye()</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> None of them.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> All of them.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

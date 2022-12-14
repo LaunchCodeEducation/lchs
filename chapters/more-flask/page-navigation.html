@@ -101,9 +101,8 @@ make it look nice after we get the navigation working.</p>
 <p>Since we want the list to appear on every page, we will add it to the base
 template.</p>
 <ol class="arabic">
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">base.html</span></code> in Visual Studio Code.</p>
-</li>
-<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">nav</span></code> element below the <code class="docutils literal notranslate"><span class="pre">endblock</span></code> statement. Include a heading
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">base.html</span></code> in Visual Studio Code.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">nav</span></code> element below the <code class="docutils literal notranslate"><span class="pre">endblock</span></code> statement. Include a heading
 and an unordered list. Make one item for each of the pages you created
 earlier.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>15
@@ -124,15 +123,15 @@ earlier.</p>
 <p>Save your work, then launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. The list should appear on each page
 that extends <code class="docutils literal notranslate"><span class="pre">base.html</span></code>.</p>
 </li>
-<li><p class="first">Next, change the list items from text to active links.</p>
+<li><p>Next, change the list items from text to active links.</p>
 <ol class="loweralpha">
-<li><p class="first">Wrap the text in link tags, <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;&lt;/a&gt;</span></code>.</p>
+<li><p>Wrap the text in link tags, <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;&lt;/a&gt;</span></code>.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Pizza Topping Form<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Second Page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Fill in the <code class="docutils literal notranslate"><span class="pre">href</span></code> values with the path to each page:</p>
+<li><p>Fill in the <code class="docutils literal notranslate"><span class="pre">href</span></code> values with the path to each page:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Pizza Topping Form<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/second&quot;</span><span class="p">&gt;</span>Second Page<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 </pre></div>
@@ -144,7 +143,7 @@ from the <code class="docutils literal notranslate"><span class="pre">&#64;app.r
 <code class="docutils literal notranslate"><span class="pre">.html</span></code> names you gave to the template files. The paths you use will
 depend on your Python code. They might not match this example.</p>
 </li>
-<li><p class="first">Save your work, then refresh the tab in the browser. Properly done, the
+<li><p>Save your work, then refresh the tab in the browser. Properly done, the
 navigation links should work something like this:</p>
 <div class="figure align-default" id="id2">
 <img alt="Clicking either of the two links in the list navigates to the chosen page." src="../../_images/basic-nav.gif" />
@@ -153,10 +152,10 @@ navigation links should work something like this:</p>
 </li>
 </ol>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>If we hover the pointer over one of the links, its URL appears in the bottom
 corner of the browser window.</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <img alt="Hovering over a link displays the target URL in the lower corner of the browser window." src="../../_images/link-url.png" />
 </div>
 </div>
@@ -176,10 +175,9 @@ created from a user-defined class. (There are other choices as well).</p>
 <div class="section" id="update-main-py">
 <h3><span class="section-number">22.7.2.1. </span>Update <code class="docutils literal notranslate"><span class="pre">main.py</span></code><a class="headerlink" href="#update-main-py" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Near the top of the code in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, define a dictionary called
-<code class="docutils literal notranslate"><span class="pre">navigation</span></code>.</p>
-</li>
-<li><p class="first">Add one key/value pair for each page in your website. The <em>key</em> will be the
+<li><p>Near the top of the code in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, define a dictionary called
+<code class="docutils literal notranslate"><span class="pre">navigation</span></code>.</p></li>
+<li><p>Add one key/value pair for each page in your website. The <em>key</em> will be the
 text for the link. The <em>value</em> will be the path to that page.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
 4
@@ -197,7 +195,7 @@ text for the link. The <em>value</em> will be the path to that page.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Include the <code class="docutils literal notranslate"><span class="pre">navigation</span></code> dictionary as an argument in each
+<li><p>Include the <code class="docutils literal notranslate"><span class="pre">navigation</span></code> dictionary as an argument in each
 <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;template_name&#39;</span><span class="p">,</span> <span class="n">navigation</span> <span class="o">=</span> <span class="n">navigation</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
@@ -210,7 +208,7 @@ text for the link. The <em>value</em> will be the path to that page.</p>
 <p>Jinja3 uses the same syntax as Python to loop through a dictionary
 <a class="reference internal" href="../dictionaries/dictionary-iteration.html#key-value-iteration"><span class="std std-ref">by key/value paris</span></a>.</p>
 <ol class="arabic">
-<li><p class="first">Replace the <code class="docutils literal notranslate"><span class="pre">li</span></code> items in the list with a loop:</p>
+<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">li</span></code> items in the list with a loop:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>15
 16
 17
@@ -229,21 +227,19 @@ text for the link. The <em>value</em> will be the path to that page.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Each time the loops runs, <code class="docutils literal notranslate"><span class="pre">text</span></code> is assigned the next key in the
-dictionary. <code class="docutils literal notranslate"><span class="pre">path</span></code> takes the value of that key.</p>
-</li>
-<li><p class="first">Save your work, then refresh the tab in the browser. Test to make sure both
-links still work.</p>
-</li>
+<li><p>Each time the loops runs, <code class="docutils literal notranslate"><span class="pre">text</span></code> is assigned the next key in the
+dictionary. <code class="docutils literal notranslate"><span class="pre">path</span></code> takes the value of that key.</p></li>
+<li><p>Save your work, then refresh the tab in the browser. Test to make sure both
+links still work.</p></li>
 </ol>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>With the loop in place, changes made to <code class="docutils literal notranslate"><span class="pre">navigation</span></code> will appear on all
 pages that extend <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Test this out!</p>
-<ol class="last arabic simple">
-<li>Try rearranging the order of the key/value pairs in <code class="docutils literal notranslate"><span class="pre">navigation</span></code>.</li>
-<li>Add a third page to the website. Include a key/value pair for the page in
-the <code class="docutils literal notranslate"><span class="pre">navigation</span></code> dictionary.</li>
+<ol class="arabic simple">
+<li><p>Try rearranging the order of the key/value pairs in <code class="docutils literal notranslate"><span class="pre">navigation</span></code>.</p></li>
+<li><p>Add a third page to the website. Include a key/value pair for the page in
+the <code class="docutils literal notranslate"><span class="pre">navigation</span></code> dictionary.</p></li>
 </ol>
 </div>
 </div>
@@ -261,7 +257,7 @@ hide the menu until a user reveals it.</p>
 own dropdown menu. It will appear when the user moves their pointer over the
 <code class="docutils literal notranslate"><span class="pre">Page</span> <span class="pre">Navigation</span></code> heading.</p>
 <ol class="arabic">
-<li><p class="first">First, add the following <code class="docutils literal notranslate"><span class="pre">class</span></code> attributes to the <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>,
+<li><p>First, add the following <code class="docutils literal notranslate"><span class="pre">class</span></code> attributes to the <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;h3&gt;</span></code>,
 and <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</span></code> tags:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>15
 16
@@ -281,7 +277,7 @@ and <code class="docutils literal notranslate"><span class="pre">&lt;ul&gt;</spa
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Next, add the following class selectors to <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. The explanation
+<li><p>Next, add the following class selectors to <code class="docutils literal notranslate"><span class="pre">style.css</span></code>. The explanation
 for how the code works follows this section.</p>
 <div class="highlight-CSS notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -327,7 +323,7 @@ for how the code works follows this section.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save, then use <em>Shift + Refresh</em> or <em>Control + Refresh</em> to apply the CSS
+<li><p>Save, then use <em>Shift + Refresh</em> or <em>Control + Refresh</em> to apply the CSS
 changes in the browser. Move the cursor over the heading to test the code.</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../../_images/css-dropdown.png"><img alt="A dropdown menu showing a 3-item unordered list." src="../../_images/css-dropdown.png" style="width: 50%;" /></a>
@@ -339,40 +335,41 @@ changes in the browser. Move the cursor over the heading to test the code.</p>
 <h3><span class="section-number">22.7.3.1. </span>CSS Breakdown<a class="headerlink" href="#css-breakdown" title="Permalink to this headline">¶</a></h3>
 <p>Let’s take a look at how the CSS rules make a working dropdown.</p>
 <ol class="arabic simple">
-<li><strong>Line 2</strong>: <code class="docutils literal notranslate"><span class="pre">position:</span> <span class="pre">relative</span></code> makes the elements inside the
+<li><p><strong>Line 2</strong>: <code class="docutils literal notranslate"><span class="pre">position:</span> <span class="pre">relative</span></code> makes the elements inside the
 <code class="docutils literal notranslate"><span class="pre">&lt;nav&gt;&lt;/nav&gt;</span></code> tags pair up with each other. The <code class="docutils literal notranslate"><span class="pre">h3</span></code> comes first, with
-the <code class="docutils literal notranslate"><span class="pre">ul</span></code> right below it.</li>
-<li><strong>Line 11</strong>: When the dropdown items appear, <code class="docutils literal notranslate"><span class="pre">position:</span> <span class="pre">absolute</span></code> makes
+the <code class="docutils literal notranslate"><span class="pre">ul</span></code> right below it.</p></li>
+<li><p><strong>Line 11</strong>: When the dropdown items appear, <code class="docutils literal notranslate"><span class="pre">position:</span> <span class="pre">absolute</span></code> makes
 them <em>overlap</em> other content instead of pushing it further down the page.
 The revealed menu covers up other text and images. If we set this value to
 <code class="docutils literal notranslate"><span class="pre">relative</span></code>, then anything below the menu would shift position when it
-opens.</li>
-<li><strong>Lines 6 &amp; 12</strong>: For dropdown menus, we need to be careful with margins. If
+opens.</p></li>
+<li><p><strong>Lines 6 &amp; 12</strong>: For dropdown menus, we need to be careful with margins. If
 the gap between the label and the choices is too large, then the content
 will disappear when the user moves their mouse to make a selection! To
 prevent this, we set the <em>bottom</em> margin of <code class="docutils literal notranslate"><span class="pre">droptitle</span></code> to zero pixels.
-Similarly, we set the <em>top</em> margin of <code class="docutils literal notranslate"><span class="pre">dropdown-content</span></code> to <code class="docutils literal notranslate"><span class="pre">0px</span></code>.</li>
-<li><strong>Lines 13-16</strong>: These properties control the appearance of the menu.<ol class="loweralpha">
-<li>Setting a <code class="docutils literal notranslate"><span class="pre">background-color</span></code> hides any content that the menu overlaps
-when it opens.</li>
-<li><code class="docutils literal notranslate"><span class="pre">width:</span> <span class="pre">100%</span></code> makes the menu take up the same horizontal space as
-its container (<code class="docutils literal notranslate"><span class="pre">nav</span></code>).</li>
-<li><code class="docutils literal notranslate"><span class="pre">border</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> make the menu area and text more obvious.</li>
+Similarly, we set the <em>top</em> margin of <code class="docutils literal notranslate"><span class="pre">dropdown-content</span></code> to <code class="docutils literal notranslate"><span class="pre">0px</span></code>.</p></li>
+<li><p><strong>Lines 13-16</strong>: These properties control the appearance of the menu.</p>
+<ol class="loweralpha simple">
+<li><p>Setting a <code class="docutils literal notranslate"><span class="pre">background-color</span></code> hides any content that the menu overlaps
+when it opens.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width:</span> <span class="pre">100%</span></code> makes the menu take up the same horizontal space as
+its container (<code class="docutils literal notranslate"><span class="pre">nav</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border</span></code> and <code class="docutils literal notranslate"><span class="pre">padding</span></code> make the menu area and text more obvious.</p></li>
 </ol>
 </li>
-<li><strong>Line 10</strong>: <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> hides the element from the screen. The menu
-items are still on the page, but they do not appear in the view.</li>
-<li><strong>Lines 19-21</strong>: <code class="docutils literal notranslate"><span class="pre">.dropdown:hover</span> <span class="pre">.dropdown-content</span></code> controls the
+<li><p><strong>Line 10</strong>: <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> hides the element from the screen. The menu
+items are still on the page, but they do not appear in the view.</p></li>
+<li><p><strong>Lines 19-21</strong>: <code class="docutils literal notranslate"><span class="pre">.dropdown:hover</span> <span class="pre">.dropdown-content</span></code> controls the
 operation of the menu. In the browser, when the pointer moves over the
 <code class="docutils literal notranslate"><span class="pre">nav</span></code> element, <code class="docutils literal notranslate"><span class="pre">dropdown:hover</span></code> becomes <code class="docutils literal notranslate"><span class="pre">True</span></code>. When this happens,
 <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">block</span></code> is applied to the <code class="docutils literal notranslate"><span class="pre">dropdown-content</span></code> class. This
 overrules the <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> statement in line 10, and the menu appears
 on the page! When the pointer moves away from the menu, <code class="docutils literal notranslate"><span class="pre">dropdown:hover</span></code>
-becomes <code class="docutils literal notranslate"><span class="pre">False</span></code>, and <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> is reapplied.</li>
+becomes <code class="docutils literal notranslate"><span class="pre">False</span></code>, and <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none</span></code> is reapplied.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">You can explore other dropdown styling options at
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>You can explore other dropdown styling options at
 <a class="reference external" href="https://www.w3schools.com/css/css_dropdowns.asp" target="_blank">W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>
@@ -384,11 +381,11 @@ any deeper into this topic, here are a few helpful resources you can explore on
 your own.</p>
 <p><strong>Down the Rabbit Hole</strong>:</p>
 <ol class="arabic simple">
-<li><a class="reference external" href="https://www.w3schools.com/css/css_navbar.asp" target="_blank">CSS Navbar at W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">Navs</span> <span class="pre">&amp;</span> <span class="pre">tabs</span></code>, <code class="docutils literal notranslate"><span class="pre">Navbar</span></code>, and <code class="docutils literal notranslate"><span class="pre">Pagination</span></code> components at
-<a class="reference external" href="https://getbootstrap.com/docs/5.0/components/navs-tabs/" target="_blank">Bootstrap<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</li>
-<li><a class="reference external" href="https://flask-menu.readthedocs.io/en/latest/" target="_blank">Flask-Menu<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> is an
-extension that adds support for generating menus.</li>
+<li><p><a class="reference external" href="https://www.w3schools.com/css/css_navbar.asp" target="_blank">CSS Navbar at W3Schools<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Navs</span> <span class="pre">&amp;</span> <span class="pre">tabs</span></code>, <code class="docutils literal notranslate"><span class="pre">Navbar</span></code>, and <code class="docutils literal notranslate"><span class="pre">Pagination</span></code> components at
+<a class="reference external" href="https://getbootstrap.com/docs/5.0/components/navs-tabs/" target="_blank">Bootstrap<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p></li>
+<li><p><a class="reference external" href="https://flask-menu.readthedocs.io/en/latest/" target="_blank">Flask-Menu<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> is an
+extension that adds support for generating menus.</p></li>
 </ol>
 </div>
 </div>

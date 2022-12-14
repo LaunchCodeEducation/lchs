@@ -91,12 +91,10 @@ the steps below. Happy coding!</p>
 <div class="section" id="part-a-setup">
 <h2><span class="section-number">20.10.1. </span>Part A: Setup<a class="headerlink" href="#part-a-setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">From the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in your <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository, create a new
-branch called <code class="docutils literal notranslate"><span class="pre">rocket-form</span></code>.</p>
-</li>
-<li><p class="first">In the new branch, create the <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> and <code class="docutils literal notranslate"><span class="pre">rocket.css</span></code> files.</p>
-</li>
-<li><p class="first">Paste the following starter code into the HTML file:</p>
+<li><p>From the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch in your <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository, create a new
+branch called <code class="docutils literal notranslate"><span class="pre">rocket-form</span></code>.</p></li>
+<li><p>In the new branch, create the <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> and <code class="docutils literal notranslate"><span class="pre">rocket.css</span></code> files.</p></li>
+<li><p>Paste the following starter code into the HTML file:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -123,7 +121,7 @@ branch called <code class="docutils literal notranslate"><span class="pre">rocke
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Paste this code into the CSS file.</p>
+<li><p>Paste this code into the CSS file.</p>
 <div class="highlight-css notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -134,147 +132,139 @@ branch called <code class="docutils literal notranslate"><span class="pre">rocke
 </pre></div>
 </td></tr></table></div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">block;</span></code> formats an element as a block-type. In this case, each
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">block;</span></code> formats an element as a block-type. In this case, each
 <code class="docutils literal notranslate"><span class="pre">label</span></code> (and its wrapped input) will start on a new line. Now you won’t
 need to use as many <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code> elements to separate the rows in your form!</p>
 </div>
 </li>
-<li><p class="first">Save and commit your work.</p>
-</li>
+<li><p>Save and commit your work.</p></li>
 </ol>
 </div>
 <div class="section" id="part-b-first-input">
 <h2><span class="section-number">20.10.2. </span>Part B: First Input<a class="headerlink" href="#part-b-first-input" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Create a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> with these attributes.</p>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> with these attributes.</p>
 <ol class="loweralpha simple">
-<li>Set <code class="docutils literal notranslate"><span class="pre">method</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code></li>
-<li>Set <code class="docutils literal notranslate"><span class="pre">action</span></code> to
-<code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span></code>.</li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">method</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code></p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">action</span></code> to
+<code class="docutils literal notranslate"><span class="pre">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span></code>.</p></li>
 </ol>
 </li>
-<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">form</span></code> element, add a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> for
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">form</span></code> element, add a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> for
 <code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">Name</span></code>:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Test Name: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;test-name&quot;</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Save your work, then open <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> in your browser. What keeps
-you from submitting the form right now?</p>
-</li>
-<li><p class="first">Add a submit button called <em>Run Simulation</em> to your form.</p>
+<li><p>Save your work, then open <code class="docutils literal notranslate"><span class="pre">rocket_sim.html</span></code> in your browser. What keeps
+you from submitting the form right now?</p></li>
+<li><p>Add a submit button called <em>Run Simulation</em> to your form.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Run Simulation<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="c">&lt;!-- OR --&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Run Simulation&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Enter a value into the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> input and submit the form. Was the
+<li><p>Enter a value into the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> input and submit the form. Was the
 key/value pair properly sent to the server?</p>
 <div class="figure align-default" id="id1">
 <img alt="Request Parrot page showing the key/value pair &quot;test-name/Input success!&quot;" src="../../_images/exercises-partB.png" />
 <p class="caption"><span class="caption-text">Data successfully sent to the parrot server.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Save and commit your work before starting Part C.</p>
-</li>
+<li><p>Save and commit your work before starting Part C.</p></li>
 </ol>
 </div>
 <div class="section" id="part-c-more-inputs">
 <h2><span class="section-number">20.10.3. </span>Part C: More Inputs<a class="headerlink" href="#part-c-more-inputs" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Add these five <code class="docutils literal notranslate"><span class="pre">inputs</span></code> to your form. Pay attention to the types and
+<li><p>Add these five <code class="docutils literal notranslate"><span class="pre">inputs</span></code> to your form. Pay attention to the types and
 required values. Be sure to add a <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> for each input.</p>
-<table border="1" class="docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Label</th>
-<th class="head">Input Type</th>
-<th class="head">Input Name</th>
-<th class="head">Required Values</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Label</p></th>
+<th class="head"><p>Input Type</p></th>
+<th class="head"><p>Input Name</p></th>
+<th class="head"><p>Required Values</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Test Date</td>
-<td><code class="docutils literal notranslate"><span class="pre">date</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">test-date</span></code></td>
-<td>Date format <code class="docutils literal notranslate"><span class="pre">mm/dd/yyyy</span></code></td>
+<tbody>
+<tr class="row-even"><td><p>Test Date</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">test-date</span></code></p></td>
+<td><p>Date format <code class="docutils literal notranslate"><span class="pre">mm/dd/yyyy</span></code></p></td>
 </tr>
-<tr class="row-odd"><td>Rocket Type</td>
-<td><code class="docutils literal notranslate"><span class="pre">select</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">rocket-type</span></code></td>
-<td>Options for <code class="docutils literal notranslate"><span class="pre">Falcon</span></code>, <code class="docutils literal notranslate"><span class="pre">Saturn</span></code>, <code class="docutils literal notranslate"><span class="pre">Orion</span></code>, and <code class="docutils literal notranslate"><span class="pre">Terrier</span></code>.</td>
+<tr class="row-odd"><td><p>Rocket Type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">select</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rocket-type</span></code></p></td>
+<td><p>Options for <code class="docutils literal notranslate"><span class="pre">Falcon</span></code>, <code class="docutils literal notranslate"><span class="pre">Saturn</span></code>, <code class="docutils literal notranslate"><span class="pre">Orion</span></code>, and <code class="docutils literal notranslate"><span class="pre">Terrier</span></code>.</p></td>
 </tr>
-<tr class="row-even"><td>Number of Engines</td>
-<td><code class="docutils literal notranslate"><span class="pre">number</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">engine-count</span></code></td>
-<td>A whole number from 1 - 9.</td>
+<tr class="row-even"><td><p>Number of Engines</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">engine-count</span></code></p></td>
+<td><p>A whole number from 1 - 9.</p></td>
 </tr>
-<tr class="row-odd"><td>Wind Rating</td>
-<td><code class="docutils literal notranslate"><span class="pre">radio</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">wind-rating</span></code></td>
-<td>Options for <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Wind</span></code>, <code class="docutils literal notranslate"><span class="pre">Mild</span></code>, and <code class="docutils literal notranslate"><span class="pre">Strong</span></code> (see note below).</td>
+<tr class="row-odd"><td><p>Wind Rating</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">radio</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wind-rating</span></code></p></td>
+<td><p>Options for <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Wind</span></code>, <code class="docutils literal notranslate"><span class="pre">Mild</span></code>, and <code class="docutils literal notranslate"><span class="pre">Strong</span></code> (see note below).</p></td>
 </tr>
-<tr class="row-even"><td>Use Autopilot</td>
-<td><code class="docutils literal notranslate"><span class="pre">checkbox</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">autopilot</span></code></td>
-<td><code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></td>
+<tr class="row-even"><td><p>Use Autopilot</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">checkbox</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">autopilot</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">on</span></code> or <code class="docutils literal notranslate"><span class="pre">off</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </li>
-<li><p class="first"><em>Note</em>: Each <code class="docutils literal notranslate"><span class="pre">wind-rating</span></code> input needs to include a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute.
+<li><p><em>Note</em>: Each <code class="docutils literal notranslate"><span class="pre">wind-rating</span></code> input needs to include a <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute.
 For <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">Wind</span></code>, set the value to <code class="docutils literal notranslate"><span class="pre">0</span></code>. For <code class="docutils literal notranslate"><span class="pre">Mild</span></code>, set the value to
-<code class="docutils literal notranslate"><span class="pre">10</span></code>. For <code class="docutils literal notranslate"><span class="pre">Strong</span></code>, set the value to <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
-</li>
-<li><p class="first">Add placeholder text to the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">engine-count</span></code> input fields.</p>
-</li>
-<li><p class="first">Include an empty <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> element with the <code class="docutils literal notranslate"><span class="pre">select</span></code> input. Make it the
-default choice, set <code class="docutils literal notranslate"><span class="pre">value=&quot;&quot;</span></code>, and add the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute.</p>
-</li>
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute to add some validation. Prevent the form from
-being submitted if any input <em>besides</em> <code class="docutils literal notranslate"><span class="pre">autopilot</span></code> is left blank.</p>
-</li>
-<li><p class="first">Add a <em>Scrub Launch</em> button that resets the form.</p>
+<code class="docutils literal notranslate"><span class="pre">10</span></code>. For <code class="docutils literal notranslate"><span class="pre">Strong</span></code>, set the value to <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p></li>
+<li><p>Add placeholder text to the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">engine-count</span></code> input fields.</p></li>
+<li><p>Include an empty <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> element with the <code class="docutils literal notranslate"><span class="pre">select</span></code> input. Make it the
+default choice, set <code class="docutils literal notranslate"><span class="pre">value=&quot;&quot;</span></code>, and add the <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute to add some validation. Prevent the form from
+being submitted if any input <em>besides</em> <code class="docutils literal notranslate"><span class="pre">autopilot</span></code> is left blank.</p></li>
+<li><p>Add a <em>Scrub Launch</em> button that resets the form.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Before submitting, your form should look something like:</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/rocket-form.png"><img alt="The empty form on the left, and the completed form on the right." src="../../_images/rocket-form.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">The empty and filled rocket simulation form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>After submitting:</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <img alt="The response from the parrot server, showing the key/value pairs set by the form submission." src="../../_images/rocket-response.png" />
 </div>
 </div>
 </li>
-<li><p class="first">Save and commit your work before starting Part D.</p>
-</li>
+<li><p>Save and commit your work before starting Part D.</p></li>
 </ol>
 </div>
 <div class="section" id="part-d-style-the-form">
 <h2><span class="section-number">20.10.4. </span>Part D: Style the Form<a class="headerlink" href="#part-d-style-the-form" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Add a centered heading to your form. Make the text a different color, font,
-and/or style compared to the labels.</li>
-<li>Add a border or a background color (or both) to the form.</li>
-<li>Center the <em>Run Simulation</em> and <em>Scrub Launch</em> buttons inside the form.
-Also, make them different colors.</li>
-<li>Divide the form into three parts: One for the test name and date, one for
-the rocket type and engine count, and one for the wind rating and autopilot.</li>
-<li>Align the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">test-date</span></code> fields. Also, make the
-<code class="docutils literal notranslate"><span class="pre">engine-count</span></code> field shorter than the name and date boxes.</li>
-<li><em>Optional</em>: Add more styling to the form and inputs! Feel free to include
+<li><p>Add a centered heading to your form. Make the text a different color, font,
+and/or style compared to the labels.</p></li>
+<li><p>Add a border or a background color (or both) to the form.</p></li>
+<li><p>Center the <em>Run Simulation</em> and <em>Scrub Launch</em> buttons inside the form.
+Also, make them different colors.</p></li>
+<li><p>Divide the form into three parts: One for the test name and date, one for
+the rocket type and engine count, and one for the wind rating and autopilot.</p></li>
+<li><p>Align the <code class="docutils literal notranslate"><span class="pre">test-name</span></code> and <code class="docutils literal notranslate"><span class="pre">test-date</span></code> fields. Also, make the
+<code class="docutils literal notranslate"><span class="pre">engine-count</span></code> field shorter than the name and date boxes.</p></li>
+<li><p><em>Optional</em>: Add more styling to the form and inputs! Feel free to include
 images or adjust the text/background color, margins, padding, borders,
-shading, font, etc. Have a little fun.</li>
-<li>Remember to save and commit your work.</li>
+shading, font, etc. Have a little fun.</p></li>
+<li><p>Remember to save and commit your work.</p></li>
 </ol>
 <div class="figure align-default" id="id3">
 <img alt="A styled Rocket Simulation form." src="../../_images/rocket-styled.png" />

@@ -121,32 +121,33 @@ does in a moment.</p>
 </td></tr></table></div>
 <p id="index-0">Here is the breakdown for the code:</p>
 <ol class="arabic simple">
-<li><strong>Line 1</strong>: This imports the <code class="docutils literal notranslate"><span class="pre">Flask</span></code> class from the <code class="docutils literal notranslate"><span class="pre">flask</span></code> module.</li>
-<li><strong>Line 3</strong>: A lot of work goes on behind the scenes when this statement
-runs.<ol class="loweralpha">
-<li>It creates an object called <code class="docutils literal notranslate"><span class="pre">app</span></code> from the <code class="docutils literal notranslate"><span class="pre">Flask</span></code> class. We will use
+<li><p><strong>Line 1</strong>: This imports the <code class="docutils literal notranslate"><span class="pre">Flask</span></code> class from the <code class="docutils literal notranslate"><span class="pre">flask</span></code> module.</p></li>
+<li><p><strong>Line 3</strong>: A lot of work goes on behind the scenes when this statement
+runs.</p>
+<ol class="loweralpha simple">
+<li><p>It creates an object called <code class="docutils literal notranslate"><span class="pre">app</span></code> from the <code class="docutils literal notranslate"><span class="pre">Flask</span></code> class. We will use
 the object’s methods to control the flow of data between the Python code
-and our webpages.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">__name__</span></code> argument tells Flask where to find any other files we
-create for our program.</li>
+and our webpages.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">__name__</span></code> argument tells Flask where to find any other files we
+create for our program.</p></li>
 </ol>
 </li>
-<li><strong>Line 4</strong>: Turns on a debugging mode. This allows us to update our Python
-code and see the results while the program is running.</li>
-<li><strong>Line 6</strong>: <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> is called a <strong>decorator</strong>. This links a
+<li><p><strong>Line 4</strong>: Turns on a debugging mode. This allows us to update our Python
+code and see the results while the program is running.</p></li>
+<li><p><strong>Line 6</strong>: <code class="docutils literal notranslate"><span class="pre">&#64;app.route()</span></code> is called a <strong>decorator</strong>. This links a
 function to a particular URL. When the user visits that URL in their
 browser, it triggers the function. We will take a closer look at this on the
-next page.</li>
-<li><strong>Lines 7 - 9</strong>: The <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function returns the <code class="docutils literal notranslate"><span class="pre">message</span></code> string we
-want to display in the browser.</li>
-<li><strong>Lines 11 - 12</strong>: Checks to make sure the Python file is being run as the
+next page.</p></li>
+<li><p><strong>Lines 7 - 9</strong>: The <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function returns the <code class="docutils literal notranslate"><span class="pre">message</span></code> string we
+want to display in the browser.</p></li>
+<li><p><strong>Lines 11 - 12</strong>: Checks to make sure the Python file is being run as the
 main program instead of a module. If the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then
-<code class="docutils literal notranslate"><span class="pre">app.run()</span></code> executes and starts our Flask application.</li>
+<code class="docutils literal notranslate"><span class="pre">app.run()</span></code> executes and starts our Flask application.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If you are using Replit create a new python repl and change lines 11 -12 to:</p>
-<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
 12
 13
 14
@@ -165,20 +166,19 @@ main program instead of a module. If the condition is <code class="docutils lite
 step is to launch it and see what it looks like in a browser.</p>
 <p>To start a Flask application, we follow three basic steps:</p>
 <ol class="arabic simple">
-<li>Activate the virtual environment,</li>
-<li>Launch a Python/Flask program,</li>
-<li>Open a web browser and navigate to a specific IP address.</li>
+<li><p>Activate the virtual environment,</p></li>
+<li><p>Launch a Python/Flask program,</p></li>
+<li><p>Open a web browser and navigate to a specific IP address.</p></li>
 </ol>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Make sure you are in the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code> directory first. Then:</p>
 <ol class="arabic">
-<li><p class="first">In the terminal, activate the virtual environment with the command
+<li><p>In the terminal, activate the virtual environment with the command
 <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">hello-env/bin/activate</span></code> on a Mac, or <code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">hello-env/Scripts/activate</span></code>
 on Windows. You should see <code class="docutils literal notranslate"><span class="pre">(hello-env)</span></code> appear before the terminal
-prompt.</p>
-</li>
-<li><p class="first">From the terminal, run the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program. LOTS of text will follow
+prompt.</p></li>
+<li><p>From the terminal, run the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program. LOTS of text will follow
 the command.</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -203,29 +203,28 @@ Use a production WSGI server instead.
 </td></tr></table></div>
 <p><em>Mac users</em>:  Remember to use <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
 </li>
-<li><p class="first">You only need to pay attention to two lines:</p>
+<li><p>You only need to pay attention to two lines:</p>
 <ol class="loweralpha simple">
-<li>Line 1 launches the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program.</li>
-<li>Line 7 tells you that Flask started a server on your machine. It also
-shows you the IP address for that server.</li>
-<li>In this example, the address is <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code>. The exact
-numbers might be different on your machine, however.</li>
+<li><p>Line 1 launches the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program.</p></li>
+<li><p>Line 7 tells you that Flask started a server on your machine. It also
+shows you the IP address for that server.</p></li>
+<li><p>In this example, the address is <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000</span></code>. The exact
+numbers might be different on your machine, however.</p></li>
 </ol>
 </li>
-<li><p class="first">Open a new tab in your web browser. Copy/paste the URL into the address
-bar.</p>
-</li>
-<li><p class="first">Ta da! There’s our webpage.</p>
+<li><p>Open a new tab in your web browser. Copy/paste the URL into the address
+bar.</p></li>
+<li><p>Ta da! There’s our webpage.</p>
 <div class="figure align-default" id="id1">
 <img alt="Webpage showing the text, &quot;Hello, Flask!&quot;" src="../../_images/hello-flask.png" />
 <p class="caption"><span class="caption-text">Navigate to the IP address shown in the terminal to see the message from your Python code.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 </ol>
-<div class="admonition-note last admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<div class="admonition-note admonition">
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If you are using Replit.com remember to run from the shell tab.</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <img alt="Showing what running a Flask app in Replit looks like." src="../../_images/repl_flask.png" />
 </div>
 </div>
@@ -236,21 +235,19 @@ bar.</p>
 <span class="pre">Flask!</span></code> This matches the value assigned to the <code class="docutils literal notranslate"><span class="pre">message</span></code> variable in the
 Python code. Let’s see what happens when we change this.</p>
 <ol class="arabic">
-<li><p class="first">Assign a different string to the <code class="docutils literal notranslate"><span class="pre">message</span></code> variable. Save, then refresh
-the page in the browser.</p>
-</li>
-<li><p class="first">Notice that the text on the webpage changes to match. Updating the Python
+<li><p>Assign a different string to the <code class="docutils literal notranslate"><span class="pre">message</span></code> variable. Save, then refresh
+the page in the browser.</p></li>
+<li><p>Notice that the text on the webpage changes to match. Updating the Python
 code affects what we see in the browser! This is what Flask does. It
-connects a Python program to a webpage.</p>
-</li>
-<li><p class="first">Let’s do more. On line 2 in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
+connects a Python program to a webpage.</p></li>
+<li><p>Let’s do more. On line 2 in <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, import the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">import</span> <span class="nn">random</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Now update the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function as follows:</p>
+<li><p>Now update the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function as follows:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 7
  8
  9
@@ -263,7 +260,7 @@ connects a Python program to a webpage.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save, then refresh the webpage several times. With every refresh, the
+<li><p>Save, then refresh the webpage several times. With every refresh, the
 <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function runs again, and line 10 assigns a new random number to
 <code class="docutils literal notranslate"><span class="pre">num</span></code>. Notice that the message in the browser changes to display the new
 number.</p>
@@ -280,14 +277,14 @@ number.</p>
 webpage. However, this string value does not have to be simple text. Let’s see
 what happens when we include some HTML tags:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Put some <code class="docutils literal notranslate"><span class="pre">h1</span></code> tags around the message in line 9:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;&lt;h1&gt;Here&#39;s a random number: </span><span class="si">{0}</span><span class="s2">&lt;/h1&gt;&quot;</span>
 </pre></div>
 </td></tr></table></div>
 <p>When we save our code and refresh the page in the browser, we will see a
 change in the text:</p>
-<div class="last figure align-default" id="id2">
+<div class="figure align-default" id="id2">
 <img alt="The message in the webpage now appears as an h1 heading." src="../../_images/string-with-html.png" />
 <p class="caption"><span class="caption-text">Nice! We now have an <code class="docutils literal notranslate"><span class="pre">h1</span></code> heading on the page.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
@@ -297,10 +294,10 @@ browser. Just like we saw with <a class="reference internal" href="../html/html-
 built, a browser <em>renders</em> plain text as… plain text. However, by adding HTML
 tags to the string, we can tell the browser how we want to structure the page.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Let’s add a form and a button to our webpage.</p>
 <ol class="arabic">
-<li><p class="first">Modify the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function as follows:</p>
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">hello()</span></code> function as follows:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 8
  9
 10
@@ -321,18 +318,16 @@ tags to the string, we can tell the browser how we want to structure the page.</
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the code, then refresh the page. Click the <em>New Number</em> button
-several times.</p>
-</li>
-<li><p class="first">Since we include no <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag,
+<li><p>Save the code, then refresh the page. Click the <em>New Number</em> button
+several times.</p></li>
+<li><p>Since we include no <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag,
 clicking the button submits the form to the current URL. This causes the
-page to refresh and display a new random number.</p>
-</li>
+page to refresh and display a new random number.</p></li>
 </ol>
 <p>Note how lines 9 - 14 resemble a simple HTML document. By enclosing the HTML
 code in triple quotes (to allow for multiple lines), we can return it from
 the function as a single string value.</p>
-<p class="last">When the browser receives the results of <code class="docutils literal notranslate"><span class="pre">page.format(num)</span></code>, it ignores
+<p>When the browser receives the results of <code class="docutils literal notranslate"><span class="pre">page.format(num)</span></code>, it ignores
 the quotes and renders the HTML code.</p>
 </div>
 </div>
@@ -347,8 +342,8 @@ terminal. Once done, refreshing the page in the browser results in an
 <em>Unable to connect</em> error. The server is off, so requests made to it receive no
 response.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Now would be a good time to commit your work to the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Now would be a good time to commit your work to the <code class="docutils literal notranslate"><span class="pre">hello_flask</span></code>
 repository.</p>
 </div>
 </div>
@@ -362,15 +357,15 @@ and the <a class="reference internal" href="routes.html#flask-routes"><span clas
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">21.3.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>In the terminal, how can we tell if a virtual environment is active?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The command <code class="pre">python --version</code> works.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The name of the environment appears before the terminal prompt.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A directory for the environment appears in the project's file tree.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Global temperatures stabilize because of our new, carefully maintained environment.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

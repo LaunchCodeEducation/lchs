@@ -89,12 +89,12 @@
 <p>Now that we have installed all the tools we need, we are almost ready to write
 our first local Python program. We just need to run one last check.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The steps on this page are ALMOST the same for both Windows and Mac. If the
 screenshots differ slightly from what you see, it’s because the images were
 taken on a different operating system than yours. However, the menus, steps,
 etc. are the same.</p>
-<p class="last"><strong>Mac users</strong>: Whenever we ask you to type the <code class="docutils literal notranslate"><span class="pre">python</span></code> command, you
+<p><strong>Mac users</strong>: Whenever we ask you to type the <code class="docutils literal notranslate"><span class="pre">python</span></code> command, you
 should use <code class="docutils literal notranslate"><span class="pre">python3</span></code> instead. macOS comes pre-installed with a 2.x version
 of Python. This version runs if you use <code class="docutils literal notranslate"><span class="pre">python</span></code>. To make sure you’re
 running the latest version, use <code class="docutils literal notranslate"><span class="pre">python3</span></code>.</p>
@@ -121,26 +121,22 @@ have a 3.x version. If you see 2.x or an error message, go back through the
 <div class="section" id="first-local-program">
 <h2><span class="section-number">17.4.2. </span>First Local Program<a class="headerlink" href="#first-local-program" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">If you did not create the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory and <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>If you did not create the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory and <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> file
 described on the <a class="reference internal" href="vscode-intro.html#local-practice"><span class="std std-ref">previous page</span></a>, go back and do that
 now.</p>
 </div>
 <ol class="arabic">
-<li><p class="first">If it’s not already open, launch Visual Studio Code.</p>
-</li>
-<li><p class="first">From the <em>File</em> menu, select <em>Open</em>. Choose the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder.
+<li><p>If it’s not already open, launch Visual Studio Code.</p></li>
+<li><p>From the <em>File</em> menu, select <em>Open</em>. Choose the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder.
 The file tree should update to look something like this:</p>
 <div class="figure align-default">
 <img alt="File tree for the local_practice directory. It only contains hello.py." src="../../_images/local-hello-tree.png" />
 </div>
 </li>
-<li><p class="first">Double-click on <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> from the file tree to open it in the editor.</p>
-</li>
-<li><p class="first">On line 1, type <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">Local</span> <span class="pre">World!&quot;)</span></code>.</p>
-</li>
-<li><p class="first">Save your changes by using <em>File –&gt; Save</em> or a keyboard shortcut.</p>
-</li>
+<li><p>Double-click on <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> from the file tree to open it in the editor.</p></li>
+<li><p>On line 1, type <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">Local</span> <span class="pre">World!&quot;)</span></code>.</p></li>
+<li><p>Save your changes by using <em>File –&gt; Save</em> or a keyboard shortcut.</p></li>
 </ol>
 <div class="section" id="linting">
 <h3><span class="section-number">17.4.2.1. </span>Linting<a class="headerlink" href="#linting" title="Permalink to this headline">¶</a></h3>
@@ -201,46 +197,41 @@ the workspace.</p>
 <div class="section" id="try-it">
 <h2><span class="section-number">17.4.4. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Be sure to save your work after you change your code! If you forget to do
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Be sure to save your work after you change your code! If you forget to do
 this, VS Code will run the last saved version of your program instead of
 the newer one.</p>
 </div>
 <ol class="arabic">
-<li><p class="first">Now that you’ve got the classic <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> program under your belt,
+<li><p>Now that you’ve got the classic <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World</span></code> program under your belt,
 add a loop and a conditional to your program. Save your work, then run
-<code class="docutils literal notranslate"><span class="pre">hello.py</span></code> again to see the change.</p>
-</li>
-<li><p class="first">Create a new Python file in the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder. Be sure to
-include the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension.</p>
-</li>
-<li><p class="first">Your new file should open into its own tab in VS Code. If it does not, click
-on its name in the file tree.</p>
-</li>
-<li><p class="first">Log into <a class="reference external" href="https://repl.it/login" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://trinket.io/login" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+<code class="docutils literal notranslate"><span class="pre">hello.py</span></code> again to see the change.</p></li>
+<li><p>Create a new Python file in the <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder. Be sure to
+include the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension.</p></li>
+<li><p>Your new file should open into its own tab in VS Code. If it does not, click
+on its name in the file tree.</p></li>
+<li><p>Log into <a class="reference external" href="https://repl.it/login" target="_blank">repl.it<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> or <a class="reference external" href="https://trinket.io/login" target="_blank">Trinket<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 and find one of your favorite exercises, activities, or assignments.
 Copy your code from there and paste it into VS Code. Some nice options
 include:</p>
 <ol class="loweralpha simple">
-<li>The <em>Choose Your Own Adventure</em> activity that your teacher may have assigned back in chapter 5.</li>
-<li>Your <a class="reference internal" href="../../assignments/candidate-quiz.html#candidate-quiz"><span class="std std-ref">Candidate Quiz</span></a> assignment.</li>
-<li>Anything from the <a class="reference internal" href="../functions/project.html#functions-project"><span class="std std-ref">Functions chapter project</span></a>.</li>
+<li><p>The <em>Choose Your Own Adventure</em> activity that your teacher may have assigned back in chapter 5.</p></li>
+<li><p>Your <a class="reference internal" href="../../assignments/candidate-quiz.html#candidate-quiz"><span class="std std-ref">Candidate Quiz</span></a> assignment.</p></li>
+<li><p>Anything from the <a class="reference internal" href="../functions/project.html#functions-project"><span class="std std-ref">Functions chapter project</span></a>.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Steer clear of turtle programs for now. They require a little extra
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Steer clear of turtle programs for now. They require a little extra
 attention to get them working in VS Code. We will take a closer look at
 Python turtles on the next page.</p>
 </div>
 </li>
-<li><p class="first">Check to see if VS Code flags any errors in your code. Fix these first, then
+<li><p>Check to see if VS Code flags any errors in your code. Fix these first, then
 run your program. If it works, great! If not, debug your code and get it
-running.</p>
-</li>
-<li><p class="first">Practice renaming your program file. Right-click on its name in the file
+running.</p></li>
+<li><p>Practice renaming your program file. Right-click on its name in the file
 tree and choose <em>Rename</em>. Type in a new option and hit <em>Enter</em>. Be sure to
-keep the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension!</p>
-</li>
+keep the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension!</p></li>
 </ol>
 </div>
 <div class="section" id="naming-python-files">
@@ -250,10 +241,10 @@ keep the <code class="docutils literal notranslate"><span class="pre">.py</span>
 again.</p>
 <p>Python file names should:</p>
 <ol class="arabic simple">
-<li>Begin with a letter and contain only lowercase letters.</li>
-<li>Be as short as possible, but still descriptive.</li>
-<li>Separate words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</li>
-<li>End with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</li>
+<li><p>Begin with a letter and contain only lowercase letters.</p></li>
+<li><p>Be as short as possible, but still descriptive.</p></li>
+<li><p>Separate words with an underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+<li><p>End with the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>.</p></li>
 </ol>
 </div>
 </div>

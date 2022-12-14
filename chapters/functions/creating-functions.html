@@ -115,40 +115,38 @@ do its job.</p>
 <span id="function-naming-rules"></span><h3><span class="section-number">10.3.1.1. </span>Naming Functions<a class="headerlink" href="#naming-functions" title="Permalink to this headline">¶</a></h3>
 <p>Python function names should follow these rules:</p>
 <ol class="arabic">
-<li><p class="first">Names CANNOT match any Python keyword like <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<li><p>Names CANNOT match any Python keyword like <code class="docutils literal notranslate"><span class="pre">print</span></code> or <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">Most code editors use syntax highlighting to indicate keywords. Paying
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>Most code editors use syntax highlighting to indicate keywords. Paying
 attention to the highlighting helps avoid this naming mistake.</p>
 </div>
 </li>
-<li><p class="first">Names use only lowercase letters.</p>
-</li>
-<li><p class="first">The name should describe exactly what the function does.</p>
+<li><p>Names use only lowercase letters.</p></li>
+<li><p>The name should describe exactly what the function does.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">You should prefer <em>long, descriptive names</em> over <em>short, abbreviated names</em>.
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>You should prefer <em>long, descriptive names</em> over <em>short, abbreviated names</em>.
 If someone unfamiliar with your code can read the function name and tell
 you what it does, then you chose a good name.</p>
 </div>
 </li>
-<li><p class="first">For names with multiple words, separate the words with underscores (e.g.
-<code class="docutils literal notranslate"><span class="pre">convert_score_to_percentage</span></code>).</p>
-</li>
+<li><p>For names with multiple words, separate the words with underscores (e.g.
+<code class="docutils literal notranslate"><span class="pre">convert_score_to_percentage</span></code>).</p></li>
 </ol>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p><strong>Good</strong></p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">convert_feet_to_meters</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">is_valid_number_entry</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">draw_square</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">convert_feet_to_meters</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_valid_number_entry</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">draw_square</span></code></p></li>
 </ul>
 <p><strong>Not Good</strong></p>
-<ul class="last simple">
-<li><code class="docutils literal notranslate"><span class="pre">convert</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">is_valid</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">draw</span></code></li>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">convert</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_valid</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">draw</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -162,7 +160,7 @@ indented when compared to the <code class="docutils literal notranslate"><span c
 function body once it finds the first <em>unindented</em> line after the <code class="docutils literal notranslate"><span class="pre">def</span></code>
 keyword.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -180,7 +178,7 @@ keyword.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">Line 1 defines the function name and parameter. Lines 2 - 6 are part of the
+<p>Line 1 defines the function name and parameter. Lines 2 - 6 are part of the
 function body. Line 8 is even with the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, so it is NOT part of
 the <code class="docutils literal notranslate"><span class="pre">add_list_numbers</span></code> function.</p>
 </div>
@@ -203,14 +201,14 @@ list of names.</p>
 <p>As written, this loop only prints out the names from the first list. Let’s
 create a function that prints out the items from <em>any</em> list of names.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Follow these steps to code your first function:</p>
 <ol class="arabic">
-<li><p class="first">On line 2, use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword to set the name of the function and
+<li><p>On line 2, use the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword to set the name of the function and
 the name of the parameter. Don’t forget to end the line with a colon.</p>
 <p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">print_names(names_list):</span></code></p>
 </li>
-<li><p class="first">On lines 3 and 4, use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print each name from
+<li><p>On lines 3 and 4, use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to print each name from
 <code class="docutils literal notranslate"><span class="pre">names_list</span></code>. Don’t forget to indent the lines compared to the <code class="docutils literal notranslate"><span class="pre">def</span></code>
 statement!</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
@@ -219,14 +217,12 @@ statement!</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Click <em>Run</em> to make sure your code contains no syntax errors. If it
-does, debug the code before moving on.</p>
-</li>
-<li><p class="first">The program will not actually print anything to the console yet, but we
-will fix that in a moment!</p>
-</li>
+<li><p>Click <em>Run</em> to make sure your code contains no syntax errors. If it
+does, debug the code before moving on.</p></li>
+<li><p>The program will not actually print anything to the console yet, but we
+will fix that in a moment!</p></li>
 </ol>
-<div class="last"><iframe height="500px" width="100%" src="https://repl.it/@launchcode/Print-Names-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/Print-Names-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div>
 <p>We can now use <code class="docutils literal notranslate"><span class="pre">print_names</span></code> just like the built-in Python functions. To
 <em>call</em> our function, we need to type its name and include a list as the
 argument.</p>
@@ -241,11 +237,11 @@ lines below the function body:</p>
 arguments (<code class="docutils literal notranslate"><span class="pre">names</span></code> and <code class="docutils literal notranslate"><span class="pre">other_names</span></code>), we use the same loop to print the
 elements of each list to the console.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>There is nothing about our function that forces <code class="docutils literal notranslate"><span class="pre">names_list</span></code> to actually
 contain names, or even strings. The function will work the same for ANY
 list it is given. (TRY IT!)</p>
-<p class="last">Therefore, a better name for this function would be <code class="docutils literal notranslate"><span class="pre">print_list_items</span></code>!</p>
+<p>Therefore, a better name for this function would be <code class="docutils literal notranslate"><span class="pre">print_list_items</span></code>!</p>
 </div>
 </div>
 <div class="section" id="defining-vs-calling">
@@ -254,29 +250,29 @@ list it is given. (TRY IT!)</p>
 function does NOT run when it is defined. It must be <em>called</em> in order to
 execute.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">This is not only a common point of confusion for new programmers, but it can
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>This is not only a common point of confusion for new programmers, but it can
 also cause logic errors!</p>
 </div>
 <p>Let’s look at another example to see how this works.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>What happens if we define a function without calling it?</p>
 <p>Run the following code as-is (the code contains no bugs). What gets printed?</p>
-<iframe height="400px" width="100%" src="https://repl.it/@launchcode/Say-Hello-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="last arabic simple">
-<li>In order for a function to run, it must be <em>called</em> by using its name.
-Add the code <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> in line 5 and run the program again.</li>
-<li>Does it matter if the <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> statement is indented relative to
-the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement?  Try changing the indentation to check!</li>
-<li>Does it matter if we include parentheses in line 5? Try using
-<code class="docutils literal notranslate"><span class="pre">say_hello</span></code> instead of <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code>.</li>
+<iframe height="400px" width="100%" src="https://repl.it/@launchcode/Say-Hello-Function?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="arabic simple">
+<li><p>In order for a function to run, it must be <em>called</em> by using its name.
+Add the code <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> in line 5 and run the program again.</p></li>
+<li><p>Does it matter if the <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code> statement is indented relative to
+the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement?  Try changing the indentation to check!</p></li>
+<li><p>Does it matter if we include parentheses in line 5? Try using
+<code class="docutils literal notranslate"><span class="pre">say_hello</span></code> instead of <code class="docutils literal notranslate"><span class="pre">say_hello()</span></code>.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">10.3.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What are the <em>parameters</em> of the following function? Click <em>ALL</em> that apply.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -293,35 +289,35 @@ the <code class="docutils literal notranslate"><span class="pre">def</span></cod
 <span class="n">draw_square</span><span class="p">(</span><span class="n">bob</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "A1" onclick="highlight('A1', false)">bob</span></li>
    <li><span id = "B1" onclick="highlight('B1', true)">turtle_name</span></li>
    <li><span id = "C1" onclick="highlight('C1', true)">side_length</span></li>
    <li><span id = "D1" onclick="highlight('D1', false)">side</span></li>
    <li><span id = "E1" onclick="highlight('E1', false)">100</span></li>
-</ol></div></div>
+</ol></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For the same code sample, what are the <em>arguments</em> sent by the function call?
 Click <em>ALL</em> that apply.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><span id = "A2" onclick="highlight('A2', true)">bob</span></li>
    <li><span id = "B2" onclick="highlight('B2', false)">turtle_name</span></li>
    <li><span id = "C2" onclick="highlight('C2', false)">side_length</span></li>
    <li><span id = "D2" onclick="highlight('D2', false)">side</span></li>
    <li><span id = "E2" onclick="highlight('E2', true)">100</span></li>
-</ol></div></div>
+</ol></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>True or False: A function can be run several times by placing the function
 call inside a loop.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> True</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> False</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which is the BEST name for the following function?</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -330,13 +326,13 @@ call inside a loop.</p>
   <span class="k">return</span> <span class="n">area</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">area</span></li>
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> <span style="color:#419f6a; font-weight: bold">calculate_area_of_circle</span></li>
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">circle</span></li>
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> <span style="color:#419f6a; font-weight: bold">shape</span></li>
 </ol>
-<p id="Q4"></p></div></div>
+<p id="Q4"></p></div>
 </div>
 </div>
 

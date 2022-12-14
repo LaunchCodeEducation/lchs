@@ -91,11 +91,11 @@ uses text. This is quite different from how we usually use our computers and
 phones. This tutorial is meant to help you picture how your machine responds
 when you enter some common commands.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>For the purposes of this tutorial, we will use <code class="docutils literal notranslate"><span class="pre">current_directory$</span></code> as the
 terminal prompt.</p>
 <p>We will also use this file tree for the examples:</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/laptop-file-tree.png"><img alt="File tree for terminal tutorial exercises." src="../../_images/laptop-file-tree.png" style="width: 80%;" /></a>
 </div>
 </div>
@@ -126,11 +126,11 @@ School$ <span class="nb">pwd</span>
 <p class="caption"><span class="caption-text">Our current position is now in the <code class="docutils literal notranslate"><span class="pre">School</span></code> folder.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>The terminal does not display anything after a successful <code class="docutils literal notranslate"><span class="pre">cd</span></code> command. In
 the example above, we used the <a class="reference internal" href="#terminal-pwd"><span class="std std-ref">pwd</span></a> command in lines 1
 and 4 to check our location.</p>
-<p class="last">To make the actual move, only the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command on line 3 is necessary.</p>
+<p>To make the actual move, only the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command on line 3 is necessary.</p>
 </div>
 <p>To go back down into <code class="docutils literal notranslate"><span class="pre">LCHS</span></code>, we run <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">./LCHS</span></code>:</p>
 <div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -170,8 +170,8 @@ Chemistry$ <span class="nb">pwd</span>
 <p>Line 3 moves us up one level into the <code class="docutils literal notranslate"><span class="pre">School</span></code> folder. Line 4 moves us from
 there down one level into <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">We can combine more than one navigation step into a single command. In the
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>We can combine more than one navigation step into a single command. In the
 code above, we could replace lines 3 and 4 with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../Chemistry</span></code>.</p>
 </div>
 <p>For more practice, let’s go from our current spot in <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> into the
@@ -265,12 +265,12 @@ cake.jpg
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic simple">
-<li>Line 1 checks the contents of our current directory.</li>
-<li>Line 3 makes a copy of the <code class="docutils literal notranslate"><span class="pre">cake.jpg</span></code> file (found at
+<li><p>Line 1 checks the contents of our current directory.</p></li>
+<li><p>Line 3 makes a copy of the <code class="docutils literal notranslate"><span class="pre">cake.jpg</span></code> file (found at
 <code class="docutils literal notranslate"><span class="pre">MyLaptop/Photos/cake.jpg</span></code>) and places it into the <code class="docutils literal notranslate"><span class="pre">/MyLaptop/Desktop</span></code>
-location.</li>
-<li>Lines 4 and 6 use the <a class="reference internal" href="#terminal-ls"><span class="std std-ref">ls command</span></a> to verify that
-<code class="docutils literal notranslate"><span class="pre">cake.jpg</span></code> now exists in two places on our device.</li>
+location.</p></li>
+<li><p>Lines 4 and 6 use the <a class="reference internal" href="#terminal-ls"><span class="std std-ref">ls command</span></a> to verify that
+<code class="docutils literal notranslate"><span class="pre">cake.jpg</span></code> now exists in two places on our device.</p></li>
 </ol>
 <div class="figure align-default" id="id6">
 <a class="reference internal image-reference" href="../../_images/cp-end.png"><img alt="File tree showing our location in the Photos directory." src="../../_images/cp-end.png" style="width: 80%;" /></a>
@@ -329,18 +329,18 @@ could ever need. It’s so thorough, it makes this short tutorial blush.</p>
 <p>Anytime we have questions about how to use a command, we can access the manual
 to get more info!</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<p class="last">Look up some of the commands you know. Maybe you’ll learn a new option or
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p>Look up some of the commands you know. Maybe you’ll learn a new option or
 two!</p>
 </div>
 <p>Some other terminal stuff we should know when using the manual:</p>
 <ol class="arabic simple">
-<li><em>Scrolling</em>: Some entries are very long! You’ll know there’s more to read if
+<li><p><em>Scrolling</em>: Some entries are very long! You’ll know there’s more to read if
 you see <code class="docutils literal notranslate"><span class="pre">:</span></code> at the bottom of the terminal window. You can use your
 keyboard’s arrow keys to scroll through the text. Once you reach the bottom
-of the entry, you’ll see a line that reads <code class="docutils literal notranslate"><span class="pre">END</span></code>.</li>
-<li><em>Exiting</em>: Once you’re finished reading, exit the manual page by typing the
-letter <code class="docutils literal notranslate"><span class="pre">q</span></code>.</li>
+of the entry, you’ll see a line that reads <code class="docutils literal notranslate"><span class="pre">END</span></code>.</p></li>
+<li><p><em>Exiting</em>: Once you’re finished reading, exit the manual page by typing the
+letter <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
 </ol>
 <p>(Return to the <a class="reference internal" href="../../chapters/terminal/basic-commands.html#basic-terminal-commands"><span class="std std-ref">Terminal chapter</span></a>).</p>
 </div>
@@ -377,11 +377,11 @@ line 5. It just responds with another prompt. However, by using the helpful
 <p class="caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> creates a new directory.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>While <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> creates a new directory, it does not move us into that
 location. Also, we don’t need to be in the parent of the newly created
 folder.</p>
-<p class="last">We can run <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> from anywhere within the file system, as long as we use
+<p>We can run <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> from anywhere within the file system, as long as we use
 the correct file path.</p>
 </div>
 <p>(Return to the <a class="reference internal" href="../../chapters/terminal/basic-commands.html#basic-terminal-commands"><span class="std std-ref">Terminal chapter</span></a>).</p>
@@ -416,11 +416,11 @@ cake.jpg    MiscDocs
 </td></tr></table></div>
 <p>Note the following:</p>
 <ol class="arabic simple">
-<li>In line 3, we used relative paths instead of absolute paths. <code class="docutils literal notranslate"><span class="pre">./cake.jpg</span></code>
+<li><p>In line 3, we used relative paths instead of absolute paths. <code class="docutils literal notranslate"><span class="pre">./cake.jpg</span></code>
 means, <em>Look in the current directory for the file called cake.jpg</em>. The
 path <code class="docutils literal notranslate"><span class="pre">../Desktop</span></code> means, <em>Move up into the parent directory, then down
-into the Desktop folder</em>.</li>
-<li>On lines 1, 4, and 7, we use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to verify our results.</li>
+into the Desktop folder</em>.</p></li>
+<li><p>On lines 1, 4, and 7, we use <code class="docutils literal notranslate"><span class="pre">ls</span></code> to verify our results.</p></li>
 </ol>
 <p>Now our file tree looks like this:</p>
 <div class="figure align-default" id="id11">
@@ -447,7 +447,8 @@ command like the <em>You Are Here</em> dot on our file tree.</p>
 <p>We are basically just asking the computer to give us our current location. This
 may seem basic, but the information is critical.</p>
 <blockquote>
-<div>You need to know your current location when working in the terminal.</div></blockquote>
+<div><p>You need to know your current location when working in the terminal.</p>
+</div></blockquote>
 <p>A lot of beginners enter commands into the terminal without paying attention to
 where they are. This often leads to mistakes and confusion. <code class="docutils literal notranslate"><span class="pre">pwd</span></code> is like a
 sanity check - a quick way to know where we are and what we are doing.</p>
@@ -496,8 +497,8 @@ of that folder.</p>
 <div class="section" id="removing-a-directory">
 <h3>Removing a Directory<a class="headerlink" href="#removing-a-directory" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Removing a directory also deletes all of its contents.</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Removing a directory also deletes all of its contents.</p>
 </div>
 <p id="index-0">To remove a directory, we need to include an <strong>option</strong> on the command. An
 option is an additional character, or set of characters, added on the end of a

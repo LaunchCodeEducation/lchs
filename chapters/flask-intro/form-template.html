@@ -120,19 +120,17 @@ the content for a page. Then we call a Python function to fill in the blanks.</p
 <p>To use a template in Flask, we need to organize our project files in a very
 specific way. We’ll start by creating a <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory.</p>
 <ol class="arabic">
-<li><p class="first">Save and commit your work, then checkout a new branch called
-<code class="docutils literal notranslate"><span class="pre">template-practice</span></code>.</p>
-</li>
-<li><p class="first">In the File Explorer, use the buttons to create a new directory called
+<li><p>Save and commit your work, then checkout a new branch called
+<code class="docutils literal notranslate"><span class="pre">template-practice</span></code>.</p></li>
+<li><p>In the File Explorer, use the buttons to create a new directory called
 <code class="docutils literal notranslate"><span class="pre">templates</span></code>.</p>
 <div class="figure align-default">
 <img alt="File tree showing the 'templates' directory inside 'hello_flask'." src="../../_images/templates-in-filetree.png" />
 </div>
 </li>
-<li><p class="first">Any file we want to use as a template MUST go inside this directory. If we
+<li><p>Any file we want to use as a template MUST go inside this directory. If we
 don’t put it there, then Flask won’t be able to find the file when we need
-it.</p>
-</li>
+it.</p></li>
 </ol>
 <div class="section" id="add-a-template">
 <h3><span class="section-number">21.5.2.1. </span>Add a Template<a class="headerlink" href="#add-a-template" title="Permalink to this headline">¶</a></h3>
@@ -182,13 +180,13 @@ for us.</p>
 <div class="section" id="the-render-template-function">
 <h3><span class="section-number">21.5.2.2. </span>The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> Function<a class="headerlink" href="#the-render-template-function" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic" id="index-1">
-<li><p class="first">Return to the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program. In order to use the template we just
+<li><p>Return to the <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> program. In order to use the template we just
 created, we need to update the first <code class="docutils literal notranslate"><span class="pre">import</span></code> statement:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> function contains the code we need to find a file
+<li><p>The <code class="docutils literal notranslate"><span class="pre">render_template</span></code> function contains the code we need to find a file
 and send it to the browser. We do NOT need to know how the function actually
 works. All we need to remember is the syntax for calling it:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;name_of_template&quot;</span><span class="p">)</span>
@@ -197,14 +195,14 @@ works. All we need to remember is the syntax for calling it:</p>
 <p><code class="docutils literal notranslate"><span class="pre">name_of_template</span></code> MUST include the extension for the file, like
 <code class="docutils literal notranslate"><span class="pre">.html</span></code>.</p>
 </li>
-<li><p class="first">Next, add this new function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+<li><p>Next, add this new function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/form&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">form</span><span class="p">():</span>
    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;favorite_form.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Save the code, then run the program. Open a browser and navigate to
+<li><p>Save the code, then run the program. Open a browser and navigate to
 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code>. Ta da! There’s our form.</p>
 <div class="figure align-default" id="id2">
 <img alt="An HTML form with four input fields plus a Submit button." src="../../_images/favorite-form.png" />
@@ -228,9 +226,8 @@ and change its appearance in the browser. To practice this, let’s add another
 HTML file to the <code class="docutils literal notranslate"><span class="pre">templates</span></code> directory. It will be a copy of the thank you
 note shown at the top of this page.</p>
 <ol class="arabic">
-<li><p class="first">Create a new file called <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code> in the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder.</p>
-</li>
-<li><p class="first">Paste in this code:</p>
+<li><p>Create a new file called <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code> in the <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder.</p></li>
+<li><p>Paste in this code:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -273,18 +270,17 @@ note shown at the top of this page.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Note that instead of blanks, the text includes <em>placeholders</em> where we want
+<li><p>Note that instead of blanks, the text includes <em>placeholders</em> where we want
 to insert data. Each placeholder contains a variable inside a set of double
-curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code>.</p>
-</li>
-<li><p class="first">Now add this function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
+curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code>.</p></li>
+<li><p>Now add this function to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/thanks&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">thanks</span><span class="p">():</span>
    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;tynote.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Save the code, then run the program. Open a browser and navigate to
+<li><p>Save the code, then run the program. Open a browser and navigate to
 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/thanks</span></code>.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/thank-you-blanks.png"><img alt="Thank-you text with blank spaces." src="../../_images/thank-you-blanks.png" style="width: 80%;" /></a>
@@ -312,10 +308,10 @@ like:</p>
 <a class="reference internal image-reference" href="../../_images/ty-note-name.png"><img alt="Template text with the name space filled in with 'Bob'." src="../../_images/ty-note-name.png" style="width: 80%;" /></a>
 </div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Instead of hard-coding values inside <code class="docutils literal notranslate"><span class="pre">render_template</span></code>, we can use
 variables instead.</p>
-<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/thanks&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/thanks&#39;</span><span class="p">)</span>
    <span class="k">def</span> <span class="nf">thanks</span><span class="p">():</span>
       <span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Bob&quot;</span>
       <span class="n">action</span> <span class="o">=</span> <span class="s2">&quot;dancing&quot;</span>
@@ -324,18 +320,17 @@ variables instead.</p>
 </div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">Add arguments to <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> to complete the thank you note.</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>Add arguments to <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> to complete the thank you note.</p>
 <div class="figure align-default" id="id3">
 <img alt="Template text with all placeholders filled." src="../../_images/ty-note-done.png" />
 <p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code> template will all placeholders filled.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Move the <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">person</span></code> argument to the end of the list in
+<li><p>Move the <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">person</span></code> argument to the end of the list in
 <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>. Does this change where the <code class="docutils literal notranslate"><span class="pre">name</span></code> value appears
-on the webpage?</p>
-</li>
+on the webpage?</p></li>
 </ol>
 </div>
 </div>
@@ -347,12 +342,12 @@ placeholder like <code class="docutils literal notranslate"><span class="pre">{{
 matching value from the data.</p>
 <p>Besides variables, Flask can also evaluate simple expressions.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic simple">
-<li>In <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code>, replace the <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code> placeholder with
-<code class="docutils literal notranslate"><span class="pre">{{name*3}}</span></code>. What happens?</li>
-<li>Replace <code class="docutils literal notranslate"><span class="pre">{{verb}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{verb.capitalize()}}</span></code>. What happens?</li>
-<li>Replace <code class="docutils literal notranslate"><span class="pre">{{gift}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{gift=='wand'}}</span></code>. What happens?</li>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">tynote.html</span></code>, replace the <code class="docutils literal notranslate"><span class="pre">{{name}}</span></code> placeholder with
+<code class="docutils literal notranslate"><span class="pre">{{name*3}}</span></code>. What happens?</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">{{verb}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{verb.capitalize()}}</span></code>. What happens?</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">{{gift}}</span></code> with <code class="docutils literal notranslate"><span class="pre">{{gift=='wand'}}</span></code>. What happens?</p></li>
 </ol>
 </div>
 </div>
@@ -369,16 +364,16 @@ Flask application.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">21.5.6. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">render_template()</span></code>, the name of the template must come first in the
 list of arguments. But what about the other entries?</p>
 <p>Does changing the order of the arguments change where their values appear on
 the webpage?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Yes</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> No</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

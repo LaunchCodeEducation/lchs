@@ -94,23 +94,19 @@ any of the tasks. However, after you finish the exercises, feel free to explore
 <div class="section" id="setup">
 <span id="more-flask-exercises-setup"></span><h2><span class="section-number">22.10.1. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Open a new window in Visual Studio Code.</p>
-</li>
-<li><p class="first">Use the <em>File</em> menu to open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p>
-</li>
-<li><p class="first">In your browser, navigate to this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_flask_logic" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
+<li><p>Open a new window in Visual Studio Code.</p></li>
+<li><p>Use the <em>File</em> menu to open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> directory.</p></li>
+<li><p>In your browser, navigate to this <a class="reference external" href="https://github.com/LaunchCodeEducation/LCHS_flask_logic" target="_blank">GitHub repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.
 Click the green <em>Code</em> button and copy the URL shown in the dialog box.</p>
 <div class="figure align-default">
 <img alt="Clicking the Code button reveals the URL for the repository." src="../../_images/clone-starter-code.png" />
 </div>
 </li>
-<li><p class="first">In the terminal, enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">repo_address</span></code>. Be sure to
-replace <code class="docutils literal notranslate"><span class="pre">repo_address</span></code> with the URL you copied in step 3.</p>
-</li>
-<li><p class="first">Return to the <em>File</em> menu and open the <code class="docutils literal notranslate"><span class="pre">LCHS_flask_logic</span></code> folder you just
-cloned.</p>
-</li>
-<li><p class="first">In the terminal panel, create a new virtual environment for the project,
+<li><p>In the terminal, enter the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">repo_address</span></code>. Be sure to
+replace <code class="docutils literal notranslate"><span class="pre">repo_address</span></code> with the URL you copied in step 3.</p></li>
+<li><p>Return to the <em>File</em> menu and open the <code class="docutils literal notranslate"><span class="pre">LCHS_flask_logic</span></code> folder you just
+cloned.</p></li>
+<li><p>In the terminal panel, create a new virtual environment for the project,
 then activate it. You can name your virtual environment whatever you want,
 but the example below uses <code class="docutils literal notranslate"><span class="pre">flask-env</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Mac:
@@ -123,7 +119,7 @@ $ . flask-env/Scripts/activate
 </pre></div>
 </div>
 </li>
-<li><p class="first">Finally, install the Flask module.</p>
+<li><p>Finally, install the Flask module.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(flask-env) $ pip install flask
 </pre></div>
 </div>
@@ -142,28 +138,24 @@ Notice that on line 47, <code class="docutils literal notranslate"><span class="
 template.</p>
 <p>Let’s run the web application and see what this template looks like:</p>
 <ol class="arabic">
-<li><p class="first">Make sure <code class="docutils literal notranslate"><span class="pre">flask-env</span></code> is active, then launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
-</li>
-<li><p class="first">Open the web application in the browser. The home page looks pretty bad
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">flask-env</span></code> is active, then launch <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p></li>
+<li><p>Open the web application in the browser. The home page looks pretty bad
 right now:</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/exercises-start1.png"><img alt="Disorganized webpage produced by the starter code." src="../../_images/exercises-start1.png" style="width: 60%;" /></a>
 </div>
 </li>
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">grid.html</span></code> in VS Code. The file is missing some boilerplate code
-and a link to the CSS stylesheet. No wonder the page looks so disorganized!</p>
-</li>
-<li><p class="first">The missing code is saved in <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Add the three required Jinja3
-statements to <code class="docutils literal notranslate"><span class="pre">grid.html</span></code> to <a class="reference internal" href="reusing-content.html#extend-base"><span class="std std-ref">extend the base template</span></a>.</p>
-</li>
-<li><p class="first">Save your work, then refresh the tab in the browser. The page should look
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">grid.html</span></code> in VS Code. The file is missing some boilerplate code
+and a link to the CSS stylesheet. No wonder the page looks so disorganized!</p></li>
+<li><p>The missing code is saved in <code class="docutils literal notranslate"><span class="pre">base.html</span></code>. Add the three required Jinja3
+statements to <code class="docutils literal notranslate"><span class="pre">grid.html</span></code> to <a class="reference internal" href="reusing-content.html#extend-base"><span class="std std-ref">extend the base template</span></a>.</p></li>
+<li><p>Save your work, then refresh the tab in the browser. The page should look
 much better now.</p>
 <div class="figure align-default">
 <a class="reference internal image-reference" href="../../_images/exercise-base-applied.png"><img alt="Webpage produced after extending the base template." src="../../_images/exercise-base-applied.png" style="width: 80%;" /></a>
 </div>
 </li>
-<li><p class="first">Finally, replace <code class="docutils literal notranslate"><span class="pre">Heading</span> <span class="pre">Text</span> <span class="pre">Here</span></code> with something more descriptive.</p>
-</li>
+<li><p>Finally, replace <code class="docutils literal notranslate"><span class="pre">Heading</span> <span class="pre">Text</span> <span class="pre">Here</span></code> with something more descriptive.</p></li>
 </ol>
 <p>Before you move on, use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status/git</span> <span class="pre">add</span> <span class="pre">./git</span> <span class="pre">commit</span> <span class="pre">-m</span></code> to commit your
 work.</p>
@@ -187,14 +179,14 @@ determines the correct direction choices for any box in the grid. Take a
 moment to explore the statements in <code class="docutils literal notranslate"><span class="pre">fill_choices()</span></code>. You don’t need to
 change anything, but note how the code is organized.</p>
 <ol class="arabic simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">box_num</span></code> parameter receives an integer value. This will be the number
-for the highlighted box in the grid.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">options</span></code> dictionary stores the direction choices allowed for the box.
+<li><p>The <code class="docutils literal notranslate"><span class="pre">box_num</span></code> parameter receives an integer value. This will be the number
+for the highlighted box in the grid.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">options</span></code> dictionary stores the direction choices allowed for the box.
 Each key in the dictionary matches a possible direction (<code class="docutils literal notranslate"><span class="pre">Left</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Right</span></code>, <code class="docutils literal notranslate"><span class="pre">Up</span></code>, or <code class="docutils literal notranslate"><span class="pre">Down</span></code>). The value for a key is the number of the
-next box in that direction.</li>
-<li>The four <code class="docutils literal notranslate"><span class="pre">if</span></code> blocks in lines 12-23 determine which key/value pairs are
-added to the dictionary.</li>
+next box in that direction.</p></li>
+<li><p>The four <code class="docutils literal notranslate"><span class="pre">if</span></code> blocks in lines 12-23 determine which key/value pairs are
+added to the dictionary.</p></li>
 </ol>
 <p><code class="docutils literal notranslate"><span class="pre">fill_choices()</span></code> returns the completed dictionary. This gets assigned to the
 <code class="docutils literal notranslate"><span class="pre">choices</span></code> variable inside the <code class="docutils literal notranslate"><span class="pre">show_grid()</span></code> function. <code class="docutils literal notranslate"><span class="pre">choices</span></code> then gets
@@ -204,34 +196,30 @@ passed as an argument inside <code class="docutils literal notranslate"><span cl
 <h3><span class="section-number">22.10.3.2. </span>Update <code class="docutils literal notranslate"><span class="pre">grid.html</span></code><a class="headerlink" href="#update-grid-html" title="Permalink to this headline">¶</a></h3>
 <p>Return to <code class="docutils literal notranslate"><span class="pre">grid.html</span></code> in VS Code.</p>
 <ol class="arabic">
-<li><p class="first">Remove three of the four <code class="docutils literal notranslate"><span class="pre">label</span></code> elements in the form.</p>
-</li>
-<li><p class="first">In the one that remains, use placeholders for the label text and the
+<li><p>Remove three of the four <code class="docutils literal notranslate"><span class="pre">label</span></code> elements in the form.</p></li>
+<li><p>In the one that remains, use placeholders for the label text and the
 <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute. Also, include the <code class="docutils literal notranslate"><span class="pre">required</span></code> attribute to prevent the
 users from submitting an empty form.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;choice&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">{{value}}</span> <span class="na">required</span> <span class="p">/&gt;</span>{{direction}}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Remember the format for the <code class="docutils literal notranslate"><span class="pre">choices</span></code> dictionary. Each <em>key</em> is the
+<li><p>Remember the format for the <code class="docutils literal notranslate"><span class="pre">choices</span></code> dictionary. Each <em>key</em> is the
 direction label for a radio button. Each <em>value</em> is the number of the box in
-that direction.</p>
-</li>
-<li><p class="first">Add a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that <a class="reference internal" href="page-navigation.html#jinja3-dictionary-iteration"><span class="std std-ref">iterates over the key/value pairs</span></a>
+that direction.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that <a class="reference internal" href="page-navigation.html#jinja3-dictionary-iteration"><span class="std std-ref">iterates over the key/value pairs</span></a>
 in the <code class="docutils literal notranslate"><span class="pre">choices</span></code> dictionary. The <code class="docutils literal notranslate"><span class="pre">label/input</span></code> code should be the only
-thing inside the body of the loop.</p>
-</li>
-<li><p class="first">Save your work, then reload the page in the browser.</p>
-</li>
-<li><p class="first">Test your work!</p>
+thing inside the body of the loop.</p></li>
+<li><p>Save your work, then reload the page in the browser.</p></li>
+<li><p>Test your work!</p>
 <ol class="loweralpha simple">
-<li>Refresh the page several times. Make sure that the options displayed in
-the form are correct for the highlighted box.</li>
-<li>Select an option in the form and submit it. Do this several times. As
+<li><p>Refresh the page several times. Make sure that the options displayed in
+the form are correct for the highlighted box.</p></li>
+<li><p>Select an option in the form and submit it. Do this several times. As
 long as you didn’t change anything in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, this should work. If
-an error occurs, check your code in <code class="docutils literal notranslate"><span class="pre">grid.html</span></code>.</li>
-<li>Notice that below the image, the <code class="docutils literal notranslate"><span class="pre">Path</span> <span class="pre">followed</span></code> text updates each time
-you submit the form.</li>
+an error occurs, check your code in <code class="docutils literal notranslate"><span class="pre">grid.html</span></code>.</p></li>
+<li><p>Notice that below the image, the <code class="docutils literal notranslate"><span class="pre">Path</span> <span class="pre">followed</span></code> text updates each time
+you submit the form.</p></li>
 </ol>
 </li>
 </ol>
@@ -246,14 +234,14 @@ adding a conditional to the <code class="docutils literal notranslate"><span cla
 restart after taking a certain number of steps. The instructions below set the
 limit at five steps, but you can choose any number you want.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">The steps below describe ONE way to accomplish the task, not the ONLY way.
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>The steps below describe ONE way to accomplish the task, not the ONLY way.
 Feel free to explore different methods to reset the page. For example, you
 could use a link element (<code class="docutils literal notranslate"><span class="pre">&lt;a&gt;&lt;/a&gt;</span></code>) to restore the page instead of a
 <code class="docutils literal notranslate"><span class="pre">form</span></code>.</p>
 </div>
 <ol class="arabic">
-<li><p class="first">After the user submits the form five times, the webpage should display a
+<li><p>After the user submits the form five times, the webpage should display a
 different form next to the image:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You&#39;ve taken five steps. Time to start over!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;GET&quot;</span><span class="p">&gt;</span>
@@ -263,7 +251,7 @@ different form next to the image:</p>
 </div>
 <p>Clicking the <em>Restart</em> button will cause the page to reset.</p>
 </li>
-<li><p class="first">Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block to the template:</p>
+<li><p>Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> block to the template:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
 10
 11
@@ -282,22 +270,22 @@ different form next to the image:</p>
 </pre></div>
 </td></tr></table></div>
 <ol class="loweralpha simple">
-<li><code class="docutils literal notranslate"><span class="pre">condition</span></code> is the boolean expression that checks how many steps the
-user has taken so far.</li>
-<li>The code block for <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">Direction</span> <span class="pre">form...</span> <span class="pre">--&gt;</span></code> is the HTML you created
-in Part B.</li>
-<li>The code block for <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">Restart</span> <span class="pre">form...</span> <span class="pre">--&gt;</span></code> is the HTML shown in step
-1.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">condition</span></code> is the boolean expression that checks how many steps the
+user has taken so far.</p></li>
+<li><p>The code block for <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">Direction</span> <span class="pre">form...</span> <span class="pre">--&gt;</span></code> is the HTML you created
+in Part B.</p></li>
+<li><p>The code block for <code class="docutils literal notranslate"><span class="pre">&lt;!--</span> <span class="pre">Restart</span> <span class="pre">form...</span> <span class="pre">--&gt;</span></code> is the HTML shown in step
+1.</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">To keep track of the number of steps, use the string assigned to the the
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>To keep track of the number of steps, use the string assigned to the the
 <code class="docutils literal notranslate"><span class="pre">steps</span></code> variable. A five-step sequence will look something like
 <code class="docutils literal notranslate"><span class="pre">6-3-5-2-5</span></code>. There are many ways to check if the string shows 5 or more
 steps. We’ll leave it to you to decide how to do this in line 11.</p>
 </div>
 </li>
-<li><p class="first">Save your work, then refresh the page in your browser. Test your code by
+<li><p>Save your work, then refresh the page in your browser. Test your code by
 submitting the form several times. When you reach the step limit, the
 content on the screen should change.</p>
 <div class="figure align-default" id="id2">

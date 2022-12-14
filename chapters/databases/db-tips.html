@@ -113,9 +113,9 @@ some potential security issues.</p>
 <p>By deliberately closing the connection, the flow for our database interactions
 looks something like this:</p>
 <ol class="arabic simple">
-<li>Open a connection to the database.</li>
-<li>Execute one or more SQL queries, and use <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> as needed.</li>
-<li>Close the connection.</li>
+<li><p>Open a connection to the database.</p></li>
+<li><p>Execute one or more SQL queries, and use <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> as needed.</p></li>
+<li><p>Close the connection.</p></li>
 </ol>
 <p>Every time we access the database, we must re-open the connection, execute our
 SQL queries, and then close the connection. While it might seem inefficient to
@@ -132,29 +132,27 @@ the changes we make to our projects. Unless we are careful,
 <p>While including the database in a Git repository might seem like a good idea,
 we must absolutely avoid doing so! Here are two important reasons why:</p>
 <ol class="arabic simple">
-<li>Over time, the size of the database can become very large. This increases
+<li><p>Over time, the size of the database can become very large. This increases
 the size of the repository, which makes it more complicated and time
-consuming to backup.</li>
-<li>If the database is part of the repository, it will be visible to <em>anyone</em>
+consuming to backup.</p></li>
+<li><p>If the database is part of the repository, it will be visible to <em>anyone</em>
 who has access to the repo. If we push the repo to GitHub (where saved
 projects are visible to anyone with a web browser), then we make the
 contents of our database open for public viewing and download. (This is
-bad).</li>
+bad).</p></li>
 </ol>
 <p>To keep our database separate from version control, we need to add its name to
 the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file <em>before</em> we make a commit. (Recall that we used
 <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> with our <a class="reference internal" href="../more-flask/chapter-setup.html#create-gitignore"><span class="std std-ref">earlier Flask projects</span></a>).</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Let’s create a new database file and prevent Git from tracking it as part of
 the repository.</p>
-<ol class="last arabic">
-<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory in Visual Studio Code.</p>
-</li>
-<li><p class="first">If you don’t already have one, use the tools in VS Code to create a
-<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p>
-</li>
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> in the workspace and add the name of the database
+<ol class="arabic">
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory in Visual Studio Code.</p></li>
+<li><p>If you don’t already have one, use the tools in VS Code to create a
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> in the workspace and add the name of the database
 you want Git to ignore.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">no_gitting_this</span><span class="o">.</span><span class="n">db</span>
 </pre></div>
@@ -162,7 +160,7 @@ you want Git to ignore.</p>
 <p>If you have an existing <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file, you can add the database
 name anywhere in the file. The name just needs to be on its own line.</p>
 </li>
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and create the new database file. Its name must match
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and create the new database file. Its name must match
 the one in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -172,13 +170,13 @@ the one in <code class="docutils literal notranslate"><span class="pre">.gitigno
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Notice that when the new database appears in the file
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Notice that when the new database appears in the file
 tree, its name remains gray.</p>
 <div class="figure align-default">
 <img alt="Showing the file tree with database names greyed out." src="../../_images/db-ignore.png" />
 </div>
 </li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in the terminal. Notice that <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in the terminal. Notice that <code class="docutils literal notranslate"><span class="pre">main.py</span></code> and
 <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> appear in the output, but not the new database.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git status
 On branch main
@@ -203,11 +201,11 @@ other row. For example, if we have two students with the same name, their table
 entries can easily be confused. However, by adding a unique primary key, the two
 rows no longer look the same.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Without primary keys, we cannot tell the difference between two rows that
 contain identical values. Primary keys guarantee that every row has at least
 one unique piece of data.</p>
-<div class="last figure align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/primary-key.png"><img alt="Showing two database tables. One with a primary key column and the other without." src="../../_images/primary-key.png" style="width: 80%;" /></a>
 <p class="caption"><span class="caption-text">The table on the right includes an <code class="docutils literal notranslate"><span class="pre">id</span></code> column that stores the primary key for each row.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
@@ -218,27 +216,26 @@ However, we must include some special syntax when we first create the table.</p>
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">key_name</span></code> is the column in the table that will store the primary keys.
-Each key value must be an integer data type.</li>
-<li>We must type out <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> instead of <code class="docutils literal notranslate"><span class="pre">INT</span></code> for the data type. This is
-required! Using <code class="docutils literal notranslate"><span class="pre">INT</span></code> causes errors.</li>
-<li><code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> sets up the process to automatically assign an integer to
+<li><p><code class="docutils literal notranslate"><span class="pre">key_name</span></code> is the column in the table that will store the primary keys.
+Each key value must be an integer data type.</p></li>
+<li><p>We must type out <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> instead of <code class="docutils literal notranslate"><span class="pre">INT</span></code> for the data type. This is
+required! Using <code class="docutils literal notranslate"><span class="pre">INT</span></code> causes errors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> sets up the process to automatically assign an integer to
 <code class="docutils literal notranslate"><span class="pre">key_name</span></code>. This happens each time a new row is added to the table. We do
-NOT need to assign a value to <code class="docutils literal notranslate"><span class="pre">key_name</span></code> ourselves.</li>
-<li>Python keeps track of the largest primary key in the table. When a new row
-is added, its primary key is assigned the next higher value.</li>
-<li>We can assign our own value to <code class="docutils literal notranslate"><span class="pre">key_name</span></code> when we <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> a row.
+NOT need to assign a value to <code class="docutils literal notranslate"><span class="pre">key_name</span></code> ourselves.</p></li>
+<li><p>Python keeps track of the largest primary key in the table. When a new row
+is added, its primary key is assigned the next higher value.</p></li>
+<li><p>We can assign our own value to <code class="docutils literal notranslate"><span class="pre">key_name</span></code> when we <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> a row.
 However, the action will throw an error if the value we choose matches a
-primary key already in the table.</li>
+primary key already in the table.</p></li>
 </ol>
 <div class="section" id="try-it-primary-keys">
 <h3><span class="section-number">24.7.3.1. </span>Try It! (Primary Keys)<a class="headerlink" href="#try-it-primary-keys" title="Permalink to this headline">¶</a></h3>
 <p>Let’s create a new table in <code class="docutils literal notranslate"><span class="pre">practice.db</span></code> that uses primary keys.</p>
 <ol class="arabic">
-<li><p class="first">Return to your <code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory in Visual Studio Code. Open
-<code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the editor.</p>
-</li>
-<li><p class="first">Create a new table called <code class="docutils literal notranslate"><span class="pre">authors</span></code>. The table should include 4 columns:
+<li><p>Return to your <code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory in Visual Studio Code. Open
+<code class="docutils literal notranslate"><span class="pre">main.py</span></code> in the editor.</p></li>
+<li><p>Create a new table called <code class="docutils literal notranslate"><span class="pre">authors</span></code>. The table should include 4 columns:
 <code class="docutils literal notranslate"><span class="pre">author_id,</span> <span class="pre">last_name,</span> <span class="pre">first_name,</span> <span class="pre">website</span></code>.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -262,7 +259,7 @@ primary key already in the table.</li>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Rather than writing a separate SQL query for each author, we will use a loop
+<li><p>Rather than writing a separate SQL query for each author, we will use a loop
 to do the work for us. Paste this code into the editor:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
 13
@@ -308,7 +305,7 @@ to do the work for us. Paste this code into the editor:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, then use your SQLite extension powers to view the
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, then use your SQLite extension powers to view the
 <code class="docutils literal notranslate"><span class="pre">authors</span></code> table. Even though we did NOT include values for <code class="docutils literal notranslate"><span class="pre">author_id</span></code>
 in the SQL query, each row still displays a value for that column.</p>
 <div class="figure align-default" id="id2">
@@ -321,78 +318,77 @@ in the SQL query, each row still displays a value for that column.</p>
 <div class="section" id="try-more">
 <h3><span class="section-number">24.7.3.2. </span>Try More!<a class="headerlink" href="#try-more" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>If you make a mistake and need to start fresh, you can easily <code class="docutils literal notranslate"><span class="pre">DROP</span></code> the
 <code class="docutils literal notranslate"><span class="pre">authors</span></code> table and re-create it. Add one line of code right before the
 <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code> statement. Comment out the line (or activate it) as needed.</p>
-<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>6
 7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;DROP TABLE authors&quot;</span><span class="p">)</span>
 <span class="n">sql_query</span> <span class="o">=</span> <span class="s2">&quot;CREATE TABLE authors...&quot;</span>
 </pre></div>
 </td></tr></table></div>
 </div>
 <ol class="arabic">
-<li><p class="first">After the loop, write another SQL query that removes one row from the middle
+<li><p>After the loop, write another SQL query that removes one row from the middle
 of the <code class="docutils literal notranslate"><span class="pre">authors</span></code> table. View the table again. Notice that there is now a
 gap in the primary key values.</p>
 <p>Does adding a new row fill in this gap or continue with the next higher
 number? Try it to find out!</p>
 </li>
-<li><p class="first">Insert another new row, but this time assign an integer to <code class="docutils literal notranslate"><span class="pre">author_id</span></code>
+<li><p>Insert another new row, but this time assign an integer to <code class="docutils literal notranslate"><span class="pre">author_id</span></code>
 yourself. Make the difference obvious by selecting a value over <code class="docutils literal notranslate"><span class="pre">100</span></code>.
 View the table again.</p>
 <ol class="loweralpha simple">
-<li>Does the bottom row always have the highest primary key? Add a row with
-a smaller primary key to test this!</li>
-<li>Insert another new row, but let the program automatically assign
+<li><p>Does the bottom row always have the highest primary key? Add a row with
+a smaller primary key to test this!</p></li>
+<li><p>Insert another new row, but let the program automatically assign
 <code class="docutils literal notranslate"><span class="pre">author_id</span></code>. View the table again. What do you notice about the value
-assigned to the primary key?</li>
+assigned to the primary key?</p></li>
 </ol>
 </li>
-<li><p class="first">Try inserting a row with an <code class="docutils literal notranslate"><span class="pre">author_id</span></code> value that already exists in the
-table. What happens?</p>
-</li>
+<li><p>Try inserting a row with an <code class="docutils literal notranslate"><span class="pre">author_id</span></code> value that already exists in the
+table. What happens?</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">24.7.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>When should we close the connection to the database?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> As the last step in our program.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> After 24 hours.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> After we complete a SQL query.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> We don't need to close the connection.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Why should we NOT track a database with version control?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Oh, I know why! Please let me explain! I'll even give quotes from the text on this page.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Wait, what? Why wouldn't I want to make sensitive data visible to everyone?</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>When using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>, does the bottom row of a table always have the
 highest primary key?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Yes</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> No</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>If there is a gap in the primary key values, does adding a new row fill in
 the gap or continue with the next higher number?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, false)"> The gap is filled in.</li>
    <li><input type="radio" name="Q4" autocomplete="off" onclick="evaluateMC(name, true)"> The next higher number is assigned, which leaves the gap open.</li>
 </ol>
-<p id="Q4"></p></div></div>
+<p id="Q4"></p></div>
 </div>
 </div>
 

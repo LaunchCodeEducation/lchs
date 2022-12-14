@@ -89,7 +89,8 @@
 <p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/modules/exercises.html#modules-exercises"><span class="std std-ref">exercises</span></a>.
 However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
 <blockquote>
-<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div><p>A suggested solution is ONE way to solve the problem, not the ONLY way.</p>
+</div></blockquote>
 <div class="section" id="chapter-sandbox">
 <h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
 <p>Use the editor below to test out any of the solutions!</p>
@@ -99,8 +100,8 @@ However, there are usually OTHER ways to accomplish the same thing. This is OK!<
 <p>Practice makes better. You will create a program that accomplishes the
 following:</p>
 <ol class="loweralpha simple">
-<li>Steps through a list of Yes/No questions.</li>
-<li>Calls functions based on the user’s responses.</li>
+<li><p>Steps through a list of Yes/No questions.</p></li>
+<li><p>Calls functions based on the user’s responses.</p></li>
 </ol>
 <p>Rather than coding all of the functions from scratch, you are going to use
 existing modules to help assemble your project. <a class="reference internal" href="../../chapters/modules/exercises.html#chp11startercode"><span class="std std-ref">Get Starter Code Here</span></a>.</p>
@@ -109,7 +110,7 @@ existing modules to help assemble your project. <a class="reference internal" hr
 <p>Lucky you! Most of the functions you need are in the <code class="docutils literal notranslate"><span class="pre">averages.py</span></code> and
 <code class="docutils literal notranslate"><span class="pre">display.py</span></code> files.</p>
 <ol class="arabic">
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add a statement to import all functions from the
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, add a statement to import all functions from the
 <code class="docutils literal notranslate"><span class="pre">averages</span></code> module.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">averages</span>
 </pre></div>
@@ -117,7 +118,7 @@ existing modules to help assemble your project. <a class="reference internal" hr
 </li>
 </ol>
 <ol class="arabic" start="3">
-<li><p class="first">Use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to rename the imported <code class="docutils literal notranslate"><span class="pre">print_all</span></code> function to
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to rename the imported <code class="docutils literal notranslate"><span class="pre">print_all</span></code> function to
 <code class="docutils literal notranslate"><span class="pre">display_results</span></code>.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">display</span> <span class="kn">import</span> <span class="n">print_all</span> <span class="k">as</span> <span class="n">display_results</span>
 </pre></div>
@@ -130,7 +131,7 @@ existing modules to help assemble your project. <a class="reference internal" hr
 <span id="chp11part2"></span><h3>Finish Coding A New Module<a class="headerlink" href="#finish-coding-a-new-module" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">random_select.py</span></code> requires your attention.</p>
 <ol class="arabic">
-<li><p class="first">Add code to complete the <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> function. It should take a
+<li><p>Add code to complete the <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> function. It should take a
 list as an argument and then return a
 <a class="reference internal" href="../../chapters/modules/random-module.html#random-collection-item"><span class="std std-ref">randomly selected element</span></a> from that list.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -161,13 +162,13 @@ list as an argument and then return a
 your work in the previous sections. If you did, do not worry. The comments
 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will still show you where to add code.</p>
 <ol class="arabic">
-<li><p class="first"><strong>Line 19</strong>: Call <code class="docutils literal notranslate"><span class="pre">display_results</span></code> to print all of the tests and student
+<li><p><strong>Line 19</strong>: Call <code class="docutils literal notranslate"><span class="pre">display_results</span></code> to print all of the tests and student
 scores. Be sure to pass in the correct arguments.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">display_results</span><span class="p">(</span><span class="n">astronauts</span><span class="p">,</span> <span class="n">test_titles</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first"><strong>Line 23</strong>: Using dot notation, call <code class="docutils literal notranslate"><span class="pre">average_for_test</span></code> to print the
+<li><p><strong>Line 23</strong>: Using dot notation, call <code class="docutils literal notranslate"><span class="pre">average_for_test</span></code> to print the
 class average for each test. Use <code class="docutils literal notranslate"><span class="pre">title_index</span></code> and <code class="docutils literal notranslate"><span class="pre">scores</span></code> as
 arguments.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">avg</span> <span class="o">=</span> <span class="n">averages</span><span class="o">.</span><span class="n">average_for_test</span><span class="p">(</span><span class="n">title_index</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
@@ -176,7 +177,7 @@ arguments.</p>
 </li>
 </ol>
 <ol class="arabic" start="4">
-<li><p class="first"><strong>Line 30</strong>: Call <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> to pick the next spacewalker from the
+<li><p><strong>Line 30</strong>: Call <code class="docutils literal notranslate"><span class="pre">random_from_list</span></code> to pick the next spacewalker from the
 <code class="docutils literal notranslate"><span class="pre">astronauts</span></code> list.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">walker</span> <span class="o">=</span> <span class="n">random_select</span><span class="o">.</span><span class="n">random_from_list</span><span class="p">(</span><span class="n">astronauts</span><span class="p">)</span>
 </pre></div>

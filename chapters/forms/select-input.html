@@ -103,7 +103,7 @@ provides the key. The <code class="docutils literal notranslate"><span class="pr
 assigned to that key.</p>
 <p>A select input works very much like a group of radio buttons.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s use a drop-down menu to select our color choice.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -122,7 +122,7 @@ assigned to that key.</p>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last figure align-default" id="id1">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../_images/select-parrot.png"><img alt="The 'Red' menu option is selected. This assigns the value 'red' to the 'color' key." src="../../_images/select-parrot.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">The value of the selected <code class="docutils literal notranslate"><span class="pre">option</span></code> element is assigned to the <code class="docutils literal notranslate"><span class="pre">color</span></code> key.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
@@ -135,7 +135,7 @@ user never clicks on the menu. By default, <code class="docutils literal notrans
 <p>Just like a radio button group, we should ALWAYS offer the user a <em>No Choice</em>
 option. This can be an empty menu slot or some form of non-selectable title.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Here are two examples of <em>no choice</em> menu options. Each one is the first
 <code class="docutils literal notranslate"><span class="pre">option</span></code> element, and the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute is assigned the empty
 string.</p>
@@ -170,51 +170,51 @@ string.</p>
 <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<table border="1" class="docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col width="50%" />
-<col width="50%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Example 1</th>
-<th class="head">Example 2</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example 1</p></th>
+<th class="head"><p>Example 2</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><div class="first last"><select name="color"> Example #1
+<tbody>
+<tr class="row-even"><td><select name="color"> Example #1
    <option value="" selected></option>
    <option value="red"> Red</option>
    <option value="green"> Green</option>
    <option value="blue"> Blue</option>
-</select></div></td>
-<td><div class="first last"><select name="color">
+</select></td>
+<td><select name="color">
    <option value="" disabled selected>Choose a color:</option>
    <option value="red"> Red</option>
    <option value="green"> Green</option>
    <option value="blue"> Blue</option>
-</select></div></td>
+</select></td>
 </tr>
 </tbody>
 </table>
 <p>The <code class="docutils literal notranslate"><span class="pre">selected</span></code> attribute sets an option as the default choice, and it will
 be displayed when the page first loads.</p>
-<p class="last">In Example 1, the blank menu slot can be chosen as an option. The
+<p>In Example 1, the blank menu slot can be chosen as an option. The
 <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attribute in Example 2 (line 11) means that once the user picks
 a different option, the default title cannot be re-selected.</p>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Return to your local <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form.</p>
-<ol class="last arabic simple">
-<li>Save and commit the work in the <code class="docutils literal notranslate"><span class="pre">radio</span></code> branch.</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and checkout a new branch called <code class="docutils literal notranslate"><span class="pre">select</span></code>.</li>
-<li>In the new branch, modify your form to use a select input with at least
-three options.</li>
-<li>What happens if you submit the form without clicking the select menu?</li>
-<li>Experiment by placing the <code class="docutils literal notranslate"><span class="pre">selected</span></code> and <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attributes inside
-different <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</li>
-<li>Try using the <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute in place of <code class="docutils literal notranslate"><span class="pre">disabled</span></code>. What does it
-do to the input?</li>
+<ol class="arabic simple">
+<li><p>Save and commit the work in the <code class="docutils literal notranslate"><span class="pre">radio</span></code> branch.</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and checkout a new branch called <code class="docutils literal notranslate"><span class="pre">select</span></code>.</p></li>
+<li><p>In the new branch, modify your form to use a select input with at least
+three options.</p></li>
+<li><p>What happens if you submit the form without clicking the select menu?</p></li>
+<li><p>Experiment by placing the <code class="docutils literal notranslate"><span class="pre">selected</span></code> and <code class="docutils literal notranslate"><span class="pre">disabled</span></code> attributes inside
+different <code class="docutils literal notranslate"><span class="pre">&lt;option&gt;</span></code> tags.</p></li>
+<li><p>Try using the <code class="docutils literal notranslate"><span class="pre">hidden</span></code> attribute in place of <code class="docutils literal notranslate"><span class="pre">disabled</span></code>. What does it
+do to the input?</p></li>
 </ol>
 </div>
 </div>
@@ -225,12 +225,12 @@ way. However, they are NOT always interchangeable. When should we use each
 input type?</p>
 <p>Here are a few guidelines:</p>
 <ol class="arabic simple">
-<li>If the user needs to select multiple options, or be able to unselect items,
-go with checkboxes.</li>
-<li>If the user must make a single choice from a long list, radio buttons work
-better than a drop-down menu.</li>
-<li>Top-down lists are easier to read. Whenever possible, arrange a set of
-choices vertically instead of side-by-side.</li>
+<li><p>If the user needs to select multiple options, or be able to unselect items,
+go with checkboxes.</p></li>
+<li><p>If the user must make a single choice from a long list, radio buttons work
+better than a drop-down menu.</p></li>
+<li><p>Top-down lists are easier to read. Whenever possible, arrange a set of
+choices vertically instead of side-by-side.</p></li>
 </ol>
 <p><a class="reference external" href="https://community.appway.com/screen/kb/article/checkboxes-radio-buttons-dropdowns-when-to-use-what-1482810890174" target="_blank">This article<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
 also gives a nice summary of when to use the different input types.</p>
@@ -238,16 +238,16 @@ also gives a nice summary of when to use the different input types.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.6.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>For a select input, what determines the key/value pair when the form is
 submitted?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> and <code class="pre">value</code> attributes inside the <code class="pre">select</code> tag.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> and <code class="pre">value</code> attributes inside the <code class="pre">option</code> tag.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> The <code class="pre">name</code> from the <code class="pre">select</code> tag and the <code class="pre">value</code> from <code class="pre">option</code>.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> The <code class="pre">name</code> from the <code class="pre">option</code> tag and the <code class="pre">value</code> from <code class="pre">select</code>.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 </div>
 </div>
 

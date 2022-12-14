@@ -89,7 +89,8 @@
 <p>Cookies provide a useful way to store data for longer periods of time. However,
 we must never forget one critical fact:</p>
 <blockquote>
-<div>Cookie data is not secure.</div></blockquote>
+<div><p>Cookie data is not secure.</p>
+</div></blockquote>
 <p>As we saw on the previous page, the browser tools allow users to view any
 cookies stored on their devices. Not only can users access the cookies, they
 can also easily modify them.</p>
@@ -145,8 +146,8 @@ saves the same amount of data, but it appears as a <em>single</em> item.</p>
 <h2><span class="section-number">23.4.2. </span>Set Up Flask Sessions<a class="headerlink" href="#set-up-flask-sessions" title="Permalink to this headline">¶</a></h2>
 <p>To work with sessions in our Flask programs:</p>
 <ol class="arabic simple">
-<li>Import the <code class="docutils literal notranslate"><span class="pre">session</span></code> object from the <code class="docutils literal notranslate"><span class="pre">flask</span></code> library.</li>
-<li>Set up a secret key to encrypt the session cookies.</li>
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">session</span></code> object from the <code class="docutils literal notranslate"><span class="pre">flask</span></code> library.</p></li>
+<li><p>Set up a secret key to encrypt the session cookies.</p></li>
 </ol>
 <p>The general syntax for this is:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -167,11 +168,11 @@ the harder it will be for outsiders to decrypt the data.</p>
 cookies. We’ll practice this on the next page. First, however, let’s learn how
 to set a good secret key.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>Using sessions does provide more safety than plain cookies, but sessions are
 NOT secure. The data is still stored on a user’s machine, which means they
 have direct access to the file.</p>
-<p class="last">While it takes more steps to view the key/value pairs, accessing the data
+<p>While it takes more steps to view the key/value pairs, accessing the data
 from a session is a fairly straightforward process.</p>
 </div>
 </div>
@@ -191,10 +192,10 @@ used.</p>
 <em>Anyone</em> who visits the URL for our repository can see the value assigned to
 <code class="docutils literal notranslate"><span class="pre">secret_key</span></code>.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
 <p>For the local programs you create in this course, assigning a specific
 string to <code class="docutils literal notranslate"><span class="pre">secret_key</span></code> will work fine.</p>
-<p class="last">However, if you ever want to <em>deploy</em> one of your Flask programs to the web
+<p>However, if you ever want to <em>deploy</em> one of your Flask programs to the web
 (where the world can see it), you need to take steps to protect the secret
 key.</p>
 </div>
@@ -204,33 +205,33 @@ exploring these methods is beyond the scope of this course.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">23.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>To store a user’s password, which of the following should we use?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A cookie</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> A session</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Something else</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>By default, how long to cookies and sessions persist on a user’s device?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Until they quit the browser.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they refresh the page.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they close the tab.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until they use the browser tools to clear the data.</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Until midnight.</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Can programmers change how long cookie and session data persists?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Yes</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> No</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 </div>
 </div>
 

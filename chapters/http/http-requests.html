@@ -106,13 +106,13 @@ Request Body
 </div>
 <p>The structure has these components:</p>
 <ol class="arabic simple" id="index-1">
-<li><strong>Request line:</strong> The first line is the request line. It includes the
-<strong>request method</strong>, the path from the URL, and the HTTP version being used.</li>
-<li><strong>Request headers:</strong> From line 2 until the first blank line, the <em>headers</em>
-consist of a series of key-value pairs, one per line.</li>
-<li><strong>Blank line:</strong> This marks the end of the request headers.</li>
-<li><strong>Request body (Optional):</strong> Below the blank line, the request body takes up
-the remainder of the HTTP request.</li>
+<li><p><strong>Request line:</strong> The first line is the request line. It includes the
+<strong>request method</strong>, the path from the URL, and the HTTP version being used.</p></li>
+<li><p><strong>Request headers:</strong> From line 2 until the first blank line, the <em>headers</em>
+consist of a series of key-value pairs, one per line.</p></li>
+<li><p><strong>Blank line:</strong> This marks the end of the request headers.</p></li>
+<li><p><strong>Request body (Optional):</strong> Below the blank line, the request body takes up
+the remainder of the HTTP request.</p></li>
 </ol>
 <div class="section" id="request-methods">
 <h2><span class="section-number">19.4.1. </span>Request Methods<a class="headerlink" href="#request-methods" title="Permalink to this headline">¶</a></h2>
@@ -130,13 +130,13 @@ a <code class="docutils literal notranslate"><span class="pre">GET</span></code>
 <p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests usually do not have a body, since they just <em>ask</em> for
 information. We don’t need to provide commands to change that data in any way.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p><code class="docutils literal notranslate"><span class="pre">GET</span></code> requests are usually used for:</p>
-<ol class="last arabic simple">
-<li>Loading a page after typing its URL in the browser’s address bar.</li>
-<li>Conducting a search via a search engine.</li>
-<li>Loading a page after clicking on a link.</li>
-<li>Refreshing a webpage.</li>
+<ol class="arabic simple">
+<li><p>Loading a page after typing its URL in the browser’s address bar.</p></li>
+<li><p>Conducting a search via a search engine.</p></li>
+<li><p>Loading a page after clicking on a link.</p></li>
+<li><p>Refreshing a webpage.</p></li>
 </ol>
 </div>
 </div>
@@ -148,13 +148,13 @@ submitting a form.</p>
 <p><code class="docutils literal notranslate"><span class="pre">POST</span></code> requests usually have a body. It contains data that the server will
 process and/or store in some fashion.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p><code class="docutils literal notranslate"><span class="pre">POST</span></code> requests are used for:</p>
-<ol class="last arabic simple">
-<li>Logging into a web site.</li>
-<li>Sending an email using an online service.</li>
-<li>Making an online purchase.</li>
-<li>Providing information through an electronic form.</li>
+<ol class="arabic simple">
+<li><p>Logging into a web site.</p></li>
+<li><p>Sending an email using an online service.</p></li>
+<li><p>Making an online purchase.</p></li>
+<li><p>Providing information through an electronic form.</p></li>
 </ol>
 </div>
 </div>
@@ -163,37 +163,37 @@ process and/or store in some fashion.</p>
 <h2><span class="section-number">19.4.2. </span>Headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h2>
 <p>There are <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Request_fields" target="_blank">lots of request headers<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>,
 but only a few will be useful to us.</p>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Common HTTP Request Headers</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Header</th>
-<th class="head">Purpose</th>
-<th class="head">Example</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Example</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Host</span></code></td>
-<td>The domain name or IP address for the server receiving the request.</td>
-<td><code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code></td>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Host</span></code></p></td>
+<td><p>The domain name or IP address for the server receiving the request.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">www.launchcode.org</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">User-Agent</span></code></td>
-<td>Information about the client (usually a browser) making the request. The
-example is for a version of Firefox on a Mac.</td>
-<td><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10.15;</span> <span class="pre">rv:67.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/82.0.2</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">User-Agent</span></code></p></td>
+<td><p>Information about the client (usually a browser) making the request. The
+example is for a version of Firefox on a Mac.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Mozilla/5.0</span> <span class="pre">(Macintosh;</span> <span class="pre">Intel</span> <span class="pre">Mac</span> <span class="pre">OS</span> <span class="pre">X</span> <span class="pre">10.15;</span> <span class="pre">rv:67.0)</span> <span class="pre">Gecko/20100101</span> <span class="pre">Firefox/82.0.2</span></code></p></td>
 </tr>
-<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Accept</span></code></td>
-<td>The types of data that the client requires in the response.</td>
-<td><code class="docutils literal notranslate"><span class="pre">text/html,</span> <span class="pre">image/jpeg</span></code></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Accept</span></code></p></td>
+<td><p>The types of data that the client requires in the response.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">text/html,</span> <span class="pre">image/jpeg</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></td>
-<td>The type of data included in the request body. Usually only used for
-<code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</td>
-<td><code class="docutils literal notranslate"><span class="pre">application/json,</span> <span class="pre">application/xml</span></code></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Content-Type</span></code></p></td>
+<td><p>The type of data included in the request body. Usually only used for
+<code class="docutils literal notranslate"><span class="pre">POST</span></code> requests.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">application/json,</span> <span class="pre">application/xml</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -207,17 +207,17 @@ signing into a web site, the body will contain a username and password.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">19.4.4. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which type of method (<code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>) should be used for each of the
 following actions. Click on each option to reveal the correct answer.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li onclick="revealAnswer('resultA', 'POST')">Making a purchase from Amazon. <span id="resultA"></span></li>
    <li onclick="revealAnswer('resultB', 'POST')">Logging into a gmail account. <span id="resultB"></span></li>
    <li onclick="revealAnswer('resultC', 'GET')">Looking up (then reading) an NPR article. <span id="resultC"></span></li>
    <li onclick="revealAnswer('resultD', 'GET')">Streaming a movie trailer on YouTube. <span id="resultD"></span></li>
    <li onclick="revealAnswer('resultE', 'GET')">Clicking a link in a Wikipedia page. <span id="resultE"></span></li>
    <li onclick="revealAnswer('resultF', 'POST')">Submitting an online assignment to your teacher. <span id="resultF"></span></li>
-</ol></div></div>
+</ol></div>
 </div>
 </div>
 

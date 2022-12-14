@@ -88,13 +88,13 @@
 <h1><span class="section-number">25.6. </span>Database Functions<a class="headerlink" href="#database-functions" title="Permalink to this headline">¶</a></h1>
 <p>When a player clicks a cell on the game board, several things might happen:</p>
 <ol class="arabic simple">
-<li>If the cell contains a mine, the game ends. The player blows up, all of the
-hidden mines are revealed, and any remaining buttons are deactivated.</li>
-<li>If the cell does NOT contain a mine, the button is replaced by a number.
+<li><p>If the cell contains a mine, the game ends. The player blows up, all of the
+hidden mines are revealed, and any remaining buttons are deactivated.</p></li>
+<li><p>If the cell does NOT contain a mine, the button is replaced by a number.
 This number tells the player how many mines are located in the spaces
-surrounding the cell.</li>
-<li>If the <em>Flag Mine</em> checkbox is selected, the cell changes color when
-clicked. The button remains active.</li>
+surrounding the cell.</p></li>
+<li><p>If the <em>Flag Mine</em> checkbox is selected, the cell changes color when
+clicked. The button remains active.</p></li>
 </ol>
 <div class="figure align-default" id="id1">
 <img alt="Showing different cell background colors (gray, white, goldenrod, and red)." src="../../_images/clicked-cells.png" />
@@ -124,49 +124,46 @@ the following videos.</p>
 <div class="section" id="video-summary">
 <h2><span class="section-number">25.6.2. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">The Python code for our Minesweeper application is split across three files:
+<li><p>The Python code for our Minesweeper application is split across three files:
 <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, <code class="docutils literal notranslate"><span class="pre">game_logic.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">crud.py</span></code>. This provides several
 advantages:</p>
 <ol class="loweralpha simple">
-<li>We keep related functions together, which helps organize our work.</li>
-<li>We keep the individual files small.</li>
-<li>Smaller files are easier to debug.</li>
-<li>Any of the separate files can be used as modules in other projects.</li>
+<li><p>We keep related functions together, which helps organize our work.</p></li>
+<li><p>We keep the individual files small.</p></li>
+<li><p>Smaller files are easier to debug.</p></li>
+<li><p>Any of the separate files can be used as modules in other projects.</p></li>
 </ol>
 </li>
-<li><p class="first">The database functions are all located inside the <code class="docutils literal notranslate"><span class="pre">crud.py</span></code> file.</p>
-</li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function has one job - to run SQL queries and return
+<li><p>The database functions are all located inside the <code class="docutils literal notranslate"><span class="pre">crud.py</span></code> file.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function has one job - to run SQL queries and return
 the results. It is identical to the function we used in Part 2 of the
-<a class="reference internal" href="../databases/project-part2.html#movie-sql-part-2"><span class="std std-ref">Movie SQLs project</span></a>.</p>
-</li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">record_mines()</span></code> function adds rows to the <code class="docutils literal notranslate"><span class="pre">mines</span></code> table. The
+<a class="reference internal" href="../databases/project-part2.html#movie-sql-part-2"><span class="std std-ref">Movie SQLs project</span></a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">record_mines()</span></code> function adds rows to the <code class="docutils literal notranslate"><span class="pre">mines</span></code> table. The
 function also updates the <code class="docutils literal notranslate"><span class="pre">board</span></code> table. Each action requires its own
 SQL query string, which will be formatted and executed as part of a loop.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">counter</span></code> variable works because the <code class="docutils literal notranslate"><span class="pre">mines</span></code> and <code class="docutils literal notranslate"><span class="pre">board</span></code>
 table are reset before each new game.</p>
-<p class="last">If we wanted to add new data to <em>existing</em> content, we would need to use
+<p>If we wanted to add new data to <em>existing</em> content, we would need to use
 a different approach. We would have to write extra SQL queries, then use
 the results to match the <code class="docutils literal notranslate"><span class="pre">mine_id</span></code> values in the two tables.</p>
 </div>
 </li>
-<li><p class="first">The <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> function runs one <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query on the <code class="docutils literal notranslate"><span class="pre">board</span></code>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> function runs one <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query on the <code class="docutils literal notranslate"><span class="pre">board</span></code>
 table. This collects the coordinates (like <code class="docutils literal notranslate"><span class="pre">B7</span></code>) for each cell in the game
 board. Once that is done, <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> uses a loop to repeatedly call
 the <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code> function.</p>
 <ol class="loweralpha simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function returns a list of results when it
+<li><p>The <code class="docutils literal notranslate"><span class="pre">execute_query()</span></code> function returns a list of results when it
 runs a <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query. However, the elements in the list are NOT simple
-string values.</li>
-<li>To extract the cell coordinates from the list, we must access each
-element and include an <code class="docutils literal notranslate"><span class="pre">[index]</span></code> value to retrieve the string.</li>
+string values.</p></li>
+<li><p>To extract the cell coordinates from the list, we must access each
+element and include an <code class="docutils literal notranslate"><span class="pre">[index]</span></code> value to retrieve the string.</p></li>
 </ol>
 </li>
-<li><p class="first">A detailed review of the <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code> function will be done
-later in this chapter.</p>
-</li>
+<li><p>A detailed review of the <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code> function will be done
+later in this chapter.</p></li>
 </ol>
 </div>
 </div>

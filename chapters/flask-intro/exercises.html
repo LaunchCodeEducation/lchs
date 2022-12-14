@@ -89,30 +89,30 @@
 <p>In the following exercises, you will create a Flask application that does the
 following:</p>
 <ol class="arabic simple">
-<li>Uses a form to collect a <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#turtle-color"><span class="std std-ref">hex code</span></a> from the user.</li>
-<li>Validates the submitted code.</li>
-<li>Returns feedback to the user.</li>
-<li>Displays the color produced by the hex code.</li>
+<li><p>Uses a form to collect a <a class="reference internal" href="../../appendices/turtles/turtle-properties.html#turtle-color"><span class="std std-ref">hex code</span></a> from the user.</p></li>
+<li><p>Validates the submitted code.</p></li>
+<li><p>Returns feedback to the user.</p></li>
+<li><p>Displays the color produced by the hex code.</p></li>
 </ol>
 <div class="section" id="part-a-setup">
 <span id="flask-repo"></span><h2><span class="section-number">21.9.1. </span>Part A: Setup<a class="headerlink" href="#part-a-setup" title="Permalink to this headline">¶</a></h2>
 <p>The starter code for this project is stored in a GitHub repository. You will
 need to <a class="reference internal" href="../../assignments/communication-log.html#clone-repo"><span class="std std-ref">clone the repo</span></a> to your device.</p>
 <ol class="arabic">
-<li><p class="first">Open your <code class="docutils literal notranslate"><span class="pre">flask_projects</span></code> folder in Visual Studio Code. Enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> in
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">flask_projects</span></code> folder in Visual Studio Code. Enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> in
 the terminal to verify your path.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ pwd
 /Users/username/Desktop/local_practice/flask_projects
 </pre></div>
 </div>
 </li>
-<li><p class="first">Download the stater code into this directory. In the terminal, enter the
+<li><p>Download the stater code into this directory. In the terminal, enter the
 command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/LaunchCodeEducation/lchs_flask_intro.git
 </pre></div>
 </div>
 </li>
-<li><p class="first">Use <em>File –&gt; Open</em> to open the <code class="docutils literal notranslate"><span class="pre">lchs_flask_intro</span></code> folder. You should see
+<li><p>Use <em>File –&gt; Open</em> to open the <code class="docutils literal notranslate"><span class="pre">lchs_flask_intro</span></code> folder. You should see
 five files in the left panel.</p>
 <div class="figure align-default">
 <img alt="File tree showing 5 items." src="../../_images/exercises-start.png" />
@@ -140,28 +140,24 @@ $ . exercises-env/Scripts/activate
 <p>Remember that Flask requires you to store your templates and supporting files
 in specific places inside your project.</p>
 <ol class="arabic">
-<li><p class="first">Use the buttons in VS Code to create the <code class="docutils literal notranslate"><span class="pre">static</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code>
-directories.</p>
-</li>
-<li><p class="first">Drag the HTML file into <code class="docutils literal notranslate"><span class="pre">templates</span></code>. Move the image and CSS files into
-<code class="docutils literal notranslate"><span class="pre">static</span></code>.</p>
-</li>
-<li><p class="first">Your file tree should now look like this:</p>
+<li><p>Use the buttons in VS Code to create the <code class="docutils literal notranslate"><span class="pre">static</span></code> and <code class="docutils literal notranslate"><span class="pre">templates</span></code>
+directories.</p></li>
+<li><p>Drag the HTML file into <code class="docutils literal notranslate"><span class="pre">templates</span></code>. Move the image and CSS files into
+<code class="docutils literal notranslate"><span class="pre">static</span></code>.</p></li>
+<li><p>Your file tree should now look like this:</p>
 <div class="figure align-default">
 <img alt="The project file tree after adding Flask and two directories." src="../../_images/flask-tree-start.png" />
 </div>
 </li>
-<li><p class="first">Before moving on, make sure to save and commit your work.</p>
-</li>
+<li><p>Before moving on, make sure to save and commit your work.</p></li>
 </ol>
 </div>
 </div>
 <div class="section" id="part-b-render-the-form">
 <h2><span class="section-number">21.9.2. </span>Part B: Render the Form<a class="headerlink" href="#part-b-render-the-form" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">From the terminal, use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hexcode.py</span></code> to launch the application.</p>
-</li>
-<li><p class="first">Open your browser and navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hex_form</span></code>.
+<li><p>From the terminal, use <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hexcode.py</span></code> to launch the application.</p></li>
+<li><p>Open your browser and navigate to <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/hex_form</span></code>.
 Unfortunately, the form doesn’t look very nice right now. By moving the
 <code class="docutils literal notranslate"><span class="pre">.html</span></code> and <code class="docutils literal notranslate"><span class="pre">.css</span></code> files into different directories, we broke the link
 between them.</p>
@@ -170,17 +166,16 @@ between them.</p>
 <p class="caption"><span class="caption-text">Your webpage rendered, but it needs some work.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Open the <code class="docutils literal notranslate"><span class="pre">hex_form.html</span></code> file in Visual Studio Code. On line 7, update the
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">hex_form.html</span></code> file in Visual Studio Code. On line 7, update the
 <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute. Replace <code class="docutils literal notranslate"><span class="pre">style.css</span></code> with the <a class="reference internal" href="style-templates.html#link-stylesheet-flask"><span class="std std-ref">url_for</span></a>
 function.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{url_for(&#39;static&#39;, filename=&#39;style.css&#39;)}}&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">On line 27, do the same thing to update the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute inside the
-<code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag. Be sure to change the filename to <code class="docutils literal notranslate"><span class="pre">hex_figure.png</span></code>.</p>
-</li>
-<li><p class="first">Save your changes. Refresh the webpage to make sure the style rules and
+<li><p>On line 27, do the same thing to update the <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute inside the
+<code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag. Be sure to change the filename to <code class="docutils literal notranslate"><span class="pre">hex_figure.png</span></code>.</p></li>
+<li><p>Save your changes. Refresh the webpage to make sure the style rules and
 image are now in place.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/hex-form-midway.png"><img alt="Hex form with CSS rules and image applied." src="../../_images/hex-form-midway.png" style="width: 40%;" /></a>
@@ -201,7 +196,7 @@ always show <code class="docutils literal notranslate"><span class="pre">FF0000<
 <p>Add <a class="reference internal" href="form-template.html#template-placeholders"><span class="std std-ref">placeholders</span></a> to the template to make the
 input boxes change when the form is submitted.</p>
 <ol class="arabic">
-<li><p class="first">In lines 23 and 24, replace <code class="docutils literal notranslate"><span class="pre">FF0000</span></code> with the <code class="docutils literal notranslate"><span class="pre">{{hex}}</span></code> placeholder:</p>
+<li><p>In lines 23 and 24, replace <code class="docutils literal notranslate"><span class="pre">FF0000</span></code> with the <code class="docutils literal notranslate"><span class="pre">{{hex}}</span></code> placeholder:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
 24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Enter a code: #<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;hex&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;{{hex}}&quot;</span> <span class="na">required</span><span class="p">/&gt;&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;color&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;#{{hex}}&quot;</span> <span class="na">disabled</span><span class="p">/&gt;</span>
@@ -209,11 +204,10 @@ input boxes change when the form is submitted.</p>
 </td></tr></table></div>
 <p>Be sure to keep the <code class="docutils literal notranslate"><span class="pre">#</span></code> symbol in line 24.</p>
 </li>
-<li><p class="first">In line 21, replace the <code class="docutils literal notranslate"><span class="pre">Feedback</span> <span class="pre">will</span> <span class="pre">appear</span> <span class="pre">here...</span></code> text with a
+<li><p>In line 21, replace the <code class="docutils literal notranslate"><span class="pre">Feedback</span> <span class="pre">will</span> <span class="pre">appear</span> <span class="pre">here...</span></code> text with a
 different placeholder. Use whatever variable name you want, but remember to
-surround it with double curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code>.</p>
-</li>
-<li><p class="first">Now open <code class="docutils literal notranslate"><span class="pre">hexcode.py</span></code>. In the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function, add <code class="docutils literal notranslate"><span class="pre">hex</span></code> and
+surround it with double curly braces <code class="docutils literal notranslate"><span class="pre">{{}}</span></code>.</p></li>
+<li><p>Now open <code class="docutils literal notranslate"><span class="pre">hexcode.py</span></code>. In the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function, add <code class="docutils literal notranslate"><span class="pre">hex</span></code> and
 your feedback variable. Assign values to them.</p>
 <p>Also, add arguments to the <code class="docutils literal notranslate"><span class="pre">render_template()</span></code> function to pass the values
 to the template.</p>
@@ -231,15 +225,12 @@ to the template.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save your changes and make sure the webpage still works.</p>
-</li>
-<li><p class="first">In the Python code, change the value of <code class="docutils literal notranslate"><span class="pre">hex</span></code> to <code class="docutils literal notranslate"><span class="pre">00FF00</span></code>, <code class="docutils literal notranslate"><span class="pre">0000FF</span></code>, or
+<li><p>Save your changes and make sure the webpage still works.</p></li>
+<li><p>In the Python code, change the value of <code class="docutils literal notranslate"><span class="pre">hex</span></code> to <code class="docutils literal notranslate"><span class="pre">00FF00</span></code>, <code class="docutils literal notranslate"><span class="pre">0000FF</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">987654</span></code>. Save, then refresh the page. It should respond differently to
-each of the values.</p>
-</li>
-<li><p class="first">Test your feedback placeholder by changing its string in the Python code.</p>
-</li>
-<li><p class="first">Once you have the template responding to the data you send to it, save and
+each of the values.</p></li>
+<li><p>Test your feedback placeholder by changing its string in the Python code.</p></li>
+<li><p>Once you have the template responding to the data you send to it, save and
 commit your work.</p>
 <div class="figure align-default" id="id3">
 <img alt="Input fields responding to Python data." src="../../_images/working-placeholders.png" />
@@ -254,7 +245,7 @@ commit your work.</p>
 <p>Right now, nothing much happens when you click the <em>Check Hex Code</em> button. You
 need to add more code so you can do something with the form data.</p>
 <ol class="arabic">
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">hex_form.html</span></code> add <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes inside the
+<li><p>In <code class="docutils literal notranslate"><span class="pre">hex_form.html</span></code> add <code class="docutils literal notranslate"><span class="pre">action</span></code> and <code class="docutils literal notranslate"><span class="pre">method</span></code> attributes inside the
 <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag. Assign them values of <code class="docutils literal notranslate"><span class="pre">&quot;/hex_form&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>,
 respectively. Refresh the webpage, then submit the form. You should see an
 error message.</p>
@@ -265,7 +256,7 @@ error message.</p>
 <code class="docutils literal notranslate"><span class="pre">GET</span></code> request. This is why the page renders OK initially, but not after
 the button is clicked.</p>
 </li>
-<li><p class="first">To fix this, return to the <code class="docutils literal notranslate"><span class="pre">hexcode.py</span></code> file. Update the <code class="docutils literal notranslate"><span class="pre">&#64;app.route</span></code>
+<li><p>To fix this, return to the <code class="docutils literal notranslate"><span class="pre">hexcode.py</span></code> file. Update the <code class="docutils literal notranslate"><span class="pre">&#64;app.route</span></code>
 decorator to accept two types of HTTP requests. This should take care of the
 <em>Method Not Allowed</em> error.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/hex_form&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">])</span>
@@ -280,7 +271,7 @@ decorator to accept two types of HTTP requests. This should take care of the
 request when the form is submitted, and we want the page to change in response.</p>
 <p>To make this happen, update your Python code.</p>
 <ol class="arabic">
-<li><p class="first">Add this conditional to the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function:</p>
+<li><p>Add this conditional to the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
 10
 11
@@ -302,7 +293,7 @@ request when the form is submitted, and we want the page to change in response.<
 If <code class="docutils literal notranslate"><span class="pre">request.method</span> <span class="pre">==</span> <span class="pre">'POST'</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the form was
 submitted. You need to recover the data.</p>
 </li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">request.form</span></code> to get the hex code and assign it to a variable.</p>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">request.form</span></code> to get the hex code and assign it to a variable.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 9
 10
 11
@@ -324,25 +315,21 @@ submitted. You need to recover the data.</p>
 </td></tr></table></div>
 <p>Line 11 recovers the value from the input element with <code class="docutils literal notranslate"><span class="pre">name=&quot;hex&quot;</span></code>.</p>
 </li>
-<li><p class="first">There is no form data for <code class="docutils literal notranslate"><span class="pre">feedback</span></code>, but it does need a value. Assign it
-any message you like on line 12.</p>
-</li>
-<li><p class="first">Save the changes, then reload the webpage. Use the form to submit several
+<li><p>There is no form data for <code class="docutils literal notranslate"><span class="pre">feedback</span></code>, but it does need a value. Assign it
+any message you like on line 12.</p></li>
+<li><p>Save the changes, then reload the webpage. Use the form to submit several
 valid hex codes. You should see the input boxes change, and the feedback line
-should appear.</p>
-</li>
-<li><p class="first">What happens when you submit an INVALID hex code, like <code class="docutils literal notranslate"><span class="pre">AA9</span></code>?</p>
-</li>
-<li><p class="first">Be sure to commit your changes before continuing.</p>
-</li>
+should appear.</p></li>
+<li><p>What happens when you submit an INVALID hex code, like <code class="docutils literal notranslate"><span class="pre">AA9</span></code>?</p></li>
+<li><p>Be sure to commit your changes before continuing.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>If the browser sends a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request to the server,
 <code class="docutils literal notranslate"><span class="pre">request.method</span> <span class="pre">==</span> <span class="pre">'POST'</span></code> returns <code class="docutils literal notranslate"><span class="pre">False</span></code>. In that case, the <code class="docutils literal notranslate"><span class="pre">else</span></code>
 clause runs. <code class="docutils literal notranslate"><span class="pre">hex</span></code> and <code class="docutils literal notranslate"><span class="pre">feedback</span></code> get assigned the default values of
 <code class="docutils literal notranslate"><span class="pre">FF0000</span></code> and the empty sting.</p>
-<p class="last">You can make this happen by clicking in the address bar of the browser and
+<p>You can make this happen by clicking in the address bar of the browser and
 tapping <em>Enter</em>. This resets the form to its original appearance.</p>
 </div>
 </div>
@@ -370,20 +357,21 @@ form.</p>
 </pre></div>
 </td></tr></table></div>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">hex</span></code> must contain exactly 6 characters. Add a conditional to check the
-length of the string collected from the form.</li>
-<li>If the string is NOT 6 characters long:<ol class="loweralpha">
-<li>Assign an error message to the feedback variable. This should explain to
-the user why their code didn’t work.</li>
-<li>Re-assign a value to <code class="docutils literal notranslate"><span class="pre">hex</span></code> to replace the user’s invalid one. This can
+<li><p><code class="docutils literal notranslate"><span class="pre">hex</span></code> must contain exactly 6 characters. Add a conditional to check the
+length of the string collected from the form.</p></li>
+<li><p>If the string is NOT 6 characters long:</p>
+<ol class="loweralpha simple">
+<li><p>Assign an error message to the feedback variable. This should explain to
+the user why their code didn’t work.</p></li>
+<li><p>Re-assign a value to <code class="docutils literal notranslate"><span class="pre">hex</span></code> to replace the user’s invalid one. This can
 be the empty string or a valid code. (Keep in mind that this value of
-<code class="docutils literal notranslate"><span class="pre">hex</span></code> will be sent to the template).</li>
+<code class="docutils literal notranslate"><span class="pre">hex</span></code> will be sent to the template).</p></li>
 </ol>
 </li>
-<li>If the string is 6 characters long, assign the empty string to the feedback
-variable.</li>
-<li>Save, then refresh the form in the browser. Submit at least 3 hex codes to
-check your work (one too long, one valid, one too short).</li>
+<li><p>If the string is 6 characters long, assign the empty string to the feedback
+variable.</p></li>
+<li><p>Save, then refresh the form in the browser. Submit at least 3 hex codes to
+check your work (one too long, one valid, one too short).</p></li>
 </ol>
 <p>Once you have the length validation working, save and commit your progress.</p>
 </div>
@@ -391,7 +379,7 @@ check your work (one too long, one valid, one too short).</li>
 <h3><span class="section-number">21.9.4.2. </span>Check Characters<a class="headerlink" href="#check-characters" title="Permalink to this headline">¶</a></h3>
 <p>You will use a separate function to check the characters in the hex code.</p>
 <ol class="arabic">
-<li><p class="first">Near the top of your Python program, define the <code class="docutils literal notranslate"><span class="pre">valid_hex_chars</span></code>
+<li><p>Near the top of your Python program, define the <code class="docutils literal notranslate"><span class="pre">valid_hex_chars</span></code>
 function.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>4
 5
@@ -405,16 +393,16 @@ function.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">The function should:</p>
+<li><p>The function should:</p>
 <ol class="loweralpha simple">
-<li>Include a parameter that accepts the user’s hex code.</li>
-<li>Use a loop to check if each character is either a digit (0-9) or a letter
-(A-F). Case does NOT matter for the letters.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if all 6 characters are valid.</li>
-<li>Return <code class="docutils literal notranslate"><span class="pre">False</span></code> if even one character is incorrect.</li>
+<li><p>Include a parameter that accepts the user’s hex code.</p></li>
+<li><p>Use a loop to check if each character is either a digit (0-9) or a letter
+(A-F). Case does NOT matter for the letters.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if all 6 characters are valid.</p></li>
+<li><p>Return <code class="docutils literal notranslate"><span class="pre">False</span></code> if even one character is incorrect.</p></li>
 </ol>
 </li>
-<li><p class="first">Back in the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function, modify your conditional by adding an
+<li><p>Back in the <code class="docutils literal notranslate"><span class="pre">hex_form()</span></code> function, modify your conditional by adding an
 <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="ow">not</span> <span class="n">valid_hex_chars</span><span class="p">(</span><span class="nb">hex</span><span class="p">):</span>
    <span class="c1"># Your new code here.</span>
@@ -423,16 +411,15 @@ function.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Note that the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement calls the <code class="docutils literal notranslate"><span class="pre">valid_hex_chars()</span></code> function.
+<li><p>Note that the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement calls the <code class="docutils literal notranslate"><span class="pre">valid_hex_chars()</span></code> function.
 If the hex characters are invalid, assign a different error message to the
-feedback variable.</p>
-</li>
-<li><p class="first">Save, then refresh the form in the browser. Submit several different hex
+feedback variable.</p></li>
+<li><p>Save, then refresh the form in the browser. Submit several different hex
 codes to test this part of the validation.</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>Valid hex codes: <code class="docutils literal notranslate"><span class="pre">987654</span></code>, <code class="docutils literal notranslate"><span class="pre">AaBbCf</span></code>, <code class="docutils literal notranslate"><span class="pre">3CF98b</span></code></p>
-<p class="last">Invalid hex codes: <code class="docutils literal notranslate"><span class="pre">1234AG</span></code>, <code class="docutils literal notranslate"><span class="pre">k23Wb4</span></code>, <code class="docutils literal notranslate"><span class="pre">87*654</span></code></p>
+<p>Invalid hex codes: <code class="docutils literal notranslate"><span class="pre">1234AG</span></code>, <code class="docutils literal notranslate"><span class="pre">k23Wb4</span></code>, <code class="docutils literal notranslate"><span class="pre">87*654</span></code></p>
 </div>
 </li>
 </ol>

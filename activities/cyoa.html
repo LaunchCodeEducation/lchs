@@ -86,8 +86,8 @@
   <div class="section" id="activity-2-adventure-time">
 <h1>Activity #2: Adventure Time!<a class="headerlink" href="#activity-2-adventure-time" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">For best results, complete the <a class="reference internal" href="../chapters/booleans-and-conditionals/index.html#conditionals"><span class="std std-ref">Conditionals chapter</span></a>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>For best results, complete the <a class="reference internal" href="../chapters/booleans-and-conditionals/index.html#conditionals"><span class="std std-ref">Conditionals chapter</span></a>
 before starting this activity.</p>
 </div>
 <p>While playing a game or reading a story, you may have needed to make a choice.
@@ -103,15 +103,17 @@ follows a different path based on your choice.</p>
 <p>The more choices the story contains, the more events and endings become
 possible. For example:</p>
 <ol class="arabic simple">
-<li><em>You are standing in an open field west of a white house, with a boarded
-front door. There is a small mailbox here.</em><ul>
-<li>Do you open the mailbox, walk around the house, try the front door, or
-just walk away? (4 choices, 4 paths to follow)</li>
+<li><p><em>You are standing in an open field west of a white house, with a boarded
+front door. There is a small mailbox here.</em></p>
+<ul class="simple">
+<li><p>Do you open the mailbox, walk around the house, try the front door, or
+just walk away? (4 choices, 4 paths to follow)</p></li>
 </ul>
 </li>
-<li><em>You are standing outside of an open closet full of life-size puppets.</em><ul>
-<li>Do you close the closet door, dance with the puppets, or run screaming
-down the hall? (3 choices, 3 possible outcomes)</li>
+<li><p><em>You are standing outside of an open closet full of life-size puppets.</em></p>
+<ul class="simple">
+<li><p>Do you close the closet door, dance with the puppets, or run screaming
+down the hall? (3 choices, 3 possible outcomes)</p></li>
 </ul>
 </li>
 </ol>
@@ -140,35 +142,36 @@ showing the paths that lead to each ending.</p>
 <div class="section" id="project-requirements">
 <h2>Project Requirements<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>The adventure you design must be school appropriate, and it should ask the
-user to make <em>at least</em> 2 decisions, which lead to <em>at least</em> 4 endings.</li>
-<li>Your team can add more choices, but the maximum limit is 8 endings.</li>
-<li>Begin your CYOA with a short backstory or introduction, and then ask the
-users to make their decisions.</li>
-<li>Each ending should be distinct from the others! Having ALL choices lead to
-the same result is weak and boring.</li>
+<li><p>The adventure you design must be school appropriate, and it should ask the
+user to make <em>at least</em> 2 decisions, which lead to <em>at least</em> 4 endings.</p></li>
+<li><p>Your team can add more choices, but the maximum limit is 8 endings.</p></li>
+<li><p>Begin your CYOA with a short backstory or introduction, and then ask the
+users to make their decisions.</p></li>
+<li><p>Each ending should be distinct from the others! Having ALL choices lead to
+the same result is weak and boring.</p></li>
 </ol>
 </div>
 <div class="section" id="make-a-plan">
 <h2>Make a Plan<a class="headerlink" href="#make-a-plan" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Discuss with your team different ideas and/or themes for your story.</li>
-<li>Decide on your favorite idea, then write down some possible choices and
+<li><p>Discuss with your team different ideas and/or themes for your story.</p></li>
+<li><p>Decide on your favorite idea, then write down some possible choices and
 consequences that a character in the story could face. If you think of too
-many, select the ones that work best as <em>binary</em> decisions.</li>
-<li>Draw a <em>choice tree</em> to map out the questions, paths, and endings for your
-story.</li>
-<li>Write the text for the backstory/introduction.</li>
-<li>In a code editor, use comments to map out your CYOA program.<ol class="loweralpha">
-<li>Now is NOT the time to actually code anything. # Comments ONLY.</li>
-<li>Use your choice tree to help organize the comments for your story.</li>
-<li>For 2 questions and 4 endings, your program should need 10 - 15 comments.</li>
+many, select the ones that work best as <em>binary</em> decisions.</p></li>
+<li><p>Draw a <em>choice tree</em> to map out the questions, paths, and endings for your
+story.</p></li>
+<li><p>Write the text for the backstory/introduction.</p></li>
+<li><p>In a code editor, use comments to map out your CYOA program.</p>
+<ol class="loweralpha simple">
+<li><p>Now is NOT the time to actually code anything. # Comments ONLY.</p></li>
+<li><p>Use your choice tree to help organize the comments for your story.</p></li>
+<li><p>For 2 questions and 4 endings, your program should need 10 - 15 comments.</p></li>
 </ol>
 </li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -207,11 +210,11 @@ story.</li>
 <em>nesting</em> the conditionals creates the backbone for your CYOA story. Refer to
 your comments and choice tree as you code your adventure.</p>
 <ol class="arabic simple">
-<li>Use a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to display the introduction/backstory. Follow this
-with an <code class="docutils literal notranslate"><span class="pre">input</span></code> statement to prompt the user to make their first choice.</li>
-<li>Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement to analyze the user’s answer and move on to the
-selected part of the story.</li>
-<li>Now what?</li>
+<li><p>Use a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement to display the introduction/backstory. Follow this
+with an <code class="docutils literal notranslate"><span class="pre">input</span></code> statement to prompt the user to make their first choice.</p></li>
+<li><p>Add an <code class="docutils literal notranslate"><span class="pre">if/else</span></code> statement to analyze the user’s answer and move on to the
+selected part of the story.</p></li>
+<li><p>Now what?</p></li>
 </ol>
 </div>
 <div class="section" id="test-your-code">
@@ -226,7 +229,7 @@ which choices still need to be tested or which ones need to be fixed.</p>
 only the first letter of their response. Also, converting that letter to
 UPPERCASE or lowercase helps analyze their choice.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>3
 4
 5
@@ -236,19 +239,19 @@ UPPERCASE or lowercase helps analyze their choice.</p>
    <span class="c1"># Attic code here...</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">choice[0]</span></code> looks at the first character in the <code class="docutils literal notranslate"><span class="pre">choice</span></code> string, and
+<p><code class="docutils literal notranslate"><span class="pre">choice[0]</span></code> looks at the first character in the <code class="docutils literal notranslate"><span class="pre">choice</span></code> string, and
 <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> casts it into lowercase.</p>
 </div>
 </div>
 <div class="section" id="bonus-tasks">
 <h2>Bonus Tasks<a class="headerlink" href="#bonus-tasks" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Expand your story to include more than 2 questions and 4 endings.</li>
-<li>Include one <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> statement to give the user three possible
-options (e.g. go upstairs, go downstairs, or walk down the hall).</li>
-<li>Update your code to deal with invalid entries. For example, the user enters
+<li><p>Expand your story to include more than 2 questions and 4 endings.</p></li>
+<li><p>Include one <code class="docutils literal notranslate"><span class="pre">if/elif/else</span></code> statement to give the user three possible
+options (e.g. go upstairs, go downstairs, or walk down the hall).</p></li>
+<li><p>Update your code to deal with invalid entries. For example, the user enters
 something unexpected like “run” instead of “open door” or “turn on the
-lights”.</li>
+lights”.</p></li>
 </ol>
 </div>
 </div>

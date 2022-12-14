@@ -89,8 +89,8 @@
 <p>Once we define a function, we can call it on its own, as part of a conditional,
 or from inside of a loop.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -144,13 +144,13 @@ palindrome.</p>
 </td></tr></table></div>
 <p>Let’s break down the steps carried out by this function:</p>
 <ol class="arabic simple">
-<li><strong>Turn the string into a list of characters.</strong> We call <code class="docutils literal notranslate"><span class="pre">list(a_string)</span></code>,
-which returns a list of the individual characters that make up the string.</li>
-<li><strong>Reverse the list of characters.</strong> To do this, we use the built-in list
-method <code class="docutils literal notranslate"><span class="pre">reverse()</span></code>.</li>
-<li><strong>Join the reversed character list into a string.</strong> We call
+<li><p><strong>Turn the string into a list of characters.</strong> We call <code class="docutils literal notranslate"><span class="pre">list(a_string)</span></code>,
+which returns a list of the individual characters that make up the string.</p></li>
+<li><p><strong>Reverse the list of characters.</strong> To do this, we use the built-in list
+method <code class="docutils literal notranslate"><span class="pre">reverse()</span></code>.</p></li>
+<li><p><strong>Join the reversed character list into a string.</strong> We call
 <code class="docutils literal notranslate"><span class="pre">''.join(letters_list)</span></code>. Joining with the empty string combines all of the
-list elements together into a single string with no spaces in between.</li>
+list elements together into a single string with no spaces in between.</p></li>
 </ol>
 </div>
 <div class="section" id="the-is-palindrome-function">
@@ -159,7 +159,7 @@ list elements together into a single string with no spaces in between.</li>
 checker. Our approach will be to take the string argument, reverse it, and then
 compare the reversed string to the original.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Does the <code class="docutils literal notranslate"><span class="pre">is_palindrome</span></code> function work? See for yourself by adding this
 code:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">string_value</span><span class="p">))</span>
@@ -167,19 +167,19 @@ code:</p>
 </td></tr></table></div>
 <p>Here are a few strings to try:</p>
 <ol class="arabic simple">
-<li><code class="docutils literal notranslate"><span class="pre">'dad'</span></code>      (True)</li>
-<li><code class="docutils literal notranslate"><span class="pre">'Mom'</span></code>      (False)</li>
-<li><code class="docutils literal notranslate"><span class="pre">'radar'</span></code>    (True)</li>
-<li><code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code> (False)</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'dad'</span></code>      (True)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'Mom'</span></code>      (False)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'radar'</span></code>    (True)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'taco</span> <span class="pre">cat'</span></code> (False)</p></li>
 </ol>
-<div class="last"><iframe height="550px" width="100%" src="https://repl.it/@launchcode/Palindrome-Checker?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<iframe height="550px" width="100%" src="https://repl.it/@launchcode/Palindrome-Checker?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Currently, the code does not count <code class="docutils literal notranslate"><span class="pre">'Mom'</span></code> as a palindrome because
 <code class="docutils literal notranslate"><span class="pre">'Mom'</span></code> is not the same string as <code class="docutils literal notranslate"><span class="pre">'moM'</span></code>. Try making the
 <code class="docutils literal notranslate"><span class="pre">is_palindrome</span></code> function <em>case-insensitive</em> by using the <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>
 string method.</p>
-<p class="last">Case-insensitive means that both <code class="docutils literal notranslate"><span class="pre">mom</span></code> and <code class="docutils literal notranslate"><span class="pre">Mom</span></code> return <code class="docutils literal notranslate"><span class="pre">True</span></code> for
+<p>Case-insensitive means that both <code class="docutils literal notranslate"><span class="pre">mom</span></code> and <code class="docutils literal notranslate"><span class="pre">Mom</span></code> return <code class="docutils literal notranslate"><span class="pre">True</span></code> for
 being palindromes.</p>
 </div>
 </div>

@@ -101,16 +101,15 @@ and send that data to a server.</p>
 must include some type of <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in order to capture information
 from the user.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<ol class="last arabic">
-<li><p class="first">Examine the HTML code and webpage in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">h1</span></code>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<ol class="arabic">
+<li><p>Examine the HTML code and webpage in the editor below. Note how the <code class="docutils literal notranslate"><span class="pre">h1</span></code>
 and <code class="docutils literal notranslate"><span class="pre">p</span></code> elements appear on the page, but the form itself seems to be
-missing.</p>
-</li>
-<li><p class="first">An empty <code class="docutils literal notranslate"><span class="pre">form</span></code> element will not appear on a web page until we add one
+missing.</p></li>
+<li><p>An empty <code class="docutils literal notranslate"><span class="pre">form</span></code> element will not appear on a web page until we add one
 or more <code class="docutils literal notranslate"><span class="pre">input</span></code> elements inside of it.</p>
 <iframe src="https://trinket.io/embed/html/3ad7389dd4" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></li>
-<li><p class="first">Add a basic <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag to the HTML and see how the webpage changes.
+<li><p>Add a basic <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag to the HTML and see how the webpage changes.
 Replace line 13 with the code:</p>
 <div class="highlight-HTML notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
 14
@@ -120,9 +119,8 @@ Replace line 13 with the code:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Once the new page renders, notice that a box appears. Clicking inside
-this box allows us to type something!</p>
-</li>
+<li><p>Once the new page renders, notice that a box appears. Clicking inside
+this box allows us to type something!</p></li>
 </ol>
 </div>
 <div class="section" id="local-html-forms">
@@ -131,17 +129,17 @@ this box allows us to type something!</p>
 move this into Visual Studio Code, since we will do most of our work locally
 from now on.</p>
 <ol class="arabic simple">
-<li>Launch VS Code. Open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder and create a new
-directory called <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code>.</li>
-<li>Navigate into <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> and initialize it as a new repository with
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</li>
-<li>Create an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file inside the folder.</li>
-<li>Paste your code from the Trinket editor above into the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file.</li>
-<li><a class="reference internal" href="../git/repositories-and-commits.html#commit-summary"><span class="std std-ref">Save and commit</span></a> your work.</li>
-<li>Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in a new tab of your browser to confirm that your setup
-works.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to check the name of your default branch. If necessary,
-use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">old-branch-name</span> <span class="pre">main</span></code> to change its name to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</li>
+<li><p>Launch VS Code. Open your <code class="docutils literal notranslate"><span class="pre">local_practice</span></code> folder and create a new
+directory called <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code>.</p></li>
+<li><p>Navigate into <code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> and initialize it as a new repository with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</p></li>
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and <code class="docutils literal notranslate"><span class="pre">style.css</span></code> file inside the folder.</p></li>
+<li><p>Paste your code from the Trinket editor above into the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file.</p></li>
+<li><p><a class="reference internal" href="../git/repositories-and-commits.html#commit-summary"><span class="std std-ref">Save and commit</span></a> your work.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> in a new tab of your browser to confirm that your setup
+works.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> to check the name of your default branch. If necessary,
+use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-m</span> <span class="pre">old-branch-name</span> <span class="pre">main</span></code> to change its name to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
 </ol>
 </div>
 </div>
@@ -151,10 +149,10 @@ use <code class="docutils literal notranslate"><span class="pre">git</span> <spa
 enter data. <code class="docutils literal notranslate"><span class="pre">input</span></code> elements have two very important attributes: <em>name</em> and
 <em>type</em>.</p>
 <ol class="arabic simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute identifies the input’s value when the form is
-submitted.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute defines the value expected from the input box. These
-value types include text, numbers, dates, email addresses, etc.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute identifies the input’s value when the form is
+submitted.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute defines the value expected from the input box. These
+value types include text, numbers, dates, email addresses, etc.</p></li>
 </ol>
 <p>The syntax for an input tag is:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;...&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;...&quot;</span><span class="p">/&gt;</span>
@@ -168,8 +166,8 @@ element:</p>
 <p id="index-2">Notice that <code class="docutils literal notranslate"><span class="pre">input</span></code> tags are <strong>self-closing</strong>. This means that the element
 only requires a <em>single</em> tag, which ends with <code class="docutils literal notranslate"><span class="pre">/&gt;</span></code>.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Values are NOT submitted for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it includes a <code class="docutils literal notranslate"><span class="pre">name</span></code>
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Values are NOT submitted for an <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> unless it includes a <code class="docutils literal notranslate"><span class="pre">name</span></code>
 attribute.</p>
 </div>
 </div>
@@ -185,7 +183,7 @@ than one input!</p>
 the purpose of that field. The simplest way to use the <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;</span></code> tags is to
 <em>wrap</em> them around <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tags.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s add a second input box and some labels to our basic form:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
 14
@@ -197,7 +195,7 @@ the purpose of that field. The simplest way to use the <code class="docutils lit
 </pre></div>
 </td></tr></table></div>
 <p>Now our form is more user-friendly:</p>
-<div class="last figure align-default">
+<div class="figure align-default">
 <img alt="HTML that includes a form tag with two input elements. Each element is inside of a label element." src="../../_images/label-example.png" />
 </div>
 </div>
@@ -207,14 +205,14 @@ inside <code class="docutils literal notranslate"><span class="pre">&lt;label&gt
 <p>This works by assigning the SAME string to each attribute. When <code class="docutils literal notranslate"><span class="pre">for</span></code> is
 used, the <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> element does NOT have to be inside <code class="docutils literal notranslate"><span class="pre">&lt;label&gt;&lt;/label&gt;</span></code>.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Replace the first wrapped <code class="docutils literal notranslate"><span class="pre">label/input</span></code> pair with this:</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>14
 15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;user&quot;</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;user&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">/&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<p class="last">Note that the appearance of the page doesn’t change, since the two formats
+<p>Note that the appearance of the page doesn’t change, since the two formats
 do the exact same thing.</p>
 </div>
 <div class="section" id="field-focus">
@@ -232,12 +230,12 @@ clicked. For <em>non-text</em> inputs, when the label is clicked, a value is sel
 This behavior can be seen with <code class="docutils literal notranslate"><span class="pre">radio</span></code> and <code class="docutils literal notranslate"><span class="pre">checkbox</span></code> elements, which we
 will learn about soon.</p>
 <div class="admonition-examples admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Examples</p>
 <p>Click on the label next to each input element.</p>
 <form>
    <label>Text: <input name="demo" type="text"/></label><br>
    <label>Checkbox: <input type="checkbox" name="newsletter"/></label>
-</form><div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</form><div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
@@ -256,13 +254,13 @@ field. When we use the <code class="docutils literal notranslate"><span class="p
 into the input box. The user can change the value by typing something else in
 the field.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Here is an input element with a default value of <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
 <form>
    <label>Which coding language ROCKS?
       <input name="language" type="text" value="Python"/>
    </label>
-</form><div class="last highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</form><div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
@@ -275,35 +273,35 @@ the field.</p>
 </td></tr></table></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Add default values to the <code class="docutils literal notranslate"><span class="pre">Username</span></code> and <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">Name</span></code> fields in your
 basic form.</p>
-<p class="last">When the input box contains a default value, what happens when you click the
+<p>When the input box contains a default value, what happens when you click the
 label?</p>
 </div>
 </div>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.1.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the purpose of the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute for <code class="docutils literal notranslate"><span class="pre">input</span></code> elements?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It adds a text label to the input box.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It identifies the type of data the user should put in the input field.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> It references the input value when the form is submitted.</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> It applies <em>focus</em> to the input element.</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which <code class="docutils literal notranslate"><span class="pre">input</span></code> attribute sets a default value?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">value</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">name</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">type</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">id</code></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

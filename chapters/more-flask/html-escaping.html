@@ -91,17 +91,15 @@ However, it also exposes our program to damage if we don’t carefully validate
 the user’s submission.</p>
 <p>The following example demonstrates one possible problem.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>The editor below builds a simple form that sends data to the Parrot Server.</p>
-<iframe src="https://trinket.io/embed/html/7a12452a92" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><ol class="last arabic">
-<li><p class="first">Enter your favorite color, then click <em>Submit</em>. Examine the results page,
-then click the <em>Run</em> button to return to the form.</p>
-</li>
-<li><p class="first">Repeat step 1, but this time put <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> tags around your choice. For
+<iframe src="https://trinket.io/embed/html/7a12452a92" width="100%" height="400" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe><ol class="arabic">
+<li><p>Enter your favorite color, then click <em>Submit</em>. Examine the results page,
+then click the <em>Run</em> button to return to the form.</p></li>
+<li><p>Repeat step 1, but this time put <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> tags around your choice. For
 example, <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;vermilion&lt;/h1&gt;</span></code>. Click <em>Submit</em> and notice how the
-results page looks different.</p>
-</li>
-<li><p class="first">Return to the form one more time. Copy lines 10 - 16 from the HTML code and
+results page looks different.</p></li>
+<li><p>Return to the form one more time. Copy lines 10 - 16 from the HTML code and
 paste the statements into the input box. Click <em>Submit</em>.</p>
 <div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../_images/html-hijack.png"><img alt="Request parrot page with an active form submitted by the user." src="../../_images/html-hijack.png" style="width: 50%;" /></a>
@@ -166,7 +164,7 @@ similar results to the live example above.</p>
 (like the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> symbols) and disarm them. Fortunately, Python comes
 with a module that streamlines the task.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module contains methods that convert code statements into simple
 string values.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -196,10 +194,9 @@ string values.</p>
    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
-<ol class="last arabic">
-<li><p class="first"><strong>Line 2</strong>: Import the <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module.</p>
-</li>
-<li><p class="first"><strong>Line 10</strong>: <code class="docutils literal notranslate"><span class="pre">cgi.escape(color)</span></code> converts HTML code markers into string
+<ol class="arabic">
+<li><p><strong>Line 2</strong>: Import the <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module.</p></li>
+<li><p><strong>Line 10</strong>: <code class="docutils literal notranslate"><span class="pre">cgi.escape(color)</span></code> converts HTML code markers into string
 data. An entry like <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;vermilion&lt;/h1&gt;</span></code> will now appear on the page as
 normal text surrounded by the <code class="docutils literal notranslate"><span class="pre">h1</span></code> tags.</p>
 <div class="figure align-default" id="id3">

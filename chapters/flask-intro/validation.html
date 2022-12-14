@@ -124,18 +124,18 @@ us cover the bases. Here’s a summery of what each type brings to our
 application:</p>
 <p>Client-side:</p>
 <ol class="arabic simple">
-<li><strong>Pro</strong>: Checks data in real-time, and prevents bad data from being sent to
-the server.</li>
-<li><strong>Pro</strong>: HTML attributes make it simple to put in place.</li>
-<li><strong>Con</strong>: Can be easily fooled, turned off, or bypassed completely by the
-user.</li>
+<li><p><strong>Pro</strong>: Checks data in real-time, and prevents bad data from being sent to
+the server.</p></li>
+<li><p><strong>Pro</strong>: HTML attributes make it simple to put in place.</p></li>
+<li><p><strong>Con</strong>: Can be easily fooled, turned off, or bypassed completely by the
+user.</p></li>
 </ol>
 <p>Server-side:</p>
 <ol class="arabic simple">
-<li><strong>Pro</strong>: Cannot be bypassed by the user.</li>
-<li><strong>Pro</strong>: Allows programmers to write much more specific checks for the data.</li>
-<li><strong>Con</strong>: Requires more work to put in place, and it only operates after
-a request reaches the server.</li>
+<li><p><strong>Pro</strong>: Cannot be bypassed by the user.</p></li>
+<li><p><strong>Pro</strong>: Allows programmers to write much more specific checks for the data.</p></li>
+<li><p><strong>Con</strong>: Requires more work to put in place, and it only operates after
+a request reaches the server.</p></li>
 </ol>
 <p>Whenever our applications collect user input, we should <em>never</em> assume that the
 information will be valid or safe. We must <em>always</em> check the data to make sure
@@ -154,9 +154,9 @@ film title.</p>
 Pixar movie. Submitting the form sends data to the <code class="docutils literal notranslate"><span class="pre">/results</span></code> route, so
 that’s where we need to add some new Python code.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
-<ol class="last arabic">
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">results()</span></code> function. Your code should
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<ol class="arabic">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and find the <code class="docutils literal notranslate"><span class="pre">results()</span></code> function. Your code should
 include a <code class="docutils literal notranslate"><span class="pre">request.form</span></code> statement for each of the four input fields.
 However, in this exercise we’re only going to pay attention to the movie
 title.</p>
@@ -174,7 +174,7 @@ title.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">To help with the validation, it’s useful to cast text entries into all
+<li><p>To help with the validation, it’s useful to cast text entries into all
 lowercase or uppercase. We should also remove any leading or trailing
 whitespace. Modify line 25 as follows:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
@@ -191,7 +191,7 @@ whitespace. Modify line 25 as follows:</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">As of December, 2020, Pixar had released 23 full-length movies.
+<li><p>As of December, 2020, Pixar had released 23 full-length movies.
 Copy/paste the list of the titles into your code.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
 24
@@ -219,7 +219,7 @@ Copy/paste the list of the titles into your code.</p>
 <p>Note that all of the titles in the list are lowercase. This matches the
 format of the string assigned to <code class="docutils literal notranslate"><span class="pre">best_pix</span></code>.</p>
 </li>
-<li><p class="first">Add a conditional to check if the title entered by the user is NOT part
+<li><p>Add a conditional to check if the title entered by the user is NOT part
 of the <code class="docutils literal notranslate"><span class="pre">films</span></code> list:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>23
 24
@@ -258,7 +258,7 @@ of the <code class="docutils literal notranslate"><span class="pre">films</span>
 error message to the <code class="docutils literal notranslate"><span class="pre">best_pix</span></code> variable. If <code class="docutils literal notranslate"><span class="pre">False</span></code>, line 36 casts
 the user’s entry into Title Case.</p>
 </li>
-<li><p class="first">Save your code, then launch the application and navigate to
+<li><p>Save your code, then launch the application and navigate to
 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/form</span></code>. Test out the validation code by entering
 different options in the <code class="docutils literal notranslate"><span class="pre">Favorite</span> <span class="pre">Pixar</span> <span class="pre">Movie</span></code> field. Be sure to test
 cASe differences, leading/trailing whitespace, non-Pixar movies, and (of
@@ -273,10 +273,10 @@ course) your favorite Pixar film.</p>
 <p>Following the example above, add validation for the <code class="docutils literal notranslate"><span class="pre">color</span></code> input. Limit the
 user to only 1 of 3 choices: <code class="docutils literal notranslate"><span class="pre">red</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code>, or <code class="docutils literal notranslate"><span class="pre">blue</span></code>.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>You could replace the <code class="docutils literal notranslate"><span class="pre">color</span></code> input with either radio buttons or a select
 menu. This would fit well with client-side validation.</p>
-<p class="last">However, you need to practice server-side validation! For now, keep the
+<p>However, you need to practice server-side validation! For now, keep the
 input as <code class="docutils literal notranslate"><span class="pre">type=&quot;text&quot;</span></code>.</p>
 </div>
 </div>
@@ -299,34 +299,34 @@ results page. We will handle this in the next chapter.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">21.7.5. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which type of validation prevents form submission?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> Client-side</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Server-side</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Both</li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> Neither</li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which type of validation can be used to display error messages on a webpage?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Client-side</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Server-side</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> Both</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> Neither</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>Which type of validation provides more detailed control over checking user
 input?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, false)"> Client-side</li>
    <li><input type="radio" name="Q3" autocomplete="off" onclick="evaluateMC(name, true)"> Server-side</li>
 </ol>
-<p id="Q3"></p></div></div>
+<p id="Q3"></p></div>
 </div>
 </div>
 

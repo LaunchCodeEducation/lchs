@@ -89,7 +89,8 @@
 <p>The answers on this page show ONE way to solve the <a class="reference internal" href="../../chapters/classes-and-objects/exercises.html#classes-and-objects-exercises"><span class="std std-ref">exercises</span></a>.
 However, there are usually OTHER ways to accomplish the same thing. This is OK!</p>
 <blockquote>
-<div>A suggested solution is ONE way to solve the problem, not the ONLY way.</div></blockquote>
+<div><p>A suggested solution is ONE way to solve the problem, not the ONLY way.</p>
+</div></blockquote>
 <div class="section" id="chapter-sandbox">
 <h2>Chapter Sandbox<a class="headerlink" href="#chapter-sandbox" title="Permalink to this headline">¶</a></h2>
 <p>Use the editor below to test out any of the solutions!</p>
@@ -107,7 +108,7 @@ Below the <code class="docutils literal notranslate"><span class="pre">import</s
 <div class="section" id="add-properties-to-robot">
 <h3>Add Properties to <code class="docutils literal notranslate"><span class="pre">Robot</span></code><a class="headerlink" href="#add-properties-to-robot" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Inside the class, define the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method. It should include
+<li><p>Inside the class, define the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method. It should include
 parameters for <code class="docutils literal notranslate"><span class="pre">self</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -123,7 +124,7 @@ parameters for <code class="docutils literal notranslate"><span class="pre">self
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Give a default value to <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
+<li><p>Give a default value to <code class="docutils literal notranslate"><span class="pre">year</span></code>.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mass</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">1942</span><span class="p">):</span>
 </pre></div>
 </td></tr></table></div>
@@ -155,7 +156,7 @@ parameters for <code class="docutils literal notranslate"><span class="pre">self
 <div class="section" id="add-methods-to-robot">
 <h3>Add Methods to <code class="docutils literal notranslate"><span class="pre">Robot</span></code><a class="headerlink" href="#add-methods-to-robot" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">Below <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, define a second method called <code class="docutils literal notranslate"><span class="pre">move()</span></code>. This method should:</p>
+<li><p>Below <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, define a second method called <code class="docutils literal notranslate"><span class="pre">move()</span></code>. This method should:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -170,7 +171,7 @@ parameters for <code class="docutils literal notranslate"><span class="pre">self
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Add the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method to return a string of the object properties.</p>
+<li><p>Add the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method to return a string of the object properties.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -197,7 +198,7 @@ parameters for <code class="docutils literal notranslate"><span class="pre">self
 <p>In part 1, you defined a class and created one <code class="docutils literal notranslate"><span class="pre">Robot</span></code> object in <code class="docutils literal notranslate"><span class="pre">main()</span></code>.
 Now create three more objects:</p>
 <ol class="arabic" start="3">
-<li><p class="first">Use a mass value from <code class="docutils literal notranslate"><span class="pre">25</span></code> to <code class="docutils literal notranslate"><span class="pre">40</span></code>. (<em>Bonus</em>: Use <code class="docutils literal notranslate"><span class="pre">randint</span></code> to
+<li><p>Use a mass value from <code class="docutils literal notranslate"><span class="pre">25</span></code> to <code class="docutils literal notranslate"><span class="pre">40</span></code>. (<em>Bonus</em>: Use <code class="docutils literal notranslate"><span class="pre">randint</span></code> to
 generate the mass value instead of hard-coding a number when you call the
 class).</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -236,7 +237,7 @@ random value to the <code class="docutils literal notranslate"><span class="pre"
 <p>Between the class and <code class="docutils literal notranslate"><span class="pre">main()</span></code>, define a function called <code class="docutils literal notranslate"><span class="pre">oldest_robot</span></code>. It
 should:</p>
 <ol class="arabic" start="2">
-<li><p class="first">Use a loop to iterate through the list.</p>
+<li><p>Use a loop to iterate through the list.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -257,7 +258,7 @@ should:</p>
 </li>
 </ol>
 <ol class="arabic" start="4">
-<li><p class="first">If two robots have the same <code class="docutils literal notranslate"><span class="pre">year</span></code> value, then the one with the largest
+<li><p>If two robots have the same <code class="docutils literal notranslate"><span class="pre">year</span></code> value, then the one with the largest
 <code class="docutils literal notranslate"><span class="pre">distance</span></code> will be older.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -324,13 +325,10 @@ argument. Assign the returned index to a new variable.</p>
 <code class="docutils literal notranslate"><span class="pre">robot_race</span></code> function that takes a list of robots as a parameter.</p>
 <p>Within the function:</p>
 <ol class="arabic">
-<li><p class="first">Each robot takes a turn running a race.</p>
-</li>
-<li><p class="first">A robot runs the race by calling its <code class="docutils literal notranslate"><span class="pre">move()</span></code> method several times.</p>
-</li>
-<li><p class="first">A robot is done with the race when it moves 30 steps or more.</p>
-</li>
-<li><p class="first">Create a new list to store how many turns it takes each robot to complete
+<li><p>Each robot takes a turn running a race.</p></li>
+<li><p>A robot runs the race by calling its <code class="docutils literal notranslate"><span class="pre">move()</span></code> method several times.</p></li>
+<li><p>A robot is done with the race when it moves 30 steps or more.</p></li>
+<li><p>Create a new list to store how many turns it takes each robot to complete
 the race. Use the string: <code class="docutils literal notranslate"><span class="pre">'____</span> <span class="pre">took</span> <span class="pre">____</span> <span class="pre">turns</span> <span class="pre">to</span> <span class="pre">take</span> <span class="pre">30</span> <span class="pre">steps.'</span></code>
 Fill in the blanks with the robot’s name and race result.</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -361,7 +359,7 @@ Fill in the blanks with the robot’s name and race result.</p>
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Print the results to the console (one robot per line).</p>
+<li><p>Print the results to the console (one robot per line).</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3

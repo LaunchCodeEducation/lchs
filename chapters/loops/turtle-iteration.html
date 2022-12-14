@@ -89,9 +89,9 @@
 <p>Take another look at the turtle code for drawing a square. Which statements are
 repeated? How many times?</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Turtle statements for drawing a square:</p>
-<div class="last highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -136,8 +136,8 @@ like we can change the value in <code class="docutils literal notranslate"><span
 <p>For a triangle, let’s try replacing <code class="docutils literal notranslate"><span class="pre">range(4)</span></code> with <code class="docutils literal notranslate"><span class="pre">range(3)</span></code> to make 3
 sides instead of 4:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
-<div class="last"><iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Polygons?lite=true" scrolling="no" frameborder="yes"></iframe></div></div>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<iframe height="600px" width="100%" src="https://repl.it/@launchcode/LCHS-Turtle-Polygons?lite=true" scrolling="no" frameborder="yes"></iframe></div>
 <p>Hmmm… that didn’t quite work. This is because of line 7. <code class="docutils literal notranslate"><span class="pre">bob.left(90)</span></code>
 works fine for the square (all right angles), but the turtle needs to turn by a
 different amount for a triangle.</p>
@@ -154,26 +154,26 @@ specific numbers inside <code class="docutils literal notranslate"><span class="
 works for ALL polygons.</p>
 <p>Make the following adjustments in the editor above:</p>
 <ol class="arabic simple">
-<li>Before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> and assign it a
-value. This stores the number of sides of the shape we want to draw.</li>
-<li>Also before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>. This stores
+<li><p>Before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> and assign it a
+value. This stores the number of sides of the shape we want to draw.</p></li>
+<li><p>Also before the loop, define a variable called <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>. This stores
 the number of degrees that the turtle needs to rotate after drawing each
-side.</li>
-<li><code class="docutils literal notranslate"><span class="pre">turn_angle</span></code> needs to be calculated. Set
+side.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">turn_angle</span></code> needs to be calculated. Set
 the variable equal to <code class="docutils literal notranslate"><span class="pre">360.0</span> <span class="pre">/</span> <span class="pre">num_sides</span></code> (360.0 degrees divided by the
 number of sides). If you want to know why this works, go ask your math
-teacher! They will LOVE to explain it to you.</li>
-<li>Replace the number in <code class="docutils literal notranslate"><span class="pre">range</span></code> with the variable <code class="docutils literal notranslate"><span class="pre">num_sides</span></code>.</li>
-<li>Replace the number in <code class="docutils literal notranslate"><span class="pre">left</span></code> with <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>.</li>
-<li>Test the program by having it draw a square first (<code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">4</span></code>), then
-change <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to make a triangle.</li>
-<li>Ever wanted to know what a <em>nonagon</em> looks like (9 sides)? How about a
+teacher! They will LOVE to explain it to you.</p></li>
+<li><p>Replace the number in <code class="docutils literal notranslate"><span class="pre">range</span></code> with the variable <code class="docutils literal notranslate"><span class="pre">num_sides</span></code>.</p></li>
+<li><p>Replace the number in <code class="docutils literal notranslate"><span class="pre">left</span></code> with <code class="docutils literal notranslate"><span class="pre">turn_angle</span></code>.</p></li>
+<li><p>Test the program by having it draw a square first (<code class="docutils literal notranslate"><span class="pre">num_sides</span> <span class="pre">=</span> <span class="pre">4</span></code>), then
+change <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to make a triangle.</p></li>
+<li><p>Ever wanted to know what a <em>nonagon</em> looks like (9 sides)? How about a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Tridecagon" target="_blank">triskaidecagon<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>? Change the
-value of <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to find out!</li>
+value of <code class="docutils literal notranslate"><span class="pre">num_sides</span></code> to find out!</p></li>
 </ol>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">If you have your own repl.it account, you can save a copy of the finished
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>If you have your own repl.it account, you can save a copy of the finished
 polygon loop by logging in and <em>forking</em> the <a class="reference external" href="https://repl.it/&#64;launchcode/LCHS-Turtle-Polygons-Solution" target="_blank">final code<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
 </div>
 </div>

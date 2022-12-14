@@ -114,15 +114,15 @@ it calls the parent class and completes that initialization. Next, control
 returns to the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method in the child class, and values are assigned
 to any additional properties.</p>
 <ol class="arabic simple">
-<li>Line 3 defines the initializer method for the child class. Note that the
+<li><p>Line 3 defines the initializer method for the child class. Note that the
 parameters include <code class="docutils literal notranslate"><span class="pre">self</span></code> and variables for both the parent and child
-properties.</li>
-<li>Line 5 calls the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method from the parent class. This assigns
-values to all properties inherited from that class.</li>
-<li>Line 7 creates a new property name and assigns it a value.</li>
+properties.</p></li>
+<li><p>Line 5 calls the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method from the parent class. This assigns
+values to all properties inherited from that class.</p></li>
+<li><p>Line 7 creates a new property name and assigns it a value.</p></li>
 </ol>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s see how this works for our <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> class:</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -192,7 +192,7 @@ values to all properties inherited from that class.</li>
 dream_car: {&#39;make&#39;: &#39;Tesla&#39;, &#39;model&#39;: &#39;Model S&#39;, &#39;year&#39;: 2020, &#39;color&#39;: &#39;blue&#39;, &#39;battery_size&#39;: &#39;100 kWh&#39;, &#39;charge_level&#39;: 100}
 </pre></div>
 </div>
-<p class="last">Lines 27 and 28 print out the property names and values for the <code class="docutils literal notranslate"><span class="pre">Car</span></code> and
+<p>Lines 27 and 28 print out the property names and values for the <code class="docutils literal notranslate"><span class="pre">Car</span></code> and
 <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> objects. Note that <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> includes two properties that are
 missing from <code class="docutils literal notranslate"><span class="pre">my_car</span></code>.</p>
 </div>
@@ -213,7 +213,7 @@ contains a different set of instructions. These execute instead of the parent
 code.</p>
 <p>Let’s see how this works with the <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We can call the <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method on a <code class="docutils literal notranslate"><span class="pre">GasCar</span></code> object, but the sound
 produced depends on the <code class="docutils literal notranslate"><span class="pre">make</span></code> of the car.</p>
 <div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
@@ -270,7 +270,7 @@ produced depends on the <code class="docutils literal notranslate"><span class="
 </pre></div>
 </td></tr></table></div>
 <p><strong>Console Output</strong></p>
-<div class="last highlight-none notranslate"><div class="highlight"><pre><span></span>Beep, beep.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Beep, beep.
 ah-OOOO-gah
 Beep!
 </pre></div>
@@ -295,13 +295,13 @@ the <code class="docutils literal notranslate"><span class="pre">else</span></co
 <h2>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
 <p>In the editor below:</p>
 <ol class="arabic simple">
-<li>Define a <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method in the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> class. For now, just have
-it return a string value that is different from <code class="docutils literal notranslate"><span class="pre">'Beep!'</span></code>.</li>
-<li>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, confirm that <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> behave differently
-when you use the objects to call the <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method.</li>
-<li>Expand the code in the child <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method to be more interesting
+<li><p>Define a <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method in the <code class="docutils literal notranslate"><span class="pre">EVCar</span></code> class. For now, just have
+it return a string value that is different from <code class="docutils literal notranslate"><span class="pre">'Beep!'</span></code>.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">main()</span></code>, confirm that <code class="docutils literal notranslate"><span class="pre">my_car</span></code> and <code class="docutils literal notranslate"><span class="pre">dream_car</span></code> behave differently
+when you use the objects to call the <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method.</p></li>
+<li><p>Expand the code in the child <code class="docutils literal notranslate"><span class="pre">honk_horn()</span></code> method to be more interesting
 than a single <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. Be sure to include logic that calls
-the parent method if certain conditions are met.</li>
+the parent method if certain conditions are met.</p></li>
 </ol>
 <iframe src="https://trinket.io/embed/python/6532425879" width="100%" height="600" frameborder="1" marginwidth="0" marginheight="0" allowfullscreen></iframe></div>
 <div class="section" id="wrap-up">

@@ -91,15 +91,15 @@ with a new database file.</p>
 <div class="section" id="part-a-set-up-a-new-database">
 <h2><span class="section-number">24.9.1. </span>Part A: Set Up a New Database<a class="headerlink" href="#part-a-set-up-a-new-database" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Launch Visual Studio Code and use the <em>File</em> menu to open your
-<code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory.</li>
-<li>Double-click the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to open it in the editor.</li>
-<li>Choose a name for a new database file (like <code class="docutils literal notranslate"><span class="pre">exercises.db</span></code>) and enter it
-on its own line in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</li>
-<li>Create an <code class="docutils literal notranslate"><span class="pre">exercises.py</span></code> file. Start by importing the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> module,
-then <a class="reference internal" href="sqlite.html#connect-to-db"><span class="std std-ref">open a connection</span></a> to your new database.</li>
-<li>Don’t forget to define a <code class="docutils literal notranslate"><span class="pre">cursor</span></code> object.</li>
-<li>Run the program. Your new database should appear in the file tree.</li>
+<li><p>Launch Visual Studio Code and use the <em>File</em> menu to open your
+<code class="docutils literal notranslate"><span class="pre">database_practice</span></code> directory.</p></li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file to open it in the editor.</p></li>
+<li><p>Choose a name for a new database file (like <code class="docutils literal notranslate"><span class="pre">exercises.db</span></code>) and enter it
+on its own line in <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p></li>
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">exercises.py</span></code> file. Start by importing the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> module,
+then <a class="reference internal" href="sqlite.html#connect-to-db"><span class="std std-ref">open a connection</span></a> to your new database.</p></li>
+<li><p>Don’t forget to define a <code class="docutils literal notranslate"><span class="pre">cursor</span></code> object.</p></li>
+<li><p>Run the program. Your new database should appear in the file tree.</p></li>
 </ol>
 <p>The setup is done. You are ready to go!</p>
 </div>
@@ -109,26 +109,24 @@ then <a class="reference internal" href="sqlite.html#connect-to-db"><span class=
 your game closet. To do this, you will use a <code class="docutils literal notranslate"><span class="pre">games</span></code> table to store some
 information. The table needs at least 5 columns:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">game_id</span></code>: This is the primary key assigned to each row in the <code class="docutils literal notranslate"><span class="pre">games</span></code>
-table.</li>
-<li><code class="docutils literal notranslate"><span class="pre">title</span></code>: This is the name of the game.</li>
-<li><code class="docutils literal notranslate"><span class="pre">num_players</span></code>: Gives a range for the number of people required to play the
-game.</li>
-<li><code class="docutils literal notranslate"><span class="pre">min_age</span></code>: Identifies the youngest recommended player age for the game.</li>
-<li><code class="docutils literal notranslate"><span class="pre">ranking</span></code>: Assigns a value of 1 - 5 to the game. The higher the number,
-the more you like the game.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">game_id</span></code>: This is the primary key assigned to each row in the <code class="docutils literal notranslate"><span class="pre">games</span></code>
+table.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code>: This is the name of the game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_players</span></code>: Gives a range for the number of people required to play the
+game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_age</span></code>: Identifies the youngest recommended player age for the game.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ranking</span></code>: Assigns a value of 1 - 5 to the game. The higher the number,
+the more you like the game.</p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">num_players</span></code> columns will hold <code class="docutils literal notranslate"><span class="pre">TEXT</span></code> data types.
 <code class="docutils literal notranslate"><span class="pre">game_id</span></code> and <code class="docutils literal notranslate"><span class="pre">min_age</span></code> will be integers. <code class="docutils literal notranslate"><span class="pre">ranking</span></code> will be a <code class="docutils literal notranslate"><span class="pre">FLOAT</span></code>
 data type.</p>
 <ol class="arabic">
-<li><p class="first">Define a <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> variable and assign it a string to create the
+<li><p>Define a <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> variable and assign it a string to create the
 <code class="docutils literal notranslate"><span class="pre">games</span></code> table. Be sure to include the <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> syntax for the
-<code class="docutils literal notranslate"><span class="pre">game_id</span></code> column.</p>
-</li>
-<li><p class="first">Use <code class="docutils literal notranslate"><span class="pre">cursor.execute()</span></code> to run the SQL query and create the new table.</p>
-</li>
-<li><p class="first">Verify that the table was created by expanding the database name in the
+<code class="docutils literal notranslate"><span class="pre">game_id</span></code> column.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">cursor.execute()</span></code> to run the SQL query and create the new table.</p></li>
+<li><p>Verify that the table was created by expanding the database name in the
 <em>SQLITE EXPLORER</em> tab.</p>
 <div class="figure align-default">
 <img alt="The expanded SQLite Explorer tab, showing the games table and column names." src="../../_images/db-exercises-table.png" />
@@ -139,33 +137,29 @@ data type.</p>
 <div class="section" id="part-c-add-rows">
 <h2><span class="section-number">24.9.3. </span>Part C: Add Rows<a class="headerlink" href="#part-c-add-rows" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Assign a new string to your <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> variable. It should use the
+<li><p>Assign a new string to your <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> variable. It should use the
 <a class="reference internal" href="crud.html#sql-insert-syntax"><span class="std std-ref">INSERT INTO</span></a> keywords to add an entry to the <code class="docutils literal notranslate"><span class="pre">games</span></code>
-table. Remember to use placeholders after the <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> keyword.</p>
-</li>
-<li><p class="first">For the first new row, set the <code class="docutils literal notranslate"><span class="pre">title</span></code> as “Qwirkle”, the <code class="docutils literal notranslate"><span class="pre">num_players</span></code>
+table. Remember to use placeholders after the <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> keyword.</p></li>
+<li><p>For the first new row, set the <code class="docutils literal notranslate"><span class="pre">title</span></code> as “Qwirkle”, the <code class="docutils literal notranslate"><span class="pre">num_players</span></code>
 as “2 - 4”, the <code class="docutils literal notranslate"><span class="pre">min_age</span></code> as 6, and the ranking as 4.5.</p>
 <p>You do NOT need to include a value for <code class="docutils literal notranslate"><span class="pre">game_id</span></code>, since the <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>
 module automatically assigns primary key values.</p>
 </li>
-<li><p class="first">Reuse the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string to add another entry to the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.
-This time, choose your own values for the columns.</p>
-</li>
-<li><p class="first">It is possible to fill in only SOME of the columns for a given row. To skip
+<li><p>Reuse the <code class="docutils literal notranslate"><span class="pre">sql_query</span></code> string to add another entry to the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.
+This time, choose your own values for the columns.</p></li>
+<li><p>It is possible to fill in only SOME of the columns for a given row. To skip
 one or more columns, leave their names and values out of the SQL command.</p>
 <p>Add 3 - 5 more rows to the <code class="docutils literal notranslate"><span class="pre">games</span></code> table. At least one of these should
 NOT fill in all of the columns.</p>
 </li>
-<li><p class="first">Finish off your code with a <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> statement, then <code class="docutils literal notranslate"><span class="pre">.close()</span></code> the
-connection to the database.</p>
-</li>
-<li><p class="first">Run your program, then use the <em>Play</em> button in the <em>SQLITE EXPLORER</em> tab
-to view the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.</p>
-</li>
+<li><p>Finish off your code with a <code class="docutils literal notranslate"><span class="pre">.commit()</span></code> statement, then <code class="docutils literal notranslate"><span class="pre">.close()</span></code> the
+connection to the database.</p></li>
+<li><p>Run your program, then use the <em>Play</em> button in the <em>SQLITE EXPLORER</em> tab
+to view the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Notice that <code class="docutils literal notranslate"><span class="pre">NULL</span></code> appears in a cell whenever a value for that column
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">NULL</span></code> appears in a cell whenever a value for that column
 is not assigned.</p>
 </div>
 </div>
@@ -174,16 +168,16 @@ is not assigned.</p>
 <p>For this section, you will need to use several different query strings to
 complete the steps.</p>
 <ol class="arabic simple">
-<li>Use <a class="reference internal" href="crud.html#sql-select-syntax"><span class="std std-ref">SELECT … FROM …</span></a> to return results from
-all of the columns in the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">list()</span></code> to convert the returned results, then print the data to the
-console in a clear fashion. <em>Tip</em>: Define a function to accomplish this.</li>
-<li>Repeat step 1, but return and print a single entry based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code>
-value. You will need to include the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> keyword in your SQL query.</li>
-<li>Repeat step 1, but print only the <code class="docutils literal notranslate"><span class="pre">title</span></code> data from the table. <em>Bonus</em>:
-Display the games in alphabetical order.</li>
-<li>Select the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">min_age</span></code> data, but print the results in
-<em>DECREASING</em> order by age.</li>
+<li><p>Use <a class="reference internal" href="crud.html#sql-select-syntax"><span class="std std-ref">SELECT … FROM …</span></a> to return results from
+all of the columns in the <code class="docutils literal notranslate"><span class="pre">games</span></code> table.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">list()</span></code> to convert the returned results, then print the data to the
+console in a clear fashion. <em>Tip</em>: Define a function to accomplish this.</p></li>
+<li><p>Repeat step 1, but return and print a single entry based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code>
+value. You will need to include the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> keyword in your SQL query.</p></li>
+<li><p>Repeat step 1, but print only the <code class="docutils literal notranslate"><span class="pre">title</span></code> data from the table. <em>Bonus</em>:
+Display the games in alphabetical order.</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">title</span></code> and <code class="docutils literal notranslate"><span class="pre">min_age</span></code> data, but print the results in
+<em>DECREASING</em> order by age.</p></li>
 </ol>
 </div>
 <div class="section" id="part-u-modify-game-data">
@@ -192,23 +186,22 @@ Display the games in alphabetical order.</li>
 queries! If you leave it out, then <em>ALL</em> rows in the table will be changed.</p>
 <p>Don’t forget to view the <code class="docutils literal notranslate"><span class="pre">games</span></code> table after each step to confirm your work.</p>
 <ol class="arabic">
-<li><p class="first">Update a single record based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code>.</p>
+<li><p>Update a single record based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code>.</p>
 <ol class="loweralpha simple">
-<li>The first entry we added in Part C has a <code class="docutils literal notranslate"><span class="pre">game_id</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span></code>. Use
+<li><p>The first entry we added in Part C has a <code class="docutils literal notranslate"><span class="pre">game_id</span></code> of <code class="docutils literal notranslate"><span class="pre">1</span></code>. Use
 <code class="docutils literal notranslate"><span class="pre">UPDATE</span> <span class="pre">...</span> <span class="pre">SET</span> <span class="pre">...</span> <span class="pre">WHERE</span></code> to change the <code class="docutils literal notranslate"><span class="pre">ranking</span></code> for this entry to
-a different value.</li>
-<li>Use a single <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement to change two columns for the entry
-with <code class="docutils literal notranslate"><span class="pre">game_id</span></code> = 4.</li>
+a different value.</p></li>
+<li><p>Use a single <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> statement to change two columns for the entry
+with <code class="docutils literal notranslate"><span class="pre">game_id</span></code> = 4.</p></li>
 </ol>
 </li>
-<li><p class="first">Use <a class="reference internal" href="crud.html#add-table-column"><span class="std std-ref">ALTER TABLE</span></a> to add a new column, called
-<code class="docutils literal notranslate"><span class="pre">will_donate</span></code>, to the table. Set the data type to <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code>.</p>
-</li>
-<li><p class="first">With a single <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> command, set the <code class="docutils literal notranslate"><span class="pre">will_donate</span></code> value to <code class="docutils literal notranslate"><span class="pre">True</span></code>
+<li><p>Use <a class="reference internal" href="crud.html#add-table-column"><span class="std std-ref">ALTER TABLE</span></a> to add a new column, called
+<code class="docutils literal notranslate"><span class="pre">will_donate</span></code>, to the table. Set the data type to <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code>.</p></li>
+<li><p>With a single <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> command, set the <code class="docutils literal notranslate"><span class="pre">will_donate</span></code> value to <code class="docutils literal notranslate"><span class="pre">True</span></code>
 for all entries that have a <code class="docutils literal notranslate"><span class="pre">ranking</span></code> lower than 3.0.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">SQLite converts boolean values to integers. <code class="docutils literal notranslate"><span class="pre">True</span></code> is stored as <code class="docutils literal notranslate"><span class="pre">1</span></code>,
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>SQLite converts boolean values to integers. <code class="docutils literal notranslate"><span class="pre">True</span></code> is stored as <code class="docutils literal notranslate"><span class="pre">1</span></code>,
 while <code class="docutils literal notranslate"><span class="pre">False</span></code> is saved as <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </div>
 </li>
@@ -218,10 +211,10 @@ while <code class="docutils literal notranslate"><span class="pre">False</span><
 <h2><span class="section-number">24.9.6. </span>Part D: Remove Games<a class="headerlink" href="#part-d-remove-games" title="Permalink to this headline">¶</a></h2>
 <p>Remember, there is no undo option after running <a class="reference internal" href="crud.html#sql-delete-syntax"><span class="std std-ref">DELETE</span></a>!</p>
 <ol class="arabic simple">
-<li>Delete a single row from the table based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code> value.</li>
-<li>Write a single <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> command to remove any games from the table that
+<li><p>Delete a single row from the table based on its <code class="docutils literal notranslate"><span class="pre">game_id</span></code> value.</p></li>
+<li><p>Write a single <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> command to remove any games from the table that
 you don’t consider fun. You can use either the <code class="docutils literal notranslate"><span class="pre">ranking</span></code> or <code class="docutils literal notranslate"><span class="pre">will_donate</span></code>
-value to decide which rows to remove.</li>
+value to decide which rows to remove.</p></li>
 </ol>
 </div>
 <div class="section" id="bonus-exercises">
@@ -230,11 +223,11 @@ value to decide which rows to remove.</li>
 <p>Take a quick break and, if you wish, try these additional tasks that go above
 and beyond the basic SQL commands.</p>
 <ol class="arabic simple">
-<li>Use logical operators (<code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code>) in <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> statements.</li>
-<li>Print the complete records for the games, but only if the <code class="docutils literal notranslate"><span class="pre">min_age</span></code> column
-<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">null</span></code>.</li>
-<li>Experiment with the <a class="reference external" href="https://www.w3schools.com/sql/sql_orderby.asp" target="_blank">ORDER BY<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
-keywords.</li>
+<li><p>Use logical operators (<code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code>) in <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> statements.</p></li>
+<li><p>Print the complete records for the games, but only if the <code class="docutils literal notranslate"><span class="pre">min_age</span></code> column
+<code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">null</span></code>.</p></li>
+<li><p>Experiment with the <a class="reference external" href="https://www.w3schools.com/sql/sql_orderby.asp" target="_blank">ORDER BY<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+keywords.</p></li>
 </ol>
 </div>
 </div>

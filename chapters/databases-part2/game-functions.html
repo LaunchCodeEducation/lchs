@@ -137,19 +137,19 @@ contain a heading.</span><a class="headerlink" href="#id1" title="Permalink to t
 </td></tr></table></div>
 <p>Here’s a breakdown of the code:</p>
 <ol class="arabic simple">
-<li><strong>Line 21</strong>: Instead of an empty list, <code class="docutils literal notranslate"><span class="pre">headings</span></code> begins with a single
+<li><p><strong>Line 21</strong>: Instead of an empty list, <code class="docutils literal notranslate"><span class="pre">headings</span></code> begins with a single
 entry. That string value keeps the upper left cell on the board blank. Since
 the first column contains row letters instead of active spaces, no heading
-is necessary.</li>
-<li><strong>Line 22</strong>: This sets up a basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Each time it repeats,
-<code class="docutils literal notranslate"><span class="pre">label</span></code> is assigned a new integer (0, 1, 2, … 9).</li>
-<li><strong>Line 23</strong>: This appends the value <code class="docutils literal notranslate"><span class="pre">label</span> <span class="pre">+</span> <span class="pre">1</span></code> to the end of the
-<code class="docutils literal notranslate"><span class="pre">headings</span></code> list.</li>
-<li><strong>Line 24</strong>: This returns an independent copy of the column headings, which
-is assigned to <code class="docutils literal notranslate"><span class="pre">session['columns']</span></code>.</li>
+is necessary.</p></li>
+<li><p><strong>Line 22</strong>: This sets up a basic <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Each time it repeats,
+<code class="docutils literal notranslate"><span class="pre">label</span></code> is assigned a new integer (0, 1, 2, … 9).</p></li>
+<li><p><strong>Line 23</strong>: This appends the value <code class="docutils literal notranslate"><span class="pre">label</span> <span class="pre">+</span> <span class="pre">1</span></code> to the end of the
+<code class="docutils literal notranslate"><span class="pre">headings</span></code> list.</p></li>
+<li><p><strong>Line 24</strong>: This returns an independent copy of the column headings, which
+is assigned to <code class="docutils literal notranslate"><span class="pre">session['columns']</span></code>.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
 <p>Since the loop just builds a list of 10 numbers, you might wonder why we
 don’t hard-code the result.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">headings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
@@ -158,7 +158,7 @@ don’t hard-code the result.</p>
 <p>Using a loop keeps our code flexible. If we add a parameter to
 <code class="docutils literal notranslate"><span class="pre">make_columns()</span></code>, we can adapt the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to generate a different
 number of headings. This opens up the possibility for other board layouts.</p>
-<div class="last highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_columns</span><span class="p">(</span><span class="n">num_headings</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_columns</span><span class="p">(</span><span class="n">num_headings</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
    <span class="n">headings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span>
    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_headings</span><span class="p">):</span>
       <span class="n">headings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -209,14 +209,12 @@ loops.</p>
 </td></tr></table></div>
 <p>Here’s a breakdown of the code:</p>
 <ol class="arabic">
-<li><p class="first"><strong>Line 27</strong>: Assigns an empty list to <code class="docutils literal notranslate"><span class="pre">rows</span></code>.</p>
-</li>
-<li><p class="first"><strong>Lines 28 - 30</strong>: Line 28 starts the <em>outer loop</em>. Each time it repeats,
+<li><p><strong>Line 27</strong>: Assigns an empty list to <code class="docutils literal notranslate"><span class="pre">rows</span></code>.</p></li>
+<li><p><strong>Lines 28 - 30</strong>: Line 28 starts the <em>outer loop</em>. Each time it repeats,
 <code class="docutils literal notranslate"><span class="pre">row</span></code> is assigned a new value in the range 0 - 9. Line 29 uses this
 integer to assign an uppercase character (<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">-</span> <span class="pre">J</span></code>) to <code class="docutils literal notranslate"><span class="pre">letter</span></code>. Line 30
-assigns an empty list to the accumulator variable <code class="docutils literal notranslate"><span class="pre">cells</span></code>.</p>
-</li>
-<li><p class="first"><strong>Lines 31 - 35</strong>: Line 31 begins the <em>inner loop</em>. Each time it repeats,
+assigns an empty list to the accumulator variable <code class="docutils literal notranslate"><span class="pre">cells</span></code>.</p></li>
+<li><p><strong>Lines 31 - 35</strong>: Line 31 begins the <em>inner loop</em>. Each time it repeats,
 <code class="docutils literal notranslate"><span class="pre">column</span></code> is assigned an integer in the range 0 - 10. When <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">==</span> <span class="pre">0</span></code>,
 we are dealing with the first cell in the row. Line 33 appends <code class="docutils literal notranslate"><span class="pre">letter</span></code> to
 <code class="docutils literal notranslate"><span class="pre">cells</span></code>.</p>
@@ -225,12 +223,10 @@ Line 35 appends a letter/number combination to <code class="docutils literal not
 be used as the text inside the button.</p>
 <p>After the inner loop finishes, the <code class="docutils literal notranslate"><span class="pre">cells</span></code> list contains 11 entries.</p>
 </li>
-<li><p class="first"><strong>Line 36</strong>: This statement is part of the outer loop. It appends the
-completed <code class="docutils literal notranslate"><span class="pre">cells</span></code> list to <code class="docutils literal notranslate"><span class="pre">rows</span></code>.</p>
-</li>
-<li><p class="first"><strong>Line 37</strong>: This returns the completed <code class="docutils literal notranslate"><span class="pre">rows</span></code> list, which is assigned to
-<code class="docutils literal notranslate"><span class="pre">session['rows']</span></code>.</p>
-</li>
+<li><p><strong>Line 36</strong>: This statement is part of the outer loop. It appends the
+completed <code class="docutils literal notranslate"><span class="pre">cells</span></code> list to <code class="docutils literal notranslate"><span class="pre">rows</span></code>.</p></li>
+<li><p><strong>Line 37</strong>: This returns the completed <code class="docutils literal notranslate"><span class="pre">rows</span></code> list, which is assigned to
+<code class="docutils literal notranslate"><span class="pre">session['rows']</span></code>.</p></li>
 </ol>
 </div>
 <div class="section" id="the-place-mines-function">
@@ -265,35 +261,29 @@ single parameter, which is the number of mines to hide.</p>
 </td></tr></table></div>
 <p>Here’s a breakdown of the code:</p>
 <ol class="arabic">
-<li><p class="first"><strong>Line 40</strong>: Assigns an empty list to the <code class="docutils literal notranslate"><span class="pre">mines</span></code> variable. This begins
-yet another example of the accumulator pattern!</p>
-</li>
-<li><p class="first"><strong>Line 41</strong>: The condition <code class="docutils literal notranslate"><span class="pre">len(mines)</span> <span class="pre">&lt;</span> <span class="pre">amount</span></code> keeps the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop
+<li><p><strong>Line 40</strong>: Assigns an empty list to the <code class="docutils literal notranslate"><span class="pre">mines</span></code> variable. This begins
+yet another example of the accumulator pattern!</p></li>
+<li><p><strong>Line 41</strong>: The condition <code class="docutils literal notranslate"><span class="pre">len(mines)</span> <span class="pre">&lt;</span> <span class="pre">amount</span></code> keeps the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop
 running until the number of entries in <code class="docutils literal notranslate"><span class="pre">mines</span></code> matches the number assigned
-to <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p>
-</li>
-<li><p class="first"><strong>Line 42</strong>: <code class="docutils literal notranslate"><span class="pre">string.ascii_uppercase[0:10]</span></code> returns a slice from the
+to <code class="docutils literal notranslate"><span class="pre">amount</span></code>.</p></li>
+<li><p><strong>Line 42</strong>: <code class="docutils literal notranslate"><span class="pre">string.ascii_uppercase[0:10]</span></code> returns a slice from the
 string of uppercase letters. In this case, the index values <code class="docutils literal notranslate"><span class="pre">[0:10]</span></code>
 return the letters <code class="docutils literal notranslate"><span class="pre">'ABCDEFGHIJ'</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">random.choice</span></code> then selects one letter from the slice.</p>
 </li>
-<li><p class="first"><strong>Line 43</strong>: This selects a random integer from 1 - 10, including both end
-points.</p>
-</li>
-<li><p class="first"><strong>Line 44</strong>: This combines the row letter with the column number and assigns
-the string to <code class="docutils literal notranslate"><span class="pre">location</span></code>.</p>
-</li>
-<li><p class="first"><strong>Lines 45 &amp; 46</strong>: The conditional prevents duplicate choices for the mine
+<li><p><strong>Line 43</strong>: This selects a random integer from 1 - 10, including both end
+points.</p></li>
+<li><p><strong>Line 44</strong>: This combines the row letter with the column number and assigns
+the string to <code class="docutils literal notranslate"><span class="pre">location</span></code>.</p></li>
+<li><p><strong>Lines 45 &amp; 46</strong>: The conditional prevents duplicate choices for the mine
 locations. If the newly chosen cell is NOT currently in the <code class="docutils literal notranslate"><span class="pre">mines</span></code> list,
-it is added. Otherwise, the choice is ignored.</p>
-</li>
-<li><p class="first"><strong>Lines 47 - 50</strong>: These statements alphabetize the <code class="docutils literal notranslate"><span class="pre">mines</span></code> list, call two
-of the <code class="docutils literal notranslate"><span class="pre">crud.py</span></code> functions, and return an independent copy of the list.</p>
-</li>
+it is added. Otherwise, the choice is ignored.</p></li>
+<li><p><strong>Lines 47 - 50</strong>: These statements alphabetize the <code class="docutils literal notranslate"><span class="pre">mines</span></code> list, call two
+of the <code class="docutils literal notranslate"><span class="pre">crud.py</span></code> functions, and return an independent copy of the list.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">We coded the <code class="docutils literal notranslate"><span class="pre">record_mines()</span></code> and <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> functions on the
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>We coded the <code class="docutils literal notranslate"><span class="pre">record_mines()</span></code> and <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> functions on the
 <a class="reference internal" href="db-logic.html#crud-tutorials"><span class="std std-ref">Database Functions page</span></a>.</p>
 </div>
 </div>
@@ -362,11 +352,11 @@ chapter. Now it’s time to complete that work.</p>
 <p><code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code> is called at the start of each new round of
 Minesweeper. When the player submits a number of mines to hide:</p>
 <ol class="arabic simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">index()</span></code> function calls <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code>.</li>
-<li>The <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code> function picks random locations on the board to hide
-the new set of mines. Then it calls the <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> function.</li>
-<li><code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> iterates through all of the cells in the <code class="docutils literal notranslate"><span class="pre">board</span></code> table,
-and it passes each location to <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code>.</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">index()</span></code> function calls <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code> function picks random locations on the board to hide
+the new set of mines. Then it calls the <code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count_mines()</span></code> iterates through all of the cells in the <code class="docutils literal notranslate"><span class="pre">board</span></code> table,
+and it passes each location to <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code>.</p></li>
 </ol>
 <p>For a given cell on the table, <code class="docutils literal notranslate"><span class="pre">check_surroundings()</span></code> counts the number of
 mines hidden in the surrounding spaces. This total is stored in both the
@@ -394,15 +384,16 @@ examines the Python code used to perform that search.</p>
 <div class="section" id="video-summary">
 <h3><span class="section-number">25.9.2.4. </span>Video Summary<a class="headerlink" href="#video-summary" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li>To check all of the spaces surrounding a given cell, we can use a pair of
+<li><p>To check all of the spaces surrounding a given cell, we can use a pair of
 <a class="reference internal" href="../loops/project.html#nested-loops"><span class="std std-ref">nested for loops</span></a>. The <em>outer loop</em> sets a new row
-value. The <em>inner loop</em> iterates over the possible columns in each row.</li>
-<li>To simplify our search algorithm, add extra cells to the board!<ol class="loweralpha">
-<li>Place the cells along the outer edge of the game board.</li>
-<li>The cells remain hidden from the player, and they will never contain a
-mine.</li>
-<li>The cost of storing data for the hidden cells is well worth it. We gain
-<em>a lot more</em> by decreasing the complexity of the search.</li>
+value. The <em>inner loop</em> iterates over the possible columns in each row.</p></li>
+<li><p>To simplify our search algorithm, add extra cells to the board!</p>
+<ol class="loweralpha simple">
+<li><p>Place the cells along the outer edge of the game board.</p></li>
+<li><p>The cells remain hidden from the player, and they will never contain a
+mine.</p></li>
+<li><p>The cost of storing data for the hidden cells is well worth it. We gain
+<em>a lot more</em> by decreasing the complexity of the search.</p></li>
 </ol>
 </li>
 </ol>

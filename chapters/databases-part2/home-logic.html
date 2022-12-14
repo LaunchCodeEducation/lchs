@@ -93,10 +93,10 @@ the game running.</p>
 <p>The home page for our application is controlled by the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function in
 <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. It serves several purposes:</p>
 <ol class="arabic simple">
-<li>To clear existing data in preparation for a new game,</li>
-<li>To process the <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span></code> form submission,</li>
-<li>To hide a new batch of mines on the board,</li>
-<li>To redirect a player to the URL where they will play the game.</li>
+<li><p>To clear existing data in preparation for a new game,</p></li>
+<li><p>To process the <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span></code> form submission,</p></li>
+<li><p>To hide a new batch of mines on the board,</p></li>
+<li><p>To redirect a player to the URL where they will play the game.</p></li>
 </ol>
 <p>To complete your <code class="docutils literal notranslate"><span class="pre">index()</span></code> function, open your Minesweeper project and code
 along with the video:</p>
@@ -109,39 +109,35 @@ along with the video:</p>
 notes give you information about the ideas explained in the clip. To see the
 specific Python code and hear the logic behind it, you need to watch the movie.</p>
 <ol class="arabic">
-<li><p class="first">Two helper functions have already been written for you. The
+<li><p>Two helper functions have already been written for you. The
 <code class="docutils literal notranslate"><span class="pre">reset_board()</span></code> and <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code> functions can be found in the
 <code class="docutils literal notranslate"><span class="pre">game_logic.py</span></code> file. Line 2 in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> imports these functions from
-that module.</p>
-</li>
-<li><p class="first">Use a conditional to break the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function into two parts. One part
+that module.</p></li>
+<li><p>Use a conditional to break the <code class="docutils literal notranslate"><span class="pre">index()</span></code> function into two parts. One part
 deals with the form submission (a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request), and the other resets
-the board after a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p>
-</li>
-<li><p class="first">After a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, use <code class="docutils literal notranslate"><span class="pre">request.form[]</span></code> to collect data from the
+the board after a <code class="docutils literal notranslate"><span class="pre">GET</span></code> request.</p></li>
+<li><p>After a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request, use <code class="docutils literal notranslate"><span class="pre">request.form[]</span></code> to collect data from the
 <em>Main Menu</em> form. This will be the number of mines the user wants to hide.</p>
 <ol class="loweralpha simple">
-<li>Add some server-side validation to deal with invalid form submissions
-(e.g. submitting and empty field, or letters, or symbols, etc.).</li>
-<li>For invalid form submissions, set the number of mines to some default
-value, like <code class="docutils literal notranslate"><span class="pre">10</span></code>.</li>
-<li>For now, don’t worry about checking if the number of mines is within
-5 - 25. You can return to this idea <a class="reference internal" href="extras.html#game-refinements"><span class="std std-ref">later</span></a>.</li>
+<li><p>Add some server-side validation to deal with invalid form submissions
+(e.g. submitting and empty field, or letters, or symbols, etc.).</p></li>
+<li><p>For invalid form submissions, set the number of mines to some default
+value, like <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>For now, don’t worry about checking if the number of mines is within
+5 - 25. You can return to this idea <a class="reference internal" href="extras.html#game-refinements"><span class="std std-ref">later</span></a>.</p></li>
 </ol>
 </li>
-<li><p class="first">Save the number of mines to the session cookie. Make sure the value is the
+<li><p>Save the number of mines to the session cookie. Make sure the value is the
 <code class="docutils literal notranslate"><span class="pre">int</span></code> data type.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;num_mines&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">number_submitted_from_form</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">After validating the number of mines, call the <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code> function.
+<li><p>After validating the number of mines, call the <code class="docutils literal notranslate"><span class="pre">place_mines()</span></code> function.
 Include the number of mines as the argument, and save the returned list to
-<code class="docutils literal notranslate"><span class="pre">session['mines']</span></code>.</p>
-</li>
-<li><p class="first">Finally, use the <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> function to send the user to the <code class="docutils literal notranslate"><span class="pre">/play</span></code>
-route.</p>
-</li>
+<code class="docutils literal notranslate"><span class="pre">session['mines']</span></code>.</p></li>
+<li><p>Finally, use the <code class="docutils literal notranslate"><span class="pre">redirect()</span></code> function to send the user to the <code class="docutils literal notranslate"><span class="pre">/play</span></code>
+route.</p></li>
 </ol>
 </div>
 </div>

@@ -90,36 +90,36 @@
 input. However, the attribute also provides other options for collecting data
 from the user.</p>
 <p>For example:</p>
-<table border="1" class="docutils align-default" id="id1">
+<table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Three Non-Text Inputs</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Checkboxes</th>
-<th class="head">Radio Buttons</th>
-<th class="head">Select Menu</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Checkboxes</p></th>
+<th class="head"><p>Radio Buttons</p></th>
+<th class="head"><p>Select Menu</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><p class="first">Select any number of options. Boxes can be checked or unchecked by
+<tbody>
+<tr class="row-even"><td><p>Select any number of options. Boxes can be checked or unchecked by
 clicking in the box or on the label.</p>
-<div class="last"><form>
+<form>
   <label><input type="checkbox" name="red"/> Red</label><br>
   <label><input type="checkbox" name="green"/> Green</label><br>
   <label><input type="checkbox" name="blue"/> Blue</label>
-</form></div></td>
-<td><p class="first">Only one choice per group is allowed. Once selected, a radio button
+</form></td>
+<td><p>Only one choice per group is allowed. Once selected, a radio button
 CANNOT be unchecked by clicking on it again. (More on this below).</p>
-<div class="last"><form>
+<form>
   <label><input type="radio" name="color"/> Red</label><br>
   <label><input type="radio" name="color"/> Green</label><br>
   <label><input type="radio" name="color"/> Blue</label>
-</form></div></td>
-<td><p class="first">A drop-down menu that allows the selection of at least one item.</p>
-<div class="last"><form>
+</form></td>
+<td><p>A drop-down menu that allows the selection of at least one item.</p>
+<form>
   <label>Choose a color: <br>
      <select>
         <option disabled selected></option>
@@ -128,7 +128,7 @@ CANNOT be unchecked by clicking on it again. (More on this below).</p>
         <option>Blue</option>
      </select>
   </label>
-</form></div></td>
+</form></td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +148,7 @@ paired with its own <code class="docutils literal notranslate"><span class="pre"
 checkbox. The key is the same as the <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute, and the default value
 is <code class="docutils literal notranslate"><span class="pre">on</span></code>.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s use the <em>Parrot Server</em> again to see the data received from a set of
 checkboxes. Note that each <code class="docutils literal notranslate"><span class="pre">input</span></code> element has its own <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -164,7 +164,7 @@ checkboxes. Note that each <code class="docutils literal notranslate"><span clas
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last figure align-default" id="id2">
+<div class="figure align-default" id="id2">
 <img alt="Selecting the 'Red' and 'Green' checkboxes sends values of &quot;on&quot; to the server." src="../../_images/checkbox-1.png" />
 <p class="caption"><span class="caption-text">Checking a box assigns the value <code class="docutils literal notranslate"><span class="pre">on</span></code> to the <code class="docutils literal notranslate"><span class="pre">name</span></code> of the input element.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
@@ -175,7 +175,7 @@ the <code class="docutils literal notranslate"><span class="pre">value</span></c
 </pre></div>
 </div>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>We’ve added <code class="docutils literal notranslate"><span class="pre">value</span></code> attributes to each <code class="docutils literal notranslate"><span class="pre">input</span></code> tag. Note that we also
 changed the <code class="docutils literal notranslate"><span class="pre">name</span></code> for each element.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -191,7 +191,7 @@ changed the <code class="docutils literal notranslate"><span class="pre">name</s
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last figure align-default" id="id3">
+<div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/checkbox-2.png"><img alt="Adding &quot;value&quot; attributes changes the data assigned to each key." src="../../_images/checkbox-2.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute lets us choose what gets assigned to the key.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
@@ -202,7 +202,7 @@ changed the <code class="docutils literal notranslate"><span class="pre">name</s
 attribute. Let’s see what happens when we give all the checkboxes in a group
 the same <code class="docutils literal notranslate"><span class="pre">name</span></code>:</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Each of the <code class="docutils literal notranslate"><span class="pre">input</span></code> elements in this form is named <code class="docutils literal notranslate"><span class="pre">colors</span></code>. When
 submitted, the form will assign all of the selected <code class="docutils literal notranslate"><span class="pre">values</span></code> to that key.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -222,22 +222,22 @@ submitted, the form will assign all of the selected <code class="docutils litera
 <a class="reference internal image-reference" href="../../_images/checkbox-3.png"><img alt="Checkboxes with the same name contribute to the same key/value pair." src="../../_images/checkbox-3.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">Multiple checkboxes contribute to a single key/value pair.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p class="last">Note that the value assigned to the <code class="docutils literal notranslate"><span class="pre">colors</span></code> key is a <em>list</em> containing
+<p>Note that the value assigned to the <code class="docutils literal notranslate"><span class="pre">colors</span></code> key is a <em>list</em> containing
 the individual values of the clicked checkboxes.</p>
 </div>
 <p>When we give a set of checkbox inputs the same <code class="docutils literal notranslate"><span class="pre">name</span></code>, each one contributes
 to a single key. In this case, we have a single <code class="docutils literal notranslate"><span class="pre">colors</span></code> key that accepts
 the results from the entire set of boxes.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Return to your local <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form.</p>
-<ol class="last arabic simple">
-<li>Save and commit your previous work to the repository.</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to make a branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code>. Call it
-<code class="docutils literal notranslate"><span class="pre">checkboxes</span></code>.</li>
-<li>In this new branch, modify your form to use at least three checkboxes.</li>
-<li>Experiment with the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> attributes to see how they
-behave.</li>
+<ol class="arabic simple">
+<li><p>Save and commit your previous work to the repository.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span></code> to make a branch off of <code class="docutils literal notranslate"><span class="pre">main</span></code>. Call it
+<code class="docutils literal notranslate"><span class="pre">checkboxes</span></code>.</p></li>
+<li><p>In this new branch, modify your form to use at least three checkboxes.</p></li>
+<li><p>Experiment with the <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> attributes to see how they
+behave.</p></li>
 </ol>
 </div>
 </div>
@@ -256,7 +256,7 @@ the form. Just like with checkboxes, every radio input should have its own
 <p>To make a radio group work, all of the input elements must have the same
 <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Let’s convert the color checkboxes to a set of radio buttons. We do this by
 updating the <code class="docutils literal notranslate"><span class="pre">type</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes in each <code class="docutils literal notranslate"><span class="pre">&lt;input&gt;</span></code> tag.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -272,7 +272,7 @@ updating the <code class="docutils literal notranslate"><span class="pre">type</
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </td></tr></table></div>
-<div class="last figure align-default" id="id5">
+<div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../../_images/radio-parrot.png"><img alt="The 'Green' radio button is selected. This assigns the value 'green' to the 'color' key." src="../../_images/radio-parrot.png" style="width: 70%;" /></a>
 <p class="caption"><span class="caption-text">The selected radio input sets the value for the <code class="docutils literal notranslate"><span class="pre">color</span></code> key.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
@@ -300,27 +300,27 @@ situation where our users need to do this.</p>
 will revisit this idea later in the chapter. For now, here is one easy,
 excellent tip:</p>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>In a radio group, ALWAYS include some kind of <em>No Choice</em> option. This gives
 the user an escape route if they don’t like any of the other options.</p>
-<div class="last"><form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
+<form action="https://handlers.education.launchcode.org/request-parrot" method="POST">
    <label><input type="radio" name="color" value="red"/> Red</label><br>
    <label><input type="radio" name="color" value="green"/> Green</label><br>
    <label><input type="radio" name="color" value="blue"/> Blue</label><br>
    <label><input type="radio" name="color" value=""/> None of the above</label><br>
-</form></div></div>
+</form></div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Return to your local <code class="docutils literal notranslate"><span class="pre">index.html</span></code> form.</p>
-<ol class="last arabic simple">
-<li>Save and commit the work in the <code class="docutils literal notranslate"><span class="pre">checkboxes</span></code> branch.</li>
-<li>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and checkout a new branch called <code class="docutils literal notranslate"><span class="pre">radio</span></code>.</li>
-<li>In the new branch, modify your form to include at least three radio
-inputs.</li>
-<li>Submit your form to the parrot server to see how the data gets reported.</li>
-<li>What happens if you submit the form without clicking any of the radio
-buttons?</li>
-<li>What happens if you give each radio input a different <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute?</li>
+<ol class="arabic simple">
+<li><p>Save and commit the work in the <code class="docutils literal notranslate"><span class="pre">checkboxes</span></code> branch.</p></li>
+<li><p>Return to <code class="docutils literal notranslate"><span class="pre">main</span></code> and checkout a new branch called <code class="docutils literal notranslate"><span class="pre">radio</span></code>.</p></li>
+<li><p>In the new branch, modify your form to include at least three radio
+inputs.</p></li>
+<li><p>Submit your form to the parrot server to see how the data gets reported.</p></li>
+<li><p>What happens if you submit the form without clicking any of the radio
+buttons?</p></li>
+<li><p>What happens if you give each radio input a different <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute?</p></li>
 </ol>
 </div>
 </div>
@@ -328,24 +328,24 @@ buttons?</li>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.5.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What is the default value submitted when a checkbox is selected?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">on</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">off</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">True</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">False</code></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p><strong>True or False:</strong> A group of radio inputs should have different values for
 their <code class="docutils literal notranslate"><span class="pre">name</span></code> attributes.</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> True</li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> False</li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 

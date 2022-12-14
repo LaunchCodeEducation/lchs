@@ -102,8 +102,8 @@ make it available for use in the program. For example, the statement
 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code> creates a new name, <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, which points to the module
 where all of the turtle data and functions are stored.</p>
 <div class="admonition-warning admonition">
-<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
-<p class="last">Put all <code class="docutils literal notranslate"><span class="pre">import</span></code> statements in the very first lines of a program! This
+<p class="admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p>Put all <code class="docutils literal notranslate"><span class="pre">import</span></code> statements in the very first lines of a program! This
 avoids runtime errors by importing all module items well before your code
 calls for them.</p>
 </div>
@@ -129,14 +129,14 @@ the screen:</p>
 </td></tr></table></div>
 <p>We can read these two examples of dot notation like this:</p>
 <ol class="arabic simple">
-<li><strong>Line 4</strong> - In the <code class="docutils literal notranslate"><span class="pre">string</span></code> module, access the value for the variable
-<code class="docutils literal notranslate"><span class="pre">ascii_lowercase</span></code>.</li>
-<li><strong>Line 5</strong> - In the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module, call the function called <code class="docutils literal notranslate"><span class="pre">circle</span></code>,
-and send it the argument <code class="docutils literal notranslate"><span class="pre">50</span></code>.</li>
+<li><p><strong>Line 4</strong> - In the <code class="docutils literal notranslate"><span class="pre">string</span></code> module, access the value for the variable
+<code class="docutils literal notranslate"><span class="pre">ascii_lowercase</span></code>.</p></li>
+<li><p><strong>Line 5</strong> - In the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module, call the function called <code class="docutils literal notranslate"><span class="pre">circle</span></code>,
+and send it the argument <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p></li>
 </ol>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">In order to call a function stored in a module, we MUST know the name of
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>In order to call a function stored in a module, we MUST know the name of
 that function. To access a data value stored in a module, we MUST know the
 variable name for that value.</p>
 </div>
@@ -146,7 +146,7 @@ variable name for that value.</p>
 up with a Google search. However, Python has a useful directory function,
 <code class="docutils literal notranslate"><span class="pre">dir()</span></code>, that returns a list of names for everything stored in a module.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -164,10 +164,10 @@ up with a Google search. However, Python has a useful directory function,
 </div>
 <p>To make this output easier to read, we can use a loop to print the list
 one element per line.</p>
-<div class="last"><iframe height="450px" width="100%" src="https://repl.it/@launchcode/Print-Module-Contents?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<iframe height="450px" width="100%" src="https://repl.it/@launchcode/Print-Module-Contents?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
-<p class="last">From the list of names, skip those that begin with underscores <code class="docutils literal notranslate"><span class="pre">__</span></code>. Using
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p>From the list of names, skip those that begin with underscores <code class="docutils literal notranslate"><span class="pre">__</span></code>. Using
 these is a more advanced skill, and we will focus on the other options for
 now.</p>
 </div>
@@ -185,7 +185,7 @@ we can use the <code class="docutils literal notranslate"><span class="pre">from
 module. If we want to import more than one item, we separate the names by
 commas.</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Compare the syntax and results from the following imports:</p>
 <div class="highlight-Python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -219,7 +219,7 @@ File &quot;main.py&quot;, line 4, in &lt;module&gt;
 NameError: name &#39;ascii_letters&#39; is not defined
 </pre></div>
 </div>
-<p class="last">Note that when we combine <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span></code>, we do NOT need to use dot
+<p>Note that when we combine <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span></code>, we do NOT need to use dot
 notation. We can call the variable or function directly by its name. Also note
 that <code class="docutils literal notranslate"><span class="pre">ascii_letters</span></code> results in a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, because that data was not
 imported from the <code class="docutils literal notranslate"><span class="pre">string</span></code> module in line 1.</p>
@@ -237,12 +237,12 @@ keyword as part of the <code class="docutils literal notranslate"><span class="p
 <div class="section" id="try-it">
 <h2><span class="section-number">11.2.4. </span>Try It!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p class="first">Using the clues in the code below, import the modules required to make
+<li><p>Using the clues in the code below, import the modules required to make
 the program work:</p>
 <iframe height="550px" width="100%" src="https://repl.it/@launchcode/Import-Modules?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><p><em>Challenge</em>: Modify the code to replace one <code class="docutils literal notranslate"><span class="pre">import</span></code> statement with
 <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module_name</span> <span class="pre">import</span> <span class="pre">function_name</span></code>.</p>
 </li>
-<li><p class="first">Using the clues in the code below, rename the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to make
+<li><p>Using the clues in the code below, rename the <code class="docutils literal notranslate"><span class="pre">turtle</span></code> module to make
 the code work:</p>
 <iframe height="600px" width="100%" src="https://repl.it/@launchcode/Rename-Turtle-Module?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></li>
 </ol>

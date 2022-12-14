@@ -112,7 +112,7 @@ amount. The methods <code class="docutils literal notranslate"><span class="pre"
 (right) or counterclockwise (left). Inside the parentheses, we must include a
 number to specify how much <code class="docutils literal notranslate"><span class="pre">bob</span></code> should turn.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>The following program draws a line, returns to the starting point, rotates
 the turtle left, and then draws another line.</p>
 <p>The <em>argument</em> (the number inside the parentheses) in line 7 sets the number
@@ -120,15 +120,15 @@ of degrees <code class="docutils literal notranslate"><span class="pre">bob</spa
 counterclockwise by 45°.</p>
 <p>Change the argument in line 7 to see how it affects the drawing:</p>
 <ol class="arabic simple">
-<li>Try each of the values 90, 120, 180, and 360.</li>
-<li>What happens if you enter a negative number?</li>
-<li>Try using 720.</li>
-<li>What happens if you switch the order of lines 7 &amp; 8?</li>
+<li><p>Try each of the values 90, 120, 180, and 360.</p></li>
+<li><p>What happens if you enter a negative number?</p></li>
+<li><p>Try using 720.</p></li>
+<li><p>What happens if you switch the order of lines 7 &amp; 8?</p></li>
 </ol>
-<div class="last"><iframe height="500px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Turning?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<iframe height="500px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Turning?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Without diving deep into the geometry, there are 360° in a circle. Using a
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Without diving deep into the geometry, there are 360° in a circle. Using a
 larger number as the argument just makes the turtle spin in place one or
 more times before running the next statement in the code.</p>
 </div>
@@ -143,8 +143,8 @@ more times before running the next statement in the code.</p>
 a circle in the drawing space. The argument <code class="docutils literal notranslate"><span class="pre">radius</span></code> sets the size of the
 circle in pixels.</p>
 <div class="admonition-note admonition">
-<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
-<p class="last">Remember that the radius of a circle is the distance from the center to the
+<p class="admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p>Remember that the radius of a circle is the distance from the center to the
 edge. The actual size of the circle will be twice the radius, so
 <code class="docutils literal notranslate"><span class="pre">bob.circle(50)</span></code> draws a circle that is 100 pixels across.</p>
 </div>
@@ -155,21 +155,21 @@ the curved line will be.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">bob.circle(50,</span> <span class="pre">180)</span></code> draws a half-circle, since 180 is half of
 360.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Experiment with drawing curved lines.</p>
 <p>Try the following:</p>
 <ol class="arabic simple">
-<li>Change the size of the circle.</li>
-<li>What happens if you use a negative radius?</li>
-<li>Change line 4 to <code class="docutils literal notranslate"><span class="pre">bob.circle(50,</span> <span class="pre">180)</span></code>.</li>
-<li>Replace <code class="docutils literal notranslate"><span class="pre">180</span></code> with different numbers to see how the drawing changes.</li>
+<li><p>Change the size of the circle.</p></li>
+<li><p>What happens if you use a negative radius?</p></li>
+<li><p>Change line 4 to <code class="docutils literal notranslate"><span class="pre">bob.circle(50,</span> <span class="pre">180)</span></code>.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">180</span></code> with different numbers to see how the drawing changes.</p></li>
 </ol>
-<div class="last"><iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Curves?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div></div>
+<iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Curves?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe></div>
 <div class="admonition-tip admonition">
-<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
 <p>How many degrees are there in one-eighth of a circle?</p>
 <p>Never fear! You can make Python figure that out for you!</p>
-<p class="last"><code class="docutils literal notranslate"><span class="pre">bob.circle(50,</span> <span class="pre">360/8)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">bob.circle(50,</span> <span class="pre">360/8)</span></code></p>
 </div>
 <p>Combining lines, turns, and circles, we can begin making more interesting
 shapes!</p>
@@ -182,16 +182,16 @@ shapes!</p>
 <p>In the previous examples, we used a single turtle to do all of the drawing, but
 there is no reason to limit ourselves to just one drawing pet!</p>
 <div class="admonition-example admonition">
-<p class="first admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
+<p class="admonition-title"><i class="fas fa-binoculars" aria-hidden="true"></i>Example</p>
 <p>Run the following program to see two turtles draw a rectangle.</p>
-<iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Two-Turtles?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="last arabic simple">
-<li>Play around by changing any of the code to make the pair of turtles draw
-different shapes.</li>
-<li>Currently, <code class="docutils literal notranslate"><span class="pre">bob</span></code> finishes one part of the drawing before <code class="docutils literal notranslate"><span class="pre">mae</span></code> starts.
+<iframe height="600px" width="100%" src="https://repl.it/@launchcode/Turtle-Appendix-Two-Turtles?lite=true" scrolling="no" frameborder="yes" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe><ol class="arabic simple">
+<li><p>Play around by changing any of the code to make the pair of turtles draw
+different shapes.</p></li>
+<li><p>Currently, <code class="docutils literal notranslate"><span class="pre">bob</span></code> finishes one part of the drawing before <code class="docutils literal notranslate"><span class="pre">mae</span></code> starts.
 Try rearranging the order of the statements to make <code class="docutils literal notranslate"><span class="pre">mae</span></code> and <code class="docutils literal notranslate"><span class="pre">bob</span></code>
 take turns drawing their lines. Instead of <code class="docutils literal notranslate"><span class="pre">bob,</span> <span class="pre">bob,</span> <span class="pre">bob,</span> <span class="pre">mae,</span> <span class="pre">mae,</span>
-<span class="pre">mae,</span> <span class="pre">mae</span></code>, try <code class="docutils literal notranslate"><span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae</span></code>.</li>
-<li>Add a third turtle and make it add something new to the picture.</li>
+<span class="pre">mae,</span> <span class="pre">mae</span></code>, try <code class="docutils literal notranslate"><span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae,</span> <span class="pre">bob,</span> <span class="pre">mae</span></code>.</p></li>
+<li><p>Add a third turtle and make it add something new to the picture.</p></li>
 </ol>
 </div>
 </div>

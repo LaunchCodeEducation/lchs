@@ -98,9 +98,9 @@ inside the <code class="docutils literal notranslate"><span class="pre">&lt;form
 </pre></div>
 </div>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
-<ol class="last arabic">
-<li><p class="first">Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file and update the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag.</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It</p>
+<ol class="arabic">
+<li><p>Return to your <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file and update the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag.</p>
 <div class="highlight-html notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>13
 14
 15
@@ -115,14 +115,11 @@ inside the <code class="docutils literal notranslate"><span class="pre">&lt;form
 </pre></div>
 </td></tr></table></div>
 </li>
-<li><p class="first">Save the change, then refresh the page in your browser. Make sure you see
+<li><p>Save the change, then refresh the page in your browser. Make sure you see
 a URL in the address bar <em>without</em> any query string. If one appears after
-the refresh, just delete that part of the address and hit <em>Enter</em>.</p>
-</li>
-<li><p class="first">Type in some characters into the <em>Password</em> field, then click <em>Login</em>.</p>
-</li>
-<li><p class="first">Properly done, the URL in the address bar no longer spoils your secrecy!</p>
-</li>
+the refresh, just delete that part of the address and hit <em>Enter</em>.</p></li>
+<li><p>Type in some characters into the <em>Password</em> field, then click <em>Login</em>.</p></li>
+<li><p>Properly done, the URL in the address bar no longer spoils your secrecy!</p></li>
 </ol>
 </div>
 <div class="section" id="send-data-to-a-server">
@@ -147,28 +144,25 @@ a LaunchCode server and set of simple handlers. The server will collect and
 spit back the data received from a form. This allows us to practice using the
 the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute without getting too deep into the weeds.</p>
 <div class="admonition-try-it admonition">
-<p class="first admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
+<p class="admonition-title"><i class="fas fa-puzzle-piece" aria-hidden="true"></i>Try It!</p>
 <p>Update your code to send a <code class="docutils literal notranslate"><span class="pre">POST</span></code> request to an external server. The
 response will send back a new HTML page that displays the key/value pairs
 collected from your form.</p>
-<ol class="last arabic">
-<li><p class="first">Take a moment to save and commit the work you’ve done in the
-<code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository.</p>
-</li>
-<li><p class="first">In <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, add the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>
+<ol class="arabic">
+<li><p>Take a moment to save and commit the work you’ve done in the
+<code class="docutils literal notranslate"><span class="pre">forms_chapter</span></code> repository.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, add the <code class="docutils literal notranslate"><span class="pre">action</span></code> attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code>
 tag. Assign it the URL <code class="docutils literal notranslate"><span class="pre">https://handlers.education.launchcode.org/request-parrot</span></code>.</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://handlers.education.launchcode.org/request-parrot&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Inside the <code class="docutils literal notranslate"><span class="pre">form</span></code> element, include at least three <code class="docutils literal notranslate"><span class="pre">input</span></code> elements,
-with labels. At least one <code class="docutils literal notranslate"><span class="pre">input</span></code> should use <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code>.</p>
-</li>
-<li><p class="first">Include a submit button called <em>Send to Parrot</em>. Why <em>Parrot</em>? Because
+<li><p>Inside the <code class="docutils literal notranslate"><span class="pre">form</span></code> element, include at least three <code class="docutils literal notranslate"><span class="pre">input</span></code> elements,
+with labels. At least one <code class="docutils literal notranslate"><span class="pre">input</span></code> should use <code class="docutils literal notranslate"><span class="pre">type=&quot;password&quot;</span></code>.</p></li>
+<li><p>Include a submit button called <em>Send to Parrot</em>. Why <em>Parrot</em>? Because
 all the server does is send the form data back to us, just like a parrot
-repeats what it hears.</p>
-</li>
-<li><p class="first">Save your work for <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, then refresh its page in your browser.
+repeats what it hears.</p></li>
+<li><p>Save your work for <code class="docutils literal notranslate"><span class="pre">index.html</span></code>, then refresh its page in your browser.
 Fill in each of the input fields and submit the form. An example of the
 form and response is shown below:</p>
 <div class="figure align-default" id="id1">
@@ -176,9 +170,8 @@ form and response is shown below:</p>
 <p class="caption"><span class="caption-text">On left: Form before submitting. On right: The HTML page sent in the server’s response.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
-<li><p class="first">Use the <em>Back</em> button to return to your form. Feel free to edit your HTML
-to change the number, type, or names of the input fields.</p>
-</li>
+<li><p>Use the <em>Back</em> button to return to your form. Feel free to edit your HTML
+to change the number, type, or names of the input fields.</p></li>
 </ol>
 </div>
 </div>
@@ -194,27 +187,27 @@ before sending it out.</p>
 <div class="section" id="check-your-understanding">
 <h2><span class="section-number">20.3.3. </span>Check Your Understanding<a class="headerlink" href="#check-your-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag determines if the data is submitted
 with <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">action</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">type</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">submit</code></li>
    <li><input type="radio" name="Q1" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">method</code></li>
 </ol>
-<p id="Q1"></p></div></div>
+<p id="Q1"></p></div>
 <div class="admonition-question admonition">
-<p class="first admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
+<p class="admonition-title"><i class="fas fa-question" aria-hidden="true"></i>Question</p>
 <p>What attribute inside the <code class="docutils literal notranslate"><span class="pre">&lt;form&gt;</span></code> tag determines <em>where</em> the request is
 sent?</p>
-<div class="last"><ol type="a">
+<ol type="a">
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, true)"> <code class="pre">action</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">type</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">submit</code></li>
    <li><input type="radio" name="Q2" autocomplete="off" onclick="evaluateMC(name, false)"> <code class="pre">method</code></li>
 </ol>
-<p id="Q2"></p></div></div>
+<p id="Q2"></p></div>
 </div>
 </div>
 
